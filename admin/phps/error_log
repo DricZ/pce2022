@@ -1,0 +1,123 @@
+[21-Jan-2021 14:55:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect integer value: 'DEFAULT' for column 'id' at row 1' in /home/pcepetraac11/public_html/admin/phps/submitAdmin.php:19
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/submitAdmin.php(19): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/submitAdmin.php on line 19
+[21-Jan-2021 14:55:54 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1366 Incorrect integer value: '' for column 'id' at row 1' in /home/pcepetraac11/public_html/admin/phps/submitAdmin.php:19
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/submitAdmin.php(19): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/submitAdmin.php on line 19
+[21-Jan-2021 14:56:44 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/submitAdmin.php:21) in /home/pcepetraac11/public_html/admin/phps/submitAdmin.php on line 22
+[21-Jan-2021 14:58:23 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/submitAdmin.php:21) in /home/pcepetraac11/public_html/admin/phps/submitAdmin.php on line 22
+[21-Jan-2021 14:59:28 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/submitAdmin.php:21) in /home/pcepetraac11/public_html/admin/phps/submitAdmin.php on line 22
+[28-Jan-2021 13:40:33 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pcepetra_pce2021.pendaftar' doesn't exist' in /home/pcepetraac11/public_html/admin/phps/refresh_pendaftar.php:7
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_pendaftar.php(7): PDO->prepare('SELECT * FROM `...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_pendaftar.php on line 7
+[01-Apr-2021 19:59:37 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1221 Incorrect usage of UNION and ORDER BY' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:8
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(8): PDO->prepare('SELECT nama_kel...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 8
+[01-Apr-2021 19:59:37 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1221 Incorrect usage of UNION and ORDER BY' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:8
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(8): PDO->prepare('SELECT nama_kel...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 8
+[01-Apr-2021 19:59:57 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1221 Incorrect usage of UNION and ORDER BY' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:8
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(8): PDO->prepare('SELECT nama_kel...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 8
+[01-Apr-2021 19:59:57 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1221 Incorrect usage of UNION and ORDER BY' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:8
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(8): PDO->prepare('SELECT nama_kel...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 8
+[01-Apr-2021 19:59:59 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1221 Incorrect usage of UNION and ORDER BY' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:8
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(8): PDO->prepare('SELECT nama_kel...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 8
+[01-Apr-2021 19:59:59 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 1221 Incorrect usage of UNION and ORDER BY' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:8
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(8): PDO->prepare('SELECT nama_kel...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 8
+[17-Apr-2021 11:50:08 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.status' in 'field list'' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:9
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(9): PDO->prepare('SELECT a.status...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 9
+[17-Apr-2021 11:50:08 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.status' in 'field list'' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:9
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(9): PDO->prepare('SELECT a.status...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 9
+[17-Apr-2021 11:50:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.status' in 'field list'' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:9
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(9): PDO->prepare('SELECT a.status...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 9
+[17-Apr-2021 11:50:10 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.status' in 'field list'' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:9
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(9): PDO->prepare('SELECT a.status...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 9
+[17-Apr-2021 11:50:11 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.status' in 'field list'' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:9
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(9): PDO->prepare('SELECT a.status...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 9
+[17-Apr-2021 11:50:11 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.status' in 'field list'' in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php:9
+Stack trace:
+#0 /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php(9): PDO->prepare('SELECT a.status...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/admin/phps/refresh_jadwal_checking_bc.php on line 9
+[08-May-2021 03:14:18 UTC] PHP Warning:  session_start(): open(/tmp/sess_455c7333a5f80f3298f9a07d189c52d8, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 03:14:18 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 03:14:18 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/loginattempt.php on line 61
+[08-May-2021 03:14:18 UTC] PHP Warning:  Unknown: open(/tmp/sess_455c7333a5f80f3298f9a07d189c52d8, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[08-May-2021 03:14:18 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-May-2021 03:14:24 UTC] PHP Warning:  session_start(): open(/tmp/sess_455c7333a5f80f3298f9a07d189c52d8, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 03:14:24 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 03:14:24 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/loginattempt.php on line 61
+[08-May-2021 03:14:24 UTC] PHP Warning:  Unknown: open(/tmp/sess_455c7333a5f80f3298f9a07d189c52d8, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[08-May-2021 03:14:24 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-May-2021 03:18:20 UTC] PHP Warning:  session_start(): open(/tmp/sess_09a92728af93506f732623092fd093ac, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 03:18:20 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 03:18:20 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/loginattempt.php on line 61
+[08-May-2021 03:18:20 UTC] PHP Warning:  Unknown: open(/tmp/sess_09a92728af93506f732623092fd093ac, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[08-May-2021 03:18:20 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-May-2021 04:47:15 UTC] PHP Warning:  session_start(): open(/tmp/sess_c1f2eec46670f36c8cfb0a0bdf213b04, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 04:47:15 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 04:47:15 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/loginattempt.php on line 61
+[08-May-2021 04:47:15 UTC] PHP Warning:  Unknown: open(/tmp/sess_c1f2eec46670f36c8cfb0a0bdf213b04, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[08-May-2021 04:47:15 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-May-2021 04:49:26 UTC] PHP Warning:  session_start(): open(/tmp/sess_c1f2eec46670f36c8cfb0a0bdf213b04, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 04:49:26 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 04:49:26 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/loginattempt.php on line 61
+[08-May-2021 04:49:26 UTC] PHP Warning:  Unknown: open(/tmp/sess_c1f2eec46670f36c8cfb0a0bdf213b04, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[08-May-2021 04:49:26 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-May-2021 05:00:22 UTC] PHP Warning:  session_start(): open(/tmp/sess_6088e4ab78c0d44654959d5a7094fefe, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 05:00:22 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 05:00:22 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/loginattempt.php on line 61
+[08-May-2021 05:00:22 UTC] PHP Warning:  Unknown: open(/tmp/sess_6088e4ab78c0d44654959d5a7094fefe, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[08-May-2021 05:00:22 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-May-2021 05:19:07 UTC] PHP Warning:  session_start(): open(/tmp/sess_40d44e531e984246f7303da176c6e841, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 05:19:07 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 05:19:07 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/loginattempt.php on line 61
+[08-May-2021 05:19:07 UTC] PHP Warning:  Unknown: open(/tmp/sess_40d44e531e984246f7303da176c6e841, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[08-May-2021 05:19:07 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-May-2021 06:03:30 UTC] PHP Warning:  session_start(): open(/tmp/sess_c1f2eec46670f36c8cfb0a0bdf213b04, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 06:03:30 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 06:03:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/loginattempt.php on line 61
+[08-May-2021 06:03:30 UTC] PHP Warning:  Unknown: open(/tmp/sess_c1f2eec46670f36c8cfb0a0bdf213b04, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[08-May-2021 06:03:30 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[08-May-2021 08:52:40 UTC] PHP Warning:  session_start(): open(/tmp/sess_ad871b2d3fa46f7dcca41d131d64e5c7, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 08:52:40 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/connect.php on line 20
+[08-May-2021 08:52:40 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/admin/phps/loginattempt.php on line 61
+[08-May-2021 08:52:40 UTC] PHP Warning:  Unknown: open(/tmp/sess_ad871b2d3fa46f7dcca41d131d64e5c7, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[08-May-2021 08:52:40 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0

@@ -1,0 +1,54 @@
+<!--
+
+MARIO SAYS U R DUMB :)
+
+JUST KIDDING, U R THE MOST POWERFUL HACKER I HAVE EVER SEEN OMG
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AMPUN BANG JAGO</title>
+    <script type="text/javascript">
+        message = "AMPUN BANG JAGO 🦊 ";
+
+        function step() {
+            message = message.substr(1) + message.substr(0, 1);
+            document.title = message.substr(0, 15);
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="./style_mario.css">
+</head>
+
+<style>
+    * {
+        -webkit-touch-callout: none;
+        /* iOS Safari */
+        -webkit-user-select: none;
+        /* Safari */
+        -khtml-user-select: none;
+        /* Konqueror HTML */
+        -moz-user-select: none;
+        /* Old versions of Firefox */
+        -ms-user-select: none;
+        /* Internet Explorer/Edge */
+        user-select: none;
+        /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+    }
+</style>
+
+<body onload="setInterval(step,100)">
+    <div id="skybox" class="skybox">
+        <div class="txt" style="color: red;">TAKUT DEH YANG JAGO NGEHEK
+            <br><span style="color: white;"><a href="http://pce.petra.ac.id/" style="text-decoration: none; color: white;">GO BACK TO YOUR MAMA</a></span></div>
+        <div id="player" class="idle"></div>
+        <div class="ground"></div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

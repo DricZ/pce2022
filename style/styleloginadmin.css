@@ -1,0 +1,151 @@
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Oswald', sans-serif;
+	background: #ededed;
+	display: flex;
+	align-items: center;
+	height : 100%;
+	justify-content: center;
+}
+.jumbotron {
+	background-color: #e2e3e5;
+	margin: 15px 15px 15px 15px;
+	padding: 25px 15px 25px 15px;
+}
+h1{
+	color: #412c27;
+	text-transform: uppercase;
+	margin-top: 30px;
+	font-size: 30pt;
+}
+
+h2
+{
+	color: #412c27;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 20pt;
+}
+
+h3
+{
+	margin-top: 50px;
+	color: #412c27;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 16px;
+}
+
+@media only screen and (max-device-width:768px){
+	h1{
+		font-size: 30px;
+	}
+	h2{
+		font-size: 20px;
+	}
+	h3{
+		font-size: 13px;
+	}
+}
+
+input[type="text"], input[type="password"]
+{
+	border: none;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	width: 300px;
+	outline: none;
+	color: black;
+	transition: 0.5s;
+}
+
+input[type="text"]:hover, input[type="password"]:hover
+{
+	background-color: #babbbd;
+}
+
+input[type="submit"]
+{
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: none;
+	padding: 5px 130px;
+	outline: none;
+	color: black;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover
+{
+	background: #c57538;
+
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 0.8; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: white;
+  opacity: 0.8;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: white;
+  opacity: 0.8;
+}
+
+/* ul li span
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	display: flex !important;
+	transition: 0.5s;
+	align-items: center;
+	justify-content: center;
+	color: rgb(207, 201, 201);
+	font-size: 30px !important;
+} */
+/*ul li span:hover
+{
+	box-shadow: -1px 1px 1px rgba(0,0,0,.1);
+}
+ul li:hover span:nth-child(5)
+{
+	transform: translate(40px, -40px);
+	opacity: 1;
+}
+ul li:hover span:nth-child(4)
+{
+	transform: translate(30px, -30px);
+	opacity: .8;
+}
+ul li:hover span:nth-child(3)
+{
+	transform: translate(20px, -20px);
+	opacity: .6;
+}
+ul li:hover span:nth-child(2)
+{
+	transform: translate(10px, -10px);
+	opacity: .4;
+}
+ul li:hover span:nth-child(1)
+{
+	transform: translate(0px, 0px);
+	opacity: .2;
+}*/
