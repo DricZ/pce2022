@@ -643,23 +643,34 @@ if (isset($_GET['status'])) {
 
                         <div id="row-pay-college" class="mx-3" hidden>
                             <div class="row justify-content-center">
-                                <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Please make a payment transfer <u>SEPARATELY</u> if you want to take part in more than 1 (one) competition to the BCA account above in accordance with the nominal given in each competition. Thank you and good luck competing in Petra Civil Expo 2021!</h3><br>
+                                <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Please make a payment transfer <u>SEPARATELY</u> if you want to take part in more than 1 (one) competition to the BCA account above in accordance with the nominal given in each competition. Thank you and good luck competing in Petra Civil Expo 2022!</h3><br>
                             </div>
 
 
                             <div class="row justify-content-center">
-                                <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Silakan melakukan transfer pembayaran <u>SECARA TERPISAH</u> apabila mengikuti lebih dari 1 (satu) lomba ke rekening BCA di atas sesuai dengan nominal yang sudah diberikan di setiap bidang lomba. Terima kasih dan semoga sukses berkompetisi di Petra Civil Expo 2021!</h3><br>
+                                <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Silakan melakukan transfer pembayaran <u>SECARA TERPISAH</u> apabila mengikuti lebih dari 1 (satu) lomba ke rekening BCA di atas sesuai dengan nominal yang sudah diberikan di setiap bidang lomba. Terima kasih dan semoga sukses berkompetisi di Petra Civil Expo 2022!</h3><br>
+                            </div>
+                        </div>
+
+                        <div id="row-pay-college" class="mx-3">
+                        <div class="row justify-content-center">
+                            <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Use payment news with <u>Team Name - Name of University/School!</u></h3><br>
+                            </div>
+
+
+                            <div class="row justify-content-center">
+                            <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Gunakan berita pembayaran dengan format <u>Nama Tim - Nama Universitas/sekolah!</u></h3><br>
                             </div>
                         </div>
 
                         <div id="row-pay-shs" class="mx-3" hidden>
                             <div class="row justify-content-center">
-                                <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Please make a payment transfer to the BCA account above in accordance with the nominal given in Bridge Competition. Thank you and good luck competing in Petra Civil Expo 2021!</h3><br>
+                                <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Please make a payment transfer to the BCA account above in accordance with the nominal given in Bridge Competition. Thank you and good luck competing in Petra Civil Expo 2022!</h3><br>
                             </div>
 
 
                             <div class="row justify-content-center">
-                                <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Silakan melakukan transfer pembayaran ke rekening BCA di atas sesuai dengan nominal yang sudah diberikan untuk bidang lomba Bridge Competition. Terima kasih dan semoga sukses berkompetisi di Petra Civil Expo 2021!</h3><br>
+                                <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Silakan melakukan transfer pembayaran ke rekening BCA di atas sesuai dengan nominal yang sudah diberikan untuk bidang lomba Bridge Competition. Terima kasih dan semoga sukses berkompetisi di Petra Civil Expo 2022!</h3><br>
                             </div>
                         </div>
 
