@@ -1153,7 +1153,7 @@ if (isset($_GET['status'])) {
                      }
                   </style>
                   <h1 class="lktb-shadow">
-                  Road TO SKILLED CONCRETE TECHNOLOGIST</h1>
+                  ROAD TO SKILLED CONCRETE TECHNOLOGIST</h1>
                   <p style="color:white; text-align: center; font-size: 14pt;" id="tes">
                      <b>Lomba Kuat Tekan Beton 2022 </b> mengangkat tema "Road to Skilled Concrete Technologist". 
                      Tema ini diangkat dengan mengingat bahwa beton adalah salah satu bahan yang paling banyak 
