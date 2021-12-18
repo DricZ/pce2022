@@ -173,7 +173,7 @@ require_once 'phps/connect.php';
 
         .menu-icon {
             width: 100%;
-            background: #a29d99;
+            background: #00CED1;
             text-align: right;
             box-sizing: border-box;
             padding: 23px 24px 12px 0px;
