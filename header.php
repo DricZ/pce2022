@@ -162,7 +162,7 @@ require_once 'phps/connect.php';
 
         nav ul li a {
             text-decoration: none;
-            color: white;
+            color: #00CED1;
             font-size: 16px;
         }
 
