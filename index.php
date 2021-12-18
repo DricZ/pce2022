@@ -1263,7 +1263,7 @@ if (isset($_GET['status'])) {
                </h1>
                <div id="reward-prize">
                   <h1 style="border: 2px solid white; font-family: 'Monument Extended', sans-serif; letter-spacing: 2px; text-align: center; color: white; margin-bottom: 30px;" id="reward">
-                     <i class="fas fa-money-bill-wave"></i> 19.000.000 IDR <i class="fas fa-money-bill-wave"></i>
+                     <i class="fas fa-money-bill-wave"></i> 19.500.000 IDR <i class="fas fa-money-bill-wave"></i>
                   </h1>
                </div>
             </span>
