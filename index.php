@@ -1303,7 +1303,7 @@ if (isset($_GET['status'])) {
             <div class="timeline-block timeline-block-right">
                <div class="marker"></div>
                <div class="timeline-content">
-                  <h3 style="color:white;">December 28<sup>th</sup>, 2020 - January 28<sup>th</sup>, 2022</h3>
+                  <h3 style="color:white;">December 20<sup>th</sup>, 2021 - February 28<sup>th</sup>, 2022</h3>
                   <h4 style="font-weight:bold; color:white;">Early Bird Registration</h4>
                </div>
             </div>
@@ -1311,7 +1311,7 @@ if (isset($_GET['status'])) {
             <div class="timeline-block timeline-block-left">
                <div class="marker"></div>
                <div class="timeline-content">
-                  <h3 style="color:white; text-align: right;">January 29<sup>th</sup> - March 4<sup>th</sup>, 2022</h3>
+                  <h3 style="color:white; text-align: right;">January 29<sup>th</sup> -February 28<sup>th</sup>, 2022</h3>
                   <h4 style="font-weight:bold; color:white;text-align: right;">Normal Price Registration</h4>
                </div>
             </div>
@@ -1320,14 +1320,22 @@ if (isset($_GET['status'])) {
                <div class="marker"></div>
                <div class="timeline-content">
                   <h3 style="color:white;">March 5<sup>th</sup>, 2022</h3>
-                  <h4 style="font-weight:bold; color:white;">Opening Ceremony and International Webinar</h4>
+                  <h4 style="font-weight:bold; color:white;">Opening Ceremony and International Talkshow</h4>
                </div>
             </div>
 
             <div class="timeline-block timeline-block-left">
                <div class="marker"></div>
                <div class="timeline-content">
-                  <h3 style="color:white; text-align: right;">March 12<sup>th</sup> - May 23<sup>rd</sup>, 2022</h3>
+                  <h3 style="color:white; text-align: right;">May 7<sup>th</sup> - May 21<sup>rd</sup>, 2022</h3>
+                  <h4 style="font-weight:bold; color:white;text-align: right;"> Pameran Konstruksi</h4>
+               </div>
+            </div>
+            
+            <div class="timeline-block timeline-block-left">
+               <div class="marker"></div>
+               <div class="timeline-content">
+                  <h3 style="color:white; text-align: right;">March 12<sup>th</sup> - May 21<sup>rd</sup>, 2022</h3>
                   <h4 style="font-weight:bold; color:white;text-align: right;">Earthquake Resistant Design Competition</h4>
                </div>
             </div>
@@ -1335,7 +1343,7 @@ if (isset($_GET['status'])) {
             <div class="timeline-block timeline-block-right">
                <div class="marker"></div>
                <div class="timeline-content">
-                  <h3 style="color:white;">March 26<sup>th</sup> - May 17<sup>th</sup>, 2022</h3>
+                  <h3 style="color:white;">March 7<sup>th</sup> - May 14<sup>th</sup>, 2022</h3>
                   <h4 style="font-weight:bold; color:white;">Bridge Competition</h4>
                </div>
             </div>
@@ -1343,7 +1351,7 @@ if (isset($_GET['status'])) {
             <div class="timeline-block timeline-block-left">
                <div class="marker"></div>
                <div class="timeline-content">
-                  <h3 style="color:white; text-align: right;">March 27<sup>th</sup> - May 8<sup>th</sup>, 2022</h3>
+                  <h3 style="color:white; text-align: right;">March 12<sup>th</sup> - May 14<sup>th</sup>, 2022</h3>
                   <h4 style="font-weight:bold; color:white;text-align: right;">Lomba Kuat Tekan Beton</h4>
                </div>
             </div>
@@ -1352,7 +1360,7 @@ if (isset($_GET['status'])) {
                <div class="marker"></div>
                <div class="timeline-content">
                   <h3 style="color:white;">May 21<sup>st</sup> - May 23<sup>rd</sup>, 2022</h3>
-                  <h4 style="font-weight:bold; color:white;">Final Day <i class="fas fa-trophy"></i></h4>
+                  <h4 style="font-weight:bold; color:white;">Closing dan Awarding Night <i class="fas fa-trophy"></i></h4>
                </div>
             </div>
 
