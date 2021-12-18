@@ -544,9 +544,9 @@ include 'phps/connect.php';
             <div class="explain calvert" style="font-family:Consolas;color:black;z-index:1000;">
                 <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>AL<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name2" style="color:black;">B</a>ERT VALENTINO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
                 <h3 style="cursor:pointer;">
-                    <a href="https://www.instagram.com/#/" target="_blank">@NANTIDIISI</a>
+                    <a href="https://www.instagram.com/albertvalentino19/" target="_blank">@albertvalentino19</a>
                 </h3>
-                <p>NANTI DIISI</p>
+                <p>.</p>
             </div>
         </div>
     </div>
