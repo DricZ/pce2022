@@ -798,7 +798,7 @@ if (isset($_GET['status'])) {
                      REDIFINING FUTURE THROUGH VISIONARY INNOVATIONS
                   </h1>
                   <p style="color:white; text-align: center; font-size: 14pt;">
-                     <b>Petra Civil Expo 2022</b>akan menangkat tema "Redifining Future Through Visionary Innovations". Tema ini memiliki arti bahwa manusia harus peduli akan kebutuhan masa depan dengan cara berinovasi dengan kreatif. Melihat kondisi Negara Indonesia yang pembangunan infrastrukturnya masih belum merata, generasi muda Indonesia memiliki tugas besar untuk memastikan seluruh daerah di Indonesia dapat merasakan kemajuan infrastruktur. Dengan tema ini, diharapkan para peserta <b>Petra Civil Expo 2022</b> sebagai generasi penerus bangsa dapat memberikan inovasi-inovasi baru dan merealisasikannya agar dapat memajukan pembangunan infrastruktur di Indonesia ke depannya.</p>
+                     <b>Petra Civil Expo 2022</b> akan menangkat tema "Redifining Future Through Visionary Innovations". Tema ini memiliki arti bahwa manusia harus peduli akan kebutuhan masa depan dengan cara berinovasi dengan kreatif. Melihat kondisi Negara Indonesia yang pembangunan infrastrukturnya masih belum merata, generasi muda Indonesia memiliki tugas besar untuk memastikan seluruh daerah di Indonesia dapat merasakan kemajuan infrastruktur. Dengan tema ini, diharapkan para peserta <b>Petra Civil Expo 2022</b> sebagai generasi penerus bangsa dapat memberikan inovasi-inovasi baru dan merealisasikannya agar dapat memajukan pembangunan infrastruktur di Indonesia ke depannya.</p>
                </div>
             </span>
          </div>
@@ -1141,13 +1141,18 @@ if (isset($_GET['status'])) {
                      }
                   </style>
                   <h1 class="lktb-shadow">
-                     INNOVATIVE MATERIAL BRING EFFECTIVE CONCRETE</h1>
+                  Road TO SKILLED CONCRETE TECHNOLOGIST</h1>
                   <p style="color:white; text-align: center; font-size: 14pt;" id="tes">
-                     <b>Lomba Kuat Tekan Beton</b> adalah lomba mendesain dan membuat beton bertaraf nasional. Lomba kali ini akan
-                     memfokuskan mengenai bagaimana kuat tekan beton yang direncanakan dapat sesuai dengan pengerjaan di
-                     lapangan. Dengan megandalkan material yang tersedia pada daerah masing-masing diharapkan beton yang
-                     dibuat dapat mencapai hasil yang maksimal. Besar harapan kami setelah mengikuti lomba ini, peserta dapat
-                     ahli dalam merencanakan dan membuat beton.
+                     <b>Lomba Kuat Tekan Beton 2022 </b> mengangkat tema "Road to Skilled Concrete Technologist". 
+                     Tema ini diangkat dengan mengingat bahwa beton adalah salah satu bahan yang paling banyak 
+                     digunakan dalam pekerjaan konstruksi di Indonesia. Sebelum dibentuk, beton harus direncanakan 
+                     terlebih dahulu karena beton merupakan campuran dari berbagai macam material. Proses pencampuran 
+                     inilah yang menjadi masalah terbesar dalam pembentukan beton. Permasalahan sering terjadi 
+                     akibat pemahaman engineer mengenai beton yang masih kurang sehingga membuat kualitas beton 
+                     menjadi berkurang pada saat pembangunan. Hal ini menyebabkan bangunan tidak sesuai dengan rencana.
+                      Maka dari itu, peserta perlu memiliki pemahaman mengenai kondisi konstruksi beton yang sedang 
+                      berlangsung di sekitar mereka. Dengan harapan setelah memahami permasalahan yang sedang terjadi, 
+                     peserta dapat memberi solusi melalui rencana beton yang mereka buat di Lomba Kuat Tekan Beton 2022.
                   </p>
                </div>
             </span>
@@ -1192,7 +1197,7 @@ if (isset($_GET['status'])) {
                <div class="timeline-block timeline-block-right">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:white;">March 27<sup>th</sup>, 2021</h3>
+                     <h3 style="color:white;">March 12<sup>th</sup>, 2022</h3>
                      <h4 style="font-weight:bold;">Briefing Day</h4>
                   </div>
                </div>
@@ -1200,7 +1205,7 @@ if (isset($_GET['status'])) {
                <div class="timeline-block timeline-block-left">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:white; text-align: right;">March 29<sup>th</sup> - April 4<sup>th</sup>, 2021</h3>
+                     <h3 style="color:white; text-align: right;">March 19<sup>th</sup>, 2022</h3>
                      <h4 style="font-weight:bold;text-align: right;">Distribution of Materials</h4>
                   </div>
                </div>
@@ -1208,7 +1213,7 @@ if (isset($_GET['status'])) {
                <div class="timeline-block timeline-block-right">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:white;">April 6<sup>th</sup>, 2021</h3>
+                     <h3 style="color:white;">March 26<sup>th</sup>, 2022</h3>
                      <h4 style="font-weight:bold;">Proposal and Mix Design Submission Deadline</h4>
                   </div>
                </div>
@@ -1216,7 +1221,7 @@ if (isset($_GET['status'])) {
                <div class="timeline-block timeline-block-left">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:white;text-align: right;">April 10<sup>th</sup>, 2021</h3>
+                     <h3 style="color:white;text-align: right;">April 9<sup>th</sup>, 2022</h3>
                      <h4 style="font-weight:bold;text-align: right;">Mixing Day</h4>
                   </div>
                </div>
@@ -1224,29 +1229,29 @@ if (isset($_GET['status'])) {
                <div class="timeline-block timeline-block-right">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:white;">April 17<sup>th</sup>, 2021</h3>
+                     <h3 style="color:white;">April 16<sup>th</sup>, 2022</h3>
                      <h4 style="font-weight:bold;">Day 7 Testing</h4>
                   </div>
                </div>
                <div class="timeline-block timeline-block-left">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:white;text-align: right;">April 24<sup>th</sup> - April 30<sup>th</sup>, 2021</h3>
+                     <h3 style="color:white;text-align: right;">April 25<sup>th</sup> - April 30<sup>th</sup>, 2022</h3>
                      <h4 style="font-weight:bold;text-align: right;">Concrete Submission</h4>
                   </div>
                </div>
                <div class="timeline-block timeline-block-right">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:white;">May 8<sup>th</sup>, 2021</h3>
+                     <h3 style="color:white;">May 7<sup>th</sup>, 2022</h3>
                      <h4 style="font-weight:bold;">Final Testing</h4>
                   </div>
                </div>
                <div class="timeline-block timeline-block-left">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:white;text-align: right;">May 21<sup>st</sup> - May 23<sup>rd</sup>, 2021</h3>
-                     <h4 style="font-weight:bold;text-align: right;"><i class="fas fa-trophy"></i> Final Day</h4>
+                     <h3 style="color:white;text-align: right;">May 14<sup>st</sup>, 2022</h3>
+                     <h4 style="font-weight:bold;text-align: right;"><i class="fas fa-trophy"></i> Presentation Day</h4>
                   </div>
                </div>
             </div>
@@ -1258,7 +1263,7 @@ if (isset($_GET['status'])) {
                </h1>
                <div id="reward-prize">
                   <h1 style="border: 2px solid white; font-family: 'Monument Extended', sans-serif; letter-spacing: 2px; text-align: center; color: white; margin-bottom: 30px;" id="reward">
-                     <i class="fas fa-money-bill-wave"></i> 19.000.000 IDR <i class="fas fa-money-bill-wave"></i>
+                     <i class="fas fa-money-bill-wave"></i> 19.500.000 IDR <i class="fas fa-money-bill-wave"></i>
                   </h1>
                </div>
             </span>
