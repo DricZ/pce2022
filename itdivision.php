@@ -572,9 +572,9 @@ include 'phps/connect.php';
                 <img draggable="false" src="./foto/bagus.png" class="profile front">
             </div>
             <div class="explain bagus" style="font-family:Consolas;color:black;z-index:1000;">
-                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>AND<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name4" style="color:black;">R</a>E</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
+                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>ANDRE<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name4" style="color:black;"> L</a>EO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
                 <h3 style="cursor:pointer;">
-                    <a href="https://www.instagram.com/#/" target="_blank">@NANTIDIISI</a>
+                    <a href="https://www.instagram.com/andre_leo28/" target="_blank">@andre_leo28</a>
                 </h3>
                 <p>NANTI DIISI</p>
             </div>
