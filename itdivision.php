@@ -530,7 +530,7 @@ include 'phps/connect.php';
                 <h3 style="cursor:pointer;">
                     <a href="https://www.instagram.com/dricz21_/" target="_blank">@dricz21_</a>
                 </h3>
-                <p>Coba pencet Ctrl + F4</p>
+                <p>Coba pencet Alt + F4</p>
             </div>
         </div>
     </div>
