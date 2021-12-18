@@ -798,7 +798,7 @@ if (isset($_GET['status'])) {
                      REDIFINING FUTURE THROUGH VISIONARY INNOVATIONS
                   </h1>
                   <p style="color:white; text-align: center; font-size: 14pt;">
-                     <b>Petra Civil Expo 2022</b>akan menangkat tema "Redifining Future Through Visionary Innovations". Tema ini memiliki arti bahwa manusia harus peduli akan kebutuhan masa depan dengan cara berinovasi dengan kreatif. Melihat kondisi Negara Indonesia yang pembangunan infrastrukturnya masih belum merata, generasi muda Indonesia memiliki tugas besar untuk memastikan seluruh daerah di Indonesia dapat merasakan kemajuan infrastruktur. Dengan tema ini, diharapkan para peserta <b>Petra Civil Expo 2022</b> sebagai generasi penerus bangsa dapat memberikan inovasi-inovasi baru dan merealisasikannya agar dapat memajukan pembangunan infrastruktur di Indonesia ke depannya.</p>
+                     <b>Petra Civil Expo 2022</b> akan menangkat tema "Redifining Future Through Visionary Innovations". Tema ini memiliki arti bahwa manusia harus peduli akan kebutuhan masa depan dengan cara berinovasi dengan kreatif. Melihat kondisi Negara Indonesia yang pembangunan infrastrukturnya masih belum merata, generasi muda Indonesia memiliki tugas besar untuk memastikan seluruh daerah di Indonesia dapat merasakan kemajuan infrastruktur. Dengan tema ini, diharapkan para peserta <b>Petra Civil Expo 2022</b> sebagai generasi penerus bangsa dapat memberikan inovasi-inovasi baru dan merealisasikannya agar dapat memajukan pembangunan infrastruktur di Indonesia ke depannya.</p>
                </div>
             </span>
          </div>
