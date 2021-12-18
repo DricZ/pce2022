@@ -526,12 +526,12 @@ include 'phps/connect.php';
                 <img draggable="false" src="./foto/Dea.png" class="profile front">
             </div>
             <div class="explain dea" style="font-family:Consolas;color:black;z-index:1000;">
-                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>R<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name" style="color:black;">E</a>BEKA DEA</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
+                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>A<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name" style="color:black;">U</a>DRICO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
                 <h2><a href="http://genta.petra.ac.id/" style="text-decoration: none; color: black;" target="_blank">genta.petra.ac.id</a></h2>
                 <h3 style="cursor:pointer;">
-                    <a href="https://www.instagram.com/reb_de/" target="_blank">@reb_de</a>
+                    <a href="https://www.instagram.com/dricz21_/" target="_blank">@dricz21_</a>
                 </h3>
-                <p>saya bingung mau quote apa</p>
+                <p>NANTI DIISI</p>
             </div>
         </div>
     </div>
@@ -543,12 +543,11 @@ include 'phps/connect.php';
                 <img draggable="false" src="./foto/calvert.png" class="profile front">
             </div>
             <div class="explain calvert" style="font-family:Consolas;color:black;z-index:1000;">
-                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>CAL<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name2" style="color:black;">V</a>ERT TANUDIHARDJO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
-                <h2>你好美女</h2>
+                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>AL<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name2" style="color:black;">B</a>ERT VALENTINO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
                 <h3 style="cursor:pointer;">
-                    <a href="https://www.instagram.com/vertfrag/" target="_blank">@vertfrag</a>
+                    <a href="https://www.instagram.com/#/" target="_blank">@NANTIDIISI</a>
                 </h3>
-                <p>ak g ngapa2 in</p>
+                <p>NANTI DIISI</p>
             </div>
         </div>
     </div>
@@ -559,12 +558,12 @@ include 'phps/connect.php';
                 <img draggable="false" src="./foto/hanse.png" class="profile front">
             </div>
             <div class="explain hans" style="font-family:Consolas;color:black;z-index:1000;">
-                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>MIKAEL H<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name3" style="color:black;">A</a>NS</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
+                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>REINER J<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name3" style="color:black;">U</a>LIO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
                 <h2><a href="http://irgl.petra.ac.id/" style="text-decoration: none; color: black;" target="_blank">irgl.petra.ac.id</a></h2>
                 <h3 style="cursor:pointer;">
-                    <a href="https://www.instagram.com/mikael_h_u/" target="_blank">@mikael_h_u</a>
+                    <a href="https://www.instagram.com/#/" target="_blank">@NANTIDIISI</a>
                 </h3>
-                <p>F10 > ctrl + F5</p>
+                <p>NANTI DIISI</p>
             </div>
         </div>
     </div>
@@ -575,10 +574,10 @@ include 'phps/connect.php';
                 <img draggable="false" src="./foto/bagus.png" class="profile front">
             </div>
             <div class="explain bagus" style="font-family:Consolas;color:black;z-index:1000;">
-                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>BASKARA BA<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name4" style="color:black;">G</a>US</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
+                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>AND<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name4" style="color:black;">R</a>E</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
                 <h2><a href="http://openhouse.petra.ac.id/" style="text-decoration: none; color: black;" target="_blank">openhouse.petra.ac.id</a></h2>
                 <h3 style="cursor:pointer;">
-                    <a href="https://www.instagram.com/baskarabagus_/" target="_blank">@baskarabagus_</a>
+                    <a href="https://www.instagram.com/#/" target="_blank">@NANTIDIISI</a>
                 </h3>
                 <p>fraq uryc cym. v arrq fyrrc zna</p>
             </div>
@@ -591,12 +590,12 @@ include 'phps/connect.php';
                 <img draggable="false" src="./foto/jimlee.png" class="profile front">
             </div>
             <div class="explain jimlee" style="font-family:Consolas;color:black;z-index:1000;">
-                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>JIM<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name4" style="color:black;">L</a>EE CHRISTANTO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
+                <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>TONI<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name4" style="color:black;"> A</a>RIANTO PUTRA</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
                 <h2><a href="http://wgg.petra.ac.id/" style="text-decoration: none; color: black;" target="_blank">wgg.petra.ac.id</a></h2>
                 <h3 style="cursor:pointer;">
-                    <a href="https://www.instagram.com/jimleewidjaya_/" target="_blank">@jimleewidjaya_</a>
+                    <a href="https://www.instagram.com/#/" target="_blank">@NANTIDIISI</a>
                 </h3>
-                <p>di mana ada calvert di situ ada saya</p>
+                <p>NANTI DIISI</p>
             </div>
         </div>
     </div>
