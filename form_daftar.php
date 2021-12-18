@@ -483,13 +483,13 @@ if (isset($_GET['status'])) {
                                         <hr style="width: 40%; height: 3px; background-color: red;">
 
                                         <p class="card-text">
-                                            <b><i> “Stitch the 17.000”</i></b>
+                                            <b><i> “Unifying The Sleeping Tiger”</i></b>
                                         </p>
                                         <!-- <p class="card-text" style="font-weight: bold;">
                                             <b>&#128178; Rp260.000,00 <span style="color: brown;">(EARLY BIRD)</span></b>
                                         </p> -->
                                         <p class="card-text" style="font-weight: bold;">
-                                            &#128178; Rp275.000,00
+                                            &#128178; Rp260.000,00
                                         </p>
                                         <p class="card-text" style="font-weight: bold;">
                                             <b>FOR SENIOR HIGH SCHOOL STUDENTS</b>
@@ -501,11 +501,11 @@ if (isset($_GET['status'])) {
                         </div>
 
                         <div class="row justify-content-center">
-                            <img src="../assets/dontmiss.png" alt="" style="width: 50%; height: 70%;">
+                            <img src="assets/dontmiss.png" alt="" style="width: 50%; height: 70%;">
                         </div>
                         <br>
                         <div class="row justify-content-center">
-                            <h5 style="font-weight: bold; font-size: 18pt; color: black; text-align: center;"><span style="color: red;">FREE</span> <a href="webinar_regist.php" style="text-decoration: none; color: black;">INTERNATIONAL WEBINAR</a> ACCESS<br>ONLY FOR A LIMITED TIME!</h5>
+                            <h5 style="font-weight: bold; font-size: 18pt; color: black; text-align: center;"><span style="color: red;">FREE</span> <a href="webinar_regist.php" style="text-decoration: none; color: black;">INTERNATIONAL TALKSHOW</a> ACCESS<br>ONLY FOR A LIMITED TIME!</h5>
                         </div>
 
                         <br>
@@ -533,13 +533,13 @@ if (isset($_GET['status'])) {
                                             <hr style="width: 40%; height: 3px; background-color: red;">
                                         </div>
                                         <p class="card-text">
-                                            <b><i> “Stitch the 17.000”</i></b>
+                                            <b><i> “Unifying The Sleeping Tiger”</i></b>
                                         </p>
                                         <!-- <p class="card-text" style="font-weight: bold;">
                                             <b>&#128178; Rp260.000,00 <span style="color: brown;">(EARLY BIRD)</span></b>
                                         </p> -->
                                         <p class="card-text" style="font-weight: bold;">
-                                            <b>&#128178; Rp275.000,00</b>
+                                            <b>&#128178; Rp260.000,00</b>
                                         </p>
                                         <p class="card-text" style="font-weight: bold;" <b>FOR UNIVERSITY STUDENTS</b><br>
                                             <img src="assets/bc_univ_bca.png" style="max-width: 100%" alt="">
@@ -556,13 +556,13 @@ if (isset($_GET['status'])) {
                                             <hr style="width: 40%; height: 3px; background-color: red;">
                                         </div>
                                         <p class="card-text">
-                                            <b><i>“Overcome the Certain Uncertainty”</i></b>
+                                            <b><i>“The Undefined Disaster and Its Defined Counter”</i></b>
                                         </p>
                                         <!-- <p class="card-text" style="font-weight: bold;">
                                             <b>&#128178; Rp240.000,00 <span style="color: brown;">(EARLY BIRD)</span></b>
                                         </p> -->
                                         <p class="card-text" style="font-weight: bold;">
-                                            <b>&#128178; Rp265.000,00</b>
+                                            <b>&#128178; Rp245.000,00</b>
                                         </p>
                                         <p class="card-text">
                                             <img src="assets/erdc_bca.png" style="max-width: 100%" alt="">
@@ -579,13 +579,13 @@ if (isset($_GET['status'])) {
                                             <hr style="width: 40%; height: 3px; background-color: red;">
                                         </div>
                                         <p class="card-text">
-                                            <b><i>“Innovative Material Bring Effective Concrete"</i></b>
+                                            <b><i>“Road to Skilled Concrete Technologist"</i></b>
                                         </p>
                                         <!-- <p class="card-text" style="font-weight: bold;">
                                             <b>&#128178; Rp215.000,00 <span style="color: brown;">(EARLY BIRD)</span></b>
                                         </p> -->
                                         <p class="card-text" style="font-weight: bold;">
-                                            <b>&#128178; Rp240.000,00</b>
+                                            <b>&#128178; Rp210.000,00</b>
                                         </p>
                                         <p class="card-text">
                                             <img src="assets/lktb_bca.png" style="max-width: 100%" alt="">
@@ -597,11 +597,11 @@ if (isset($_GET['status'])) {
                         </div>
 
                         <div class="row justify-content-center">
-                            <img src="../assets/dontmiss.png" alt="" style="width: 50%;">
+                            <img src="assets/dontmiss.png" alt="" style="width: 50%;">
                         </div>
                         <br>
                         <div class="row justify-content-center">
-                            <h5 style="font-weight: bold; font-size: 18pt; color: black; text-align: center;"><span style="color: red;">FREE</span> <a href="webinar_regist.php" style="text-decoration: none; color: black;">INTERNATIONAL WEBINAR</a> ACCESS<br>ONLY FOR A LIMITED TIME!</h5>
+                            <h5 style="font-weight: bold; font-size: 18pt; color: black; text-align: center;"><span style="color: red;">FREE</span> <a href="webinar_regist.php" style="text-decoration: none; color: black;">INTERNATIONAL TALKSHOW</a> ACCESS<br>ONLY FOR A LIMITED TIME!</h5>
                         </div>
 
                         <br>
@@ -623,17 +623,17 @@ if (isset($_GET['status'])) {
                                     <div id="bc-pay" hidden>
                                         <br>
                                         <h5 id="competition-fees" style="font-weight: bold; font-size: 16pt;">BRIDGE COMPETITION</h5>
-                                        <h5 id="fees" style="font-weight: bold; font-size: 20pt;">Rp275.000,00</h5>
+                                        <h5 id="fees" style="font-weight: bold; font-size: 20pt;">Rp260.000,00</h5>
                                     </div>
                                     <div id="erdc-pay" hidden>
                                         <br>
                                         <h5 id="competition-fees" style="font-weight: bold; font-size: 16pt;">EARTHQUAKE RESISTANT DESIGN COMPETITION</h5>
-                                        <h5 id="fees" style="font-weight: bold; font-size: 20pt;">Rp265.000,00</h5>
+                                        <h5 id="fees" style="font-weight: bold; font-size: 20pt;">Rp245.000,00</h5>
                                     </div>
                                     <div id="lktb-pay" hidden>
                                         <br>
                                         <h5 id="competition-fees" style="font-weight: bold; font-size: 16pt;">LOMBA KUAT TEKAN BETON</h5>
-                                        <h5 id="fees" style="font-weight: bold; font-size: 20pt;">Rp240.000,00</h5>
+                                        <h5 id="fees" style="font-weight: bold; font-size: 20pt;">Rp210.000,00</h5>
                                     </div>
                                 </div>
                             </div>
