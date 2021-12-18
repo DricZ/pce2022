@@ -1063,37 +1063,37 @@ if (isset($_GET['status'])) {
                   <div class="marker"></div>
                   <div class="timeline-content">
                      <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">March 12<sup>th</sup>, 2022</h3>
-                     <h4 style="font-weight:bold;color: #123958; text-shadow: 1px 1px #f0ebce;">Proposal Submission Deadline</h4>
+                     <h4 style="font-weight:bold;color: #123958; text-shadow: 1px 1px #f0ebce;">Webinar dan Briefing</h4>
                   </div>
                </div>
 
                <div class="timeline-block timeline-block-left">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="text-align: right;color:#1C545E; text-shadow: 1px 1px #f0ebce;">March 26<sup>th</sup>, 2022</h3>
-                     <h4 style="font-weight:bold;text-align: right;color: #123958; text-shadow: 1px 1px #f0ebce;">Workshop</h4>
+                     <h3 style="text-align: right;color:#1C545E; text-shadow: 1px 1px #f0ebce;">April 9<sup>th</sup>, 2022</h3>
+                     <h4 style="font-weight:bold;text-align: right;color: #123958; text-shadow: 1px 1px #f0ebce;">Pembagian Balsa</h4>
                   </div>
                </div>
 
                <div class="timeline-block timeline-block-right">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">March 27<sup>th</sup>, 2022</h3>
-                     <h4 style="font-weight:bold;color: #123958; text-shadow: 1px 1px #f0ebce;">Distribution of Balsa</h4>
+                     <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">April 11<sup>th</sup>, 2022</h3>
+                     <h4 style="font-weight:bold;color: #123958; text-shadow: 1px 1px #f0ebce;">Pembagian TOR Final</h4>
                   </div>
                </div>
 
                <div class="timeline-block timeline-block-left">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="text-align: right;color:#1C545E; text-shadow: 1px 1px #f0ebce;">May 6<sup>th</sup> - May 8<sup>th</sup>, 2022</h3>
+                     <h3 style="text-align: right;color:#1C545E; text-shadow: 1px 1px #f0ebce;">May 7<sup>th</sup> - May 8<sup>th</sup>, 2022</h3>
                      <h4 style="font-weight:bold;text-align: right;color: #123958; text-shadow: 1px 1px #f0ebce;">Checking Session</h4>
                   </div>
                </div>
                <div class="timeline-block timeline-block-right">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">May 20<sup>th</sup>, 2022</h3>
+                     <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">May 18<sup>th</sup>, 2022</h3>
                      <h4 style="font-weight:bold;color: #123958; text-shadow: 1px 1px #f0ebce;">Maket Submission Deadline</h4>
                   </div>
                </div>
