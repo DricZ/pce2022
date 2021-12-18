@@ -1017,14 +1017,9 @@ if (isset($_GET['status'])) {
                      }
                   </style>
                   <h1 class="erdc-shadow">
-                     OVERCOME THE CERTAIN UNCERTAINTY</h1>
+                     THE UNDEFINED DISASTER AND ITS DEFINED COUNTER</h1>
                   <p style="color:#123958; text-align: center; font-size: 14pt;" id="tes">
-                     <b>Earthquake Resistant Design Competition (ERDC)</b> adalah lomba desain bangunan bertingkat tahan gempa
-                     bertaraf nasional. Pada lomba ini, peserta diajak untuk berpikir secara inovatif untuk membuat desain
-                     bangunan bertingkat tahan gempa yang efektif dan kuat menahan beban lateral gempa bumi. Peserta akan
-                     membuat maket bangunan bertingkat tahan gempa yang akan diuji menggunakan mesin penggetaran (<i>shaking
-                        table</i>). Diharapkan dengan mengikuti lomba ini, peserta tertarik untuk mempelajari bangunan tahan gempa
-                     dan memanfaatkan ilmu yang mereka dapatkan untuk membantu memajukan Negara Indonesia di masa mendatang.
+                     <b>Earthquake Resistant Design Competition (ERDC)</b> mengangkat tema “The Undefined Disaster and Its Defined Counter”. Tema ini diangkat karena gempa bumi merupakan sebuah bencana yang tidak dapat didefinisikan dengan pasti wujud dan kekuatannya. Oleh sebab itu, harus ada solusi yang pasti untuk menghadapinya ketika gempa datang di suatu hari nanti. Harapannya, tema ini akan memberi pandangan baru mengenai gempa bumi agar setiap orang tidak meremehkannya sehingga tidak terjadi kerugian yang besar ketika gempa bumi menyerang.
                   </p>
                </div>
             </span>
