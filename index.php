@@ -933,8 +933,8 @@ if (isset($_GET['status'])) {
                   <div class="timeline-block timeline-block-right">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">April 25<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;">Batas Pengumpulan Jembatan Universitas</h4>
+                        <h3 style="color:white;text-align: right;">April 25<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;text-align: right;">Batas Pengumpulan Jembatan Universitas</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-left">
@@ -954,8 +954,8 @@ if (isset($_GET['status'])) {
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">May 12<sup>nd</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;">Batas Pengumpulan Jembatan, Proposal + PPT Universitas dan SMA untuk Final Day</h4>
+                        <h3 style="color:white;text-align: right;">May 12<sup>nd</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;text-align: right;">Batas Pengumpulan Jembatan, Proposal + PPT Universitas dan SMA untuk Final Day</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-right">
