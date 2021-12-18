@@ -263,7 +263,7 @@ include 'phps/connect.php';
             top: 240%;
         }
 
-        .hans {
+        .reiner {
             top: 300%;
         }
 
@@ -461,7 +461,7 @@ include 'phps/connect.php';
                 top: 260%;
             }
 
-            .hans {
+            .reiner {
                 top: 340%;
             }
 
@@ -551,12 +551,12 @@ include 'phps/connect.php';
         </div>
     </div>
     <div class="three">
-        <div class="wrap hans">
-            <div class="second hans">
-                <img draggable="false" src="./foto/hans.jpg" class="profile background">
-                <img draggable="false" src="./foto/hanse.png" class="profile front">
+        <div class="wrap reiner">
+            <div class="second reiner">
+                <img draggable="false" src="./foto/reiner.jpg" class="profile background">
+                <img draggable="false" src="./foto/reiner.png" class="profile front">
             </div>
-            <div class="explain hans" style="font-family:Consolas;color:black;z-index:1000;">
+            <div class="explain reiner" style="font-family:Consolas;color:black;z-index:1000;">
                 <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>REINER J<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name3" style="color:black;">U</a>LIO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
                 <h3 style="cursor:pointer;">
                     <a href="https://www.instagram.com/reinerjulio/" target="_blank">@reinerjulio</a>
