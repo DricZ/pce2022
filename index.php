@@ -820,7 +820,7 @@ if (isset($_GET['status'])) {
             border-radius: 25px 25px 0 0;
          } */
       </style>
-      <div class="bc wrap pb-4" style="background-color:var(--graybrown);">
+      <div class="bc wrap pb-4" style="background-color: #00CED1;">
          <!--BC section-->
          <div class="container pt-5">
             <span class="row">
@@ -1001,7 +1001,7 @@ if (isset($_GET['status'])) {
             </span>
          </div>
       </div>
-      <div class="erdc wrap pb-4" style="background-color:#ece6da;">
+      <div class="erdc wrap pb-4" style="background-color:#7FFFD4;">
          <!--ERDC section-->
          <div class="container pt-5">
             <span class="row">
@@ -1132,7 +1132,7 @@ if (isset($_GET['status'])) {
             </span>
          </div>
       </div>
-      <div class="lktb wrap pb-4" style="background-color:var(--graybrown);">
+      <div class="lktb wrap pb-4" style="background-color:#00CED1;">
          <!--LKTB section-->
          <div class="container pt-5">
             <span class="row">
