@@ -226,7 +226,7 @@ include 'phps/connect.php';
                 <div class="menu">
                     <!-- <div class="divide"></div> -->
                     <ul>
-                        <li><a href="index.php">Petra Civil Expo 2021</a></li>
+                        <li><a href="index.php">Petra Civil Expo 2022</a></li>
                         <li>
                             <hr>
                         </li>
