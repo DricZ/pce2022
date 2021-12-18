@@ -1,8 +1,8 @@
 <?php
     $host = '127.0.0.1';
     $db = 'pcepetra_pce2021';
-    $user = 'pcepetraac11';
-    $pass = '3AZdwqazba!M';
+    $user = 'root';
+    $pass = '';
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset;";

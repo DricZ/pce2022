@@ -521,16 +521,16 @@ include 'phps/connect.php';
     <div class="one">
         <div class="wrap dea">
             <div class="second dea">
-                <img draggable="false" src="./foto/Dea.jpg" class="profile background" style="filter:invert();">
+                <img draggable="false" src="./foto/audrico.jpg" class="profile background" style="filter:invert();">
                 <div class="profile iv" style="width:350px; height:350px;backdrop-filter:invert();z-index:999;position:absolute"></div>
-                <img draggable="false" src="./foto/Dea.png" class="profile front">
+                <img draggable="false" src="./foto/audrico.png" class="profile front">
             </div>
             <div class="explain dea" style="font-family:Consolas;color:black;z-index:1000;">
                 <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>A<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name" style="color:black;">U</a>DRICO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
                 <h3 style="cursor:pointer;">
                     <a href="https://www.instagram.com/dricz21_/" target="_blank">@dricz21_</a>
                 </h3>
-                <p>NANTI DIISI</p>
+                <p>Coba pencet Ctrl + F4</p>
             </div>
         </div>
     </div>
