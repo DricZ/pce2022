@@ -527,7 +527,6 @@ include 'phps/connect.php';
             </div>
             <div class="explain dea" style="font-family:Consolas;color:black;z-index:1000;">
                 <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>A<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name" style="color:black;">U</a>DRICO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
-                <h2><a href="http://genta.petra.ac.id/" style="text-decoration: none; color: black;" target="_blank">genta.petra.ac.id</a></h2>
                 <h3 style="cursor:pointer;">
                     <a href="https://www.instagram.com/dricz21_/" target="_blank">@dricz21_</a>
                 </h3>
@@ -559,7 +558,6 @@ include 'phps/connect.php';
             </div>
             <div class="explain hans" style="font-family:Consolas;color:black;z-index:1000;">
                 <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>REINER J<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name3" style="color:black;">U</a>LIO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
-                <h2><a href="http://irgl.petra.ac.id/" style="text-decoration: none; color: black;" target="_blank">irgl.petra.ac.id</a></h2>
                 <h3 style="cursor:pointer;">
                     <a href="https://www.instagram.com/#/" target="_blank">@NANTIDIISI</a>
                 </h3>
@@ -575,11 +573,10 @@ include 'phps/connect.php';
             </div>
             <div class="explain bagus" style="font-family:Consolas;color:black;z-index:1000;">
                 <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>AND<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name4" style="color:black;">R</a>E</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
-                <h2><a href="http://openhouse.petra.ac.id/" style="text-decoration: none; color: black;" target="_blank">openhouse.petra.ac.id</a></h2>
                 <h3 style="cursor:pointer;">
                     <a href="https://www.instagram.com/#/" target="_blank">@NANTIDIISI</a>
                 </h3>
-                <p>fraq uryc cym. v arrq fyrrc zna</p>
+                <p>NANTI DIISI</p>
             </div>
         </div>
     </div>
@@ -591,7 +588,6 @@ include 'phps/connect.php';
             </div>
             <div class="explain jimlee" style="font-family:Consolas;color:black;z-index:1000;">
                 <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>TONI<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name4" style="color:black;"> A</a>RIANTO PUTRA</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
-                <h2><a href="http://wgg.petra.ac.id/" style="text-decoration: none; color: black;" target="_blank">wgg.petra.ac.id</a></h2>
                 <h3 style="cursor:pointer;">
                     <a href="https://www.instagram.com/#/" target="_blank">@NANTIDIISI</a>
                 </h3>
