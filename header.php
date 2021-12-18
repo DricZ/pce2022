@@ -133,7 +133,7 @@ require_once 'phps/connect.php';
         nav ul {
             line-height: 60px;
             list-style: none;
-            background: rgba(0, 0, 0, 0);
+            background: #7FFFD4;
             overflow: hidden;
             color: #fff;
             padding: 0;
@@ -144,7 +144,7 @@ require_once 'phps/connect.php';
         }
 
         nav.black ul {
-            background: #a29d99;
+            background: #00CED1;
         }
 
         nav.black ul li a {
