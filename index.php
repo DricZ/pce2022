@@ -411,7 +411,7 @@ if (isset($_SESSION['id'])) {
             setTimeout(() => {
                var str = `
                   <div style="color: black; font-weight: 500; max-height: 360px;">
-                     <p style="font-size: 14pt;">Terima kasih sudah memilih jadwal untuk <b>Checking Jembatan</b>! Data Anda akan divalidasi lebih lanjut oleh panitia Petra Civil Expo 2022.</p>
+                     <p style="font-size: 14pt;">Terima kasih sudah memilih jadwal untuk <b>Checking Jembatan</b>! Data Anda akan divalidasi lebih lanjut oleh panitia Petra Civil Expo 2021.</p>
                      `;
 
                str += `
@@ -447,7 +447,7 @@ if (isset($_SESSION['id'])) {
             setTimeout(() => {
                var str = `
                   <div style="color: black; font-weight: 500; max-height: 360px;">
-                     <p style="font-size: 14pt;">Terima kasih sudah mengisi informasi untuk <b>penerima Kayu Balsa</b> di kota/daerah Anda! Data Anda akan divalidasi lebih lanjut oleh panitia Petra Civil Expo 2022.</p>
+                     <p style="font-size: 14pt;">Terima kasih sudah mengisi informasi untuk <b>penerima Kayu Balsa</b> di kota/daerah Anda! Data Anda akan divalidasi lebih lanjut oleh panitia Petra Civil Expo 2021.</p>
                      `;
 
                str += `
@@ -483,7 +483,7 @@ if (isset($_SESSION['id'])) {
             setTimeout(() => {
                var str = `
                <div style="color: black; font-weight: 500;">
-                  <p style="font-size: 14pt;">Terima kasih sudah melakukan pendaftaran Petra Civil Expo 2022!<br>Bukti pembayaran dan data tim Anda akan dilakukan pengecekan dan validasi lebih lanjut oleh panitia Petra Civil Expo 2022.</p>
+                  <p style="font-size: 14pt;">Terima kasih sudah melakukan pendaftaran Petra Civil Expo 2021!<br>Bukti pembayaran dan data tim Anda akan dilakukan pengecekan dan validasi lebih lanjut oleh panitia Petra Civil Expo 2021.</p>
                   <hr>
                   <h5 style="font-weight: bold; color: red;">MOHON DIPERHATIKAN BAIK-BAIK!</h5>
                   <hr>
@@ -502,7 +502,7 @@ if (isset($_SESSION['id'])) {
                if (isset($_SESSION['id'])) {
                   if ($pendaftar['pilihan_lomba_1'] != '') {
                ?>
-                     str += `<hr><p style="font-size: 14pt;"><b>NOMOR PESERTA<br>BRIDGE COMPETITION<br>PETRA CIVIL EXPO 2022</b></p><hr>`;
+                     str += `<hr><p style="font-size: 14pt;"><b>NOMOR PESERTA<br>BRIDGE COMPETITION<br>PETRA CIVIL EXPO 2021</b></p><hr>`;
                      <?php
                      if ($pendaftar['nama_peserta_1'] != '') {
                      ?>
@@ -563,7 +563,7 @@ if (isset($_SESSION['id'])) {
                   <?php
                   if ($pendaftar['pilihan_lomba_2'] != '') {
                   ?>
-                     str += `<hr><p style="font-size: 14pt;"><b>NOMOR PESERTA<br>EARTHQUAKE RESISTANT DESIGN COMPETITION<br>PETRA CIVIL EXPO 2022</b></p><hr>`;
+                     str += `<hr><p style="font-size: 14pt;"><b>NOMOR PESERTA<br>EARTHQUAKE RESISTANT DESIGN COMPETITION<br>PETRA CIVIL EXPO 2021</b></p><hr>`;
                      <?php
                      if ($pendaftar['nama_peserta_1'] != '') {
                      ?>
@@ -594,7 +594,7 @@ if (isset($_SESSION['id'])) {
                   <?php
                   if ($pendaftar['pilihan_lomba_3'] != '') {
                   ?>
-                     str += `<hr><p style="font-size: 14pt;"><b>NOMOR PESERTA<br>LOMBA KUAT TEKAN BETON<br>PETRA CIVIL EXPO 2022</b></p><hr>`;
+                     str += `<hr><p style="font-size: 14pt;"><b>NOMOR PESERTA<br>LOMBA KUAT TEKAN BETON<br>PETRA CIVIL EXPO 2021</b></p><hr>`;
                      <?php
                      if ($pendaftar['nama_peserta_1'] != '') {
                      ?>
@@ -692,8 +692,8 @@ if (isset($_SESSION['id'])) {
             setTimeout(() => {
                var str = `
                <div style="color: black; font-weight: 500;">
-                  <p style="font-size: 14pt;">Thank you for registering for the Petra Civil Expo 2022's <b>"Into the Industry 4.0 Advancements of Tall Building Constructions"</b> International Webinar!
-                  Your proof of payment (for Indonesian students) and your data will be checked and validated further by the Petra Civil Expo 2022's committee. <br><br> We will give you a payment receipt and the International Webinar's link via <b>e-mail</b> after your data has been confirmed. <br><br> Stay safe and God bless you!</p>
+                  <p style="font-size: 14pt;">Thank you for registering for the Petra Civil Expo 2021's <b>"Into the Industry 4.0 Advancements of Tall Building Constructions"</b> International Webinar!
+                  Your proof of payment (for Indonesian students) and your data will be checked and validated further by the Petra Civil Expo 2021's committee. <br><br> We will give you a payment receipt and the International Webinar's link via <b>e-mail</b> after your data has been confirmed. <br><br> Stay safe and God bless you!</p>
                </div>
                `;
                this.$content.html(str);
@@ -746,7 +746,7 @@ if (isset($_GET['status'])) {
 ?>
 
 <head>
-   <title>Petra Civil Expo 2022</title>
+   <title>Petra Civil Expo 2021</title>
 </head>
 
 <div id="particles-js" style="background-color:rgb(36,34,34);"></div>
@@ -783,7 +783,7 @@ if (isset($_GET['status'])) {
                </div>
                <div class="col-md-8 col-12 mx-auto mt-5" style="z-index:10;">
                   <p style="color:white; text-align: center; font-size: 14pt;">
-                     <b>Petra Civil Expo</b> merupakan ajang perlombaan terbesar yang diadakan oleh Himpunan Mahasiswa Teknik Sipil Universitas Kristen Petra. <b>Petra Civil Expo</b> menaungi 3 lomba nasional yang biasa diadakan setiap tahunnya, yaitu Bridge Competition, Earthquake Resistant Design Competition, dan Lomba Kuat Tekan Beton. Untuk <b>Petra Civil Expo 2022</b> selain menaungi ketiga lomba tersebut, juga akan diadakan talkshow yang berskala internasional.
+                     <b>Petra Civil Expo</b> merupakan ajang perlombaan terbesar yang diadakan oleh Himpunan Mahasiswa Teknik Sipil Universitas Kristen Petra. <b>Petra Civil Expo</b> menaungi <b>3 lomba nasional</b> yang biasa diadakan setiap tahunnya, yaitu <b>Bridge Competition</b>, <b>Earthquake Resistant Design Competition</b>, dan <b>Lomba Kuat Tekan Beton</b>. Untuk <b>Petra Civil Expo 2021</b> selain menaungi ketiga lomba tersebut, juga akan diadakan <b>webinar</b> yang berskala internasional.
                   </p>
                   <!-- <center><a type='button' href='form_daftar.php' class='btn effect01' style="      -webkit-appearance: none; z-index: 100; height: 70px; line-height: 50px;"><i class="far fa-edit"></i> REGISTER HERE</a></center> -->
                </div>
@@ -836,10 +836,16 @@ if (isset($_GET['status'])) {
                      }
                   </style>
                   <h1 class="bc-shadow">
-                     Unifying The Sleeping Tiger
+                     STITCH THE 17.000
                   </h1>
                   <p style="color:white; text-align: center; font-size: 14pt;" id="tes">
-                     <b>Bridge Competition 2022</b> mengangkat tema “Unifying The Sleeping Tiger” karena Indonesia terkenal dengan julukan The Sleeping Tiger of Southeast Asia. Tema ini memiliki makna bahwa perkembangan infrastruktur di Indonesia dapat berdampak besar pada kemajuan negara Indonesia. Salah satu perkembangan infrastruktur yang dapat dikembangkan adalah infrastruktur jembatan. Infrastruktur jembatan ini ditujukan untuk dapat mempermudah akses mobilitas masyarakat.
+                     <b>Bridge Competition</b> adalah sebuah kompetisi tahunan bergengsi antar Sekolah Menengah Atas dan antar
+                     perguruan tinggi dengan taraf nasional se-Indonesia dalam bidang dunia teknik sipil yang sudah
+                     diadakan
+                     sejak 1986 dan menjadi kompetisi tahunan sejak 1994. Kompetisi ini diadakan dengan tujuan untuk
+                     menambah
+                     wawasan dan mengembangkan kemampuan serta skill pelajar dan mahasiswa khususnya dalam merencanakan dan
+                     membangun sebuah prototype jembatan berbahan kayu balsa yang kuat dan seefisien mungkin.
                   </p>
                </div>
             </span>
@@ -869,100 +875,82 @@ if (isset($_GET['status'])) {
                </span>
             </div>
             <div class="row justify-content-center">
-               <a type='button' href='assets/tor/PERATURAN LOMBA BC 2022 (SMA).pdf' class='btn effect01' style="z-index: 100; -webkit-appearance: none;"><i class="fas fa-download"></i> TERMS OF REFERENCE<br><b>BRIDGE COMPETITION<br>(SMA)</b></a>
+               <a type='button' href='assets/tor/PERATURAN LOMBA BC 2021 (SMA).pdf' class='btn effect01' style="z-index: 100; -webkit-appearance: none;"><i class="fas fa-download"></i> TERMS OF REFERENCE<br><b>BRIDGE COMPETITION<br>(SMA)</b></a>
             </div><br>
             <div class="row justify-content-center">
-               <a type='button' href='assets/tor/PERATURAN LOMBA BC 2022 (UNIVERSITAS).pdf' class='btn effect01' style="z-index: 100; -webkit-appearance: none;"><i class="fas fa-download"></i> TERMS OF REFERENCE<br><b>BRIDGE COMPETITION<br>(UNIVERSITY)</b></a>
+               <a type='button' href='assets/tor/PERATURAN LOMBA BC 2021 (UNIVERSITAS).pdf' class='btn effect01' style="z-index: 100; -webkit-appearance: none;"><i class="fas fa-download"></i> TERMS OF REFERENCE<br><b>BRIDGE COMPETITION<br>(UNIVERSITY)</b></a>
             </div>
             <!--timeline BC section-->
             <div class="container-fluid pt-5">
                <span class="mt-5">
                   <h1 class="bc-shadow">
-                     TIMELINE<br>BRIDGE COMPETITION<br>2022</h1>
+                     TIMELINE<br>BRIDGE COMPETITION<br>2021</h1>
                </span>
                <div class="timeline-container">
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">March 7<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;text-align: right;">Briefing Day</h4>
+                        <h3 style="color:white;text-align: right;">March 26<sup>th</sup>, 2021</h3>
+                        <h4 style="font-weight:bold;text-align: right;">Briefing and Workshop for University Participants</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-right">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">March 8<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;">Pembagian Balsa</h4>
+                        <h3 style="color:white;">March 27<sup>th</sup>, 2021</h3>
+                        <h4 style="font-weight:bold;">Rally and Workshop for Senior High School Participants</h4>
                      </div>
                   </div>
+
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">March 12<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;text-align: right;">Workshop Universitas</h4>
-                     </div>
-                  </div>
-                  <div class="timeline-block timeline-block-right">
-                     <div class="marker"></div>
-                     <div class="timeline-content">
-                        <h3 style="color:white;">March 19<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;">Workshop SMA dan Rally Games</h4>
-                     </div>
-                  </div>
-                  <div class="timeline-block timeline-block-left">
-                     <div class="marker"></div>
-                     <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">April 11<sup>th</sup>, 2022</h3>
+                        <h3 style="color:white;text-align: right;">April 23<sup>rd</sup> - April 24<sup>th</sup>, 2021</h3>
                         <h4 style="font-weight:bold;text-align: right;">Checking Day</h4>
                      </div>
                   </div>
+
                   <div class="timeline-block timeline-block-right">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">April 21<sup>st</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;">Batas Pengumpulan Jembatan SMA</h4>
+                        <h3 style="color:white;">April 26<sup>th</sup> - April 28<sup>th</sup>, 2021</h3>
+                        <h4 style="font-weight:bold;">Bridge Submission for Senior High School Participants</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">April 23<sup>rd</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;text-align: right;">Elimination Day SMA</h4>
+                        <h3 style="color:white;text-align: right;">April 30<sup>th</sup>, 2021</h3>
+                        <h4 style="font-weight:bold;text-align: right;">Elimination Day for Senior High School Participants</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-right">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">April 25<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;">Batas Pengumpulan Jembatan Universitas</h4>
+                        <h3 style="color:white;">May 3<sup>rd</sup> - May 5<sup>th</sup>, 2021</h3>
+                        <h4 style="font-weight:bold;">Bridge Submission for University Participants</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">April 27<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;text-align: right;">Elimination Day Universitas</h4>
+                        <h3 style="color:white;text-align: right;">May 7<sup>th</sup>, 2021</h3>
+                        <h4 style="font-weight:bold;text-align: right;">Elimination Day for University Participants</h4>
                      </div>
                   </div>
+
                   <div class="timeline-block timeline-block-right">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">April 28<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;">Finalist Briefing</h4>
+                        <h3 style="color:white;">May 17<sup>th</sup>, 2021</h3>
+                        <h4 style="font-weight:bold;">Briefing Finalists</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">May 12<sup>nd</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;text-align: right;">Batas Pengumpulan Jembatan, Proposal + PPT Universitas dan SMA untuk Final Day</h4>
-                     </div>
-                  </div>
-                  <div class="timeline-block timeline-block-right">
-                     <div class="marker"></div>
-                     <div class="timeline-content">
-                        <h3 style="color:white;text-align: left;">May 14<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;text-align: left;"><i class="fas fa-trophy"></i> Final Day</h4>
+                        <h3 style="color:white;text-align: right;">May 21<sup>st</sup> - May 23<sup>rd</sup>, 2021</h3>
+                        <h4 style="font-weight:bold;text-align: right;"><i class="fas fa-trophy"></i> Final Day</h4>
                      </div>
                   </div>
                </div>
@@ -1055,19 +1043,19 @@ if (isset($_GET['status'])) {
             </span>
          </div>
          <div class="row justify-content-center 1">
-            <a type='button' href='assets/tor/TOR ERDC 2022.pdf' class='btn effect01' style="z-index: 100; -webkit-appearance: none;"><i class="fas fa-download"></i> TERMS OF REFERENCE<br><b>EARTHQUAKE RESISTANT<br>DESIGN COMPETITION</b></a>
+            <a type='button' href='assets/tor/TOR ERDC 2021.pdf' class='btn effect01' style="z-index: 100; -webkit-appearance: none;"><i class="fas fa-download"></i> TERMS OF REFERENCE<br><b>EARTHQUAKE RESISTANT<br>DESIGN COMPETITION</b></a>
          </div>
          <!--timeline ERDC section-->
          <div class="container-fluid pt-5">
             <!--<span class="mt-5 px-5">-->
             <h1 class="erdc-shadow">
-               TIMELINE<br>EARTHQUAKE RESISTANT DESIGN COMPETITION<br>2022</h1>
+               TIMELINE<br>EARTHQUAKE RESISTANT DESIGN COMPETITION<br>2021</h1>
             <!--</span>-->
             <div class="timeline-container">
                <div class="timeline-block timeline-block-right">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">March 12<sup>th</sup>, 2022</h3>
+                     <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">March 12<sup>th</sup>, 2021</h3>
                      <h4 style="font-weight:bold;color: #123958; text-shadow: 1px 1px #f0ebce;">Proposal Submission Deadline</h4>
                   </div>
                </div>
@@ -1075,7 +1063,7 @@ if (isset($_GET['status'])) {
                <div class="timeline-block timeline-block-left">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="text-align: right;color:#1C545E; text-shadow: 1px 1px #f0ebce;">March 26<sup>th</sup>, 2022</h3>
+                     <h3 style="text-align: right;color:#1C545E; text-shadow: 1px 1px #f0ebce;">March 26<sup>th</sup>, 2021</h3>
                      <h4 style="font-weight:bold;text-align: right;color: #123958; text-shadow: 1px 1px #f0ebce;">Workshop</h4>
                   </div>
                </div>
@@ -1083,7 +1071,7 @@ if (isset($_GET['status'])) {
                <div class="timeline-block timeline-block-right">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">March 27<sup>th</sup>, 2022</h3>
+                     <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">March 27<sup>th</sup>, 2021</h3>
                      <h4 style="font-weight:bold;color: #123958; text-shadow: 1px 1px #f0ebce;">Distribution of Balsa</h4>
                   </div>
                </div>
@@ -1091,14 +1079,14 @@ if (isset($_GET['status'])) {
                <div class="timeline-block timeline-block-left">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="text-align: right;color:#1C545E; text-shadow: 1px 1px #f0ebce;">May 6<sup>th</sup> - May 8<sup>th</sup>, 2022</h3>
+                     <h3 style="text-align: right;color:#1C545E; text-shadow: 1px 1px #f0ebce;">May 6<sup>th</sup> - May 8<sup>th</sup>, 2021</h3>
                      <h4 style="font-weight:bold;text-align: right;color: #123958; text-shadow: 1px 1px #f0ebce;">Checking Session</h4>
                   </div>
                </div>
                <div class="timeline-block timeline-block-right">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">May 20<sup>th</sup>, 2022</h3>
+                     <h3 style="color:#1C545E; text-shadow: 1px 1px #f0ebce;">May 20<sup>th</sup>, 2021</h3>
                      <h4 style="font-weight:bold;color: #123958; text-shadow: 1px 1px #f0ebce;">Maket Submission Deadline</h4>
                   </div>
                </div>
@@ -1106,7 +1094,7 @@ if (isset($_GET['status'])) {
                <div class="timeline-block timeline-block-left">
                   <div class="marker"></div>
                   <div class="timeline-content">
-                     <h3 style="text-align: right;color:#1C545E; text-shadow: 1px 1px #f0ebce;">May 21<sup>st</sup> - May 23<sup>rd</sup>, 2022</h3>
+                     <h3 style="text-align: right;color:#1C545E; text-shadow: 1px 1px #f0ebce;">May 21<sup>st</sup> - May 23<sup>rd</sup>, 2021</h3>
                      <h4 style="text-align: right;font-weight:bold;color: #123958; text-shadow: 1px 1px #f0ebce;">Final Day <i class="fas fa-trophy"></i></h4>
                   </div>
                </div>
@@ -1153,7 +1141,7 @@ if (isset($_GET['status'])) {
                      }
                   </style>
                   <h1 class="lktb-shadow">
-                  Road TO SKILLED CONCRETE TECHNOLOGIST</h1>
+                  ROAD TO SKILLED CONCRETE TECHNOLOGIST</h1>
                   <p style="color:white; text-align: center; font-size: 14pt;" id="tes">
                      <b>Lomba Kuat Tekan Beton 2022 </b> mengangkat tema "Road to Skilled Concrete Technologist". 
                      Tema ini diangkat dengan mengingat bahwa beton adalah salah satu bahan yang paling banyak 
@@ -1196,14 +1184,14 @@ if (isset($_GET['status'])) {
                </span>
             </div>
             <div class="row justify-content-center mt-1">
-               <a type='button' href='assets/tor/TOR LKTB 2022.pdf' class='btn effect01' style="-webkit-appearance: none; z-index: 100;"><i class="fas fa-download"></i> TERMS OF REFERENCE<br><b>LOMBA KUAT TEKAN BETON</b></a>
+               <a type='button' href='assets/tor/TOR LKTB 2021.pdf' class='btn effect01' style="-webkit-appearance: none; z-index: 100;"><i class="fas fa-download"></i> TERMS OF REFERENCE<br><b>LOMBA KUAT TEKAN BETON</b></a>
             </div>
          </div>
          <!--timeline LKTB section-->
          <div class="container-fluid pt-5">
             <span class="mt-5">
                <h1 class="lktb-shadow">
-                  TIMELINE<br>LOMBA KUAT TEKAN BETON<br>2022</h1>
+                  TIMELINE<br>LOMBA KUAT TEKAN BETON<br>2021</h1>
             </span>
             <div class="timeline-container">
                <div class="timeline-block timeline-block-right">
@@ -1303,7 +1291,7 @@ if (isset($_GET['status'])) {
             <div class="timeline-block timeline-block-right">
                <div class="marker"></div>
                <div class="timeline-content">
-                  <h3 style="color:white;">December 28<sup>th</sup>, 2020 - January 28<sup>th</sup>, 2022</h3>
+                  <h3 style="color:white;">December 28<sup>th</sup>, 2020 - January 28<sup>th</sup>, 2021</h3>
                   <h4 style="font-weight:bold; color:white;">Early Bird Registration</h4>
                </div>
             </div>
@@ -1311,7 +1299,7 @@ if (isset($_GET['status'])) {
             <div class="timeline-block timeline-block-left">
                <div class="marker"></div>
                <div class="timeline-content">
-                  <h3 style="color:white; text-align: right;">January 29<sup>th</sup> - March 4<sup>th</sup>, 2022</h3>
+                  <h3 style="color:white; text-align: right;">January 29<sup>th</sup> - March 4<sup>th</sup>, 2021</h3>
                   <h4 style="font-weight:bold; color:white;text-align: right;">Normal Price Registration</h4>
                </div>
             </div>
@@ -1335,7 +1323,7 @@ if (isset($_GET['status'])) {
             <div class="timeline-block timeline-block-right">
                <div class="marker"></div>
                <div class="timeline-content">
-                  <h3 style="color:white;">March 26<sup>th</sup> - May 17<sup>th</sup>, 2022</h3>
+                  <h3 style="color:white;">March 7<sup>th</sup> - May 14<sup>th</sup>, 2022</h3>
                   <h4 style="font-weight:bold; color:white;">Bridge Competition</h4>
                </div>
             </div>
@@ -1343,7 +1331,7 @@ if (isset($_GET['status'])) {
             <div class="timeline-block timeline-block-left">
                <div class="marker"></div>
                <div class="timeline-content">
-                  <h3 style="color:white; text-align: right;">March 27<sup>th</sup> - May 8<sup>th</sup>, 2022</h3>
+                  <h3 style="color:white; text-align: right;">March 12<sup>th</sup> - May 14<sup>th</sup>, 2022</h3>
                   <h4 style="font-weight:bold; color:white;text-align: right;">Lomba Kuat Tekan Beton</h4>
                </div>
             </div>
@@ -1351,8 +1339,8 @@ if (isset($_GET['status'])) {
             <div class="timeline-block timeline-block-right">
                <div class="marker"></div>
                <div class="timeline-content">
-                  <h3 style="color:white;">May 21<sup>st</sup> - May 23<sup>rd</sup>, 2022</h3>
-                  <h4 style="font-weight:bold; color:white;">Final Day <i class="fas fa-trophy"></i></h4>
+                  <h3 style="color:white;">May 21<sup>st</sup>, 2022</h3>
+                  <h4 style="font-weight:bold; color:white;">Closing dan Awarding Night <i class="fas fa-trophy"></i></h4>
                </div>
             </div>
 
