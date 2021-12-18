@@ -559,9 +559,9 @@ include 'phps/connect.php';
             <div class="explain hans" style="font-family:Consolas;color:black;z-index:1000;">
                 <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>REINER J<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name3" style="color:black;">U</a>LIO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
                 <h3 style="cursor:pointer;">
-                    <a href="https://www.instagram.com/#/" target="_blank">@NANTIDIISI</a>
+                    <a href="https://www.instagram.com/reinerjulio/" target="_blank">@reinerjulio</a>
                 </h3>
-                <p>NANTI DIISI</p>
+                <p>tes.</p>
             </div>
         </div>
     </div>
