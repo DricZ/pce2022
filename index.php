@@ -836,16 +836,10 @@ if (isset($_GET['status'])) {
                      }
                   </style>
                   <h1 class="bc-shadow">
-                     STITCH THE 17.000
+                     Unifying The Sleeping Tiger
                   </h1>
                   <p style="color:white; text-align: center; font-size: 14pt;" id="tes">
-                     <b>Bridge Competition</b> adalah sebuah kompetisi tahunan bergengsi antar Sekolah Menengah Atas dan antar
-                     perguruan tinggi dengan taraf nasional se-Indonesia dalam bidang dunia teknik sipil yang sudah
-                     diadakan
-                     sejak 1986 dan menjadi kompetisi tahunan sejak 1994. Kompetisi ini diadakan dengan tujuan untuk
-                     menambah
-                     wawasan dan mengembangkan kemampuan serta skill pelajar dan mahasiswa khususnya dalam merencanakan dan
-                     membangun sebuah prototype jembatan berbahan kayu balsa yang kuat dan seefisien mungkin.
+                     <b>Bridge Competition 2022</b> mengangkat tema “Unifying The Sleeping Tiger” karena Indonesia terkenal dengan julukan The Sleeping Tiger of Southeast Asia. Tema ini memiliki makna bahwa perkembangan infrastruktur di Indonesia dapat berdampak besar pada kemajuan negara Indonesia. Salah satu perkembangan infrastruktur yang dapat dikembangkan adalah infrastruktur jembatan. Infrastruktur jembatan ini ditujukan untuk dapat mempermudah akses mobilitas masyarakat.
                   </p>
                </div>
             </span>
@@ -890,67 +884,85 @@ if (isset($_GET['status'])) {
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">March 26<sup>th</sup>, 2021</h3>
-                        <h4 style="font-weight:bold;text-align: right;">Briefing and Workshop for University Participants</h4>
+                        <h3 style="color:white;text-align: right;">March 7<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;text-align: right;">Briefing Day</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-right">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">March 27<sup>th</sup>, 2021</h3>
-                        <h4 style="font-weight:bold;">Rally and Workshop for Senior High School Participants</h4>
+                        <h3 style="color:white;">March 8<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;">Pembagian Balsa</h4>
                      </div>
                   </div>
-
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">April 23<sup>rd</sup> - April 24<sup>th</sup>, 2021</h3>
+                        <h3 style="color:white;text-align: right;">March 12<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;text-align: right;">Workshop Universitas</h4>
+                     </div>
+                  </div>
+                  <div class="timeline-block timeline-block-right">
+                     <div class="marker"></div>
+                     <div class="timeline-content">
+                        <h3 style="color:white;">March 19<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;">Workshop SMA dan Rally Games</h4>
+                     </div>
+                  </div>
+                  <div class="timeline-block timeline-block-left">
+                     <div class="marker"></div>
+                     <div class="timeline-content">
+                        <h3 style="color:white;text-align: right;">April 11<sup>th</sup>, 2022</h3>
                         <h4 style="font-weight:bold;text-align: right;">Checking Day</h4>
                      </div>
                   </div>
-
                   <div class="timeline-block timeline-block-right">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">April 26<sup>th</sup> - April 28<sup>th</sup>, 2021</h3>
-                        <h4 style="font-weight:bold;">Bridge Submission for Senior High School Participants</h4>
+                        <h3 style="color:white;">April 21<sup>st</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;">Batas Pengumpulan Jembatan SMA</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">April 30<sup>th</sup>, 2021</h3>
-                        <h4 style="font-weight:bold;text-align: right;">Elimination Day for Senior High School Participants</h4>
+                        <h3 style="color:white;text-align: right;">April 23<sup>rd</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;text-align: right;">Elimination Day SMA</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-right">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">May 3<sup>rd</sup> - May 5<sup>th</sup>, 2021</h3>
-                        <h4 style="font-weight:bold;">Bridge Submission for University Participants</h4>
+                        <h3 style="color:white;">April 25<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;">Batas Pengumpulan Jembatan Universitas</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">May 7<sup>th</sup>, 2021</h3>
-                        <h4 style="font-weight:bold;text-align: right;">Elimination Day for University Participants</h4>
+                        <h3 style="color:white;">April 27<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;">Elimination Day Universitas</h4>
                      </div>
                   </div>
-
                   <div class="timeline-block timeline-block-right">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">May 17<sup>th</sup>, 2021</h3>
-                        <h4 style="font-weight:bold;">Briefing Finalists</h4>
+                        <h3 style="color:white;">April 28<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;">Finalist Briefing</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">May 21<sup>st</sup> - May 23<sup>rd</sup>, 2021</h3>
-                        <h4 style="font-weight:bold;text-align: right;"><i class="fas fa-trophy"></i> Final Day</h4>
+                        <h3 style="color:white;">May 12<sup>nd</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;">Batas Pengumpulan Jembatan, Proposal + PPT Universitas dan SMA untuk Final Day</h4>
+                     </div>
+                  </div>
+                  <div class="timeline-block timeline-block-right">
+                     <div class="marker"></div>
+                     <div class="timeline-content">
+                        <h3 style="color:white;text-align: left;">May 14<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;text-align: left;"><i class="fas fa-trophy"></i> Final Day</h4>
                      </div>
                   </div>
                </div>
