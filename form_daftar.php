@@ -33,7 +33,7 @@ if (isset($_GET['status'])) {
     }
 
     body {
-        background-color: var(--whitebrown);
+        background-color: #7FFFD4;
     }
 
     .card:hover {
