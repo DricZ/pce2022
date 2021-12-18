@@ -261,10 +261,10 @@ require_once 'phps/connect.php';
         $(window).on("scroll", function() {
             if ($(window).scrollTop()) {
                 $('nav').addClass('black');
-                $('.logo-head').attr("src", "assets/pce_logo monochrome.png");
+                $('.logo-head').attr("src", "assets/pce_logo color.png");
             } else {
                 $('nav').removeClass('black');
-                $('.logo-head').attr("src", "assets/pce_logo color.png");
+                $('.logo-head').attr("src", "assets/pce_logo monochrome.png");
             }
         })
     </script>
@@ -276,7 +276,7 @@ require_once 'phps/connect.php';
             </div>
             <div class="logo">
                 <a href="http://pce.petra.ac.id/">
-                    <img class="logo-head" src="assets\pce_logo color.png" alt="PCE" style="width:100px; height:29px;" class="d-inline-block" loading="lazy">
+                    <img class="logo-head" src="assets\pce_logo monochrome.png" alt="PCE" style="width:100px; height:29px;" class="d-inline-block" loading="lazy">
                 </a>
             </div>
             <div class="menu">
