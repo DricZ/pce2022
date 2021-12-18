@@ -505,7 +505,7 @@ if (isset($_GET['status'])) {
                         </div>
                         <br>
                         <div class="row justify-content-center">
-                            <h5 style="font-weight: bold; font-size: 18pt; color: black; text-align: center;"><span style="color: red;">FREE</span> <a href="webinar_regist.php" style="text-decoration: none; color: black;">INTERNATIONAL TALKSHOW</a> ACCESS<br>ONLY FOR A LIMITED TIME!</h5>
+                        <h5 style="font-weight: bold; font-size: 18pt; color: black; text-align: center;"><span style="color: red;">FREE</span> INTERNATIONAL TALKSHOW ACCESS<br>ONLY FOR CONTESTANTS!</h5>
                         </div>
 
                         <br>
@@ -601,7 +601,7 @@ if (isset($_GET['status'])) {
                         </div>
                         <br>
                         <div class="row justify-content-center">
-                            <h5 style="font-weight: bold; font-size: 18pt; color: black; text-align: center;"><span style="color: red;">FREE</span> <a href="webinar_regist.php" style="text-decoration: none; color: black;">INTERNATIONAL TALKSHOW</a> ACCESS<br>ONLY FOR A LIMITED TIME!</h5>
+                            <h5 style="font-weight: bold; font-size: 18pt; color: black; text-align: center;"><span style="color: red;">FREE</span> INTERNATIONAL TALKSHOW ACCESS<br>ONLY FOR CONTESTANTS!</h5>
                         </div>
 
                         <br>
