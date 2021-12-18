@@ -933,15 +933,15 @@ if (isset($_GET['status'])) {
                   <div class="timeline-block timeline-block-right">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;text-align: right;">April 25<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;text-align: right;">Batas Pengumpulan Jembatan Universitas</h4>
+                        <h3 style="color:white;">April 25<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;">Batas Pengumpulan Jembatan Universitas</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-left">
                      <div class="marker"></div>
                      <div class="timeline-content">
-                        <h3 style="color:white;">April 27<sup>th</sup>, 2022</h3>
-                        <h4 style="font-weight:bold;">Elimination Day Universitas</h4>
+                        <h3 style="color:white;text-align: right;">April 27<sup>th</sup>, 2022</h3>
+                        <h4 style="font-weight:bold;text-align: right;">Elimination Day Universitas</h4>
                      </div>
                   </div>
                   <div class="timeline-block timeline-block-right">
