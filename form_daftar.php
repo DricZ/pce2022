@@ -24,7 +24,7 @@ if (isset($_GET['status'])) {
 <html lang="en">
 
 <head>
-    <title>PCE 2021 - Registration</title>
+    <title>PCE 2022 - Registration</title>
 </head>
 
 <style>
@@ -98,7 +98,7 @@ if (isset($_GET['status'])) {
             </div>
             <div class="row justify-content-center">
                 <h3 class="title" style="text-align: center;">
-                    <b>PETRA CIVIL EXPO<br>2021</b>
+                    <b>PETRA CIVIL EXPO<br>2022</b>
                 </h3>
             </div>
 
