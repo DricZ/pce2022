@@ -133,7 +133,6 @@ require_once 'phps/connect.php';
         nav ul {
             line-height: 60px;
             list-style: none;
-            background: #7FFFD4;
             overflow: hidden;
             color: #fff;
             padding: 0;
