@@ -31,7 +31,7 @@ include 'phps/connect.php';
 
     <title>Hello!</title>
     <script type="text/javascript">
-        message = "IT Division Petra Civil Expo 2021 🦊 ";
+        message = "IT Division Petra Civil Expo 2022 🦊 ";
 
         function step() {
             message = message.substr(1) + message.substr(0, 1);
@@ -568,8 +568,8 @@ include 'phps/connect.php';
     <div class="four">
         <div class="wrap bagus">
             <div class="second bagus">
-                <img draggable="false" src="./foto/bagus.jpg" class="profile background">
-                <img draggable="false" src="./foto/bagus.png" class="profile front">
+                <img draggable="false" src="./foto/Andre.jpeg" class="profile background">
+                <img draggable="false" src="./foto/Andre.png" class="profile front">
             </div>
             <div class="explain bagus" style="font-family:Consolas;color:black;z-index:1000;">
                 <h2 style="color:black;font-weight:bolder;">&lt;<span style="color:red;">h2</span>&gt;<b>ANDRE<a data-chaffle="en" data-chaffle-speed="50" data-chaffle-delay="300" class="name4" style="color:black;"> L</a>EO</b>&lt;/<span style="color:red;">h2</span>&gt;</h2>
