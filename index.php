@@ -795,10 +795,10 @@ if (isset($_GET['status'])) {
             <span class="row row-cols-1">
                <div class="col-md-8 col-12 mx-auto mt-4 mb-5" style="z-index:10;">
                   <h1 style="color:white; font-family: 'Monument Extended', sans-serif;letter-spacing: 2px; text-align: center;">
-                     INNOVATE FOR AN IMPACTFUL BREAKTHROUGH
+                     REDIFINING FUTURE THROUGH VISIONARY INNOVATIONS
                   </h1>
                   <p style="color:white; text-align: center; font-size: 14pt;">
-                     Melalui <b>Petra Civil Expo 2021</b>, diharapkan peserta dapat memperluas ilmu mereka, terutama dalam aspek pembuatan dan pembentukan beton yang kuat tekan, struktur jembatan, dan bangunan bertingkat tahan gempa yang kuat dan efisien. Selain itu, peserta juga diharapkan dapat menghasilkan ide yang <i>out of the box</i> agar dapat menghasilkan dan merealisasikan ide serta inovasi-inovasi yang nantinya akan berdampak bagi kemajuan infrastruktur Bangsa Indonesia.</p>
+                     <b>Petra Civil Expo 2022</b>akan menangkat tema "Redifining Future Through Visionary Innovations". Tema ini memiliki arti bahwa manusia harus peduli akan kebutuhan masa depan dengan cara berinovasi dengan kreatif. Melihat kondisi Negara Indonesia yang pembangunan infrastrukturnya masih belum merata, generasi muda Indonesia memiliki tugas besar untuk memastikan seluruh daerah di Indonesia dapat merasakan kemajuan infrastruktur. Dengan tema ini, diharapkan para peserta <b>Petra Civil Expo 2022</b> sebagai generasi penerus bangsa dapat memberikan inovasi-inovasi baru dan merealisasikannya agar dapat memajukan pembangunan infrastruktur di Indonesia ke depannya.</p>
                </div>
             </span>
          </div>
