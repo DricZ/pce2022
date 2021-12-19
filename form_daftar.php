@@ -514,12 +514,12 @@ if (isset($_GET['status'])) {
                     </div>
 
                     <div id="row-fees-college" hidden>
-                        <div class="row justify-content-center">
-                            <h3 style="font-weight: bold; font-size: 18pt; color: red; text-align: center;">Registration Fees</h3>
-                        </div>
                         <!-- <div class="row justify-content-center">
-                            <h4 style="font-weight: bold; font-size: 18pt; color: red; text-align: center;">(EARLY BIRD)</h4>
+                            <h3 style="font-weight: bold; font-size: 18pt; color: red; text-align: center;">Registration Fees</h3>
                         </div> -->
+                        <div class="row justify-content-center">
+                            <h4 style="font-weight: bold; font-size: 18pt; color: red; text-align: center;">EARLY BIRD</h4>
+                        </div>
 
                         <br>
 
