@@ -491,9 +491,11 @@ if (isset($_GET['status'])) {
                                         <p class="card-text" style="font-weight: bold;">
                                             &#128178; Rp260.000,00
                                         </p>
-                                        <p class="card-text" style="font-weight: bold;">
+                                        <p class="card-text" style="font-weight: bold; font-size :15px;">
                                             <b>FOR SENIOR HIGH SCHOOL STUDENTS</b>
-                                            <img src="assets/bc_sma_bca.png" style="max-width: 100%" alt="">
+                                            <img src="assets/bc_sma_bca.png" style="max-width: 100%" alt=""><br>
+                                            OA : @949jdndr <br>
+                                            CP : 085746560733 (Steven)
                                         </p>
                                     </div>
                                 </div>
@@ -541,8 +543,10 @@ if (isset($_GET['status'])) {
                                         <p class="card-text" style="font-weight: bold;">
                                             <b>&#128178; Rp260.000,00</b>
                                         </p>
-                                        <p class="card-text" style="font-weight: bold;" <b>FOR UNIVERSITY STUDENTS</b><br>
+                                        <p class="card-text" style="font-weight: bold; font-size :15px;" <b>FOR UNIVERSITY STUDENTS</b><br>
                                             <img src="assets/bc_univ_bca.png" style="max-width: 100%" alt="">
+                                            OA : @949jdndr <br>
+                                            CP : 085746560733 <br> (Steven)
                                         </p>
                                     </div>
                                 </div>
@@ -564,8 +568,10 @@ if (isset($_GET['status'])) {
                                         <p class="card-text" style="font-weight: bold;">
                                             <b>&#128178; Rp245.000,00</b>
                                         </p>
-                                        <p class="card-text">
+                                        <p class="card-text" style="font-weight: bold;  font-size :15px;">
                                             <img src="assets/erdc_bca.png" style="max-width: 100%" alt="">
+                                            OA : @978opekz <br>
+                                            CP : 081260040311 <br> (Danny)
                                         </p>
                                     </div>
                                 </div>
@@ -587,8 +593,10 @@ if (isset($_GET['status'])) {
                                         <p class="card-text" style="font-weight: bold;">
                                             <b>&#128178; Rp210.000,00</b>
                                         </p>
-                                        <p class="card-text">
+                                        <p class="card-text"style="font-weight: bold; font-size :15px;"">
                                             <img src="assets/lktb_bca.png" style="max-width: 100%" alt="">
+                                            OA : @495fhirl <br>
+                                            CP : 081333787098 <br> (Vincentius)
                                         </p>
                                     </div>
                                     <!-- <img class="card-img-bottom" src="assets/lktb_bca.png" style="max-width: 70%"> -->
