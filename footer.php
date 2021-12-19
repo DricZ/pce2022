@@ -77,7 +77,7 @@
         <div class="col mt-4">
             <h5 class="text-center" style="color:white;">CONTACT US</h5>
             <div class="contact row justify-content-center">
-                <div class="col-12 mt-3"><a class="yess" target="_blank" href="https://line.me/R/ti/p/@642uzmuf" style="text-decoration: none;"><i class="fab fa-line fa-2x pr-1" style="color:white; font-size: 13pt;"></i>@642uzmuf</a>
+                <div class="col-12 mt-3"><a class="yess" target="_blank" href="https://line.me/R/ti/p/@tou8951r" style="text-decoration: none;"><i class="fab fa-line fa-2x pr-1" style="color:white; font-size: 13pt;"></i>@tou8951r</a>
                 </div>
                 <div class="col-12 mt-3"><a class="yess" target="_blank" href="https://www.instagram.com/petracivilexpo/" style="text-decoration: none;"><i class="fab fa-instagram fa-2x pr-1" style="color: white; font-size: 13pt;"></i>petracivilexpo</a></div>
                 <div class="col-12 mt-3"><a class="yess" target="_blank" href="https://www.tiktok.com/@petracivilexpo?lang=en" style="text-decoration: none;"><i class="fab fa-tiktok pr-1" style="color: white; font-size: 13pt;"></i>petracivilexpo</a></div>
