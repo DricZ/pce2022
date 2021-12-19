@@ -570,7 +570,7 @@ if (isset($_GET['status'])) {
                                         </p>
                                         <p class="card-text" style="font-weight: bold;  font-size :15px;">
                                             <img src="assets/erdc_bca.png" style="max-width: 100%" alt="">
-                                            OA : @978opekz <br>
+                                            OA : @642uzmuf <br>
                                             CP : 081260040311 <br> (Danny)
                                         </p>
                                     </div>
