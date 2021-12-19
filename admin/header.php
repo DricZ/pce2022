@@ -26,11 +26,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="Cache-Control" content="no-store" />
 
-	<meta name="description" content="Open Recruitment Petra Civil Expo 2021">
+	<meta name="description" content="Open Recruitment Petra Civil Expo 2022">
 	<meta name="author" content="">
 	<!-- <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" /> -->
 
-	<!-- <title>Admin PCE 2021</title> -->
+	<!-- <title>Admin PCE 2022</title> -->
 	<!-- For apple devices -->
 
 	<!-- style -->

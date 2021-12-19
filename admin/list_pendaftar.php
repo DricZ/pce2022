@@ -479,7 +479,7 @@ if (isset($_GET['stat'])) {
             <div class="col-12 col-md-10 offset-md-1">
                 <div align="center">
                     <h2>LIST PENDAFTAR LOMBA</h2>
-                    <h2><b>&#127876; PETRA CIVIL EXPO 2021 &#127876;</b></h2>
+                    <h2><b>&#127876; PETRA CIVIL EXPO 2022 &#127876;</b></h2>
                     <h3><?php echo $emojiTexts[$randomIndex]; ?></h3><br>
                 </div>
             </div>

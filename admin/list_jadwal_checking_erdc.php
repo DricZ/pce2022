@@ -277,7 +277,7 @@ $randomIndex = array_rand($emojiTexts);
             <div class="col-12 col-md-10 offset-md-1">
                 <div align="center">
                     <h2>LIST JADWAL CHECKING</h2>
-                    <h2><b>&#127982; EARTHQUAKE RESISTANT DESIGN COMPETITION 2021 &#127982;</b></h2>
+                    <h2><b>&#127982; EARTHQUAKE RESISTANT DESIGN COMPETITION 2022 &#127982;</b></h2>
                     <h3><?php echo $emojiTexts[$randomIndex]; ?></h3><br>
                 </div>
             </div>
@@ -287,9 +287,9 @@ $randomIndex = array_rand($emojiTexts);
             <div class="col-12 col-md-10 offset-md-1" style="padding-top: 30px;">
                 <select class="form-control" id="filter_tanggal" name="filter_tanggal" style="height:40px; font-size: 12pt;">
                     <option value="">Lihat berdasarkan tanggal...</option>
-                    <option value="06-05-2021">06-05-2021</option>
-                    <option value="07-05-2021">07-05-2021</option>
-                    <option value="08-05-2021">08-05-2021</option>
+                    <option value="06-05-2022">06-05-2022</option>
+                    <option value="07-05-2022">07-05-2022</option>
+                    <option value="08-05-2022">08-05-2022</option>
                 </select>
             </div>
             <div class="col-12 col-md-10 offset-md-1" style="padding-top: 30px;">

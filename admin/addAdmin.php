@@ -73,7 +73,7 @@ if (isset($_GET['stat'])) {
         <div class="col-12 col-md-10 offset-md-1 mt-4">
             <div align="center">
                 <h2>TAMBAH ADMIN BARU</h2>
-                <h2><b>WEBSITE ADMIN PETRA CIVIL EXPO 2021</b></h2>
+                <h2><b>WEBSITE ADMIN PETRA CIVIL EXPO 2022</b></h2>
                 <h3><?php echo $emojiTexts[$randomIndex]; ?></h3><br>
             </div>
         </div>
@@ -117,7 +117,7 @@ if (isset($_GET['stat'])) {
         } else {
         ?>
             <h1 style="color: red; text-align: center; font-weight: bold;">MOHON MAAF!<br>ANDA TIDAK MEMILIKI HAK AKSES KE PAGE INI.</h1>
-            <p class="mt-4" style="text-align: center; font-size: 16pt; font-weight: bold;">Penambahan admin baru hanya dapat dilakukan oleh Ketua Petra Civil Expo 2021, Ketua maupun Wakil Ketua tiap Bidang Lomba, dan Divisi IT. Silakan mengirim data calon admin baru (nama lengkap, nrp, divisi, dan bidang lomba) ke salah satu pihak di atas untuk ditambahkan kemudian.<br>Terima kasih.</p>
+            <p class="mt-4" style="text-align: center; font-size: 16pt; font-weight: bold;">Penambahan admin baru hanya dapat dilakukan oleh Ketua Petra Civil Expo 2022, Ketua maupun Wakil Ketua tiap Bidang Lomba, dan Divisi IT. Silakan mengirim data calon admin baru (nama lengkap, nrp, divisi, dan bidang lomba) ke salah satu pihak di atas untuk ditambahkan kemudian.<br>Terima kasih.</p>
         <?php
         }
         ?>
