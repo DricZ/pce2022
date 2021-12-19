@@ -1,14 +1,14 @@
 <?php
 // require_once 'phps/connect.php';
 
-if (!isset($_SESSION['nrpAdmin'])) {
-	header("Location: index.php");
-	exit();
-}
+// if (!isset($_SESSION['nrpAdmin'])) {
+// 	header("Location: index.php");
+// 	exit();
+// }
 
-$nama = $_SESSION['namaAdmin'];
-$nrp = $_SESSION['nrpAdmin'];
-$divisi = $_SESSION['divisi'];
+// $nama = $_SESSION['namaAdmin'];
+// $nrp = $_SESSION['nrpAdmin'];
+// $divisi = $_SESSION['divisi'];
 
 // $sqlCek = "SELECT COUNT(*) AS x FROM pewawancara WHERE nrp = ?";
 // $stmtCek = $pdo->prepare($sqlCek);

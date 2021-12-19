@@ -2,14 +2,6 @@
 require_once 'phps/connect.php';
 $_SESSION['page'] = 'pendaftar';
 
-if (!isset($_SESSION['nrpAdmin'])) {
-    header("Location: index.php");
-    exit();
-}
-
-$nama = $_SESSION['namaAdmin'];
-$nrp = $_SESSION['nrpAdmin'];
-
 include 'header.php';
 
 $emojiTexts = ['༼ つ ◕_◕ ༽つ', 'ʕ•ᴥ•ʔ', '(ง ͠° ͟ل͜ ͡°)ง', '¯\_(ツ)_/¯', "(ง'̀-'́)ง", '(ᵔᴥᵔ)', '(¬‿¬)', '(~˘▾˘)~', '༼ʘ̚ل͜ʘ̚༽', 'ᕦ(ò_óˇ)ᕤ', '(｡◕‿‿◕｡)', '(>‿◠)✌'];

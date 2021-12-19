@@ -2,13 +2,13 @@
 require_once 'phps/connect.php';
 $_SESSION['page'] = 'pendaftar';
 
-if (!isset($_SESSION['nrpAdmin'])) {
-    header("Location: index.php");
-    exit();
-}
+// if (!isset($_SESSION['nrpAdmin'])) {
+//     header("Location: index.php");
+//     exit();
+// }
 
-$nama = $_SESSION['namaAdmin'];
-$nrp = $_SESSION['nrpAdmin'];
+// $nama = $_SESSION['namaAdmin'];
+// $nrp = $_SESSION['nrpAdmin'];
 
 include 'header.php';
 
