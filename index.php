@@ -860,6 +860,10 @@ if (isset($_GET['status'])) {
                <div><img src="assets/image/bc/bc_4.jpg" alt=""></div>
                <div><img src="assets/image/bc/bc_5.jpg" alt=""></div>
                <div><img src="assets/image/bc/bc_6.jpg" alt=""></div>
+               <div><img src="assets/image/bc/bc_7.jpg" alt=""></div>
+               <div><img src="assets/image/bc/bc_8.jpg" alt=""></div>
+               <div><img src="assets/image/bc/bc_9.jpg" alt=""></div>
+               <div><img src="assets/image/bc/bc_10.jpg" alt=""></div>
             </div>
             <div class="row justify-content-center">
                <span class="mt-4">
