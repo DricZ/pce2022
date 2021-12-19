@@ -344,7 +344,7 @@ $randomIndex = array_rand($emojiTexts);
             <div class="col-12 col-md-10 offset-md-1">
                 <div align="center">
                     <h2>LIST PENERIMA KAYU BALSA</h2>
-                    <h2><b>&#127982; BRIDGE COMPETITION 2021 &#127982;</b></h2>
+                    <h2><b>&#127982; BRIDGE COMPETITION 2022 &#127982;</b></h2>
                     <h3><?php echo $emojiTexts[$randomIndex]; ?></h3><br>
                 </div>
             </div>

@@ -36,7 +36,7 @@ if (isset($_GET['stat'])) {
 	<!-- ICON -->
 	<link rel="icon" href="../assets/pce_icon.ico" type="image/x-icon">
 
-	<title>Admin PCE 2021</title>
+	<title>Admin PCE 2022</title>
 	<link rel="stylesheet" href="../style/styleloginadmin.css?v=<?php echo time(); ?>">
 	<!-- For apple devices -->
 
@@ -62,7 +62,7 @@ if (isset($_GET['stat'])) {
 		<div class="container justify-content-center text-center" id="header">
 			<a href="https://www.instagram.com/petracivilexpo/" target="_blank"><img src="..\assets\pce_logo color.png" style="width:200px; height:58px;" alt="pce"></a>
 			<h1 class="font-weight-bold" style="text-align: center;">ADMIN SITE</h1>
-			<h2 class="font-weight-normal" style="text-align: center;">PETRA CIVIL EXPO 2021</h2>
+			<h2 class="font-weight-normal" style="text-align: center;">PETRA CIVIL EXPO 2022</h2>
 		</div>
 		<div class="container d-flex justify-content-center ">
 			<div class="jumbotron my-auto" id="form">
@@ -80,7 +80,7 @@ if (isset($_GET['stat'])) {
 			</div>
 		</div>
 		<div class="container justify-content-center text-center" id="header">
-			<h2 class="font-weight-small" style="text-align: center; font-size: 12pt;">By IT Division Petra Civil Expo 2021</h2>
+			<h2 class="font-weight-small" style="text-align: center; font-size: 12pt;">By IT Division Petra Civil Expo 2022</h2>
 		</div>
 	</div>
 </body>
