@@ -1178,12 +1178,11 @@ if (isset($_GET['status'])) {
             </div>
             <!-- <div style="filter:blur(5px) brightness(0.5);"></div> -->
             <div class="owl-carousel">
-               <div><img src="assets/image/lktb/lktb_mixing_1.jpg" alt=""></div>
-               <div><img src="assets/image/lktb/lktb_mixing_2.jpg" alt=""></div>
-               <div><img src="assets/image/lktb/lktb_stage_1.jpg" alt=""></div>
+               <div><img src="assets/image/lktb/lktb_mixing_1.png" alt=""></div>
+               <div><img src="assets/image/lktb/lktb_mixing_2.png" alt=""></div>
+               <div><img src="assets/image/lktb/lktb_stage_1.png" alt=""></div>
                <div><img src="assets/image/lktb/lktb_stage_2.jpg" alt=""></div>
                <div><img src="assets/image/lktb/lktb_3.jpg" alt=""></div>
-               <div><img src="assets/image/lktb/lktb_4.jpg" alt=""></div>
             </div>
          </div>
          <div class="container-fluid pt-4">
