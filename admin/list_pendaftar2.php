@@ -562,7 +562,7 @@ if (isset($_GET['stat'])) {
             <div class="col-12 col-md-10 offset-md-1">
                 <div align="center">
                     <h2>LIST PENDAFTAR LOMBA</h2>
-                    <h2><b>&#127982; PETRA CIVIL EXPO 2021 &#127982;</b></h2>
+                    <h2><b>&#127982; PETRA CIVIL EXPO 2022 &#127982;</b></h2>
                     <h3><?php echo $emojiTexts[$randomIndex]; ?></h3><br>
                 </div>
             </div>
@@ -673,7 +673,7 @@ if (isset($_GET['stat'])) {
         <p style="font-weight: bold;">kalo butuh excel dengan format judul kolom tertentu bisa contact it yah guys</p>
         <p style="font-weight: bold;">
             <a href="https://www.bible.com/id/bible/306/PHP.4.6.TB" style="text-decoration: none; color: green;" target="_blank">
-                SEMANGAT YAH PARA BPHK PCE<br>PETRA CIVIL EXPO 2021 PASTI SUKSES!!&#128588;
+                SEMANGAT YAH PARA BPHK PCE<br>PETRA CIVIL EXPO 2022 PASTI SUKSES!!&#128588;
             </a>
         </p>
 
