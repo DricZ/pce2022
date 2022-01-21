@@ -1,10 +1,22 @@
-<!DOCTYPE html> 
+
 <html> 
+
 <body> 
 
 <button onclick="pauseVid()" type="button">Pause Video</button><br> 
 
-<video id="myVideo" width="320" height="176" onclick="playVid()">
+<!-- 
+    1. mode awal autoplay, kita ubah 
+ -->
+
+<video id="myVideo" autoplay="autoplay" muted="muted" id="header-video" style="
+         width: 100%;
+         height: 100%;
+         position: absolute;
+         top:  0;
+         left: 0;
+         object-fit: cover;
+      " onclick="playVid()">
   <source src="video/1.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
