@@ -17,7 +17,9 @@
          left: 0;
          object-fit: cover;
       " onclick="pauseVid()">
-  <source src="video/1.mp4" type="video/mp4">
+
+  <!-- BACKGROUND OPENING -->
+  <source src="video/1.mp4" type="assets/video/mp4">    
   Your browser does not support HTML5 video.
 </video>
 
