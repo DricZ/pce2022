@@ -1,31 +1,41 @@
-<html> 
-    <body> 
-      <style type="text/css">
-        html,body{height: 100%;}
-        .bg-utama{
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body style="margin: 0%;">
+  <style type="text/css">
+    /* .bg-utama{
         background-image: url(assets/STAND.jpg);
         background-size: 100%;
         background-repeat: no-repeat;
         height: 100vh;
         background-position-y: center;
-        }
-     </style>
-    
-    <div class="bg-utama">
-    </div>
+        } */
+  </style>
 
-    <script> 
-    var vid = document.getElementById("myVideo"); 
-    
-    function playVid() { 
-      vid.play(); 
+  <!-- <div class="bg-utama">
+    </div> -->
+  <div style="text-align: center; background-color: grey;">
+    <img src="assets/STAND.jpg" alt="" style="height: 100vh;">
+  </div>
+
+  <script>
+    var vid = document.getElementById("myVideo");
+
+    function playVid() {
+      vid.play();
+    }
+
+    function pauseVid() {
+      vid.pause();
     } 
-    
-    function pauseVid() { 
-      vid.pause(); 
-    } 
-    </script> 
-    
-    </body> 
-    </html>
-    
+  </script>
+</body>
+
+</html>
