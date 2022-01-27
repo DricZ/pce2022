@@ -16,7 +16,7 @@
          top:  0;
          left: 0;
          object-fit: cover;
-      " onclick="playVid()">
+      " onclick="pauseVid()">
   <source src="video/1.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
