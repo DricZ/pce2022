@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .gambar {
+            cursor: pointer;
+            height: 100vh;
+            transition: 1s ease-out;
+            transform: scale(1);
+        }
+
+        .penampung {
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body style="margin: 0%;">
+    <div class="penampung" style="background-color: grey;">
+        <center><img src="assets/background.jpg" alt="" id="pintu" class="gambar"></center>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    var clicked = false;
+    $('#pintu').click(function () {
+        if (!clicked) {
+            // ZOOM IN & FADE OUT
+            $('.gambar').fadeOut(1000);
+            document.getElementById('pintu').style.transform = 'scale(2)';
+
+            // GANTI GAMBAR
+            setTimeout(() => {
+                $('#pintu').prop("src", "assets/ruangan.jpeg");
+            }, 1000);
+
+            // ZOOM OUT & FADE IN
+            $('.gambar').fadeIn(50);
+            setTimeout(() => {
+                document.getElementById('pintu').style.transform = 'scale(1)';
+            }, 1050);
+
+            clicked = true;
+        }
+    })
+</script>
+
+</html>
