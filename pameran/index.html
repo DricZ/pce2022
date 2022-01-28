@@ -29,9 +29,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-    var clicked = false;
+    var clicked = 0;
     $('#pintu').click(function () {
-        if (!clicked) {
+        if (clicked == 0) {
             // ZOOM IN & FADE OUT
             $('.gambar').fadeOut(1000);
             document.getElementById('pintu').style.transform = 'scale(2)';
@@ -47,7 +47,20 @@
                 document.getElementById('pintu').style.transform = 'scale(1)';
             }, 1050);
 
-            clicked = true;
+            clicked = 1;
+        }
+
+        else{
+            // ZOOM IN & FADE OUT
+            $('.gambar').fadeOut(1000);
+            document.getElementById('pintu').style.transform = 'scale(2)';
+
+            // GANTI GAMBAR
+            setTimeout(() => {
+                window.location.replace("stand.html");;
+            }, 1000);
+
+            clicked = 1;
         }
     })
 </script>
