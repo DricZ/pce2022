@@ -15,29 +15,33 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <style>
-
+    .barang_stand {
+      z-index: 2;
+      position: absolute;
+      width: 5vw;
+      /* left: 29.5vw;
+      top: 33.5vh; */
+    }
   </style>
 </head>
 
 <body style="margin: 0%;">
   <!-- Carousel -->
-  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+  <div id="demo" class="carousel slide" data-bs-interval="false">
     <!-- The slideshow/carousel -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <!-- STAND 1 -->
+        <div style="text-align: center; background-color: grey;">
+          <img src="assets/STAND.jpg" alt="" style="height: 100vh;">
+          <img src="assets/pintu.jpeg" alt="" class="barang_stand">
+        </div>
+      </div>
+      <div class="carousel-item">
         <div style="text-align: center; background-color: grey;">
           <img src="assets/STAND.jpg" alt="" style="height: 100vh;">
         </div>
       </div>
       <div class="carousel-item">
-        <!-- STAND 2 -->
-        <div style="text-align: center; background-color: grey;">
-          <img src="assets/STAND.jpg" alt="" style="height: 100vh;">
-        </div>
-      </div>
-      <div class="carousel-item">
-        <!-- STAND 3 -->
         <div style="text-align: center; background-color: grey;">
           <img src="assets/STAND.jpg" alt="" style="height: 100vh;">
         </div>
@@ -53,7 +57,6 @@
     </button>
   </div>
 
-
   <script>
     var vid = document.getElementById("myVideo");
 
@@ -64,13 +67,6 @@
     function pauseVid() {
       vid.pause();
     } 
-  </script>
-
-  <script>
-    // DISABLE AUTO SCROLL
-    $('.carousel').carousel({
-      interval: false,
-    });
   </script>
 </body>
 
