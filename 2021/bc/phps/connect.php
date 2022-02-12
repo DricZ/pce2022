@@ -1,6 +1,6 @@
 <?php
     $host = '127.0.0.1';
-    $db = 'pcepetra_pce2022';
+    $db = 'pcepetra_pce2021';
     $user = 'root';
     $pass = '';
     $charset = 'utf8mb4';
