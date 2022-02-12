@@ -1,0 +1,42 @@
+[11-Mar-2021 13:15:08 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/connect.php:19) in /home/pcepetraac11/public_html/bc/rally_games/phps/connect.php on line 22
+[11-Mar-2021 13:17:55 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/phps/connect.php on line 20
+[11-Mar-2021 13:18:18 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/phps/connect.php on line 20
+[11-Mar-2021 13:18:54 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/phps/connect.php on line 20
+[11-Mar-2021 13:18:55 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/phps/connect.php on line 20
+[11-Mar-2021 13:19:21 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/phps/connect.php on line 20
+[11-Mar-2021 13:19:22 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/phps/connect.php on line 20
+[11-Mar-2021 13:19:23 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/phps/connect.php on line 20
+[11-Mar-2021 13:30:35 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/index.php on line 8
+[11-Mar-2021 13:32:21 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/index.php on line 8
+[14-Mar-2021 05:40:31 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pcepetra_rallygames_bc.team' doesn't exist' in /home/pcepetraac11/public_html/bc/rally_games/header.php:15
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/header.php(15): PDO->prepare('SELECT * FROM t...')
+#1 /home/pcepetraac11/public_html/bc/rally_games/map.php(2): include('/home/pcepetraa...')
+#2 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/header.php on line 15
+[27-Mar-2021 06:45:47 UTC] PHP Fatal error:  Call to a member function prepare() on null in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 7
+[27-Mar-2021 06:45:50 UTC] PHP Fatal error:  Call to a member function prepare() on null in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 7
+[27-Mar-2021 06:45:54 UTC] PHP Fatal error:  Call to a member function prepare() on null in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 7
+[27-Mar-2021 06:45:57 UTC] PHP Fatal error:  Call to a member function prepare() on null in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 7
+[27-Mar-2021 06:46:11 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 2
+[27-Mar-2021 06:46:11 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 2
+[27-Mar-2021 06:46:11 UTC] PHP Fatal error:  Call to a member function prepare() on null in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 7
+[27-Mar-2021 06:46:15 UTC] PHP Warning:  require_once(header.php): failed to open stream: No such file or directory in /home/pcepetraac11/public_html/bc/rally_games/shop.php on line 11
+[27-Mar-2021 06:46:15 UTC] PHP Fatal error:  require_once(): Failed opening required 'header.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcepetraac11/public_html/bc/rally_games/shop.php on line 11
+[27-Mar-2021 06:46:28 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 2
+[27-Mar-2021 06:46:28 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 2
+[27-Mar-2021 06:46:28 UTC] PHP Fatal error:  Call to a member function prepare() on null in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 7
+[27-Mar-2021 06:46:37 UTC] PHP Warning:  require_once(header.php): failed to open stream: No such file or directory in /home/pcepetraac11/public_html/bc/rally_games/shop.php on line 11
+[27-Mar-2021 06:46:37 UTC] PHP Fatal error:  require_once(): Failed opening required 'header.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcepetraac11/public_html/bc/rally_games/shop.php on line 11
+[27-Mar-2021 06:46:40 UTC] PHP Warning:  require_once(header.php): failed to open stream: No such file or directory in /home/pcepetraac11/public_html/bc/rally_games/shop.php on line 11
+[27-Mar-2021 06:46:40 UTC] PHP Fatal error:  require_once(): Failed opening required 'header.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcepetraac11/public_html/bc/rally_games/shop.php on line 11
+[27-Mar-2021 06:46:42 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 2
+[27-Mar-2021 06:46:42 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 2
+[27-Mar-2021 06:46:42 UTC] PHP Fatal error:  Call to a member function prepare() on null in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 7
+[27-Mar-2021 06:46:43 UTC] PHP Warning:  require_once(header.php): failed to open stream: No such file or directory in /home/pcepetraac11/public_html/bc/rally_games/shop.php on line 11
+[27-Mar-2021 06:46:43 UTC] PHP Fatal error:  require_once(): Failed opening required 'header.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcepetraac11/public_html/bc/rally_games/shop.php on line 11
+[27-Mar-2021 06:46:44 UTC] PHP Warning:  include(header.php): failed to open stream: No such file or directory in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 2
+[27-Mar-2021 06:46:44 UTC] PHP Warning:  include(): Failed opening 'header.php' for inclusion (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 2
+[27-Mar-2021 06:46:44 UTC] PHP Fatal error:  Call to a member function prepare() on null in /home/pcepetraac11/public_html/bc/rally_games/map.php on line 7
+[28-Mar-2021 08:10:42 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/index.php on line 7
+[28-Mar-2021 08:10:45 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/pcepetraac11/public_html/bc/rally_games/phps/include.php:56) in /home/pcepetraac11/public_html/bc/rally_games/index.php on line 7

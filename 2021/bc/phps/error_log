@@ -1,0 +1,60 @@
+[20-Apr-2021 07:45:50 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[20-Apr-2021 07:45:58 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[20-Apr-2021 08:51:56 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[20-Apr-2021 08:52:00 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[20-Apr-2021 13:17:41 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[20-Apr-2021 13:17:46 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[20-Apr-2021 16:26:18 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[21-Apr-2021 07:13:34 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[21-Apr-2021 12:48:55 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[21-Apr-2021 14:09:58 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[21-Apr-2021 14:10:02 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20
+[21-Apr-2021 14:10:05 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'id_pendaftar' cannot be null' in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php(20): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/phps/submit_jadwal_checking_bc.php on line 20

@@ -1,0 +1,376 @@
+[11-Mar-2021 13:16:51 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pcepetra_pce2021.team' doesn't exist' in /home/pcepetraac11/public_html/bc/rally_games/phps/loginattempt.php:20
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/loginattempt.php(20): PDO->prepare('SELECT COUNT(*)...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/loginattempt.php on line 20
+[11-Mar-2021 21:36:30 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:304
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(304): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 304
+[11-Mar-2021 21:36:32 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:304
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(304): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 304
+[11-Mar-2021 21:37:48 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:304
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(304): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 304
+[11-Mar-2021 21:37:54 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:304
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(304): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 304
+[11-Mar-2021 21:38:00 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:304
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(304): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 304
+[11-Mar-2021 21:38:06 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:304
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(304): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 304
+[11-Mar-2021 22:18:10 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 22:18:29 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 22:19:04 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:398
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(398): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 398
+[11-Mar-2021 22:24:49 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:27:56 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:30:48 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:33:26 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:34:50 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:36:33 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:37:34 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:43:35 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 22:44:06 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 22:45:55 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:398
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(398): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 398
+[11-Mar-2021 22:46:50 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:47:33 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:48:26 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:52:11 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:440
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(440): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 440
+[11-Mar-2021 22:52:57 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Jembatan Kayu', 'Jembatan Baja', 'Jembatan Beton', 'Rumah Sakit', 'Mall', 'Taman' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:439
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(439): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 439
+[11-Mar-2021 22:54:28 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 22:57:19 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 22:59:03 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:398
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(398): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 398
+[11-Mar-2021 23:03:27 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:03:39 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:04:31 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:398
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(398): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 398
+[11-Mar-2021 23:08:24 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:09:40 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:10:20 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:11:06 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:11:10 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:398
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(398): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 398
+[11-Mar-2021 23:13:45 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:14:39 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:14:42 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:398
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(398): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 398
+[11-Mar-2021 23:15:20 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:15:23 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:15:25 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:398
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(398): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 398
+[11-Mar-2021 23:18:54 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:19:27 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:20:29 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:22:20 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:22:40 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:22:42 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:23:36 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:398
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(398): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 398
+[11-Mar-2021 23:23:37 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:23:38 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:30:39 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:398
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(398): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 398
+[11-Mar-2021 23:31:23 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:40:00 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:40:02 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:40:03 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:398
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(398): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 398
+[11-Mar-2021 23:41:12 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:43:28 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:383
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(383): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 383
+[11-Mar-2021 23:46:07 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:46:30 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:400
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(400): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 400
+[11-Mar-2021 23:47:03 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:47:22 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:400
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(400): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 400
+[11-Mar-2021 23:48:50 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:49:28 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:384
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(384): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 384
+[11-Mar-2021 23:52:09 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[11-Mar-2021 23:53:21 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:368
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(368): PDO->prepare('SELECT d.name F...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 368
+[12-Mar-2021 11:32:08 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'description' in 'field list'' in /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php:58
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php(58): PDO->prepare('INSERT INTO `hi...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php on line 58
+[12-Mar-2021 11:32:15 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'description' in 'field list'' in /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php:58
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php(58): PDO->prepare('INSERT INTO `hi...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php on line 58
+[12-Mar-2021 11:32:20 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'description' in 'field list'' in /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php:58
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php(58): PDO->prepare('INSERT INTO `hi...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php on line 58
+[12-Mar-2021 11:32:24 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'description' in 'field list'' in /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php:58
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php(58): PDO->prepare('INSERT INTO `hi...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/update_location.php on line 58
+[12-Mar-2021 13:44:38 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pcepetra_rallygames_bc.team' doesn't exist' in /home/pcepetraac11/public_html/bc/rally_games/phps/signout.php:5
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/signout.php(5): PDO->prepare('UPDATE team SET...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/signout.php on line 5
+[12-Mar-2021 13:44:40 UTC] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'pcepetra_rallygames_bc.team' doesn't exist' in /home/pcepetraac11/public_html/bc/rally_games/phps/signout.php:5
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/signout.php(5): PDO->prepare('UPDATE team SET...')
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/signout.php on line 5
+[13-Mar-2021 15:27:14 UTC] PHP Parse error:  syntax error, unexpected '").'>' (T_CONSTANT_ENCAPSED_STRING) in /home/pcepetraac11/public_html/bc/rally_games/phps/build_jogjaGetBuilding.php on line 24
+[14-Mar-2021 11:54:29 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'time' cannot be null' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:503
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(503): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 503
+[14-Mar-2021 11:57:11 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'time' cannot be null' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:503
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(503): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 503
+[14-Mar-2021 11:58:18 Asia/Jakarta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'time' cannot be null' in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php:503
+Stack trace:
+#0 /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php(503): PDOStatement->execute(Array)
+#1 {main}
+  thrown in /home/pcepetraac11/public_html/bc/rally_games/phps/build_building.php on line 503

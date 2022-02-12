@@ -1,0 +1,8 @@
+[24-May-2021 12:00:12 UTC] PHP Warning:  session_start(): open(/tmp/sess_e67d76fa660864ee211df9e971a1aa3c, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/bc/rally_games/admin/phps/connect.php on line 20
+[24-May-2021 12:00:12 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/bc/rally_games/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/bc/rally_games/admin/phps/connect.php on line 20
+[24-May-2021 12:00:12 UTC] PHP Warning:  Unknown: open(/tmp/sess_e67d76fa660864ee211df9e971a1aa3c, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[24-May-2021 12:00:12 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
+[24-May-2021 12:00:14 UTC] PHP Warning:  session_start(): open(/tmp/sess_f68dfa3ad263b3a83debf42c5fd5098a, O_RDWR) failed: No space left on device (28) in /home/pcepetraac11/public_html/bc/rally_games/admin/phps/connect.php on line 20
+[24-May-2021 12:00:14 UTC] PHP Warning:  session_start(): Cannot send session cache limiter - headers already sent (output started at /home/pcepetraac11/public_html/bc/rally_games/admin/phps/connect.php:20) in /home/pcepetraac11/public_html/bc/rally_games/admin/phps/connect.php on line 20
+[24-May-2021 12:00:14 UTC] PHP Warning:  Unknown: open(/tmp/sess_f68dfa3ad263b3a83debf42c5fd5098a, O_RDWR) failed: No space left on device (28) in Unknown on line 0
+[24-May-2021 12:00:14 UTC] PHP Warning:  Unknown: Failed to write session data (files). Please verify that the current setting of session.save_path is correct (/tmp) in Unknown on line 0
