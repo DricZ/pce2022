@@ -1,8 +1,8 @@
 <?php
 require "connect.php";
 
-if(isset($_POST['g-recaptcha-response'])&& !empty($_POST['g-recaptcha-response']))
-{
+// if(isset($_POST['g-recaptcha-response'])&& !empty($_POST['g-recaptcha-response']))
+// {
     if (isset($_POST['username']) && isset($_POST['password'])) {
         if ($_POST['username'] == 'admin' && $_POST['password'] == 'admin') {
             echo "admin";
@@ -39,9 +39,9 @@ if(isset($_POST['g-recaptcha-response'])&& !empty($_POST['g-recaptcha-response']
     } else {
         exit();
     }
-}
-else {
-    header("Location: ../index.php?stat=2"); //captcha salah
-    exit();
-}
+// }
+// else {
+//     header("Location: ../index.php?stat=2"); //captcha salah
+//     exit();
+// }
 ?>
