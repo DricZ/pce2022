@@ -348,7 +348,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
                             </div>
                         </div>`;
 
-                            var itemCard = ``;
+                           var itemCard = ``;
 
                             if (item['nama'] != 'Tiket Terbang') { //jika bukan tiket terbang
                                 if (item['stok'] > 1) {
@@ -361,7 +361,8 @@ if ($rowTeam['location_now_id_city'] != 0) {
                                             <div class="stok">` + item['stok'] + `</div>` + part4 + ' pt-2' + part4_5;
                                 }
                             } else { //jika tiket terbang
-                                itemCard = part1 + part2 + ' mt-2' + part2_1 + '35%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5 + `<div class="stok hidden">` + item['stok'] + `</div>` + part4 + ' pt-3' + part4_5;
+                            //ini tiket terbang
+                                //itemCard = part1 + part2 + ' mt-2' + part2_1 + '35%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5 + `<div class="stok hidden">` + item['stok'] + `</div>` + part4 + ' pt-3' + part4_5;
                             }
                             $("#shop").append(itemCard);
                         });
