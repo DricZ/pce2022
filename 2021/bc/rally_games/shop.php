@@ -165,7 +165,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
             <h1 id="title">SHOP</h1>
 
             <div class="row wallet">
-                <img src="assets/image/bridge dollar.png" width="55px" class="mx-2 pt-1">
+                <img src="assets/image/bridge coin.png" width="35px" class="mx-2 pt-1">
                 <div class="uang pr-4"><?= number_format($rowTeam['money'],0,',','.'); ?></div>
             </div>
 
@@ -337,7 +337,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
                                             <div class="btn-plus circle-btns circle-btn" id="btn-plus">+</div>
                                         </div>
                                         <div class="row justify-content-center my-1 no-event" style="font-size:18pt;">
-                                            <img src="assets/image/bridge dollar.png" width="20%" height="10%" style="padding-top:4px;">
+                                            <img src="assets/image/bridge coin.png" width="10%" height="5%" style="padding-top:4px;">
                                             <div id="harga">` + item['harga'] + `</div>
                                         </div>
                                     </div>
@@ -450,7 +450,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
 
                     shopSwal.fire({
                         title: '<h3 style="color:white;">Konfirmasi Pembelian</h3>',
-                        html: "<div style='color:white;'>Anda akan membayar <h5><img src='assets/image/bridge dollar.png' width='30px'>" + total + "</h5> untuk membeli <b>" + qty + " " + item + "</b></div>",
+                        html: "<div style='color:white;'>Anda akan membayar <h5><img src='assets/image/bridge coin.png' width='30px'>" + total + "</h5> untuk membeli <b>" + qty + " " + item + "</b></div>",
                         icon: 'warning',
                         showCancelButton: true,
                         confirmButtonText: 'Bayar',
