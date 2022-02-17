@@ -101,10 +101,23 @@ function show() {
                             <div class="card-body p-2">
                                 <div class="row col-12">
                                     <div class="col-8 pt-3 pl-5">
-                                        <h4>` + d.name +' ' +d.city_name + `</h4>
+                                        <h4>` + d.name +' ' + d.city_name + `</h4>
                                         <h4>` + d.time +`</h4>
                                     </div>
                                     <div class="col-4 pt-3 text-right">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card news-card mb-4">
+                            <div class="card-body p-2">
+                                <div class="row col-12">
+                                    <div class="col-8 pt-3 pl-5">
+                                        <h4>` + d.keterangan + `</h4>
+                                        <h4>` + d.added_on + `</h4>
+                                    </div>
+                                    <div class="col-4 pt-3 text-right">
+                                    <h4><img src="assets/image/bridge dollar.png" width="20%" style="border-radius:0;margin-top:-4px;">` + d.money_value + `</h4>
                                     </div>
                                 </div>
                             </div>
