@@ -1432,8 +1432,7 @@
 
 <script>
     function topLeft() {
-
-        window.location.href="test_metode1.html";
+        window.location.href = "test_metode1.html";
         // document.getElementById('peta').style.height = "225vh";
         // setTimeout(() => {
         //     $('html, body').animate({ scrollTop: $('#atas_kiri').offset().top - 100 }, 250, 'linear');
@@ -1441,10 +1440,11 @@
     }
 
     function bottomLeft() {
-        document.getElementById('peta').style.height = "225vh";
-        setTimeout(() => {
-            $('html, body').animate({ scrollTop: $('#bawah_kiri').offset().top + 100 }, 550, 'linear');
-        }, 250);
+        window.location.href = "test_metode1bawah.html";
+        // document.getElementById('peta').style.height = "225vh";
+        // setTimeout(() => {
+        //     $('html, body').animate({ scrollTop: $('#bawah_kiri').offset().top + 100 }, 550, 'linear');
+        // }, 250);
     }
 
     // document.getElementById('peta').style.transform = "scale(2.5)";

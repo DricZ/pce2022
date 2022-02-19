@@ -1,7 +1,7 @@
 <style>
     #peta {
         height: 90vh;
-        transition: all 2s;
+        transition: all 1.5s;
     }
 </style>
 
@@ -17,16 +17,15 @@
 
 <script>
     $(document).ready(function () {
+        document.getElementById('peta').style.height = "500vh";
         setTimeout(() => {
-            document.getElementById('peta').style.height = "250vh";
-        }, 1000);
+            $('html, body').animate({
+                scrollTop: $('#atas_kiri').offset().top - 50,
+                scrollLeft: $('#atas_kiri').offset().left / 2 + window.screen.width / 4
+            }, 550, 'linear');
+        }, 1500);
         setTimeout(() => {
-            $('html, body').animate({ scrollTop: $('#atas_kiri').offset().top - 50 }, 550, 'linear');
-            $('html, body').animate({ scrollLeft: $('#atas_kiri').offset().left / 2 + window.screen.width / 4 }, 550, 'linear');
-        }, 2000);
-        setTimeout(() => {
-            document.getElementById('peta').style.height = "500vh";
             document.body.style.overflow = "hidden";
-        }, 2550);
+        }, 2050);
     })
 </script>
