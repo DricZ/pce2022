@@ -123,7 +123,7 @@ body {
                 <h5 class="title" style="text-align: center;">
                     <b>SPEAKER</b>
                 </h5>
-                <center><img class="mt-2" id="foto-pak-iwan" src="assets/riza_yosia.png" alt=""></center>
+                <center><img class="mt-2" id="foto-pak-iwan" src="assets/riza_yosia.jpg" alt=""></center>
                 <style>
                 #foto-pak-iwan {
                     width: 30%;
@@ -412,13 +412,13 @@ body {
                 if (fileSize > 1048576 * 5) {
                     $.alert(
                         "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, ukuran file maksimal adalah 5 MB! Silakan upload ulang.</center></span>"
-                        );
+                    );
                     $(this).val(null);
                 }
                 if (fileType != 'jpg' && fileType != 'jpeg' && fileType != 'png') {
                     $.alert(
                         "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, silakan upload hanya file image (.jpg, .jpeg, atau .png)!</center></span>"
-                        );
+                    );
                     $(this).val(null);
                 }
             }
@@ -433,13 +433,13 @@ body {
             if (fileSize > 1048576 * 5) {
                 $.alert(
                     "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, ukuran file maksimal adalah 5 MB! Silakan upload ulang.</center></span>"
-                    );
+                );
                 $(this).val(null);
             }
             if (fileType != 'jpg' && fileType != 'jpeg' && fileType != 'png') {
                 $.alert(
                     "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, silakan upload hanya file image (.jpg, .jpeg, atau .png)!</center></span>"
-                    );
+                );
                 $(this).val(null);
             }
         }
