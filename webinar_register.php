@@ -24,7 +24,11 @@ if (isset($_GET['status'])) {
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
     <title>PCE 2022 - Webinar Registration</title>
+=======
+    <title>PCE 2022 - Talk Show Registration</title>
+>>>>>>> 4d66d3bdd585a9f342bd2a8833a3e6089754d609
 </head>
 
 <style>
@@ -33,7 +37,7 @@ if (isset($_GET['status'])) {
     }
 
     body {
-        background-color: var(--whitebrown);
+        background-color: #7FFFD4;
     }
 
     .card:hover {
@@ -144,7 +148,9 @@ if (isset($_GET['status'])) {
                     <b>"The King of Property Australia"</b>
                 </h4>
             </div>
-            <div class="justify-content-center mt-5 mx-3">
+
+            <!-- Video Webinar -->
+            <!-- <div class="justify-content-center mt-5 mx-3">
                 <h5 class="title mb-3" style="text-align: center;">
                     <b>WATCH THE STORY</b>
                 </h5>
@@ -163,9 +169,13 @@ if (isset($_GET['status'])) {
                         }
                     }
                 </style>
-            </div>
+            </div> -->
+            
             <br>
             <br>
+
+            <!-- BELUM FIX -->
+            <!-- Gambar Poster -->
             <div class="row justify-content-center mt-4">
                 <center>
                     <a href="assets/poster_webinar.jpg" target="_blank">

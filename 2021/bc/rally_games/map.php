@@ -37,6 +37,7 @@ if ($bonusBalistmt->rowCount() != 0) {
     <style>
         body {
             color: black;
+            overflow-y: hidden;
         }
 
         .center {
@@ -125,14 +126,6 @@ if ($bonusBalistmt->rowCount() != 0) {
             transition: .2s;
             animation: none;
         }
-
-        #tes1{
-            
-        }
-
-        /* .map path {
-            fill: #464e6b;
-        } */
 
         .for-jkt {
             animation: blinking 2s infinite ease-in-out;
@@ -253,8 +246,8 @@ if ($bonusBalistmt->rowCount() != 0) {
             }
             ?>
         </div>
-        <div class="map px-5 mb-1" style="background-color:rgb(32,31,31);">
-            <<svg xmlns:mapsvg="http://mapsvg.com" viewBox="0 0 976.1 835.45" style="transform: scale(0.5);">
+        <div class="map" style="background-color:rgb(32,31,31);">
+            <svg xmlns:mapsvg="http://mapsvg.com" viewBox="0 0 976.1 835.45" style="transform: scale(0.3); margin-top: -400px">
             
             <title>pulau fix</title>
             <g id="jalan">
