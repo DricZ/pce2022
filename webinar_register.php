@@ -24,10 +24,7 @@ if (isset($_GET['status'])) {
 <html lang="en">
 
 <head>
-    <<<<<<< HEAD <title>PCE 2022 - Webinar Registration</title>
-        =======
-        <title>PCE 2022 - Talk Show Registration</title>
-        >>>>>>> 4d66d3bdd585a9f342bd2a8833a3e6089754d609
+    <title>PCE 2022 - International Talk Show Registration</title>
 </head>
 
 <style>
@@ -414,12 +411,14 @@ body {
 
                 if (fileSize > 1048576 * 5) {
                     $.alert(
-                        "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, ukuran file maksimal adalah 5 MB! Silakan upload ulang.</center></span>");
+                        "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, ukuran file maksimal adalah 5 MB! Silakan upload ulang.</center></span>"
+                        );
                     $(this).val(null);
                 }
                 if (fileType != 'jpg' && fileType != 'jpeg' && fileType != 'png') {
                     $.alert(
-                        "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, silakan upload hanya file image (.jpg, .jpeg, atau .png)!</center></span>");
+                        "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, silakan upload hanya file image (.jpg, .jpeg, atau .png)!</center></span>"
+                        );
                     $(this).val(null);
                 }
             }
@@ -433,12 +432,14 @@ body {
 
             if (fileSize > 1048576 * 5) {
                 $.alert(
-                    "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, ukuran file maksimal adalah 5 MB! Silakan upload ulang.</center></span>");
+                    "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, ukuran file maksimal adalah 5 MB! Silakan upload ulang.</center></span>"
+                    );
                 $(this).val(null);
             }
             if (fileType != 'jpg' && fileType != 'jpeg' && fileType != 'png') {
                 $.alert(
-                    "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, silakan upload hanya file image (.jpg, .jpeg, atau .png)!</center></span>");
+                    "<span style='color: red; font-weight: bold; text-align: center;'><center>Mohon maaf, silakan upload hanya file image (.jpg, .jpeg, atau .png)!</center></span>"
+                    );
                 $(this).val(null);
             }
         }
