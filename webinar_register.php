@@ -24,7 +24,7 @@ if (isset($_GET['status'])) {
 <html lang="en">
 
 <head>
-    <title>PCE 2021 - Webinar Registration</title>
+    <title>PCE 2022 - Talk Show Registration</title>
 </head>
 
 <style>
@@ -33,7 +33,7 @@ if (isset($_GET['status'])) {
     }
 
     body {
-        background-color: var(--whitebrown);
+        background-color: #7FFFD4;
     }
 
     .card:hover {
