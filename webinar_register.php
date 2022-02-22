@@ -24,7 +24,7 @@ if (isset($_GET['status'])) {
 <html lang="en">
 
 <head>
-    <title>PCE 2021 - Webinar Registration</title>
+    <title>PCE 2022 - Webinar Registration</title>
 </head>
 
 <style>
@@ -92,18 +92,18 @@ if (isset($_GET['status'])) {
 
             <div class="row justify-content-center mx-3">
                 <h4 class="title" style="text-align: center;">
-                    <b>PETRA CIVIL EXPO 2021</b>
+                    <b>PETRA CIVIL EXPO 2022</b>
                 </h4>
             </div>
             <div class="row justify-content-center mx-3">
                 <h4 class="title" style="text-align: center;">
-                    <b>INTERNATIONAL WEBINAR</b>
+                    <b>INTERNATIONAL TALKSHOW</b>
                 </h4>
             </div>
 
             <div class="row justify-content-center mt-5 mx-3">
                 <h3 class="title" style="text-align: center; text-shadow: 3px 3px white, 4px 4px white, 5px 5px white;">
-                    <b>"INTO THE INDUSTRY 4.0 ADVANCEMENTS OF TALL BUILDINGS CONSTRUCTIONS"</b>
+                    <b>"INNOVATIVE CONSTRUCTION TECHNOLOGIES FOR AN IMPACTFUL BREAKTHROUGH "</b>
                 </h3>
             </div>
             <div class="justify-content-center mt-3 mx-3">
@@ -111,7 +111,7 @@ if (isset($_GET['status'])) {
                     SAVE THE DATE
                 </h5>
                 <h5 class="title" style="text-align: center;">
-                    <b><i class="fas fa-calendar-alt"></i> Friday, March 5th, 2021</b>
+                    <b><i class="fas fa-calendar-alt"></i> Friday, March 5th, 2022</b>
                 </h5>
                 <h5 class="title" style="text-align: center;">
                     <b><i class="far fa-clock"></i> 14:00 WIB (GMT+7)</b>
@@ -436,7 +436,7 @@ if (isset($_GET['status'])) {
 
                     <div id="row-pay-shs" class="mx-3">
                         <div class="row justify-content-center">
-                            <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Please make a payment transfer to the BCA (Bank Central Asia) account above in accordance with the nominal given. Thank you and enjoy the International Webinar!</h3><br>
+                            <h3 style="font-weight: bold; font-size: 12pt; color: red; text-align: center;">Please make a payment transfer to the BCA (Bank Central Asia) account above in accordance with the nominal given. Thank you and enjoy the INTERNATIONAL TALKSHOW!</h3><br>
                         </div>
 
                     </div>
