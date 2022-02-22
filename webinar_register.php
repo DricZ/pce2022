@@ -144,7 +144,9 @@ if (isset($_GET['status'])) {
                     <b>"The King of Property Australia"</b>
                 </h4>
             </div>
-            <div class="justify-content-center mt-5 mx-3">
+
+            <!-- Video Webinar -->
+            <!-- <div class="justify-content-center mt-5 mx-3">
                 <h5 class="title mb-3" style="text-align: center;">
                     <b>WATCH THE STORY</b>
                 </h5>
@@ -163,9 +165,13 @@ if (isset($_GET['status'])) {
                         }
                     }
                 </style>
-            </div>
+            </div> -->
+            
             <br>
             <br>
+
+            <!-- BELUM FIX -->
+            <!-- Gambar Poster -->
             <div class="row justify-content-center mt-4">
                 <center>
                     <a href="assets/poster_webinar.jpg" target="_blank">
