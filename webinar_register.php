@@ -103,7 +103,7 @@ if (isset($_GET['status'])) {
 
             <div class="row justify-content-center mt-5 mx-3">
                 <h3 class="title" style="text-align: center; text-shadow: 3px 3px white, 4px 4px white, 5px 5px white;">
-                    <b>"INNOVATIVE CONSTRUCTION TECHNOLOGIES FOR AN IMPACTFUL BREAKTHROUGH "</b>
+                    <b>"INNOVATIVE CONSTRUCTION TECHNOLOGIES FOR AN IMPACTFUL BREAKTHROUGH"</b>
                 </h3>
             </div>
             <div class="justify-content-center mt-3 mx-3">
