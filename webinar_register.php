@@ -24,11 +24,7 @@ if (isset($_GET['status'])) {
 <html lang="en">
 
 <head>
-<<<<<<< HEAD
-    <title>PCE 2022 - Webinar Registration</title>
-=======
-    <title>PCE 2022 - Talk Show Registration</title>
->>>>>>> 4d66d3bdd585a9f342bd2a8833a3e6089754d609
+    <title>PCE 2022 - International Talk Show Registration</title>
 </head>
 
 <style>
@@ -118,7 +114,7 @@ if (isset($_GET['status'])) {
                     <b><i class="fas fa-calendar-alt"></i> Friday, March 5th, 2022</b>
                 </h5>
                 <h5 class="title" style="text-align: center;">
-                    <b><i class="far fa-clock"></i> 14:00 WIB (GMT+7)</b>
+                    <b><i class="far fa-clock"></i> 15:00 WIB (GMT+7)</b>
                 </h5>
             </div>
             <div class="justify-content-center mt-5 mx-3">
