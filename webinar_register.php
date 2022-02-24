@@ -471,7 +471,7 @@ body {
                         <h3 style="font-weight: bold; font-size: 18pt; color: red; text-align: center;">Payment</h3>
                     </div>
                     <div class="row justify-content-center">
-                        <img src="assets/webinar_bca.png" alt="bca 6124888888 a/n johan eric" style="width: 300px; height: 200px;">
+                        <img src="assets/webinar_bca.png" alt="bca 7880912822 a/n Roger Matthew " style="width: 300px; height: 200px;">
                     </div>
 
                     <br>
@@ -480,7 +480,7 @@ body {
                         <div class="col-12 col-md-6 offset-md-3">
                             <div class="form-group" align="center">
                                 <h5 for="total_amount" style="font-weight: bold; color: red;">AMOUNT TO BE PAID</h5>
-                                <h5 id="fees" style="font-weight: bold; font-size: 20pt;">Rp30.000,00</h5>
+                                <h5 id="fees" style="font-weight: bold; font-size: 20pt;">Rp15.000,00</h5>
                             </div>
                         </div>
                     </div>
