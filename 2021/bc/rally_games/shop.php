@@ -362,7 +362,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
                                 }
                             } else { //jika tiket terbang
                             //ini tiket terbang
-                                //itemCard = part1 + part2 + ' mt-2' + part2_1 + '35%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5 + `<div class="stok hidden">` + item['stok'] + `</div>` + part4 + ' pt-3' + part4_5;
+                                itemCard = part1 + part2 + ' mt-2' + part2_1 + '35%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5 + `<div class="stok hidden">` + item['stok'] + `</div>` + part4 + ' pt-3' + part4_5;
                             }
                             $("#shop").append(itemCard);
                         });
