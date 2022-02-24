@@ -692,8 +692,13 @@ if (isset($_SESSION['id'])) {
             setTimeout(() => {
                var str = `
                <div style="color: black; font-weight: 500;">
-                  <p style="font-size: 14pt;">Thank you for registering for the Petra Civil Expo 2022's <b>"Into the Industry 4.0 Advancements of Tall Building Constructions"</b> International Webinar!
-                  Your proof of payment (for Indonesian students) and your data will be checked and validated further by the Petra Civil Expo 2022's committee. <br><br> We will give you a payment receipt and the International Webinar's link via <b>e-mail</b> after your data has been confirmed. <br><br> Stay safe and God bless you!</p>
+                  <p style="font-size: 14pt;">Thank you for registering for the Petra Civil Expo 2022's <b>"Innovative Construction Technologies for an Impactful Breakthrough"</b> International Talk Show!
+                  Your proof of payment (for Indonesian students) and your data will be checked and validated further by the Petra Civil Expo 2022's committee. <br><br> We will give you a payment receipt and the International Talk Show's link via <b>e-mail</b> after your data has been confirmed. 
+                  
+                  <br><a type='button' target="_blank" href='http://petra.id/GroupBCSMA' class='btn btn-success' style='-webkit-appearance: none;'><i class="fab fa-whatsapp"></i> JOIN WHATSAPP GROUP<br><b>BRIDGE COMPETITION (SMA)</b></a>
+                  
+                  <br><br> Stay safe and God bless you!</p>
+                  
                </div>
                `;
                this.$content.html(str);
