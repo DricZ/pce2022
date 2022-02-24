@@ -24,11 +24,10 @@
         .cls-6:hover,
         .cls-7:hover,
         .cls-8:hover,
-        .cls-9:hover,
         .cls-10:hover {
             transition: all 0.3s;
             /* fill: red; */
-            filter: drop-shadow(5px 5px 5px blue);
+            filter: drop-shadow(0 0 15px white);
         }
 
         .cls-1 {
@@ -64,16 +63,24 @@
         }
 
         .cls-9 {
-            fill: #fff;
+            fill: #009dc4;
         }
 
         .cls-10 {
             fill: #fbc111;
         }
+
+        .demo_btn {
+            position: fixed;
+            z-index: 2;
+        }
     </style>
 </head>
 
-<body>
+<body style="background-color: #009dc4;">
+    <div class="demo_btn">
+        <button onclick="_zoomOut()" style="width: 20vw; height: 20vh; font-size: 3vw;">zoom out</button>
+    </div>
     <div style="text-align: center;">
         <svg xmlns:mapsvg="http://mapsvg.com" viewBox="0 0 976.1 835.45" id="peta">
             <title>pulau fix</title>
@@ -987,7 +994,7 @@
                     transform="translate(-50.59 -529.05)" />
             </g>
             <g id="pulau">
-                <path id="atas_kiri" onclick="topLeft()" class="cls-1"
+                <path id="atas_kiri" onclick="_zoomIn('atas_kiri')" class="cls-1"
                     d="M417,630.73c18.72,13.32,11.7,12.24,13.07,16.87,3.21,10.86,3.82,24.85,3.56,27.33-.74,7.32-2.29,13.46,1.43,17.35,1.24,1.29,3.46,2.75,5.23,2.14,2.44-.86,2.58-5.18,3.56-12.36,1.68-12.22,2.78-10.62,3.57-19.25.76-8.47-.51-7.72,0-18.77.5-10.9,1.75-11.92,1.18-19.49-.45-6-.73-9.8-2.85-14.49-2.29-5.09-5.06-7.48-4-9.27.57-1,2-1.21,10-.95,9.15.3,9.56.67,13.07.48,6.82-.39,11.18-2.11,11.41-1.43.14.41-1.3,1.52-1.9,1.19-1.05-.58,1.89-4.77.95-9-.43-1.91-1.58-3.6-9.27-9-6.51-4.6-9.77-6.9-11.88-7.6-6.9-2.29-9,.81-18.3,0-2.4-.21-7.54-2-17.82-5.47-12.91-4.4-16-6.11-18.06-9.5-1.34-2.26-1.22-3.6-3.09-5.23-2.53-2.21-5.12-1.8-12.35-2.14-10.88-.51-12.45-1.78-16.16,0a13.27,13.27,0,0,0-6.18,5.7c-1.83,3.54-1,6.61,0,13.31,2.07,14.3.09,13.69,1.9,16.87,3.47,6.1,8.72,4.84,17.58,12.83,4.23,3.81,5.29,6.13,8.32,9.74C394.58,616.13,402.86,625.36,417,630.73Z"
                     transform="translate(-50.59 -529.05)" />
                 <path class="cls-1"
@@ -1431,6 +1438,36 @@
 </body>
 
 <script>
+    var current_isalnd;
+
+    $(document).ready(function () {
+        console.log("tes");
+    });
+
+    function _zoomIn(id_pulau) {
+        document.getElementById('peta').style.padding = "100%";
+        document.getElementById('peta').style.paddingLeft = "125%";
+        document.getElementById('peta').style.transform = "scale(5.0)";
+        setTimeout(() => {
+            $('html, body').animate({
+                scrollTop: $('#' + id_pulau).offset().top - window.innerHeight / 10,
+                scrollLeft: $('#' + id_pulau).offset().left - window.innerWidth / 5
+            }, 500, 'linear');
+        }, 500);
+
+        setTimeout(() => {
+            document.getElementById(id_pulau).style.transition = "all 1s";
+            document.getElementById(id_pulau).style.filter = "drop-shadow(0 0 15px white)";
+        }, 1000);
+        current_isalnd = id_pulau;
+    }
+
+    function _zoomOut() {
+        document.getElementById('peta').style.padding = "1%";
+        document.getElementById('peta').style.paddingLeft = "0%";
+        document.getElementById('peta').style.transform = "scale(1.0)";
+    }
+
     function topLeft() {
         // Metode 1
         // window.location.href = "test_metode1atas.html";
@@ -1438,7 +1475,7 @@
         //Metode 2
         // window.location.href = "map.png";
 
-        // TEMPLATE ZOOM SDH FIX AMAN (haruse)
+        // TEMPLATE ZOOM SDH FIX AMAN
         document.getElementById('peta').style.padding = "100%";
         document.getElementById('peta').style.paddingLeft = "125%";
         document.getElementById('peta').style.transform = "scale(5.0)";
