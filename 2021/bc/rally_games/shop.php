@@ -352,13 +352,11 @@ if ($rowTeam['location_now_id_city'] != 0) {
 
                             if (item['nama'] != 'Tiket Terbang') { //jika bukan tiket terbang
                                 if (item['stok'] > 1) {
-                                    itemCard = part1 + part2 + part2_1 + '30%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5 + `Jumlah stok:&nbsp
-                                            <div class="stok">` + item['stok'] + `</div>` + part4 + ' pt-2' + part4_5;
+                                    itemCard = part1 + part2 + part2_1 + '30%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5  + part4 + ' pt-2' + part4_5;
                                 } else if (item['stok'] == 1) {
-                                    itemCard = part1 + part2 + part2_1 + '30%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5 + 'Stok terakhir' + `<div class="stok hidden">` + item['stok'] + `</div>` + part4 + ' pt-2' + part4_5;
+                                    itemCard = part1 + part2 + part2_1 + '30%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5 + part4 + ' pt-2' + part4_5;
                                 } else {
-                                    itemCard = part1 + ' sold-out' + part2 + part2_1 + '30%' + part2_5 + part3 + ' mt-2' + part3_5 + `Jumlah stok:&nbsp
-                                            <div class="stok">` + item['stok'] + `</div>` + part4 + ' pt-2' + part4_5;
+                                    itemCard = part1 + ' sold-out' + part2 + part2_1 + '30%' + part2_5 + part3 + ' mt-2' + part3_5 + part4 + ' pt-2' + part4_5;
                                 }
                             } else { //jika tiket terbang
                             //ini tiket terbang
