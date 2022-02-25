@@ -11,9 +11,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
+        html,
+        body {
+            background-color: #009dc4;
+        }
+
         #peta {
             height: 90vh;
             transition: all 0.75s;
+        }
+
+        .current {
+            filter: drop-shadow(0 0 25px black);
         }
 
         .cls-1:hover,
@@ -77,7 +86,7 @@
     </style>
 </head>
 
-<body style="background-color: #009dc4;">
+<body>
     <div class="demo_btn">
         <button onclick="_zoomOut()" style="width: 20vw; height: 20vh; font-size: 3vw;">zoom out</button>
     </div>
@@ -1440,9 +1449,9 @@
 <script>
     var current_isalnd;
 
-    $(document).ready(function () {
-        console.log("tes");
-    });
+    // $(document).ready(function () {
+    //     console.log("tes");
+    // });
 
     function _zoomIn(id_pulau) {
         document.getElementById('peta').style.padding = "100%";
@@ -1457,7 +1466,7 @@
 
         setTimeout(() => {
             document.getElementById(id_pulau).style.transition = "all 1s";
-            document.getElementById(id_pulau).style.filter = "drop-shadow(0 0 15px white)";
+            document.getElementById(id_pulau).style.filter = "drop-shadow(0 0 25px black)";
         }, 1000);
         current_isalnd = id_pulau;
     }
@@ -1466,43 +1475,6 @@
         document.getElementById('peta').style.padding = "1%";
         document.getElementById('peta').style.paddingLeft = "0%";
         document.getElementById('peta').style.transform = "scale(1.0)";
-    }
-
-    function topLeft() {
-        // Metode 1
-        // window.location.href = "test_metode1atas.html";
-
-        //Metode 2
-        // window.location.href = "map.png";
-
-        // TEMPLATE ZOOM SDH FIX AMAN
-        document.getElementById('peta').style.padding = "100%";
-        document.getElementById('peta').style.paddingLeft = "125%";
-        document.getElementById('peta').style.transform = "scale(5.0)";
-        setTimeout(() => {
-            $('html, body').animate({
-                scrollTop: $('#atas_kiri').offset().top - window.innerHeight / 10,
-                scrollLeft: $('#atas_kiri').offset().left - window.innerWidth / 5
-            }, 500, 'linear');
-        }, 500);
-    }
-
-    function bottomLeft() {
-        // Metode 1
-        // window.location.href = "test_metode1bawah.html";
-
-        //Metode 2
-        // window.location.href = "map.png";
-
-        document.getElementById('peta').style.padding = "100%";
-        document.getElementById('peta').style.paddingLeft = "125%";
-        document.getElementById('peta').style.transform = "scale(5.0)";
-        setTimeout(() => {
-            $('html, body').animate({
-                scrollTop: $('#bawah_kiri').offset().top - window.innerHeight / 10,
-                scrollLeft: $('#bawah_kiri').offset().left - window.innerWidth / 5
-            }, 500, 'linear');
-        }, 500);
     }
 
     // document.getElementById('peta').style.height = "300vh";
