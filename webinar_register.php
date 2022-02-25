@@ -463,9 +463,9 @@ body {
     });
 
     $("#country").change(function() {
-        if ($("#country").val() == 'International Student' || $("#country").val() == '') {
+        if ( $("#country").val() == '') {
             $('#row-payment').html('')
-        } else if ($("#country").val() == 'Indonesian Student') {
+        } else if ($("#country").val() == 'Indonesian Student' || $("#country").val() == 'International Student') {
             $('#row-payment').html(`
                     <div class="row justify-content-center">
                         <h3 style="font-weight: bold; font-size: 18pt; color: red; text-align: center;">Payment</h3>

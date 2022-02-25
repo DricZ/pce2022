@@ -17,23 +17,11 @@ $stmtTeam = $pdo->prepare($sqlTeam);
 $stmtTeam->execute([$_SESSION['username']]);
 $rowTeam = $stmtTeam->fetch();
 ?>
-<?php
-if ($rowTeam['location_now_id_city'] != 0) {
-?>
 
-    <head>
-        <title>SHOP - <?= $_SESSION['kota'] ?></title>
-    </head>
-<?php
-} else {
-?>
+<head>
+    <title>CRAFT</title>
+</head>
 
-    <head>
-        <title>SHOP</title>
-    </head>
-<?php
-}
-?>
 
 <style>
     .mainshop {
@@ -162,7 +150,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
                     </g>
                 </svg>
             </div>
-            <h1 id="title">SHOP</h1>
+            <h1 id="title">Craft</h1>
 
             <div class="row wallet">
                 <img src="assets/image/bridge coin.png" width="35px" class="mx-2 pt-1">
@@ -174,7 +162,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
             ?>
                 <div class="row wallet" style="margin-top: 5%; z-index:100;" id="p-history">
                     <div class="purchase-history">
-                        <p>Purchase History</p>
+                        <p>Craft History</p>
                     </div>
                 </div>
             <?php
@@ -182,34 +170,13 @@ if ($rowTeam['location_now_id_city'] != 0) {
             ?>
 
         </div>
-
-        <?php
-        if ($rowTeam['location_now_id_city'] == 0) {
-        ?>
-            <div class="container col-md-8 col-12" style="margin-top: 15vh;">
-                <div class="row row-cols-lg-3 row-cols-2">
-                    <!-- Tampilan jika tidak ada info (kosong) -->
-                    <div id="no-content-msg-shop">
-                        <img src="assets/image/nothing-to-say.svg" width="55%">
-                        <h3>Please visit a city to see the shop!</h3>
-                    </div>
-                    <!-- END -->
-                </div>
-            </div>
-        <?php
-        } else {
-        ?>
-            <div class="row col-12 justify-content-center mb-4">
-                <h3 id="city"><?= $getCityNamerow['city_name']; ?></h3>
+            <div class="row col-12 justify-content-center mb-5">
             </div>
             <div class="container col-md-8 col-12">
                 <div class="row row-cols-lg-3 row-cols-2" id="shop">
 
                 </div>
             </div>
-        <?php
-        }
-        ?>
 
         <div class="footer my-5">
             &nbsp
