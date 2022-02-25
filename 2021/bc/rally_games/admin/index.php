@@ -1,5 +1,5 @@
 <?php
-header('Location: ../');
+//header('Location: ../');
 require_once 'phps/connect.php';
 if (isset($_SESSION["usernameAdmin"])) {
     header("location: give_money.php");
