@@ -34,6 +34,16 @@
     <title>MAP</title>
 
     <style>
+    @keyframes slideInLeft {
+        0% {
+            transform: scale(1.0);
+        }
+
+        100% {
+            transform: scale(3.0);
+        }
+    }
+
     body {
         color: black;
         overflow-y: hidden;
@@ -170,13 +180,13 @@
 
     /* NEW */
     #peta {
-            height: 90vh;
-            transition: all 0.75s;
-        }
+        height: 90vh;
+        transition: all 0.75s;
+    }
 
-        .current{
-            filter: drop-shadow(0 0 25px black);
-        }
+    .current {
+        filter: drop-shadow(0 0 25px black);
+    }
 
     #tes1:hover {
         fill: #ff0;
@@ -184,18 +194,23 @@
         animation: none;
     }
 
-    .cls-1:hover,
-        .cls-2:hover,
-        .cls-3:hover,
-        .cls-4:hover,
-        .cls-5:hover,
-        .cls-6:hover,
-        .cls-7:hover,
-        .cls-8:hover,
-        .cls-10:hover {
-            transition: all 0.3s;
-            filter: drop-shadow(0 0 15px white);
-        }
+    /* .cls-1:hover,
+    .cls-2:hover,
+    .cls-3:hover,
+    .cls-4:hover,
+    .cls-5:hover,
+    .cls-6:hover,
+    .cls-7:hover,
+    .cls-8:hover,
+    .cls-10:hover {
+        transition: all 0.3s;
+        filter: drop-shadow(0 0 15px white);
+    } */
+
+    #peta:hover {
+        transition: all 0.3s;
+        filter: drop-shadow(0 0 5px white);
+    }
     </style>
 
 </head>
@@ -276,7 +291,7 @@
     </div>
     <div class="map" style="background-color:rgb(32,31,31); text-align: center;">
         <svg xmlns:mapsvg="http://mapsvg.com" viewBox="0 0 976.1 835.45"
-        style="transform: scale(0.8); padding-bottom: 15vh" id="peta">
+            style="transform: scale(0.8); padding-bottom: 15vh" id="peta" onclick="pindah()">
             <title>pulau fix</title>
             <g id="jalan">
                 <path
@@ -1632,163 +1647,163 @@
 
     <!-- OLD -->
     <script>
-        <?php
+    <?php
                 if ($rowTeam['location_now_id_city'] != 0) {
                 ?>
-        $(function() {
-            var id_kota = <?= $getCityNamerow['id']; ?>;
-            if (id_kota == 1) {
-                $('#jakarta').addClass("for-jkt");
-            } else {
-                $('#jakarta').addClass("jkt");
-            }
-            if (id_kota == 2) {
-                $('#jogja').addClass("current-location");
-            }
-            if (id_kota == 3) {
-                $('#bali').addClass("current-location");
-            }
-            if (id_kota == 4) {
-                $('#lampung').addClass("current-location");
-            }
-            if (id_kota == 5) {
-                $('#banjarmasin').addClass("current-location");
-            }
-            if (id_kota == 6) {
-                $('#jayapura').addClass("current-location");
-            }
-        });
-        <?php
+    $(function() {
+        var id_kota = <?= $getCityNamerow['id']; ?>;
+        if (id_kota == 1) {
+            $('#jakarta').addClass("for-jkt");
+        } else {
+            $('#jakarta').addClass("jkt");
+        }
+        if (id_kota == 2) {
+            $('#jogja').addClass("current-location");
+        }
+        if (id_kota == 3) {
+            $('#bali').addClass("current-location");
+        }
+        if (id_kota == 4) {
+            $('#lampung').addClass("current-location");
+        }
+        if (id_kota == 5) {
+            $('#banjarmasin').addClass("current-location");
+        }
+        if (id_kota == 6) {
+            $('#jayapura').addClass("current-location");
+        }
+    });
+    <?php
                 } else {
                 ?>
-        $('#jakarta').addClass("jkt");
-        <?php
+    $('#jakarta').addClass("jkt");
+    <?php
                 }
                 ?>
 
-        <?php
+    <?php
                 if ($bonusBalistmt->rowCount() != 0) {
                 ?>
 
-        function kunjungiKota(data) {
-            $.confirm({
-                title: 'Kunjungi ' + data + '?',
-                typeAnimated: true,
-                theme: 'modern',
-                draggable: false,
-                columnClass: "col-md-6",
-                buttons: {
-                    confirm: {
-                        text: 'KONFIRMASI',
-                        btnClass: 'btn-green',
-                        action: function() {
-                            $.ajax({
-                                url: "phps/update_location.php",
-                                method: "get",
-                                data: {
-                                    data: data
-                                },
-                                success: function(res) {
-                                    if (res == 'true') {
-                                        Swal.fire({
-                                            position: "center",
-                                            icon: "success",
-                                            title: "Berhasil Mengunjungi " + data + "!",
-                                            showConfirmButton: false,
-                                            timer: 2000
-                                        })
-                                        setTimeout(function() {
-                                            window.location.href = "map.php";
-                                        }, 2000);
-                                    }
-                                    if (res == 'false') {
-                                        Swal.fire({
-                                            position: "center",
-                                            icon: "error",
-                                            title: "Anda Tidak Memiliki Tiket Pesawat! Silakan Membeli Tiket Pesawat di Shop.",
-                                            showConfirmButton: false,
-                                            timer: 3000
-                                        })
-                                    }
+    function kunjungiKota(data) {
+        $.confirm({
+            title: 'Kunjungi ' + data + '?',
+            typeAnimated: true,
+            theme: 'modern',
+            draggable: false,
+            columnClass: "col-md-6",
+            buttons: {
+                confirm: {
+                    text: 'KONFIRMASI',
+                    btnClass: 'btn-green',
+                    action: function() {
+                        $.ajax({
+                            url: "phps/update_location.php",
+                            method: "get",
+                            data: {
+                                data: data
+                            },
+                            success: function(res) {
+                                if (res == 'true') {
+                                    Swal.fire({
+                                        position: "center",
+                                        icon: "success",
+                                        title: "Berhasil Mengunjungi " + data + "!",
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    })
+                                    setTimeout(function() {
+                                        window.location.href = "map.php";
+                                    }, 2000);
                                 }
-                            });
-                        }
-                    },
-                    cancel: {
-                        text: 'BATAL',
-                        btnClass: 'btn-red',
-                        action: function() {}
+                                if (res == 'false') {
+                                    Swal.fire({
+                                        position: "center",
+                                        icon: "error",
+                                        title: "Anda Tidak Memiliki Tiket Pesawat! Silakan Membeli Tiket Pesawat di Shop.",
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                    })
+                                }
+                            }
+                        });
                     }
                 },
-                content: "<div style='color: black; font-size: 12pt; max-height: 300px;'>Apakah Anda yakin akan mengunjungi <b>" +
-                    data +
-                    "</b>?<br><br><b style='font-size: 14pt; color: green;'>TOURISM PARADISE BONUS</b><br>Anda akan mendapatkan 2000 Bridge Money dan terbebas dari tiket pesawat.</div>"
-            });
-        }
-        <?php
+                cancel: {
+                    text: 'BATAL',
+                    btnClass: 'btn-red',
+                    action: function() {}
+                }
+            },
+            content: "<div style='color: black; font-size: 12pt; max-height: 300px;'>Apakah Anda yakin akan mengunjungi <b>" +
+                data +
+                "</b>?<br><br><b style='font-size: 14pt; color: green;'>TOURISM PARADISE BONUS</b><br>Anda akan mendapatkan 2000 Bridge Money dan terbebas dari tiket pesawat.</div>"
+        });
+    }
+    <?php
                 } else {
                 ?>
 
-        function kunjungiKota(data) {
-            $.confirm({
-                title: 'Kunjungi ' + data + '?',
-                typeAnimated: true,
-                theme: 'modern',
-                draggable: false,
-                columnClass: "col-md-6",
-                buttons: {
-                    confirm: {
-                        text: 'KONFIRMASI',
-                        btnClass: 'btn-green',
-                        action: function() {
-                            $.ajax({
-                                url: "phps/update_location.php",
-                                method: "get",
-                                data: {
-                                    data: data
-                                },
-                                success: function(res) {
-                                    if (res == 'true') {
-                                        Swal.fire({
-                                            position: "center",
-                                            icon: "success",
-                                            title: "Berhasil Mengunjungi " + data + "!",
-                                            showConfirmButton: false,
-                                            timer: 2000
-                                        })
-                                        setTimeout(function() {
-                                            window.location.href = "map.php";
-                                        }, 2000);
-                                    }
-                                    if (res == 'false') {
-                                        Swal.fire({
-                                            position: "center",
-                                            icon: "error",
-                                            title: "Anda Tidak Memiliki Tiket Pesawat! Silakan Membeli Tiket Pesawat di Shop.",
-                                            showConfirmButton: false,
-                                            timer: 3000
-                                        })
-                                    }
+    function kunjungiKota(data) {
+        $.confirm({
+            title: 'Kunjungi ' + data + '?',
+            typeAnimated: true,
+            theme: 'modern',
+            draggable: false,
+            columnClass: "col-md-6",
+            buttons: {
+                confirm: {
+                    text: 'KONFIRMASI',
+                    btnClass: 'btn-green',
+                    action: function() {
+                        $.ajax({
+                            url: "phps/update_location.php",
+                            method: "get",
+                            data: {
+                                data: data
+                            },
+                            success: function(res) {
+                                if (res == 'true') {
+                                    Swal.fire({
+                                        position: "center",
+                                        icon: "success",
+                                        title: "Berhasil Mengunjungi " + data + "!",
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    })
+                                    setTimeout(function() {
+                                        window.location.href = "map.php";
+                                    }, 2000);
                                 }
-                            });
-                        }
-                    },
-                    cancel: {
-                        text: 'BATAL',
-                        btnClass: 'btn-red',
-                        action: function() {}
+                                if (res == 'false') {
+                                    Swal.fire({
+                                        position: "center",
+                                        icon: "error",
+                                        title: "Anda Tidak Memiliki Tiket Pesawat! Silakan Membeli Tiket Pesawat di Shop.",
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                    })
+                                }
+                            }
+                        });
                     }
                 },
-                content: "<div style='color: black; font-size: 12pt; max-height: 300px;'>Apakah Anda yakin akan mengunjungi <b>" +
-                    data +
-                    "</b>?<br><span style='color: red; font-weight: bold;'>1 (satu) tiket pesawat</span> akan dikurangi dari inventory Anda.</div>"
-            });
-        }
-        <?php
+                cancel: {
+                    text: 'BATAL',
+                    btnClass: 'btn-red',
+                    action: function() {}
+                }
+            },
+            content: "<div style='color: black; font-size: 12pt; max-height: 300px;'>Apakah Anda yakin akan mengunjungi <b>" +
+                data +
+                "</b>?<br><span style='color: red; font-weight: bold;'>1 (satu) tiket pesawat</span> akan dikurangi dari inventory Anda.</div>"
+        });
+    }
+    <?php
                 }
                 ?>
 
-        <?php
+    <?php
                 $checkLocationsql = "SELECT * FROM team WHERE username = ?";
                 $checkLocationstmt = $pdo->prepare($checkLocationsql);
                 $checkLocationstmt->execute([$_SESSION['username']]);
@@ -1796,801 +1811,801 @@
 
                 if ($checkLocationrow['location_now_id_city'] == 0) {
                 ?>
-        $('#jayapura').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'JAYAPURA',
-                theme: 'modern',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Jembatan Hotel Kamp</h5>' +
-                    '<h6>menambah total Bridge Point sebanyak 15% di akhir game</h6>' +
-                    '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Jembatan Hotel Kamp terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
-                buttons: {
-                    pilih_kota: {
-                        text: 'Pilih Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            window.location.href = 'phps/update_location.php?stat=6';
-                        }
+    $('#jayapura').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'JAYAPURA',
+            theme: 'modern',
+            content: '' +
+                '<h5 style="font-weight: bold;">Jembatan Hotel Kamp</h5>' +
+                '<h6>menambah total Bridge Point sebanyak 15% di akhir game</h6>' +
+                '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Jembatan Hotel Kamp terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
+            buttons: {
+                pilih_kota: {
+                    text: 'Pilih Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        window.location.href = 'phps/update_location.php?stat=6';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        $('#jakarta').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'JAKARTA',
-                theme: 'modern',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Monumen Nasional</h5>' +
-                    '<h6>mendapatkan 2000 Bridge Point</h6>' +
-                    '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Monumen Nasional terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
-                buttons: {
-                    pilih_kota: {
-                        text: 'Pilih Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            window.location.href = 'phps/update_location.php?stat=1';
-                        }
+    });
+    $('#jakarta').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'JAKARTA',
+            theme: 'modern',
+            content: '' +
+                '<h5 style="font-weight: bold;">Monumen Nasional</h5>' +
+                '<h6>mendapatkan 2000 Bridge Point</h6>' +
+                '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Monumen Nasional terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
+            buttons: {
+                pilih_kota: {
+                    text: 'Pilih Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        window.location.href = 'phps/update_location.php?stat=1';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        $('#jogja').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'JOGJAKARTA',
-                theme: 'modern',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Candi Borobudur</h5>' +
-                    '<h6>mengurangi 1 buah bahan bangunan pilihan setiap membangun bangunan</h6>',
-                buttons: {
-                    pilih_kota: {
-                        text: 'Pilih Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            window.location.href =
-                                'phps/update_location.php?stat=2'; // stat e gae jogja nek location_now_id_city == 0
-                        }
+    });
+    $('#jogja').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'JOGJAKARTA',
+            theme: 'modern',
+            content: '' +
+                '<h5 style="font-weight: bold;">Candi Borobudur</h5>' +
+                '<h6>mengurangi 1 buah bahan bangunan pilihan setiap membangun bangunan</h6>',
+            buttons: {
+                pilih_kota: {
+                    text: 'Pilih Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        window.location.href =
+                            'phps/update_location.php?stat=2'; // stat e gae jogja nek location_now_id_city == 0
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        $('#bali').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'BALI',
-                theme: 'modern',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Tourism Paradise</h5>' +
-                    '<h6>mendapatkan 2000 Bridge Money setiap berpindah kota, mengurangi cooldown berpindah kota sebanyak 5 menit (menjadi 15 menit), dan akan terbebas dari tiket terbang</h6>',
-                buttons: {
-                    pilih_kota: {
-                        text: 'Pilih Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            window.location.href = 'phps/update_location.php?stat=3';
-                        }
+    });
+    $('#bali').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'BALI',
+            theme: 'modern',
+            content: '' +
+                '<h5 style="font-weight: bold;">Tourism Paradise</h5>' +
+                '<h6>mendapatkan 2000 Bridge Money setiap berpindah kota, mengurangi cooldown berpindah kota sebanyak 5 menit (menjadi 15 menit), dan akan terbebas dari tiket terbang</h6>',
+            buttons: {
+                pilih_kota: {
+                    text: 'Pilih Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        window.location.href = 'phps/update_location.php?stat=3';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        $('#banjarmasin').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'BANJARMASIN',
-                theme: 'modern',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Hutan</h5>' +
-                    '<h6>mendapatkan 2 bonus kayu tiap sub-sesi berakhir (tiap 20 menit)</h6>',
+    });
+    $('#banjarmasin').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'BANJARMASIN',
+            theme: 'modern',
+            content: '' +
+                '<h5 style="font-weight: bold;">Hutan</h5>' +
+                '<h6>mendapatkan 2 bonus kayu tiap sub-sesi berakhir (tiap 20 menit)</h6>',
 
-                buttons: {
-                    pilih_kota: {
-                        text: 'Pilih Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            window.location.href = 'phps/update_location.php?stat=5';
-                        }
+            buttons: {
+                pilih_kota: {
+                    text: 'Pilih Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        window.location.href = 'phps/update_location.php?stat=5';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        $('#lampung').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'LAMPUNG',
-                theme: 'modern',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Menara Siger</h5>' +
-                    '<h6>mengurangi kebutuhan pekerja sebesar 1 (untuk bangunan dengan 2 pekerja atau lebih)</h6>',
-                buttons: {
-                    pilih_kota: {
-                        text: 'Pilih Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            window.location.href = 'phps/update_location.php?stat=4';
-                        }
+    });
+    $('#lampung').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'LAMPUNG',
+            theme: 'modern',
+            content: '' +
+                '<h5 style="font-weight: bold;">Menara Siger</h5>' +
+                '<h6>mengurangi kebutuhan pekerja sebesar 1 (untuk bangunan dengan 2 pekerja atau lebih)</h6>',
+            buttons: {
+                pilih_kota: {
+                    text: 'Pilih Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        window.location.href = 'phps/update_location.php?stat=4';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                 } else {
                     if ($checkLocationrow['location_now_id_city'] == 6) {
                     ?>
-        $('#jayapura').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'JAYAPURA',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Jembatan Hotel Kamp</h5>' +
-                    '<h6>menambah total Bridge Point sebanyak 15% di akhir game</h6>' +
-                    '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Jembatan Hotel Kamp terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Jayapura';
-                        }
-                    },
-                    bangun_bangunan: {
-                        text: 'Bangun Bangunan',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            <?php
+    $('#jayapura').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'JAYAPURA',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Jembatan Hotel Kamp</h5>' +
+                '<h6>menambah total Bridge Point sebanyak 15% di akhir game</h6>' +
+                '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Jembatan Hotel Kamp terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Jayapura';
+                    }
+                },
+                bangun_bangunan: {
+                    text: 'Bangun Bangunan',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        <?php
                                             //CEK BONUS YOGYAKARTA
                                             $bonusYogyasql = "SELECT * FROM `team_constructed_landmark` WHERE id_landmark = 2 AND id_team = ?";
                                             $bonusYogyastmt = $pdo->prepare($bonusYogyasql);
                                             $bonusYogyastmt->execute([$rowTeam['id']]);
                                             if ($bonusYogyastmt->rowCount() != 0) {
                                             ?>
-                            window.location.href = 'build_efek_jogja.php';
-                            <?php
+                        window.location.href = 'build_efek_jogja.php';
+                        <?php
                                             } else {
                                             ?>
-                            window.location.href = 'build.php';
-                            <?php
+                        window.location.href = 'build.php';
+                        <?php
                                             }
                                             ?>
-                        }
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                     } else {
                         if (strtotime($timestamp) >= $disableCooldown) {
                         ?>
-        $('#jayapura').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'JAYAPURA',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Jembatan Hotel Kamp</h5>' +
-                    '<h6>menambah total Bridge Point sebanyak 15% di akhir game</h6>' +
-                    '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Jembatan Hotel Kamp terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Jayapura';
-                        }
-                    },
-                    kunjungi_kota: {
-                        text: 'Kunjungi Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            kunjungiKota('Jayapura');
-                        }
+    $('#jayapura').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'JAYAPURA',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Jembatan Hotel Kamp</h5>' +
+                '<h6>menambah total Bridge Point sebanyak 15% di akhir game</h6>' +
+                '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Jembatan Hotel Kamp terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Jayapura';
                     }
                 },
-                draggable: false,
-                closeIcon: true
-            });
+                kunjungi_kota: {
+                    text: 'Kunjungi Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        kunjungiKota('Jayapura');
+                    }
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         } else {
                         ?>
-        $('#jayapura').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'JAYAPURA',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Jembatan Hotel Kamp</h5>' +
-                    '<h6>menambah total Bridge Point sebanyak 15% di akhir game</h6>' +
-                    '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Jembatan Hotel Kamp terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>' +
-                    '<br><br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
-                    '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Jayapura';
-                        }
+    $('#jayapura').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'JAYAPURA',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Jembatan Hotel Kamp</h5>' +
+                '<h6>menambah total Bridge Point sebanyak 15% di akhir game</h6>' +
+                '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Jembatan Hotel Kamp terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>' +
+                '<br><br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
+                '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Jayapura';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         }
                     }
 
                     if ($checkLocationrow['location_now_id_city'] == 1) {
                         ?>
-        $('#jakarta').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'JAKARTA',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Monumen Nasional</h5>' +
-                    '<h6>mendapatkan 2000 Bridge Point</h6>' +
-                    '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Monumen Nasional terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Jakarta';
-                        }
-                    },
-                    bangun_bangunan: {
-                        text: 'Bangun Bangunan',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            <?php
+    $('#jakarta').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'JAKARTA',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Monumen Nasional</h5>' +
+                '<h6>mendapatkan 2000 Bridge Point</h6>' +
+                '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Monumen Nasional terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Jakarta';
+                    }
+                },
+                bangun_bangunan: {
+                    text: 'Bangun Bangunan',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        <?php
                                             //CEK BONUS YOGYAKARTA
                                             $bonusYogyasql = "SELECT * FROM `team_constructed_landmark` WHERE id_landmark = 2 AND id_team = ?";
                                             $bonusYogyastmt = $pdo->prepare($bonusYogyasql);
                                             $bonusYogyastmt->execute([$rowTeam['id']]);
                                             if ($bonusYogyastmt->rowCount() != 0) {
                                             ?>
-                            window.location.href = 'build_efek_jogja.php';
-                            <?php
+                        window.location.href = 'build_efek_jogja.php';
+                        <?php
                                             } else {
                                             ?>
-                            window.location.href = 'build.php';
-                            <?php
+                        window.location.href = 'build.php';
+                        <?php
                                             }
                                             ?>
-                        }
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                     } else {
                         if (strtotime($timestamp) >= $disableCooldown) {
                         ?>
-        $('#jakarta').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'JAKARTA',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Monumen Nasional</h5>' +
-                    '<h6>mendapatkan 2000 Bridge Point</h6>' +
-                    '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Monumen Nasional terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Jakarta';
-                        }
-                    },
-                    kunjungi_kota: {
-                        text: 'Kunjungi Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            kunjungiKota('Jakarta');
-                        }
+    $('#jakarta').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'JAKARTA',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Monumen Nasional</h5>' +
+                '<h6>mendapatkan 2000 Bridge Point</h6>' +
+                '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Monumen Nasional terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Jakarta';
                     }
                 },
-                draggable: false,
-                closeIcon: true
-            });
+                kunjungi_kota: {
+                    text: 'Kunjungi Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        kunjungiKota('Jakarta');
+                    }
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         } else {
                         ?>
-        $('#jakarta').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'JAKARTA',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Monumen Nasional</h5>' +
-                    '<h6>mendapatkan 2000 Bridge Point</h6>' +
-                    '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Monumen Nasional terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>' +
-                    '<br><br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
-                    '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Jakarta';
-                        }
+    $('#jakarta').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'JAKARTA',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Monumen Nasional</h5>' +
+                '<h6>mendapatkan 2000 Bridge Point</h6>' +
+                '<br><a style="color: red;">terbatas kepada <b>1 team pertama</b> yang mendapatkan Monumen Nasional terlebih dahulu di tiap sub-sesi (tiap 20 menit)</a>' +
+                '<br><br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
+                '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Jakarta';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         }
                         ?>
-        <?php
+    <?php
                     }
 
                     if ($checkLocationrow['location_now_id_city'] == 3) {
                     ?>
-        $('#bali').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'BALI',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Tourism Paradise</h5>' +
-                    '<h6>mendapatkan 2000 Bridge Money setiap berpindah kota, mengurangi cooldown berpindah kota sebanyak 5 menit (menjadi 15 menit), dan akan terbebas dari tiket terbang</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Bali';
-                        }
-                    },
-                    bangun_bangunan: {
-                        text: 'Bangun Bangunan',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            <?php
+    $('#bali').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'BALI',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Tourism Paradise</h5>' +
+                '<h6>mendapatkan 2000 Bridge Money setiap berpindah kota, mengurangi cooldown berpindah kota sebanyak 5 menit (menjadi 15 menit), dan akan terbebas dari tiket terbang</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Bali';
+                    }
+                },
+                bangun_bangunan: {
+                    text: 'Bangun Bangunan',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        <?php
                                             //CEK BONUS YOGYAKARTA
                                             $bonusYogyasql = "SELECT * FROM `team_constructed_landmark` WHERE id_landmark = 2 AND id_team = ?";
                                             $bonusYogyastmt = $pdo->prepare($bonusYogyasql);
                                             $bonusYogyastmt->execute([$rowTeam['id']]);
                                             if ($bonusYogyastmt->rowCount() != 0) {
                                             ?>
-                            window.location.href = 'build_efek_jogja.php';
-                            <?php
+                        window.location.href = 'build_efek_jogja.php';
+                        <?php
                                             } else {
                                             ?>
-                            window.location.href = 'build.php';
-                            <?php
+                        window.location.href = 'build.php';
+                        <?php
                                             }
                                             ?>
-                        }
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                     } else {
                         if (strtotime($timestamp) >= $disableCooldown) {
                         ?>
-        $('#bali').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'BALI',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Tourism Paradise</h5>' +
-                    '<h6>mendapatkan 2000 Bridge Money setiap berpindah kota, mengurangi cooldown berpindah kota sebanyak 5 menit (menjadi 15 menit), dan akan terbebas dari tiket terbang</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Bali';
-                        }
-                    },
-                    kunjungi_kota: {
-                        text: 'Kunjungi Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            kunjungiKota('Bali');
-                        }
+    $('#bali').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'BALI',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Tourism Paradise</h5>' +
+                '<h6>mendapatkan 2000 Bridge Money setiap berpindah kota, mengurangi cooldown berpindah kota sebanyak 5 menit (menjadi 15 menit), dan akan terbebas dari tiket terbang</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Bali';
                     }
                 },
-                draggable: false,
-                closeIcon: true
-            });
+                kunjungi_kota: {
+                    text: 'Kunjungi Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        kunjungiKota('Bali');
+                    }
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         } else {
                         ?>
-        $('#bali').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'BALI',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Tourism Paradise</h5>' +
-                    '<h6>mendapatkan 2000 Bridge Money setiap berpindah kota, mengurangi cooldown berpindah kota sebanyak 5 menit (menjadi 15 menit), dan akan terbebas dari tiket terbang</h6>' +
-                    '<br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
-                    '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Bali';
-                        }
+    $('#bali').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'BALI',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Tourism Paradise</h5>' +
+                '<h6>mendapatkan 2000 Bridge Money setiap berpindah kota, mengurangi cooldown berpindah kota sebanyak 5 menit (menjadi 15 menit), dan akan terbebas dari tiket terbang</h6>' +
+                '<br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
+                '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Bali';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         }
                         ?>
-        <?php
+    <?php
                     }
 
                     if ($checkLocationrow['location_now_id_city'] == 5) {
                     ?>
-        $('#banjarmasin').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'BANJARMASIN',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Hutan</h5>' +
-                    '<h6>mendapatkan 2 bonus kayu tiap sub-sesi berakhir (tiap 20 menit)</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Banjarmasin';
-                        }
-                    },
-                    bangun_bangunan: {
-                        text: 'Bangun Bangunan',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            <?php
+    $('#banjarmasin').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'BANJARMASIN',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Hutan</h5>' +
+                '<h6>mendapatkan 2 bonus kayu tiap sub-sesi berakhir (tiap 20 menit)</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Banjarmasin';
+                    }
+                },
+                bangun_bangunan: {
+                    text: 'Bangun Bangunan',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        <?php
                                             //CEK BONUS YOGYAKARTA
                                             $bonusYogyasql = "SELECT * FROM `team_constructed_landmark` WHERE id_landmark = 2 AND id_team = ?";
                                             $bonusYogyastmt = $pdo->prepare($bonusYogyasql);
                                             $bonusYogyastmt->execute([$rowTeam['id']]);
                                             if ($bonusYogyastmt->rowCount() != 0) {
                                             ?>
-                            window.location.href = 'build_efek_jogja.php';
-                            <?php
+                        window.location.href = 'build_efek_jogja.php';
+                        <?php
                                             } else {
                                             ?>
-                            window.location.href = 'build.php';
-                            <?php
+                        window.location.href = 'build.php';
+                        <?php
                                             }
                                             ?>
-                        }
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                     } else {
                         if (strtotime($timestamp) >= $disableCooldown) {
                         ?>
-        $('#banjarmasin').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'BANJARMASIN',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Hutan</h5>' +
-                    '<h6>mendapatkan 2 bonus kayu tiap sub-sesi berakhir (tiap 20 menit)</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Banjarmasin';
-                        }
-                    },
-                    kunjungi_kota: {
-                        text: 'Kunjungi Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            kunjungiKota('Banjarmasin');
-                        }
+    $('#banjarmasin').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'BANJARMASIN',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Hutan</h5>' +
+                '<h6>mendapatkan 2 bonus kayu tiap sub-sesi berakhir (tiap 20 menit)</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Banjarmasin';
                     }
                 },
-                draggable: false,
-                closeIcon: true
-            });
+                kunjungi_kota: {
+                    text: 'Kunjungi Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        kunjungiKota('Banjarmasin');
+                    }
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         } else {
                         ?>
-        $('#banjarmasin').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'BANJARMASIN',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Hutan</h5>' +
-                    '<h6>mendapatkan 2 bonus kayu tiap sub-sesi berakhir (tiap 20 menit)</h6>' +
-                    '<br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
-                    '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Banjarmasin';
-                        }
+    $('#banjarmasin').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'BANJARMASIN',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Hutan</h5>' +
+                '<h6>mendapatkan 2 bonus kayu tiap sub-sesi berakhir (tiap 20 menit)</h6>' +
+                '<br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
+                '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Banjarmasin';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         }
                         ?>
-        <?php
+    <?php
                     }
 
                     if ($checkLocationrow['location_now_id_city'] == 4) {
                     ?>
-        $('#lampung').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'LAMPUNG',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Menara Siger</h5>' +
-                    '<h6>mengurangi kebutuhan pekerja sebesar 1 (untuk bangunan dengan 2 pekerja atau lebih)</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Lampung';
-                        }
-                    },
-                    bangun_bangunan: {
-                        text: 'Bangun Bangunan',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            <?php
+    $('#lampung').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'LAMPUNG',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Menara Siger</h5>' +
+                '<h6>mengurangi kebutuhan pekerja sebesar 1 (untuk bangunan dengan 2 pekerja atau lebih)</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Lampung';
+                    }
+                },
+                bangun_bangunan: {
+                    text: 'Bangun Bangunan',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        <?php
                                             //CEK BONUS YOGYAKARTA
                                             $bonusYogyasql = "SELECT * FROM `team_constructed_landmark` WHERE id_landmark = 2 AND id_team = ?";
                                             $bonusYogyastmt = $pdo->prepare($bonusYogyasql);
                                             $bonusYogyastmt->execute([$rowTeam['id']]);
                                             if ($bonusYogyastmt->rowCount() != 0) {
                                             ?>
-                            window.location.href = 'build_efek_jogja.php';
-                            <?php
+                        window.location.href = 'build_efek_jogja.php';
+                        <?php
                                             } else {
                                             ?>
-                            window.location.href = 'build.php';
-                            <?php
+                        window.location.href = 'build.php';
+                        <?php
                                             }
                                             ?>
-                        }
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                     } else {
                         if (strtotime($timestamp) >= $disableCooldown) {
                         ?>
-        $('#lampung').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'LAMPUNG',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Menara Siger</h5>' +
-                    '<h6>mengurangi kebutuhan pekerja sebesar 1 (untuk bangunan dengan 2 pekerja atau lebih)</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Lampung';
-                        }
-                    },
-                    kunjungi_kota: {
-                        text: 'Kunjungi Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            kunjungiKota('Lampung');
-                        }
+    $('#lampung').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'LAMPUNG',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Menara Siger</h5>' +
+                '<h6>mengurangi kebutuhan pekerja sebesar 1 (untuk bangunan dengan 2 pekerja atau lebih)</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Lampung';
                     }
                 },
-                draggable: false,
-                closeIcon: true
-            });
+                kunjungi_kota: {
+                    text: 'Kunjungi Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        kunjungiKota('Lampung');
+                    }
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         } else {
                         ?>
-        $('#lampung').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'LAMPUNG',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Menara Siger</h5>' +
-                    '<h6>mengurangi kebutuhan pekerja sebesar 1 (untuk bangunan dengan 2 pekerja atau lebih)</h6>' +
-                    '<br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
-                    '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Lampung';
-                        }
+    $('#lampung').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'LAMPUNG',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Menara Siger</h5>' +
+                '<h6>mengurangi kebutuhan pekerja sebesar 1 (untuk bangunan dengan 2 pekerja atau lebih)</h6>' +
+                '<br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
+                '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Lampung';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         }
                     }
 
                     if ($checkLocationrow['location_now_id_city'] == 2) {
                         ?>
-        $('#jogja').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'YOGYAKARTA',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Candi Borobudur</h5>' +
-                    '<h6>mengurangi 1 buah bahan bangunan pilihan setiap membangun bangunan</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Yogyakarta';
-                        }
-                    },
-                    bangun_bangunan: {
-                        text: 'Bangun Bangunan',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            <?php
+    $('#jogja').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'YOGYAKARTA',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Candi Borobudur</h5>' +
+                '<h6>mengurangi 1 buah bahan bangunan pilihan setiap membangun bangunan</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Yogyakarta';
+                    }
+                },
+                bangun_bangunan: {
+                    text: 'Bangun Bangunan',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        <?php
                                             //CEK BONUS YOGYAKARTA
                                             $bonusYogyasql = "SELECT * FROM `team_constructed_landmark` WHERE id_landmark = 2 AND id_team = ?";
                                             $bonusYogyastmt = $pdo->prepare($bonusYogyasql);
                                             $bonusYogyastmt->execute([$rowTeam['id']]);
                                             if ($bonusYogyastmt->rowCount() != 0) {
                                             ?>
-                            window.location.href = 'build_efek_jogja.php';
-                            <?php
+                        window.location.href = 'build_efek_jogja.php';
+                        <?php
                                             } else {
                                             ?>
-                            window.location.href = 'build.php';
-                            <?php
+                        window.location.href = 'build.php';
+                        <?php
                                             }
                                             ?>
-                        }
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                     } else {
                         if (strtotime($timestamp) >= $disableCooldown) {
                         ?>
-        $('#jogja').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'YOGYAKARTA',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Candi Borobudur</h5>' +
-                    '<h6>mengurangi 1 buah bahan bangunan pilihan setiap membangun bangunan</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Yogyakarta';
-                        }
-                    },
-                    kunjungi_kota: {
-                        text: 'Kunjungi Kota',
-                        btnClass: 'btn-success',
-                        action: function() {
-                            kunjungiKota('Yogyakarta');
-                        }
+    $('#jogja').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'YOGYAKARTA',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Candi Borobudur</h5>' +
+                '<h6>mengurangi 1 buah bahan bangunan pilihan setiap membangun bangunan</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Yogyakarta';
                     }
                 },
-                draggable: false,
-                closeIcon: true
-            });
+                kunjungi_kota: {
+                    text: 'Kunjungi Kota',
+                    btnClass: 'btn-success',
+                    action: function() {
+                        kunjungiKota('Yogyakarta');
+                    }
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         } else {
                         ?>
-        $('#jogja').on('click', function() {
-            $.alert({
-                backgroundDismiss: true,
-                title: 'YOGYAKARTA',
-                theme: 'modern',
-                columnClass: 'col-md-5',
-                content: '' +
-                    '<h5 style="font-weight: bold;">Candi Borobudur</h5>' +
-                    '<h6>mengurangi 1 buah bahan bangunan pilihan setiap membangun bangunan</h6>' +
-                    '<br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
-                    '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
-                buttons: {
-                    lihat_bangunan: {
-                        text: 'Lihat Bangunan',
-                        btnClass: 'btn-primary',
-                        action: function() {
-                            window.location.href = 'constructed_building.php?city=Yogyakarta';
-                        }
+    $('#jogja').on('click', function() {
+        $.alert({
+            backgroundDismiss: true,
+            title: 'YOGYAKARTA',
+            theme: 'modern',
+            columnClass: 'col-md-5',
+            content: '' +
+                '<h5 style="font-weight: bold;">Candi Borobudur</h5>' +
+                '<h6>mengurangi 1 buah bahan bangunan pilihan setiap membangun bangunan</h6>' +
+                '<br><h5 style="color: black;">Anda sedang berada dalam mode cooldown terbang (berpindah kota) selama <b style="color: red;"><?= intval(($disableCooldown - strtotime($timestamp)) / 60) + 1 ?> menit</b>!</h5>' +
+                '<br><h6>Silakan refresh browser Anda untuk refresh cooldown.</h6>',
+            buttons: {
+                lihat_bangunan: {
+                    text: 'Lihat Bangunan',
+                    btnClass: 'btn-primary',
+                    action: function() {
+                        window.location.href = 'constructed_building.php?city=Yogyakarta';
                     }
-                },
-                draggable: false,
-                closeIcon: true
-            });
+                }
+            },
+            draggable: false,
+            closeIcon: true
         });
-        <?php
+    });
+    <?php
                         }
                     }
                 }
@@ -2634,7 +2649,11 @@ function _zoomOut() {
 }
 
 function pindah() {
-    document.location.href = "test_map.html";
+    document.body.style.animation = "1s ease-out 0s 1 slideInLeft";
+    setTimeout(() => {
+        document.location.href = "test_map.html";
+    }, 1000);
+
 }
 
 // document.getElementById('peta').style.height = "300vh";
