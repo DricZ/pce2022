@@ -39,7 +39,8 @@
             <div class="container">
               <div class='row'>
                 <div class='col-sm-4'>
-                  <img class="card-img-top g_jembatan" src="assets/image/jembatan Baja.png" alt="Card image">
+                  <img id="j1" onclick="on('j1')" class="card-img-top g_jembatan" src="assets/image/jembatan Baja.png"
+                    alt="Card image">
                 </div>
                 <div class='col-sm-4'>
                   <img class="card-img-top g_jembatan" src="assets/image/jembatan Kayu.png" alt="Card image">
@@ -61,10 +62,19 @@
           </div>
         </div>
       </div>
-
     </div>
 
 
 </body>
+
+<script>
+  function on(id) {
+    document.getElementById(id).style.backgroundColor = "yellow";
+  }
+
+  function off(id) {
+    document.getElementById(id).style.backgroundColor = "putih";
+  }
+</script>
 
 </html>
