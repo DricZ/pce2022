@@ -216,14 +216,19 @@ if ($rowTeam['location_now_id_city'] != 0) {
         </div>
     </div>
     <div id="containerPurchaseHistory">
-        <div id="history-header" class="text-left mb-3">
+        <div id="history-header" class="text-left">
             <h1> Your Purchase History </h1>
+        </div>
+
+        <div class="goback" id="p-goback">
+            <div class="purchase-goback mb-3">
+                <p>Go Back To Shop <--</p>
+            </div>
         </div>
 
         <div id="history-rowcol" class="d-flex">
             <p>Nama Barang</p>
             <p>Jumlah Pembelian</p>
-            <p>Kota Beli</p>
             <p>Total Harga</p>
         </div>
 
@@ -231,11 +236,6 @@ if ($rowTeam['location_now_id_city'] != 0) {
 
         </div>
 
-        <div class="goback" style="margin-top: 5%;" id="p-goback">
-            <div class="purchase-goback">
-                <p>Go Back To Shop <--</p>
-            </div>
-        </div>
         <div class="footer my-5">
             &nbsp
         </div>
@@ -272,7 +272,6 @@ if ($rowTeam['location_now_id_city'] != 0) {
                             <img src="assets/image/` + d.image + `" class="history-picture mr-3">
                             <p class="history-item-name">` + d.resource_name + `</p>
                             <p class="history-item-qty">` + d.count + `</p>
-                            <p class="history-item-kota">` + d.city_name + `</p>
                             <p class="history-item-harga">` + d.price + `</p>
                         </div>
                     `;
