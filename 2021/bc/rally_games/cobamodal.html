@@ -12,11 +12,6 @@
     .g_jembatan {
       width: 100%;
     }
-
-    .g_jembatan:hover {
-      transition: all 0.3s;
-      filter: drop-shadow(0 0 15px white);
-    }
   </style>
 </head>
 
@@ -58,19 +53,47 @@
                     src="assets/image/jembatan Beton.png" alt="Card image">
                 </div>
 
-                <div class="col-12">
-                  <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilih model
-                      <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Biasa</a></li>
-                      <li><a href="#">Proteksi</a></li>
-                    </ul>
-                  </div>
+                <!-- Jembatan Kayu -->
+                <div class="col-12 hidden" id="desckayu">
+                  <center><h1>Jembatan Kayu</h1></center>
 
-                  <p>pekerja 1</p>
+                  <h4>Bahan-bahan yang diperluhkan:</h4>
+
+                  <p>
+                    1x pekerja <br>
+                    3x kayu
+                  </p>
                 </div>
 
+                <!-- Jembatan Baja -->
+                <div class="col-12 hidden" id="descbaja">
+                  <center><h1>Jembatan Baja</h1></center>
+
+                  <h4>Bahan-bahan yang diperluhkan:</h4>
+
+                  <p>
+                    2x pekerja <br>
+                    2x besi <br>
+                    1x kayu<br>
+                    1x semen<br>
+                    1x pasir
+                  </p>
+                </div>
+
+                <!-- Jembatan Beton -->
+                <div class="col-12 hidden" id="descbeton">
+                  <center><h1>Jembatan Beton</h1></center>
+
+                  <h4>Bahan-bahan yang diperluhkan:</h4>
+
+                  <p>
+                    2x pekerja<br>
+                    3x besi<br>
+                    3x semen<br>
+                    2x pasir<br>
+                    2x kayu
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -89,6 +112,7 @@
 
 <script>
   var arr_j = ['jmbkayu', 'jmbbaja', 'jmbbeton'];
+  var arr_j2 = ['desckayu', 'descbaja', 'descbeton']
 
   function on(id) {
     for (let i = 0; i < arr_j.length; i++) {
@@ -96,6 +120,18 @@
         off(arr_j[i]);
       } else {
         document.getElementById(id).style.backgroundColor = "yellow";
+        desckay(arr_j2[i])
+      }
+    }
+  }
+
+  function desckay(id) {
+    for (let i = 0; i < arr_j.length; i++) {
+      if (arr_j2[i] != id) {
+        document.getElementById(arr_j2[i]).classList.add('hidden');
+
+      } else {
+        document.getElementById(arr_j2[i]).classList.remove('hidden');
       }
     }
   }
