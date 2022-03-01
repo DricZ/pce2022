@@ -20,6 +20,7 @@ $rowTeam = $stmtTeam->fetch();
 
 <head>
     <title>CRAFT</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 
@@ -157,7 +158,7 @@ $rowTeam = $stmtTeam->fetch();
                 <div class="uang pr-4"><?= number_format($rowTeam['money'],0,',','.'); ?></div>
             </div>
 
-            <select class="form-control" id="jenis_bom" name="jenis_bom" style="margin-top:8%; height:40px; font-size: 12pt;" required>
+            <select class="form-control" id="jenis_bom" name="jenis_bom" style="margin-top:8%; height:40px; font-size: 12pt;margin-bottom:3cm;" required>
             <option value="">Select bom for your life...</option>
             <option value="bom1">bom lv1</option>
             <option value="bom2">bom lv2</option>
@@ -168,23 +169,51 @@ $rowTeam = $stmtTeam->fetch();
             </select>
             <div id="boom_1" hidden>
             <div class="row">
-                <div class="col">
-                <div>
-                    <div class="card card-body">
-                    muncul bahan yang di pake
-                    <img src="assets/image/BOMB LV1.png" width="200 px">
-                    <a href="#" class="btn btn-primary" onclick="">craft</a>
+            <div class="col"> 
+                <div class="row">
+                    <div class="col-4">
+                    <img src="assets/image/BOMB LV 1.png" alt="" style="width: 10cm;">
+                    </div>
+                    <div class="col-4">
+                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
                     </div>
                 </div>
-                </div>
+                  <div class="row">
+                    <div class="col-2">
+                      <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
+                      <b>1x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                      <b>1x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                      <b>1x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                      <b>1x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                      <b>2x</b>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
             </div>
+            <p></p>
+            <p></p>
+            <p></p>
+           
+        </div>
             </div>
             <div id="boom_2" hidden>
             <div class="row">
                 <div class="col">
                     <div >
                     <div class="card card-body">
-                        muncul bahan yang di pake bom 2
+                        <p style ="color :white;">muncul bahan yang di pake bom 2</p> 
                         <img src="assets/image/BOMB LV 2.png" width="200 px">
                         <a href="#" class="btn btn-primary" onclick="">craft</a>
                     </div>
@@ -289,363 +318,7 @@ $rowTeam = $stmtTeam->fetch();
             }
             });
 
-            <?php
-            if ($rowTeam['location_now_id_city'] != 0) {
-            ?>
-                <div class="row wallet" style="margin-top: 5%; z-index:100;" id="p-history">
-                    <div class="purchase-history">
-                        <p>Craft History</p>
-                    </div>
-                </div>
-            <?php
-            }
-            ?>
-
-        </div>
-            <div class="row col-12 justify-content-center mb-5">
-            </div>
-            <div class="container col-md-8 col-12">
-                <div class="row row-cols-lg-3 row-cols-2" id="shop">
-
-                </div>
-            </div>
-
-        <div class="footer my-5">
-            &nbsp
-        </div>
-    </div>
-    <div id="containerPurchaseHistory">
-        <div id="history-header" class="text-left mb-3">
-            <h1> Your Purchase History </h1>
-        </div>
-
-        <div id="history-rowcol" class="d-flex">
-            <p>Nama Barang</p>
-            <p>Jumlah Pembelian</p>
-            <p>Kota Beli</p>
-            <p>Total Harga</p>
-        </div>
-
-        <div class="purchaseHistory">
-
-        </div>
-
-        <div class="goback" style="margin-top: 5%;" id="p-goback">
-            <div class="purchase-goback">
-                <p>Go Back To Craft <--</p>
-            </div>
-        </div>
-        <div class="footer my-5">
-            &nbsp
-        </div>
-
-    </div>
-
-    <?php
-    if ($rowTeam['location_now_id_city'] != 0) {
-    ?>
-        <script>
-            function showPurchaseHistory() {
-                $(".purchaseHistory").html("<span>Harap tunggu...</span>");
-
-                $.ajax({
-                    url: "phps/refresh_purchase_history.php",
-                    type: "get",
-                    dataType: "json",
-                    success: function(result) {
-                        var data = result;
-                        var str = "";
-                        //loop dari data
-                        if (data.length == 0) {
-                            str += `
-                        <div style="margin-top: 20vh;" id="no-content-msg-info">
-                            <img src="assets/image/nothing-to-say.svg" width="55%">
-                            <h3>You have never purchased anything.<br> Go buy some resources from Shop!</h3>
-                        </div>
-                    `;
-                        } else {
-                            for (var i = 0; i < data.length; i++) {
-                                var d = data[i];
-                                str += `
-                        <div class="history-item d-flex">
-                            <img src="assets/image/` + d.image + `" class="history-picture mr-3">
-                            <p class="history-item-name">` + d.resource_name + `</p>
-                            <p class="history-item-qty">` + d.count + `</p>
-                            <p class="history-item-kota">` + d.city_name + `</p>
-                            <p class="history-item-harga">` + d.price + `</p>
-                        </div>
-                    `;
-                            }
-                        }
-                        $(".purchaseHistory").html(str);
-                    },
-                    error: function(result) {
-                        //Error handling
-                        alert("ERROR!");
-                    }
-                });
-            }
-
-            const shopSwal = Swal.mixin({
-                customClass: {
-                    confirmButton: 'btn-gradient btn-sweet py-3 px-4',
-                    cancelButton: 'btn-gradient btn-sweet py-3 px-4 mr-5'
-                },
-                buttonsStyling: false,
-                allowOutsideClick: false,
-                background: 'rgb(68,63,63)'
-            });
-
-            function formatNumber(num) {
-                return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
-            }
-
-            function load_data(status, total = 0, qty = 0, barang = 0) {
-                $.ajax({
-                    url: "phps/get_shop.php",
-                    method: "GET",
-                    success: function(data) {
-                        $("#shop").html('');
-                        var cash = 0;
-                        data.forEach(function(item) {
-                            cash = item['uang'];
-                            var part1 = `
-                        <div class="col py-3">
-                            <div class="card-item shop-item`,
-                                part2 = `
-                        ">
-                                <div class="container item">
-                                    <div class="row pt-3 justify-content-center">
-                                        <h3 class="bahan">` + item['nama'] + `</h3>
-                                    </div>
-                                    <div class="row justify-content-center`,
-                                part2_1 = `">
-                                        <img src="assets/image/` + item['image'] + `" width="`,
-                                part2_5 = `">
-                                    </div>
-                                    <div class="hitung">
-                                        <div class="tag-sold-out`,
-                                part3 = `">SOLD OUT</div>
-                                        <div class="row justify-content-center mb-1`,
-                                part3_5 = ` jml-stok">`,
-                                part4 = `</div>
-                                        <div class="row justify-content-center`,
-                                part4_5 = ` pb-1 tes">
-                                            <div class="btn-min circle-btn unclickable circle-btns" id="btn-min">-</div>
-                                            <input class="qty mx-1" disabled value="0">
-                                            <div class="btn-plus circle-btns circle-btn" id="btn-plus">+</div>
-                                        </div>
-                                        <div class="row justify-content-center my-1 no-event" style="font-size:18pt;">
-                                            <img src="assets/image/bridge coin.png" width="10%" height="5%" style="padding-top:4px;">
-                                            <div id="harga">` + item['harga'] + `</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="off container btn-beli btn-gradient py-2 off" id="btn-beli">
-                                    BELI
-                                </div>
-                            </div>
-                        </div>`;
-
-                           var itemCard = ``;
-
-                            if (item['nama'] != 'Tiket Terbang') { //jika bukan tiket terbang
-                                if (item['stok'] > 1) {
-                                    itemCard = part1 + part2 + part2_1 + '30%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5 + `
-                                            <div class="stok hidden">` + item['stok'] + `</div>` + part4 + ' pt-2' + part4_5;
-                                } else if (item['stok'] == 1) {
-                                    itemCard = part1 + part2 + part2_1 + '30%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5 + `<div class="stok hidden">` + item['stok'] + `</div>` + part4 + ' pt-2' + part4_5;
-                                } else {
-                                    itemCard = part1 + ' sold-out' + part2 + part2_1 + '30%' + part2_5 + part3 + ' mt-2' + part3_5 + `
-                                            <div class="stok hidden">` + item['stok'] + `</div>` + part4 + ' pt-2' + part4_5;
-                                }
-                            } else { //jika tiket terbang
-                            //ini tiket terbang
-                                itemCard = part1 + part2 + ' mt-2' + part2_1 + '35%' + part2_5 + ' hidden' + part3 + ' mt-2' + part3_5 + `<div class="stok hidden">` + item['stok'] + `</div>` + part4 + ' pt-3' + part4_5;
-                            }
-                            $("#shop").append(itemCard);
-                        });
-                        $(".uang").text(formatNumber(cash));
-                        if (status == 1) {
-                            shopSwal.fire({
-                                title: '<h3 style="color:white;">Pembelian Berhasil!</h3>',
-                                html: "<div style='color:white;'><b>" + qty + " " + barang + "</b> telah ditambahkan pada inventory Anda.</div>",
-                                icon: 'success'
-                            })
-                        }
-                    },
-                    error: function(data) {
-                        shopSwal.fire({
-                            title: '<h3 style="color:white;">Error</h3>',
-                            html: '<div style="color:white;">Terjadi Error di Server. Silakan ulangi kembali.</div>',
-                            icon: 'error'
-                        })
-                    }
-                });
-            }
-            $(function() {
-                load_data(0);
-                showPurchaseHistory();
-                $("#shop").on("click", "[id='btn-plus'],[id='btn-min']", function() {
-                    var $qty = $(this).closest('.hitung').find('.qty'),
-                        currentVal = parseInt($qty.val()),
-                        isAdd = $(this).hasClass('btn-plus'),
-                        cost = parseInt($(this).closest('.hitung').find('#harga').text()),
-                        $jmlStok = $(this).closest('.hitung').find('.stok'),
-                        jmlStok = parseInt($jmlStok.text());
-
-                    if (isAdd) {
-
-                        if ($(this).closest('.card-item').find('.btn-beli').hasClass('off'))
-                            $(this).closest('.card-item').find('.btn-beli').removeClass('off');
-                        $jmlStok.text(--jmlStok);
-                        $qty.val(++currentVal);
-                        if (currentVal > 0) {
-
-                            if (currentVal > 2) {
-                                cost /= (currentVal - 1);
-                            }
-                            $(this).closest('.hitung').find('#harga').text(cost * currentVal);
-                        }
-                    } else {
-
-                        $jmlStok.text(++jmlStok);
-                        $qty.val((currentVal > 0 ? --currentVal : currentVal));
-                        if (currentVal == 0) {
-                            $(this).closest('.card-item').find('.btn-beli').addClass('off');
-                        }
-                        if (currentVal > 0) {
-                            t = cost / (currentVal + 1);
-                            $(this).closest('.hitung').find('#harga').text(cost - t);
-                        }
-                    }
-                    if (jmlStok == 0 && $(this).closest('.card-item').find('.bahan').text() != 'Tiket Terbang') {
-                        $(this).removeClass('circle-btns');
-                        $(this).addClass('unclickable');
-                    }
-                    if (currentVal == 0) {
-                        $(this).removeClass('circle-btns');
-                        $(this).addClass('unclickable');
-                    }
-                });
-                $("#shop").on("click", "[id='btn-plus']", function() {
-                    if ($(this).closest('.hitung').find('.btn-min').hasClass('unclickable')) {
-                        $(this).closest('.hitung').find('.btn-min').removeClass('unclickable');
-                        $(this).closest('.hitung').find('.btn-min').addClass('circle-btns');
-                    }
-                });
-                $("#shop").on("click", "[id='btn-min']", function() {
-                    if ($(this).closest('.hitung').find('.btn-plus').hasClass('unclickable')) {
-                        $(this).closest('.hitung').find('.btn-plus').removeClass('unclickable');
-                        $(this).closest('.hitung').find('.btn-plus').addClass('circle-btns');
-                    }
-                });
-                $("#shop").on('click', "[id='btn-beli']", function() {
-                    var total = $(this).closest('.card-item').find('#harga').text(),
-                        item = $(this).closest('.card-item').find('.bahan').text(),
-                        qty = $(this).closest('.card-item').find('.qty').val(),
-                        stok = $(this).closest('.card-item').find('.stok').text(),
-                        cash = $('.uang').text();
-
-                    shopSwal.fire({
-                        title: '<h3 style="color:white;">Konfirmasi Pembelian</h3>',
-                        html: "<div style='color:white;'>Anda akan membayar <h5><img src='assets/image/bridge coin.png' width='30px'>" + total + "</h5> untuk membeli <b>" + qty + " " + item + "</b></div>",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonText: 'Bayar',
-                        cancelButtonText: 'Batal',
-                        reverseButtons: true
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            $.ajax({
-                                url: "phps/buy_shop.php",
-                                method: "POST",
-                                data: {
-                                    item: item,
-                                    stok: stok,
-                                    qty: qty,
-                                    total: total,
-                                    cash: cash
-                                },
-                                success: function(res) {
-                                
-                                    load_data(1, total, qty, item);
-                                    showPurchaseHistory();
-                                },
-                                error: function($xhr, textStatus, errorThrown) {
-                                    
-                                    load_data(0);
-                                    if ($xhr.responseJSON['error'] == 'Uang tidak cukup') {
-                                        shopSwal.fire({
-                                            title: '<h3 style="color:white;">Pembelian Gagal!</h3>',
-                                            html: '<div style="color:white;">Uang Anda tidak mencukupi!</div>',
-                                            icon: 'error'
-                                        })
-                                    } else {
-                                        shopSwal.fire({
-                                            title: '<h3 style="color:white;">Pembelian Gagal!</h3>',
-                                            html: '<div style="color:white;">Terjadi Error di Server. Silakan ulangi kembali.</div>',
-                                            icon: 'error'
-                                        })
-                                    }
-                                }
-                            });
-                        } else if (result.dismiss === Swal.DismissReason.cancel) {
-                            
-                            load_data(0);
-                            shopSwal.fire({
-                                title: '<h3 style="color:white;">Pembelian Telah Dibatalkan!</h3>',
-                                html: '',
-                                icon: 'error'
-                            })
-                        }
-                    })
-                });
-
-
-                $('#containerPurchaseHistory').hide();
-                $('.purchase-history').click(function() {
-                    $('#containerPurchaseHistory').show();
-                    $('.mainshop').animate({
-                        top: '-100vh'
-                    });
-
-                    $('#containerPurchaseHistory').animate({
-                        top: '0'
-                    }, function() {
-                        var time = 200;
-                        $(".history-item").each(function() {
-                            $(this).animate({
-                                top: '0'
-                            }, time);
-                            time += 100;
-                        });
-
-                        $('.mainshop').hide();
-                        $('.goback').show();
-                    });
-                });
-
-                $('.goback').click(function() {
-                    $('.mainshop').show();
-                    $('.mainshop').animate({
-                        top: '0'
-                    });
-
-                    $('#containerPurchaseHistory').animate({
-                        top: '100vh'
-                    }, function() {
-                        $('#containerPurchaseHistory').hide();
-                        $(".history-item").css({
-                            top: '100vh'
-                        });
-                    });
-                });
-            });
         </script>
-    <?php
-    }
-    ?>
 
     </body>
 
