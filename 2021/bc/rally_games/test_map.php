@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+    require_once 'phps/connect.php';
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,55 +15,63 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
-        @keyframes glowing {
-            0% {
-                filter: drop-shadow(0 0 5px black);
-            }
-
-            50% {
-                filter: drop-shadow(0 0 20px black);
-            }
-
-            100% {
-                filter: drop-shadow(0 0 5px black);
-            }
+    @keyframes glowing {
+        0% {
+            filter: drop-shadow(0 0 5px black);
         }
 
-        @keyframes zoomout {
-            0% {
-                transform: scale(3.0);
-            }
-
-            100% {
-                transform: scale(1.0);
-            }
+        50% {
+            filter: drop-shadow(0 0 20px black);
         }
 
-        body {
-            animation: 1s ease-out 0s 1 zoomout;
-            background-image: url('assets/laut.png');
-            background-size: 100vw 100vh;
-            width: 100vw;
-            overflow: hidden;
+        100% {
+            filter: drop-shadow(0 0 5px black);
+        }
+    }
+
+    @keyframes zoomout {
+        0% {
+            transform: scale(3.0);
         }
 
-        #svg2 {
-            transition: all 0.75s;
-            width: 80vw;
-            max-height: 100vh;
+        100% {
+            transform: scale(1.0);
         }
+    }
 
-        .pulau_ku:hover {
-            transition: all 0.3s;
-            filter: drop-shadow(0 0 15px white);
-        }
+    body {
+        animation: 1s ease-out 0s 1 zoomout;
+        background-image: url('assets/laut.png');
+        background-size: 110vw 110vh;
+        overflow: hidden;
+    }
 
-        .demo_btn {
-            position: fixed;
-            z-index: 2;
-        }
+    #svg2 {
+        width: 80vw;
+        max-height: 100vh;
+        transition: all 0.75s;
+    }
 
-        /* #harta {
+    .jembatan_ku {
+        opacity: 0.5;
+    }
+
+    .pulau_ku:hover {
+        transition: all 0.3s;
+        filter: drop-shadow(0 0 15px white);
+    }
+
+    .jembatan_ku:hover {
+        transition: all 0.3s;
+        filter: drop-shadow(0 0 3px white);
+    }
+
+    .demo_btn {
+        position: fixed;
+        z-index: 2;
+    }
+
+    /* #harta {
             position: fixed;
             width: 250px;
             top: 150px;
@@ -67,14 +79,17 @@
             z-index: 2;
         } */
 
-        .current {
-            animation: glowing 1300ms infinite;
-            filter: drop-shadow(0 0 25px black);
-        }
+    .current {
+        animation: glowing 1300ms infinite;
+        filter: drop-shadow(0 0 25px black);
+    }
     </style>
 </head>
 
 <body>
+    <div id="coba" style="position: fixed;">
+        <h1>HALO</h1>
+    </div>
     <div class="demo_btn">
         <button onclick="_zoomOut()" style="width: 20vw; height: 20vh; font-size: 3vw;">zoom out</button>
         <br><br>
@@ -100,805 +115,810 @@
                     <g id="g14" clip-path="url(#clipPath18)">
                         <g id="ini_jembatan">
                             <g id="g20" transform="translate(411.3672,920.2988)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 1.167,3.185 4.001,5.411 6.663,7.331 2.947,2.127 5.974,4.146 9.055,6.074 6.294,3.94 12.831,7.485 19.515,10.715 13.371,6.459 27.313,11.641 41.38,16.357 8.026,2.691 16.101,5.23 24.179,7.762 1.835,0.576 1.051,3.473 -0.798,2.893 C 85.317,46.531 70.632,41.907 56.269,36.387 42.05,30.922 28.108,24.586 15.13,16.572 11.561,14.368 8.049,12.052 4.666,9.571 1.475,7.231 -1.497,4.605 -2.893,0.797 -3.558,-1.018 -0.66,-1.801 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path22" />
                             </g>
                             <g id="g24" transform="translate(529.2969,962.2358)">
-                                <path d="m 0,0 v -25.951 c 0,-1.93 3,-1.933 3,0 V 0 C 3,1.931 0,1.934 0,0"
+                                <path class="jembatan_ku"
+                                    d="m 0,0 v -25.951 c 0,-1.93 3,-1.933 3,0 V 0 C 3,1.931 0,1.934 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path26" />
                             </g>
                             <g id="g28" transform="translate(776.1982,142.042)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.427,-4.451 4.342,-9.14 5.729,-14.017 0.527,-1.854 3.422,-1.066 2.892,0.797 C 7.166,-8.104 5.136,-3.155 2.59,1.515 1.666,3.21 -0.926,1.697 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path30" />
                             </g>
                             <g id="g32" transform="translate(274.8623,519.0811)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -8.162,-1.967 -16.458,-3.247 -24.834,-3.821 -1.916,-0.131 -1.93,-3.132 0,-3 8.638,0.592 17.214,1.9 25.631,3.927 C 2.673,-2.441 1.879,0.452 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path34" />
                             </g>
                             <g id="g36" transform="translate(266.3076,393.8848)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C -13.649,-2.48 -28.044,0.211 -39.892,7.412 -41.546,8.417 -43.056,5.824 -41.406,4.821 -28.84,-2.816 -13.65,-5.519 0.797,-2.893 2.694,-2.548 1.891,0.344 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path38" />
                             </g>
                             <g id="g40" transform="translate(168.8652,657.5093)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -6.408,-10.91 -12.436,-22.04 -18.072,-33.368 -0.857,-1.723 1.73,-3.245 2.591,-1.514 5.635,11.328 11.663,22.458 18.071,33.368 C 3.57,0.154 0.978,1.666 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path42" />
                             </g>
                             <g id="g44" transform="translate(660.3076,257.7432)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -8.479,-1.008 -16.936,-2.193 -25.363,-3.56 -1.901,-0.308 -1.094,-3.2 0.798,-2.893 C -16.402,-5.129 -8.213,-3.977 0,-3 1.894,-2.774 1.916,0.228 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path46" />
                             </g>
                             <g id="g48" transform="translate(968.8945,377.0488)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -2.779,-12.867 -8.703,-24.935 -17.209,-34.985 -1.24,-1.466 0.872,-3.599 2.121,-2.122 8.838,10.443 15.09,22.925 17.981,36.309 C 3.299,1.085 0.407,1.889 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path50" />
                             </g>
                             <g id="g52" transform="translate(645.1738,563.4951)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -0.789,11.304 4.282,22.387 13.149,29.391 1.514,1.196 -0.622,3.306 -2.121,2.121 C 1.608,24.072 -3.837,11.994 -3,0 -2.866,-1.915 0.135,-1.93 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path54" />
                             </g>
                             <g id="g56" transform="translate(664.2119,500.3271)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 11.431,4.312 21.917,10.816 30.793,19.22 1.405,1.33 -0.719,3.449 -2.121,2.121 C 20.189,13.31 10.133,7.017 -0.798,2.893 -2.587,2.218 -1.812,-0.684 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path58" />
                             </g>
                             <g id="g60" transform="translate(660.9658,551.5254)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 5.46,-10.359 11.763,-20.251 18.838,-29.581 1.152,-1.519 3.758,-0.025 2.591,1.514 C 14.354,-18.737 8.05,-8.845 2.591,1.514 1.69,3.223 -0.899,1.708 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path62" />
                             </g>
                             <g id="g64" transform="translate(771.9004,164.2393)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 8.313,7.061 14.54,16.373 17.891,26.752 0.593,1.841 -2.302,2.63 -2.894,0.797 C 11.799,17.642 5.805,8.853 -2.121,2.121 -3.595,0.869 -1.464,-1.243 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path66" />
                             </g>
                             <g id="g68" transform="translate(826.0059,181.1865)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 3.511,-2.199 5.2,-6.307 6.997,-9.861 l 6.973,-13.802 c 4.648,-9.201 9.298,-18.402 13.946,-27.604 0.871,-1.723 3.46,-0.207 2.59,1.514 -4.798,9.498 -9.597,18.996 -14.396,28.494 -2.399,4.749 -4.797,9.499 -7.198,14.247 C 7.061,-3.349 5.096,0.347 1.514,2.591 -0.127,3.618 -1.635,1.024 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path70" />
                             </g>
                             <g id="g72" transform="translate(73.7261,344.8301)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 v -3.562 c 0,-0.522 0.46,-1.023 1,-1 0.542,0.025 1,0.44 1,1 V 0 C 2,0.522 1.54,1.023 1,1 0.458,0.976 0,0.561 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path74" />
                             </g>
                             <g id="g76" transform="translate(58.1265,320.7178)">
-                                <path d="M 0,0 C 1.287,0 1.289,2 0,2 -1.287,2 -1.289,0 0,0"
+                                <path class="jembatan_ku" d="M 0,0 C 1.287,0 1.289,2 0,2 -1.287,2 -1.289,0 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path78" />
                             </g>
                             <g id="g80" transform="translate(93.8862,294.1934)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -1.781,1.172 -3.841,1.694 -5.742,2.619 -2.196,1.069 -3.732,2.984 -5.375,4.733 l -10.351,11.015 c -0.883,0.941 -2.295,-0.475 -1.414,-1.414 3.547,-3.775 7.094,-7.551 10.642,-11.326 1.578,-1.681 3.091,-3.492 5.168,-4.573 1.98,-1.032 4.185,-1.545 6.063,-2.782 C 0.069,-2.437 1.072,-0.705 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path82" />
                             </g>
                             <g id="g84" transform="translate(823.292,682.6143)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C 2.121,1.814 4.478,3.336 6.983,4.563 7.469,4.801 7.601,5.49 7.343,5.932 7.053,6.427 6.461,6.529 5.975,6.291 3.313,4.987 0.837,3.34 -1.415,1.414 -1.825,1.062 -1.775,0.361 -1.415,0 -1.008,-0.407 -0.412,-0.353 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path86" />
                             </g>
                             <g id="g88" transform="translate(981.3701,508.3281)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 0.232,-6.142 0.284,-12.313 0.154,-18.457 -0.026,-1.288 1.974,-1.287 2,0 C 2.284,-12.313 2.232,-6.142 2,0 1.951,1.283 -0.049,1.289 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path90" />
                             </g>
                             <g id="g92" transform="translate(946.293,239.3916)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C 0.041,-1.264 0.107,-2.527 0.269,-3.782 0.316,-4.155 0.362,-4.533 0.427,-4.904 0.456,-5.076 0.411,-4.646 0.415,-4.821 0.416,-4.877 0.43,-4.933 0.433,-4.988 0.437,-5.078 0.445,-5.167 0.444,-5.258 0.443,-5.349 0.426,-5.439 0.426,-5.529 0.427,-5.155 0.425,-5.492 0.396,-5.617 0.321,-5.939 0.218,-6.255 0.116,-6.569 c -0.428,-1.326 -0.883,-2.642 -1.311,-3.967 -0.398,-1.228 1.533,-1.754 1.928,-0.532 0.438,1.351 0.903,2.695 1.337,4.047 0.18,0.56 0.357,1.132 0.373,1.725 0.015,0.544 -0.117,1.094 -0.19,1.631 0.04,-0.293 -0.009,0.074 -0.015,0.128 -0.015,0.123 -0.029,0.246 -0.042,0.369 -0.027,0.26 -0.05,0.52 -0.071,0.78 C 2.062,-1.593 2.025,-0.797 2,0 1.959,1.284 -0.041,1.289 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path94" />
                             </g>
                             <g id="g96" transform="translate(864.0293,258.5254)">
-                                <path d="m 0,0 v -16.023 c 0,-1.288 2,-1.289 2,0 V 0 C 2,1.287 0,1.289 0,0"
+                                <path class="jembatan_ku"
+                                    d="m 0,0 v -16.023 c 0,-1.288 2,-1.289 2,0 V 0 C 2,1.287 0,1.289 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path98" />
                             </g>
                             <g id="g100" transform="translate(883.8379,211.5088)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 1.236,-1.01 2.694,-1.704 4.144,-2.352 1.951,-0.872 3.947,-1.639 5.952,-2.377 3.538,-1.305 7.196,-2.378 10.664,-3.864 1.171,-0.501 2.19,1.222 1.01,1.728 -3.387,1.45 -6.936,2.53 -10.397,3.791 -1.985,0.722 -3.97,1.461 -5.906,2.31 C 4.097,-0.162 2.585,0.458 1.414,1.414 0.425,2.222 -0.998,0.814 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path102" />
                             </g>
                             <g id="g104" transform="translate(783.6084,129.7363)">
-                                <path d="M 0,0 C 1.287,0 1.289,2 0,2 -1.287,2 -1.289,0 0,0"
+                                <path class="jembatan_ku" d="M 0,0 C 1.287,0 1.289,2 0,2 -1.287,2 -1.289,0 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path106" />
                             </g>
                             <g id="g108" transform="translate(796.0332,128.2227)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 11.393,1.22 22.853,1.701 34.308,1.44 1.287,-0.029 1.287,1.971 0,2 C 22.853,3.701 11.393,3.22 0,2 -1.267,1.864 -1.28,-0.138 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path110" />
                             </g>
                             <g id="g112" transform="translate(792.7129,119.5176)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 7.208,-7.836 14.415,-15.673 21.623,-23.51 0.873,-0.949 2.284,0.468 1.414,1.414 C 15.829,-14.259 8.622,-6.422 1.414,1.415 0.541,2.364 -0.87,0.947 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path114" />
                             </g>
                             <g id="g116" transform="translate(781.376,116.5547)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -0.072,-5.587 0.32,-11.159 1.139,-16.685 0.187,-1.269 2.115,-0.729 1.928,0.532 C 2.275,-10.808 1.93,-5.403 2,0 2.017,1.287 0.017,1.288 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path118" />
                             </g>
                             <g id="g120" transform="translate(775.6768,127.5859)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -11.672,-1.337 -23.309,-2.966 -34.898,-4.889 -1.267,-0.211 -0.73,-2.138 0.531,-1.928 C -22.953,-4.924 -11.494,-3.316 0,-2 1.264,-1.855 1.278,0.146 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path122" />
                             </g>
                             <g id="g124" transform="translate(576.7393,812.9429)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 4.751,0.154 9.502,0.309 14.253,0.462 4.516,0.147 9.143,0.044 13.563,1.1 1.251,0.3 0.722,2.229 -0.531,1.929 C 22.89,2.441 18.252,2.592 13.761,2.447 L 0,2 C -1.283,1.958 -1.289,-0.042 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path126" />
                             </g>
                             <g id="g128" transform="translate(345.8721,607.6191)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 0.847,-2.86 1.514,-5.769 1.999,-8.712 0.087,-0.534 0.748,-0.831 1.23,-0.699 0.566,0.156 0.786,0.695 0.698,1.23 C 3.443,-5.237 2.775,-2.329 1.928,0.532 1.564,1.763 -0.367,1.239 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path130" />
                             </g>
                             <g id="g132" transform="translate(106.7588,285.623)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 4.942,-5.854 10.761,-10.921 17.2,-15.068 1.085,-0.7 2.089,1.031 1.009,1.727 C 11.909,-9.283 6.249,-4.312 1.414,1.414 0.583,2.398 -0.826,0.978 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path134" />
                             </g>
                             <g id="g136" transform="translate(135.6528,246.8379)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -1.256,-0.683 -1.247,-2.103 -1.25,-3.356 -0.004,-1.706 -0.008,-3.411 -0.012,-5.115 -0.009,-3.468 -0.016,-6.937 -0.025,-10.406 -0.003,-1.287 1.997,-1.289 2,0 0.007,2.998 0.015,5.997 0.021,8.995 l 0.011,4.409 C 0.747,-4.768 0.748,-4.062 0.75,-3.356 0.751,-2.975 0.6,-1.95 1.01,-1.727 2.141,-1.112 1.132,0.615 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path138" />
                             </g>
                             <g id="g140" transform="translate(517.7344,917.1631)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.269,-3.045 3.644,-6.569 4.412,-10.271 0.421,-2.029 0.658,-4.086 0.803,-6.152 0.068,-0.973 0.115,-1.949 0.15,-2.924 0.032,-0.859 -0.004,-1.678 0.436,-2.443 0.641,-1.115 2.37,-0.109 1.727,1.01 -0.435,0.756 -0.191,2.244 -0.236,3.104 -0.053,0.975 -0.121,1.948 -0.215,2.92 -0.189,1.952 -0.469,3.902 -0.911,5.813 C 5.34,-5.378 3.921,-1.936 1.727,1.009 0.967,2.03 -0.77,1.034 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path142" />
                             </g>
                             <g id="g144" transform="translate(469.2183,896.3452)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 8.154,-0.93 16.357,-1.316 24.562,-1.155 1.286,0.025 1.29,2.025 0,2 C 16.357,0.684 8.154,1.07 0,2 -1.277,2.146 -1.267,0.145 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path146" />
                             </g>
                             <g id="g148" transform="translate(539.8838,879.3496)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.898,-6.408 3.243,-13.546 3.563,-20.464 0.059,-1.282 2.059,-1.289 1.999,0 C 5.226,-13.16 4.783,-5.747 1.727,1.009 1.197,2.18 -0.527,1.165 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path150" />
                             </g>
                             <g id="g152" transform="translate(601.6787,907.2671)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 7.975,0.329 15.958,0.138 23.908,-0.572 1.281,-0.114 1.274,1.886 0,2 C 15.958,2.138 7.975,2.329 0,2 -1.282,1.947 -1.289,-0.053 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path154" />
                             </g>
                             <g id="g156" transform="translate(632.5928,899.4092)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 1.663,-3.345 2.984,-6.666 3.554,-10.377 0.552,-3.602 0.561,-7.267 0.583,-10.901 0.007,-1.287 2.007,-1.29 2,0 -0.023,3.82 -0.068,7.649 -0.655,11.432 C 4.881,-5.965 3.466,-2.487 1.728,1.009 1.154,2.162 -0.571,1.15 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path158" />
                             </g>
                             <g id="g160" transform="translate(584.3223,859.6274)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -6.38,-1.042 -12.663,-2.592 -18.795,-4.638 -1.215,-0.405 -0.694,-2.338 0.531,-1.929 6.133,2.046 12.415,3.596 18.795,4.638 C 1.799,-1.722 1.261,0.206 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path162" />
                             </g>
                             <g id="g164" transform="translate(358.7524,901.7739)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -8.052,-4.41 -16.12,-8.827 -23.756,-13.938 -6.396,-4.281 -13.246,-9.068 -16.157,-16.503 -0.47,-1.2 1.463,-1.719 1.928,-0.532 2.854,7.288 10.15,11.974 16.414,16.087 7.287,4.784 14.94,8.975 22.581,13.159 C 2.139,-1.108 1.131,0.619 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path166" />
                             </g>
                             <g id="g168" transform="translate(90.6729,156.3984)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.439,-4.992 4.91,-9.97 7.415,-14.931 1.193,-2.363 2.384,-4.729 3.604,-7.08 1.036,-1.995 2.194,-3.938 3.949,-5.386 0.986,-0.814 2.408,0.593 1.414,1.414 -1.737,1.433 -2.799,3.356 -3.816,5.331 -1.227,2.383 -2.438,4.775 -3.646,7.169 C 6.491,-8.668 4.094,-3.836 1.727,1.01 1.162,2.166 -0.563,1.153 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path170" />
                             </g>
                             <g id="g172" transform="translate(114.7979,143.1152)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 1.811,-0.604 3.866,-0.583 5.755,-0.661 2.153,-0.089 4.31,-0.083 6.462,0.017 4.24,0.199 8.457,0.771 12.604,1.672 1.257,0.273 0.725,2.201 -0.532,1.928 C 20.313,2.092 16.282,1.546 12.217,1.356 10.219,1.264 8.216,1.251 6.217,1.321 4.361,1.387 2.308,1.336 0.532,1.929 -0.692,2.338 -1.217,0.407 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path174" />
                             </g>
                             <g id="g176" transform="translate(126.8589,180.2334)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -8.92,3.938 -18.539,5.994 -28.292,6.01 -1.288,0.002 -1.29,-1.998 0,-2 9.38,-0.016 18.696,-1.947 27.283,-5.737 C 0.157,-2.242 1.176,-0.519 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path178" />
                             </g>
                             <g id="g180" transform="translate(135.1338,191.3857)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -0.66,4.323 3.299,7.539 6.591,9.469 1.11,0.65 0.105,2.379 -1.009,1.726 C 3.447,9.945 1.429,8.466 -0.063,6.47 -1.57,4.455 -2.31,1.968 -1.929,-0.531 -1.847,-1.065 -1.175,-1.36 -0.699,-1.229 -0.127,-1.073 0.082,-0.535 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path182" />
                             </g>
                             <g id="g184" transform="translate(151.2456,205.2939)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 13.167,0.518 26.352,0.301 39.495,-0.651 1.284,-0.093 1.278,1.907 0,2 C 26.352,2.301 13.167,2.518 0,2 -1.283,1.949 -1.29,-0.051 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path186" />
                             </g>
                             <g id="g188" transform="translate(149.7095,161.9561)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 10.738,2.729 21.68,4.562 32.722,5.465 1.274,0.104 1.285,2.105 0,2 C 21.504,6.547 10.377,4.701 -0.531,1.929 -1.778,1.611 -1.25,-0.317 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path190" />
                             </g>
                             <g id="g192" transform="translate(203.3154,161.1006)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 5.263,-3.018 10.49,-6.096 15.678,-9.24 2.558,-1.551 5.107,-3.117 7.646,-4.699 2.258,-1.407 5.274,-2.748 6.748,-5.055 0.691,-1.082 2.423,-0.08 1.727,1.009 -1.468,2.297 -3.98,3.593 -6.231,5.002 -2.673,1.672 -5.357,3.328 -8.051,4.965 C 12.057,-4.697 6.553,-1.451 1.01,1.728 -0.109,2.368 -1.117,0.641 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path194" />
                             </g>
                             <g id="g196" transform="translate(94.2139,215.6396)">
-                                <path d="m 0,0 h 49.89 c 1.286,0 1.289,2 0,2 H 0 C -1.287,2 -1.289,0 0,0"
+                                <path class="jembatan_ku"
+                                    d="m 0,0 h 49.89 c 1.286,0 1.289,2 0,2 H 0 C -1.287,2 -1.289,0 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path198" />
                             </g>
                             <g id="g200" transform="translate(84.3242,208.2324)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -7.251,-4.269 -14.51,-8.524 -21.753,-12.807 -6.644,-3.927 -13.226,-8.009 -19.059,-13.095 -0.972,-0.848 0.447,-2.257 1.414,-1.414 5.818,5.072 12.419,9.101 19.045,13.013 7.116,4.201 14.242,8.385 21.362,12.576 C 2.118,-1.074 1.113,0.655 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path202" />
                             </g>
                             <g id="g204" transform="translate(33.4111,234.7764)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 15.157,-0.031 30.315,-0.062 45.472,-0.094 1.287,-0.002 1.289,1.998 0,2 C 30.315,1.937 15.157,1.969 0,2 -1.287,2.003 -1.289,0.003 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path206" />
                             </g>
                             <g id="g208" transform="translate(28.4805,253.6367)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -0.318,0.199 2.207,2.85 2.459,3.124 1.102,1.199 2.226,2.379 3.372,3.537 2.294,2.318 4.677,4.548 7.136,6.692 0.972,0.847 -0.447,2.256 -1.414,1.414 C 8.602,12.195 5.763,9.498 3.051,6.675 1.73,5.3 0.437,3.896 -0.821,2.462 -1.38,1.823 -1.978,1.12 -2.022,0.229 -2.063,-0.587 -1.699,-1.295 -1.009,-1.727 0.084,-2.412 1.089,-0.683 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path210" />
                             </g>
                             <g id="g212" transform="translate(50.0571,270.9287)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 3.354,-0.738 6.708,-1.477 10.061,-2.215 3.332,-0.733 6.712,-1.364 9.983,-2.347 5.972,-1.795 10.784,-5.974 16.666,-7.966 1.222,-0.414 1.746,1.516 0.532,1.928 -5.877,1.991 -10.681,6.167 -16.666,7.966 -3.193,0.96 -6.491,1.579 -9.744,2.295 C 7.398,0.417 3.965,1.173 0.532,1.929 -0.723,2.204 -1.258,0.276 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path214" />
                             </g>
                             <g id="g216" transform="translate(152.5376,245.3096)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 8.691,-10.144 21.826,-14.396 32.845,-21.319 3.181,-1.998 6.186,-4.244 8.853,-6.897 0.913,-0.909 2.328,0.504 1.414,1.414 C 33.651,-17.39 20.553,-13.401 9.733,-5.952 6.667,-3.841 3.84,-1.416 1.415,1.414 0.576,2.394 -0.833,0.973 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path218" />
                             </g>
                             <g id="g220" transform="translate(203.2339,217.0283)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 5.866,8.519 9.56,18.335 10.82,28.596 0.156,1.274 -1.845,1.263 -2,0 C 7.604,18.692 3.926,9.219 -1.727,1.01 -2.458,-0.053 -0.726,-1.055 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path222" />
                             </g>
                             <g id="g224" transform="translate(207.1006,293.0566)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 3.911,4.026 7.512,8.453 10.031,13.497 2.652,5.311 3.846,11.122 4.976,16.904 0.246,1.258 -1.681,1.796 -1.928,0.533 C 11.985,25.335 10.872,19.649 8.304,14.507 5.856,9.604 2.387,5.328 -1.415,1.414 -2.312,0.49 -0.899,-0.925 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path226" />
                             </g>
                             <g id="g228" transform="translate(554.1484,973.0244)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 23.957,-7.846 46.174,-20.911 64.632,-38.086 5.155,-4.797 10.009,-9.911 14.538,-15.302 1.243,-1.48 3.356,0.652 2.121,2.122 C 64.868,-31.719 44.073,-15.887 20.95,-5.083 14.4,-2.022 7.668,0.643 0.798,2.893 -1.041,3.495 -1.829,0.599 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path230" />
                             </g>
                             <g id="g232" transform="translate(75.9609,381.2197)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -6.238,-11.061 -14.521,-20.84 -24.353,-28.871 -0.998,-0.815 0.425,-2.222 1.414,-1.414 9.954,8.13 18.352,18.079 24.666,29.275 C 2.36,0.113 0.633,1.122 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path234" />
                             </g>
                             <g id="g236" transform="translate(81.6563,377.5342)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 0.798,-13.136 -2.516,-26.267 -9.405,-37.476 -0.677,-1.099 1.053,-2.105 1.726,-1.009 C -0.619,-27 2.817,-13.463 2,0 1.922,1.279 -0.078,1.288 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path238" />
                             </g>
                             <g id="g240" transform="translate(89.9795,373.1904)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.632,-7.098 6.017,-13.89 10.119,-20.253 0.695,-1.078 2.427,-0.076 1.727,1.01 C 7.838,-13.027 4.5,-6.404 1.929,0.532 1.485,1.729 -0.449,1.211 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path242" />
                             </g>
                             <g id="g244" transform="translate(38.3467,329.9756)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 6.97,-3.982 14.196,-7.484 21.628,-10.517 1.191,-0.485 1.709,1.449 0.532,1.929 C 14.89,-5.621 7.827,-2.168 1.01,1.727 -0.11,2.366 -1.119,0.639 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path246" />
                             </g>
                             <g id="g248" transform="translate(59.5776,316.6836)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -3.907,-6.379 -7.963,-12.665 -12.165,-18.854 -0.725,-1.067 1.007,-2.069 1.727,-1.009 4.202,6.188 8.258,12.474 12.165,18.853 C 2.401,0.091 0.672,1.097 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path250" />
                             </g>
                             <g id="g252" transform="translate(97.4546,346.6777)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -8.745,-4.626 -17.636,-8.969 -26.661,-13.023 -1.172,-0.527 -0.156,-2.251 1.01,-1.727 9.024,4.054 17.915,8.396 26.66,13.022 C 2.147,-1.125 1.138,0.602 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path254" />
                             </g>
                             <g id="g256" transform="translate(38.5273,464.5068)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.298,-4.857 4.942,-9.543 7.937,-14.005 1.438,-2.143 2.954,-4.235 4.543,-6.269 1.418,-1.815 2.991,-3.542 5.151,-4.459 1.172,-0.496 2.192,1.225 1.01,1.727 -2.135,0.905 -3.594,2.648 -4.977,4.444 -1.575,2.043 -3.07,4.149 -4.49,6.302 C 6.379,-8.019 3.898,-3.581 1.727,1.009 1.177,2.172 -0.548,1.158 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path258" />
                             </g>
                             <g id="g260" transform="translate(64.8271,430.8506)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 6.028,-6.5 12.906,-12.176 20.412,-16.892 1.093,-0.686 2.098,1.043 1.009,1.727 C 14.053,-10.535 7.332,-4.966 1.414,1.415 0.537,2.36 -0.875,0.943 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path262" />
                             </g>
                             <g id="g264" transform="translate(96.7046,405.5771)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 11.052,-3.013 22.427,-4.737 33.874,-5.15 1.288,-0.046 1.286,1.954 0,2 C 22.598,-2.743 11.417,-1.039 0.532,1.929 -0.712,2.268 -1.242,0.339 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path266" />
                             </g>
                             <g id="g268" transform="translate(146.3179,398.3437)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 20.757,-0.769 41.515,-1.537 62.272,-2.305 1.288,-0.048 1.286,1.952 0,2 C 41.515,0.463 20.757,1.231 0,2 -1.287,2.047 -1.285,0.047 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path270" />
                             </g>
                             <g id="g272" transform="translate(121.5176,559.3809)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 4.451,-7.525 8.763,-15.132 12.934,-22.816 0.614,-1.131 2.341,-0.123 1.727,1.009 C 10.49,-14.123 6.178,-6.516 1.727,1.01 1.072,2.117 -0.657,1.111 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path274" />
                             </g>
                             <g id="g276" transform="translate(87.4351,551.5444)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 10.235,-10.803 22.874,-18.843 35.367,-26.751 1.091,-0.691 2.096,1.039 1.01,1.726 C 24.021,-17.204 11.537,-9.271 1.414,1.414 0.527,2.351 -0.886,0.935 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path278" />
                             </g>
                             <g id="g280" transform="translate(93.9663,507.5566)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C 10.74,0.761 21.326,3.011 31.43,6.735 32.627,7.177 32.109,9.11 30.898,8.663 20.963,5.002 10.563,2.748 0,2 -1.276,1.909 -1.286,-0.091 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path282" />
                             </g>
                             <g id="g284" transform="translate(145.6328,535.001)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 10.837,0.146 21.676,0.169 32.514,0.066 1.287,-0.011 1.288,1.989 0,2 C 21.676,2.169 10.837,2.146 0,2 -1.286,1.982 -1.29,-0.018 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path286" />
                             </g>
                             <g id="g288" transform="translate(132.2686,517.9678)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 7.089,-6.905 14.066,-13.924 20.929,-21.055 0.894,-0.928 2.307,0.487 1.414,1.415 C 15.48,-12.51 8.503,-5.49 1.414,1.414 0.491,2.313 -0.924,0.9 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path290" />
                             </g>
                             <g id="g292" transform="translate(189.5571,534.7627)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 18.816,-8.581 37.467,-17.522 55.939,-26.82 1.147,-0.577 2.161,1.147 1.01,1.727 C 38.477,-15.796 19.826,-6.854 1.009,1.727 -0.153,2.257 -1.171,0.533 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path294" />
                             </g>
                             <g id="g296" transform="translate(181.6562,487.6768)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 9.827,-10.967 24.07,-16.403 38.137,-19.464 4.491,-0.976 9.025,-1.744 13.564,-2.458 1.259,-0.197 1.801,1.73 0.531,1.929 C 34.019,-17.129 14.278,-12.942 1.414,1.415 0.553,2.375 -0.857,0.957 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path298" />
                             </g>
                             <g id="g300" transform="translate(235.6064,454.1982)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C 8.913,1.85 17.683,4.312 26.254,7.376 27.458,7.807 26.939,9.739 25.723,9.305 17.151,6.241 8.381,3.778 -0.532,1.929 -1.792,1.668 -1.258,-0.261 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path302" />
                             </g>
                             <g id="g304" transform="translate(349.5854,496.5332)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 20.296,3.021 40.755,4.891 61.261,5.622 1.283,0.045 1.29,2.046 0,2 C 40.575,6.885 19.942,4.977 -0.532,1.928 -1.8,1.739 -1.261,-0.188 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path306" />
                             </g>
                             <g id="g308" transform="translate(378.9233,438.96)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 5.597,3.023 11.09,6.234 16.461,9.643 4.591,2.914 9.66,5.842 12.521,10.639 0.662,1.108 -1.066,2.114 -1.726,1.009 C 24.432,16.559 19.177,13.714 14.646,10.86 9.532,7.641 4.308,4.599 -1.01,1.728 -2.143,1.115 -1.134,-0.612 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path310" />
                             </g>
                             <g id="g312" transform="translate(444.0132,386.21)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -3.293,-9.841 -9.64,-18.535 -17.965,-24.727 -1.021,-0.759 -0.025,-2.496 1.009,-1.727 8.768,6.521 15.413,15.549 18.885,25.923 C 2.338,0.691 0.407,1.217 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path314" />
                             </g>
                             <g id="g316" transform="translate(545.7158,336.2207)">
-                                <path d="m 0,0 v -20.099 c 0,-1.287 2,-1.289 2,0 V 0 C 2,1.287 0,1.289 0,0"
+                                <path class="jembatan_ku"
+                                    d="m 0,0 v -20.099 c 0,-1.287 2,-1.289 2,0 V 0 C 2,1.287 0,1.289 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path318" />
                             </g>
                             <g id="g320" transform="translate(540.0991,308.1289)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -16.886,2.451 -33.909,3.905 -50.968,4.3 -4.837,0.112 -9.676,0.137 -14.513,0.085 -1.287,-0.015 -1.29,-2.015 0,-2 16.809,0.183 33.625,-0.626 50.336,-2.452 4.882,-0.535 9.753,-1.156 14.613,-1.862 C 0.728,-2.111 1.271,-0.185 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path322" />
                             </g>
                             <g id="g324" transform="translate(561.5869,298.2432)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C 2.551,-7.604 5.101,-15.208 7.651,-22.812 8.059,-24.026 9.99,-23.506 9.58,-22.28 7.029,-14.677 4.479,-7.072 1.929,0.532 1.521,1.746 -0.411,1.226 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path326" />
                             </g>
                             <g id="g328" transform="translate(620.8613,301.166)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 3.662,-4.557 8.404,-8.015 13.078,-11.454 5.319,-3.913 10.653,-7.804 16.003,-11.674 1.045,-0.756 2.044,0.979 1.01,1.727 -5.218,3.775 -10.421,7.569 -15.609,11.384 C 9.81,-6.58 5.075,-3.141 1.414,1.414 0.608,2.417 -0.799,0.994 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path330" />
                             </g>
                             <g id="g332" transform="translate(635.0137,305.4785)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 12.79,-2.17 25.766,-2.599 38.707,-2.99 1.288,-0.039 1.286,1.961 0,2 C 25.948,-0.604 13.142,-0.21 0.531,1.929 -0.728,2.143 -1.269,0.216 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path334" />
                             </g>
                             <g id="g336" transform="translate(711.2979,316.2041)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -2.552,-8.573 -6.769,-16.59 -12.396,-23.545 -0.802,-0.992 0.604,-2.416 1.415,-1.414 5.851,7.231 10.254,15.506 12.91,24.427 C 2.297,0.704 0.367,1.232 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path338" />
                             </g>
                             <g id="g340" transform="translate(698.2666,270.0918)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -3.511,-10.717 -7.378,-21.805 -15.502,-29.976 -0.909,-0.914 0.505,-2.329 1.414,-1.414 8.373,8.421 12.398,19.81 16.017,30.859 C 2.33,0.694 0.399,1.22 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path342" />
                             </g>
                             <g id="g344" transform="translate(691.4678,219.1328)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -3.39,-5.614 -6.63,-11.355 -10.527,-16.642 -3.925,-5.322 -8.647,-9.924 -14.014,-13.784 -1.036,-0.744 -0.038,-2.479 1.01,-1.726 5.471,3.934 10.27,8.557 14.319,13.948 4.083,5.435 7.431,11.385 10.939,17.194 C 2.394,0.096 0.665,1.102 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path346" />
                             </g>
                             <g id="g348" transform="translate(912.0186,337.3984)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 -7.506,-13.635 c -0.621,-1.128 1.106,-2.138 1.727,-1.009 2.502,4.545 5.004,9.089 7.506,13.634 C 2.348,0.119 0.621,1.129 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path350" />
                             </g>
                             <g id="g352" transform="translate(898.2666,322.1504)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C -1.195,7.945 -3.741,15.779 -7.956,22.649 -8.629,23.744 -10.359,22.741 -9.684,21.64 -5.552,14.906 -3.101,7.255 -1.929,-0.531 -1.737,-1.8 0.19,-1.261 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path354" />
                             </g>
                             <g id="g356" transform="translate(867.9443,319.3555)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 3.507,0.005 7.014,0.011 10.521,0.017 1.719,0.003 3.439,0.005 5.158,0.008 1.69,0.003 3.435,0.137 5.072,-0.357 1.235,-0.373 1.763,1.557 0.532,1.929 -1.556,0.469 -3.17,0.432 -4.779,0.429 C 14.647,2.023 12.791,2.021 10.934,2.018 L 0,2 C -1.287,1.997 -1.289,-0.003 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path358" />
                             </g>
                             <g id="g360" transform="translate(901.251,303.3574)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C 0.693,4.614 1.388,9.228 2.082,13.842 2.163,14.38 1.946,14.91 1.384,15.072 0.912,15.207 0.233,14.907 0.153,14.374 -0.541,9.76 -1.234,5.146 -1.929,0.532 -2.01,-0.007 -1.794,-0.537 -1.23,-0.698 -0.76,-0.834 -0.08,-0.533 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path362" />
                             </g>
                             <g id="g364" transform="translate(908.2598,315.7412)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 23.974,-7.312 c 1.233,-0.377 1.761,1.552 0.531,1.927 C 16.515,-2.946 8.523,-0.509 0.532,1.929 -0.702,2.306 -1.229,0.375 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path366" />
                             </g>
                             <g id="g368" transform="translate(889.1865,293.1162)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 11.079,1.965 22.122,4.135 33.121,6.508 1.258,0.271 0.726,2.2 -0.531,1.929 C 21.59,6.062 10.548,3.894 -0.532,1.929 -1.797,1.705 -1.261,-0.223 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path370" />
                             </g>
                             <g id="g372" transform="translate(926.2158,340.626)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 0.617,-1.916 2.147,-3.215 3.611,-4.505 1.686,-1.483 3.44,-2.89 5.247,-4.222 3.632,-2.676 7.502,-5.011 11.548,-7.005 1.151,-0.567 2.165,1.157 1.009,1.727 -3.73,1.838 -7.312,3.966 -10.695,6.387 -1.689,1.208 -3.324,2.489 -4.901,3.84 -1.38,1.18 -3.311,2.508 -3.89,4.309 C 1.536,1.752 -0.396,1.229 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path374" />
                             </g>
                             <g id="g376" transform="translate(952.79,320.1035)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 6.385,-5.443 13.706,-9.639 21.622,-12.42 1.217,-0.428 1.739,1.504 0.531,1.929 C 14.58,-7.831 7.524,-3.795 1.414,1.414 0.44,2.245 -0.981,0.837 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path378" />
                             </g>
                             <g id="g380" transform="translate(956.7217,329.2822)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C 10.235,1.417 20.274,3.991 29.926,7.684 31.116,8.139 30.6,10.073 29.395,9.612 19.743,5.92 9.704,3.345 -0.531,1.929 -1.801,1.753 -1.261,-0.174 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path382" />
                             </g>
                             <g id="g384" transform="translate(338.1104,667.8003)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -12.947,-5.325 -26.014,-10.354 -39.189,-15.086 -1.203,-0.432 -0.684,-2.365 0.531,-1.929 13.176,4.732 26.242,9.762 39.19,15.086 C 1.706,-1.446 1.191,0.49 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path386" />
                             </g>
                             <g id="g388" transform="translate(338.4668,658.3936)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.893,-9.577 5.972,-19.097 9.235,-28.554 0.417,-1.21 2.35,-0.69 1.929,0.532 C 7.901,-18.565 4.822,-9.045 1.928,0.532 1.557,1.76 -0.374,1.237 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path390" />
                             </g>
                             <g id="g392" transform="translate(344.5781,626.6851)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -12.701,-0.226 -25.406,-0.106 -38.101,0.357 -1.288,0.048 -1.286,-1.952 0,-2 C -25.406,-2.106 -12.701,-2.226 0,-2 1.286,-1.978 1.29,0.022 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path394" />
                             </g>
                             <g id="g396" transform="translate(392.2134,661.5366)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 8.105,-7.547 16.211,-15.094 24.317,-22.641 0.941,-0.876 2.359,0.535 1.414,1.414 C 17.625,-13.68 9.52,-6.133 1.414,1.414 0.473,2.291 -0.944,0.879 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path398" />
                             </g>
                             <g id="g400" transform="translate(388.9165,656.9326)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -9.736,-6.835 -20.388,-12.277 -31.637,-16.149 -1.21,-0.416 -0.69,-2.349 0.532,-1.929 11.41,3.928 22.237,9.417 32.114,16.351 C 2.055,-0.993 1.057,0.742 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path402" />
                             </g>
                             <g id="g404" transform="translate(355.2988,630.0264)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 9.04,-0.015 18.079,-0.03 27.119,-0.044 4.098,-0.007 8.221,0.109 12.315,-0.119 3.856,-0.215 7.703,-0.92 10.956,-3.115 1.069,-0.722 2.071,1.01 1.009,1.727 C 44.737,2.947 35.729,1.941 28.104,1.954 18.736,1.969 9.368,1.984 0,2 -1.287,2.002 -1.289,0.002 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path406" />
                             </g>
                             <g id="g408" transform="translate(348.459,560.2954)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 13.959,-0.122 27.91,-0.495 41.857,0.283 4.82,0.269 9.635,0.619 14.447,0.994 1.275,0.099 1.286,2.1 0,2 C 42.354,2.19 28.478,1.681 14.488,1.841 9.659,1.896 4.83,1.958 0,2 -1.287,2.011 -1.289,0.011 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path410" />
                             </g>
                             <g id="g412" transform="translate(178.3105,725.9336)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 3.901,-4.934 8.013,-9.698 12.321,-14.281 0.884,-0.939 2.296,0.477 1.415,1.415 C 9.427,-8.284 5.316,-3.52 1.414,1.414 1.077,1.841 0.354,1.761 0,1.414 -0.423,1 -0.333,0.421 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path414" />
                             </g>
                             <g id="g416" transform="translate(228.0908,670.2729)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.556,-3.412 5.288,-6.687 8.211,-9.791 1.451,-1.54 2.946,-3.039 4.483,-4.494 1.174,-1.111 2.958,-3.013 4.595,-1.526 0.954,0.868 -0.463,2.278 -1.414,1.414 0.129,0.118 -0.031,0.056 -0.176,0.143 -0.155,0.093 -0.29,0.184 -0.43,0.3 -0.331,0.274 -0.638,0.591 -0.951,0.886 -0.63,0.593 -1.254,1.194 -1.871,1.802 -1.3,1.284 -2.568,2.599 -3.803,3.945 C 6.203,-4.66 3.892,-1.88 1.727,1.01 0.964,2.027 -0.772,1.032 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path418" />
                             </g>
                             <g id="g420" transform="translate(152.6416,610.8267)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 1.186,-0.987 2.597,-1.139 4.086,-1.244 1.736,-0.121 3.477,-0.121 5.217,-0.116 3.549,0.008 7.112,0.033 10.562,-0.909 1.243,-0.339 1.774,1.589 0.532,1.929 C 17.25,0.519 13.99,0.64 10.745,0.642 9.124,0.643 7.501,0.621 5.88,0.669 4.558,0.709 2.501,0.51 1.415,1.414 0.432,2.232 -0.991,0.825 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path422" />
                             </g>
                             <g id="g424" transform="translate(178.6333,610.6074)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 7.466,-7.905 19.959,-11.017 24.776,-21.381 0.542,-1.166 2.266,-0.152 1.727,1.009 C 21.568,-9.753 9.029,-6.648 1.414,1.414 0.528,2.352 -0.884,0.936 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path426" />
                             </g>
                             <g id="g428" transform="translate(219.1523,753.4575)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 9.494,-7.354 21.701,-10.113 31.006,-17.728 0.988,-0.808 2.411,0.599 1.414,1.415 C 23.094,-8.682 10.905,-5.937 1.414,1.414 0.409,2.193 -1.017,0.787 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path430" />
                             </g>
                             <g id="g432" transform="translate(256.3218,783.9136)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 4.95,-8.181 10.147,-16.208 15.585,-24.073 0.727,-1.052 2.461,-0.052 1.727,1.01 C 11.875,-15.198 6.677,-7.171 1.727,1.009 1.062,2.109 -0.669,1.105 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path434" />
                             </g>
                             <g id="g436" transform="translate(305.2842,812.3423)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 0.149,-12.038 -0.851,-24.062 -3.01,-35.905 -0.229,-1.258 1.698,-1.798 1.929,-0.532 C 1.109,-24.418 2.151,-12.216 2,0 1.984,1.286 -0.016,1.29 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path438" />
                             </g>
                             <g id="g440" transform="translate(290.207,750.6753)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 6.914,-8.45 14.547,-16.712 19.773,-26.364 0.613,-1.133 2.341,-0.124 1.727,1.009 C 16.196,-15.558 8.432,-7.162 1.414,1.414 0.599,2.411 -0.809,0.989 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path442" />
                             </g>
                             <g id="g444" transform="translate(351.0937,744.3525)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 6.777,-8.164 13.736,-16.176 20.869,-24.031 0.867,-0.955 2.278,0.463 1.414,1.414 C 15.15,-14.762 8.191,-6.75 1.414,1.414 0.591,2.405 -0.817,0.984 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path446" />
                             </g>
                             <g id="g448" transform="translate(326.1729,721.6631)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 11.75,-4.557 24.822,-2.687 36.649,-6.933 1.214,-0.436 1.736,1.496 0.532,1.929 C 25.352,-0.757 12.278,-2.627 0.532,1.929 -0.669,2.395 -1.189,0.461 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path450" />
                             </g>
                             <g id="g452" transform="translate(374.189,711.0537)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 6.399,-1.272 12.916,-1.845 19.439,-1.684 1.285,0.031 1.29,2.032 0,2 C 13.092,0.16 6.759,0.691 0.532,1.929 -0.725,2.179 -1.263,0.251 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path454" />
                             </g>
                             <g id="g456" transform="translate(467.0898,736.8477)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 6.409,-5.984 12.5,-12.345 17.8,-19.344 4.922,-6.503 9.126,-13.512 12.662,-20.858 2.219,-4.609 4.177,-9.336 5.974,-14.125 0.447,-1.194 2.381,-0.676 1.928,0.532 -3.102,8.269 -6.691,16.371 -11.168,23.994 -4.242,7.222 -9.271,13.953 -14.87,20.178 C 8.865,-5.774 5.196,-2.118 1.414,1.415 0.474,2.292 -0.943,0.881 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path458" />
                             </g>
                             <g id="g460" transform="translate(488.8862,748.4155)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 14.227,1.23 28.576,0.235 42.489,-2.987 1.252,-0.29 1.787,1.638 0.532,1.929 C 28.94,2.202 14.4,3.245 0,2 -1.272,1.89 -1.284,-0.111 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path462" />
                             </g>
                             <g id="g464" transform="translate(516.2573,699.2544)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 4.704,0.129 9.395,0.503 14.059,1.124 0.54,0.071 0.994,0.408 1,1 0.005,0.485 -0.464,1.07 -1,1 C 9.395,2.503 4.704,2.129 0,2 -1.284,1.965 -1.29,-0.035 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path466" />
                             </g>
                             <g id="g468" transform="translate(573.5332,666.459)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.046,-13.208 -1.763,-28.403 7.642,-39.529 0.831,-0.984 2.24,0.437 1.414,1.415 C 0.069,-27.484 3.886,-12.105 1.929,0.532 1.732,1.8 -0.195,1.261 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path470" />
                             </g>
                             <g id="g472" transform="translate(587.2031,621.8721)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -0.58,-3.417 -2.225,-6.423 -4.013,-9.347 -1.78,-2.91 -3.655,-5.763 -5.611,-8.558 -3.961,-5.659 -8.281,-11.055 -12.905,-16.186 -0.861,-0.953 0.55,-2.372 1.414,-1.414 4.738,5.256 9.159,10.794 13.219,16.591 1.999,2.855 3.915,5.771 5.727,8.749 1.825,2.998 3.504,6.137 4.098,9.634 C 2.143,0.728 0.216,1.269 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path474" />
                             </g>
                             <g id="g476" transform="translate(562.749,578.5337)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -18.213,-6.192 -36.943,-10.836 -55.944,-13.848 -5.468,-0.866 -10.956,-1.592 -16.46,-2.188 -1.266,-0.136 -1.281,-2.138 0,-2 19.302,2.09 38.419,5.796 57.086,11.141 5.323,1.524 10.607,3.184 15.85,4.966 C 1.744,-1.517 1.224,0.416 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path478" />
                             </g>
                             <g id="g480" transform="translate(577.8047,482.1055)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 10.464,2.488 20.199,7.516 28.278,14.616 0.969,0.852 -0.45,2.261 -1.414,1.414 C 19.042,9.155 9.593,4.337 -0.532,1.928 -1.783,1.631 -1.254,-0.299 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path482" />
                             </g>
                             <g id="g484" transform="translate(940.9844,462.3457)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 8.949,1.305 17.793,3.23 26.475,5.765 1.233,0.36 0.708,2.291 -0.532,1.928 C 17.262,5.159 8.418,3.233 -0.531,1.929 -1.8,1.743 -1.261,-0.184 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path486" />
                             </g>
                             <g id="g488" transform="translate(968.3682,434.8301)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 1.928,0.271 3.221,2.58 4.196,4.058 1.239,1.876 2.254,3.885 3.127,5.954 1.75,4.141 2.898,8.495 4.017,12.84 0.32,1.247 -1.608,1.779 -1.929,0.531 C 8.41,19.497 7.395,15.601 5.931,11.858 5.204,10 4.351,8.189 3.341,6.469 2.846,5.624 2.312,4.802 1.736,4.009 1.168,3.225 0.501,2.073 -0.531,1.929 -1.801,1.751 -1.261,-0.176 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path490" />
                             </g>
                             <g id="g492" transform="translate(1014.6562,442.9658)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -3.98,1.493 -7.549,4.284 -11.107,6.561 -3.859,2.468 -7.717,4.936 -11.576,7.404 -1.087,0.695 -2.09,-1.035 -1.008,-1.727 3.986,-2.55 7.973,-5.1 11.96,-7.651 3.603,-2.305 7.169,-5.004 11.2,-6.515 C 0.675,-2.381 1.196,-0.448 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path494" />
                             </g>
                             <g id="g496" transform="translate(981.4727,482.7197)">
-                                <path d="m 0,0 v -9.156 c 0,-1.287 2,-1.289 2,0 V 0 C 2,1.286 0,1.289 0,0"
+                                <path class="jembatan_ku"
+                                    d="m 0,0 v -9.156 c 0,-1.287 2,-1.289 2,0 V 0 C 2,1.286 0,1.289 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path498" />
                             </g>
                             <g id="g500" transform="translate(982.8555,522.2344)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 18.884,-3.908 37.769,-7.815 56.652,-11.723 1.256,-0.259 1.793,1.668 0.533,1.929 C 38.3,-5.887 19.416,-1.979 0.531,1.928 -0.725,2.188 -1.262,0.261 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path502" />
                             </g>
                             <g id="g504" transform="translate(940.665,555.9858)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 5.276,-3.198 10.184,-6.949 14.646,-11.21 0.931,-0.889 2.347,0.523 1.415,1.415 C 11.479,-5.422 6.426,-1.556 1.01,1.727 -0.094,2.396 -1.1,0.667 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path506" />
                             </g>
                             <g id="g508" transform="translate(931.9609,576.2002)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 3.836,-4.721 7.098,-9.89 9.741,-15.368 0.559,-1.159 2.284,-0.146 1.727,1.01 C 8.747,-8.72 5.361,-3.443 1.414,1.414 0.603,2.414 -0.806,0.991 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path510" />
                             </g>
                             <g id="g512" transform="translate(1005.2041,595.2734)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 4.543,-1.21 9.506,0.289 13.864,1.582 4.616,1.369 9.448,3.378 14.332,3.362 1.287,-0.005 1.288,1.995 0,2 C 23.475,6.96 18.828,5.173 14.369,3.821 10.084,2.522 5.03,0.73 0.532,1.929 -0.713,2.261 -1.244,0.332 0,0"
                                     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path514" />
                             </g>
                             <g id="g516" transform="translate(993.5459,568.0952)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 9.233,-5.765 19.27,-10.172 29.753,-13.099 1.242,-0.346 1.771,1.582 0.532,1.929 C 19.957,-8.288 10.105,-3.952 1.01,1.727 -0.085,2.411 -1.09,0.681 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path518" />
                             </g>
                             <g id="g520" transform="translate(882.8076,635.5015)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 10.446,-8.537 21.896,-15.768 34.104,-21.51 1.158,-0.545 2.174,1.179 1.009,1.727 C 23.067,-14.117 11.725,-7.011 1.415,1.414 0.426,2.222 -0.997,0.815 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path522" />
                             </g>
                             <g id="g524" transform="translate(912.1846,654.2324)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 0.426,-12.446 1.694,-24.85 3.779,-37.127 0.215,-1.266 2.143,-0.729 1.929,0.532 C 3.652,-24.494 2.419,-12.268 2,0 1.956,1.283 -0.044,1.29 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path526" />
                             </g>
                             <g id="g528" transform="translate(936.8076,664.5479)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -3.437,-11.731 -0.286,-24.227 2.21,-35.818 0.27,-1.258 2.199,-0.725 1.929,0.532 -2.42,11.237 -5.543,23.379 -2.21,34.754 C 2.292,0.706 0.362,1.234 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path530" />
                             </g>
                             <g id="g532" transform="translate(967.8623,680.3843)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -2,-2.273 -4.895,-3.447 -7.622,-4.603 -3.216,-1.361 -6.492,-2.573 -9.765,-3.788 -1.196,-0.444 -0.678,-2.379 0.532,-1.929 3.435,1.276 6.869,2.557 10.243,3.991 2.888,1.228 5.907,2.506 8.026,4.915 C 2.261,-0.451 0.852,0.969 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path534" />
                             </g>
                             <g id="g536" transform="translate(1002.3066,694.0791)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -4.741,-7.152 -12.382,-12.041 -20.793,-13.604 -1.264,-0.235 -0.728,-2.163 0.531,-1.928 8.923,1.658 16.974,6.957 21.989,14.523 C 2.44,0.066 0.709,1.069 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path538" />
                             </g>
                             <g id="g540" transform="translate(877.5811,674.5718)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -6.306,-3.583 -12.912,-6.587 -19.761,-8.975 -1.208,-0.421 -0.688,-2.353 0.532,-1.928 7.008,2.443 13.786,5.509 20.238,9.176 C 2.128,-1.091 1.121,0.638 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path542" />
                             </g>
                             <g id="g544" transform="translate(889.1611,672.6567)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C 4.528,0.247 9.038,0.781 13.501,1.588 14.766,1.817 14.229,3.745 12.969,3.517 8.681,2.741 4.352,2.238 0,2 -1.28,1.93 -1.288,-0.071 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path546" />
                             </g>
                             <g id="g548" transform="translate(910.8369,675.1616)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 6.239,-0.26 12.485,-0.141 18.709,0.357 1.274,0.102 1.286,2.103 0,2 C 12.485,1.859 6.239,1.74 0,2 -1.287,2.054 -1.284,0.054 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path550" />
                             </g>
                             <g id="g552" transform="translate(908.9531,727.2363)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -6.731,-0.916 -13.309,-2.704 -19.575,-5.328 -1.17,-0.49 -0.656,-2.426 0.531,-1.928 6.267,2.624 12.844,4.411 19.576,5.327 C 1.802,-1.756 1.261,0.171 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path554" />
                             </g>
                             <g id="g556" transform="translate(887.2461,715.7236)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.542,-3.707 4.972,-7.489 7.272,-11.351 1.15,-1.929 2.267,-3.876 3.353,-5.841 1.018,-1.841 2.563,-3.907 2.338,-6.099 -0.132,-1.278 1.869,-1.269 2,0 0.224,2.174 -0.964,4.091 -1.963,5.927 -1.145,2.104 -2.326,4.187 -3.543,6.25 C 7.021,-6.985 4.438,-2.944 1.727,1.01 1.003,2.064 -0.73,1.065 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path558" />
                             </g>
                             <g id="g560" transform="translate(935.4053,715.6431)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -0.3,-8.864 -1.376,-17.672 -3.224,-26.346 -0.267,-1.256 1.661,-1.792 1.929,-0.532 C 0.589,-18.033 1.694,-9.039 2,0 2.044,1.287 0.044,1.286 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path562" />
                             </g>
                             <g id="g564" transform="translate(941.2051,713.4507)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.921,-4.205 5.841,-8.41 8.761,-12.615 2.265,-3.264 4.862,-8.451 9.639,-7.574 1.264,0.231 0.729,2.159 -0.532,1.928 -2.025,-0.372 -3.614,1.323 -4.693,2.797 -1.308,1.786 -2.534,3.637 -3.796,5.455 C 6.828,-6.336 4.277,-2.663 1.728,1.01 0.998,2.06 -0.736,1.061 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path566" />
                             </g>
                             <g id="g568" transform="translate(854.1084,750.9854)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 -4.263,-26.363 c -0.204,-1.259 1.724,-1.801 1.929,-0.532 1.421,8.788 2.842,17.576 4.262,26.364 C 2.132,0.728 0.205,1.27 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path570" />
                             </g>
                             <g id="g572" transform="translate(856.3057,769.2065)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 18.017,0.623 36.047,0.806 54.072,0.552 1.287,-0.019 1.288,1.981 0,2 C 36.047,2.806 18.017,2.623 0,2 -1.283,1.956 -1.29,-0.044 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path574" />
                             </g>
                             <g id="g576" transform="translate(924.3008,759.7036)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 8.706,0.878 16.929,5.076 22.554,11.815 0.819,0.982 -0.588,2.404 -1.414,1.414 C 15.867,6.913 8.191,2.826 0,2 -1.269,1.872 -1.282,-0.129 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path578" />
                             </g>
                             <g id="g580" transform="translate(841.9355,823.8149)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 8.746,0.139 17.493,0.096 26.238,-0.129 1.287,-0.034 1.286,1.966 0,2 C 17.493,2.096 8.746,2.139 0,2 -1.286,1.979 -1.29,-0.021 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path582" />
                             </g>
                             <g id="g584" transform="translate(835.3398,817.9463)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -2.935,-9.8 -5.222,-19.78 -6.848,-29.88 -0.203,-1.259 1.724,-1.801 1.929,-0.532 1.626,10.1 3.913,20.08 6.847,29.88 C 2.298,0.704 0.368,1.232 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path586" />
                             </g>
                             <g id="g588" transform="translate(805.9375,895.1514)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -6.885,-14.985 -13.771,-29.971 -20.655,-44.957 -0.534,-1.161 1.189,-2.178 1.726,-1.009 6.886,14.986 13.771,29.971 20.657,44.956 C 2.261,0.152 0.538,1.169 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path590" />
                             </g>
                             <g id="g592" transform="translate(634.5449,870.5537)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 5.082,-9.044 13.325,-15.619 19.417,-23.904 0.755,-1.026 2.491,-0.03 1.727,1.009 C 15.058,-14.617 6.8,-8.019 1.728,1.009 1.097,2.132 -0.632,1.125 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path594" />
                             </g>
                             <g id="g596" transform="translate(742.8701,901.8936)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -0.121,-6.268 -2.707,-12.138 -4.943,-17.889 -2.318,-5.959 -4.667,-11.905 -7.093,-17.821 -0.488,-1.19 1.445,-1.708 1.928,-0.532 2.488,6.068 4.896,12.167 7.272,18.28 C -0.586,-12.17 1.878,-6.307 2,0 2.024,1.288 0.024,1.288 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path598" />
                             </g>
                             <g id="g600" transform="translate(527.5381,836.6538)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 7.22,-8.884 13.859,-18.225 19.888,-27.957 0.676,-1.092 2.407,-0.089 1.726,1.009 C 15.496,-17.07 8.742,-7.603 1.414,1.415 0.602,2.414 -0.805,0.991 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path602" />
                             </g>
                             <g id="g604" transform="translate(581.6699,824.7363)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 6.107,10.707 12.216,21.413 18.323,32.119 0.639,1.12 -1.089,2.129 -1.726,1.009 C 10.488,22.422 4.381,11.716 -1.728,1.01 -2.366,-0.11 -0.639,-1.119 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path606" />
                             </g>
                             <g id="g608" transform="translate(562.2676,801.3228)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.438,-9.552 6.061,-18.771 10.751,-27.441 0.612,-1.133 2.34,-0.124 1.727,1.009 C 7.865,-17.906 4.327,-8.86 1.929,0.532 1.61,1.778 -0.319,1.25 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path610" />
                             </g>
                             <g id="g612" transform="translate(581.3281,773.6499)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="M 0,0 C 7.597,3.156 15.376,5.847 23.298,8.063 24.536,8.409 24.01,10.339 22.767,9.992 14.844,7.776 7.065,5.084 -0.532,1.928 -1.703,1.441 -1.189,-0.494 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path614" />
                             </g>
                             <g id="g616" transform="translate(609.1201,782.1704)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 14.781,-5.612 29.89,-10.334 45.234,-14.146 1.25,-0.31 1.783,1.619 0.533,1.929 C 30.421,-8.406 15.313,-3.683 0.531,1.928 -0.673,2.386 -1.194,0.453 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path618" />
                             </g>
                             <g id="g620" transform="translate(777.127,746.833)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 1.589,-8.772 3.178,-17.544 4.768,-26.316 0.228,-1.265 2.156,-0.729 1.928,0.531 C 5.106,-17.013 3.518,-8.241 1.929,0.531 1.699,1.796 -0.229,1.26 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path622" />
                             </g>
                             <g id="g624" transform="translate(791.8447,759.9248)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.856,-9.735 6.959,-19.074 12.19,-27.767 0.664,-1.102 2.393,-0.097 1.727,1.01 C 8.771,-18.205 4.739,-9.046 1.928,0.532 1.566,1.764 -0.364,1.24 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path626" />
                             </g>
                             <g id="g628" transform="translate(732.7959,722.6763)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 14.284,-11.356 29.135,-21.985 44.499,-31.832 1.086,-0.697 2.091,1.034 1.009,1.727 C 30.289,-20.351 15.564,-9.835 1.414,1.414 0.416,2.207 -1.008,0.801 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path630" />
                             </g>
                             <g id="g632" transform="translate(813.4141,717.8506)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -8.06,-0.204 -16.119,-0.407 -24.179,-0.61 -1.284,-0.032 -1.289,-2.033 0,-2 8.06,0.203 16.119,0.406 24.179,0.61 1.285,0.032 1.29,2.032 0,2"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path634" />
                             </g>
                             <g id="g636" transform="translate(800.9795,676.499)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -0.012,-0.535 -5.555,-0.802 -6.177,-0.858 -2.286,-0.206 -4.576,-0.374 -6.868,-0.503 -4.585,-0.257 -9.178,-0.354 -13.769,-0.305 -1.288,0.014 -1.289,-1.986 0,-2 5.576,-0.059 11.152,0.099 16.715,0.492 2.699,0.191 5.394,0.436 8.082,0.735 C -0.429,-2.263 1.954,-2.105 2,0 2.028,1.288 0.028,1.287 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path638" />
                             </g>
                             <g id="g640" transform="translate(807.9307,663.9912)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 10.436,-0.768 19.648,5.225 27.875,10.885 1.054,0.725 0.055,2.459 -1.01,1.727 C 18.926,7.149 10.081,1.258 0,2 -1.284,2.094 -1.278,0.094 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path642" />
                             </g>
                             <g id="g644" transform="translate(683.2705,637.9834)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -1.731,-6.414 -4.128,-12.616 -7.166,-18.524 -0.588,-1.143 1.138,-2.156 1.728,-1.01 3.114,6.057 5.591,12.426 7.367,19.002 C 2.265,0.712 0.336,1.243 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path646" />
                             </g>
                             <g id="g648" transform="translate(717.291,638.0469)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -3.176,-15.399 -12.665,-28.354 -21.809,-40.765 -0.764,-1.037 0.971,-2.036 1.727,-1.009 9.245,12.547 18.8,25.674 22.011,41.242 C 2.188,0.725 0.26,1.262 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path650" />
                             </g>
                             <g id="g652" transform="translate(674.8281,700.252)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -3.341,-5.642 -8.594,-9.802 -13.563,-13.94 -5.458,-4.543 -11.013,-8.967 -16.568,-13.391 -1.006,-0.801 0.417,-2.208 1.415,-1.414 5.68,4.524 11.362,9.049 16.939,13.701 4.988,4.161 10.15,8.371 13.504,14.035 C 2.384,0.101 0.655,1.108 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path654" />
                             </g>
                             <g id="g656" transform="translate(760.0254,665.9199)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -6.208,0.788 -12.388,-0.692 -18.602,-0.349 -6.187,0.341 -11.653,3.495 -17.669,4.638 -1.256,0.239 -1.795,-1.688 -0.531,-1.929 6.048,-1.149 11.529,-4.236 17.739,-4.68 C -12.697,-2.775 -6.361,-1.193 0,-2 1.273,-2.162 1.262,-0.16 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path658" />
                             </g>
                             <g id="g660" transform="translate(772.9492,639.2095)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 5.711,-8.909 11.025,-18.065 15.927,-27.443 0.596,-1.141 2.323,-0.132 1.727,1.009 C 12.753,-17.055 7.438,-7.899 1.728,1.01 1.035,2.09 -0.697,1.088 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path662" />
                             </g>
                             <g id="g664" transform="translate(475.0151,813.4136)">
-                                <path
+                                <path class="jembatan_ku"
                                     d="m 0,0 c -3.914,-9.335 -7.827,-18.669 -11.741,-28.004 -0.497,-1.186 1.437,-1.704 1.928,-0.532 3.914,9.335 7.828,18.669 11.742,28.004 C 2.426,0.654 0.491,1.171 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path666" />
                             </g>
@@ -1648,69 +1668,91 @@
 </body>
 
 <script>
-    var current_isalnd;
+$(document).on('mousemove', function(e) {
+    $('#coba').css({
+        left: e.pageX,
+        top: e.pageY
+    });
+});
 
-    // $(document).ready(function () {
-    //     console.log("tes");
-    // });
-    // - $(this).outerHeight(true) / 5
-    // - $(this).outerWidth(true) / 2
+var current_isalnd;
 
-    function _zoomIn(id_pulau, pulau_besar) {
-        if (pulau_besar == false) {
-            document.body.style.overflow = "scroll";
-            document.getElementById('svg2').style.padding = "100%";
-            document.getElementById('svg2').style.paddingLeft = "100%";
-            document.getElementById('svg2').style.transform = "scale(5.0)";
-        } else {
-            document.body.style.overflow = "scroll";
-            document.getElementById('svg2').style.padding = "100%";
-            document.getElementById('svg2').style.paddingLeft = "100%";
-            document.getElementById('svg2').style.transform = "scale(2.5)";
-        }
+function _zoomIn(id_pulau, pulau_besar) {
+    var change_height = 0;
+    if (pulau_besar == false) {
+        document.body.style.overflow = "scroll";
+        document.getElementById('svg2').style.padding = "100%";
+        document.getElementById('svg2').style.paddingLeft = "100%";
+        document.getElementById('svg2').style.transform = "scale(5.0)";
+        change_height = 7.5;
+    } else {
+        document.body.style.overflow = "scroll";
+        document.getElementById('svg2').style.padding = "100%";
+        document.getElementById('svg2').style.paddingLeft = "100%";
+        document.getElementById('svg2').style.transform = "scale(2.5)";
+        change_height = 9;
+    }
 
-        setTimeout(() => {
-            $('html, body').animate({
-                scrollTop: $('#' + id_pulau).offset().top - $(this).outerHeight(true) / 7.5,
-                scrollLeft: $('#' + id_pulau).offset().left - $(this).outerWidth(true) / 2
-            }, 750, 'linear');
+    setTimeout(() => {
+        $('html, body').animate({
+            scrollTop: $('#' + id_pulau).offset().top - $(this).outerHeight(true) / change_height,
+            scrollLeft: $('#' + id_pulau).offset().left - $(this).outerWidth(true) / 2
+        }, 750, 'linear');
+        if (current_isalnd != undefined) {
             console.log(current_isalnd);
             if (document.getElementById(current_isalnd).classList.contains('current')) {
                 document.getElementById(current_isalnd).classList.remove('current');
             }
-        }, 750);
+        }
+    }, 750);
 
-        setTimeout(() => {
-            current_isalnd = id_pulau;
-            document.getElementById(current_isalnd).classList.add("current");
-            document.body.style.overflow = "hidden";
-        }, 1000);
-    }
+    setTimeout(() => {
+        current_isalnd = id_pulau;
+        document.getElementById(current_isalnd).classList.add("current");
+        document.body.style.overflow = "hidden";
+    }, 1000);
+}
 
-    function _zoomOut() {
-        document.getElementById('svg2').style.padding = "1%";
-        document.getElementById('svg2').style.paddingLeft = "0%";
-        document.getElementById('svg2').style.transform = "scale(1.0)";
-        setTimeout(() => {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 500, 'linear');
-        }, 500);
-    }
+function _zoomOut() {
+    document.getElementById('svg2').style.padding = "1%";
+    document.getElementById('svg2').style.paddingLeft = "0%";
+    document.getElementById('svg2').style.transform = "scale(1.0)";
+    setTimeout(() => {
+        $('html, body').animate({
+            scrollTop: 0
+        }, 500, 'linear');
+    }, 500);
+}
+$('.pulau_ku').click(function() {
+    _zoomIn(this.id, false);
+});
+$('.p_besar').click(function() {
+    _zoomIn(this.id, true);
+});
 
-    $('.pulau_ku').click(function () {
-        _zoomIn(this.id, false);
+function goBack() {
+    document.location.href = "http://localhost/pce2022/2021/bc/rally_games/map.php";
+}
+</script>
+
+<!-- AJAX -->
+<script>
+// DEMO GET DATA DARI DATABASE LEWAT PHP
+$(function() {
+    // AMBIL JEMBATAN YG SUDAH DIBANGUN
+    $.ajax({
+        url: "new_phps/get_jembatan.php",
+        method: "GET",
+        success: function(data) {
+            $('#coba').html('');
+            data.forEach(function(item) {
+                document.getElementById(item['nama_jembatan']).style.opacity = "1";
+                document.getElementById(item['nama_jembatan']).style.fill = "black";
+                $('#coba').append(item['nama_jembatan']);
+            });
+        }
     });
-
-    $('.p_besar').click(function () {
-        _zoomIn(this.id, true);
-    });
-
-    function goBack() {
-        document.location.href = "http://localhost/pce2022/2021/bc/rally_games/map.php";
-    }
-
-    // document.getElementById('svg2').style.height = "300vh";
+});
 </script>
 
 </html>

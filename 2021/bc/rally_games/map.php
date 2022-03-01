@@ -2651,7 +2651,7 @@ function _zoomOut() {
 function pindah() {
     document.body.style.animation = "1s ease-out 0s 1 slideInLeft";
     setTimeout(() => {
-        document.location.href = "test_map.html";
+        document.location.href = "test_map.php";
     }, 1000);
 
 }

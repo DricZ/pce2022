@@ -38,12 +38,19 @@
     for ($i=0; $i < $stmt_jembatan->rowCount(); $i++) {
         if ($row_jembatan['id_pulau1'] == $pulau_tujuan || 
         $row_jembatan['id_pulau2'] == $pulau_tujuan) {
-            echo 'DITEMUKAN JEMBATAN YG TERHUBUNG KE PULAU TUJUAN<br>';
-            // nanti update lokasi yg baru 
-            // $pulau_tujuan jadi location_now_id_city
+            // JIKA PUNYA JEMBATAN YG TERHUBUNG KE PULAU TUJUAN
+
+            // munculkan modal 'mau pergi ke pulau ini?'
+            // menggunakan jembatan
         } else {
-            echo 'ANDA TIDAK PUNYA JEMBATAN YG TERHUBUNG KE PULAU TUJUAN, HARUS PAKAI TIKET PESAWAT<br>';
-            // cek inventori, jika punya tiket pesawat baru boleh pindah
+            // JIKA TDK PUNYA JEMBATAN YG TERHUBUNG KE PULAU TUJUAN
+            
+            // cek inventori
+            // jika punya tiket pesawat
+                // munculkan modal 'mau pergi ke pulau ini?'
+                // menggunakan tiket pesawat
+            // jika tdk punya tiket pesawat
+                // munculkan modal 'anda tidak punya tiket pesawat atau jembatan untuk pergi ke pulau ini'
         }
         echo $row_jembatan['nama_jembatan'];
     }
@@ -53,13 +60,6 @@
 // maka bisa ganti lokasi
 // jika tidak
 // pakai tiket perjalanan
-
-// SELECT * FROM team WHERE username = 'S001001';
-
-// SELECT * FROM new_jembatan WHERE id_pulau1 = 1 OR id_pulau2 = 1;
-
-    // AMBIL JEMBATAN YG TERHUBUNG KE PULAU SKRG
-    // $sql_jembatan = "SELECT * FROM jembatan WHERE id_pulau1 = $curr_location OR id_pulau2 = $curr_location";
 ?>
 
 <!DOCTYPE html>
