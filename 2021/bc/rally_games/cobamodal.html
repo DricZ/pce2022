@@ -10,10 +10,10 @@
 
   <style>
     .g_jembatan {
-      width:100%;
+      width: 100%;
     }
 
-    .g_jembatan:hover{
+    .g_jembatan:hover {
       transition: all 0.3s;
       filter: drop-shadow(0 0 15px white);
     }
@@ -44,19 +44,33 @@
             <div class="container">
               <div class='row' style="width:50%">
                 <div class='col-sm-4'>
-                  <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan" src="assets/image/jembatan Kayu.png" alt="Card image">
-              
+                  <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
+                    src="assets/image/jembatan Kayu.png" alt="Card image">
                 </div>
+
                 <div class='col-sm-4'>
-                  <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan" src="assets/image/jembatan Baja.png"
-                  alt="Card image">
+                  <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan"
+                    src="assets/image/jembatan Baja.png" alt="Card image">
                 </div>
+
                 <div class='col-sm-4'>
-                  <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan" src="assets/image/jembatan Beton.png" alt="Card image">
+                  <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan"
+                    src="assets/image/jembatan Beton.png" alt="Card image">
                 </div>
+
                 <div class="col-12">
-                  nanti disini bahan"nya
+                  <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Pilih model
+                      <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Biasa</a></li>
+                      <li><a href="#">Proteksi</a></li>
+                    </ul>
+                  </div>
+
+                  <p>pekerja 1</p>
                 </div>
+
               </div>
             </div>
 
@@ -74,13 +88,20 @@
 </body>
 
 <script>
+  var arr_j = ['jmbkayu', 'jmbbaja', 'jmbbeton'];
+
   function on(id) {
-    
-    document.getElementById(id).style.backgroundColor = "yellow";
+    for (let i = 0; i < arr_j.length; i++) {
+      if (arr_j[i] != id) {
+        off(arr_j[i]);
+      } else {
+        document.getElementById(id).style.backgroundColor = "yellow";
+      }
+    }
   }
 
   function off(id) {
-    document.getElementById(id).style.backgroundColor = "putih";
+    document.getElementById(id).style.backgroundColor = "white";
   }
 </script>
 
