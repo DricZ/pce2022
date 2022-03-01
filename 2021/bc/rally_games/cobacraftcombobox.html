@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <title>combo box</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    </head>
+    <body>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown button
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" data-toggle="collapse" onclick="klik()">bom lv1</a>
+                <a class="dropdown-item" data-toggle="collapse" href="#bom2" 
+                role="button" aria-expanded="false" aria-controls="multiCollapseExample1">bom lv2</a>
+                <a class="dropdown-item" data-toggle="collapse" href="#bom1" 
+                role="button" aria-expanded="false" aria-controls="multiCollapseExample1">bom lv3</a>
+                <a class="dropdown-item" data-toggle="collapse" href="#bom1" 
+                role="button" aria-expanded="false" aria-controls="multiCollapseExample1">bom lv4</a>
+                <a class="dropdown-item" data-toggle="collapse" href="#bom1" 
+                role="button" aria-expanded="false" aria-controls="multiCollapseExample1">bom lv5</a>
+                <a class="dropdown-item" data-toggle="collapse" href="#bom1" 
+                role="button" aria-expanded="false" aria-controls="multiCollapseExample1">bom lv6</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="collapse multi-collapse" id="bom1">
+                <div class="card card-body">
+                  muncul bahan yang di pake
+                  <a href="#" class="btn btn-primary" onclick="">craft</a>
+                </div>
+              </div>
+              <div class="collapse multi-collapse" id="bom2">
+                <div class="card card-body">
+                  muncul bahan yang di pake bom 2
+                  <a href="#" class="btn btn-primary" onclick="">craft</a>
+                </div>
+              </div>
+           </div>
+       </div>
+       <!-- <script>
+         function klik(){
+          document.getElementById('bom1').style.display = 'block';
+         }
+
+       </script> -->
+
+        <select class="form-control" id="jenis_bom" name="jenis_bom" style="height:40px; font-size: 12pt;" required>
+          <option value="">Select bom for your life...</option>
+          <option value="bom1">bom lv1</option>
+          <option value="bom2">bom lv2</option>
+          <option value="bom3">bom lv3</option>
+          <option value="bom4">bom lv4</option>
+          <option value="bom5">bom lv5</option>
+          <option value="bom6">bom lv6</option>
+        </select>
+        <div id="boom_1" hidden>
+          <div class="row">
+            <div class="col">
+              <div>
+                <div class="card card-body">
+                  muncul bahan yang di pake
+                  <a href="#" class="btn btn-primary" onclick="">craft</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+        <div id="boom_2" hidden>
+          <div class="row">
+              <div class="col">
+                <div >
+                  <div class="card card-body">
+                    muncul bahan yang di pake bom 2
+                    <a href="#" class="btn btn-primary" onclick="">craft</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div id="boom_3" hidden>
+          <div class="row">
+              <div class="col">
+                <div >
+                  <div class="card card-body">
+                    muncul bahan yang di pake bom 3
+                    <a href="#" class="btn btn-primary" onclick="">craft</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div id="boom_4" hidden>
+          <div class="row">
+              <div class="col">
+                <div >
+                  <div class="card card-body">
+                    muncul bahan yang di pake bom 4
+                    <a href="#" class="btn btn-primary" onclick="">craft</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div id="boom_5" hidden>
+          <div class="row">
+              <div class="col">
+                <div >
+                  <div class="card card-body">
+                    muncul bahan yang di pake bom 5
+                    <a href="#" class="btn btn-primary" onclick="">craft</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div id="boom_6" hidden>
+          <div class="row">
+              <div class="col">
+                <div >
+                  <div class="card card-body">
+                    muncul bahan yang di pake bom 6
+                    <a href="#" class="btn btn-primary" onclick="">craft</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+        <script>
+          $("#jenis_bom").change(function() {
+            if ($("#jenis_bom").val() == 'bom1') {
+              $("#boom_1").removeAttr("hidden");
+              $('#boom_2').prop('hidden', true);
+              $('#boom_3').prop('hidden', true);
+              $('#boom_4').prop('hidden', true);
+              $('#boom_5').prop('hidden', true);
+              $('#boom_6').prop('hidden', true);
+              }
+            else if ($("#jenis_bom").val() == 'bom2') {
+              $('#boom_1').prop('hidden', true);
+              $("#boom_2").removeAttr("hidden");
+              $('#boom_3').prop('hidden', true);
+              $('#boom_4').prop('hidden', true);
+              $('#boom_5').prop('hidden', true);
+              $('#boom_6').prop('hidden', true);
+          }else if ($("#jenis_bom").val() == 'bom3') {
+              $('#boom_1').prop('hidden', true);
+              $("#boom_2").prop("hidden",true);
+              $('#boom_3').removeAttr('hidden');
+              $('#boom_4').prop('hidden', true);
+              $('#boom_5').prop('hidden', true);
+              $('#boom_6').prop('hidden', true);
+          }else if ($("#jenis_bom").val() == 'bom4') {
+              $('#boom_1').prop('hidden', true);
+              $("#boom_2").prop("hidden",true);
+              $('#boom_3').prop('hidden', true);
+              $('#boom_4').removeAttr('hidden');
+              $('#boom_5').prop('hidden', true);
+              $('#boom_6').prop('hidden', true);
+          }else if ($("#jenis_bom").val() == 'bom5') {
+              $('#boom_1').prop('hidden', true);
+              $("#boom_2").prop("hidden",true);
+              $('#boom_3').prop('hidden', true);
+              $('#boom_4').prop('hidden', true);
+              $('#boom_5').removeAttr('hidden');
+              $('#boom_6').prop('hidden', true);
+          }else if ($("#jenis_bom").val() == 'bom6') {
+              $('#boom_1').prop('hidden', true);
+              $("#boom_2").prop("hidden",true);
+              $('#boom_3').prop('hidden', true);
+              $('#boom_4').prop('hidden', true);
+              $('#boom_5').prop('hidden', true);
+              $('#boom_6').removeAttr('hidden');
+          }
+          });
+        </script>
+    </body>
+</html>
