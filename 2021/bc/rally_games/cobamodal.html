@@ -12,6 +12,10 @@
     .g_jembatan {
       width: 100%;
     }
+
+    .modal-body{
+      padding: 20px;
+    }
   </style>
 </head>
 
@@ -39,6 +43,7 @@
           <div class="modal-body">
             <div class="container">
               <div class='row' style="width:50%">
+                <p>Pilih tipe jembatan yang ingin dibangun:</p>
                 <div class='col-sm-4'>
                   <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
                     src="assets/image/jembatan Kayu.png" alt="Card image">
@@ -53,9 +58,11 @@
                   <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan"
                     src="assets/image/jembatan Beton.png" alt="Card image">
                 </div>
+              </div>
+              <div class="row" style="width:50%">
 
                 <!-- Jembatan Kayu -->
-                <div class="col-12 hidden" id="desckayu">
+                <div class="col-12 jembatan hidden" id="desckayu">
                   <br>
                   <center>
                     <h1>Jembatan Kayu</h1>
@@ -68,7 +75,7 @@
                 </div>
 
                 <!-- Jembatan Baja -->
-                <div class="col-12 hidden" id="descbaja">
+                <div class="col-12 jembatan hidden" id="descbaja">
                   <br>
                   <center>
                     <h1>Jembatan Baja</h1>
@@ -84,7 +91,7 @@
                 </div>
 
                 <!-- Jembatan Beton -->
-                <div class="col-12 hidden" id="descbeton">
+                <div class="col-12 jembatan hidden" id="descbeton">
                   <br>
                   <center>
                     <h1>Jembatan Beton</h1>
@@ -103,7 +110,7 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-success" data-dismiss="modal">BUILD</button>
+              <button id="build" type="button" class="btn btn-success" data-dismiss="modal">CLOSE</button>
             </div>
           </div>
         </div>
@@ -115,9 +122,10 @@
 
 <script>
   var arr_j = ['jmbkayu', 'jmbbaja', 'jmbbeton'];
-  var arr_j2 = ['desckayu', 'descbaja', 'descbeton']
+  var arr_j2 = ['desckayu', 'descbaja', 'descbeton'];
 
   function on(id) {
+    document.getElementById("build").innerHTML= "BUILD";
     for (let i = 0; i < arr_j.length; i++) {
       if (arr_j[i] != id) {
         off(arr_j[i]);
@@ -142,6 +150,7 @@
   function off(id) {
     document.getElementById(id).style.backgroundColor = "white";
   }
+
 </script>
 
 </html>
