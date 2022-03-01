@@ -157,6 +157,138 @@ $rowTeam = $stmtTeam->fetch();
                 <div class="uang pr-4"><?= number_format($rowTeam['money'],0,',','.'); ?></div>
             </div>
 
+            <select class="form-control" id="jenis_bom" name="jenis_bom" style="margin-top:8%; height:40px; font-size: 12pt;" required>
+            <option value="">Select bom for your life...</option>
+            <option value="bom1">bom lv1</option>
+            <option value="bom2">bom lv2</option>
+            <option value="bom3">bom lv3</option>
+            <option value="bom4">bom lv4</option>
+            <option value="bom5">bom lv5</option>
+            <option value="bom6">bom lv6</option>
+            </select>
+            <div id="boom_1" hidden>
+            <div class="row">
+                <div class="col">
+                <div>
+                    <div class="card card-body">
+                    muncul bahan yang di pake
+                    <img src="assets/image/BOMB LV1.png" width="200 px">
+                    <a href="#" class="btn btn-primary" onclick="">craft</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div id="boom_2" hidden>
+            <div class="row">
+                <div class="col">
+                    <div >
+                    <div class="card card-body">
+                        muncul bahan yang di pake bom 2
+                        <img src="assets/image/BOMB LV 2.png" width="200 px">
+                        <a href="#" class="btn btn-primary" onclick="">craft</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="boom_3" hidden>
+            <div class="row">
+                <div class="col">
+                    <div >
+                    <div class="card card-body">
+                        muncul bahan yang di pake bom 3
+                        <img src="assets/image/BOMB LV 3.png" width="200 px">
+                        <a href="#" class="btn btn-primary" onclick="">craft</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="boom_4" hidden>
+            <div class="row">
+                <div class="col">
+                    <div >
+                    <div class="card card-body">
+                        muncul bahan yang di pake bom 4
+                        <a href="#" class="btn btn-primary" onclick="">craft</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="boom_5" hidden>
+            <div class="row">
+                <div class="col">
+                    <div >
+                    <div class="card card-body">
+                        muncul bahan yang di pake bom 5
+                        <a href="#" class="btn btn-primary" onclick="">craft</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div id="boom_6" hidden>
+            <div class="row">
+                <div class="col">
+                    <div >
+                    <div class="card card-body">
+                        muncul bahan yang di pake bom 6
+                        <a href="#" class="btn btn-primary" onclick="">craft</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <script>
+            $("#jenis_bom").change(function() {
+                if ($("#jenis_bom").val() == 'bom1') {
+                $("#boom_1").removeAttr("hidden");
+                $('#boom_2').prop('hidden', true);
+                $('#boom_3').prop('hidden', true);
+                $('#boom_4').prop('hidden', true);
+                $('#boom_5').prop('hidden', true);
+                $('#boom_6').prop('hidden', true);
+                }
+                else if ($("#jenis_bom").val() == 'bom2') {
+                $('#boom_1').prop('hidden', true);
+                $("#boom_2").removeAttr("hidden");
+                $('#boom_3').prop('hidden', true);
+                $('#boom_4').prop('hidden', true);
+                $('#boom_5').prop('hidden', true);
+                $('#boom_6').prop('hidden', true);
+            }else if ($("#jenis_bom").val() == 'bom3') {
+                $('#boom_1').prop('hidden', true);
+                $("#boom_2").prop("hidden",true);
+                $('#boom_3').removeAttr('hidden');
+                $('#boom_4').prop('hidden', true);
+                $('#boom_5').prop('hidden', true);
+                $('#boom_6').prop('hidden', true);
+            }else if ($("#jenis_bom").val() == 'bom4') {
+                $('#boom_1').prop('hidden', true);
+                $("#boom_2").prop("hidden",true);
+                $('#boom_3').prop('hidden', true);
+                $('#boom_4').removeAttr('hidden');
+                $('#boom_5').prop('hidden', true);
+                $('#boom_6').prop('hidden', true);
+            }else if ($("#jenis_bom").val() == 'bom5') {
+                $('#boom_1').prop('hidden', true);
+                $("#boom_2").prop("hidden",true);
+                $('#boom_3').prop('hidden', true);
+                $('#boom_4').prop('hidden', true);
+                $('#boom_5').removeAttr('hidden');
+                $('#boom_6').prop('hidden', true);
+            }else if ($("#jenis_bom").val() == 'bom6') {
+                $('#boom_1').prop('hidden', true);
+                $("#boom_2").prop("hidden",true);
+                $('#boom_3').prop('hidden', true);
+                $('#boom_4').prop('hidden', true);
+                $('#boom_5').prop('hidden', true);
+                $('#boom_6').removeAttr('hidden');
+            }
+            });
+
             <?php
             if ($rowTeam['location_now_id_city'] != 0) {
             ?>
@@ -200,7 +332,7 @@ $rowTeam = $stmtTeam->fetch();
 
         <div class="goback" style="margin-top: 5%;" id="p-goback">
             <div class="purchase-goback">
-                <p>Go Back To Shop <--</p>
+                <p>Go Back To Craft <--</p>
             </div>
         </div>
         <div class="footer my-5">
