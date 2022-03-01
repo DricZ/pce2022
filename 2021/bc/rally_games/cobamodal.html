@@ -10,7 +10,12 @@
 
   <style>
     .g_jembatan {
-      width: 100%;
+      width:100%;
+    }
+
+    .g_jembatan:hover{
+      transition: all 0.3s;
+      filter: drop-shadow(0 0 15px white);
     }
   </style>
 </head>
@@ -25,7 +30,7 @@
 
     <!-- The Modal -->
     <div class="modal fade" id="myModal">
-      <div class="modal-xl-dialog">
+      <div class="modal-dialog">
         <div class="modal-content">
 
           <!-- Modal Header -->
@@ -37,16 +42,17 @@
           <!-- Modal body -->
           <div class="modal-body">
             <div class="container">
-              <div class='row'>
+              <div class='row' style="width:50%">
                 <div class='col-sm-4'>
-                  <img id="j1" onclick="on('j1')" class="card-img-top g_jembatan" src="assets/image/jembatan Baja.png"
-                    alt="Card image">
+                  <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan" src="assets/image/jembatan Kayu.png" alt="Card image">
+              
                 </div>
                 <div class='col-sm-4'>
-                  <img class="card-img-top g_jembatan" src="assets/image/jembatan Kayu.png" alt="Card image">
+                  <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan" src="assets/image/jembatan Baja.png"
+                  alt="Card image">
                 </div>
                 <div class='col-sm-4'>
-                  <img class="card-img-top g_jembatan" src="assets/image/jembatan Beton.png" alt="Card image">
+                  <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan" src="assets/image/jembatan Beton.png" alt="Card image">
                 </div>
                 <div class="col-12">
                   nanti disini bahan"nya
@@ -69,6 +75,7 @@
 
 <script>
   function on(id) {
+    
     document.getElementById(id).style.backgroundColor = "yellow";
   }
 
