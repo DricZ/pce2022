@@ -202,72 +202,191 @@ $rowTeam = $stmtTeam->fetch();
                   </div>
                   <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
             </div>
-            <p></p>
-            <p></p>
-            <p></p>
-           
         </div>
             </div>
             <div id="boom_2" hidden>
             <div class="row">
                 <div class="col">
-                    <div >
-                    <div class="card card-body">
-                        <p style ="color :white;">muncul bahan yang di pake bom 2</p> 
-                        <img src="assets/image/BOMB LV 2.png" width="200 px">
-                        <a href="#" class="btn btn-primary" onclick="">craft</a>
+                <div class="row">
+                    <div class="col-4">
+                    <img src="assets/image/BOMB LV 2.png" alt="" style="width: 10cm;">
                     </div>
+                    <div class="col-4">
+                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
                     </div>
                 </div>
+                  <div class="row">
+                    <div class="col-2">
+                      <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
+                      <b>1x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                      <b>1x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                      <b>2x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                      <b>2x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                      <b>3x</b>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+            </div>
             </div>
             </div>
             <div id="boom_3" hidden>
             <div class="row">
                 <div class="col">
-                    <div >
-                    <div class="card card-body">
-                        muncul bahan yang di pake bom 3
-                        <img src="assets/image/BOMB LV 3.png" width="200 px">
-                        <a href="#" class="btn btn-primary" onclick="">craft</a>
+                <div class="row">
+                    <div class="col-4">
+                    <img src="assets/image/BOMB LV 3.png" alt="" style="width: 10cm;">
                     </div>
+                    <div class="col-4">
+                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
                     </div>
                 </div>
+                  <div class="row">
+                    <div class="col-2">
+                      <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
+                      <b>2x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                      <b>2x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                      <b>3x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                      <b>3x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                      <b>4x</b>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+            </div>
             </div>
             </div>
             <div id="boom_4" hidden>
             <div class="row">
                 <div class="col">
-                    <div >
-                    <div class="card card-body">
-                        muncul bahan yang di pake bom 4
-                        <a href="#" class="btn btn-primary" onclick="">craft</a>
+                <div class="row">
+                    <div class="col-4">
+                    <img src="assets/image/BOMB LV 4.png" alt="" style="width: 10cm;">
                     </div>
+                    <div class="col-4">
+                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
                     </div>
                 </div>
+                  <div class="row">
+                    <div class="col-2">
+                      <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
+                      <b>2x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                      <b>3x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                      <b>3x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                      <b>4x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                      <b>4x</b>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+            </div>
             </div>
             </div>
             <div id="boom_5" hidden>
             <div class="row">
                 <div class="col">
-                    <div >
-                    <div class="card card-body">
-                        muncul bahan yang di pake bom 5
-                        <a href="#" class="btn btn-primary" onclick="">craft</a>
+                <div class="row">
+                    <div class="col-4">
+                    <img src="assets/image/BOMB LV 5.png" alt="" style="width: 10cm;">
                     </div>
+                    <div class="col-4">
+                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
                     </div>
                 </div>
+                  <div class="row">
+                    <div class="col-2">
+                      <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
+                      <b>3x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                      <b>4x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                      <b>4x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                      <b>4x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                      <b>5x</b>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+            </div>
             </div>
             </div>
             <div id="boom_6" hidden>
             <div class="row">
                 <div class="col">
-                    <div >
-                    <div class="card card-body">
-                        muncul bahan yang di pake bom 6
-                        <a href="#" class="btn btn-primary" onclick="">craft</a>
+                <div class="row">
+                    <div class="col-4">
+                    <img src="assets/image/BOMB LV 6.png" alt="" style="width: 10cm;">
                     </div>
+                    <div class="col-4">
+                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
                     </div>
                 </div>
+                  <div class="row">
+                    <div class="col-2">
+                      <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
+                      <b>3x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                      <b>5x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                      <b>6x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                      <b>3x</b>
+                    </div>
+                    <div class="col-2">
+                      <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                      <b>6x</b>
+                    </div>
+                  </div>
+                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+            </div>
             </div>
             </div>
             <script>
