@@ -157,9 +157,14 @@ $rowTeam = $stmtTeam->fetch();
                 <img src="assets/image/bridge coin.png" width="35px" class="mx-2 pt-1">
                 <div class="uang pr-4"><?= number_format($rowTeam['money'],0,',','.'); ?></div>
             </div>
-
-            <select class="form-control" id="jenis_bom" name="jenis_bom" style="margin-top:8%; height:40px; font-size: 12pt;margin-bottom:3cm;" required>
-            <option value="">Select bom for your life...</option>
+            <div class="container" style="margin-top: 2cm;">
+            <div class="row">
+                anda dapat membuat bom penghancur hubungan orang.....
+             </div>
+            </div>
+            
+            <select class="form-control" id="jenis_bom" name="jenis_bom" style="margin-top:1cm; height:40px; font-size: 12pt;margin-bottom:2cm;" required>
+            <option value="">Select bom...</option>
             <option value="bom1">bom lv1</option>
             <option value="bom2">bom lv2</option>
             <option value="bom3">bom lv3</option>
@@ -169,15 +174,16 @@ $rowTeam = $stmtTeam->fetch();
             </select>
             <div id="boom_1" hidden>
             <div class="row">
-            <div class="col"> 
+            <div class="col"style="margin-bottom: 3cm;"> 
+            <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 1</h1 >
                 <div class="row">
-                    <div class="col-4">
-                    <img src="assets/image/BOMB LV 1.png" alt="" style="width: 10cm;">
-                    </div>
-                    <div class="col-4">
-                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
-                    </div>
+                    <img src="assets/image/BOMB LV 1.png" alt="" style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
                 </div>
+                <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                <h3>deskripsi :</h3>
+                <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan orang</p>
+              </div>
+                <div class="row"></div>
                   <div class="row">
                     <div class="col-2">
                       <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
@@ -200,21 +206,23 @@ $rowTeam = $stmtTeam->fetch();
                       <b>2x</b>
                     </div>
                   </div>
-                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+                  <div class="row" style="float :right">
+                    <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>  
+                  </div>              
             </div>
         </div>
             </div>
             <div id="boom_2" hidden>
             <div class="row">
-                <div class="col">
+                <div class="col"style="margin-bottom: 3cm;">
+                <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 2</h1 >
                 <div class="row">
-                    <div class="col-4">
-                    <img src="assets/image/BOMB LV 2.png" alt="" style="width: 10cm;">
-                    </div>
-                    <div class="col-4">
-                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
-                    </div>
+                    <img src="assets/image/BOMB LV 2.png" alt="" style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
                 </div>
+                <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                <h3>deskripsi :</h3>
+                <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan orang</p>
+              </div>
                   <div class="row">
                     <div class="col-2">
                       <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
@@ -237,21 +245,23 @@ $rowTeam = $stmtTeam->fetch();
                       <b>3x</b>
                     </div>
                   </div>
-                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+                  <div class="row" style="float :right">
+                    <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>  
+                  </div>                  
             </div>
             </div>
             </div>
             <div id="boom_3" hidden>
             <div class="row">
-                <div class="col">
+                <div class="col"style="margin-bottom: 3cm;">
+                <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 3</h1 >
                 <div class="row">
-                    <div class="col-4">
-                    <img src="assets/image/BOMB LV 3.png" alt="" style="width: 10cm;">
-                    </div>
-                    <div class="col-4">
-                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
-                    </div>
+                    <img src="assets/image/BOMB LV 3.png" alt="" style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
                 </div>
+                <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                <h3>deskripsi :</h3>
+                <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan orang</p>
+              </div>
                   <div class="row">
                     <div class="col-2">
                       <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
@@ -274,21 +284,23 @@ $rowTeam = $stmtTeam->fetch();
                       <b>4x</b>
                     </div>
                   </div>
-                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+                  <div class="row" style="float :right">
+                    <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>  
+                  </div>                  
             </div>
             </div>
             </div>
             <div id="boom_4" hidden>
             <div class="row">
-                <div class="col">
+                <div class="col"style="margin-bottom: 3cm;">
+                <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 4</h1 >
                 <div class="row">
-                    <div class="col-4">
-                    <img src="assets/image/BOMB LV 4.png" alt="" style="width: 10cm;">
-                    </div>
-                    <div class="col-4">
-                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
-                    </div>
+                    <img src="assets/image/BOMB LV 4.png" alt="" style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
                 </div>
+                <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                <h3>deskripsi :</h3>
+                <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan orang</p>
+              </div>
                   <div class="row">
                     <div class="col-2">
                       <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
@@ -311,21 +323,23 @@ $rowTeam = $stmtTeam->fetch();
                       <b>4x</b>
                     </div>
                   </div>
-                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+                  <div class="row" style="float :right">
+                    <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>  
+                  </div>                  
             </div>
             </div>
             </div>
             <div id="boom_5" hidden>
             <div class="row">
-                <div class="col">
+                <div class="col"style="margin-bottom: 3cm;">
+                <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 5</h1 >
                 <div class="row">
-                    <div class="col-4">
-                    <img src="assets/image/BOMB LV 5.png" alt="" style="width: 10cm;">
-                    </div>
-                    <div class="col-4">
-                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
-                    </div>
+                    <img src="assets/image/BOMB LV 5.png" alt="" style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
                 </div>
+                <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                <h3>deskripsi :</h3>
+                <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan orang</p>
+              </div>
                   <div class="row">
                     <div class="col-2">
                       <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
@@ -348,21 +362,24 @@ $rowTeam = $stmtTeam->fetch();
                       <b>5x</b>
                     </div>
                   </div>
-                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+                  <div class="row" style="float :right">
+                    <!-- <img src="assets/image/bridge coin.png" width="1%" height="1%">10000 -->
+                    <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>  
+                  </div>                  
             </div>
             </div>
             </div>
             <div id="boom_6" hidden>
             <div class="row">
-                <div class="col">
+                <div class="col"style="margin-bottom: 3cm;">
+                <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 6</h1 >
                 <div class="row">
-                    <div class="col-4">
-                    <img src="assets/image/BOMB LV 6.png" alt="" style="width: 10cm;">
-                    </div>
-                    <div class="col-4">
-                    <p>bom ini bisa meledakan jembatan kayu langsung modar</p>
-                    </div>
+                    <img src="assets/image/BOMB LV 6.png" alt="" style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
                 </div>
+                <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                <h3>deskripsi :</h3>
+                <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan orang</p>
+              </div>
                   <div class="row">
                     <div class="col-2">
                       <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
@@ -385,13 +402,23 @@ $rowTeam = $stmtTeam->fetch();
                       <b>6x</b>
                     </div>
                   </div>
-                  <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>            
+                  <div class="row" style="float :right">
+                    <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>  
+                  </div>                  
             </div>
             </div>
             </div>
             <script>
             $("#jenis_bom").change(function() {
-                if ($("#jenis_bom").val() == 'bom1') {
+                if ($("#jenis_bom").val() == '') {
+                $('#boom_1').prop('hidden', true);
+                $('#boom_2').prop('hidden', true);
+                $('#boom_3').prop('hidden', true);
+                $('#boom_4').prop('hidden', true);
+                $('#boom_5').prop('hidden', true);
+                $('#boom_6').prop('hidden', true);
+                }
+                else if ($("#jenis_bom").val() == 'bom1') {
                 $("#boom_1").removeAttr("hidden");
                 $('#boom_2').prop('hidden', true);
                 $('#boom_3').prop('hidden', true);
