@@ -14,6 +14,10 @@
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <!-- BOOTSTRAP 3 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <style>
     @keyframes glowing {
         0% {
@@ -47,6 +51,7 @@
     }
 
     #svg2 {
+        box-sizing: content-box;
         width: 80vw;
         max-height: 100vh;
         transition: all 0.75s;
@@ -87,14 +92,18 @@
 </head>
 
 <body>
-    <div id="coba" style="position: fixed;">
+    <input id="session_username" type="hidden" value="<?php echo $_SESSION['username']; ?>">
+
+    <div id="coba" style="position: fixed; display: none;">
         <h1>HALO</h1>
     </div>
+
     <div class="demo_btn">
         <button onclick="_zoomOut()" style="width: 20vw; height: 20vh; font-size: 3vw;">zoom out</button>
         <br><br>
         <button onclick="goBack()" style="width: 20vw; height: 20vh; font-size: 3vw;">GO BACK!</button>
     </div>
+
     <div style="text-align: center;">
         <!-- <div style="text-align: center;">
             <img src="treasure.png" id="harta">
@@ -1667,92 +1676,6 @@
     </div>
 </body>
 
-<script>
-$(document).on('mousemove', function(e) {
-    $('#coba').css({
-        left: e.pageX,
-        top: e.pageY
-    });
-});
-
-var current_isalnd;
-
-function _zoomIn(id_pulau, pulau_besar) {
-    var change_height = 0;
-    if (pulau_besar == false) {
-        document.body.style.overflow = "scroll";
-        document.getElementById('svg2').style.padding = "100%";
-        document.getElementById('svg2').style.paddingLeft = "100%";
-        document.getElementById('svg2').style.transform = "scale(5.0)";
-        change_height = 7.5;
-    } else {
-        document.body.style.overflow = "scroll";
-        document.getElementById('svg2').style.padding = "100%";
-        document.getElementById('svg2').style.paddingLeft = "100%";
-        document.getElementById('svg2').style.transform = "scale(2.5)";
-        change_height = 9;
-    }
-
-    setTimeout(() => {
-        $('html, body').animate({
-            scrollTop: $('#' + id_pulau).offset().top - $(this).outerHeight(true) / change_height,
-            scrollLeft: $('#' + id_pulau).offset().left - $(this).outerWidth(true) / 2
-        }, 750, 'linear');
-        if (current_isalnd != undefined) {
-            console.log(current_isalnd);
-            if (document.getElementById(current_isalnd).classList.contains('current')) {
-                document.getElementById(current_isalnd).classList.remove('current');
-            }
-        }
-    }, 750);
-
-    setTimeout(() => {
-        current_isalnd = id_pulau;
-        document.getElementById(current_isalnd).classList.add("current");
-        document.body.style.overflow = "hidden";
-    }, 1000);
-}
-
-function _zoomOut() {
-    document.getElementById('svg2').style.padding = "1%";
-    document.getElementById('svg2').style.paddingLeft = "0%";
-    document.getElementById('svg2').style.transform = "scale(1.0)";
-    setTimeout(() => {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 500, 'linear');
-    }, 500);
-}
-$('.pulau_ku').click(function() {
-    _zoomIn(this.id, false);
-});
-$('.p_besar').click(function() {
-    _zoomIn(this.id, true);
-});
-
-function goBack() {
-    document.location.href = "http://localhost/pce2022/2021/bc/rally_games/map.php";
-}
-</script>
-
-<!-- AJAX -->
-<script>
-// DEMO GET DATA DARI DATABASE LEWAT PHP
-$(function() {
-    // AMBIL JEMBATAN YG SUDAH DIBANGUN
-    $.ajax({
-        url: "new_phps/get_jembatan.php",
-        method: "GET",
-        success: function(data) {
-            $('#coba').html('');
-            data.forEach(function(item) {
-                document.getElementById(item['nama_jembatan']).style.opacity = "1";
-                document.getElementById(item['nama_jembatan']).style.fill = "black";
-                $('#coba').append(item['nama_jembatan']);
-            });
-        }
-    });
-});
-</script>
+<script src="test_map.js"></script>
 
 </html>
