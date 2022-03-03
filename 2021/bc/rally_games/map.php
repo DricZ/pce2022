@@ -34,7 +34,7 @@
     <title>MAP</title>
 
     <style>
-    @keyframes slideInLeft {
+    @keyframes zoom_in {
         0% {
             transform: scale(1.0);
         }
@@ -2649,10 +2649,10 @@ function _zoomOut() {
 }
 
 function pindah() {
-    document.body.style.animation = "1s ease-out 0s 1 slideInLeft";
+    document.body.style.animation = "1s ease-out 0s 1 zoom_in";
     setTimeout(() => {
         document.location.href = "test_map.php";
-    }, 1000);
+    }, 900);
 
 }
 

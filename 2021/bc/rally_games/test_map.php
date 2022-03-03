@@ -19,6 +19,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style>
+    /* MODAL */
+    .custom_row {
+        display: flex;
+        align-items: center;
+    }
+
+    p {
+        font-size: large;
+    }
+
+    .row {
+        margin-top: 15px;
+    }
+
+    #modal_saat_ini,
+    .modal_saat_jembatan,
+    .modal_saat_tiket {
+        display: none;
+    }
+
+    /*  */
+
     @keyframes glowing {
         0% {
             filter: drop-shadow(0 0 5px black);
@@ -77,12 +99,12 @@
     }
 
     /* #harta {
-            position: fixed;
-            width: 250px;
-            top: 150px;
-            left: 45vw;
-            z-index: 2;
-        } */
+                position: fixed;
+                width: 250px;
+                top: 150px;
+                left: 45vw;
+                z-index: 2;
+            } */
 
     .current {
         animation: glowing 1300ms infinite;
@@ -1675,6 +1697,64 @@
         </svg>
     </div>
 </body>
+
+<div class="modal fade" id="modal_pulau" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="modal-title">Ingin pergi ke pulau tersebut?</h1>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>Tim yang juga berada di pulau tersebut:</p>
+                        <p>- Tim A</p>
+                        <p>- Tim B</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <!-- LOKASI SAAT INI -->
+                        <p id="modal_saat_ini">Pulau tersebut adalah lokasi anda saat ini.</p>
+
+                        <!-- JEMBATAN -->
+                        <p class="modal_saat_jembatan">Pergi melalui <b>jembatan baja</b>.</p>
+
+                        <!-- TIKET PESAWAT -->
+                        <p class="modal_saat_tiket">Pergi menggunakan <b>1 tiket pesawat</b>.</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <!-- JEMBATAN -->
+                    <div class="modal_saat_jembatan">
+                        <img id="gambar_jembatan" src="assets/image/jembatan baja tampak depan-01.png" alt=""
+                            width="50%">
+                    </div>
+
+                    <!-- TIKET PESAWAT -->
+                    <div class="row custom_row modal_saat_tiket">
+                        <div class="col-sm-4 text-right">
+                            <h1 style="color: red;"><b>-1</b></h1>
+                        </div>
+                        <div class="col-sm-8 text-left">
+                            <img src="assets/image/Tiket.png" alt="" width="50%">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button id="ya" type="button" class="btn btn-success" style="width: 100%;">YA</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <button id="tidak" type="button" class="btn btn-danger" style="width: 100%;">TIDAK</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="test_map.js"></script>
 
