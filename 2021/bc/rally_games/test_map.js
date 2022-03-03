@@ -39,19 +39,24 @@ $(function () {
 // UNTUK ZOOM SAAT PULAU DI-KLIK
 function _zoomIn(id_pulau, pulau_besar) {
     var change_height = 0;
-    if (pulau_besar == false) {
-        document.body.style.overflow = "scroll";
-        document.getElementById('svg2').style.padding = "100%";
-        document.getElementById('svg2').style.paddingLeft = "100%";
-        document.getElementById('svg2').style.transform = "scale(5.0)";
-        change_height = 7.5;
-    } else {
-        document.body.style.overflow = "scroll";
-        document.getElementById('svg2').style.padding = "100%";
-        document.getElementById('svg2').style.paddingLeft = "100%";
-        document.getElementById('svg2').style.transform = "scale(2.5)";
-        change_height = 9;
-    }
+    
+    $(".awan").fadeOut(400);
+
+    setTimeout(() => {
+        if (pulau_besar == false) {
+            document.body.style.overflow = "scroll";
+            document.getElementById('svg2').style.padding = "100%";
+            document.getElementById('svg2').style.paddingLeft = "100%";
+            document.getElementById('svg2').style.transform = "scale(5.0)";
+            change_height = 7.5;
+        } else {
+            document.body.style.overflow = "scroll";
+            document.getElementById('svg2').style.padding = "100%";
+            document.getElementById('svg2').style.paddingLeft = "100%";
+            document.getElementById('svg2').style.transform = "scale(2.5)";
+            change_height = 9;
+        }
+    }, 500);
 
     setTimeout(() => {
         $('html, body').animate({
@@ -63,13 +68,13 @@ function _zoomIn(id_pulau, pulau_besar) {
                 document.getElementById(current_island).classList.remove('current');
             }
         }
-    }, 750);
+    }, 1250);
 
     setTimeout(() => {
         current_island = id_pulau;
         document.getElementById(current_island).classList.add("current");
         document.body.style.overflow = "hidden";
-    }, 1000);
+    }, 1500);
 }
 $('.pulau_ku').click(function () {
     // JIKA LOKASI SAAT INI
@@ -153,6 +158,8 @@ function _zoomOut() {
             scrollTop: 0
         }, 500, 'linear');
     }, 500);
+
+    $(".awan").fadeIn(1000);
 }
 function goBack() {
     document.location.href = "http://localhost/pce2022/2021/bc/rally_games/map.php";
