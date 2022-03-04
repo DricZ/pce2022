@@ -21,12 +21,21 @@
         $stmt->execute();
         $row = $stmt->fetch();
 
-        // JIKA DARI LIST ADA PULAU TUJUAN
         if ($_POST['pulau_tujuan'] == $row['pulau1'] ||
-        $_POST['pulau_tujuan'] == $row['pulau2']) {
+        $_POST['pulau_tujuan'] == $row['pulau2']) { // JIKA DARI LIST ADA PULAU TUJUAN
             $result = ["jembatan", $row['tipe'], $row['gambar_jembatan']];
         } else {
-            // cek inventori
+            // CEK INVENTORI
+            $sql_inventory = "SELECT * 
+            FROM `team_resources` tr
+            JOIN team t ON tr.id_team = t.id
+            WHERE tr.id_resource = 6 AND username = ?;";
+            $stmt_inventory = $pdo->prepare($sql_inventory);
+            $stmt_inventory->execute([$_SESSION['username']]);
+            $row_inventory = $stmt_inventory->fetch();
+            if ($row_inventory['count'] > 0) { // JIKA PUNYA TIKET PESAWAT
+                $result = ["tiket"];
+            }
         }
 
         echo json_encode($result);

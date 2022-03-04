@@ -1700,7 +1700,6 @@
 
 <div class="modal fade" id="modal_pulau" role="dialog">
     <div class="modal-dialog">
-        <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -1744,9 +1743,33 @@
                         <button id="ya" type="button" class="btn btn-success" style="width: 100%;">YA</button>
                     </div>
                     <div class="col-sm-6">
-                        <button id="tidak" type="button" class="btn btn-danger" style="width: 100%;">TIDAK</button>
+                        <button type="button" class="btn btn-danger tidak" style="width: 100%;">TIDAK</button>
                     </div>
                 </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default tidak" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_tdk_bisa" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="modal-title">Tidak dapat berpindah pulau!</p>
+                    <p>Anda tidak memiliki <b>jembatan</b> yang terhubung ke pulau tersebut ataupun <b>tiket
+                            pesawat</b> untuk
+                        terbang ke pulau tersebut.</p>
+                    <p>Beli <b>tiket pesawat</b> / bahan untuk membangun <b>jembatan</b> di <b>SHOP</b></p>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">
+                            SHOP
+                        </button>
+                    </div>
             </div>
 
             <div class="modal-footer">

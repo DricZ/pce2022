@@ -1,7 +1,5 @@
 var username = document.getElementById('session_username').value;
-var current_island;
-var clicked_island;
-var output_modal;
+var current_island, clicked_island;
 
 $(function () {
     // AMBIL JEMBATAN YG SUDAH DIBANGUN
@@ -76,8 +74,8 @@ $('.pulau_ku').click(function () {
     clicked_island = this.id;
     if (this.id == current_island) {
         document.getElementById('modal_saat_ini').style.display = "block";
+        $('#modal_pulau').modal();
     } else {
-        // console.log("Halo");
         $.ajax({
             url: "new_phps/check_lokasi.php",
             method: "POST",
@@ -86,20 +84,24 @@ $('.pulau_ku').click(function () {
                 pulau_skrg: current_island
             },
             success: function (data) {
-                if (data[0] == "jembatan") {
+                if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
                     var jembatan = document.getElementsByClassName('modal_saat_jembatan');
                     jembatan[0].style.display = "block";
                     jembatan[1].style.display = "block";
                     jembatan[0].innerHTML = "Pergi melalui <b>jembatan " + data[1] + "</b>.";
                     document.getElementById('gambar_jembatan').src = "assets/image/" + data[2];
+                    $('#modal_pulau').modal();
+                } else if (data[0] == "tiket") { // JIKA PINDAH PULAU PAKAI TIKET
+                    var tiket = document.getElementsByClassName('modal_saat_tiket');
+                    tiket[0].style.display = "block";
+                    tiket[1].style.display = "block";
+                    $('#modal_pulau').modal();
+                } else { // JIKA TDK PUNYA JEMBATAN & TIKET
+                    $('#modal_tdk_bisa').modal();
                 }
             }
         });
     }
-    $('#modal_pulau').modal();
-});
-$('.p_besar').click(function () {
-    _zoomIn(this.id, true);
 });
 
 // MODAL YA/TIDAK
@@ -111,13 +113,15 @@ $('#ya').click(function () {
     }
     $('#modal_pulau').modal("hide");
 });
-$('#tidak').click(function () {
+$('.tidak').click(function () {
     clicked_island = null;
-    document.getElementById('modal_saat_ini').style.display = "none";
-    document.getElementsByClassName('modal_saat_jembatan')[0].style.display = "none";
-    document.getElementsByClassName('modal_saat_jembatan')[1].style.display = "none";
-    document.getElementsByClassName('modal_saat_tiket')[0].style.display = "none";
-    document.getElementsByClassName('modal_saat_tiket')[1].style.display = "none";
+    setTimeout(() => {
+        document.getElementById('modal_saat_ini').style.display = "none";
+        document.getElementsByClassName('modal_saat_jembatan')[0].style.display = "none";
+        document.getElementsByClassName('modal_saat_jembatan')[1].style.display = "none";
+        document.getElementsByClassName('modal_saat_tiket')[0].style.display = "none";
+        document.getElementsByClassName('modal_saat_tiket')[1].style.display = "none";
+    }, 500);
     $('#modal_pulau').modal("hide");
 })
 
@@ -157,18 +161,3 @@ function _zoomOut() {
 function goBack() {
     document.location.href = "http://localhost/pce2022/2021/bc/rally_games/map.php";
 }
-
-// $.ajax({
-        //     url: "new_phps/update_lokasi.php",
-        //     method: "POST",
-        //     data: {
-        //         pulau_tujuan: clicked_island
-        //     },
-        //     success: function (data) {
-        //         console.log(data['output_modal']);
-        //         if (data["output_modal"] == "jembatan") {
-        //             document.getElementsByClassName('modal_saat_jembatan')[0].style.display = "block";
-        //             document.getElementsByClassName('modal_saat_jembatan')[1].style.display = "block";
-        //         }
-        //     }
-        // });
