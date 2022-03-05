@@ -19,12 +19,26 @@
         OR t.location_now_id_city = j.id_pulau2;";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
-        $row = $stmt->fetch();
+        $arr_jembatan = array();
+        while($row = $stmt->fetch()) {
+            array_push($arr_jembatan, $row);
+        }
+        // contoh hasil $arr_jembatan:
+        // 0: {pulau1: 'path1246', pulau2: 'path674', tipe: 'kayu', gambar_jembatan: 'jembatan kayu tampak atas-01.png'}
+        // 1: {pulau1: 'path1246', pulau2: 'path686', tipe: 'kayu', gambar_jembatan: 'jembatan kayu tampak atas-01.png'}
+        // 2: {pulau1: 'path1246', pulau2: 'path678', tipe: 'kayu', gambar_jembatan: 'jembatan kayu tampak atas-01.png')
+    
+        $pulau_ditemukan = false;
+        for ($i=0; $i < sizeof($arr_jembatan); $i++) { 
+            if ($_POST['pulau_tujuan'] == $arr_jembatan[$i]['pulau1'] ||
+                $_POST['pulau_tujuan'] == $arr_jembatan[$i]['pulau2']) { // JIKA DARI LIST ADA PULAU TUJUAN
+                $result = ["jembatan", $arr_jembatan[$i]['tipe'], $arr_jembatan[$i]['gambar_jembatan']];
+                $pulau_ditemukan = true;
+                break;
+            }
+        }
 
-        if ($_POST['pulau_tujuan'] == $row['pulau1'] ||
-        $_POST['pulau_tujuan'] == $row['pulau2']) { // JIKA DARI LIST ADA PULAU TUJUAN
-            $result = ["jembatan", $row['tipe'], $row['gambar_jembatan']];
-        } else {
+        if ($pulau_ditemukan == false) { // JIKA PULAU TUJUAN TDK TERHUBUNG JEMBATAN
             // CEK INVENTORI
             $sql_inventory = "SELECT * 
             FROM `team_resources` tr
@@ -37,7 +51,7 @@
                 $result = ["tiket"];
             }
         }
-
+        
         echo json_encode($result);
     } else {
         header("HTTP/1.1 400 Bad Request");

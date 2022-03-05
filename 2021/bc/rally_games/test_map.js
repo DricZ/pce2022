@@ -1,8 +1,29 @@
 var username = document.getElementById('session_username').value;
-var current_island, clicked_island;
+var current_island, clicked_island, transportasi;
 
-$(function () {
-    // AMBIL JEMBATAN YG SUDAH DIBANGUN
+// AMBIL LOKASI SAAT INI
+function get_lokasi() {
+    $.ajax({
+        url: "new_phps/get_lokasi.php",
+        method: "GET",
+        success: function (data) {
+            data.forEach(function (item) {
+                if (item['username'] == username) {
+                    if (current_island != undefined) {
+                        document.getElementById(current_island).classList.remove('current');
+                    }
+                    current_island = item['id_pulau_ku'];
+                    if (!document.getElementById(item['id_pulau_ku']).classList.contains('current')) {
+                        document.getElementById(item['id_pulau_ku']).classList.add('current');
+                    }
+                }
+            });
+        }
+    });
+}
+
+// AMBIL JEMBATAN YG SUDAH DIBANGUN
+function get_jembatan() {
     $.ajax({
         url: "new_phps/get_jembatan.php",
         method: "GET",
@@ -16,28 +37,18 @@ $(function () {
             });
         }
     });
+}
 
-    // AMBIL LOKASI SAAT INI
-    $.ajax({
-        url: "new_phps/get_lokasi.php",
-        method: "GET",
-        success: function (data) {
-            data.forEach(function (item) {
-                if (item['username'] == username) {
-                    current_island = item['id_pulau_ku'];
-                    if (!document.getElementById(item['id_pulau_ku']).classList.contains('current')) {
-                        document.getElementById(item['id_pulau_ku']).classList.add('current');
-                    }
-                }
-            });
-        }
-    });
+// INISIALISASI
+$(function () {
+    get_jembatan();
+    get_lokasi();
 });
 
-// UNTUK ZOOM SAAT PULAU DI-KLIK
+// UNTUK ZOOM PULAU
 function _zoomIn(id_pulau, pulau_besar) {
     var change_height = 0;
-    
+
     $(".awan").fadeOut(400);
 
     setTimeout(() => {
@@ -74,6 +85,8 @@ function _zoomIn(id_pulau, pulau_besar) {
         document.body.style.overflow = "hidden";
     }, 1500);
 }
+
+// UNTUK MUNCULKAN MODAL PULAU
 $('.pulau_ku').click(function () {
     // JIKA LOKASI SAAT INI
     clicked_island = this.id;
@@ -89,6 +102,7 @@ $('.pulau_ku').click(function () {
                 pulau_skrg: current_island
             },
             success: function (data) {
+                console.log(data);
                 if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
                     var jembatan = document.getElementsByClassName('modal_saat_jembatan');
                     jembatan[0].style.display = "block";
@@ -104,18 +118,41 @@ $('.pulau_ku').click(function () {
                 } else { // JIKA TDK PUNYA JEMBATAN & TIKET
                     $('#modal_tdk_bisa').modal();
                 }
+                transportasi = data[0];
+            },
+            error: function (data) {
+                console.log(data);
             }
         });
     }
 });
-
-// MODAL YA/TIDAK
+// MODAL PULAU YA/TIDAK
 $('#ya').click(function () {
+    $.ajax({
+        url: "new_phps/update_lokasi.php",
+        method: "POST",
+        data: {
+            pulau_tujuan: clicked_island,
+            transportasi: transportasi
+        },
+        success: function (data) {
+            console.log(data);
+            get_lokasi();
+        }
+    });
+
     if (document.getElementById(clicked_island).classList.contains('p_besar')) {
         _zoomIn(clicked_island, true);
     } else {
         _zoomIn(clicked_island, false);
     }
+    setTimeout(() => {
+        document.getElementById('modal_saat_ini').style.display = "none";
+        document.getElementsByClassName('modal_saat_jembatan')[0].style.display = "none";
+        document.getElementsByClassName('modal_saat_jembatan')[1].style.display = "none";
+        document.getElementsByClassName('modal_saat_tiket')[0].style.display = "none";
+        document.getElementsByClassName('modal_saat_tiket')[1].style.display = "none";
+    }, 500);
     $('#modal_pulau').modal("hide");
 });
 $('.tidak').click(function () {

@@ -80,265 +80,265 @@
         z-index: 1;
         position: relative;
     }
-    
-    .awan{
+
+    .awan {
         z-index: 2;
         position: absolute;
     }
 
-    .a1{
+    .a1 {
         top: 6vh;
         left: 128vh;
         width: 20vh;
     }
 
-    .a2{
+    .a2 {
         top: 13vh;
         left: 136vh;
         width: 20vh;
     }
 
-    .a3{
+    .a3 {
         top: 23vh;
         left: 143vh;
         width: 20vh;
     }
 
-    .a4{
+    .a4 {
         top: 40vh;
         left: 125vh;
         width: 20vh;
     }
 
-    .a5{
+    .a5 {
         top: 51vh;
         left: 110vh;
         width: 20vh;
     }
 
-    .a6{
+    .a6 {
         top: 55vh;
         left: 120vh;
         width: 20vh;
     }
 
-    .a7{
+    .a7 {
         top: 22vh;
         left: 65vh;
         width: 20vh;
     }
 
-    .a8{
+    .a8 {
         top: 45vh;
         left: 50vh;
         width: 20vh;
     }
 
-    .a9{
+    .a9 {
         top: 50vh;
         left: 80vh;
         width: 15vh;
     }
 
-    .a10{
+    .a10 {
         top: 56vh;
         left: 78vh;
         width: 20vh;
     }
 
-    .a11{
+    .a11 {
         top: 33vh;
         left: 150vh;
         width: 20vh;
     }
 
-    .a12{
+    .a12 {
         top: 38vh;
         left: 150vh;
         width: 20vh;
     }
 
-    .a13{
+    .a13 {
         top: 58vh;
         left: 145vh;
         width: 18vh;
     }
 
-    .a14{
+    .a14 {
         top: 56vh;
         left: 130vh;
         width: 18vh;
     }
 
-    .a15{
+    .a15 {
         top: 48vh;
         left: 125vh;
         width: 20vh;
     }
 
-    .a16{
+    .a16 {
         top: 40vh;
         left: 140vh;
         width: 10vh;
     }
-    
-    .a17{
+
+    .a17 {
         top: 58vh;
         left: 100vh;
         width: 20vh;
     }
 
-    .a18{
+    .a18 {
         top: 65vh;
         left: 115vh;
         width: 10vh;
     }
 
-    .a19{
+    .a19 {
         top: 63vh;
         left: 120vh;
         width: 15vh;
     }
 
-    .a20{
+    .a20 {
         top: 65vh;
         left: 130vh;
         width: 10vh;
     }
 
-    .a21{
+    .a21 {
         top: 65vh;
         left: 80vh;
         width: 20vh;
     }
 
-    .a22{
+    .a22 {
         top: 63vh;
         left: 87vh;
         width: 20vh;
     }
 
-    .a23{
+    .a23 {
         top: 75vh;
         left: 78vh;
         width: 20vh;
     }
 
-    .a24{
+    .a24 {
         top: 80vh;
         left: 78vh;
         width: 20vh;
     }
 
-    .a25{
+    .a25 {
         top: 73vh;
         left: 95vh;
         width: 20vh;
     }
 
-    .a26{
+    .a26 {
         top: 72vh;
         left: 98vh;
         width: 20vh;
     }
 
-    .a27{
+    .a27 {
         top: 58vh;
         left: 98vh;
         width: 20vh;
     }
 
-    .a28{
+    .a28 {
         top: 80vh;
         left: 98vh;
         width: 20vh;
     }
 
-    .a29{
+    .a29 {
         top: 83vh;
         left: 90vh;
         width: 20vh;
     }
 
-    .a30{
+    .a30 {
         top: 80vh;
         left: 115vh;
         width: 10vh;
     }
 
-    .a31{
+    .a31 {
         top: 84vh;
         left: 118vh;
         width: 10vh;
     }
 
-    .a32{
+    .a32 {
         top: 87vh;
         left: 120vh;
         width: 10vh;
     }
 
-    .a33{
+    .a33 {
         top: 89vh;
         left: 125vh;
         width: 10vh;
     }
 
-    .a34{
+    .a34 {
         top: 89vh;
         left: 128vh;
         width: 10vh;
     }
 
-    .a35{
+    .a35 {
         top: 89vh;
         left: 130vh;
         width: 10vh;
     }
 
-    .a36{
+    .a36 {
         top: 85vh;
         left: 136vh;
         width: 10vh;
     }
 
-    .a37{
+    .a37 {
         top: 83vh;
         left: 136vh;
         width: 10vh;
     }
 
-    .a38{
+    .a38 {
         top: 47vh;
         left: 80vh;
         width: 10vh;
     }
 
-    .a39{
+    .a39 {
         top: 37vh;
         left: 77vh;
         width: 10vh;
     }
 
-    .a40{
+    .a40 {
         top: 25vh;
         left: 86vh;
         width: 10vh;
     }
 
-    .a41{
+    .a41 {
         top: 25vh;
         left: 95vh;
         width: 10vh;
     }
 
-    .a42{
+    .a42 {
         top: 24vh;
         left: 115vh;
         width: 15vh;
     }
 
-    .a43{
+    .a43 {
         top: 46vh;
         left: 113vh;
         width: 8vh;
@@ -498,66 +498,69 @@
             <img src="treasure.png" id="harta">
         </div> -->
 
-        <img class="awan a1" src="./assets/image/Artboard 3.png">
-        <img class="awan a2" src="./assets/image/Artboard 3.png">
-        <img class="awan a3" src="./assets/image/Artboard 3.png">
-        <img class="awan a4" src="./assets/image/Artboard 3.png">
-        <img class="awan a5" src="./assets/image/Artboard 3.png">
-        <img class="awan a6" src="./assets/image/Artboard 3.png">
-        <img class="awan a7" src="./assets/image/Artboard 3.png">
-        <img class="awan a8" src="./assets/image/Artboard 3.png">
-        <img class="awan a9" src="./assets/image/Artboard 3.png">
-        <img class="awan a10" src="./assets/image/Artboard 3.png">
-        <img class="awan a11" src="./assets/image/Artboard 3.png">
-        <img class="awan a12" src="./assets/image/Artboard 3.png">
-        <img class="awan a13" src="./assets/image/Artboard 3.png">
-        <img class="awan a14" src="./assets/image/Artboard 3.png">
-        <img class="awan a15" src="./assets/image/Artboard 3.png">
-        <img class="awan a16" src="./assets/image/Artboard 3.png">
-        <img class="awan a17" src="./assets/image/Artboard 3.png">
-        <img class="awan a18" src="./assets/image/Artboard 3.png">
-        <img class="awan a19" src="./assets/image/Artboard 3.png">
-        <img class="awan a20" src="./assets/image/Artboard 3.png">
-        <img class="awan a21" src="./assets/image/Artboard 3.png">
-        <img class="awan a22" src="./assets/image/Artboard 3.png">
-        <img class="awan a23" src="./assets/image/Artboard 3.png">
-        <img class="awan a24" src="./assets/image/Artboard 3.png">
-        <img class="awan a25" src="./assets/image/Artboard 3.png">
-        <img class="awan a26" src="./assets/image/Artboard 3.png">
-        <img class="awan a27" src="./assets/image/Artboard 3.png">
-        <img class="awan a28" src="./assets/image/Artboard 3.png">
-        <img class="awan a29" src="./assets/image/Artboard 3.png">
-        <img class="awan a30" src="./assets/image/Artboard 3.png">
-        <img class="awan a31" src="./assets/image/Artboard 3.png">
-        <img class="awan a32" src="./assets/image/Artboard 3.png">
-        <img class="awan a33" src="./assets/image/Artboard 3.png">
-        <img class="awan a34" src="./assets/image/Artboard 3.png">
-        <img class="awan a35" src="./assets/image/Artboard 3.png">
-        <img class="awan a36" src="./assets/image/Artboard 3.png">
-        <img class="awan a37" src="./assets/image/Artboard 3.png">
-        <img class="awan a38" src="./assets/image/Artboard 3.png">
-        <img class="awan a39" src="./assets/image/Artboard 3.png">
-        <img class="awan a40" src="./assets/image/Artboard 3.png">
-        <img class="awan a41" src="./assets/image/Artboard 3.png">
-        <img class="awan a42" src="./assets/image/Artboard 3.png">
-        <img class="awan a43" src="./assets/image/Artboard 3.png">
-        <!-- <img class="awan a44" src="./assets/image/Artboard 3.png">
-        <img class="awan a45" src="./assets/image/Artboard 3.png">
-        <img class="awan a46" src="./assets/image/Artboard 3.png">
-        <img class="awan a47" src="./assets/image/Artboard 3.png">
-        <img class="awan a48" src="./assets/image/Artboard 3.png">
-        <img class="awan a49" src="./assets/image/Artboard 3.png">
-        <img class="awan a50" src="./assets/image/Artboard 3.png">
-        <img class="awan a51" src="./assets/image/Artboard 3.png">
-        <img class="awan a52" src="./assets/image/Artboard 3.png">
-        <img class="awan a53" src="./assets/image/Artboard 3.png">
-        <img class="awan a54" src="./assets/image/Artboard 3.png">
-        <img class="awan a55" src="./assets/image/Artboard 3.png">
-        <img class="awan a56" src="./assets/image/Artboard 3.png">
-        <img class="awan a57" src="./assets/image/Artboard 3.png">
-        <img class="awan a58" src="./assets/image/Artboard 3.png">
-        <img class="awan a59" src="./assets/image/Artboard 3.png">
-        <img class="awan a60" src="./assets/image/Artboard 3.png"> -->
+        <div id="ini_awan">
+            <!-- <img class="awan a1" src="./assets/image/Artboard 3.png">
+            <img class="awan a2" src="./assets/image/Artboard 3.png">
+            <img class="awan a3" src="./assets/image/Artboard 3.png">
+            <img class="awan a4" src="./assets/image/Artboard 3.png">
+            <img class="awan a5" src="./assets/image/Artboard 3.png">
+            <img class="awan a6" src="./assets/image/Artboard 3.png">
+            <img class="awan a7" src="./assets/image/Artboard 3.png">
+            <img class="awan a8" src="./assets/image/Artboard 3.png">
+            <img class="awan a9" src="./assets/image/Artboard 3.png">
+            <img class="awan a10" src="./assets/image/Artboard 3.png">
+            <img class="awan a11" src="./assets/image/Artboard 3.png">
+            <img class="awan a12" src="./assets/image/Artboard 3.png">
+            <img class="awan a13" src="./assets/image/Artboard 3.png">
+            <img class="awan a14" src="./assets/image/Artboard 3.png">
+            <img class="awan a15" src="./assets/image/Artboard 3.png">
+            <img class="awan a16" src="./assets/image/Artboard 3.png">
+            <img class="awan a17" src="./assets/image/Artboard 3.png">
+            <img class="awan a18" src="./assets/image/Artboard 3.png">
+            <img class="awan a19" src="./assets/image/Artboard 3.png">
+            <img class="awan a20" src="./assets/image/Artboard 3.png">
+            <img class="awan a21" src="./assets/image/Artboard 3.png">
+            <img class="awan a22" src="./assets/image/Artboard 3.png">
+            <img class="awan a23" src="./assets/image/Artboard 3.png">
+            <img class="awan a24" src="./assets/image/Artboard 3.png">
+            <img class="awan a25" src="./assets/image/Artboard 3.png">
+            <img class="awan a26" src="./assets/image/Artboard 3.png">
+            <img class="awan a27" src="./assets/image/Artboard 3.png">
+            <img class="awan a28" src="./assets/image/Artboard 3.png">
+            <img class="awan a29" src="./assets/image/Artboard 3.png">
+            <img class="awan a30" src="./assets/image/Artboard 3.png">
+            <img class="awan a31" src="./assets/image/Artboard 3.png">
+            <img class="awan a32" src="./assets/image/Artboard 3.png">
+            <img class="awan a33" src="./assets/image/Artboard 3.png">
+            <img class="awan a34" src="./assets/image/Artboard 3.png">
+            <img class="awan a35" src="./assets/image/Artboard 3.png">
+            <img class="awan a36" src="./assets/image/Artboard 3.png">
+            <img class="awan a37" src="./assets/image/Artboard 3.png">
+            <img class="awan a38" src="./assets/image/Artboard 3.png">
+            <img class="awan a39" src="./assets/image/Artboard 3.png">
+            <img class="awan a40" src="./assets/image/Artboard 3.png">
+            <img class="awan a41" src="./assets/image/Artboard 3.png">
+            <img class="awan a42" src="./assets/image/Artboard 3.png">
+            <img class="awan a43" src="./assets/image/Artboard 3.png"> -->
+
+            <!-- <img class="awan a44" src="./assets/image/Artboard 3.png">
+            <img class="awan a45" src="./assets/image/Artboard 3.png">
+            <img class="awan a46" src="./assets/image/Artboard 3.png">
+            <img class="awan a47" src="./assets/image/Artboard 3.png">
+            <img class="awan a48" src="./assets/image/Artboard 3.png">
+            <img class="awan a49" src="./assets/image/Artboard 3.png">
+            <img class="awan a50" src="./assets/image/Artboard 3.png">
+            <img class="awan a51" src="./assets/image/Artboard 3.png">
+            <img class="awan a52" src="./assets/image/Artboard 3.png">
+            <img class="awan a53" src="./assets/image/Artboard 3.png">
+            <img class="awan a54" src="./assets/image/Artboard 3.png">
+            <img class="awan a55" src="./assets/image/Artboard 3.png">
+            <img class="awan a56" src="./assets/image/Artboard 3.png">
+            <img class="awan a57" src="./assets/image/Artboard 3.png">
+            <img class="awan a58" src="./assets/image/Artboard 3.png">
+            <img class="awan a59" src="./assets/image/Artboard 3.png">
+            <img class="awan a60" src="./assets/image/Artboard 3.png"> -->
+        </div>
 
         <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
             xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
@@ -2144,10 +2147,14 @@
                         <p id="modal_saat_ini">Pulau tersebut adalah lokasi anda saat ini.</p>
 
                         <!-- JEMBATAN -->
-                        <p class="modal_saat_jembatan">Pergi melalui <b>jembatan baja</b>.</p>
+                        <p class="modal_saat_jembatan">Pergi dengan melalui
+                            <b>jembatan baja</b>.
+                        </p>
 
                         <!-- TIKET PESAWAT -->
-                        <p class="modal_saat_tiket">Pergi menggunakan <b>1 tiket pesawat</b>.</p>
+                        <p class="modal_saat_tiket">Pergi menggunakan
+                            <b>1 tiket pesawat</b>.
+                        </p>
                     </div>
                 </div>
                 <div class="text-center">
