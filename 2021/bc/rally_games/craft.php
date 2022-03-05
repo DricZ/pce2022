@@ -16,11 +16,13 @@ $sqlTeam = "SELECT * FROM team WHERE username = ?";
 $stmtTeam = $pdo->prepare($sqlTeam);
 $stmtTeam->execute([$_SESSION['username']]);
 $rowTeam = $stmtTeam->fetch();
+
+
 ?>
 
 <head>
     <title>CRAFT</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 </head>
 
 
@@ -140,6 +142,7 @@ $rowTeam = $stmtTeam->fetch();
     }
 }
 </style>
+
 <div id="containerAll">
     <div class="container my-5 pb-5 mainshop">
         <div class="row col-12 justify-content-center mt-5">
@@ -181,7 +184,7 @@ $rowTeam = $stmtTeam->fetch();
             <div id="boom_1" hidden>
                 <div class="row">
                     <div class="col" style="margin-bottom: 3cm;">
-                        <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 1</h1>
+                        <h1 id='Bom Lvl 1' style="text-align: center;margin-bottom: 1cm;">BOOM LVL 1</h1>
                         <div class="row">
                             <img src="assets/image/BOMB LV 1.png" alt=""
                                 style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
@@ -214,274 +217,339 @@ $rowTeam = $stmtTeam->fetch();
                                 <b>2x</b>
                             </div>
                         </div>
-                        <div class="row" style="float :right">
-                            <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="boom_2" hidden>
-                <div class="row">
-                    <div class="col" style="margin-bottom: 3cm;">
-                        <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 2</h1>
-                        <div class="row">
-                            <img src="assets/image/BOMB LV 2.png" alt=""
-                                style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
-                        </div>
-                        <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
-                            <h3>deskripsi :</h3>
-                            <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan
-                                orang</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
-                                <b>1x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
-                                <b>1x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
-                                <b>2x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
-                                <b>2x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
-                                <b>3x</b>
-                            </div>
-                        </div>
-                        <div class="row" style="float :right">
-                            <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="boom_3" hidden>
-                <div class="row">
-                    <div class="col" style="margin-bottom: 3cm;">
-                        <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 3</h1>
-                        <div class="row">
-                            <img src="assets/image/BOMB LV 3.png" alt=""
-                                style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
-                        </div>
-                        <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
-                            <h3>deskripsi :</h3>
-                            <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan
-                                orang</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
-                                <b>2x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
-                                <b>2x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
-                                <b>3x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
-                                <b>3x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
-                                <b>4x</b>
-                            </div>
-                        </div>
-                        <div class="row" style="float :right">
-                            <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="boom_4" hidden>
-                <div class="row">
-                    <div class="col" style="margin-bottom: 3cm;">
-                        <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 4</h1>
-                        <div class="row">
-                            <img src="assets/image/BOMB LV 4.png" alt=""
-                                style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
-                        </div>
-                        <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
-                            <h3>deskripsi :</h3>
-                            <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan
-                                orang</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
-                                <b>2x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
-                                <b>3x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
-                                <b>3x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
-                                <b>4x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
-                                <b>4x</b>
-                            </div>
-                        </div>
-                        <div class="row" style="float :right">
-                            <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="boom_5" hidden>
-                <div class="row">
-                    <div class="col" style="margin-bottom: 3cm;">
-                        <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 5</h1>
-                        <div class="row">
-                            <img src="assets/image/BOMB LV 5.png" alt=""
-                                style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
-                        </div>
-                        <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
-                            <h3>deskripsi :</h3>
-                            <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan
-                                orang</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
-                                <b>3x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
-                                <b>4x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
-                                <b>4x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
-                                <b>4x</b>
-                            </div>
-                            <div class="col-2">
-                                <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
-                                <b>5x</b>
-                            </div>
-                        </div>
                         <div class="row" style="float :right; text-align:right;">
-                          <div class="col-12">
-                            <img src="assets/image/bridge coin.png" width="2%">10000
-                            <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>
+                            <div class="col-12">
+                                <img src="assets/image/bridge coin.png" width="2%"><span id='uangbom1'>6000</span>
+                                <a href="#" class="btn btn-primary craft" style="text-align:right;">craft</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div id="boom_6" hidden>
-                <div class="row">
-                    <div class="col" style="margin-bottom: 3cm;">
-                        <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 6</h1>
-                        <div class="row">
-                            <img src="assets/image/BOMB LV 6.png" alt=""
-                                style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
-                        </div>
-                        <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
-                            <h3>deskripsi :</h3>
-                            <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan hubungan
-                                orang</p>
-                        </div>
-                        <div class="row">
-                            <div class="col-2">
-                                <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
-                                <b>3x</b>
+                <div id="boom_2" hidden>
+                    <div class="row">
+                        <div class="col" style="margin-bottom: 3cm;">
+                            <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 2</h1>
+                            <div class="row">
+                                <img src="assets/image/BOMB LV 2.png" alt=""
+                                    style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
                             </div>
-                            <div class="col-2">
-                                <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
-                                <b>5x</b>
+                            <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                                <h3>deskripsi :</h3>
+                                <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan
+                                    hubungan
+                                    orang</p>
                             </div>
-                            <div class="col-2">
-                                <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
-                                <b>6x</b>
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
+                                    <b>1x</b>
+                                </div>
+                                <div class="col-2">
+                                    <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                                    <b>1x</b>
+                                </div>
+                                <div class="col-2">
+                                    <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                                    <b>2x</b>
+                                </div>
+                                <div class="col-2">
+                                    <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                                    <b>2x</b>
+                                </div>
+                                <div class="col-2">
+                                    <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                                    <b>3x</b>
+                                </div>
                             </div>
-                            <div class="col-2">
-                                <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
-                                <b>3x</b>
+                            <div class="row" style="float :right; text-align:right;">
+                                <div class="col-12">
+                                    <img src="assets/image/bridge coin.png" width="2%">10000
+                                    <a href="#" class="btn btn-primary craft" onclick=""
+                                        style="text-align:right;">craft</a>
+                                </div>
                             </div>
-                            <div class="col-2">
-                                <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
-                                <b>6x</b>
-                            </div>
-                        </div>
-                        <div class="row" style="float :right">
-                            <a href="#" class="btn btn-primary" onclick="" style="text-align:right;">craft</a>
                         </div>
                     </div>
-                </div>
-            </div>
-            <script>
-            $("#jenis_bom").change(function() {
-                if ($("#jenis_bom").val() == '') {
-                    $('#boom_1').prop('hidden', true);
-                    $('#boom_2').prop('hidden', true);
-                    $('#boom_3').prop('hidden', true);
-                    $('#boom_4').prop('hidden', true);
-                    $('#boom_5').prop('hidden', true);
-                    $('#boom_6').prop('hidden', true);
-                } else if ($("#jenis_bom").val() == 'bom1') {
-                    $("#boom_1").removeAttr("hidden");
-                    $('#boom_2').prop('hidden', true);
-                    $('#boom_3').prop('hidden', true);
-                    $('#boom_4').prop('hidden', true);
-                    $('#boom_5').prop('hidden', true);
-                    $('#boom_6').prop('hidden', true);
-                } else if ($("#jenis_bom").val() == 'bom2') {
-                    $('#boom_1').prop('hidden', true);
-                    $("#boom_2").removeAttr("hidden");
-                    $('#boom_3').prop('hidden', true);
-                    $('#boom_4').prop('hidden', true);
-                    $('#boom_5').prop('hidden', true);
-                    $('#boom_6').prop('hidden', true);
-                } else if ($("#jenis_bom").val() == 'bom3') {
-                    $('#boom_1').prop('hidden', true);
-                    $("#boom_2").prop("hidden", true);
-                    $('#boom_3').removeAttr('hidden');
-                    $('#boom_4').prop('hidden', true);
-                    $('#boom_5').prop('hidden', true);
-                    $('#boom_6').prop('hidden', true);
-                } else if ($("#jenis_bom").val() == 'bom4') {
-                    $('#boom_1').prop('hidden', true);
-                    $("#boom_2").prop("hidden", true);
-                    $('#boom_3').prop('hidden', true);
-                    $('#boom_4').removeAttr('hidden');
-                    $('#boom_5').prop('hidden', true);
-                    $('#boom_6').prop('hidden', true);
-                } else if ($("#jenis_bom").val() == 'bom5') {
-                    $('#boom_1').prop('hidden', true);
-                    $("#boom_2").prop("hidden", true);
-                    $('#boom_3').prop('hidden', true);
-                    $('#boom_4').prop('hidden', true);
-                    $('#boom_5').removeAttr('hidden');
-                    $('#boom_6').prop('hidden', true);
-                } else if ($("#jenis_bom").val() == 'bom6') {
-                    $('#boom_1').prop('hidden', true);
-                    $("#boom_2").prop("hidden", true);
-                    $('#boom_3').prop('hidden', true);
-                    $('#boom_4').prop('hidden', true);
-                    $('#boom_5').prop('hidden', true);
-                    $('#boom_6').removeAttr('hidden');
-                }
-            });
-            </script>
+                    <div id="boom_3" hidden>
+                        <div class="row">
+                            <div class="col" style="margin-bottom: 3cm;">
+                                <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 3</h1>
+                                <div class="row">
+                                    <img src="assets/image/BOMB LV 3.png" alt=""
+                                        style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
+                                </div>
+                                <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                                    <h3>deskripsi :</h3>
+                                    <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan
+                                        hubungan
+                                        orang</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-2">
+                                        <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
+                                        <b>2x</b>
+                                    </div>
+                                    <div class="col-2">
+                                        <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                                        <b>2x</b>
+                                    </div>
+                                    <div class="col-2">
+                                        <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                                        <b>3x</b>
+                                    </div>
+                                    <div class="col-2">
+                                        <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                                        <b>3x</b>
+                                    </div>
+                                    <div class="col-2">
+                                        <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                                        <b>4x</b>
+                                    </div>
+                                </div>
+                                <div class="row" style="float :right; text-align:right;">
+                                    <div class="col-12">
+                                        <img src="assets/image/bridge coin.png" width="2%">10000
+                                        <a href="#" class="btn btn-primary craft" onclick=""
+                                            style="text-align:right;">craft</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="boom_4" hidden>
+                            <div class="row">
+                                <div class="col" style="margin-bottom: 3cm;">
+                                    <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 4</h1>
+                                    <div class="row">
+                                        <img src="assets/image/BOMB LV 4.png" alt=""
+                                            style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
+                                    </div>
+                                    <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                                        <h3>deskripsi :</h3>
+                                        <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan
+                                            hubungan
+                                            orang</p>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
+                                            <b>2x</b>
+                                        </div>
+                                        <div class="col-2">
+                                            <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                                            <b>3x</b>
+                                        </div>
+                                        <div class="col-2">
+                                            <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                                            <b>3x</b>
+                                        </div>
+                                        <div class="col-2">
+                                            <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                                            <b>4x</b>
+                                        </div>
+                                        <div class="col-2">
+                                            <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                                            <b>4x</b>
+                                        </div>
+                                    </div>
+                                    <div class="row" style="float :right; text-align:right;">
+                                        <div class="col-12">
+                                            <img src="assets/image/bridge coin.png" width="2%">10000
+                                            <a href="#" class="btn btn-primary craft" onclick=""
+                                                style="text-align:right;">craft</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="boom_5" hidden>
+                                <div class="row">
+                                    <div class="col" style="margin-bottom: 3cm;">
+                                        <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 5</h1>
+                                        <div class="row">
+                                            <img src="assets/image/BOMB LV 5.png" alt=""
+                                                style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
+                                        </div>
+                                        <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                                            <h3>deskripsi :</h3>
+                                            <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat
+                                                menghancurkan hubungan
+                                                orang</p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-2">
+                                                <img src="assets/image/Black powder.png" alt="" style="width: 100px;;">
+                                                <b>3x</b>
+                                            </div>
+                                            <div class="col-2">
+                                                <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                                                <b>4x</b>
+                                            </div>
+                                            <div class="col-2">
+                                                <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                                                <b>4x</b>
+                                            </div>
+                                            <div class="col-2">
+                                                <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                                                <b>4x</b>
+                                            </div>
+                                            <div class="col-2">
+                                                <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                                                <b>5x</b>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="float :right; text-align:right;">
+                                            <div class="col-12">
+                                                <img src="assets/image/bridge coin.png" width="2%">10000
+                                                <a href="#" class="btn btn-primary craft" onclick=""
+                                                    style="text-align:right;">craft</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="boom_6" hidden>
+                                    <div class="row">
+                                        <div class="col" style="margin-bottom: 3cm;">
+                                            <h1 style="text-align: center;margin-bottom: 1cm;">BOOM LVL 6</h1>
+                                            <div class="row">
+                                                <img src="assets/image/BOMB LV 6.png" alt=""
+                                                    style="width: 10cm; display: block; margin-left: auto;margin-right: auto;">
+                                            </div>
+                                            <div class="col-12" style="margin-top: 2cm; margin-bottom: 2cm;">
+                                                <h3>deskripsi :</h3>
+                                                <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat
+                                                    menghancurkan hubungan
+                                                    orang</p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <img src="assets/image/Black powder.png" alt=""
+                                                        style="width: 100px;;">
+                                                    <b>3x</b>
+                                                </div>
+                                                <div class="col-2">
+                                                    <img src="assets/image/sulfur.png" alt="" style="width: 100px;;">
+                                                    <b>5x</b>
+                                                </div>
+                                                <div class="col-2">
+                                                    <img src="assets/image/hcl.png" alt="" style="width: 100px;;">
+                                                    <b>6x</b>
+                                                </div>
+                                                <div class="col-2">
+                                                    <img src="assets/image/Styrofoam.png" alt="" style="width: 100px;;">
+                                                    <b>3x</b>
+                                                </div>
+                                                <div class="col-2">
+                                                    <img src="assets/image/korek api.png" alt="" style="width: 100px;;">
+                                                    <b>6x</b>
+                                                </div>
+                                            </div>
+                                            <div class="row" style="float :right; text-align:right;">
+                                                <div class="col-12">
+                                                    <img src="assets/image/bridge coin.png" width="2%">10000
+                                                    <a href="#" class="btn btn-primary craft" onclick=""
+                                                        style="text-align:right;">craft</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <script>
+                                    $("#jenis_bom").change(function() {
+                                        if ($("#jenis_bom").val() == '') {
+                                            $('#boom_1').prop('hidden', true);
+                                            $('#boom_2').prop('hidden', true);
+                                            $('#boom_3').prop('hidden', true);
+                                            $('#boom_4').prop('hidden', true);
+                                            $('#boom_5').prop('hidden', true);
+                                            $('#boom_6').prop('hidden', true);
+                                        } else if ($("#jenis_bom").val() == 'bom1') {
+                                            $("#boom_1").removeAttr("hidden");
+                                            $('#boom_2').prop('hidden', true);
+                                            $('#boom_3').prop('hidden', true);
+                                            $('#boom_4').prop('hidden', true);
+                                            $('#boom_5').prop('hidden', true);
+                                            $('#boom_6').prop('hidden', true);
+                                        } else if ($("#jenis_bom").val() == 'bom2') {
+                                            $('#boom_1').prop('hidden', true);
+                                            $("#boom_2").removeAttr("hidden");
+                                            $('#boom_3').prop('hidden', true);
+                                            $('#boom_4').prop('hidden', true);
+                                            $('#boom_5').prop('hidden', true);
+                                            $('#boom_6').prop('hidden', true);
+                                        } else if ($("#jenis_bom").val() == 'bom3') {
+                                            $('#boom_1').prop('hidden', true);
+                                            $("#boom_2").prop("hidden", true);
+                                            $('#boom_3').removeAttr('hidden');
+                                            $('#boom_4').prop('hidden', true);
+                                            $('#boom_5').prop('hidden', true);
+                                            $('#boom_6').prop('hidden', true);
+                                        } else if ($("#jenis_bom").val() == 'bom4') {
+                                            $('#boom_1').prop('hidden', true);
+                                            $("#boom_2").prop("hidden", true);
+                                            $('#boom_3').prop('hidden', true);
+                                            $('#boom_4').removeAttr('hidden');
+                                            $('#boom_5').prop('hidden', true);
+                                            $('#boom_6').prop('hidden', true);
+                                        } else if ($("#jenis_bom").val() == 'bom5') {
+                                            $('#boom_1').prop('hidden', true);
+                                            $("#boom_2").prop("hidden", true);
+                                            $('#boom_3').prop('hidden', true);
+                                            $('#boom_4').prop('hidden', true);
+                                            $('#boom_5').removeAttr('hidden');
+                                            $('#boom_6').prop('hidden', true);
+                                        } else if ($("#jenis_bom").val() == 'bom6') {
+                                            $('#boom_1').prop('hidden', true);
+                                            $("#boom_2").prop("hidden", true);
+                                            $('#boom_3').prop('hidden', true);
+                                            $('#boom_4').prop('hidden', true);
+                                            $('#boom_5').prop('hidden', true);
+                                            $('#boom_6').removeAttr('hidden');
+                                        }
+                                    });
+                                    var harga = $('#uangbom1').text() ,
+                                        item = $('#bomLVL1').text(),
+                                        qty = 1,
+                                        stok = 999,
+                                        cash = $('.uang').text();
+                                    $('.craft').click(function() {
+                                        
+                                        $.ajax({
+                                            url: "new_phps/boom.php",
+                                            method: "POST",
+                                            data: {
+                                                item: item,
+                                                stok: stok,
+                                                qty: qty,
+                                                harga: harga,
+                                                cash: cash
+                                            },
+                                            success: function(res) {
 
-            </body>
+                                                // load_data(1, total, qty, item);
+                                                // showPurchaseHistory();
+                                                console.log("hallo");
+                                            },
+                                            error: function($xhr, textStatus, errorThrown) {
 
-            </html>
+                                                // load_data(0);
+                                                // if ($xhr.responseJSON['error'] ==
+                                                //     'Uang tidak cukup') {
+                                                //     shopSwal.fire({
+                                                //         title: '<h3 style="color:white;">Pembelian Gagal!</h3>',
+                                                //         html: '<div style="color:white;">Uang Anda tidak mencukupi!</div>',
+                                                //         icon: 'error'
+                                                //     })
+                                                // } else {
+                                                //     shopSwal.fire({
+                                                //         title: '<h3 style="color:white;">Pembelian Gagal!</h3>',
+                                                //         html: '<div style="color:white;">Terjadi Error di Server. Silakan ulangi kembali.</div>',
+                                                //         icon: 'error'
+                                                //     })
+                                                // }
+                                                console.log("error");
+                                            }
+                                        });
+                                    });
+                                    </script>
+
+                                    </body>
+
+                                    </html>
