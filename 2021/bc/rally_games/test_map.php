@@ -491,6 +491,7 @@
         <button onclick="_zoomOut()" style="width: 20vw; height: 20vh; font-size: 3vw;">zoom out</button>
         <br><br>
         <button onclick="goBack()" style="width: 20vw; height: 20vh; font-size: 3vw;">GO BACK!</button>
+        <button onclick="pindah()" style="width: 20vw; height: 20vh; font-size: 3vw;">tes!</button>
     </div>
 
     <div style="text-align: center;">
@@ -2216,5 +2217,15 @@
 </div>
 
 <script src="test_map.js"></script>
+
+<script>
+    function pindah() {
+    document.body.style.animation = "1s ease-out 0s 1 slideInLeft";
+    setTimeout(() => {
+        document.location.href = "cobadestroyjembatan.html";
+    }, 1000);
+
+}
+</script>
 
 </html>
