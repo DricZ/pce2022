@@ -171,7 +171,16 @@
            
         }
         else {
-            $result = 'barang tidak cukup';
+            if($cek < 5 and $row_team['money'] <$harga){
+                $result = 1;
+            }
+            else if($row_team['money'] <$harga) {
+                $result = 2;
+            }
+            else  {
+                $result = 3;
+            }
+
         }
   //update bom dalam team_reso7rce
         echo json_encode($result);

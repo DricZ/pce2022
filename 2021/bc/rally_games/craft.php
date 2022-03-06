@@ -570,16 +570,55 @@ $rowTeam = $stmtTeam->fetch();
                                     // showPurchaseHistory();
                                     
                                     console.log(res);
-                                    shopSwal.fire({
+                                    if (res == 1){
+                                        shopSwal.fire({
+                                        title: '<h3 style="color:white;">Gagal Membuat Boom!</h3>',
+                                        html: "<div style='color:white;'><b>"+ 'uang dan bahan tidak cukup' +"</b> .</div>",
+                                        icon: 'error',confirmButtonText: 'Oke'
+                                        
+                                        }).then((result2)=>{
+                                            if(result2.isConfirmed){
+                                                location.reload();
+                                            }
+                                        })
+                                    }
+                                    else if (res == 2){
+                                        shopSwal.fire({
+                                        title: '<h3 style="color:white;">Gagal Membuat Boom!</h3>',
+                                        html: "<div style='color:white;'><b>"+ 'uang tidak cukup' +"</b> .</div>",
+                                        icon: 'error',confirmButtonText: 'Oke'
+                                        
+                                        }).then((result2)=>{
+                                            if(result2.isConfirmed){
+                                                location.reload();
+                                            }
+                                        })
+                                    }
+                                    else if (res == 3){
+                                        shopSwal.fire({
+                                        title: '<h3 style="color:white;">Gagal Membuat Boom!</h3>',
+                                        html: "<div style='color:white;'><b>"+ 'bahan tidak cukup' +"</b> .</div>",
+                                        icon: 'error',confirmButtonText: 'Oke'
+                                        
+                                        }).then((result2)=>{
+                                            if(result2.isConfirmed){
+                                                location.reload();
+                                            }
+                                        })
+                                    }
+                                    else {
+                                        shopSwal.fire({
                                         title: '<h3 style="color:white;">Berhasil Membuat Boom!</h3>',
                                         html: "<div style='color:white;'><b>" + item + "</b> telah ditambahkan pada inventory Anda.</div>",
                                         icon: 'success',confirmButtonText: 'Oke'
                                         
-                                    }).then((result2)=>{
-                                        if(result2.isConfirmed){
-                                            location.reload();
-                                        }
-                                    })
+                                        }).then((result2)=>{
+                                            if(result2.isConfirmed){
+                                                location.reload();
+                                            }
+                                        })
+                                    }
+                                    
                                 },
                                 error: function($xhr, textStatus,
                                     errorThrown) {
