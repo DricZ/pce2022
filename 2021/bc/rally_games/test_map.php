@@ -2344,18 +2344,15 @@
                 src="assets/image/jembatan Beton.png" alt="Card image">
             </div>
             </div> -->
-            <div class="row" style="width:50%">
+            <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
 
             <!-- Jembatan Kayu -->
             <div class="col-12 jembatan hidden" id="upkayu">
-                <br>
                 <center>
                 <h1>Jembatan Kayu</h1>
                 </center>
                 <h4>Bahan yang diperlukan:</h4>
                 <p>
-                1x Jembatan Kayu
-                <img src="assets/image/Jembatan Kayu.png" width="100px" height="100px"> <br>
                 1x Shield Jembatan Kayu
                 <img src="assets/image/shield pulau.png" width="100px" height="100px">
                 </p>
@@ -2363,14 +2360,11 @@
 
             <!-- Jembatan Baja -->
             <div class="col-12 jembatan hidden" id="upbaja">
-                <br>
                 <center>
                 <h1>Jembatan Baja</h1>
                 </center>
-                <h4>Bom yang diperlukan:</h4>
+                <h4>Bahan yang diperlukan:</h4>
                 <p>
-                1x Jembatan Baja
-                <img src="assets/image/Jembatan Baja.png" width="100px" height="100px"> <br>
                 1x Shield Jembatan Baja
                 <img src="assets/image/shield pulau.png" width="100px" height="100px">
                 </p>
@@ -2378,14 +2372,11 @@
 
             <!-- Jembatan Beton -->
             <div class="col-12 jembatan hidden" id="upbeton">
-                <br>
                 <center>
                 <h1>Jembatan Beton</h1>
                 </center>
-                <h4>Bom yang diperluhkan:</h4>
+                <h4>Bahan yang diperluhkan:</h4>
                 <p>
-                1x Jembatan Beton
-                <img src="assets/image/Jembatan Beton.png" width="100px" height="100px"> <br>
                 1x Shield Jembatan Beton
                 <img src="assets/image/shield pulau.png" width="100px" height="100px"> 
                 </p>
@@ -2395,7 +2386,10 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-            <button id="build" type="button" class="btn btn-success" data-dismiss="modal">CLOSE</button>
+            <p>
+            8500 Bridge Coin
+            <button id="upgrade" type="button" class="btn btn-success" data-dismiss="modal">UPGRADE</button>
+        </p>
         </div>
         </div>
     </div>
@@ -2416,35 +2410,29 @@
         <!-- Modal body -->
         <div class="modal-body">
         <div class="container">
-            <div class="row" style="width:50%">
+            <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
 
             <!-- Jembatan Kayu -->
             <div class="col-12 jembatan hidden" id="destkayu">
-                <br>
                 <center>
                 <h1>Jembatan Kayu</h1>
                 </center>
                 <h4>Bom yang diperlukan:</h4>
                 <p>
-                2x bom level 1
-                <img src="assets/image/BOMB LV 1.png" width="100px" height="100px"> <br>
-                1x bom level 2
-                <img src="assets/image/BOMB LV 2.png" width="100px" height="100px">
+                1x Bom level 1
+                <img src="assets/image/BOMB LV 1.png" width="100px" height="100px"> 
                 </p>
             </div>
 
             <!-- Jembatan Baja -->
             <div class="col-12 jembatan hidden" id="destbaja">
-                <br>
                 <center>
                 <h1>Jembatan Baja</h1>
                 </center>
                 <h4>Bom yang diperlukan:</h4>
                 <p>
-                3x bom level 3
-                <img src="assets/image/BOMB LV 3.png" width="100px" height="100px"> <br>
-                2x bom level 4
-                <img src="assets/image/BOMB LV 4.png" width="100px" height="100px">
+                1x Bom level 3
+                <img src="assets/image/BOMB LV 3.png" width="100px" height="100px">
                 </p>
             </div>
 
@@ -2456,12 +2444,8 @@
                 </center>
                 <h4>Bom yang diperluhkan:</h4>
                 <p>
-                3x bom level 4
-                <img src="assets/image/BOMB LV 4.png" width="100px" height="100px"> <br>
-                2x bom level 5
-                <img src="assets/image/BOMB LV 5.png" width="100px" height="100px"> <br>
-                1x bom level 6
-                <img src="assets/image/BOMB LV 6.png" width="100px" height="100px">
+                1x Bom level 5
+                <img src="assets/image/BOMB LV 5.png" width="100px" height="100px"> 
                 </p>
             </div>
             </div>
@@ -2469,7 +2453,7 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
-            <button id="build" type="button" class="btn btn-success" data-dismiss="modal">CLOSE</button>
+            <button id="destroy" type="button" class="btn btn-success" data-dismiss="modal">DESTROY</button>
         </div>
         </div>
     </div>
