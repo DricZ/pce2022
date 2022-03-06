@@ -34,6 +34,11 @@ function get_jembatan() {
                     document.getElementById(item['nama_jembatan']).style.fill = "black";
                     $('#coba').append(item['nama_jembatan']);
                 }
+                else{
+                    document.getElementById(item['nama_jembatan']).style.opacity = "1";
+                    document.getElementById(item['nama_jembatan']).style.fill = "red";
+                    $('#coba').append(item['nama_jembatan']);
+                }
             });
         }
     });
@@ -47,34 +52,80 @@ function build_jembatan(id_jembatan) {
             id_jembatan: id_jembatan
         },
         success: function (data) {
-        //    console.log(data);
+           console.log(data);
+
+            if (data.length == 0) {
+            console.log("tes");
+            $('#modal_build').modal();
+            }
 
             data.forEach(function (item) {
 
-                if (item['id_team'] == 0) {
-                    $('#modal_build').modal();
+                if($('#build').click()){
+                    item['id_team'];
+
                 }
 
-                else {
-                    if (item['username'] == username){
-                        $('#modal_upgrade').modal();
+                if (item['username'] == username){
+                    // KAYU
+                    if (item['tipe_jembatan'] == 1) {
+                        document.getElementById("upkayu").classList.remove('hidden');
+                    
+                    } else {
+                        document.getElementById("upkayu").classList.add('hidden');
+
                     }
-                    else{
-                        $('#modal_destroy').modal();
+
+                    // Baja
+                    if (item['tipe_jembatan'] == 2) {
+                        document.getElementById("upbaja").classList.remove('hidden');
+                    
+                    } else {
+                        document.getElementById("upbaja").classList.add('hidden');
                     }
+
+                    // BETON
+                    if (item['tipe_jembatan'] == 3) {
+                        document.getElementById("upbeton").classList.remove('hidden');
+                    
+                    } else {
+                        document.getElementById("upbeton").classList.add('hidden');
+                    }
+
+                    $('#modal_upgrade').modal();
+                    
                 }
+                else{
+                    // KAYU
+                    if (item['tipe_jembatan'] == 1) {
+                        document.getElementById("destkayu").classList.remove('hidden');
+                    
+                    } else {
+                        document.getElementById("destkayu").classList.add('hidden');
+
+                    }
+
+                    // Baja
+                    if (item['tipe_jembatan'] == 2) {
+                        document.getElementById("destbaja").classList.remove('hidden');
+                    
+                    } else {
+                        document.getElementById("destbaja").classList.add('hidden');
+                    }
+
+                    // BETON
+                    if (item['tipe_jembatan'] == 3) {
+                        document.getElementById("destbeton").classList.remove('hidden');
+                    
+                    } else {
+                        document.getElementById("destbeton").classList.add('hidden');
+                    }
+
+                    $('#modal_destroy').modal();
+                }
+                
             });   
 
-            
-            
-            data.forEach(function (item) {
-
-                // if (item['username'] == username) {
-                //     document.getElementById(item['nama_jembatan']).style.opacity = "1";
-                //     document.getElementById(item['nama_jembatan']).style.fill = "black";
-                //     $('#coba').append(item['nama_jembatan']);
-                // }
-            });       
          },
         error: function () {
             console.log("ERROR");
@@ -167,8 +218,11 @@ $('.pulau_ku').click(function () {
                 }
                 transportasi = data[0];
             },
-            error: function (data) {
-                console.log(data);
+            error: function($xhr, textStatus,
+                errorThrown) {
+                    console.log(errorThrown);
+                    console.warn($xhr.responseText);
+                
             }
         });
     }
@@ -260,28 +314,35 @@ var arr_j = ['jmbkayu', 'jmbbaja', 'jmbbeton'];
 var arr_j2 = ['desckayu', 'descbaja', 'descbeton'];
 
 function on(id) {
-document.getElementById("build").innerHTML = "BUILD";
-for (let i = 0; i < arr_j.length; i++) {
-    if (arr_j[i] != id) {
-    off(arr_j[i]);
-    } else {
-    document.getElementById(id).style.backgroundColor = "yellow";
-    desckay(arr_j2[i])
+    for (let i = 0; i < arr_j.length; i++) {
+        if (arr_j[i] != id) {
+            off(arr_j[i]);
+        } else {
+            document.getElementById(id).style.backgroundColor = "yellow";
+            desckay(arr_j2[i]);
+        }
     }
-}
 }
 
 function desckay(id) {
-for (let i = 0; i < arr_j.length; i++) {
-    if (arr_j2[i] != id) {
-    document.getElementById(arr_j2[i]).classList.add('hidden');
+    for (let i = 0; i < arr_j.length; i++) {
+        if (arr_j2[i] != id) {
+        document.getElementById(arr_j2[i]).classList.add('hidden');
 
-    } else {
-    document.getElementById(arr_j2[i]).classList.remove('hidden');
+        } else {
+        document.getElementById(arr_j2[i]).classList.remove('hidden');
+        }
     }
 }
+
+function build(){
+    
 }
 
 function off(id) {
 document.getElementById(id).style.backgroundColor = "white";
+}
+
+function ambil_jembatan(){
+
 }

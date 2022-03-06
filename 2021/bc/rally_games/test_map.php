@@ -2307,6 +2307,168 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
+            <button id="build" type="button" class="btn btn-success" data-dismiss="modal" onClick="build()">BUILD</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_upgrade">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h4 class="modal-title">
+            Upgrade Jembatan
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </h4>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+        <div class="container">
+            <!-- <div class='row' style="width:50%">
+            <div class='col-sm-4'>
+                <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
+                src="assets/image/jembatan Kayu.png" alt="Card image">
+            </div>
+
+            <div class='col-sm-4'>
+                <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan"
+                src="assets/image/jembatan Baja.png" alt="Card image">
+            </div>
+
+            <div class='col-sm-4'>
+                <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan"
+                src="assets/image/jembatan Beton.png" alt="Card image">
+            </div>
+            </div> -->
+            <div class="row" style="width:50%">
+
+            <!-- Jembatan Kayu -->
+            <div class="col-12 jembatan hidden" id="upkayu">
+                <br>
+                <center>
+                <h1>Jembatan Kayu</h1>
+                </center>
+                <h4>Bahan yang diperlukan:</h4>
+                <p>
+                1x Jembatan Kayu
+                <img src="assets/image/Jembatan Kayu.png" width="100px" height="100px"> <br>
+                1x Shield Jembatan Kayu
+                <img src="assets/image/shield pulau.png" width="100px" height="100px">
+                </p>
+            </div>
+
+            <!-- Jembatan Baja -->
+            <div class="col-12 jembatan hidden" id="upbaja">
+                <br>
+                <center>
+                <h1>Jembatan Baja</h1>
+                </center>
+                <h4>Bom yang diperlukan:</h4>
+                <p>
+                1x Jembatan Baja
+                <img src="assets/image/Jembatan Baja.png" width="100px" height="100px"> <br>
+                1x Shield Jembatan Baja
+                <img src="assets/image/shield pulau.png" width="100px" height="100px">
+                </p>
+            </div>
+
+            <!-- Jembatan Beton -->
+            <div class="col-12 jembatan hidden" id="upbeton">
+                <br>
+                <center>
+                <h1>Jembatan Beton</h1>
+                </center>
+                <h4>Bom yang diperluhkan:</h4>
+                <p>
+                1x Jembatan Beton
+                <img src="assets/image/Jembatan Beton.png" width="100px" height="100px"> <br>
+                1x Shield Jembatan Beton
+                <img src="assets/image/shield pulau.png" width="100px" height="100px"> 
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button id="build" type="button" class="btn btn-success" data-dismiss="modal">CLOSE</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_destroy">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h4 class="modal-title">
+            Hancurkan Jembatan
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </h4>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+        <div class="container">
+            <div class="row" style="width:50%">
+
+            <!-- Jembatan Kayu -->
+            <div class="col-12 jembatan hidden" id="destkayu">
+                <br>
+                <center>
+                <h1>Jembatan Kayu</h1>
+                </center>
+                <h4>Bom yang diperlukan:</h4>
+                <p>
+                2x bom level 1
+                <img src="assets/image/BOMB LV 1.png" width="100px" height="100px"> <br>
+                1x bom level 2
+                <img src="assets/image/BOMB LV 2.png" width="100px" height="100px">
+                </p>
+            </div>
+
+            <!-- Jembatan Baja -->
+            <div class="col-12 jembatan hidden" id="destbaja">
+                <br>
+                <center>
+                <h1>Jembatan Baja</h1>
+                </center>
+                <h4>Bom yang diperlukan:</h4>
+                <p>
+                3x bom level 3
+                <img src="assets/image/BOMB LV 3.png" width="100px" height="100px"> <br>
+                2x bom level 4
+                <img src="assets/image/BOMB LV 4.png" width="100px" height="100px">
+                </p>
+            </div>
+
+            <!-- Jembatan Beton -->
+            <div class="col-12 jembatan hidden" id="destbeton">
+                <br>
+                <center>
+                <h1>Jembatan Beton</h1>
+                </center>
+                <h4>Bom yang diperluhkan:</h4>
+                <p>
+                3x bom level 4
+                <img src="assets/image/BOMB LV 4.png" width="100px" height="100px"> <br>
+                2x bom level 5
+                <img src="assets/image/BOMB LV 5.png" width="100px" height="100px"> <br>
+                1x bom level 6
+                <img src="assets/image/BOMB LV 6.png" width="100px" height="100px">
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
             <button id="build" type="button" class="btn btn-success" data-dismiss="modal">CLOSE</button>
         </div>
         </div>
