@@ -47,8 +47,35 @@ function build_jembatan(id_jembatan) {
             id_jembatan: id_jembatan
         },
         success: function (data) {
-            console.log(data);
-        },
+        //    console.log(data);
+
+            data.forEach(function (item) {
+
+                if (item['id_team'] == 0) {
+                    $('#modal_build').modal();
+                }
+
+                else {
+                    if (item['username'] == username){
+                        $('#modal_upgrade').modal();
+                    }
+                    else{
+                        $('#modal_destroy').modal();
+                    }
+                }
+            });   
+
+            
+            
+            data.forEach(function (item) {
+
+                // if (item['username'] == username) {
+                //     document.getElementById(item['nama_jembatan']).style.opacity = "1";
+                //     document.getElementById(item['nama_jembatan']).style.fill = "black";
+                //     $('#coba').append(item['nama_jembatan']);
+                // }
+            });       
+         },
         error: function () {
             console.log("ERROR");
         }
@@ -224,4 +251,37 @@ function _zoomOut() {
 }
 function goBack() {
     document.location.href = "http://localhost/pce2022/2021/bc/rally_games/map.php";
+}
+
+
+
+// MODAL BANGUN
+var arr_j = ['jmbkayu', 'jmbbaja', 'jmbbeton'];
+var arr_j2 = ['desckayu', 'descbaja', 'descbeton'];
+
+function on(id) {
+document.getElementById("build").innerHTML = "BUILD";
+for (let i = 0; i < arr_j.length; i++) {
+    if (arr_j[i] != id) {
+    off(arr_j[i]);
+    } else {
+    document.getElementById(id).style.backgroundColor = "yellow";
+    desckay(arr_j2[i])
+    }
+}
+}
+
+function desckay(id) {
+for (let i = 0; i < arr_j.length; i++) {
+    if (arr_j2[i] != id) {
+    document.getElementById(arr_j2[i]).classList.add('hidden');
+
+    } else {
+    document.getElementById(arr_j2[i]).classList.remove('hidden');
+    }
+}
+}
+
+function off(id) {
+document.getElementById(id).style.backgroundColor = "white";
 }
