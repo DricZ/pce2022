@@ -200,7 +200,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
         } else {
         ?>
             <div class="row col-12 justify-content-center mb-4">
-                <h3 id="city"><?= $getCityNamerow['city_name']; ?></h3>
+                
             </div>
             <div class="container col-md-8 col-12">
                 <div class="row row-cols-lg-3 row-cols-2" id="shop">
