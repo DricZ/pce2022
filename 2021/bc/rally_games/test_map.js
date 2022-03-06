@@ -39,6 +39,24 @@ function get_jembatan() {
     });
 }
 
+function get_jembatan(id_jembatan) {
+    $.ajax({
+        url: "new_phps/get_jembatan.php",
+        method: "POST",
+        data: {
+            id_jembatan: id_jembatan
+        },
+        success: function (data) {
+            console.log(data)
+        }
+    });
+}
+
+$('.jembatan_ku').click(function (){
+    get_jembatan(this.id);
+})
+
+
 // INISIALISASI
 $(function () {
     get_jembatan();

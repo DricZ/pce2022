@@ -29,7 +29,7 @@ if (isset($_GET['stat'])) {
     <!-- ICON -->
     <link rel="icon" href="../assets/pce_icon.ico" type="image/x-icon">
 
-    <title>Bridge Competition 2021</title>
+    <title>Bridge Competition 2022</title>
     <!-- For apple devices -->
 
     <!-- Font -->
