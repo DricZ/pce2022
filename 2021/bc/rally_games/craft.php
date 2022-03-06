@@ -556,7 +556,18 @@ $rowTeam = $stmtTeam->fetch();
 
                                                             // load_data(1, total, qty, item);
                                                             // showPurchaseHistory();
+                                                            
                                                             console.log(res);
+                                                            shopSwal.fire({
+                                                                title: '<h3 style="color:white;">Berhasil Membuat Boom!</h3>',
+                                                                html: "<div style='color:white;'><b>" + item + "</b> telah ditambahkan pada inventory Anda.</div>",
+                                                                icon: 'success',confirmButtonText: 'Oke'
+                                                                
+                                                            }).then((result2)=>{
+                                                                if(result2.isConfirmed){
+                                                                    location.reload();
+                                                                }
+                                                            })
                                                         },
                                                         error: function($xhr, textStatus,
                                                             errorThrown) {
@@ -580,16 +591,16 @@ $rowTeam = $stmtTeam->fetch();
                                                             // }
                                                         }
                                                     });
-                                                    location.reload();
+                                                    
                                                 } else if (result.dismiss === Swal.DismissReason
                                                     .cancel) {
 
                                                     // load_data(0);
-                                                    // shopSwal.fire({
-                                                    //     title: '<h3 style="color:white;">Pembelian Telah Dibatalkan!</h3>',
-                                                    //     html: '',
-                                                    //     icon: 'error'
-                                                    // })
+                                                    shopSwal.fire({
+                                                        title: '<h3 style="color:white;">Batal membuat Boom!</h3>',
+                                                        html: '',
+                                                        icon: 'error'
+                                                    })
                                                 }
                                             })
                                             
