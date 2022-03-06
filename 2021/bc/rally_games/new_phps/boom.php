@@ -82,7 +82,7 @@
             $hcl = 6;
             $styrofoam =3 ;
             $korek = 6;
-            $harga = 220250;
+            $harga = 22250;
             $idboom = 12;
         }
         $cek =0;

@@ -166,7 +166,7 @@ $rowTeam = $stmtTeam->fetch();
                 </div>
                 <div class="container" style="margin-top: 2cm;">
                     <div class="row">
-                        anda dapat membuat bom penghancur hubungan orang.....
+                        Silakan Buat Boom Yang Anda Inginkan...
                     </div>
                 </div>
                 <div class ='justify-content-start' style = 'width: inherit;'>
@@ -195,9 +195,7 @@ $rowTeam = $stmtTeam->fetch();
                             <div class='row'>
                                 <div class="col-12" style=" margin-bottom: 2cm;">
                                     <h3>deskripsi :</h3>
-                                    <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan
-                                        hubungan
-                                        orang</p>
+                                    <p style="font-size:20;">dapat menghancurkan jembatan kayu</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -244,9 +242,7 @@ $rowTeam = $stmtTeam->fetch();
                             <div class='row'>
                                 <div class="col-12" style=" margin-bottom: 2cm;">
                                     <h3>deskripsi :</h3>
-                                    <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan
-                                        hubungan
-                                        orang</p>
+                                    <p style="font-size:20;">dapat menghancurkan jembatan kayu proteksi</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -293,9 +289,7 @@ $rowTeam = $stmtTeam->fetch();
                             <div class='row'>
                                 <div class="col-12" style=" margin-bottom: 2cm;">
                                     <h3>deskripsi :</h3>
-                                    <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan
-                                        hubungan
-                                        orang</p>
+                                    <p style="font-size:20;">dapat menghancurkan jembatan baja</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -342,9 +336,7 @@ $rowTeam = $stmtTeam->fetch();
                             <div class='row'>
                                 <div class="col-12" style=" margin-bottom: 2cm;">
                                     <h3>deskripsi :</h3>
-                                    <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan
-                                        hubungan
-                                        orang</p>
+                                    <p style="font-size:20;">dapat menghancurkan jembatan baja proteksi</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -371,7 +363,7 @@ $rowTeam = $stmtTeam->fetch();
                                     <b>4x</b>
                                 </div>
                                 <div class='col-4' style = 'margin-top: auto; margin-bottom: auto;'>
-                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>6000</span>
+                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>16750</span>
                                     <a href="#" class="btn btn-primary craft" id = 'Bom Lvl 4' style="text-align:right;">buat</a>
                                 </div>
                             </div>
@@ -391,9 +383,7 @@ $rowTeam = $stmtTeam->fetch();
                             <div class='row'>
                                 <div class="col-12" style=" margin-bottom: 2cm;">
                                     <h3>deskripsi :</h3>
-                                    <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan
-                                        hubungan
-                                        orang</p>
+                                    <p style="font-size:20;">dapat menghancurkan jembatan beton</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -420,7 +410,7 @@ $rowTeam = $stmtTeam->fetch();
                                     <b>5x</b>
                                 </div>
                                 <div class='col-4' style = 'margin-top: auto; margin-bottom: auto;'>
-                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>6000</span>
+                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>18500</span>
                                     <a href="#" class="btn btn-primary craft" id = 'Bom Lvl 5' style="text-align:right;">buat</a>
                                 </div>
                             </div>
@@ -440,9 +430,7 @@ $rowTeam = $stmtTeam->fetch();
                             <div class='row'>
                                 <div class="col-12" style=" margin-bottom: 2cm;">
                                     <h3>deskripsi :</h3>
-                                    <p style="font-size:20;">ketika anda mengunakan bom ini anda dapat menghancurkan
-                                        hubungan
-                                        orang</p>
+                                    <p style="font-size:20;">dapat menghancurkan jembatan beton proteksi</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -469,7 +457,7 @@ $rowTeam = $stmtTeam->fetch();
                                     <b>6x</b>
                                 </div>
                                 <div class='col-4' style = 'margin-top: auto; margin-bottom: auto;'>
-                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>6000</span>
+                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>22250</span>
                                     <a href="#" class="btn btn-primary craft" id = 'Bom Lvl 6' style="text-align:right;">buat</a>
                                 </div>
                             </div>
