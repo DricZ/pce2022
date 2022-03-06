@@ -127,10 +127,10 @@ function show() {
             }
             $(".history").html(str);
         },
-        error: function(result) {
-            //Error handling
-            alert("ERROR!");
-            // console.log();
+        error: function($xhr, textStatus,
+                errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
         },
         complete: function() {
             /* ANIMATION */
