@@ -47,15 +47,17 @@ function build_jembatan(id_jembatan) {
             id_jembatan: id_jembatan
         },
         success: function (data) {
-            console.log(data)
+            console.log(data);
+        },
+        error: function () {
+            console.log("ERROR");
         }
-    });
+    })
 }
 
-$('.jembatan_ku').click(function (){
+$('.jembatan_ku').click(function () {
     build_jembatan(this.id);
 })
-
 
 // INISIALISASI
 $(function () {
