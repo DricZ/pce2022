@@ -477,6 +477,14 @@
         animation: glowing 1300ms infinite;
         filter: drop-shadow(0 0 25px black);
     }
+
+    .g_jembatan {
+      width: 100%;
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
     </style>
 </head>
 
@@ -2214,6 +2222,95 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_build">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h4 class="modal-title">
+            Bangun Jembatan
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </h4>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+        <div class="container">
+            <div class='row' style="width:50%">
+            <p>Pilih tipe jembatan yang ingin dibangun:</p>
+            <div class='col-sm-4'>
+                <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
+                src="assets/image/jembatan Kayu.png" alt="Card image">
+            </div>
+
+            <div class='col-sm-4'>
+                <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan"
+                src="assets/image/jembatan Baja.png" alt="Card image">
+            </div>
+
+            <div class='col-sm-4'>
+                <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan"
+                src="assets/image/jembatan Beton.png" alt="Card image">
+            </div>
+            </div>
+            <div class="row" style="width:50%">
+
+            <!-- Jembatan Kayu -->
+            <div class="col-12 jembatan hidden" id="desckayu">
+                <br>
+                <center>
+                <h1>Jembatan Kayu</h1>
+                </center>
+                <h4>Bahan-bahan yang diperluhkan:</h4>
+                <p>
+                1x pekerja <br>
+                3x kayu
+                </p>
+            </div>
+
+            <!-- Jembatan Baja -->
+            <div class="col-12 jembatan hidden" id="descbaja">
+                <br>
+                <center>
+                <h1>Jembatan Baja</h1>
+                </center>
+                <h4>Bahan-bahan yang diperluhkan:</h4>
+                <p>
+                2x pekerja <br>
+                2x besi <br>
+                1x kayu<br>
+                1x semen<br>
+                1x pasir
+                </p>
+            </div>
+
+            <!-- Jembatan Beton -->
+            <div class="col-12 jembatan hidden" id="descbeton">
+                <br>
+                <center>
+                <h1>Jembatan Beton</h1>
+                </center>
+                <h4>Bahan-bahan yang diperluhkan:</h4>
+                <p>
+                2x pekerja<br>
+                3x besi<br>
+                3x semen<br>
+                2x pasir<br>
+                2x kayu
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button id="build" type="button" class="btn btn-success" data-dismiss="modal">CLOSE</button>
+        </div>
+        </div>
+    </div>
     </div>
 </div>
 
