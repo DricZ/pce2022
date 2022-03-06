@@ -1,0 +1,155 @@
+<html>
+
+<head>
+  <title>coba upgrade</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <style>
+    .g_jembatan {
+      width: 100%;
+    }
+
+    .modal-body {
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Button to Open the Modal -->
+    <button type="button" style="margin-top:3%" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+      klik jembatan
+    </button>
+
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">
+              Upgrade Jembatan
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </h4>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="container">
+              <div class='row' style="width:50%">
+                <div class='col-sm-4'>
+                  <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
+                    src="assets/image/jembatan Kayu.png" alt="Card image">
+                </div>
+
+                <div class='col-sm-4'>
+                  <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan"
+                    src="assets/image/jembatan Baja.png" alt="Card image">
+                </div>
+
+                <div class='col-sm-4'>
+                  <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan"
+                    src="assets/image/jembatan Beton.png" alt="Card image">
+                </div>
+              </div>
+              <div class="row" style="width:50%">
+
+                <!-- Jembatan Kayu -->
+                <div class="col-12 jembatan hidden" id="desckayu">
+                  <br>
+                  <center>
+                    <h1>Jembatan Kayu</h1>
+                  </center>
+                  <h4>Bahan yang diperlukan:</h4>
+                  <p>
+                    1x Jembatan Kayu
+                    <img src="assets/image/Jembatan Kayu.png" width="100px" height="100px"> <br>
+                    1x Shield Jembatan Kayu
+                    <img src="assets/image/shield pulau.png" width="100px" height="100px">
+                  </p>
+                </div>
+
+                <!-- Jembatan Baja -->
+                <div class="col-12 jembatan hidden" id="descbaja">
+                  <br>
+                  <center>
+                    <h1>Jembatan Baja</h1>
+                  </center>
+                  <h4>Bom yang diperlukan:</h4>
+                  <p>
+                    1x Jembatan Baja
+                    <img src="assets/image/Jembatan Baja.png" width="100px" height="100px"> <br>
+                    1x Shield Jembatan Baja
+                    <img src="assets/image/shield pulau.png" width="100px" height="100px">
+                  </p>
+                </div>
+
+                <!-- Jembatan Beton -->
+                <div class="col-12 jembatan hidden" id="descbeton">
+                  <br>
+                  <center>
+                    <h1>Jembatan Beton</h1>
+                  </center>
+                  <h4>Bom yang diperluhkan:</h4>
+                  <p>
+                    1x Jembatan Beton
+                    <img src="assets/image/Jembatan Beton.png" width="100px" height="100px"> <br>
+                    1x Shield Jembatan Beton
+                    <img src="assets/image/shield pulau.png" width="100px" height="100px"> 
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button id="build" type="button" class="btn btn-success" data-dismiss="modal">CLOSE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</body>
+
+<script>
+  var arr_j = ['jmbkayu', 'jmbbaja', 'jmbbeton'];
+  var arr_j2 = ['desckayu', 'descbaja', 'descbeton'];
+  var id_jembatan = ['1', '2', '3'];
+
+  function on(id) {
+    document.getElementById("build").innerHTML = "UPGRADE";
+    for (let i = 0; i < arr_j.length; i++) {
+      if (arr_j[i] != id) {
+        off(arr_j[i]);
+      } else {
+        document.getElementById(id).style.backgroundColor = "yellow";
+        desckay(arr_j2[i])
+      }
+    }
+  }
+
+  function desckay(id) {
+    for (let i = 0; i < arr_j.length; i++) {
+      if (arr_j2[i] == id) {
+        document.getElementById(arr_j2[i]).classList.remove('hidden');
+
+      } else {
+        document.getElementById(arr_j2[i]).classList.add('hidden');
+      }
+    }
+  }
+
+  function off(id) {
+    document.getElementById(id).style.backgroundColor = "white";
+  }
+
+</script>
+
+</html>
