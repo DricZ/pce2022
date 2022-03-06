@@ -19,477 +19,479 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <style>
-    /* MODAL */
-    .custom_row {
-        display: flex;
-        align-items: center;
-    }
-
-    p {
-        font-size: large;
-    }
-
-    .row {
-        margin-top: 15px;
-    }
-
-    #modal_saat_ini,
-    .modal_saat_jembatan,
-    .modal_saat_tiket {
-        display: none;
-    }
-
-    /*  */
-
-    @keyframes glowing {
-        0% {
-            filter: drop-shadow(0 0 5px black);
+        /* MODAL */
+        .custom_row {
+            display: flex;
+            align-items: center;
         }
 
-        50% {
-            filter: drop-shadow(0 0 20px black);
+        p {
+            font-size: large;
         }
 
-        100% {
-            filter: drop-shadow(0 0 5px black);
-        }
-    }
-
-    @keyframes zoomout {
-        0% {
-            transform: scale(3.0);
+        .row {
+            margin-top: 15px;
         }
 
-        100% {
-            transform: scale(1.0);
+        #modal_saat_ini,
+        .modal_saat_jembatan,
+        .modal_saat_tiket {
+            display: none;
         }
-    }
-
-    body {
-        animation: 1s ease-out 0s 1 zoomout;
-        background-image: url('assets/laut.png');
-        background-size: 110vw 110vh;
-        overflow: hidden;
-    }
-
-    #svg2 {
-        box-sizing: content-box;
-        width: 80vw;
-        max-height: 100vh;
-        transition: all 0.75s;
-        z-index: 1;
-        position: relative;
-    }
-
-    .awan {
-        z-index: 2;
-        position: absolute;
-    }
-
-    .a1 {
-        top: 6vh;
-        left: 128vh;
-        width: 20vh;
-    }
-
-    .a2 {
-        top: 13vh;
-        left: 136vh;
-        width: 20vh;
-    }
-
-    .a3 {
-        top: 23vh;
-        left: 143vh;
-        width: 20vh;
-    }
-
-    .a4 {
-        top: 40vh;
-        left: 125vh;
-        width: 20vh;
-    }
-
-    .a5 {
-        top: 51vh;
-        left: 110vh;
-        width: 20vh;
-    }
-
-    .a6 {
-        top: 55vh;
-        left: 120vh;
-        width: 20vh;
-    }
-
-    .a7 {
-        top: 22vh;
-        left: 65vh;
-        width: 20vh;
-    }
-
-    .a8 {
-        top: 45vh;
-        left: 50vh;
-        width: 20vh;
-    }
-
-    .a9 {
-        top: 50vh;
-        left: 80vh;
-        width: 15vh;
-    }
-
-    .a10 {
-        top: 56vh;
-        left: 78vh;
-        width: 20vh;
-    }
-
-    .a11 {
-        top: 33vh;
-        left: 150vh;
-        width: 20vh;
-    }
-
-    .a12 {
-        top: 38vh;
-        left: 150vh;
-        width: 20vh;
-    }
-
-    .a13 {
-        top: 58vh;
-        left: 145vh;
-        width: 18vh;
-    }
-
-    .a14 {
-        top: 56vh;
-        left: 130vh;
-        width: 18vh;
-    }
-
-    .a15 {
-        top: 48vh;
-        left: 125vh;
-        width: 20vh;
-    }
-
-    .a16 {
-        top: 40vh;
-        left: 140vh;
-        width: 10vh;
-    }
-
-    .a17 {
-        top: 58vh;
-        left: 100vh;
-        width: 20vh;
-    }
-
-    .a18 {
-        top: 65vh;
-        left: 115vh;
-        width: 10vh;
-    }
-
-    .a19 {
-        top: 63vh;
-        left: 120vh;
-        width: 15vh;
-    }
-
-    .a20 {
-        top: 65vh;
-        left: 130vh;
-        width: 10vh;
-    }
-
-    .a21 {
-        top: 65vh;
-        left: 80vh;
-        width: 20vh;
-    }
-
-    .a22 {
-        top: 63vh;
-        left: 87vh;
-        width: 20vh;
-    }
-
-    .a23 {
-        top: 75vh;
-        left: 78vh;
-        width: 20vh;
-    }
-
-    .a24 {
-        top: 80vh;
-        left: 78vh;
-        width: 20vh;
-    }
-
-    .a25 {
-        top: 73vh;
-        left: 95vh;
-        width: 20vh;
-    }
-
-    .a26 {
-        top: 72vh;
-        left: 98vh;
-        width: 20vh;
-    }
-
-    .a27 {
-        top: 58vh;
-        left: 98vh;
-        width: 20vh;
-    }
-
-    .a28 {
-        top: 80vh;
-        left: 98vh;
-        width: 20vh;
-    }
-
-    .a29 {
-        top: 83vh;
-        left: 90vh;
-        width: 20vh;
-    }
-
-    .a30 {
-        top: 80vh;
-        left: 115vh;
-        width: 10vh;
-    }
-
-    .a31 {
-        top: 84vh;
-        left: 118vh;
-        width: 10vh;
-    }
-
-    .a32 {
-        top: 87vh;
-        left: 120vh;
-        width: 10vh;
-    }
-
-    .a33 {
-        top: 89vh;
-        left: 125vh;
-        width: 10vh;
-    }
-
-    .a34 {
-        top: 89vh;
-        left: 128vh;
-        width: 10vh;
-    }
-
-    .a35 {
-        top: 89vh;
-        left: 130vh;
-        width: 10vh;
-    }
-
-    .a36 {
-        top: 85vh;
-        left: 136vh;
-        width: 10vh;
-    }
-
-    .a37 {
-        top: 83vh;
-        left: 136vh;
-        width: 10vh;
-    }
-
-    .a38 {
-        top: 47vh;
-        left: 80vh;
-        width: 10vh;
-    }
-
-    .a39 {
-        top: 37vh;
-        left: 77vh;
-        width: 10vh;
-    }
-
-    .a40 {
-        top: 25vh;
-        left: 86vh;
-        width: 10vh;
-    }
-
-    .a41 {
-        top: 25vh;
-        left: 95vh;
-        width: 10vh;
-    }
-
-    .a42 {
-        top: 24vh;
-        left: 115vh;
-        width: 15vh;
-    }
-
-    .a43 {
-        top: 46vh;
-        left: 113vh;
-        width: 8vh;
-    }
-
-    /* .a44{
-        top: 0vh;
-        left: 40vh;
-        width: 45vh;
-    }
-
-    .a45{
-        top: 0vh;
-        left: 140vh;
-        width: 50vh;
-    }
-
-    .a46{
-        top: 0vh;
-        left: 160vh;
-        width: 50vh;
-    }
-
-    .a47{
-        top: 0vh;
-        left: 170vh;
-        width: 40vh;
-    }
-
-    .a48{
-        top: 0vh;
-        left: 130vh;
-        width: 20vh;
-    }
-
-    .a49{
-        top: 0vh;
-        left: 120vh;
-        width: 20vh;
-    }
-
-    .a50{
-        top: 0vh;
-        left: 110vh;
-        width: 15vh;
-    }
-
-    .a51{
-        top: 0vh;
-        left: 100vh;
-        width: 15vh;
-    }
-
-    .a52{
-        top: 5vh;
-        left: 110vh;
-        width: 15vh;
-    }
-
-    .a53{
-        top: 0vh;
-        left: 70vh;
-        width: 30vh;
-    }
-
-    .a54{
-        top: 20vh;
-        left: 150vh;
-        width: 50vh;
-    }
-
-    .a55{
-        top: 20vh;
-        left: 170vh;
-        width: 50vh;
-    }
-
-    .a56{
-        top: 10vh;
-        left: 170vh;
-        width: 50vh;
-    }
-
-    .a57{
-        top: 0vh;
-        left: 140vh;
-        width: 50vh;
-    }
-
-    .a58{
-        top: 0vh;
-        left: 140vh;
-        width: 50vh;
-    }
-
-    .a59{
-        top: 0vh;
-        left: 140vh;
-        width: 50vh;
-    }
-
-    .a60{
-        top: 0vh;
-        left: 140vh;
-        width: 50vh;
-    } */
-
-    .jembatan_ku {
-        opacity: 0.5;
-    }
-
-    .pulau_ku:hover {
-        transition: all 0.3s;
-        filter: drop-shadow(0 0 15px white);
-    }
-
-    .jembatan_ku:hover {
-        transition: all 0.3s;
-        filter: drop-shadow(0 0 3px white);
-    }
-
-    .demo_btn {
-        position: fixed;
-        z-index: 2;
-    }
-
-    /* #harta {
-                position: fixed;
-                width: 250px;
-                top: 150px;
-                left: 45vw;
-                z-index: 2;
-            } */
-
-    .current {
-        animation: glowing 1300ms infinite;
-        filter: drop-shadow(0 0 25px black);
-    }
-
-    .g_jembatan {
-      width: 100%;
-    }
-
-    .modal-body {
-      padding: 20px;
-    }
+
+        /*  */
+
+        @keyframes glowing {
+            0% {
+                filter: drop-shadow(0 0 5px black);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px black);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 5px black);
+            }
+        }
+
+        @keyframes zoomout {
+            0% {
+                transform: scale(3.0);
+            }
+
+            100% {
+                transform: scale(1.0);
+            }
+        }
+
+        body {
+            animation: 1s ease-out 0s 1 zoomout;
+            background-image: url('assets/laut.png');
+            background-size: 110vw 110vh;
+            overflow: hidden;
+        }
+
+        #svg2 {
+            box-sizing: content-box;
+            width: 80vw;
+            max-height: 100vh;
+            transition: all 0.75s;
+            z-index: 1;
+            position: relative;
+        }
+
+        .awan {
+            z-index: 2;
+            position: absolute;
+        }
+
+        .a1 {
+            top: 6vh;
+            left: 128vh;
+            width: 20vh;
+        }
+
+        .a2 {
+            top: 13vh;
+            left: 136vh;
+            width: 20vh;
+        }
+
+        .a3 {
+            top: 23vh;
+            left: 143vh;
+            width: 20vh;
+        }
+
+        .a4 {
+            top: 40vh;
+            left: 125vh;
+            width: 20vh;
+        }
+
+        .a5 {
+            top: 51vh;
+            left: 110vh;
+            width: 20vh;
+        }
+
+        .a6 {
+            top: 55vh;
+            left: 120vh;
+            width: 20vh;
+        }
+
+        .a7 {
+            top: 22vh;
+            left: 65vh;
+            width: 20vh;
+        }
+
+        .a8 {
+            top: 45vh;
+            left: 50vh;
+            width: 20vh;
+        }
+
+        .a9 {
+            top: 50vh;
+            left: 80vh;
+            width: 15vh;
+        }
+
+        .a10 {
+            top: 56vh;
+            left: 78vh;
+            width: 20vh;
+        }
+
+        .a11 {
+            top: 33vh;
+            left: 150vh;
+            width: 20vh;
+        }
+
+        .a12 {
+            top: 38vh;
+            left: 150vh;
+            width: 20vh;
+        }
+
+        .a13 {
+            top: 58vh;
+            left: 145vh;
+            width: 18vh;
+        }
+
+        .a14 {
+            top: 56vh;
+            left: 130vh;
+            width: 18vh;
+        }
+
+        .a15 {
+            top: 48vh;
+            left: 125vh;
+            width: 20vh;
+        }
+
+        .a16 {
+            top: 40vh;
+            left: 140vh;
+            width: 10vh;
+        }
+
+        .a17 {
+            top: 58vh;
+            left: 100vh;
+            width: 20vh;
+        }
+
+        .a18 {
+            top: 65vh;
+            left: 115vh;
+            width: 10vh;
+        }
+
+        .a19 {
+            top: 63vh;
+            left: 120vh;
+            width: 15vh;
+        }
+
+        .a20 {
+            top: 65vh;
+            left: 130vh;
+            width: 10vh;
+        }
+
+        .a21 {
+            top: 65vh;
+            left: 80vh;
+            width: 20vh;
+        }
+
+        .a22 {
+            top: 63vh;
+            left: 87vh;
+            width: 20vh;
+        }
+
+        .a23 {
+            top: 75vh;
+            left: 78vh;
+            width: 20vh;
+        }
+
+        .a24 {
+            top: 80vh;
+            left: 78vh;
+            width: 20vh;
+        }
+
+        .a25 {
+            top: 73vh;
+            left: 95vh;
+            width: 20vh;
+        }
+
+        .a26 {
+            top: 72vh;
+            left: 98vh;
+            width: 20vh;
+        }
+
+        .a27 {
+            top: 58vh;
+            left: 98vh;
+            width: 20vh;
+        }
+
+        .a28 {
+            top: 80vh;
+            left: 98vh;
+            width: 20vh;
+        }
+
+        .a29 {
+            top: 83vh;
+            left: 90vh;
+            width: 20vh;
+        }
+
+        .a30 {
+            top: 80vh;
+            left: 115vh;
+            width: 10vh;
+        }
+
+        .a31 {
+            top: 84vh;
+            left: 118vh;
+            width: 10vh;
+        }
+
+        .a32 {
+            top: 87vh;
+            left: 120vh;
+            width: 10vh;
+        }
+
+        .a33 {
+            top: 89vh;
+            left: 125vh;
+            width: 10vh;
+        }
+
+        .a34 {
+            top: 89vh;
+            left: 128vh;
+            width: 10vh;
+        }
+
+        .a35 {
+            top: 89vh;
+            left: 130vh;
+            width: 10vh;
+        }
+
+        .a36 {
+            top: 85vh;
+            left: 136vh;
+            width: 10vh;
+        }
+
+        .a37 {
+            top: 83vh;
+            left: 136vh;
+            width: 10vh;
+        }
+
+        .a38 {
+            top: 47vh;
+            left: 80vh;
+            width: 10vh;
+        }
+
+        .a39 {
+            top: 37vh;
+            left: 77vh;
+            width: 10vh;
+        }
+
+        .a40 {
+            top: 25vh;
+            left: 86vh;
+            width: 10vh;
+        }
+
+        .a41 {
+            top: 25vh;
+            left: 95vh;
+            width: 10vh;
+        }
+
+        .a42 {
+            top: 24vh;
+            left: 115vh;
+            width: 15vh;
+        }
+
+        .a43 {
+            top: 46vh;
+            left: 113vh;
+            width: 8vh;
+        }
+
+        /* .a44{
+            top: 0vh;
+            left: 40vh;
+            width: 45vh;
+        }
+
+        .a45{
+            top: 0vh;
+            left: 140vh;
+            width: 50vh;
+        }
+
+        .a46{
+            top: 0vh;
+            left: 160vh;
+            width: 50vh;
+        }
+
+        .a47{
+            top: 0vh;
+            left: 170vh;
+            width: 40vh;
+        }
+
+        .a48{
+            top: 0vh;
+            left: 130vh;
+            width: 20vh;
+        }
+
+        .a49{
+            top: 0vh;
+            left: 120vh;
+            width: 20vh;
+        }
+
+        .a50{
+            top: 0vh;
+            left: 110vh;
+            width: 15vh;
+        }
+
+        .a51{
+            top: 0vh;
+            left: 100vh;
+            width: 15vh;
+        }
+
+        .a52{
+            top: 5vh;
+            left: 110vh;
+            width: 15vh;
+        }
+
+        .a53{
+            top: 0vh;
+            left: 70vh;
+            width: 30vh;
+        }
+
+        .a54{
+            top: 20vh;
+            left: 150vh;
+            width: 50vh;
+        }
+
+        .a55{
+            top: 20vh;
+            left: 170vh;
+            width: 50vh;
+        }
+
+        .a56{
+            top: 10vh;
+            left: 170vh;
+            width: 50vh;
+        }
+
+        .a57{
+            top: 0vh;
+            left: 140vh;
+            width: 50vh;
+        }
+
+        .a58{
+            top: 0vh;
+            left: 140vh;
+            width: 50vh;
+        }
+
+        .a59{
+            top: 0vh;
+            left: 140vh;
+            width: 50vh;
+        }
+
+        .a60{
+            top: 0vh;
+            left: 140vh;
+            width: 50vh;
+        } */
+
+        .jembatan_ku {
+            opacity: 0.5;
+        }
+
+        .pulau_ku:hover {
+            transition: all 0.3s;
+            filter: drop-shadow(0 0 15px white);
+        }
+
+        .jembatan_ku:hover {
+            transition: all 0.3s;
+            filter: drop-shadow(0 0 3px white);
+        }
+
+        .demo_btn {
+            position: fixed;
+            z-index: 2;
+        }
+
+        /* #harta {
+                    position: fixed;
+                    width: 250px;
+                    top: 150px;
+                    left: 45vw;
+                    z-index: 2;
+                } */
+
+        .current {
+            animation: glowing 1300ms infinite;
+            filter: drop-shadow(0 0 25px black);
+        }
+
+        .g_jembatan {
+        width: 100%;
+        }
+
+        .modal-body {
+        padding: 20px;
+        }
+
     </style>
 </head>
 
 <body>
     <input id="session_username" type="hidden" value="<?php echo $_SESSION['username']; ?>">
+    <input id="session_id_team" type="hidden" value="<?php echo $_SESSION['id_team']; ?>">
 
     <div id="coba" style="position: fixed; display: none;">
         <h1>HALO</h1>
@@ -2328,30 +2330,17 @@
         <!-- Modal body -->
         <div class="modal-body">
         <div class="container">
-            <!-- <div class='row' style="width:50%">
-            <div class='col-sm-4'>
-                <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
-                src="assets/image/jembatan Kayu.png" alt="Card image">
+            <div class='row' style="width:50%; margin-top: 0; margin-left: 0">
+                <center>
+                    <h1>Jembatan Kayu</h1>
+                </center>
             </div>
-
-            <div class='col-sm-4'>
-                <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan"
-                src="assets/image/jembatan Baja.png" alt="Card image">
-            </div>
-
-            <div class='col-sm-4'>
-                <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan"
-                src="assets/image/jembatan Beton.png" alt="Card image">
-            </div>
-            </div> -->
             <div class="row" style="width:50%">
 
             <!-- Jembatan Kayu -->
             <div class="col-12 jembatan hidden" id="upkayu">
-                <br>
-                <center>
-                <h1>Jembatan Kayu</h1>
-                </center>
+                
+                
                 <h4>Bahan yang diperlukan:</h4>
                 <p>
                 1x Jembatan Kayu

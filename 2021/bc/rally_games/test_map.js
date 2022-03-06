@@ -1,4 +1,5 @@
 var username = document.getElementById('session_username').value;
+// var id_team = document.getElementById('session_id_team').value;
 var current_island, clicked_island, transportasi;
 
 // AMBIL LOKASI SAAT INI
@@ -61,10 +62,10 @@ function build_jembatan(id_jembatan) {
 
             data.forEach(function (item) {
 
-                if($('#build').click()){
-                    item['id_team'];
-
-                }
+                // if($('#build').click()){
+                //     item['id_team'].pop();
+                //     item['id_team'].append(id_team);
+                // }
 
                 if (item['username'] == username){
                     // KAYU
