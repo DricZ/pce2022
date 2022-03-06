@@ -39,9 +39,9 @@ function get_jembatan() {
     });
 }
 
-function get_jembatan(id_jembatan) {
+function build_jembatan(id_jembatan) {
     $.ajax({
-        url: "new_phps/get_jembatan.php",
+        url: "new_phps/build_jembatan.php",
         method: "POST",
         data: {
             id_jembatan: id_jembatan
@@ -53,7 +53,7 @@ function get_jembatan(id_jembatan) {
 }
 
 $('.jembatan_ku').click(function (){
-    get_jembatan(this.id);
+    build_jembatan(this.id);
 })
 
 
