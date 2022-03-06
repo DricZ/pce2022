@@ -93,9 +93,9 @@ $_SESSION['page'] = 'inventory';
         width: 10vw;
     }
 
-    body {
+    /* body {
         overflow: hidden;
-    }
+    } */
 </style>
 
 <body>
