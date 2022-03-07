@@ -1,49 +1,72 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-p {
-  text-align: center;
-  font-size: 60px;
-  margin-top: 0px;
-}
-</style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 
-<p id="demo"></p>
+<div class="container">
+  <h2>Modal Example</h2>
+  <!-- Button to Open the Modal -->
+  <button id="treasure" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button>
 
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Mar 7, 2022 15:37:25").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-  }
-}, 1000);
-</script>
-
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">CLUE</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body" id="body_treasure">
+          <i>Selamat! kamu berhasil menemukan treasure skill Penggandaan. Cara mendapatkan skill nya bisa kamu tanyakan di <b> <a href=""> Pos Penukaran Skill.</a></b> Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>
+          <i> Selamat! kamu berhasil menemukan treasure Boom Megaboom. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
 </body>
+<script>
+  $('#treasure').click(function () {
+    if(penggandaan){
+      document.getElementById('body_treasure').innerHTML = '<i>Selamat! kamu berhasil menemukan treasure skill Penggandaan. Cara mendapatkan skill nya bisa kamu tanyakan di <b> <a href=""> Pos Penukaran Skill.</a></b> Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
+    }
+    else if(megaboom) {
+      document.getElementById('body_treasure').innerHTML = ' <i> Selamat! kamu berhasil menemukan treasure Boom Megaboom. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
+    }
+    else if(Devide Et Impera) {
+      document.getElementById('body_treasure').innerHTML = ' <i> Selamat! kamu berhasil menemukan treasure Devide Et Impera. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
+    }
+    else if(X2 Social Credits) {
+      document.getElementById('body_treasure').innerHTML = ' <i> Selamat! kamu berhasil menemukan treasure X2 Social Credits. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
+    }
+    else if(TBL TBL TBL) {
+      document.getElementById('body_treasure').innerHTML = ' <i> Selamat! kamu berhasil menemukan treasure TBL TBL TBL. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
+    }
+    else if(Meteor) {
+      document.getElementById('body_treasure').innerHTML = ' <i> Selamat! kamu berhasil menemukan treasure Meteor. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
+    }
+    
+  })
+</script>
 </html>
