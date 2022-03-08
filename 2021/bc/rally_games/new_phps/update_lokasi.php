@@ -26,7 +26,7 @@
 
         // PINDAH LOKASI TEAM SEKARANG
         $sql_pindah = "UPDATE team t
-        SET t.location_now_id_city = (SELECT p.id
+        SET t.id_lokasi = (SELECT p.id
                                      FROM new_pulau p
                                      WHERE p.path = ?)
         WHERE t.username = ?";

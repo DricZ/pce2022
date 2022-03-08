@@ -15,8 +15,8 @@
         JOIN new_pulau p ON p.id = j.id_pulau1
         JOIN new_pulau p2 ON p2.id = j.id_pulau2
         JOIN new_tipe_jembatan tj ON tj.id = j.id_tipe
-        WHERE t.location_now_id_city = j.id_pulau1 
-        OR t.location_now_id_city = j.id_pulau2;";
+        WHERE t.id_lokasi = j.id_pulau1 
+        OR t.id_lokasi = j.id_pulau2;";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $arr_jembatan = array();

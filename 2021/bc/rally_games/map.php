@@ -123,7 +123,7 @@
     }
 
     .cls-9 {
-        fill: #fff;
+        /* fill: #fff; */
     }
 
     .cls-10 {

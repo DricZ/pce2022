@@ -4,7 +4,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_SESSION['username'])) {
         $sql = "SELECT p.path as id_pulau_ku, t.username as username
         FROM team t 
-        JOIN new_pulau p ON t.location_now_id_city = p.id
+        JOIN new_pulau p ON t.id_lokasi = p.id
         WHERE username = ?";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$_SESSION['username']]);

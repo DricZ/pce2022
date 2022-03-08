@@ -35,7 +35,7 @@ function get_jembatan() {
                     document.getElementById(item['nama_jembatan']).style.fill = "black";
                     $('#coba').append(item['nama_jembatan']);
                 }
-                else{
+                else {
                     document.getElementById(item['nama_jembatan']).style.opacity = "1";
                     document.getElementById(item['nama_jembatan']).style.fill = "red";
                     $('#coba').append(item['nama_jembatan']);
@@ -53,11 +53,11 @@ function build_jembatan(id_jembatan) {
             id_jembatan: id_jembatan
         },
         success: function (data) {
-           console.log(data);
+            console.log(data);
 
             if (data.length == 0) {
-            console.log("tes");
-            $('#modal_build').modal();
+                console.log("tes");
+                $('#modal_build').modal();
             }
 
             data.forEach(function (item) {
@@ -67,11 +67,11 @@ function build_jembatan(id_jembatan) {
                 //     item['id_team'].append(id_team);
                 // }
 
-                if (item['username'] == username){
+                if (item['username'] == username) {
                     // KAYU
                     if (item['tipe_jembatan'] == 1) {
                         document.getElementById("upkayu").classList.remove('hidden');
-                    
+
                     } else {
                         document.getElementById("upkayu").classList.add('hidden');
 
@@ -80,7 +80,7 @@ function build_jembatan(id_jembatan) {
                     // Baja
                     if (item['tipe_jembatan'] == 2) {
                         document.getElementById("upbaja").classList.remove('hidden');
-                    
+
                     } else {
                         document.getElementById("upbaja").classList.add('hidden');
                     }
@@ -88,19 +88,19 @@ function build_jembatan(id_jembatan) {
                     // BETON
                     if (item['tipe_jembatan'] == 3) {
                         document.getElementById("upbeton").classList.remove('hidden');
-                    
+
                     } else {
                         document.getElementById("upbeton").classList.add('hidden');
                     }
 
                     $('#modal_upgrade').modal();
-                    
+
                 }
-                else{
+                else {
                     // KAYU
                     if (item['tipe_jembatan'] == 1) {
                         document.getElementById("destkayu").classList.remove('hidden');
-                    
+
                     } else {
                         document.getElementById("destkayu").classList.add('hidden');
 
@@ -109,7 +109,7 @@ function build_jembatan(id_jembatan) {
                     // Baja
                     if (item['tipe_jembatan'] == 2) {
                         document.getElementById("destbaja").classList.remove('hidden');
-                    
+
                     } else {
                         document.getElementById("destbaja").classList.add('hidden');
                     }
@@ -117,17 +117,17 @@ function build_jembatan(id_jembatan) {
                     // BETON
                     if (item['tipe_jembatan'] == 3) {
                         document.getElementById("destbeton").classList.remove('hidden');
-                    
+
                     } else {
                         document.getElementById("destbeton").classList.add('hidden');
                     }
 
                     $('#modal_destroy').modal();
                 }
-                
-            });   
 
-         },
+            });
+
+        },
         error: function () {
             console.log("ERROR");
         }
@@ -219,11 +219,9 @@ $('.pulau_ku').click(function () {
                 }
                 transportasi = data[0];
             },
-            error: function($xhr, textStatus,
-                errorThrown) {
-                    console.log(errorThrown);
-                    console.warn($xhr.responseText);
-                
+            error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
             }
         });
     }
@@ -328,22 +326,22 @@ function on(id) {
 function desckay(id) {
     for (let i = 0; i < arr_j.length; i++) {
         if (arr_j2[i] != id) {
-        document.getElementById(arr_j2[i]).classList.add('hidden');
+            document.getElementById(arr_j2[i]).classList.add('hidden');
 
         } else {
-        document.getElementById(arr_j2[i]).classList.remove('hidden');
+            document.getElementById(arr_j2[i]).classList.remove('hidden');
         }
     }
 }
 
-function build(){
-    
+function build() {
+
 }
 
 function off(id) {
-document.getElementById(id).style.backgroundColor = "white";
+    document.getElementById(id).style.backgroundColor = "white";
 }
 
-function ambil_jembatan(){
+function ambil_jembatan() {
 
 }
