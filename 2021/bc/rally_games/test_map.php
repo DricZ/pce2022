@@ -3,6 +3,14 @@
 
 <?php
     require_once 'phps/connect.php';
+
+    $username = $_SESSION['username'];
+    
+    $sqlTeam = "SELECT * FROM team WHERE username = ?";
+    $stmtTeam = $pdo->prepare($sqlTeam);
+    $stmtTeam->execute([$_SESSION['username']]);
+    $rowTeam = $stmtTeam->fetch();
+    
 ?>
 
 <head>
@@ -949,10 +957,10 @@
 
 <body>
     <input id="session_username" type="hidden" value="<?php echo $_SESSION['username']; ?>">
-    <input id="session_id_team" type="hidden" value="<?php echo $_SESSION['id_team']; ?>">
 
-    <div id="coba" style="position: fixed; display: none;">
-        <h1>HALO</h1>
+    <div class="row wallet" hidden>
+        <img src="assets/image/bridge coin.png" width="35px" class="mx-2 pt-1">
+        <div class="uang pr-4"><?= number_format($rowTeam['money'],0,',','.'); ?></div>
     </div>
 
     <div class="demo_btn">
