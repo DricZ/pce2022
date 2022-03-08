@@ -473,10 +473,10 @@
             z-index: 2;
         }
         .default:hover {
-  background: #e7e7e7;
-  padding: 10px 32px;
-  text-align:center;
-}
+            background: #e7e7e7;
+            padding: 10px 32px;
+            text-align:center;
+            }
         /* #harta {
                     position: fixed;
                     width: 250px;
@@ -2248,6 +2248,228 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_build">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h4 class="modal-title">
+            Bangun Jembatan
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </h4>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+        <div class="container">
+            <div class='row' style="width:50%">
+            <p>Pilih tipe jembatan yang ingin dibangun:</p>
+            <div class='col-sm-4'>
+                <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
+                src="assets/image/jembatan Kayu.png" alt="Card image">
+            </div>
+
+            <div class='col-sm-4'>
+                <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan"
+                src="assets/image/jembatan Baja.png" alt="Card image">
+            </div>
+
+            <div class='col-sm-4'>
+                <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan"
+                src="assets/image/jembatan Beton.png" alt="Card image">
+            </div>
+            </div>
+            <div class="row" style="width:50%">
+
+            <!-- Jembatan Kayu -->
+            <div class="col-12 jembatan hidden" id="desckayu">
+                <br>
+                <center>
+                <h1>Jembatan Kayu</h1>
+                </center>
+                <h4>Bahan-bahan yang diperluhkan:</h4>
+                <p>
+                1x pekerja <br>
+                3x kayu
+                </p>
+            </div>
+
+            <!-- Jembatan Baja -->
+            <div class="col-12 jembatan hidden" id="descbaja">
+                <br>
+                <center>
+                <h1>Jembatan Baja</h1>
+                </center>
+                <h4>Bahan-bahan yang diperluhkan:</h4>
+                <p>
+                2x pekerja <br>
+                2x besi <br>
+                1x kayu<br>
+                1x semen<br>
+                1x pasir
+                </p>
+            </div>
+
+            <!-- Jembatan Beton -->
+            <div class="col-12 jembatan hidden" id="descbeton">
+                <br>
+                <center>
+                <h1>Jembatan Beton</h1>
+                </center>
+                <h4>Bahan-bahan yang diperluhkan:</h4>
+                <p>
+                2x pekerja<br>
+                3x besi<br>
+                3x semen<br>
+                2x pasir<br>
+                2x kayu
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button id="build" type="button" class="btn btn-success" data-dismiss="modal" onClick="build()">BUILD</button>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_upgrade">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h4 class="modal-title">
+            Upgrade Jembatan
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </h4>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+        <div class="container">
+            <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
+
+            <!-- Jembatan Kayu -->
+            <div class="col-12 jembatan hidden" id="upkayu">
+                <center>
+                <h1>Jembatan Kayu</h1>
+                </center>
+                <h4>Bahan yang diperlukan:</h4>
+                <p>
+                1x Shield Jembatan Kayu
+                <img src="assets/image/shield pulau.png" width="100px" height="100px">
+                </p>
+            </div>
+
+            <!-- Jembatan Baja -->
+            <div class="col-12 jembatan hidden" id="upbaja">
+                <center>
+                <h1>Jembatan Baja</h1>
+                </center>
+                <h4>Bahan yang diperlukan:</h4>
+                <p>
+                1x Shield Jembatan Baja
+                <img src="assets/image/shield pulau.png" width="100px" height="100px">
+                </p>
+            </div>
+
+            <!-- Jembatan Beton -->
+            <div class="col-12 jembatan hidden" id="upbeton">
+                <center>
+                <h1>Jembatan Beton</h1>
+                </center>
+                <h4>Bahan yang diperluhkan:</h4>
+                <p>
+                1x Shield Jembatan Beton
+                <img src="assets/image/shield pulau.png" width="100px" height="100px"> 
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+        
+            <p>
+            <img src="assets/image/bridge coin.png" width="30px" height="30px">
+            8500
+            
+            <button id="upgrade" type="button" class="btn btn-success" data-dismiss="modal">UPGRADE</button>
+        </p>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_destroy">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+        <h4 class="modal-title">
+            Hancurkan Jembatan
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </h4>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+        <div class="container">
+            <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
+
+            <!-- Jembatan Kayu -->
+            <div class="col-12 jembatan hidden" id="destkayu">
+                <center>
+                <h1>Jembatan Kayu</h1>
+                </center>
+                <h4>Bom yang diperlukan:</h4>
+                <p>
+                1x Bom level 1
+                <img src="assets/image/BOMB LV 1.png" width="100px" height="100px"> 
+                </p>
+            </div>
+
+            <!-- Jembatan Baja -->
+            <div class="col-12 jembatan hidden" id="destbaja">
+                <center>
+                <h1>Jembatan Baja</h1>
+                </center>
+                <h4>Bom yang diperlukan:</h4>
+                <p>
+                1x Bom level 3
+                <img src="assets/image/BOMB LV 3.png" width="100px" height="100px">
+                </p>
+            </div>
+
+            <!-- Jembatan Beton -->
+            <div class="col-12 jembatan hidden" id="destbeton">
+                <br>
+                <center>
+                <h1>Jembatan Beton</h1>
+                </center>
+                <h4>Bom yang diperluhkan:</h4>
+                <p>
+                1x Bom level 5
+                <img src="assets/image/BOMB LV 5.png" width="100px" height="100px"> 
+                </p>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button id="destroy" type="button" class="btn btn-success" data-dismiss="modal">DESTROY</button>
+        </div>
+        </div>
+    </div>
     </div>
 </div>
 
