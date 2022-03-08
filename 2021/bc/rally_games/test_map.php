@@ -49,7 +49,7 @@
 
         /*  */
 
-        @keyframes glowing {
+        @keyframes glowing_dark {
             0% {
                 filter: drop-shadow(0 0 5px black);
             }
@@ -60,6 +60,20 @@
 
             100% {
                 filter: drop-shadow(0 0 5px black);
+            }
+        }
+
+        @keyframes glowing_yellow {
+            0% {
+                filter: drop-shadow(0 0 5px yellow);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px yellow);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 5px yellow);
             }
         }
 
@@ -470,28 +484,22 @@
 
         .demo_btn {
             position: fixed;
+            left: 92.5vw;
             z-index: 2;
         }
+
         .default:hover {
-  background: #e7e7e7;
-  padding: 10px 32px;
-  text-align:center;
-}
-        /* #harta {
-                    position: fixed;
-                    width: 250px;
-                    top: 150px;
-                    left: 45vw;
-                    z-index: 2;
-                } */
+            background: #e7e7e7;
+            padding: 10px 32px;
+            text-align:center;
+        }
 
         .current {
-            animation: glowing 1300ms infinite;
-            filter: drop-shadow(0 0 25px black);
+            animation: glowing_dark 1300ms infinite;
         }
+
         .icon-navBar{
-            margin-left:10px;
-            margin-top:10px;
+            margin-top: 15px;
         }
     </style>
 </head>
@@ -504,36 +512,32 @@
         <div class="uang pr-4"><?= number_format($rowTeam['money'],0,',','.'); ?></div>
     </div>
 
+    <!-- NAVIGATIONS -->
     <div class="demo_btn">
-        <!-- UNTUK KEMBALI -->
+        <!-- ZOOM OUT -->
         <div class="row icon-navBar">
             <div class="col-md-3"><img src="assets/logo_zoom_out.png" onclick="_zoomOut()" alt="" style="width:50px;"></div>
         </div>
         
+        <!-- GO BACK -->
         <div class ="icon-navBar">
-        <a class="nav-link active exit" id="menu" onclick ="goBack()">
-            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 64px; width: 64px;">
-                <g class="" transform="translate(0,0)" style="">
-                    <path d="M217 28.098v455.804l142-42.597V70.697zm159.938 26.88l.062 2.327V87h16V55zM119 55v117.27h18V73h62V55zm258 50v16h16v-16zm0 34v236h16V139zm-240 58.727V233H41v46h96v35.273L195.273 256zM244 232c6.627 0 12 10.745 12 24s-5.373 24-12 24-12-10.745-12-24 5.373-24 12-24zM137 339.73h-18V448h18zM377 393v14h16v-14zm0 32v23h16v-23zM32 471v18h167v-18zm290.652 0l-60 18H480v-18z"></path>
-                </g>
-            </svg>
-    </a>
-        </div>
-        <div class="row icon-navBar">
-            <div class="col-md-3"><img src="" onclick="_zoomOut()" alt="" style="width:50px;"></div>
+            <a class="nav-link active exit" id="menu" onclick ="goBack()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:60px;">
+                    <g class="" transform="translate(0,0)" style="">
+                        <path d="M217 28.098v455.804l142-42.597V70.697zm159.938 26.88l.062 2.327V87h16V55zM119 55v117.27h18V73h62V55zm258 50v16h16v-16zm0 34v236h16V139zm-240 58.727V233H41v46h96v35.273L195.273 256zM244 232c6.627 0 12 10.745 12 24s-5.373 24-12 24-12-10.745-12-24 5.373-24 12-24zM137 339.73h-18V448h18zM377 393v14h16v-14zm0 32v23h16v-23zM32 471v18h167v-18zm290.652 0l-60 18H480v-18z"></path>
+                    </g>
+                </svg>
+            </a>
         </div>
         
-        
-        
-        <!-- <button onclick="pindah()" style="width: 20vw; height: 20vh; font-size: 3vw;">tes!</button> -->
+        <!-- TREASURE -->
+        <div class="row icon-navBar" id="harta_karun" style="display: none; animation: glowing_yellow 1.5s infinite;">
+            <div class="col-md-3"><img src="assets/treasure.png" alt="" style="width:100px;"></div>
+        </div>
     </div>
 
+    <!-- MAP & AWAN -->
     <div style="text-align: center;">
-        <!-- <div style="text-align: center;">
-            <img src="treasure.png" id="harta">
-        </div> -->
-
         <div id="ini_awan">
             <!-- <img class="awan a1" src="./assets/image/Artboard 3.png">
             <img class="awan a2" src="./assets/image/Artboard 3.png">
@@ -1540,7 +1544,7 @@
                                     style="fill:#acff4d;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path754" />
                             </g>
                             <g id="g756" transform="translate(977.1504,319.3955)">
-                                <path class="pulau_ku pulau_c"
+                                <path class="pulau_ku pulau_c cek_harta"
                                     d="m 0,0 c -2.38,-2.501 -5.035,-4.755 -7.275,-7.377 0,0 -3.661,-4.283 -8.316,-11.445 -0.284,-0.438 -1.091,-1.705 -0.649,-2.289 0.804,-1.062 4.706,1.507 6.106,0.255 1.115,-0.999 0.012,-3.857 -0.779,-5.851 -1.641,-4.133 -3.779,-6.94 -5.197,-8.774 -4.311,-5.578 -4.686,-5.81 -7.536,-9.539 0,0 -2.457,-3.214 -6.885,-11.318 -0.819,-1.497 -1.898,-3.538 -1.169,-4.324 0.869,-0.94 3.345,0.959 6.886,0 1.006,-0.273 2.31,-0.625 2.858,-1.653 1.102,-2.071 -1.656,-5.387 -4.158,-8.394 -2.592,-3.114 -3.888,-4.672 -6.106,-5.723 -2.914,-1.38 -5.759,-1.311 -6.886,-3.56 -0.22,-0.441 -0.489,-0.974 -0.26,-1.4 0.729,-1.355 5.156,0.909 11.563,0.891 5.017,-0.014 5.683,-1.411 9.744,-0.763 1.925,0.307 5.234,0.835 7.406,3.179 2.617,2.825 1.098,5.606 2.078,14.243 0.573,5.054 1.005,8.856 3.248,13.1 1.895,3.584 2.785,3.138 6.496,9.029 3.731,5.923 4.378,8.829 4.548,9.665 0.177,0.873 0.405,2.319 -0.13,8.521 C 4.562,-11.677 3.309,-12.115 3.248,-5.342 3.218,-2.015 3.492,1.166 2.339,1.525 1.647,1.741 0.794,0.834 0,0"
                                     style="fill:#acff4d;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path758" />
                             </g>
@@ -1550,7 +1554,7 @@
                                     style="fill:#acff4d;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path762" />
                             </g>
                             <g id="g764" transform="translate(669.7598,320.667)">
-                                <path class="pulau_ku pulau_c"
+                                <path class="pulau_ku pulau_c cek_harta"
                                     d="m 0,0 c -3.418,-0.805 -3.832,-9.99 -3.897,-11.445 -0.134,-2.951 0.012,-7.746 2.858,-11.955 3.395,-5.024 7.315,-4.489 11.173,-9.411 2.889,-3.688 1.612,-5.401 3.897,-10.173 3.765,-7.863 10.862,-11.907 12.733,-12.972 5.108,-2.911 11.703,-3.337 24.684,-4.07 3.614,-0.203 5.94,-0.264 22.866,-0.508 23.558,-0.34 18.875,-0.221 20.268,-0.255 19.231,-0.476 21.128,-1.309 26.503,0.509 4.662,1.576 6.686,3.369 12.992,4.578 5.1,0.977 8.619,0.733 9.095,2.289 0.477,1.564 -2.492,3.728 -5.457,5.85 -5.213,3.73 -9.832,5.759 -12.992,7.122 -9.038,3.895 -13.596,5.756 -14.811,6.104 -11.977,3.425 -17.59,0.063 -42.353,0.509 -1.571,0.028 -4.287,-0.366 -7.796,0.254 -5.723,1.011 -6.235,3.014 -11.173,4.069 -5.913,1.264 -7.398,-1.134 -13.772,0 -4.079,0.727 -6.929,2.323 -9.094,3.562 C 10.534,-17.257 5.036,1.186 0,0"
                                     style="fill:#acff4d;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path766" />
                             </g>
@@ -1590,7 +1594,7 @@
                                     style="fill:#acff4d;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path794" />
                             </g>
                             <g id="g796" transform="translate(125.395,447.8398)">
-                                <path class="pulau_ku pulau_b"
+                                <path class="pulau_ku pulau_b cek_harta"
                                     d="M 0,0 C 0.942,-4.387 2.138,-11.09 2.598,-19.33 3.174,-29.638 2.091,-33.262 1.039,-51.632 0.558,-60.04 0.805,-67.496 1.299,-82.408 c 0.281,-8.487 0.695,-15.647 5.457,-18.313 1.52,-0.851 4.273,-1.686 6.236,-0.508 4.104,2.462 -0.914,10.333 2.339,20.347 2.44,7.517 6.587,7.145 10.913,17.295 1.717,4.03 2.3,6.992 3.378,12.463 2.408,12.229 4.105,20.844 -0.26,28.487 -1.583,2.773 -3.584,4.752 -6.237,7.376 -5.84,5.78 -7.98,5.26 -11.433,9.92 C 8.883,-1.549 8.588,1.105 5.976,1.78 3.791,2.346 1.549,1.12 0,0"
                                     style="fill:#acff4d;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path798" />
                             </g>
@@ -2255,12 +2259,11 @@
 
 <script>
     function pindah() {
-    document.body.style.animation = "1s ease-out 0s 1 slideInLeft";
-    setTimeout(() => {
-        document.location.href = "cobadestroyjembatan.html";
-    }, 1000);
-
-}
+        document.body.style.animation = "1s ease-out 0s 1 slideInLeft";
+        setTimeout(() => {
+            document.location.href = "cobadestroyjembatan.html";
+        }, 1000);
+    }
 </script>
 
 </html>

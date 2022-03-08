@@ -1,5 +1,4 @@
 var username = document.getElementById('session_username').value;
-// var id_team = document.getElementById('session_id_team').value;
 var current_island, clicked_island, transportasi;
 
 // AMBIL LOKASI SAAT INI
@@ -44,6 +43,28 @@ function get_jembatan() {
         }
     });
 }
+
+function cek_harta(id_pulau) {
+    $.ajax({
+        url: "new_phps/check_treasure.php",
+        method: "POST",
+        data: {
+            pulau_harta: id_pulau
+        },
+        success: function (data) {
+            console.log(data);
+            // munculkan icon harta karun
+            if (data == "ada") {
+                $("#harta_karun").fadeIn("slow");
+            }
+        },
+        error: function ($xhr, errorThrown) {
+            console.log(errorThrown);
+            console.warn($xhr.responseText);
+        }
+    });
+}
+
 
 function build_jembatan(id_jembatan) {
     $.ajax({
@@ -134,129 +155,123 @@ function build_jembatan(id_jembatan) {
     })
 }
 
-$('#build').click(function() {
+$('#build').click(function () {
     var item = this.id,
         cash = $('.uang').text();
 
-        shopSwal.fire({
-            title: '<h3 style="color:white;">Konfirmasi pembutan</h3>',
-            html: "<div style='color:white;'>Anda akan membuat<h5>" +item + "</b></div>",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'Build',
-            cancelButtonText: 'Batal',
-            reverseButtons: true
-        }).then((result) => {
-            if (result.isConfirmed) {
-                $.ajax({
-                    url: "new_phps/post_pengiriman.php",
-            method: "POST",
-            data: {
-                item: item,
-                cash: cash
-            },
-                    success: function(res) {
+    shopSwal.fire({
+        title: '<h3 style="color:white;">Konfirmasi pembutan</h3>',
+        html: "<div style='color:white;'>Anda akan membuat<h5>" + item + "</b></div>",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Build',
+        cancelButtonText: 'Batal',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "new_phps/post_pengiriman.php",
+                method: "POST",
+                data: {
+                    item: item,
+                    cash: cash
+                },
+                success: function (res) {
 
-                        // load_data(1, total, qty, item);
-                        // showPurchaseHistory();
-                        
-                        console.log(res);
-                        if (res == 1){
-                            shopSwal.fire({
+                    // load_data(1, total, qty, item);
+                    // showPurchaseHistory();
+
+                    console.log(res);
+                    if (res == 1) {
+                        shopSwal.fire({
                             title: '<h3 style="color:white;">Gagal Membuat Jembatan!</h3>',
-                            html: "<div style='color:white;'><b>"+ 'uang dan bahan tidak cukup' +"</b> .</div>",
-                            icon: 'error',confirmButtonText: 'Oke'
-                            
-                            }).then((result2)=>{
-                                if(result2.isConfirmed){
-                                    location.reload();
-                                }
-                            })
-                        }
-                        else if (res == 2){
-                            shopSwal.fire({
+                            html: "<div style='color:white;'><b>" + 'uang dan bahan tidak cukup' + "</b> .</div>",
+                            icon: 'error', confirmButtonText: 'Oke'
+
+                        }).then((result2) => {
+                            if (result2.isConfirmed) {
+                                location.reload();
+                            }
+                        })
+                    }
+                    else if (res == 2) {
+                        shopSwal.fire({
                             title: '<h3 style="color:white;">Gagal Membuat Jembatan!</h3>',
-                            html: "<div style='color:white;'><b>"+ 'uang tidak cukup' +"</b> .</div>",
-                            icon: 'error',confirmButtonText: 'Oke'
-                            
-                            }).then((result2)=>{
-                                if(result2.isConfirmed){
-                                    location.reload();
-                                }
-                            })
-                        }
-                        else if (res == 3){
-                            shopSwal.fire({
+                            html: "<div style='color:white;'><b>" + 'uang tidak cukup' + "</b> .</div>",
+                            icon: 'error', confirmButtonText: 'Oke'
+
+                        }).then((result2) => {
+                            if (result2.isConfirmed) {
+                                location.reload();
+                            }
+                        })
+                    }
+                    else if (res == 3) {
+                        shopSwal.fire({
                             title: '<h3 style="color:white;">Gagal Membuat Boom!</h3>',
-                            html: "<div style='color:white;'><b>"+ 'bahan tidak cukup' +"</b> .</div>",
-                            icon: 'error',confirmButtonText: 'Oke'
-                            
-                            }).then((result2)=>{
-                                if(result2.isConfirmed){
-                                    location.reload();
-                                }
-                            })
-                        }
-                        else {
-                            shopSwal.fire({
+                            html: "<div style='color:white;'><b>" + 'bahan tidak cukup' + "</b> .</div>",
+                            icon: 'error', confirmButtonText: 'Oke'
+
+                        }).then((result2) => {
+                            if (result2.isConfirmed) {
+                                location.reload();
+                            }
+                        })
+                    }
+                    else {
+                        shopSwal.fire({
                             title: '<h3 style="color:white;">Berhasil Membuat Boom!</h3>',
                             html: "<div style='color:white;'><b>" + item + "</b> telah ditambahkan pada inventory Anda.</div>",
-                            icon: 'success',confirmButtonText: 'Oke'
-                            
-                            }).then((result2)=>{
-                                if(result2.isConfirmed){
-                                    location.reload();
-                                }
-                            })
-                        }
-                        
-                    },
-                    error: function($xhr, textStatus,
-                        errorThrown) {
-                            console.log(errorThrown);
-                            console.warn($xhr.responseText);
-                        // load_data(0);
-                        // if ($xhr.responseJSON[
-                        //     'error'] ==
-                        //     'Uang tidak cukup') {
-                        //     shopSwal.fire({
-                        //         title: '<h3 style="color:white;">Pembelian Gagal!</h3>',
-                        //         html: '<div style="color:white;">Uang Anda tidak mencukupi!</div>',
-                        //         icon: 'error'
-                        //     })
-                        // } else {
-                        //     shopSwal.fire({
-                        //         title: '<h3 style="color:white;">Pembelian Gagal!</h3>',
-                        //         html: '<div style="color:white;">Terjadi Error di Server. Silakan ulangi kembali.</div>',
-                        //         icon: 'error'
-                        //     })
-                        // }
-                    }
-                });
-                
-            } else if (result.dismiss === Swal.DismissReason
-                .cancel) {
+                            icon: 'success', confirmButtonText: 'Oke'
 
-                // load_data(0);
-                shopSwal.fire({
-                    title: '<h3 style="color:white;">Batal membuat Boom!</h3>',
-                    html: '',
-                    icon: 'error'
-                })
-            }
-        })
-        
-    });
+                        }).then((result2) => {
+                            if (result2.isConfirmed) {
+                                location.reload();
+                            }
+                        })
+                    }
+
+                },
+                error: function ($xhr, textStatus,
+                    errorThrown) {
+                    console.log(errorThrown);
+                    console.warn($xhr.responseText);
+                    // load_data(0);
+                    // if ($xhr.responseJSON[
+                    //     'error'] ==
+                    //     'Uang tidak cukup') {
+                    //     shopSwal.fire({
+                    //         title: '<h3 style="color:white;">Pembelian Gagal!</h3>',
+                    //         html: '<div style="color:white;">Uang Anda tidak mencukupi!</div>',
+                    //         icon: 'error'
+                    //     })
+                    // } else {
+                    //     shopSwal.fire({
+                    //         title: '<h3 style="color:white;">Pembelian Gagal!</h3>',
+                    //         html: '<div style="color:white;">Terjadi Error di Server. Silakan ulangi kembali.</div>',
+                    //         icon: 'error'
+                    //     })
+                    // }
+                }
+            });
+
+        } else if (result.dismiss === Swal.DismissReason
+            .cancel) {
+
+            // load_data(0);
+            shopSwal.fire({
+                title: '<h3 style="color:white;">Batal membuat Boom!</h3>',
+                html: '',
+                icon: 'error'
+            })
+        }
+    })
+
+});
 
 $('.jembatan_ku').click(function () {
     build_jembatan(this.id);
 })
-
-// INISIALISASI
-$(function () {
-    get_jembatan();
-    get_lokasi();
-});
 
 // UNTUK ZOOM PULAU
 function _zoomIn(id_pulau, pulau_besar) {
@@ -355,11 +370,18 @@ $('#ya').click(function () {
         }
     });
 
+    // CEK APAKAH PULAU BESAR YG DIKLIK
     if (document.getElementById(clicked_island).classList.contains('p_besar')) {
         _zoomIn(clicked_island, true);
     } else {
         _zoomIn(clicked_island, false);
     }
+
+    // CEK APAKAH PULAU DGN HARTA KARUN YG DIKLIK
+    if (document.getElementById(clicked_island).classList.contains('cek_harta')) {
+        cek_harta(clicked_island);
+    }
+
     setTimeout(() => {
         document.getElementById('modal_saat_ini').style.display = "none";
         document.getElementsByClassName('modal_saat_jembatan')[0].style.display = "none";
@@ -367,6 +389,7 @@ $('#ya').click(function () {
         document.getElementsByClassName('modal_saat_tiket')[0].style.display = "none";
         document.getElementsByClassName('modal_saat_tiket')[1].style.display = "none";
     }, 500);
+
     $('#modal_pulau').modal("hide");
 });
 $('.tidak').click(function () {
@@ -421,7 +444,6 @@ function goBack() {
 }
 
 
-
 // MODAL BANGUN
 var arr_j = ['jmbkayu', 'jmbbaja', 'jmbbeton'];
 var arr_j2 = ['desckayu', 'descbaja', 'descbeton'];
@@ -459,3 +481,10 @@ function off(id) {
 function ambil_jembatan() {
 
 }
+
+
+// INISIALISASI
+$(function () {
+    get_jembatan();
+    get_lokasi();
+});
