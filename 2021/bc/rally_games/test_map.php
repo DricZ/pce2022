@@ -464,7 +464,11 @@
             position: fixed;
             z-index: 2;
         }
-
+        .default:hover {
+  background: #e7e7e7;
+  padding: 10px 32px;
+  text-align:center;
+}
         /* #harta {
                     position: fixed;
                     width: 250px;
@@ -476,6 +480,10 @@
         .current {
             animation: glowing 1300ms infinite;
             filter: drop-shadow(0 0 25px black);
+        }
+        .icon-navBar{
+            margin-left:10px;
+            margin-top:10px;
         }
     </style>
 </head>
@@ -489,17 +497,27 @@
 
     <div class="demo_btn">
         <!-- UNTUK KEMBALI -->
-        <a class="nav-link active exit" id="menu" onclick ="goBack()">
-            <li>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 64px; width: 64px;">
-                    <g class="" transform="translate(0,0)" style="">
-                        <path d="M217 28.098v455.804l142-42.597V70.697zm159.938 26.88l.062 2.327V87h16V55zM119 55v117.27h18V73h62V55zm258 50v16h16v-16zm0 34v236h16V139zm-240 58.727V233H41v46h96v35.273L195.273 256zM244 232c6.627 0 12 10.745 12 24s-5.373 24-12 24-12-10.745-12-24 5.373-24 12-24zM137 339.73h-18V448h18zM377 393v14h16v-14zm0 32v23h16v-23zM32 471v18h167v-18zm290.652 0l-60 18H480v-18z"></path>
-                    </g>
-                </svg>
-            </li>
-        </a>
+        <div class="row icon-navBar">
+            <div class="col-md-3"><img src="assets/logo_zoom_out.png"onclick="_zoomOut()" alt="" style="width:50px;"></div>
+        </div>
         
-        <button  onclick="_zoomOut()"style="width: 20vw; height: 20vh; font-size: 3vw;" ><img src="assets/logo_zoom_out.png" alt=""> HALO</button>
+        <div class ="icon-navBar">
+        <a class="nav-link active exit" id="menu" onclick ="goBack()">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 64px; width: 64px;">
+                <g class="" transform="translate(0,0)" style="">
+                    <path d="M217 28.098v455.804l142-42.597V70.697zm159.938 26.88l.062 2.327V87h16V55zM119 55v117.27h18V73h62V55zm258 50v16h16v-16zm0 34v236h16V139zm-240 58.727V233H41v46h96v35.273L195.273 256zM244 232c6.627 0 12 10.745 12 24s-5.373 24-12 24-12-10.745-12-24 5.373-24 12-24zM137 339.73h-18V448h18zM377 393v14h16v-14zm0 32v23h16v-23zM32 471v18h167v-18zm290.652 0l-60 18H480v-18z"></path>
+                </g>
+            </svg>
+    
+    </a>
+        </div>
+        <div class="row icon-navBar">
+            <div class="col-md-3"><img src="assets/logo_zoom_out.png"onclick="_zoomOut()" alt="" style="width:50px;"></div>
+        </div>
+        
+        
+        
         <!-- <button onclick="pindah()" style="width: 20vw; height: 20vh; font-size: 3vw;">tes!</button> -->
     </div>
 
