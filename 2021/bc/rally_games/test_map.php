@@ -2696,7 +2696,7 @@
         </div>
 
         <!-- Modal body -->
-        <div class="modal-body">
+        <div class="modal-body" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
         <div class="container">
             <div class='row' style="width:50%">
             <p>Pilih tipe jembatan yang ingin dibangun:</p>
@@ -2785,14 +2785,8 @@
         </div>
 
         <!-- Modal body -->
-        <div class="modal-body">
+        <div class="modal-body" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
         <div class="container">
-            <div class='row' style="width:50%; margin-top: 0; margin-left: 0">
-                <center>
-                    <h1>Jembatan Kayu</h1>
-                </center>
-            </div>
-            </div> -->
             <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
 
             <!-- Jembatan Kayu -->
@@ -2835,8 +2829,11 @@
 
         <!-- Modal footer -->
         <div class="modal-footer">
+        
             <p>
-            8500 Bridge Coin
+            <img src="assets/image/bridge coin.png" width="30px" height="30px">
+            8500
+            
             <button id="upgrade" type="button" class="btn btn-success" data-dismiss="modal">UPGRADE</button>
         </p>
         </div>
@@ -2857,7 +2854,7 @@
         </div>
 
         <!-- Modal body -->
-        <div class="modal-body">
+        <div class="modal-body" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
         <div class="container">
             <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
 
