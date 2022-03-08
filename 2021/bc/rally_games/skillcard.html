@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #containerAll {
+            max-height: 100vh;
+            height: 100vh;
+            width: 100%;
+            top: 5000px;
+            /* padding: 2%; */
+        }
+    
+        #containerAll p {
+            color: white;
+        }
+    
+        .content {
+            margin: 0;
+        }
+    
+        .inventory-item {
+            position: relative;
+            height: 15vw;
+            width: 100%;
+            margin-top: 5%;
+            padding: 5%;
+            top: 100vh;
+            border-radius: 15px 15px;
+            box-shadow: 0 0 2em rgba(255, 255, 255, 0.1);
+            background-color: rgb(0, 0, 0, 0.3);
+            font-family: 'Spartan', sans-serif;
+            font-weight: 500;
+        }
+    
+        .inventory-item i {
+            width: 100%;
+        }
+    
+        .resource-name {
+            font-size: 2vw;
+            margin: 0;
+        }
+    
+        .resource-quantity {
+            font-size: 3vw;
+        }
+    
+        .inventory-header {
+            font-size: 50pt;
+            font-family: 'Spartan', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    
+        #decor-inventory {
+            background-image: linear-gradient(to right, #ffdca2, #ff9190, #36d1dc, #5b86e5);
+            background-size: 300% 100%;
+            animation: changeColor 10s infinite;
+            width: 98px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            left: 20%;
+            display: block;
+        }
+    
+    
+        @media screen and (max-width: 1200px) and (min-width:992px) {
+            #decor-inventory {
+                left: 10% !important;
+            }
+        }
+    
+        @media screen and (max-width: 992px) {
+            #decor-inventory {
+                display: none;
+            }
+        }
+    
+        .icons {
+            border-radius: 25px;
+            width: 40vw;
+        }
+    
+        /* body {
+            overflow: hidden;
+        } */
+    </style>
+</head>
+<body>
+    <div id="containerAll">
+        <div class="content row px-5">
+            <div class="col-6 col-md-4">
+                <!-- <div class="inventory-item d-flex top-item"> -->
+                    <img src="assets/1.png" class="icons">
+                    
+                <!-- </div> -->
+            </div>
+            <div class="col-6 col-md-4">
+                <!-- <div class="inventory-item d-flex top-item"> -->
+                    <img src="assets/1.png" class="icons">
+                    
+                <!-- </div> -->
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center backbutton">
+            <!-- <i class="fa fa-angle-double-down" style="font-size: 4vw;"></i> -->
+        </div>
+        
+    </div>
+    
+    <!-- <div class="skill_card" >
+        <img src="assets/1.png" alt="" >
+    </div>   -->
+</body>
+</html>
