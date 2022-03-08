@@ -507,7 +507,7 @@
     <div class="demo_btn">
         <!-- UNTUK KEMBALI -->
         <div class="row icon-navBar">
-            <div class="col-md-3"><img src="assets/logo_zoom_out.png"onclick="_zoomOut()" alt="" style="width:50px;"></div>
+            <div class="col-md-3"><img src="assets/logo_zoom_out.png" onclick="_zoomOut()" alt="" style="width:50px;"></div>
         </div>
         
         <div class ="icon-navBar">
@@ -521,7 +521,7 @@
     </a>
         </div>
         <div class="row icon-navBar">
-            <div class="col-md-3"><img src="assets/treasure.png"onclick="_zoomOut()" alt="" style="width:50px;"></div>
+            <div class="col-md-3"><img src="" onclick="_zoomOut()" alt="" style="width:50px;"></div>
         </div>
         
         
