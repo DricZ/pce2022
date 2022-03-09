@@ -15,11 +15,15 @@ $sql = "SELECT c.city_name FROM team_constructed_landmark a JOIN landmark b ON a
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$rowTeam['id']]);
 
-while ($row = $stmt->fetch()) {
-    $output .= '<div class="' . $row['city_name'] . ' inventory-item d-flex justify-content-between">
-        <i class="mr-3"> <img src="assets/image/jakarta.svg" class="icons"> </i>
-        <p class="nama_item"> ' . $row['city_name'] . ' </p>
-        <p class="jumlah_item pr-2">Active</p>
+$sql_skill = "SELECT r.resource_name as name,tr.count as jumlah,r.image as icon,r.image_skill as gambar,r.normal_price as id  FROM team_resources tr JOIN resource r on tr.id_resource = r.id WHERE id_team = ? AND r.id>=18;";
+$stmt_skill = $pdo->prepare($sql_skill);
+$stmt_skill->execute([$rowTeam['id']]);
+
+while ($row = $stmt_skill->fetch()) {
+    $output .= '<div class="'. $row['id'] .' inventory-item d-flex justify-content-between">
+        <i class="mr-3"> <img src="assets/image/' . $row['icon'] . '" class="icons"> </i>
+        <p class="nama_item">'. $row['name'] .' </p>
+        <p class="jumlah_item pr-2"></p>
     </div>';
 }
 ?>
@@ -30,7 +34,7 @@ while ($row = $stmt->fetch()) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKILL</title>
+    <title>CLUE SKILL</title>
 </head>
 <style>
     #containerAll {
@@ -105,7 +109,7 @@ while ($row = $stmt->fetch()) {
     }
 
     .desc-icons {
-        width: 50%;
+        width: 100%;
         border-radius: 5px;
     }
 
@@ -191,7 +195,7 @@ while ($row = $stmt->fetch()) {
                             </g>
                         </svg>
                     </div>
-                    <p class="text-center pt-1">Skill</p>
+                    <p class="text-center pt-1">Clue Skill</p>
                 </div>
             </div>
         </div>
@@ -234,12 +238,12 @@ while ($row = $stmt->fetch()) {
 
                 <!-- INIT -->
 
-                <!-- JAKARTA -->
+                <!-- penggandaan -->
 
                 <div class="itemdesc-container desc-jakarta">
 
                     <div class="itemdesc-pic d-flex justify-content-center mb-3">
-                        <img src="assets/image/monas.svg" class="desc-icons">
+                        <img src="assets/1.png" class="desc-icons">
                     </div>
                     <p class="text-center" style="font-size: 3vw;">Monumen Nasional</p>
                     <div class="itemdesc-description">
@@ -248,14 +252,14 @@ while ($row = $stmt->fetch()) {
                     </div>
                 </div>
 
-                <!-- JAKARTA -->
+                <!-- penggandaan -->
 
-                <!-- JAYAPURA -->
+                <!-- Boom Mega Boom -->
 
                 <div class="itemdesc-container desc-jayapura">
 
                     <div class="itemdesc-pic d-flex justify-content-center mb-3">
-                        <img src="assets/image/minerals.svg" class="desc-icons">
+                        <img src="assets/2.png" class="desc-icons">
                     </div>
                     <p class="text-center" style="font-size: 2.5vw;">Jembatan Hotel Kamp</p>
                     <div class="itemdesc-description">
@@ -265,14 +269,14 @@ while ($row = $stmt->fetch()) {
 
                 </div>
 
-                <!-- JAYAPURA -->
+                <!-- Boom Mega Boom -->
 
-                <!-- JOGJAKARTA -->
+                <!-- Divide Et Impera -->
 
                 <div class="itemdesc-container desc-jogjakarta">
 
                     <div class="itemdesc-pic d-flex justify-content-center mb-3">
-                        <img src="assets/image/borobodour.png" class="desc-icons">
+                        <img src="assets/3.png" class="desc-icons">
                     </div>
                     <p class="text-center" style="font-size: 3vw;">Candi Borobudur</p>
                     <div class="itemdesc-description">
@@ -281,14 +285,14 @@ while ($row = $stmt->fetch()) {
 
                 </div>
 
-                <!-- JOGJAKARTA -->
+                <!-- Divide Et Impera -->
 
-                <!-- BALI -->
+                <!-- X2 Social Credits -->
 
                 <div class="itemdesc-container desc-bali">
 
                     <div class="itemdesc-pic d-flex justify-content-center mb-3">
-                        <img src="assets/image/baliVector.png" class="desc-icons">
+                        <img src="assets/4.png" class="desc-icons">
                     </div>
                     <p class="text-center" style="font-size: 3vw;">Tourism Paradise</p>
                     <div class="itemdesc-description">
@@ -297,14 +301,14 @@ while ($row = $stmt->fetch()) {
 
                 </div>
 
-                <!-- BALI -->
+                <!-- X2 Social Credits -->
 
-                <!-- BANJARMASIN -->
+                <!-- TBL TBL TBL -->
 
                 <div class="itemdesc-container desc-banjarmasin">
 
                     <div class="itemdesc-pic d-flex justify-content-center mb-3">
-                        <img src="assets/image/banjar.svg" class="desc-icons">
+                        <img src="assets/5.png" class="desc-icons">
                     </div>
                     <p class="text-center" style="font-size: 3vw;">Hutan</p>
                     <div class="itemdesc-description">
@@ -313,14 +317,14 @@ while ($row = $stmt->fetch()) {
 
                 </div>
 
-                <!-- BANJARMASIN -->
+                <!-- TBL TBL TBL -->
 
-                <!-- LAMPUNG -->
+                <!-- Meteor -->
 
                 <div class="itemdesc-container desc-lampung">
 
                     <div class="itemdesc-pic d-flex justify-content-center mb-3">
-                        <img src="assets/image/siger.svg" class="desc-icons">
+                        <img src="assets/6.png" class="desc-icons">
                     </div>
                     <p class="text-center" style="font-size: 2vw;"> Menara Siger</p>
                     <div class="itemdesc-description">
@@ -329,7 +333,7 @@ while ($row = $stmt->fetch()) {
 
                 </div>
 
-                <!-- LAMPUNG -->
+                <!-- Meteor-->
 
             </div>
 
@@ -365,7 +369,7 @@ while ($row = $stmt->fetch()) {
 
         $("#itemdesc").show();
         $("#itemdesc").delay("fast").animate({
-            width: '30vw'
+            width: '100vw'
         }, 200, function() {
             $(".inventory-item").css({
                 width: '100%'
@@ -382,7 +386,7 @@ while ($row = $stmt->fetch()) {
 
         /* STARTUP ANIMATION */
 
-        $(".Jakarta").hover(function() {
+        $(".18").hover(function() {
             $("#decor-skill").css("display", "none");
             $(".itemdesc-container").hide();
             $(".desc-jakarta").show();
@@ -393,7 +397,7 @@ while ($row = $stmt->fetch()) {
 
 
 
-        $(".Jayapura").hover(function() {
+        $(".19").hover(function() {
             $("#decor-skill").css("display", "none");
             $(".itemdesc-container").hide();
             $(".desc-jayapura").show();
@@ -405,7 +409,7 @@ while ($row = $stmt->fetch()) {
 
 
 
-        $(".Yogyakarta").hover(function() {
+        $(".20").hover(function() {
             $("#decor-skill").css("display", "none");
             $(".itemdesc-container").hide();
             $(".desc-jogjakarta").show();
@@ -417,7 +421,7 @@ while ($row = $stmt->fetch()) {
 
 
 
-        $(".Bali").hover(function() {
+        $(".21").hover(function() {
             $("#decor-skill").css("display", "none");
             $(".itemdesc-container").hide();
             $(".desc-bali").show();
@@ -429,7 +433,7 @@ while ($row = $stmt->fetch()) {
 
 
 
-        $(".Banjarmasin").hover(function() {
+        $(".22").hover(function() {
             $("#decor-skill").css("display", "none");
             $(".itemdesc-container").hide();
             $(".desc-banjarmasin").show();
@@ -441,7 +445,7 @@ while ($row = $stmt->fetch()) {
 
 
 
-        $(".Lampung").hover(function() {
+        $(".23").hover(function() {
             $("#decor-skill").css("display", "none");
             $(".itemdesc-container").hide();
             $(".desc-lampung").show();
