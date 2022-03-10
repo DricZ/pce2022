@@ -27,390 +27,390 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <style>
-    /* MODAL */
-    .custom_row {
-        display: flex;
-        align-items: center;
-    }
-
-    p {
-        font-size: large;
-    }
-
-    .row {
-        margin-top: 15px;
-    }
-
-    #modal_saat_ini,
-    .modal_saat_jembatan,
-    .modal_saat_tiket {
-        display: none;
-    }
-
-    /*  */
-
-    @keyframes glowing_dark {
-        0% {
-            filter: drop-shadow(0 0 5px black);
+        /* MODAL */
+        .custom_row {
+            display: flex;
+            align-items: center;
         }
 
-        50% {
-            filter: drop-shadow(0 0 20px black);
+        p {
+            font-size: large;
         }
 
-        100% {
-            filter: drop-shadow(0 0 5px black);
-        }
-    }
-
-    @keyframes glowing_yellow {
-        0% {
-            filter: drop-shadow(0 0 5px yellow);
+        .row {
+            margin-top: 15px;
         }
 
-        50% {
-            filter: drop-shadow(0 0 20px yellow);
+        #modal_saat_ini,
+        .modal_saat_jembatan,
+        .modal_saat_tiket {
+            display: none;
         }
 
-        100% {
-            filter: drop-shadow(0 0 5px yellow);
-        }
-    }
+        /*  */
 
-    @keyframes zoomout {
-        0% {
-            transform: scale(3.0);
-        }
+        @keyframes glowing_dark {
+            0% {
+                filter: drop-shadow(0 0 5px black);
+            }
 
-        100% {
-            transform: scale(1.0);
-        }
-    }
+            50% {
+                filter: drop-shadow(0 0 20px black);
+            }
 
-    @keyframes shake {
-        50% {
-            transform: translate(1px, 1px) rotate(0deg);
+            100% {
+                filter: drop-shadow(0 0 5px black);
+            }
         }
 
-        55% {
-            transform: translate(-1px, -2px) rotate(-1deg);
+        @keyframes glowing_yellow {
+            0% {
+                filter: drop-shadow(0 0 5px yellow);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px yellow);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 5px yellow);
+            }
         }
 
-        60% {
-            transform: translate(-3px, 0px) rotate(1deg);
+        @keyframes zoomout {
+            0% {
+                transform: scale(3.0);
+            }
+
+            100% {
+                transform: scale(1.0);
+            }
         }
 
-        65% {
-            transform: translate(3px, 2px) rotate(0deg);
+        @keyframes shake {
+            50% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+
+            55% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+
+            60% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            65% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            75% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            85% {
+                transform: translate(3px, 1px) rotate(-1deg);
+            }
+
+            90% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+
+            95% {
+                transform: translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
         }
 
-        70% {
-            transform: translate(1px, -1px) rotate(1deg);
+        body {
+            animation: 1s ease-out 0s 1 zoomout;
+            background-image: url('assets/laut.png');
+            background-size: 110vw 110vh;
+            overflow: hidden;
         }
 
-        75% {
-            transform: translate(-1px, 2px) rotate(-1deg);
+        #svg2 {
+            box-sizing: content-box;
+            width: 80vw;
+            max-height: 100vh;
+            transition: all 0.75s;
+            z-index: 1;
+            position: relative;
         }
 
-        80% {
-            transform: translate(-3px, 1px) rotate(0deg);
+        .awan {
+            z-index: 2;
+            position: absolute;
         }
 
-        85% {
-            transform: translate(3px, 1px) rotate(-1deg);
+        .a1 {
+            top: 6vh;
+            left: 128vh;
+            width: 20vh;
         }
 
-        90% {
-            transform: translate(-1px, -1px) rotate(1deg);
+        .a2 {
+            top: 13vh;
+            left: 136vh;
+            width: 20vh;
         }
 
-        95% {
-            transform: translate(1px, 2px) rotate(0deg);
+        .a3 {
+            top: 23vh;
+            left: 143vh;
+            width: 20vh;
         }
 
-        100% {
-            transform: translate(1px, -2px) rotate(-1deg);
+        .a4 {
+            top: 40vh;
+            left: 125vh;
+            width: 20vh;
         }
-    }
 
-    body {
-        animation: 1s ease-out 0s 1 zoomout;
-        background-image: url('assets/laut.png');
-        background-size: 110vw 110vh;
-        overflow: hidden;
-    }
+        .a5 {
+            top: 51vh;
+            left: 110vh;
+            width: 20vh;
+        }
 
-    #svg2 {
-        box-sizing: content-box;
-        width: 80vw;
-        max-height: 100vh;
-        transition: all 0.75s;
-        z-index: 1;
-        position: relative;
-    }
+        .a6 {
+            top: 55vh;
+            left: 120vh;
+            width: 20vh;
+        }
 
-    .awan {
-        z-index: 2;
-        position: absolute;
-    }
+        .a7 {
+            top: 22vh;
+            left: 65vh;
+            width: 20vh;
+        }
 
-    .a1 {
-        top: 6vh;
-        left: 128vh;
-        width: 20vh;
-    }
+        .a8 {
+            top: 45vh;
+            left: 50vh;
+            width: 20vh;
+        }
 
-    .a2 {
-        top: 13vh;
-        left: 136vh;
-        width: 20vh;
-    }
+        .a9 {
+            top: 50vh;
+            left: 80vh;
+            width: 15vh;
+        }
 
-    .a3 {
-        top: 23vh;
-        left: 143vh;
-        width: 20vh;
-    }
+        .a10 {
+            top: 56vh;
+            left: 78vh;
+            width: 20vh;
+        }
 
-    .a4 {
-        top: 40vh;
-        left: 125vh;
-        width: 20vh;
-    }
+        .a11 {
+            top: 33vh;
+            left: 150vh;
+            width: 20vh;
+        }
 
-    .a5 {
-        top: 51vh;
-        left: 110vh;
-        width: 20vh;
-    }
+        .a12 {
+            top: 38vh;
+            left: 150vh;
+            width: 20vh;
+        }
 
-    .a6 {
-        top: 55vh;
-        left: 120vh;
-        width: 20vh;
-    }
+        .a13 {
+            top: 58vh;
+            left: 145vh;
+            width: 18vh;
+        }
 
-    .a7 {
-        top: 22vh;
-        left: 65vh;
-        width: 20vh;
-    }
+        .a14 {
+            top: 56vh;
+            left: 130vh;
+            width: 18vh;
+        }
 
-    .a8 {
-        top: 45vh;
-        left: 50vh;
-        width: 20vh;
-    }
+        .a15 {
+            top: 48vh;
+            left: 125vh;
+            width: 20vh;
+        }
 
-    .a9 {
-        top: 50vh;
-        left: 80vh;
-        width: 15vh;
-    }
+        .a16 {
+            top: 40vh;
+            left: 140vh;
+            width: 10vh;
+        }
 
-    .a10 {
-        top: 56vh;
-        left: 78vh;
-        width: 20vh;
-    }
+        .a17 {
+            top: 58vh;
+            left: 100vh;
+            width: 20vh;
+        }
 
-    .a11 {
-        top: 33vh;
-        left: 150vh;
-        width: 20vh;
-    }
+        .a18 {
+            top: 65vh;
+            left: 115vh;
+            width: 10vh;
+        }
 
-    .a12 {
-        top: 38vh;
-        left: 150vh;
-        width: 20vh;
-    }
+        .a19 {
+            top: 63vh;
+            left: 120vh;
+            width: 15vh;
+        }
 
-    .a13 {
-        top: 58vh;
-        left: 145vh;
-        width: 18vh;
-    }
+        .a20 {
+            top: 65vh;
+            left: 130vh;
+            width: 10vh;
+        }
 
-    .a14 {
-        top: 56vh;
-        left: 130vh;
-        width: 18vh;
-    }
+        .a21 {
+            top: 65vh;
+            left: 80vh;
+            width: 20vh;
+        }
 
-    .a15 {
-        top: 48vh;
-        left: 125vh;
-        width: 20vh;
-    }
+        .a22 {
+            top: 63vh;
+            left: 87vh;
+            width: 20vh;
+        }
 
-    .a16 {
-        top: 40vh;
-        left: 140vh;
-        width: 10vh;
-    }
+        .a23 {
+            top: 75vh;
+            left: 78vh;
+            width: 20vh;
+        }
 
-    .a17 {
-        top: 58vh;
-        left: 100vh;
-        width: 20vh;
-    }
+        .a24 {
+            top: 80vh;
+            left: 78vh;
+            width: 20vh;
+        }
 
-    .a18 {
-        top: 65vh;
-        left: 115vh;
-        width: 10vh;
-    }
+        .a25 {
+            top: 73vh;
+            left: 95vh;
+            width: 20vh;
+        }
 
-    .a19 {
-        top: 63vh;
-        left: 120vh;
-        width: 15vh;
-    }
+        .a26 {
+            top: 72vh;
+            left: 98vh;
+            width: 20vh;
+        }
 
-    .a20 {
-        top: 65vh;
-        left: 130vh;
-        width: 10vh;
-    }
+        .a27 {
+            top: 58vh;
+            left: 98vh;
+            width: 20vh;
+        }
 
-    .a21 {
-        top: 65vh;
-        left: 80vh;
-        width: 20vh;
-    }
+        .a28 {
+            top: 80vh;
+            left: 98vh;
+            width: 20vh;
+        }
 
-    .a22 {
-        top: 63vh;
-        left: 87vh;
-        width: 20vh;
-    }
+        .a29 {
+            top: 83vh;
+            left: 90vh;
+            width: 20vh;
+        }
 
-    .a23 {
-        top: 75vh;
-        left: 78vh;
-        width: 20vh;
-    }
+        .a30 {
+            top: 80vh;
+            left: 115vh;
+            width: 10vh;
+        }
 
-    .a24 {
-        top: 80vh;
-        left: 78vh;
-        width: 20vh;
-    }
+        .a31 {
+            top: 84vh;
+            left: 118vh;
+            width: 10vh;
+        }
 
-    .a25 {
-        top: 73vh;
-        left: 95vh;
-        width: 20vh;
-    }
+        .a32 {
+            top: 87vh;
+            left: 120vh;
+            width: 10vh;
+        }
 
-    .a26 {
-        top: 72vh;
-        left: 98vh;
-        width: 20vh;
-    }
+        .a33 {
+            top: 89vh;
+            left: 125vh;
+            width: 10vh;
+        }
 
-    .a27 {
-        top: 58vh;
-        left: 98vh;
-        width: 20vh;
-    }
+        .a34 {
+            top: 89vh;
+            left: 128vh;
+            width: 10vh;
+        }
 
-    .a28 {
-        top: 80vh;
-        left: 98vh;
-        width: 20vh;
-    }
+        .a35 {
+            top: 89vh;
+            left: 130vh;
+            width: 10vh;
+        }
 
-    .a29 {
-        top: 83vh;
-        left: 90vh;
-        width: 20vh;
-    }
+        .a36 {
+            top: 85vh;
+            left: 136vh;
+            width: 10vh;
+        }
 
-    .a30 {
-        top: 80vh;
-        left: 115vh;
-        width: 10vh;
-    }
+        .a37 {
+            top: 83vh;
+            left: 136vh;
+            width: 10vh;
+        }
 
-    .a31 {
-        top: 84vh;
-        left: 118vh;
-        width: 10vh;
-    }
+        .a38 {
+            top: 47vh;
+            left: 80vh;
+            width: 10vh;
+        }
 
-    .a32 {
-        top: 87vh;
-        left: 120vh;
-        width: 10vh;
-    }
+        .a39 {
+            top: 37vh;
+            left: 77vh;
+            width: 10vh;
+        }
 
-    .a33 {
-        top: 89vh;
-        left: 125vh;
-        width: 10vh;
-    }
+        .a40 {
+            top: 25vh;
+            left: 86vh;
+            width: 10vh;
+        }
 
-    .a34 {
-        top: 89vh;
-        left: 128vh;
-        width: 10vh;
-    }
+        .a41 {
+            top: 25vh;
+            left: 95vh;
+            width: 10vh;
+        }
 
-    .a35 {
-        top: 89vh;
-        left: 130vh;
-        width: 10vh;
-    }
+        .a42 {
+            top: 24vh;
+            left: 115vh;
+            width: 15vh;
+        }
 
-    .a36 {
-        top: 85vh;
-        left: 136vh;
-        width: 10vh;
-    }
-
-    .a37 {
-        top: 83vh;
-        left: 136vh;
-        width: 10vh;
-    }
-
-    .a38 {
-        top: 47vh;
-        left: 80vh;
-        width: 10vh;
-    }
-
-    .a39 {
-        top: 37vh;
-        left: 77vh;
-        width: 10vh;
-    }
-
-    .a40 {
-        top: 25vh;
-        left: 86vh;
-        width: 10vh;
-    }
-
-    .a41 {
-        top: 25vh;
-        left: 95vh;
-        width: 10vh;
-    }
-
-    .a42 {
-        top: 24vh;
-        left: 115vh;
-        width: 15vh;
-    }
-
-    .a43 {
-        top: 46vh;
-        left: 113vh;
-        width: 8vh;
-    }
+        .a43 {
+            top: 46vh;
+            left: 113vh;
+            width: 8vh;
+        }
 
     /* .a44{
             top: 0vh;
@@ -514,48 +514,50 @@
             width: 50vh;
         } */
 
-    .jembatan_ku {
-        opacity: 0.5;
-    }
+        .jembatan_ku {
+            opacity: 0.5;
+        }
 
-    .pulau_ku:hover {
-        transition: all 0.3s;
-        filter: drop-shadow(0 0 15px white);
-    }
+        .pulau_ku:hover {
+            transition: all 0.3s;
+            filter: drop-shadow(0 0 15px white);
+        }
 
-    .jembatan_ku:hover {
-        transition: all 0.3s;
-        filter: drop-shadow(0 0 3px white);
-    }
+        .jembatan_ku:hover {
+            transition: all 0.3s;
+            filter: drop-shadow(0 0 3px white);
+        }
 
-    .demo_btn {
-        position: fixed;
-        left: 92.5vw;
-        z-index: 2;
-    }
+        .demo_btn {
+            position: fixed;
+            left: 92.5vw;
+            z-index: 2;
+        }
 
-    .default:hover {
-        background: #e7e7e7;
-        padding: 10px 32px;
-        text-align: center;
-    }
+        .default:hover {
+            background: #e7e7e7;
+            padding: 10px 32px;
+            text-align: center;
+        }
 
-    .current {
-        animation: glowing_dark 1300ms infinite;
-    }
+        .current {
+            animation: glowing_dark 1300ms infinite;
+        }
 
-    .icon-navBar {
-        margin-top: 15px;
-        width: 75px;
-        cursor: pointer;
-        transition: all 0.25s ease-in-out;
-    }
+        .icon-navBar {
+            margin-top: 15px;
+            width: 75px;
+            cursor: pointer;
+            transition: all 0.25s ease-in-out;
+        }
 
-    .icon-navBar:hover {
-        transition: all 0.25s ease-in-out;
-        filter: drop-shadow(0 0 10px white);
-        width: 100px;
-    }
+        .icon-navBar:hover {
+            transition: all 0.25s ease-in-out;
+            filter: drop-shadow(0 0 10px white);
+            width: 100px;
+        }
+
+        .g_jembatan{width: 100%}
     </style>
 </head>
 
@@ -2313,6 +2315,8 @@
 <div class="modal fade" id="modal_build">
     <div class="modal-dialog">
         <div class="modal-content">
+        <input id="session_tipe_jembatan" type="hidden" value="">
+
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">
@@ -2394,7 +2398,7 @@
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <button id="build" type="button" class="btn btn-success" data-dismiss="modal"
-                        onClick="build()">BUILD</button>
+                        >BUILD</button>
                 </div>
             </div>
         </div>
