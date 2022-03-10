@@ -10,14 +10,13 @@
     $stmtTeam = $pdo->prepare($sqlTeam);
     $stmtTeam->execute([$_SESSION['username']]);
     $rowTeam = $stmtTeam->fetch();
-    
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tes map</title>
+    <title>ACTUAL MAP</title>
 
     <!-- JQUERY -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -26,347 +25,394 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
     <style>
-        /* MODAL */
-        .custom_row {
-            display: flex;
-            align-items: center;
+    /* MODAL */
+    .custom_row {
+        display: flex;
+        align-items: center;
+    }
+
+    p {
+        font-size: large;
+    }
+
+    .row {
+        margin-top: 15px;
+    }
+
+    #modal_saat_ini,
+    .modal_saat_jembatan,
+    .modal_saat_tiket {
+        display: none;
+    }
+
+    /*  */
+
+    @keyframes glowing_dark {
+        0% {
+            filter: drop-shadow(0 0 5px black);
         }
 
-        p {
-            font-size: large;
+        50% {
+            filter: drop-shadow(0 0 20px black);
         }
 
-        .row {
-            margin-top: 15px;
+        100% {
+            filter: drop-shadow(0 0 5px black);
+        }
+    }
+
+    @keyframes glowing_yellow {
+        0% {
+            filter: drop-shadow(0 0 5px yellow);
         }
 
-        #modal_saat_ini,
-        .modal_saat_jembatan,
-        .modal_saat_tiket {
-            display: none;
+        50% {
+            filter: drop-shadow(0 0 20px yellow);
         }
 
-        /*  */
+        100% {
+            filter: drop-shadow(0 0 5px yellow);
+        }
+    }
 
-        @keyframes glowing_dark {
-            0% {
-                filter: drop-shadow(0 0 5px black);
-            }
-
-            50% {
-                filter: drop-shadow(0 0 20px black);
-            }
-
-            100% {
-                filter: drop-shadow(0 0 5px black);
-            }
+    @keyframes zoomout {
+        0% {
+            transform: scale(3.0);
         }
 
-        @keyframes glowing_yellow {
-            0% {
-                filter: drop-shadow(0 0 5px yellow);
-            }
+        100% {
+            transform: scale(1.0);
+        }
+    }
 
-            50% {
-                filter: drop-shadow(0 0 20px yellow);
-            }
-
-            100% {
-                filter: drop-shadow(0 0 5px yellow);
-            }
+    @keyframes shake {
+        50% {
+            transform: translate(1px, 1px) rotate(0deg);
         }
 
-        @keyframes zoomout {
-            0% {
-                transform: scale(3.0);
-            }
-
-            100% {
-                transform: scale(1.0);
-            }
+        55% {
+            transform: translate(-1px, -2px) rotate(-1deg);
         }
 
-        body {
-            animation: 1s ease-out 0s 1 zoomout;
-            background-image: url('assets/laut.png');
-            background-size: 110vw 110vh;
-            overflow: hidden;
+        60% {
+            transform: translate(-3px, 0px) rotate(1deg);
         }
 
-        #svg2 {
-            box-sizing: content-box;
-            width: 80vw;
-            max-height: 100vh;
-            transition: all 0.75s;
-            z-index: 1;
-            position: relative;
+        65% {
+            transform: translate(3px, 2px) rotate(0deg);
         }
 
-        .awan {
-            z-index: 2;
-            position: absolute;
+        70% {
+            transform: translate(1px, -1px) rotate(1deg);
         }
 
-        .a1 {
-            top: 6vh;
-            left: 128vh;
-            width: 20vh;
+        75% {
+            transform: translate(-1px, 2px) rotate(-1deg);
         }
 
-        .a2 {
-            top: 13vh;
-            left: 136vh;
-            width: 20vh;
+        80% {
+            transform: translate(-3px, 1px) rotate(0deg);
         }
 
-        .a3 {
-            top: 23vh;
-            left: 143vh;
-            width: 20vh;
+        85% {
+            transform: translate(3px, 1px) rotate(-1deg);
         }
 
-        .a4 {
-            top: 40vh;
-            left: 125vh;
-            width: 20vh;
+        90% {
+            transform: translate(-1px, -1px) rotate(1deg);
         }
 
-        .a5 {
-            top: 51vh;
-            left: 110vh;
-            width: 20vh;
+        95% {
+            transform: translate(1px, 2px) rotate(0deg);
         }
 
-        .a6 {
-            top: 55vh;
-            left: 120vh;
-            width: 20vh;
+        100% {
+            transform: translate(1px, -2px) rotate(-1deg);
         }
+    }
 
-        .a7 {
-            top: 22vh;
-            left: 65vh;
-            width: 20vh;
-        }
+    body {
+        animation: 1s ease-out 0s 1 zoomout;
+        background-image: url('assets/laut.png');
+        background-size: 110vw 110vh;
+        overflow: hidden;
+    }
 
-        .a8 {
-            top: 45vh;
-            left: 50vh;
-            width: 20vh;
-        }
+    #svg2 {
+        box-sizing: content-box;
+        width: 80vw;
+        max-height: 100vh;
+        transition: all 0.75s;
+        z-index: 1;
+        position: relative;
+    }
 
-        .a9 {
-            top: 50vh;
-            left: 80vh;
-            width: 15vh;
-        }
+    .awan {
+        z-index: 2;
+        position: absolute;
+    }
 
-        .a10 {
-            top: 56vh;
-            left: 78vh;
-            width: 20vh;
-        }
+    .a1 {
+        top: 6vh;
+        left: 128vh;
+        width: 20vh;
+    }
 
-        .a11 {
-            top: 33vh;
-            left: 150vh;
-            width: 20vh;
-        }
+    .a2 {
+        top: 13vh;
+        left: 136vh;
+        width: 20vh;
+    }
 
-        .a12 {
-            top: 38vh;
-            left: 150vh;
-            width: 20vh;
-        }
+    .a3 {
+        top: 23vh;
+        left: 143vh;
+        width: 20vh;
+    }
 
-        .a13 {
-            top: 58vh;
-            left: 145vh;
-            width: 18vh;
-        }
+    .a4 {
+        top: 40vh;
+        left: 125vh;
+        width: 20vh;
+    }
 
-        .a14 {
-            top: 56vh;
-            left: 130vh;
-            width: 18vh;
-        }
+    .a5 {
+        top: 51vh;
+        left: 110vh;
+        width: 20vh;
+    }
 
-        .a15 {
-            top: 48vh;
-            left: 125vh;
-            width: 20vh;
-        }
+    .a6 {
+        top: 55vh;
+        left: 120vh;
+        width: 20vh;
+    }
 
-        .a16 {
-            top: 40vh;
-            left: 140vh;
-            width: 10vh;
-        }
+    .a7 {
+        top: 22vh;
+        left: 65vh;
+        width: 20vh;
+    }
 
-        .a17 {
-            top: 58vh;
-            left: 100vh;
-            width: 20vh;
-        }
+    .a8 {
+        top: 45vh;
+        left: 50vh;
+        width: 20vh;
+    }
 
-        .a18 {
-            top: 65vh;
-            left: 115vh;
-            width: 10vh;
-        }
+    .a9 {
+        top: 50vh;
+        left: 80vh;
+        width: 15vh;
+    }
 
-        .a19 {
-            top: 63vh;
-            left: 120vh;
-            width: 15vh;
-        }
+    .a10 {
+        top: 56vh;
+        left: 78vh;
+        width: 20vh;
+    }
 
-        .a20 {
-            top: 65vh;
-            left: 130vh;
-            width: 10vh;
-        }
+    .a11 {
+        top: 33vh;
+        left: 150vh;
+        width: 20vh;
+    }
 
-        .a21 {
-            top: 65vh;
-            left: 80vh;
-            width: 20vh;
-        }
+    .a12 {
+        top: 38vh;
+        left: 150vh;
+        width: 20vh;
+    }
 
-        .a22 {
-            top: 63vh;
-            left: 87vh;
-            width: 20vh;
-        }
+    .a13 {
+        top: 58vh;
+        left: 145vh;
+        width: 18vh;
+    }
 
-        .a23 {
-            top: 75vh;
-            left: 78vh;
-            width: 20vh;
-        }
+    .a14 {
+        top: 56vh;
+        left: 130vh;
+        width: 18vh;
+    }
 
-        .a24 {
-            top: 80vh;
-            left: 78vh;
-            width: 20vh;
-        }
+    .a15 {
+        top: 48vh;
+        left: 125vh;
+        width: 20vh;
+    }
 
-        .a25 {
-            top: 73vh;
-            left: 95vh;
-            width: 20vh;
-        }
+    .a16 {
+        top: 40vh;
+        left: 140vh;
+        width: 10vh;
+    }
 
-        .a26 {
-            top: 72vh;
-            left: 98vh;
-            width: 20vh;
-        }
+    .a17 {
+        top: 58vh;
+        left: 100vh;
+        width: 20vh;
+    }
 
-        .a27 {
-            top: 58vh;
-            left: 98vh;
-            width: 20vh;
-        }
+    .a18 {
+        top: 65vh;
+        left: 115vh;
+        width: 10vh;
+    }
 
-        .a28 {
-            top: 80vh;
-            left: 98vh;
-            width: 20vh;
-        }
+    .a19 {
+        top: 63vh;
+        left: 120vh;
+        width: 15vh;
+    }
 
-        .a29 {
-            top: 83vh;
-            left: 90vh;
-            width: 20vh;
-        }
+    .a20 {
+        top: 65vh;
+        left: 130vh;
+        width: 10vh;
+    }
 
-        .a30 {
-            top: 80vh;
-            left: 115vh;
-            width: 10vh;
-        }
+    .a21 {
+        top: 65vh;
+        left: 80vh;
+        width: 20vh;
+    }
 
-        .a31 {
-            top: 84vh;
-            left: 118vh;
-            width: 10vh;
-        }
+    .a22 {
+        top: 63vh;
+        left: 87vh;
+        width: 20vh;
+    }
 
-        .a32 {
-            top: 87vh;
-            left: 120vh;
-            width: 10vh;
-        }
+    .a23 {
+        top: 75vh;
+        left: 78vh;
+        width: 20vh;
+    }
 
-        .a33 {
-            top: 89vh;
-            left: 125vh;
-            width: 10vh;
-        }
+    .a24 {
+        top: 80vh;
+        left: 78vh;
+        width: 20vh;
+    }
 
-        .a34 {
-            top: 89vh;
-            left: 128vh;
-            width: 10vh;
-        }
+    .a25 {
+        top: 73vh;
+        left: 95vh;
+        width: 20vh;
+    }
 
-        .a35 {
-            top: 89vh;
-            left: 130vh;
-            width: 10vh;
-        }
+    .a26 {
+        top: 72vh;
+        left: 98vh;
+        width: 20vh;
+    }
 
-        .a36 {
-            top: 85vh;
-            left: 136vh;
-            width: 10vh;
-        }
+    .a27 {
+        top: 58vh;
+        left: 98vh;
+        width: 20vh;
+    }
 
-        .a37 {
-            top: 83vh;
-            left: 136vh;
-            width: 10vh;
-        }
+    .a28 {
+        top: 80vh;
+        left: 98vh;
+        width: 20vh;
+    }
 
-        .a38 {
-            top: 47vh;
-            left: 80vh;
-            width: 10vh;
-        }
+    .a29 {
+        top: 83vh;
+        left: 90vh;
+        width: 20vh;
+    }
 
-        .a39 {
-            top: 37vh;
-            left: 77vh;
-            width: 10vh;
-        }
+    .a30 {
+        top: 80vh;
+        left: 115vh;
+        width: 10vh;
+    }
 
-        .a40 {
-            top: 25vh;
-            left: 86vh;
-            width: 10vh;
-        }
+    .a31 {
+        top: 84vh;
+        left: 118vh;
+        width: 10vh;
+    }
 
-        .a41 {
-            top: 25vh;
-            left: 95vh;
-            width: 10vh;
-        }
+    .a32 {
+        top: 87vh;
+        left: 120vh;
+        width: 10vh;
+    }
 
-        .a42 {
-            top: 24vh;
-            left: 115vh;
-            width: 15vh;
-        }
+    .a33 {
+        top: 89vh;
+        left: 125vh;
+        width: 10vh;
+    }
 
-        .a43 {
-            top: 46vh;
-            left: 113vh;
-            width: 8vh;
-        }
+    .a34 {
+        top: 89vh;
+        left: 128vh;
+        width: 10vh;
+    }
 
-        /* .a44{
+    .a35 {
+        top: 89vh;
+        left: 130vh;
+        width: 10vh;
+    }
+
+    .a36 {
+        top: 85vh;
+        left: 136vh;
+        width: 10vh;
+    }
+
+    .a37 {
+        top: 83vh;
+        left: 136vh;
+        width: 10vh;
+    }
+
+    .a38 {
+        top: 47vh;
+        left: 80vh;
+        width: 10vh;
+    }
+
+    .a39 {
+        top: 37vh;
+        left: 77vh;
+        width: 10vh;
+    }
+
+    .a40 {
+        top: 25vh;
+        left: 86vh;
+        width: 10vh;
+    }
+
+    .a41 {
+        top: 25vh;
+        left: 95vh;
+        width: 10vh;
+    }
+
+    .a42 {
+        top: 24vh;
+        left: 115vh;
+        width: 15vh;
+    }
+
+    .a43 {
+        top: 46vh;
+        left: 113vh;
+        width: 8vh;
+    }
+
+    /* .a44{
             top: 0vh;
             left: 40vh;
             width: 45vh;
@@ -468,39 +514,48 @@
             width: 50vh;
         } */
 
-        .jembatan_ku {
-            opacity: 0.5;
-        }
+    .jembatan_ku {
+        opacity: 0.5;
+    }
 
-        .pulau_ku:hover {
-            transition: all 0.3s;
-            filter: drop-shadow(0 0 15px white);
-        }
+    .pulau_ku:hover {
+        transition: all 0.3s;
+        filter: drop-shadow(0 0 15px white);
+    }
 
-        .jembatan_ku:hover {
-            transition: all 0.3s;
-            filter: drop-shadow(0 0 3px white);
-        }
+    .jembatan_ku:hover {
+        transition: all 0.3s;
+        filter: drop-shadow(0 0 3px white);
+    }
 
-        .demo_btn {
-            position: fixed;
-            left: 92.5vw;
-            z-index: 2;
-        }
+    .demo_btn {
+        position: fixed;
+        left: 92.5vw;
+        z-index: 2;
+    }
 
-        .default:hover {
-            background: #e7e7e7;
-            padding: 10px 32px;
-            text-align:center;
-        }
+    .default:hover {
+        background: #e7e7e7;
+        padding: 10px 32px;
+        text-align: center;
+    }
 
-        .current {
-            animation: glowing_dark 1300ms infinite;
-        }
+    .current {
+        animation: glowing_dark 1300ms infinite;
+    }
 
-        .icon-navBar{
-            margin-top: 15px;
-        }
+    .icon-navBar {
+        margin-top: 15px;
+        width: 75px;
+        cursor: pointer;
+        transition: all 0.25s ease-in-out;
+    }
+
+    .icon-navBar:hover {
+        transition: all 0.25s ease-in-out;
+        filter: drop-shadow(0 0 10px white);
+        width: 100px;
+    }
     </style>
 </head>
 
@@ -515,25 +570,25 @@
     <!-- NAVIGATIONS -->
     <div class="demo_btn">
         <!-- ZOOM OUT -->
-        <div class="row icon-navBar">
-            <div class="col-md-3"><img src="assets/logo_zoom_out.png" onclick="_zoomOut()" alt="" style="width:50px;"></div>
-        </div>
-        
+        <img class="icon-navBar" src="assets/logo_zoom_out.png" onclick="_zoomOut()" alt="">
+
         <!-- GO BACK -->
-        <div class ="icon-navBar">
-            <a class="nav-link active exit" id="menu" onclick ="goBack()">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:60px;">
+        <div class="icon-navBar">
+            <a class="nav-link active exit" id="menu" onclick="goBack()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <g class="" transform="translate(0,0)" style="">
-                        <path d="M217 28.098v455.804l142-42.597V70.697zm159.938 26.88l.062 2.327V87h16V55zM119 55v117.27h18V73h62V55zm258 50v16h16v-16zm0 34v236h16V139zm-240 58.727V233H41v46h96v35.273L195.273 256zM244 232c6.627 0 12 10.745 12 24s-5.373 24-12 24-12-10.745-12-24 5.373-24 12-24zM137 339.73h-18V448h18zM377 393v14h16v-14zm0 32v23h16v-23zM32 471v18h167v-18zm290.652 0l-60 18H480v-18z"></path>
+                        <path
+                            d="M217 28.098v455.804l142-42.597V70.697zm159.938 26.88l.062 2.327V87h16V55zM119 55v117.27h18V73h62V55zm258 50v16h16v-16zm0 34v236h16V139zm-240 58.727V233H41v46h96v35.273L195.273 256zM244 232c6.627 0 12 10.745 12 24s-5.373 24-12 24-12-10.745-12-24 5.373-24 12-24zM137 339.73h-18V448h18zM377 393v14h16v-14zm0 32v23h16v-23zM32 471v18h167v-18zm290.652 0l-60 18H480v-18z">
+                        </path>
                     </g>
                 </svg>
             </a>
         </div>
-        
+
         <!-- TREASURE -->
-        <div class="row icon-navBar" id="harta_karun" style="display: none; animation: glowing_yellow 1.5s infinite;">
-            <div class="col-md-3"><img src="assets/treasure.png" alt="" style="width:100px;"></div>
-        </div>
+        <img id="harta_karun" class="icon-navBar"
+            style="display: none; animation: glowing_yellow 1.5s infinite, shake 1.5s infinite;"
+            src="assets/treasure.png" alt="">
     </div>
 
     <!-- MAP & AWAN -->
@@ -2170,7 +2225,7 @@
     </div>
 </body>
 
-<div class="modal fade" id="modal_pulau" role="dialog">
+<div class="modal fade" id="modal_pulau">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -2231,7 +2286,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal_tdk_bisa" role="dialog">
+<div class="modal fade" id="modal_tdk_bisa">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -2257,235 +2312,264 @@
 
 <div class="modal fade" id="modal_build">
     <div class="modal-dialog">
-    <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-        <h4 class="modal-title">
-            Bangun Jembatan
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </h4>
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Bangun Jembatan
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </h4>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body"
+                style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <div class="container">
+                    <div class='row' style="width:50%">
+                        <p>Pilih tipe jembatan yang ingin dibangun:</p>
+                        <div class='col-sm-4'>
+                            <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
+                                src="assets/image/jembatan Kayu.png" alt="Card image">
+                        </div>
+
+                        <div class='col-sm-4'>
+                            <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan"
+                                src="assets/image/jembatan Baja.png" alt="Card image">
+                        </div>
+
+                        <div class='col-sm-4'>
+                            <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan"
+                                src="assets/image/jembatan Beton.png" alt="Card image">
+                        </div>
+                    </div>
+                    <div class="row" style="width:50%">
+
+                        <!-- Jembatan Kayu -->
+                        <div class="col-12 jembatan hidden" id="desckayu">
+                            <br>
+                            <center>
+                                <h1>Jembatan Kayu</h1>
+                            </center>
+                            <h4>Bahan-bahan yang diperluhkan:</h4>
+                            <p>
+                                1x pekerja <br>
+                                3x kayu
+                            </p>
+                        </div>
+
+                        <!-- Jembatan Baja -->
+                        <div class="col-12 jembatan hidden" id="descbaja">
+                            <br>
+                            <center>
+                                <h1>Jembatan Baja</h1>
+                            </center>
+                            <h4>Bahan-bahan yang diperluhkan:</h4>
+                            <p>
+                                2x pekerja <br>
+                                2x besi <br>
+                                1x kayu<br>
+                                1x semen<br>
+                                1x pasir
+                            </p>
+                        </div>
+
+                        <!-- Jembatan Beton -->
+                        <div class="col-12 jembatan hidden" id="descbeton">
+                            <br>
+                            <center>
+                                <h1>Jembatan Beton</h1>
+                            </center>
+                            <h4>Bahan-bahan yang diperluhkan:</h4>
+                            <p>
+                                2x pekerja<br>
+                                3x besi<br>
+                                3x semen<br>
+                                2x pasir<br>
+                                2x kayu
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button id="build" type="button" class="btn btn-success" data-dismiss="modal"
+                        onClick="build()">BUILD</button>
+                </div>
+            </div>
         </div>
-
-        <!-- Modal body -->
-        <div class="modal-body" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
-        <div class="container">
-            <div class='row' style="width:50%">
-            <p>Pilih tipe jembatan yang ingin dibangun:</p>
-            <div class='col-sm-4'>
-                <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
-                src="assets/image/jembatan Kayu.png" alt="Card image">
-            </div>
-
-            <div class='col-sm-4'>
-                <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan"
-                src="assets/image/jembatan Baja.png" alt="Card image">
-            </div>
-
-            <div class='col-sm-4'>
-                <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan"
-                src="assets/image/jembatan Beton.png" alt="Card image">
-            </div>
-            </div>
-            <div class="row" style="width:50%">
-
-            <!-- Jembatan Kayu -->
-            <div class="col-12 jembatan hidden" id="desckayu">
-                <br>
-                <center>
-                <h1>Jembatan Kayu</h1>
-                </center>
-                <h4>Bahan-bahan yang diperluhkan:</h4>
-                <p>
-                1x pekerja <br>
-                3x kayu
-                </p>
-            </div>
-
-            <!-- Jembatan Baja -->
-            <div class="col-12 jembatan hidden" id="descbaja">
-                <br>
-                <center>
-                <h1>Jembatan Baja</h1>
-                </center>
-                <h4>Bahan-bahan yang diperluhkan:</h4>
-                <p>
-                2x pekerja <br>
-                2x besi <br>
-                1x kayu<br>
-                1x semen<br>
-                1x pasir
-                </p>
-            </div>
-
-            <!-- Jembatan Beton -->
-            <div class="col-12 jembatan hidden" id="descbeton">
-                <br>
-                <center>
-                <h1>Jembatan Beton</h1>
-                </center>
-                <h4>Bahan-bahan yang diperluhkan:</h4>
-                <p>
-                2x pekerja<br>
-                3x besi<br>
-                3x semen<br>
-                2x pasir<br>
-                2x kayu
-                </p>
-            </div>
-            </div>
-        </div>
-
-        <!-- Modal footer -->
-        <div class="modal-footer">
-            <button id="build" type="button" class="btn btn-success" data-dismiss="modal" onClick="build()">BUILD</button>
-        </div>
-        </div>
-    </div>
     </div>
 </div>
 
 <div class="modal fade" id="modal_upgrade">
     <div class="modal-dialog">
-    <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-        <h4 class="modal-title">
-            Upgrade Jembatan
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </h4>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
-        <div class="container">
-            <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
-
-            <!-- Jembatan Kayu -->
-            <div class="col-12 jembatan hidden" id="upkayu">
-                <center>
-                <h1>Jembatan Kayu</h1>
-                </center>
-                <h4>Bahan yang diperlukan:</h4>
-                <p>
-                1x Shield Jembatan Kayu
-                <img src="assets/image/shield pulau.png" width="100px" height="100px">
-                </p>
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Upgrade Jembatan
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </h4>
             </div>
 
-            <!-- Jembatan Baja -->
-            <div class="col-12 jembatan hidden" id="upbaja">
-                <center>
-                <h1>Jembatan Baja</h1>
-                </center>
-                <h4>Bahan yang diperlukan:</h4>
-                <p>
-                1x Shield Jembatan Baja
-                <img src="assets/image/shield pulau.png" width="100px" height="100px">
-                </p>
-            </div>
+            <!-- Modal body -->
+            <div class="modal-body"
+                style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <div class="container">
+                    <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
 
-            <!-- Jembatan Beton -->
-            <div class="col-12 jembatan hidden" id="upbeton">
-                <center>
-                <h1>Jembatan Beton</h1>
-                </center>
-                <h4>Bahan yang diperluhkan:</h4>
-                <p>
-                1x Shield Jembatan Beton
-                <img src="assets/image/shield pulau.png" width="100px" height="100px"> 
-                </p>
-            </div>
-            </div>
-        </div>
+                        <!-- Jembatan Kayu -->
+                        <div class="col-12 jembatan hidden" id="upkayu">
+                            <center>
+                                <h1>Jembatan Kayu</h1>
+                            </center>
+                            <h4>Bahan yang diperlukan:</h4>
+                            <p>
+                                1x Shield Jembatan Kayu
+                                <img src="assets/image/shield pulau.png" width="100px" height="100px">
+                            </p>
+                        </div>
 
-        <!-- Modal footer -->
-        <div class="modal-footer">
-        
-            <p>
-            <img src="assets/image/bridge coin.png" width="30px" height="30px">
-            8500
-            
-            <button id="upgrade" type="button" class="btn btn-success" data-dismiss="modal">UPGRADE</button>
-        </p>
+                        <!-- Jembatan Baja -->
+                        <div class="col-12 jembatan hidden" id="upbaja">
+                            <center>
+                                <h1>Jembatan Baja</h1>
+                            </center>
+                            <h4>Bahan yang diperlukan:</h4>
+                            <p>
+                                1x Shield Jembatan Baja
+                                <img src="assets/image/shield pulau.png" width="100px" height="100px">
+                            </p>
+                        </div>
+
+                        <!-- Jembatan Beton -->
+                        <div class="col-12 jembatan hidden" id="upbeton">
+                            <center>
+                                <h1>Jembatan Beton</h1>
+                            </center>
+                            <h4>Bahan yang diperluhkan:</h4>
+                            <p>
+                                1x Shield Jembatan Beton
+                                <img src="assets/image/shield pulau.png" width="100px" height="100px">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+
+                    <p>
+                        <img src="assets/image/bridge coin.png" width="30px" height="30px">
+                        8500
+
+                        <button id="upgrade" type="button" class="btn btn-success" data-dismiss="modal">UPGRADE</button>
+                    </p>
+                </div>
+            </div>
         </div>
-        </div>
-    </div>
     </div>
 </div>
 
 <div class="modal fade" id="modal_destroy">
     <div class="modal-dialog">
-    <div class="modal-content">
-        <!-- Modal Header -->
-        <div class="modal-header">
-        <h4 class="modal-title">
-            Hancurkan Jembatan
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </h4>
-        </div>
-
-        <!-- Modal body -->
-        <div class="modal-body" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
-        <div class="container">
-            <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
-
-            <!-- Jembatan Kayu -->
-            <div class="col-12 jembatan hidden" id="destkayu">
-                <center>
-                <h1>Jembatan Kayu</h1>
-                </center>
-                <h4>Bom yang diperlukan:</h4>
-                <p>
-                1x Bom level 1
-                <img src="assets/image/BOMB LV 1.png" width="100px" height="100px"> 
-                </p>
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Hancurkan Jembatan
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </h4>
             </div>
 
-            <!-- Jembatan Baja -->
-            <div class="col-12 jembatan hidden" id="destbaja">
-                <center>
-                <h1>Jembatan Baja</h1>
-                </center>
-                <h4>Bom yang diperlukan:</h4>
-                <p>
-                1x Bom level 3
-                <img src="assets/image/BOMB LV 3.png" width="100px" height="100px">
-                </p>
-            </div>
+            <!-- Modal body -->
+            <div class="modal-body"
+                style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <div class="container">
+                    <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
 
-            <!-- Jembatan Beton -->
-            <div class="col-12 jembatan hidden" id="destbeton">
-                <br>
-                <center>
-                <h1>Jembatan Beton</h1>
-                </center>
-                <h4>Bom yang diperluhkan:</h4>
-                <p>
-                1x Bom level 5
-                <img src="assets/image/BOMB LV 5.png" width="100px" height="100px"> 
-                </p>
-            </div>
-            </div>
-        </div>
+                        <!-- Jembatan Kayu -->
+                        <div class="col-12 jembatan hidden" id="destkayu">
+                            <center>
+                                <h1>Jembatan Kayu</h1>
+                            </center>
+                            <h4>Bom yang diperlukan:</h4>
+                            <p>
+                                1x Bom level 1
+                                <img src="assets/image/BOMB LV 1.png" width="100px" height="100px">
+                            </p>
+                        </div>
 
-        <!-- Modal footer -->
-        <div class="modal-footer">
-            <button id="destroy" type="button" class="btn btn-success" data-dismiss="modal">DESTROY</button>
-        </div>
+                        <!-- Jembatan Baja -->
+                        <div class="col-12 jembatan hidden" id="destbaja">
+                            <center>
+                                <h1>Jembatan Baja</h1>
+                            </center>
+                            <h4>Bom yang diperlukan:</h4>
+                            <p>
+                                1x Bom level 3
+                                <img src="assets/image/BOMB LV 3.png" width="100px" height="100px">
+                            </p>
+                        </div>
+
+                        <!-- Jembatan Beton -->
+                        <div class="col-12 jembatan hidden" id="destbeton">
+                            <br>
+                            <center>
+                                <h1>Jembatan Beton</h1>
+                            </center>
+                            <h4>Bom yang diperluhkan:</h4>
+                            <p>
+                                1x Bom level 5
+                                <img src="assets/image/BOMB LV 5.png" width="100px" height="100px">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button id="destroy" type="button" class="btn btn-success" data-dismiss="modal">DESTROY</button>
+                </div>
+            </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade" id="modal_treasure">
+    <div class="modal-dialog">
+        <div class="modal-content" style="text-align: center;
+    font-size: large;">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <h1>TREASURE CLUE</h1>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <img src="assets/1.png" alt="" style="width: 100%;">
+                <i>Selamat! kamu berhasil menemukan treasure skill <b>Penggandaan</b>. Cara mendapatkan skill nya bisa
+                    kamu tanyakan di <b><a href="https://youtu.be/dQw4w9WgXcQ"> Pos Penukaran Skill.</a></b> Tukarkan di
+                    pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa
+                    kelompok aja lho!</i>
+                <br><br>Link Pos Pennukaran Skill: <a href="https://youtu.be/dQw4w9WgXcQ">https://meet.google.com</a>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
 </div>
 
 <script src="test_map.js"></script>
 
 <script>
-    function pindah() {
-        document.body.style.animation = "1s ease-out 0s 1 slideInLeft";
-        setTimeout(() => {
-            document.location.href = "cobadestroyjembatan.html";
-        }, 1000);
-    }
+function pindah() {
+    document.body.style.animation = "1s ease-out 0s 1 slideInLeft";
+    setTimeout(() => {
+        document.location.href = "cobadestroyjembatan.html";
+    }, 1000);
+}
 </script>
 
 </html>

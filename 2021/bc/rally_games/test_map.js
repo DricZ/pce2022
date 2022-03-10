@@ -1,5 +1,5 @@
 var username = document.getElementById('session_username').value;
-var current_island, clicked_island, transportasi;
+var current_island, clicked_island, transportasi, treasure_island;
 
 // AMBIL LOKASI SAAT INI
 function get_lokasi() {
@@ -43,28 +43,6 @@ function get_jembatan() {
         }
     });
 }
-
-function cek_harta(id_pulau) {
-    $.ajax({
-        url: "new_phps/check_treasure.php",
-        method: "POST",
-        data: {
-            pulau_harta: id_pulau
-        },
-        success: function (data) {
-            console.log(data);
-            // munculkan icon harta karun
-            if (data == "ada") {
-                $("#harta_karun").fadeIn("slow");
-            }
-        },
-        error: function ($xhr, errorThrown) {
-            console.log(errorThrown);
-            console.warn($xhr.responseText);
-        }
-    });
-}
-
 
 function build_jembatan(id_jembatan) {
     $.ajax({
@@ -271,7 +249,7 @@ $('#build').click(function () {
 
 $('.jembatan_ku').click(function () {
     build_jembatan(this.id);
-})
+});
 
 // UNTUK ZOOM PULAU
 function _zoomIn(id_pulau, pulau_besar) {
@@ -313,6 +291,34 @@ function _zoomIn(id_pulau, pulau_besar) {
         document.body.style.overflow = "hidden";
     }, 1500);
 }
+
+function cek_harta(id_pulau, cek) {
+    $.ajax({
+        url: "new_phps/check_treasure.php",
+        method: "POST",
+        data: {
+            pulau_harta: id_pulau,
+            pengecekkan: cek
+        },
+        success: function (data) {
+            if (data == "ada" && cek == "harta") { // munculkan clue & hilangkan harta
+                $('#modal_treasure').modal();
+                document.getElementById("harta_karun").style.display = "none";
+            } else if (data == "ada") { // munculkan icon harta karun
+                $("#harta_karun").fadeIn("slow");
+            }
+        },
+        error: function ($xhr, errorThrown) {
+            console.log(errorThrown);
+            console.warn($xhr.responseText);
+        }
+    });
+}
+
+$('#harta_karun').click(function () {
+    console.log("HALO");
+    cek_harta(treasure_island, "harta");
+});
 
 // UNTUK MUNCULKAN MODAL PULAU
 $('.pulau_ku').click(function () {
@@ -370,6 +376,10 @@ $('#ya').click(function () {
         }
     });
 
+    if (treasure_island != null) {
+        treasure_island = null;
+    }
+
     // CEK APAKAH PULAU BESAR YG DIKLIK
     if (document.getElementById(clicked_island).classList.contains('p_besar')) {
         _zoomIn(clicked_island, true);
@@ -377,9 +387,10 @@ $('#ya').click(function () {
         _zoomIn(clicked_island, false);
     }
 
-    // CEK APAKAH PULAU DGN HARTA KARUN YG DIKLIK
+    // CEK APAKAH DI PULAU ADA HARTA KARUN
     if (document.getElementById(clicked_island).classList.contains('cek_harta')) {
-        cek_harta(clicked_island);
+        cek_harta(clicked_island, "pulau");
+        treasure_island = clicked_island;
     }
 
     setTimeout(() => {
@@ -481,7 +492,6 @@ function off(id) {
 function ambil_jembatan() {
 
 }
-
 
 // INISIALISASI
 $(function () {

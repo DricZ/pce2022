@@ -2,13 +2,13 @@
     require_once 'connect.php';
     header("Content-Type: application/json");
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        // nama_jembatan = id path, di test_map.php
+        // ambil id team
         $sql_team = "SELECT * FROM team WHERE username = ?;";
         $stmt_team = $pdo->prepare($sql_team);
         $stmt_team->execute([$_SESSION['username']]);
         $row_team = $stmt_team->fetch();
         $id_team = $row_team['id'];
-        //ambil barang dari inventory
+        // ambil barang dari inventory
         $sql_inventory = "SELECT * FROM team_resources WHERE id_team = ?;";
         $stmt_inventory = $pdo->prepare($sql_inventory);
         $stmt_inventory->execute([$id_team]);
@@ -16,14 +16,7 @@
         while($row = $stmt_inventory->fetch()) {
             array_push($row_inventory,$row);
         }
-        // $sql_cek= "SELECT id FROM resource WHERE resource_name = ?";
-        // $stmt_cek= $pdo->prepare($sql_cek);
-        // $stmt->execute([$_POST['item']]);
-        // if($stmt->rowCount()==0){
-        //     //MASUK FUNGSI ERROR AJAX
-        //     $result['status'] = 0;
-        //     $result['error'] = 'Invalid';
-        // }
+        
         $korek;
         $hcl;
         $belerang;
@@ -126,7 +119,6 @@
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute([$idboom,$idboom,$id_team]);
                 $result = "masuk else";
-    
             } 
             //mengurangi bahan
             $sql_korek = "UPDATE team_resources SET count =
@@ -191,14 +183,4 @@
         );
         echo json_encode($error);
     }
-    // 
-        // $sql_resource = "SELECT * FROM resource WHERE resource_name = ?;";
-        // $stmt_resource = $pdo->prepare($sql_resource);
-        // $stmt_resource->execute([$_POST['item']]);
-        // $row_resource = $stmt_resource->fetch();
-        // $id_resource = $row_resource['id'];
-
-        // $cekResourcesql = "SELECT * FROM team_resources WHERE id_resource = ? AND id_team = ?";
-            // $cekResourcestmt = $pdo->prepare($cekResourcesql);
-            // $cekResourcestmt->execute([$idboom, $id_team]);
 ?>

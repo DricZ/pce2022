@@ -194,19 +194,6 @@
         animation: none;
     }
 
-    /* .cls-1:hover,
-    .cls-2:hover,
-    .cls-3:hover,
-    .cls-4:hover,
-    .cls-5:hover,
-    .cls-6:hover,
-    .cls-7:hover,
-    .cls-8:hover,
-    .cls-10:hover {
-        transition: all 0.3s;
-        filter: drop-shadow(0 0 15px white);
-    } */
-
     #peta:hover {
         transition: all 0.3s;
         filter: drop-shadow(0 0 5px white);
@@ -264,13 +251,13 @@
 
             <?php
                 if ($rowTeam['location_now_id_city'] != 0) {
-                ?>
+            ?>
             <div class="row current-city">
                 <span class="ccity">Current City</span> <span class="loc"><?= $getCityNamerow['city_name']; ?></span>
             </div>
             <?php
                 }
-                ?>
+            ?>
 
         </div>
         <div class="row col-12 justify-content-center mb-1">

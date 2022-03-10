@@ -21,7 +21,7 @@ $stmt_skill->execute([$rowTeam['id']]);
 
 while ($row = $stmt_skill->fetch()) {
     $output .= '<div class="'. $row['id'] .' inventory-item d-flex justify-content-between">
-        <i class="mr-3"> <img src="assets/image/' . $row['icon'] . '" class="icons"> </i>
+        <i class="mr-3 mt-1"> <img src="assets/image/' . $row['icon'] . '" class="icons"> </i>
         <p class="nama_item">'. $row['name'] .' </p>
         <p class="jumlah_item pr-2"></p>
     </div>';
@@ -369,7 +369,7 @@ while ($row = $stmt_skill->fetch()) {
 
         $("#itemdesc").show();
         $("#itemdesc").delay("fast").animate({
-            width: '100vw'
+            width: '50vw'
         }, 200, function() {
             $(".inventory-item").css({
                 width: '100%'
