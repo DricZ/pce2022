@@ -44,107 +44,27 @@ function get_jembatan() {
     });
 }
 
-function build_jembatan(id_jembatan) {
-    path_jembatan = id_jembatan;
-
+function get_team(di_pulau) {
     $.ajax({
-        url: "new_phps/build_jembatan.php",
+        url: "new_phps/get_team.php",
         method: "POST",
         data: {
-            id_jembatan: id_jembatan
+            pulau_tujuan: di_pulau
         },
         success: function (data) {
             console.log(data);
-
-            if (data.length == 0) {
-                console.log("tes");
-                $('#modal_build').modal();
+            var str = "<h3>Tim yang juga berada di pulau ini:</h3>";
+            for (let i = 0; i < data.length; i++) {
+                str += `<p><b>• ` + data[i]['team_name'] + `</b>`;
             }
-
-            data.forEach(function (item) {
-                if (item['username'] == username) {
-                    // KAYU
-                    if (item['tipe_jembatan'] == 1) {
-                        document.getElementById("upkayu").classList.remove('hidden');
-                    } else {
-                        document.getElementById("upkayu").classList.add('hidden');
-                    }
-
-                    // BAJA
-                    if (item['tipe_jembatan'] == 2) {
-                        document.getElementById("upbaja").classList.remove('hidden');
-                    } else {
-                        document.getElementById("upbaja").classList.add('hidden');
-                    }
-
-                    // BETON
-                    if (item['tipe_jembatan'] == 3) {
-                        document.getElementById("upbeton").classList.remove('hidden');
-                    } else {
-                        document.getElementById("upbeton").classList.add('hidden');
-                    }
-
-                    $('#modal_upgrade').modal();
-                } else {
-                    // KAYU
-                    if (item['tipe_jembatan'] == 1) {
-                        document.getElementById("destkayu").classList.remove('hidden');
-                    } else {
-                        document.getElementById("destkayu").classList.add('hidden');
-                    }
-
-                    // BAJA
-                    if (item['tipe_jembatan'] == 2) {
-                        document.getElementById("destbaja").classList.remove('hidden');
-                    } else {
-                        document.getElementById("destbaja").classList.add('hidden');
-                    }
-
-                    // BETON
-                    if (item['tipe_jembatan'] == 3) {
-                        document.getElementById("destbeton").classList.remove('hidden');
-                    } else {
-                        document.getElementById("destbeton").classList.add('hidden');
-                    }
-
-                    $('#modal_destroy').modal();
-                }
-            });
-        },
-        error: function () {
-            console.log("ERROR");
-        }
-    })
-}
-
-
-
-$('#build').click(function () {
-    var id_tipe = document.getElementById("session_tipe_jembatan").value;
-    console.log(id_tipe);
-    console.log(path_jembatan);
-
-    $.ajax({
-        url: "new_phps/post_pengiriman.php",
-        method: "POST",
-        data: {
-            id_tipe: id_tipe,
-            id_jembatan: path_jembatan
-        },
-        success: function (res) {
-            // document.location.reload(true);
-            console.log(res);
+            document.getElementById("team_here").innerHTML = str;
         },
         error: function ($xhr, errorThrown) {
             console.log(errorThrown);
             console.warn($xhr.responseText);
         }
     });
-});
-
-$('.jembatan_ku').click(function () {
-    build_jembatan(this.id);
-});
+}
 
 // UNTUK ZOOM PULAU
 function _zoomIn(id_pulau, pulau_besar) {
@@ -210,14 +130,14 @@ function cek_harta(id_pulau, cek) {
         }
     });
 }
-
-// CEK LAGI :v
+// CEK LAGI...
 $('#harta_karun').click(function () {
     cek_harta(treasure_island, "harta");
 });
 
 // UNTUK MUNCULKAN MODAL PULAU
 $('.pulau_ku').click(function () {
+    get_team(this.id);
     // JIKA LOKASI SAAT INI
     clicked_island = this.id;
     if (this.id == current_island) {
@@ -234,16 +154,14 @@ $('.pulau_ku').click(function () {
             success: function (data) {
                 console.log(data);
                 if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
-                    var jembatan = document.getElementsByClassName('modal_saat_jembatan');
-                    jembatan[0].style.display = "block";
-                    jembatan[1].style.display = "block";
-                    jembatan[0].innerHTML = "Pergi melalui <b>jembatan " + data[1] + "</b>.";
-                    document.getElementById('gambar_jembatan').src = "assets/image/" + data[2];
+                    document.getElementById('modal_saat_jembatan').style.display = "block";
+                    // jembatan[0].style.display = "block";
+                    // jembatan[1].style.display = "block";
+                    // jembatan[0].innerHTML = "Pergi melalui <b>jembatan " + data[1] + "</b>.";
+                    // document.getElementById('gambar_jembatan').src = "assets/image/" + data[2];
                     $('#modal_pulau').modal();
                 } else if (data[0] == "tiket") { // JIKA PINDAH PULAU PAKAI TIKET
-                    var tiket = document.getElementsByClassName('modal_saat_tiket');
-                    tiket[0].style.display = "block";
-                    tiket[1].style.display = "block";
+                    document.getElementById('modal_saat_tiket').style.display = "block";
                     $('#modal_pulau').modal();
                 } else { // JIKA TDK PUNYA JEMBATAN & TIKET
                     $('#modal_tdk_bisa').modal();
@@ -291,10 +209,8 @@ $('#ya').click(function () {
 
     setTimeout(() => {
         document.getElementById('modal_saat_ini').style.display = "none";
-        document.getElementsByClassName('modal_saat_jembatan')[0].style.display = "none";
-        document.getElementsByClassName('modal_saat_jembatan')[1].style.display = "none";
-        document.getElementsByClassName('modal_saat_tiket')[0].style.display = "none";
-        document.getElementsByClassName('modal_saat_tiket')[1].style.display = "none";
+        document.getElementById('modal_saat_jembatan').style.display = "none";
+        document.getElementById('modal_saat_tiket').style.display = "none";
     }, 500);
 
     $('#modal_pulau').modal("hide");
@@ -406,6 +322,105 @@ function use(skill) {
     alert('tepakai');
 }
 
+function build_jembatan(id_jembatan) {
+    path_jembatan = id_jembatan;
+
+    $.ajax({
+        url: "new_phps/build_jembatan.php",
+        method: "POST",
+        data: {
+            id_jembatan: id_jembatan
+        },
+        success: function (data) {
+            console.log(data);
+
+            if (data.length == 0) {
+                console.log("tes");
+                $('#modal_build').modal();
+            }
+
+            data.forEach(function (item) {
+                if (item['username'] == username) {
+                    // KAYU
+                    if (item['tipe_jembatan'] == 1) {
+                        document.getElementById("upkayu").classList.remove('hidden');
+                    } else {
+                        document.getElementById("upkayu").classList.add('hidden');
+                    }
+
+                    // BAJA
+                    if (item['tipe_jembatan'] == 2) {
+                        document.getElementById("upbaja").classList.remove('hidden');
+                    } else {
+                        document.getElementById("upbaja").classList.add('hidden');
+                    }
+
+                    // BETON
+                    if (item['tipe_jembatan'] == 3) {
+                        document.getElementById("upbeton").classList.remove('hidden');
+                    } else {
+                        document.getElementById("upbeton").classList.add('hidden');
+                    }
+
+                    $('#modal_upgrade').modal();
+                } else {
+                    // KAYU
+                    if (item['tipe_jembatan'] == 1) {
+                        document.getElementById("destkayu").classList.remove('hidden');
+                    } else {
+                        document.getElementById("destkayu").classList.add('hidden');
+                    }
+
+                    // BAJA
+                    if (item['tipe_jembatan'] == 2) {
+                        document.getElementById("destbaja").classList.remove('hidden');
+                    } else {
+                        document.getElementById("destbaja").classList.add('hidden');
+                    }
+
+                    // BETON
+                    if (item['tipe_jembatan'] == 3) {
+                        document.getElementById("destbeton").classList.remove('hidden');
+                    } else {
+                        document.getElementById("destbeton").classList.add('hidden');
+                    }
+
+                    $('#modal_destroy').modal();
+                }
+            });
+        },
+        error: function () {
+            console.log("ERROR");
+        }
+    })
+}
+
+$('#build').click(function () {
+    var id_tipe = document.getElementById("session_tipe_jembatan").value;
+    console.log(id_tipe);
+    console.log(path_jembatan);
+
+    $.ajax({
+        url: "new_phps/post_pengiriman.php",
+        method: "POST",
+        data: {
+            id_tipe: id_tipe,
+            id_jembatan: path_jembatan
+        },
+        success: function (res) {
+            // document.location.reload(true);
+            console.log(res);
+        },
+        error: function ($xhr, errorThrown) {
+            console.log(errorThrown);
+            console.warn($xhr.responseText);
+        }
+    });
+});
+
+$('.jembatan_ku').click(function () {
+    build_jembatan(this.id);
+});
 
 // MODAL BANGUN
 var arr_j = ['jmbkayu', 'jmbbaja', 'jmbbeton'];

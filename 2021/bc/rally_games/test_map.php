@@ -69,11 +69,12 @@
             margin: auto;
             margin-left: 15px;
             margin-right: 15px;
+            margin-top: 10px;
         }
 
         #modal_saat_ini,
-        .modal_saat_jembatan,
-        .modal_saat_tiket {
+        #modal_saat_jembatan,
+        #modal_saat_tiket {
             display: none;
         }
 
@@ -2286,41 +2287,32 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h1 class="modal-title">Ingin pergi ke pulau tersebut?</h1>
                 <div class="row">
-                    <div class="col-sm-6">
-                        <p>Tim yang juga berada di pulau tersebut:</p>
-                        <p>- Tim A</p>
-                        <p>- Tim B</p>
+                    <div class="col-sm-6" id="team_here">
+                        <!-- DIISI get_team.php -->
                     </div>
                     <div class="col-sm-6">
                         <!-- LOKASI SAAT INI -->
-                        <p id="modal_saat_ini">Pulau tersebut adalah lokasi anda saat ini.</p>
+                        <p id="modal_saat_ini">
+                            Pulau tersebut adalah lokasi anda saat ini.
+                        </p>
 
                         <!-- JEMBATAN -->
-                        <p class="modal_saat_jembatan">Pergi dengan melalui
-                            <b>jembatan baja</b>.
+                        <p id="modal_saat_jembatan">
+                            Pergi dengan melalui <b>jembatan baja</b>.
+                            <img id="gambar_jembatan" src="assets/image/jembatan baja tampak depan-01.png" alt=""
+                                width="100%">
                         </p>
 
                         <!-- TIKET PESAWAT -->
-                        <p class="modal_saat_tiket">Pergi menggunakan
-                            <b>1 tiket pesawat</b>.
+                        <p id="modal_saat_tiket" class="row custom_row">
+                            Pergi menggunakan <b>1 tiket pesawat</b>.
+                            <div class="col-sm-4 text-right">
+                                <h1 style="color: red;"><b>-1</b></h1>
+                            </div>
+                            <div class="col-sm-8 text-left">
+                                <img src="assets/image/Tiket.png" alt="" width="100%">
+                            </div>
                         </p>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <!-- JEMBATAN -->
-                    <div class="modal_saat_jembatan">
-                        <img id="gambar_jembatan" src="assets/image/jembatan baja tampak depan-01.png" alt=""
-                            width="50%">
-                    </div>
-
-                    <!-- TIKET PESAWAT -->
-                    <div class="row custom_row modal_saat_tiket">
-                        <div class="col-sm-4 text-right">
-                            <h1 style="color: red;"><b>-1</b></h1>
-                        </div>
-                        <div class="col-sm-8 text-left">
-                            <img src="assets/image/Tiket.png" alt="" width="50%">
-                        </div>
                     </div>
                 </div>
                 <div class="row">
