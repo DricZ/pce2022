@@ -260,7 +260,6 @@ function show() {
                     </div>
                     `;
             } else {
-                //loop dari data
                 for (var i = 0; i < data.length; i++) {
                     var d = data[i];
                     str += `
@@ -283,9 +282,6 @@ function show() {
             }
 
             $(".content").html(str);
-
-            // $(".inventory-item").hide();
-            // $(".inventory-item").toggleClass("d-flex");
         },
         error: function () {
             alert("ERROR!");
@@ -313,26 +309,54 @@ function showSkill() {
     show();
     $('#modal_skill').modal();
 }
-function use(skill) {
-    if (skill == 'Inventory Ganda') {
-        alert('Inventory Ganda berhasil di pakai');
+function _cancelSkill() {
+    document.getElementById("nav-cancel").style.display = "none";
+    document.getElementById("nav-zoom-out").style.display = "block";
+    document.getElementById("nav-back").style.display = "block";
+    document.getElementById("nav-skill").style.display = "block";
 
+    var pulau = document.getElementsByClassName("pulau_ku");
+    for (let i = 0; i < pulau.length; i++) {
+        pulau[i].style.pointerEvents = "auto";
     }
-    else if (skill == 'Boom Mega Boom') {
-        alert('megaboom');
+
+    var jembatan = document.getElementsByClassName("jembatan_ku");
+    for (let i = 0; i < jembatan.length; i++) {
+        jembatan[i].style.pointerEvents = "auto";
+    }
+}
+
+function use(skill) {
+    if (skill == 'Boom Mega Boom') {
         $('#modal_skill').modal('hide');
-    }
-    else if (skill == 'Divide Et Impera') {
-        alert('devide');
-    }
-    else if (skill == 'X2 Social Credits') {
-        alert('2x');
-    }
-    else if (skill == 'TBL TBL TBL') {
-        alert('TBL');
-    }
-    else if (skill == 'Meteor') {
-        alert('meteor');
+        _zoomOut();
+
+        var pulau = document.getElementsByClassName("pulau_ku");
+        for (let i = 0; i < pulau.length; i++) {
+            pulau[i].style.pointerEvents = "auto";
+        }
+        // cursor: url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), auto;
+
+        // DISABLE PULAU & JEMBATAN SELAIN PULAU KECIL
+        $.ajax({
+            url: "new_phps/disable_pulau.php",
+            type: "GET",
+            success: function (data) {
+                data.forEach(function (item) {
+                    document.getElementById(item['_path']).style.pointerEvents = "none";
+                });
+            },
+            error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
+            }
+        });
+
+        // NAVIGASI GANTI CANCEL BUTTON
+        document.getElementById("nav-cancel").style.display = "block";
+        document.getElementById("nav-zoom-out").style.display = "none";
+        document.getElementById("nav-back").style.display = "none";
+        document.getElementById("nav-skill").style.display = "none";
     }
     $.ajax({
         url: "new_phps/use_skill.php",
@@ -511,3 +535,16 @@ $(function () {
     get_jembatan();
     get_lokasi();
 });
+
+// else if (skill == 'Divide Et Impera') {
+    //     alert('devide');
+    // }
+    // else if (skill == 'X2 Social Credits') {
+    //     alert('2x');
+    // }
+    // else if (skill == 'TBL TBL TBL') {
+    //     alert('TBL');
+    // }
+    // else if (skill == 'Meteor') {
+    //     alert('meteor');
+    // }

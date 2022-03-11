@@ -30,7 +30,7 @@
         /* INVENTORY */
         #containerAll {
             max-height: 100vh;
-            height: 100vh;
+            height: 90vh;
             width: 100%;
             top: 5000px;
         }
@@ -65,23 +65,11 @@
             font-size: large;
         }
 
-        .row {
-            /* margin: auto;
-            margin-left: 15px;
-<<<<<<< Updated upstream
-            margin-right: 15px;
-            margin-top: 10px;
-=======
-            margin-right: 15px; */
->>>>>>> Stashed changes
-        }
-
         #modal_saat_ini,
         #modal_saat_jembatan,
         #modal_saat_tiket {
             display: none;
         }
-
         /*  */
 
         @keyframes glowing_dark {
@@ -612,15 +600,28 @@
     <!-- NAVIGATIONS -->
     <div class="demo_btn">
         <!-- ZOOM OUT -->
-        <div class="icon-navBar" style="max-width: 100px">
+        <div id="nav-zoom-out" class="icon-navBar" style="max-width: 100px">
             <a onclick="_zoomOut()">
                 <img class="icon-navBar" src="assets/logo_zoom_out.png" alt="" style="margin-bottom: 5px;">
             </a>
             <b>ZOOM OUT</b>
         </div>
 
+        <!-- CANCEL -->
+        <div id="nav-cancel" class="icon-navBar" style="max-width: 100px; display: none;">
+            <a onclick="_cancelSkill()">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 305.002 305.002" style="enable-background:new 0 0 305.002 305.002;" xml:space="preserve">
+                    <g>
+                        <path d="M152.502,0.001C68.412,0.001,0,68.412,0,152.501s68.412,152.5,152.502,152.5c84.089,0,152.5-68.411,152.5-152.5 S236.591,0.001,152.502,0.001z M152.502,280.001C82.197,280.001,25,222.806,25,152.501c0-70.304,57.197-127.5,127.502-127.5 c70.304,0,127.5,57.196,127.5,127.5C280.002,222.806,222.806,280.001,152.502,280.001z"/>
+                        <path d="M170.18,152.5l43.13-43.129c4.882-4.882,4.882-12.796,0-17.678c-4.881-4.882-12.796-4.881-17.678,0l-43.13,43.13 l-43.131-43.131c-4.882-4.881-12.796-4.881-17.678,0c-4.881,4.882-4.881,12.796,0,17.678l43.13,43.13l-43.131,43.131 c-4.881,4.882-4.881,12.796,0,17.679c2.441,2.44,5.64,3.66,8.839,3.66c3.199,0,6.398-1.221,8.839-3.66l43.131-43.132 l43.131,43.132c2.441,2.439,5.64,3.66,8.839,3.66s6.398-1.221,8.839-3.66c4.882-4.883,4.882-12.797,0-17.679L170.18,152.5z"/>
+                    </g>
+                </svg>
+            </a>
+            <b>CANCEL</b>
+        </div>
+
         <!-- SKILL -->
-        <div class="icon-navBar" style="min-width: 80px;">
+        <div id="nav-skill" class="icon-navBar" style="min-width: 80px;">
             <a class="nav-link active exit" onclick="showSkill()">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <g class="" transform="translate(0,0)" style="">
@@ -634,7 +635,7 @@
         </div>
 
         <!-- GO BACK -->
-        <div class="icon-navBar" style="min-width: 80px;">
+        <div id="nav-back" class="icon-navBar" style="min-width: 80px;">
             <a class="nav-link active exit" onclick="goBack()">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <g class="" transform="translate(0,0)" style="">
@@ -2640,7 +2641,6 @@ function pindah() {
         document.location.href = "cobadestroyjembatan.html";
     }, 1000);
 }
-
 </script>
 
 </html>
