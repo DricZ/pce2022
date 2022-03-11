@@ -132,7 +132,7 @@ $('#build').click(function () {
             id_jembatan: path_jembatan
         },
         success: function (res) {
-            // document.location.reload(true);
+            document.location.reload(true);
             console.log(res);
         },
         error: function ($xhr, errorThrown) {

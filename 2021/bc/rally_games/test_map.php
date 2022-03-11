@@ -589,7 +589,10 @@
             width: 105px;
             font-size: large;
         }
-        .g_jembatan{width: 100%}
+
+        .g_jembatan {
+            width: 100%;
+        }
     </style>
 </head>
 
