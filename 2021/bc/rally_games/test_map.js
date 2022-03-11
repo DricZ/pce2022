@@ -259,7 +259,7 @@ function show() {
             var str = "";
             if (data.length == 0) {
                 str += `
-                    <div id="no-content-msg-skill">
+                    <div id="no-content-msg-skill" style="text-align: center;">
                         <img src="assets/image/nothing-to-say.svg" width="35%">
                         <h3>You have nothing in your inventory...</h3>
                     </div>
@@ -319,7 +319,42 @@ function showSkill() {
     $('#modal_skill').modal();
 }
 function use(skill) {
-    alert('tepakai');
+    if(skill=='Inventory Ganda'){
+        alert('Inventory Ganda berhasil di pakai');
+        
+    }
+    else if (skill=='Boom Mega Boom') {
+        alert('megaboom');
+    }
+    else if (skill=='Divide Et Impera') {
+        alert('devide');
+    }
+    else if (skill=='X2 Social Credits') {
+        alert('2x');
+    }
+    else if (skill=='TBL TBL TBL') {
+        alert('TBL');
+    }
+    else if (skill=='Meteor') {
+        alert('meteor');
+    }
+    $.ajax({
+        url: "new_phps/use_skill.php",
+        type: "POST",
+        dataType: "json",
+        data:{
+            skill : skill
+        },
+        success: function (result) {
+            console.log(result);
+            location.reload();
+        },
+        error: function ($xhr, errorThrown) {
+            console.log(errorThrown);
+            console.warn($xhr.responseText);
+        }
+    });
+    
 }
 
 function build_jembatan(id_jembatan) {
