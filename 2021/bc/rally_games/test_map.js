@@ -155,10 +155,7 @@ $('.pulau_ku').click(function () {
                 console.log(data);
                 if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
                     document.getElementById('modal_saat_jembatan').style.display = "block";
-                    // jembatan[0].style.display = "block";
-                    // jembatan[1].style.display = "block";
-                    // jembatan[0].innerHTML = "Pergi melalui <b>jembatan " + data[1] + "</b>.";
-                    // document.getElementById('gambar_jembatan').src = "assets/image/" + data[2];
+                    document.getElementById('modal_saat_jembatan').innerHTML = "<p>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</p><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
                     $('#modal_pulau').modal();
                 } else if (data[0] == "tiket") { // JIKA PINDAH PULAU PAKAI TIKET
                     document.getElementById('modal_saat_tiket').style.display = "block";
@@ -219,10 +216,8 @@ $('.tidak').click(function () {
     clicked_island = null;
     setTimeout(() => {
         document.getElementById('modal_saat_ini').style.display = "none";
-        document.getElementsByClassName('modal_saat_jembatan')[0].style.display = "none";
-        document.getElementsByClassName('modal_saat_jembatan')[1].style.display = "none";
-        document.getElementsByClassName('modal_saat_tiket')[0].style.display = "none";
-        document.getElementsByClassName('modal_saat_tiket')[1].style.display = "none";
+        document.getElementById('modal_saat_jembatan').style.display = "none";
+        document.getElementById('modal_saat_tiket').style.display = "none";
     }, 500);
     $('#modal_pulau').modal("hide");
 })
@@ -319,31 +314,31 @@ function showSkill() {
     $('#modal_skill').modal();
 }
 function use(skill) {
-    if(skill=='Inventory Ganda'){
+    if (skill == 'Inventory Ganda') {
         alert('Inventory Ganda berhasil di pakai');
-        
+
     }
-    else if (skill=='Boom Mega Boom') {
+    else if (skill == 'Boom Mega Boom') {
         alert('megaboom');
     }
-    else if (skill=='Divide Et Impera') {
+    else if (skill == 'Divide Et Impera') {
         alert('devide');
     }
-    else if (skill=='X2 Social Credits') {
+    else if (skill == 'X2 Social Credits') {
         alert('2x');
     }
-    else if (skill=='TBL TBL TBL') {
+    else if (skill == 'TBL TBL TBL') {
         alert('TBL');
     }
-    else if (skill=='Meteor') {
+    else if (skill == 'Meteor') {
         alert('meteor');
     }
     $.ajax({
         url: "new_phps/use_skill.php",
         type: "POST",
         dataType: "json",
-        data:{
-            skill : skill
+        data: {
+            skill: skill
         },
         success: function (result) {
             console.log(result);
@@ -354,7 +349,7 @@ function use(skill) {
             console.warn($xhr.responseText);
         }
     });
-    
+
 }
 
 function build_jembatan(id_jembatan) {

@@ -2304,22 +2304,21 @@
                         </p>
 
                         <!-- JEMBATAN -->
-                        <p id="modal_saat_jembatan">
-                            Pergi dengan melalui <b>jembatan baja</b>.
-                            <img id="gambar_jembatan" src="assets/image/jembatan baja tampak depan-01.png" alt=""
-                                width="100%">
-                        </p>
+                        <div id="modal_saat_jembatan">
+                            <p>Pergi dengan melalui <b>jembatan baja</b>.</p>
+                            <img id="gambar_jembatan" src="assets/image/jembatan baja tampak depan-01.png" alt="" width="100%">
+                        </div>
 
                         <!-- TIKET PESAWAT -->
-                        <p id="modal_saat_tiket" class="row custom_row">
-                            Pergi menggunakan <b>1 tiket pesawat</b>.
+                        <div id="modal_saat_tiket" class="row custom_row">
+                            <p>Pergi menggunakan <b>1 tiket pesawat</b>.</p>
                             <div class="col-sm-4 text-right">
                                 <h1 style="color: red;"><b>-1</b></h1>
                             </div>
                             <div class="col-sm-8 text-left">
                                 <img src="assets/image/Tiket.png" alt="" width="100%">
                             </div>
-                        </p>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -2616,7 +2615,6 @@
     </div>
 </div>
 
-<!-- Large modal -->
 <div class="modal fade" tabindex="-1" id="modal_skill">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
