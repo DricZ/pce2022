@@ -367,7 +367,7 @@ $('.jembatan_ku').hover(function (e) {
 
 function show() {
     $.ajax({
-        url: "phps/refresh_inventory.php",
+        url: "new_phps/refresh_skill.php",
         type: "get",
         dataType: "json",
         success: function (result) {
@@ -388,14 +388,15 @@ function show() {
                     <div class="col-12 col-md-4 mySkill" style="margin-top: 50px;">
                         <div style="text-align: center;">
                             <i class="mr-5">
-                                <img src="assets/image/` + d.image + `" class="icons" id="` + d.normal_price + `">
+                                <img src="assets/image/` + d.gambar + `" class="icons" >
                             </i>
                             <div style="font-size: xx-large; display: inline;">
                                 x` + d.count + `
                             </div>
                         </div>
                         <div style="text-align: center; font-size: large;">
-                            <p class="resource-name">` + d.resource_name + `</p>
+                            <p class="resource-name">` + d.nama + `</p>
+                            <button type="button" class="btn btn-success" onclick="use('`+ d.nama +`')">USE</button>
                         </div>
                     </div>
                 `;
@@ -432,6 +433,9 @@ function goBack() {
 function showSkill() {
     show();
     $('#modal_skill').modal();
+}
+function use(skill) {
+    alert('tepakai');
 }
 
 
