@@ -62,26 +62,17 @@ function build_jembatan(id_jembatan) {
             }
 
             data.forEach(function (item) {
-
-                // if($('#build').click()){
-                //     item['id_team'].pop();
-                //     item['id_team'].append(id_team);
-                // }
-
                 if (item['username'] == username) {
                     // KAYU
                     if (item['tipe_jembatan'] == 1) {
                         document.getElementById("upkayu").classList.remove('hidden');
-
                     } else {
                         document.getElementById("upkayu").classList.add('hidden');
                     }
 
-                    // Baja
+                    // BAJA
                     if (item['tipe_jembatan'] == 2) {
                         document.getElementById("upbaja").classList.remove('hidden');
-
-
                     } else {
                         document.getElementById("upbaja").classList.add('hidden');
                     }
@@ -89,29 +80,22 @@ function build_jembatan(id_jembatan) {
                     // BETON
                     if (item['tipe_jembatan'] == 3) {
                         document.getElementById("upbeton").classList.remove('hidden');
-
-
                     } else {
                         document.getElementById("upbeton").classList.add('hidden');
                     }
 
                     $('#modal_upgrade').modal();
-
-                }
-                else {
+                } else {
                     // KAYU
                     if (item['tipe_jembatan'] == 1) {
                         document.getElementById("destkayu").classList.remove('hidden');
-
                     } else {
                         document.getElementById("destkayu").classList.add('hidden');
-
                     }
 
-                    // Baja
+                    // BAJA
                     if (item['tipe_jembatan'] == 2) {
                         document.getElementById("destbaja").classList.remove('hidden');
-
                     } else {
                         document.getElementById("destbaja").classList.add('hidden');
                     }
@@ -119,16 +103,13 @@ function build_jembatan(id_jembatan) {
                     // BETON
                     if (item['tipe_jembatan'] == 3) {
                         document.getElementById("destbeton").classList.remove('hidden');
-
                     } else {
                         document.getElementById("destbeton").classList.add('hidden');
                     }
 
                     $('#modal_destroy').modal();
                 }
-
             });
-
         },
         error: function () {
             console.log("ERROR");
@@ -154,29 +135,12 @@ $('#build').click(function () {
             // document.location.reload(true);
             console.log(res);
         },
-        error: function ($xhr, textStatus,
-            errorThrown) {
+        error: function ($xhr, errorThrown) {
             console.log(errorThrown);
             console.warn($xhr.responseText);
-            // load_data(0);
-            // if ($xhr.responseJSON[
-            //     'error'] ==
-            //     'Uang tidak cukup') {
-            //     shopSwal.fire({
-            //         title: '<h3 style="color:white;">Pembelian Gagal!</h3>',
-            //         html: '<div style="color:white;">Uang Anda tidak mencukupi!</div>',
-            //         icon: 'error'
-            //     })
-            // } else {
-            //     shopSwal.fire({
-            //         title: '<h3 style="color:white;">Pembelian Gagal!</h3>',
-            //         html: '<div style="color:white;">Terjadi Error di Server. Silakan ulangi kembali.</div>',
-            //         icon: 'error'
-            //     })
-            // }
         }
     });
-})
+});
 
 $('.jembatan_ku').click(function () {
     build_jembatan(this.id);
@@ -400,7 +364,7 @@ function show() {
                         </div>
                         <div style="text-align: center; font-size: large;">
                             <p class="resource-name">` + d.nama + `</p>
-                            <button type="button" class="btn btn-success" onclick="use('`+ d.nama +`')">USE</button>
+                            <button type="button" class="btn btn-success" onclick="use('`+ d.nama + `')">USE</button>
                         </div>
                     </div>
                 `;
@@ -458,15 +422,15 @@ function on(id) {
         }
     }
 
-    if(id == "jmbkayu"){
-        ss.setAttribute('value','1');
+    if (id == "jmbkayu") {
+        ss.setAttribute('value', '1');
     }
-    else if(id == "jmbbaja"){
-        ss.setAttribute('value','2');
+    else if (id == "jmbbaja") {
+        ss.setAttribute('value', '2');
     }
 
-    else if(id == "jmbbeton"){
-        ss.setAttribute('value','3');
+    else if (id == "jmbbeton") {
+        ss.setAttribute('value', '3');
 
     }
 
