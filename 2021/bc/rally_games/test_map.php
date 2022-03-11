@@ -27,535 +27,568 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     <style>
-    /* MODAL */
-    .custom_row {
-        display: flex;
-        align-items: center;
-    }
-
-    p {
-        font-size: large;
-    }
-
-    .row {
-        margin-top: 15px;
-    }
-
-    #modal_saat_ini,
-    .modal_saat_jembatan,
-    .modal_saat_tiket {
-        display: none;
-    }
-
-    /*  */
-
-    @keyframes glowing_dark {
-        0% {
-            filter: drop-shadow(0 0 5px black);
+        /* INVENTORY */
+        #containerAll {
+            max-height: 100vh;
+            height: 100vh;
+            width: 100%;
+            top: 5000px;
         }
 
-        50% {
-            filter: drop-shadow(0 0 20px black);
+        .content {
+            margin: 0;
         }
 
-        100% {
-            filter: drop-shadow(0 0 5px black);
+        .resource-name {
+            font-size: larger;
+            margin: 0;
         }
-    }
-
-    @keyframes glowing_yellow {
-        0% {
-            filter: drop-shadow(0 0 5px yellow);
-        }
-
-        50% {
-            filter: drop-shadow(0 0 20px yellow);
+        
+        .icons {
+            border-radius: 25px;
+            width: 50%;
         }
 
-        100% {
-            filter: drop-shadow(0 0 5px yellow);
+        .mySkill:hover{
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 5px rgba(0, 0, 255, 1);
         }
-    }
+        /*  */
 
-    @keyframes zoomout {
-        0% {
-            transform: scale(3.0);
-        }
-
-        100% {
-            transform: scale(1.0);
-        }
-    }
-
-    @keyframes shake {
-        50% {
-            transform: translate(1px, 1px) rotate(0deg);
+        /* MODAL */
+        .custom_row {
+            display: flex;
+            align-items: center;
         }
 
-        55% {
-            transform: translate(-1px, -2px) rotate(-1deg);
+        p {
+            font-size: large;
         }
 
-        60% {
-            transform: translate(-3px, 0px) rotate(1deg);
+        .row {
+            margin: auto;
+            margin-left: 15px;
+            margin-right: 15px;
         }
 
-        65% {
-            transform: translate(3px, 2px) rotate(0deg);
+        #modal_saat_ini,
+        .modal_saat_jembatan,
+        .modal_saat_tiket {
+            display: none;
         }
 
-        70% {
-            transform: translate(1px, -1px) rotate(1deg);
+        /*  */
+
+        @keyframes glowing_dark {
+            0% {
+                filter: drop-shadow(0 0 5px black);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px black);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 5px black);
+            }
         }
 
-        75% {
-            transform: translate(-1px, 2px) rotate(-1deg);
+        @keyframes glowing_yellow {
+            0% {
+                filter: drop-shadow(0 0 5px yellow);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 20px yellow);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 5px yellow);
+            }
         }
 
-        80% {
-            transform: translate(-3px, 1px) rotate(0deg);
+        @keyframes zoomout {
+            0% {
+                transform: scale(3.0);
+            }
+
+            100% {
+                transform: scale(1.0);
+            }
         }
 
-        85% {
-            transform: translate(3px, 1px) rotate(-1deg);
+        @keyframes shake {
+            50% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+
+            55% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+
+            60% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            65% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            75% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            85% {
+                transform: translate(3px, 1px) rotate(-1deg);
+            }
+
+            90% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+
+            95% {
+                transform: translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
         }
 
-        90% {
-            transform: translate(-1px, -1px) rotate(1deg);
+        body {
+            animation: 1s ease-out 0s 1 zoomout;
+            background-image: url('assets/laut.png');
+            background-size: 110vw 110vh;
+            overflow: hidden;
         }
 
-        95% {
-            transform: translate(1px, 2px) rotate(0deg);
+        #svg2 {
+            box-sizing: content-box;
+            width: 80vw;
+            max-height: 100vh;
+            transition: all 0.75s;
+            z-index: 1;
+            position: relative;
         }
 
-        100% {
-            transform: translate(1px, -2px) rotate(-1deg);
-        }
-    }
-
-    body {
-        animation: 1s ease-out 0s 1 zoomout;
-        background-image: url('assets/laut.png');
-        background-size: 110vw 110vh;
-        overflow: hidden;
-    }
-
-    #svg2 {
-        box-sizing: content-box;
-        width: 80vw;
-        max-height: 100vh;
-        transition: all 0.75s;
-        z-index: 1;
-        position: relative;
-    }
-
-    .awan {
-        z-index: 2;
-        position: absolute;
-    }
-
-    .a1 {
-        top: 6vh;
-        left: 128vh;
-        width: 20vh;
-    }
-
-    .a2 {
-        top: 13vh;
-        left: 136vh;
-        width: 20vh;
-    }
-
-    .a3 {
-        top: 23vh;
-        left: 143vh;
-        width: 20vh;
-    }
-
-    .a4 {
-        top: 40vh;
-        left: 125vh;
-        width: 20vh;
-    }
-
-    .a5 {
-        top: 51vh;
-        left: 110vh;
-        width: 20vh;
-    }
-
-    .a6 {
-        top: 55vh;
-        left: 120vh;
-        width: 20vh;
-    }
-
-    .a7 {
-        top: 22vh;
-        left: 65vh;
-        width: 20vh;
-    }
-
-    .a8 {
-        top: 45vh;
-        left: 50vh;
-        width: 20vh;
-    }
-
-    .a9 {
-        top: 50vh;
-        left: 80vh;
-        width: 15vh;
-    }
-
-    .a10 {
-        top: 56vh;
-        left: 78vh;
-        width: 20vh;
-    }
-
-    .a11 {
-        top: 33vh;
-        left: 150vh;
-        width: 20vh;
-    }
-
-    .a12 {
-        top: 38vh;
-        left: 150vh;
-        width: 20vh;
-    }
-
-    .a13 {
-        top: 58vh;
-        left: 145vh;
-        width: 18vh;
-    }
-
-    .a14 {
-        top: 56vh;
-        left: 130vh;
-        width: 18vh;
-    }
-
-    .a15 {
-        top: 48vh;
-        left: 125vh;
-        width: 20vh;
-    }
-
-    .a16 {
-        top: 40vh;
-        left: 140vh;
-        width: 10vh;
-    }
-
-    .a17 {
-        top: 58vh;
-        left: 100vh;
-        width: 20vh;
-    }
-
-    .a18 {
-        top: 65vh;
-        left: 115vh;
-        width: 10vh;
-    }
-
-    .a19 {
-        top: 63vh;
-        left: 120vh;
-        width: 15vh;
-    }
-
-    .a20 {
-        top: 65vh;
-        left: 130vh;
-        width: 10vh;
-    }
-
-    .a21 {
-        top: 65vh;
-        left: 80vh;
-        width: 20vh;
-    }
-
-    .a22 {
-        top: 63vh;
-        left: 87vh;
-        width: 20vh;
-    }
-
-    .a23 {
-        top: 75vh;
-        left: 78vh;
-        width: 20vh;
-    }
-
-    .a24 {
-        top: 80vh;
-        left: 78vh;
-        width: 20vh;
-    }
-
-    .a25 {
-        top: 73vh;
-        left: 95vh;
-        width: 20vh;
-    }
-
-    .a26 {
-        top: 72vh;
-        left: 98vh;
-        width: 20vh;
-    }
-
-    .a27 {
-        top: 58vh;
-        left: 98vh;
-        width: 20vh;
-    }
-
-    .a28 {
-        top: 80vh;
-        left: 98vh;
-        width: 20vh;
-    }
-
-    .a29 {
-        top: 83vh;
-        left: 90vh;
-        width: 20vh;
-    }
-
-    .a30 {
-        top: 80vh;
-        left: 115vh;
-        width: 10vh;
-    }
-
-    .a31 {
-        top: 84vh;
-        left: 118vh;
-        width: 10vh;
-    }
-
-    .a32 {
-        top: 87vh;
-        left: 120vh;
-        width: 10vh;
-    }
-
-    .a33 {
-        top: 89vh;
-        left: 125vh;
-        width: 10vh;
-    }
-
-    .a34 {
-        top: 89vh;
-        left: 128vh;
-        width: 10vh;
-    }
-
-    .a35 {
-        top: 89vh;
-        left: 130vh;
-        width: 10vh;
-    }
-
-    .a36 {
-        top: 85vh;
-        left: 136vh;
-        width: 10vh;
-    }
-
-    .a37 {
-        top: 83vh;
-        left: 136vh;
-        width: 10vh;
-    }
-
-    .a38 {
-        top: 47vh;
-        left: 80vh;
-        width: 10vh;
-    }
-
-    .a39 {
-        top: 37vh;
-        left: 77vh;
-        width: 10vh;
-    }
-
-    .a40 {
-        top: 25vh;
-        left: 86vh;
-        width: 10vh;
-    }
-
-    .a41 {
-        top: 25vh;
-        left: 95vh;
-        width: 10vh;
-    }
-
-    .a42 {
-        top: 24vh;
-        left: 115vh;
-        width: 15vh;
-    }
-
-    .a43 {
-        top: 46vh;
-        left: 113vh;
-        width: 8vh;
-    }
-
-    /* .a44{
-            top: 0vh;
-            left: 40vh;
-            width: 45vh;
+        .awan {
+            z-index: 2;
+            position: absolute;
         }
 
-        .a45{
-            top: 0vh;
-            left: 140vh;
-            width: 50vh;
-        }
-
-        .a46{
-            top: 0vh;
-            left: 160vh;
-            width: 50vh;
-        }
-
-        .a47{
-            top: 0vh;
-            left: 170vh;
-            width: 40vh;
-        }
-
-        .a48{
-            top: 0vh;
-            left: 130vh;
+        .a1 {
+            top: 6vh;
+            left: 128vh;
             width: 20vh;
         }
 
-        .a49{
-            top: 0vh;
+        .a2 {
+            top: 13vh;
+            left: 136vh;
+            width: 20vh;
+        }
+
+        .a3 {
+            top: 23vh;
+            left: 143vh;
+            width: 20vh;
+        }
+
+        .a4 {
+            top: 40vh;
+            left: 125vh;
+            width: 20vh;
+        }
+
+        .a5 {
+            top: 51vh;
+            left: 110vh;
+            width: 20vh;
+        }
+
+        .a6 {
+            top: 55vh;
             left: 120vh;
             width: 20vh;
         }
 
-        .a50{
-            top: 0vh;
-            left: 110vh;
+        .a7 {
+            top: 22vh;
+            left: 65vh;
+            width: 20vh;
+        }
+
+        .a8 {
+            top: 45vh;
+            left: 50vh;
+            width: 20vh;
+        }
+
+        .a9 {
+            top: 50vh;
+            left: 80vh;
             width: 15vh;
         }
 
-        .a51{
-            top: 0vh;
-            left: 100vh;
-            width: 15vh;
+        .a10 {
+            top: 56vh;
+            left: 78vh;
+            width: 20vh;
         }
 
-        .a52{
-            top: 5vh;
-            left: 110vh;
-            width: 15vh;
-        }
-
-        .a53{
-            top: 0vh;
-            left: 70vh;
-            width: 30vh;
-        }
-
-        .a54{
-            top: 20vh;
+        .a11 {
+            top: 33vh;
             left: 150vh;
-            width: 50vh;
+            width: 20vh;
         }
 
-        .a55{
-            top: 20vh;
-            left: 170vh;
-            width: 50vh;
+        .a12 {
+            top: 38vh;
+            left: 150vh;
+            width: 20vh;
         }
 
-        .a56{
-            top: 10vh;
-            left: 170vh;
-            width: 50vh;
+        .a13 {
+            top: 58vh;
+            left: 145vh;
+            width: 18vh;
         }
 
-        .a57{
-            top: 0vh;
+        .a14 {
+            top: 56vh;
+            left: 130vh;
+            width: 18vh;
+        }
+
+        .a15 {
+            top: 48vh;
+            left: 125vh;
+            width: 20vh;
+        }
+
+        .a16 {
+            top: 40vh;
             left: 140vh;
-            width: 50vh;
+            width: 10vh;
         }
 
-        .a58{
-            top: 0vh;
-            left: 140vh;
-            width: 50vh;
+        .a17 {
+            top: 58vh;
+            left: 100vh;
+            width: 20vh;
         }
 
-        .a59{
-            top: 0vh;
-            left: 140vh;
-            width: 50vh;
+        .a18 {
+            top: 65vh;
+            left: 115vh;
+            width: 10vh;
         }
 
-        .a60{
-            top: 0vh;
-            left: 140vh;
-            width: 50vh;
-        } */
+        .a19 {
+            top: 63vh;
+            left: 120vh;
+            width: 15vh;
+        }
 
-    .jembatan_ku {
-        opacity: 0.5;
-    }
+        .a20 {
+            top: 65vh;
+            left: 130vh;
+            width: 10vh;
+        }
 
-    .pulau_ku:hover {
-        transition: all 0.3s;
-        filter: drop-shadow(0 0 15px white);
-    }
+        .a21 {
+            top: 65vh;
+            left: 80vh;
+            width: 20vh;
+        }
 
-    .jembatan_ku:hover {
-        transition: all 0.3s;
-        filter: drop-shadow(0 0 3px white);
-    }
+        .a22 {
+            top: 63vh;
+            left: 87vh;
+            width: 20vh;
+        }
 
-    .demo_btn {
-        position: fixed;
-        left: 92.5vw;
-        z-index: 2;
-    }
+        .a23 {
+            top: 75vh;
+            left: 78vh;
+            width: 20vh;
+        }
 
-    .default:hover {
-        background: #e7e7e7;
-        padding: 10px 32px;
-        text-align: center;
-    }
+        .a24 {
+            top: 80vh;
+            left: 78vh;
+            width: 20vh;
+        }
 
-    .current {
-        animation: glowing_dark 1300ms infinite;
-    }
+        .a25 {
+            top: 73vh;
+            left: 95vh;
+            width: 20vh;
+        }
 
-    .icon-navBar {
-        margin-top: 15px;
-        width: 75px;
-        cursor: pointer;
-        transition: all 0.25s ease-in-out;
-    }
+        .a26 {
+            top: 72vh;
+            left: 98vh;
+            width: 20vh;
+        }
 
-    .icon-navBar:hover {
-        transition: all 0.25s ease-in-out;
-        filter: drop-shadow(0 0 10px white);
-        width: 100px;
-    }
+        .a27 {
+            top: 58vh;
+            left: 98vh;
+            width: 20vh;
+        }
+
+        .a28 {
+            top: 80vh;
+            left: 98vh;
+            width: 20vh;
+        }
+
+        .a29 {
+            top: 83vh;
+            left: 90vh;
+            width: 20vh;
+        }
+
+        .a30 {
+            top: 80vh;
+            left: 115vh;
+            width: 10vh;
+        }
+
+        .a31 {
+            top: 84vh;
+            left: 118vh;
+            width: 10vh;
+        }
+
+        .a32 {
+            top: 87vh;
+            left: 120vh;
+            width: 10vh;
+        }
+
+        .a33 {
+            top: 89vh;
+            left: 125vh;
+            width: 10vh;
+        }
+
+        .a34 {
+            top: 89vh;
+            left: 128vh;
+            width: 10vh;
+        }
+
+        .a35 {
+            top: 89vh;
+            left: 130vh;
+            width: 10vh;
+        }
+
+        .a36 {
+            top: 85vh;
+            left: 136vh;
+            width: 10vh;
+        }
+
+        .a37 {
+            top: 83vh;
+            left: 136vh;
+            width: 10vh;
+        }
+
+        .a38 {
+            top: 47vh;
+            left: 80vh;
+            width: 10vh;
+        }
+
+        .a39 {
+            top: 37vh;
+            left: 77vh;
+            width: 10vh;
+        }
+
+        .a40 {
+            top: 25vh;
+            left: 86vh;
+            width: 10vh;
+        }
+
+        .a41 {
+            top: 25vh;
+            left: 95vh;
+            width: 10vh;
+        }
+
+        .a42 {
+            top: 24vh;
+            left: 115vh;
+            width: 15vh;
+        }
+
+        .a43 {
+            top: 46vh;
+            left: 113vh;
+            width: 8vh;
+        }
+
+        /* .a44{
+                top: 0vh;
+                left: 40vh;
+                width: 45vh;
+            }
+
+            .a45{
+                top: 0vh;
+                left: 140vh;
+                width: 50vh;
+            }
+
+            .a46{
+                top: 0vh;
+                left: 160vh;
+                width: 50vh;
+            }
+
+            .a47{
+                top: 0vh;
+                left: 170vh;
+                width: 40vh;
+            }
+
+            .a48{
+                top: 0vh;
+                left: 130vh;
+                width: 20vh;
+            }
+
+            .a49{
+                top: 0vh;
+                left: 120vh;
+                width: 20vh;
+            }
+
+            .a50{
+                top: 0vh;
+                left: 110vh;
+                width: 15vh;
+            }
+
+            .a51{
+                top: 0vh;
+                left: 100vh;
+                width: 15vh;
+            }
+
+            .a52{
+                top: 5vh;
+                left: 110vh;
+                width: 15vh;
+            }
+
+            .a53{
+                top: 0vh;
+                left: 70vh;
+                width: 30vh;
+            }
+
+            .a54{
+                top: 20vh;
+                left: 150vh;
+                width: 50vh;
+            }
+
+            .a55{
+                top: 20vh;
+                left: 170vh;
+                width: 50vh;
+            }
+
+            .a56{
+                top: 10vh;
+                left: 170vh;
+                width: 50vh;
+            }
+
+            .a57{
+                top: 0vh;
+                left: 140vh;
+                width: 50vh;
+            }
+
+            .a58{
+                top: 0vh;
+                left: 140vh;
+                width: 50vh;
+            }
+
+            .a59{
+                top: 0vh;
+                left: 140vh;
+                width: 50vh;
+            }
+
+            .a60{
+                top: 0vh;
+                left: 140vh;
+                width: 50vh;
+            } */
+
+        .jembatan_ku {
+            opacity: 0.5;
+        }
+
+        .pulau_ku:hover {
+            transition: all 0.3s ease-in-out;
+            filter: drop-shadow(0 0 15px white);
+        }
+
+        .jembatan_ku:hover {
+            transition: all 0.3s ease-in-out;
+            filter: drop-shadow(0 0 3px white);
+        }
+
+        .demo_btn {
+            position: fixed;
+            left: 92.5vw;
+            z-index: 2;
+        }
+
+        .default:hover {
+            background: #e7e7e7;
+            padding: 10px 32px;
+            text-align: center;
+        }
+
+        .current {
+            animation: glowing_dark 1300ms infinite;
+        }
+
+        .icon-navBar {
+            margin-top: 15px;
+            width: 75px;
+            cursor: pointer;
+            transition: all 0.25s ease-in-out;
+            text-align: center;
+            font-size: small;
+        }
+
+        .icon-navBar:hover {
+            transition: all 0.25s ease-in-out;
+            filter: drop-shadow(0 0 10px white);
+            width: 105px;
+            font-size: large;
+        }
     </style>
 </head>
 
@@ -570,11 +603,30 @@
     <!-- NAVIGATIONS -->
     <div class="demo_btn">
         <!-- ZOOM OUT -->
-        <img class="icon-navBar" src="assets/logo_zoom_out.png" onclick="_zoomOut()" alt="">
+        <div class="icon-navBar" style="max-width: 100px">
+            <a onclick="_zoomOut()">
+                <img class="icon-navBar" src="assets/logo_zoom_out.png" alt="" style="margin-bottom: 5px;">
+            </a>
+            <b>ZOOM OUT</b>
+        </div>
+
+        <!-- SKILL -->
+        <div class="icon-navBar" style="min-width: 80px;">
+            <a class="nav-link active exit" onclick="showSkill()">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <g class="" transform="translate(0,0)" style="">
+                        <path
+                            d="M498.03 15.125l-87.06 34.72-164.5 164.5-34.657-32.095 31.156-28.844-223-133.594L176.155 164.5l-31.094 28.813 63.563 58.875-70.03 70.03c2.932 3.53 5.915 7.01 8.968 10.438l9.656 9.656 71.5-71.5 13.718 12.688-72 72 9.843 9.844c3.502 3.116 7.044 6.19 10.657 9.187l72-72 40.782 37.75-29 26.876 223 133.594-158.69-146.97 29-26.842-67.217-62.282 162.5-162.5 34.718-87.03zM430.69 68.813l13.218 13.218L280.28 245.657l-13.717-12.687L430.688 68.812zm-341 216.875L61.874 313.5 199.22 450.875l27.81-27.844c-56.283-34.674-103.014-81.617-137.343-137.342zm18.75 100.812l-81 81 17.75 17.75 81-81-17.75-17.75z">
+                        </path>
+                    </g>
+                </svg>
+            </a>
+            <b>SKILL</b>
+        </div>
 
         <!-- GO BACK -->
-        <div class="icon-navBar">
-            <a class="nav-link active exit" id="menu" onclick="goBack()">
+        <div class="icon-navBar" style="min-width: 80px;">
+            <a class="nav-link active exit" onclick="goBack()">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <g class="" transform="translate(0,0)" style="">
                         <path
@@ -583,6 +635,7 @@
                     </g>
                 </svg>
             </a>
+            <b>EXIT</b>
         </div>
 
         <!-- TREASURE -->
@@ -2538,8 +2591,7 @@
 
 <div class="modal fade" id="modal_treasure">
     <div class="modal-dialog">
-        <div class="modal-content" style="text-align: center;
-    font-size: large;">
+        <div class="modal-content" style="text-align: center; font-size: large;">
             <div class="modal-header">
                 <h4 class="modal-title">
                     <h1>TREASURE CLUE</h1>
@@ -2553,9 +2605,25 @@
                     kelompok aja lho!</i>
                 <br><br>Link Pos Pennukaran Skill: <a href="https://youtu.be/dQw4w9WgXcQ">https://meet.google.com</a>
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Large modal -->
+<div class="modal fade" tabindex="-1" id="modal_skill">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div id="containerAll">
+                <div class="content row px-5">
+
+                </div>
+
+                <div class="d-flex justify-content-center backbutton">
+                    
+                </div>
             </div>
         </div>
     </div>

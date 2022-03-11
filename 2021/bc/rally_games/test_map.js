@@ -292,6 +292,7 @@ function _zoomIn(id_pulau, pulau_besar) {
     }, 1500);
 }
 
+// CEK HARTA KARUN
 function cek_harta(id_pulau, cek) {
     $.ajax({
         url: "new_phps/check_treasure.php",
@@ -315,8 +316,8 @@ function cek_harta(id_pulau, cek) {
     });
 }
 
+// CEK LAGI :v
 $('#harta_karun').click(function () {
-    console.log("HALO");
     cek_harta(treasure_island, "harta");
 });
 
@@ -437,6 +438,54 @@ $('.jembatan_ku').hover(function (e) {
     })
 });
 
+function show() {
+    $.ajax({
+        url: "phps/refresh_inventory.php",
+        type: "get",
+        dataType: "json",
+        success: function (result) {
+            var data = result;
+            var str = "";
+            if (data.length == 0) {
+                str += `
+                    <div id="no-content-msg-skill">
+                        <img src="assets/image/nothing-to-say.svg" width="35%">
+                        <h3>You have nothing in your inventory...</h3>
+                    </div>
+                    `;
+            } else {
+                //loop dari data
+                for (var i = 0; i < data.length; i++) {
+                    var d = data[i];
+                    str += `
+                    <div class="col-12 col-md-4 mySkill" style="margin-top: 50px;">
+                        <div style="text-align: center;">
+                            <i class="mr-5">
+                                <img src="assets/image/` + d.image + `" class="icons" id="` + d.normal_price + `">
+                            </i>
+                            <div style="font-size: xx-large; display: inline;">
+                                x` + d.count + `
+                            </div>
+                        </div>
+                        <div style="text-align: center; font-size: large;">
+                            <p class="resource-name">` + d.resource_name + `</p>
+                        </div>
+                    </div>
+                `;
+                }
+            }
+
+            $(".content").html(str);
+
+            // $(".inventory-item").hide();
+            // $(".inventory-item").toggleClass("d-flex");
+        },
+        error: function () {
+            alert("ERROR!");
+        },
+    });
+}
+
 // BUTTONS
 function _zoomOut() {
     document.getElementById('svg2').style.padding = "1%";
@@ -452,6 +501,10 @@ function _zoomOut() {
 }
 function goBack() {
     document.location.href = "http://localhost/pce2022/2021/bc/rally_games/map.php";
+}
+function showSkill() {
+    show();
+    $('#modal_skill').modal();
 }
 
 
