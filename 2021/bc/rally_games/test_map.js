@@ -155,10 +155,7 @@ $('.pulau_ku').click(function () {
                 console.log(data);
                 if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
                     document.getElementById('modal_saat_jembatan').style.display = "block";
-                    // jembatan[0].style.display = "block";
-                    // jembatan[1].style.display = "block";
-                    // jembatan[0].innerHTML = "Pergi melalui <b>jembatan " + data[1] + "</b>.";
-                    // document.getElementById('gambar_jembatan').src = "assets/image/" + data[2];
+                    document.getElementById('modal_saat_jembatan').innerHTML = "<p>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</p><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
                     $('#modal_pulau').modal();
                 } else if (data[0] == "tiket") { // JIKA PINDAH PULAU PAKAI TIKET
                     document.getElementById('modal_saat_tiket').style.display = "block";
@@ -219,10 +216,8 @@ $('.tidak').click(function () {
     clicked_island = null;
     setTimeout(() => {
         document.getElementById('modal_saat_ini').style.display = "none";
-        document.getElementsByClassName('modal_saat_jembatan')[0].style.display = "none";
-        document.getElementsByClassName('modal_saat_jembatan')[1].style.display = "none";
-        document.getElementsByClassName('modal_saat_tiket')[0].style.display = "none";
-        document.getElementsByClassName('modal_saat_tiket')[1].style.display = "none";
+        document.getElementById('modal_saat_jembatan').style.display = "none";
+        document.getElementById('modal_saat_tiket').style.display = "none";
     }, 500);
     $('#modal_pulau').modal("hide");
 })
@@ -259,13 +254,12 @@ function show() {
             var str = "";
             if (data.length == 0) {
                 str += `
-                    <div id="no-content-msg-skill">
+                    <div id="no-content-msg-skill" style="text-align: center;">
                         <img src="assets/image/nothing-to-say.svg" width="35%">
                         <h3>You have nothing in your inventory...</h3>
                     </div>
                     `;
             } else {
-                //loop dari data
                 for (var i = 0; i < data.length; i++) {
                     var d = data[i];
                     str += `
@@ -288,9 +282,6 @@ function show() {
             }
 
             $(".content").html(str);
-
-            // $(".inventory-item").hide();
-            // $(".inventory-item").toggleClass("d-flex");
         },
         error: function () {
             alert("ERROR!");
@@ -318,8 +309,72 @@ function showSkill() {
     show();
     $('#modal_skill').modal();
 }
+function _cancelSkill() {
+    document.getElementById("nav-cancel").style.display = "none";
+    document.getElementById("nav-zoom-out").style.display = "block";
+    document.getElementById("nav-back").style.display = "block";
+    document.getElementById("nav-skill").style.display = "block";
+
+    var pulau = document.getElementsByClassName("pulau_ku");
+    for (let i = 0; i < pulau.length; i++) {
+        pulau[i].style.pointerEvents = "auto";
+    }
+
+    var jembatan = document.getElementsByClassName("jembatan_ku");
+    for (let i = 0; i < jembatan.length; i++) {
+        jembatan[i].style.pointerEvents = "auto";
+    }
+}
+
 function use(skill) {
-    alert('tepakai');
+    if (skill == 'Boom Mega Boom') {
+        $('#modal_skill').modal('hide');
+        _zoomOut();
+
+        var pulau = document.getElementsByClassName("pulau_ku");
+        for (let i = 0; i < pulau.length; i++) {
+            pulau[i].style.pointerEvents = "auto";
+        }
+        // cursor: url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), auto;
+
+        // DISABLE PULAU & JEMBATAN SELAIN PULAU KECIL
+        $.ajax({
+            url: "new_phps/disable_pulau.php",
+            type: "GET",
+            success: function (data) {
+                data.forEach(function (item) {
+                    document.getElementById(item['_path']).style.pointerEvents = "none";
+                });
+            },
+            error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
+            }
+        });
+
+        // NAVIGASI GANTI CANCEL BUTTON
+        document.getElementById("nav-cancel").style.display = "block";
+        document.getElementById("nav-zoom-out").style.display = "none";
+        document.getElementById("nav-back").style.display = "none";
+        document.getElementById("nav-skill").style.display = "none";
+    }
+    $.ajax({
+        url: "new_phps/use_skill.php",
+        type: "POST",
+        dataType: "json",
+        data: {
+            skill: skill
+        },
+        success: function (result) {
+            console.log(result);
+            location.reload();
+        },
+        error: function ($xhr, errorThrown) {
+            console.log(errorThrown);
+            console.warn($xhr.responseText);
+        }
+    });
+
 }
 
 function build_jembatan(id_jembatan) {
@@ -514,3 +569,16 @@ $(function () {
     get_jembatan();
     get_lokasi();
 });
+
+// else if (skill == 'Divide Et Impera') {
+    //     alert('devide');
+    // }
+    // else if (skill == 'X2 Social Credits') {
+    //     alert('2x');
+    // }
+    // else if (skill == 'TBL TBL TBL') {
+    //     alert('TBL');
+    // }
+    // else if (skill == 'Meteor') {
+    //     alert('meteor');
+    // }
