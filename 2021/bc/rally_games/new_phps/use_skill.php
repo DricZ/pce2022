@@ -9,6 +9,16 @@
         $row_team = $stmt_team->fetch();
         $id_team = $row_team['id'];
         $result='';
+        if (isset($_POST['pulau'])) {
+            $sql_pulau = "SELECT * FROM new_pulau WHERE path =?;";
+            $stmt_pulau = $pdo->prepare($sql_pulau);
+            $stmt_pulau->execute([$_POST['pulau']]);
+            $row_pulau = $stmt_pulau->fetch();
+            $id_pulau = $row_pulau['id'];
+
+        }
+        
+
         //update 2 kali bahan 
         if ($_POST['skill'] == 'Inventory Ganda') {
             $result='masuk';
@@ -47,6 +57,35 @@
             $stmt_ganda = $pdo->prepare($sql_ganda);
             $stmt_ganda->execute([$id_team,$id_team]);
         }
+        if ($_POST['skill'] == 'Boom Mega Boom') {
+             // id_team = 0 
+            $sql_idteam = "UPDATE new_jembatan SET id_team = 0 WHERE id_pulau1=? OR id_pulau2=?;";
+            $stmt_idteam = $pdo->prepare($sql_idteam);
+            $stmt_idteam->execute([$id_pulau,$id_pulau]);
+
+            //id tipe =0
+            $sql_idteam = "UPDATE new_jembatan SET id_tipe = 0 WHERE id_pulau1=? OR id_pulau2=?;";
+            $stmt_idteam = $pdo->prepare($sql_idteam);
+            $stmt_idteam->execute([$id_pulau,$id_pulau]);
+        }
+        else if ($_POST['skill']=='TBL TBL TBL') {
+             //isi id team ke kepemilikan
+            $sql_input_id = "UPDATE new_pulau SET kepemilikan = (SELECT id from team WHERE id=? ) WHERE id=?;";
+            $stmt_input_id = $pdo->prepare($sql_input_id);
+            $stmt_input__id->execute([$id_team,$id_pulau]);
+            
+        }
+        else if ($_POST['skill'] =='Meteor') {
+           //update name hancur
+            $sql_meteor = "UPDATE new_pulau SET nama = 'hancur' WHERE id = ?;";
+            $stmt_meteor = $pdo->prepare($sql_meteor);
+            $stmt_meteor->execute([$id_pulau]);
+        }
+           
+
+            
+
+
         
         echo json_encode($result);
     } else {

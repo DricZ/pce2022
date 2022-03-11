@@ -325,6 +325,7 @@ function use(skill) {
     }
     else if (skill=='Boom Mega Boom') {
         alert('megaboom');
+        $('#modal_skill').modal('hide');
     }
     else if (skill=='Divide Et Impera') {
         alert('devide');
