@@ -104,7 +104,7 @@
         if ($cek == 5 and $row_team['money']>= $harga) {
             $sql_cekbom = "SELECT * FROM team_resources WHERE id_team = ? and id_resource= ?;";
             $stmt_cekbom = $pdo->prepare($sql_cekbom);
-            $stmt_cekbom->execute([$id_team,$idboom]);
+            $stmt_cekbom->execute([$id_team,$idboom]);  
             
             if ($stmt_cekbom->rowCount() == 0) {
                 $sql = "INSERT INTO `team_resources`( `id_resource`, `count`, `id_team`) VALUES (?,1,?);";
@@ -114,47 +114,47 @@
             } else {
                 $sql = "UPDATE team_resources SET count =
                 (SELECT count+1 FROM team_resources 
-                WHERE id_resource=?)
+                WHERE id_resource=? And id_team = ?)
                 WHERE id_resource = ? AND id_team =?;";
                 $stmt = $pdo->prepare($sql);
-                $stmt->execute([$idboom,$idboom,$id_team]);
+                $stmt->execute([$idboom,$id_team,$idboom,$id_team]);
                 $result = "masuk else";
             } 
             //mengurangi bahan
             $sql_korek = "UPDATE team_resources SET count =
             (SELECT count-? FROM team_resources 
-            WHERE id_resource=13)
+            WHERE id_resource=13 And id_team =?)
             WHERE id_resource = 13 AND id_team =?;";
             $stmt_korek = $pdo->prepare($sql_korek);
-            $stmt_korek->execute([$korek,$id_team]);
+            $stmt_korek->execute([$korek,$id_team,$id_team]);
 
             $sql_hcl = "UPDATE team_resources SET count =
             (SELECT count-? FROM team_resources 
-            WHERE id_resource=14)
+            WHERE id_resource=14 AND id_team =?)
             WHERE id_resource = 14 AND id_team =?;";
             $stmt_hcl = $pdo->prepare($sql_hcl);
-            $stmt_hcl->execute([$hcl,$id_team]);
+            $stmt_hcl->execute([$hcl,$id_team,$id_team]);
 
             $sql_belerang = "UPDATE team_resources SET count =
             (SELECT count-? FROM team_resources 
-            WHERE id_resource=15)
+            WHERE id_resource=15 AND id_team=?)
             WHERE id_resource = 15 AND id_team =?;";
             $stmt_belerang = $pdo->prepare($sql_belerang);
-            $stmt_belerang->execute([$belerang,$id_team]);
+            $stmt_belerang->execute([$belerang,$id_team,$id_team]);
 
             $sql_styrofoam = "UPDATE team_resources SET count =
             (SELECT count-? FROM team_resources 
-            WHERE id_resource=16)
+            WHERE id_resource=16 AND id_team =?)
             WHERE id_resource = 16 AND id_team =?;";
             $stmt_styrofoam = $pdo->prepare($sql_styrofoam);
-            $stmt_styrofoam->execute([$styrofoam,$id_team]);
+            $stmt_styrofoam->execute([$styrofoam,$id_team,$id_team]);
 
             $sql_black_powder = "UPDATE team_resources SET count =
             (SELECT count-? FROM team_resources 
-            WHERE id_resource=17)
+            WHERE id_resource=17 AND id_team =?)
             WHERE id_resource = 17 AND id_team =?;";
             $stmt_black_powder = $pdo->prepare($sql_black_powder);
-            $stmt_black_powder->execute([$blackpowder,$id_team]);
+            $stmt_black_powder->execute([$blackpowder,$id_team,$id_team]);
             //kurang uang
             $sql_money = "UPDATE team SET money=
             (SELECT money-? FROM team WHERE id=?) WHERE id = ?;";
