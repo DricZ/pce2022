@@ -9,7 +9,7 @@
         $getIDTeamstmt->execute([$_SESSION['username']]);
         $getIDTeamrow = $getIDTeamstmt->fetch();
 
-        $sql = "SELECT resource_name, count, image FROM team_resources a JOIN resource b ON a.id_resource = b.id WHERE id_team = ? AND count != 0 ORDER BY id_resource";
+        $sql = "SELECT resource_name, count, image FROM team_resources a JOIN resource b ON a.id_resource = b.id WHERE id_team = ? AND count != 0 AND a.id_resource<18 ORDER BY id_resource";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([$getIDTeamrow['id']]);
 
