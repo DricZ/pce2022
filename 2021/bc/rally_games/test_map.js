@@ -340,7 +340,7 @@ function build_jembatan(id_jembatan) {
             }
 
             data.forEach(function (item) {
-                if (item['username'] == username) {
+                if (item['username'] == username && item['proteksi'] == 0) {
                     // KAYU
                     if (item['tipe_jembatan'] == 1) {
                         document.getElementById("upkayu").classList.remove('hidden');
@@ -363,29 +363,42 @@ function build_jembatan(id_jembatan) {
                     }
 
                     $('#modal_upgrade').modal();
-                } else {
+                } 
+                
+                else if(item['username'] != username) {
                     // KAYU
                     if (item['tipe_jembatan'] == 1) {
-                        document.getElementById("destkayu").classList.remove('hidden');
-                    } else {
-                        document.getElementById("destkayu").classList.add('hidden');
-                    }
+                        if(item['proteksi'] == 1){
+                            document.getElementById("destkayup").classList.remove('hidden');
+                        }
+                        else{
+                            document.getElementById("destkayu").classList.remove('hidden');
+                        }
+                    } 
+                    
+                    else if(item['tipe_jembatan'] == 2){
+                        if(item['proteksi'] == 1){
+                            document.getElementById("destbajap").classList.remove('hidden');
+                        }
 
-                    // BAJA
-                    if (item['tipe_jembatan'] == 2) {
-                        document.getElementById("destbaja").classList.remove('hidden');
-                    } else {
-                        document.getElementById("destbaja").classList.add('hidden');
-                    }
+                        else{
+                            document.getElementById("destbaja").classList.remove('hidden');
+                        }                    }
 
-                    // BETON
-                    if (item['tipe_jembatan'] == 3) {
-                        document.getElementById("destbeton").classList.remove('hidden');
-                    } else {
-                        document.getElementById("destbeton").classList.add('hidden');
+                    else if(item['tipe_jembatan'] == 3){
+                        if(item['proteksi'] == 1){
+                            document.getElementById("destbetonp").classList.remove('hidden');
+                        }
+
+                        else{
+                            document.getElementById("destbeton").classList.remove('hidden');
+                        } 
                     }
 
                     $('#modal_destroy').modal();
+                }
+                else{
+
                 }
             });
         },
@@ -408,7 +421,28 @@ $('#build').click(function () {
             id_jembatan: path_jembatan
         },
         success: function (res) {
-            // document.location.reload(true);
+            document.location.reload(true);
+            console.log(res);
+        },
+        error: function ($xhr, errorThrown) {
+            console.log(errorThrown);
+            console.warn($xhr.responseText);
+        }
+    });
+});
+
+$('#upgrade').click(function () {
+    var id_tipe = document.getElementById("session_tipe_jembatan").value;
+
+    $.ajax({
+        url: "new_phps/post_upgrade.php",
+        method: "POST",
+        data: {
+            id_tipe: id_tipe,
+            id_jembatan: path_jembatan
+        },
+        success: function (res) {
+            document.location.reload(true);
             console.log(res);
         },
         error: function ($xhr, errorThrown) {

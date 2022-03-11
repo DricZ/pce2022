@@ -68,12 +68,7 @@
         .row {
             /* margin: auto;
             margin-left: 15px;
-<<<<<<< Updated upstream
-            margin-right: 15px;
-            margin-top: 10px;
-=======
             margin-right: 15px; */
->>>>>>> Stashed changes
         }
 
         #modal_saat_ini,
@@ -2543,7 +2538,7 @@
             <div class="modal-body"
                 style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
                 <div class="container">
-                    <div class="row" style="width:50%; margin-top:-2%; margin-right:0%">
+                    <div class="row" style="width:50%;">
 
                         <!-- Jembatan Kayu -->
                         <div class="col-12 jembatan hidden" id="destkayu">
@@ -2553,6 +2548,18 @@
                             <h4>Bom yang diperlukan:</h4>
                             <p>
                                 1x Bom level 1
+                                <img src="assets/image/BOMB LV 1.png" width="100px" height="100px">
+                            </p>
+                        </div>
+
+                        <!-- Jembatan Kayu Proteksi -->
+                        <div class="col-12 jembatan hidden" id="destkayup">
+                            <center>
+                                <h1>Jembatan Kayu Proteksi</h1>
+                            </center>
+                            <h4>Bom yang diperlukan:</h4>
+                            <p>
+                                1x Bom level 2
                                 <img src="assets/image/BOMB LV 1.png" width="100px" height="100px">
                             </p>
                         </div>
@@ -2569,6 +2576,18 @@
                             </p>
                         </div>
 
+                        <!-- Jembatan Baja Proteksi -->
+                        <div class="col-12 jembatan hidden" id="destbajap">
+                            <center>
+                                <h1>Jembatan Baja Proteksi</h1>
+                            </center>
+                            <h4>Bom yang diperlukan:</h4>
+                            <p>
+                                1x Bom level 4
+                                <img src="assets/image/BOMB LV 4.png" width="100px" height="100px">
+                            </p>
+                        </div>
+
                         <!-- Jembatan Beton -->
                         <div class="col-12 jembatan hidden" id="destbeton">
                             <br>
@@ -2579,6 +2598,19 @@
                             <p>
                                 1x Bom level 5
                                 <img src="assets/image/BOMB LV 5.png" width="100px" height="100px">
+                            </p>
+                        </div>
+
+                        <!-- Jembatan Beton Proteksi -->
+                        <div class="col-12 jembatan hidden" id="destbetonp">
+                            <br>
+                            <center>
+                                <h1>Jembatan Beton Proteksi</h1>
+                            </center>
+                            <h4>Bom yang diperluhkan:</h4>
+                            <p>
+                                1x Bom level 6
+                                <img src="assets/image/BOMB LV 6.png" width="100px" height="100px">
                             </p>
                         </div>
                     </div>
