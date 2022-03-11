@@ -2366,6 +2366,8 @@
 <div class="modal fade" id="modal_build">
     <div class="modal-dialog">
         <div class="modal-content">
+        <input id="session_tipe_jembatan" type="hidden" value="">
+
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">
@@ -2447,7 +2449,7 @@
                 <!-- Modal footer -->
                 <div class="modal-footer">
                     <button id="build" type="button" class="btn btn-success" data-dismiss="modal"
-                        onClick="build()">BUILD</button>
+                        >BUILD</button>
                 </div>
             </div>
         </div>
