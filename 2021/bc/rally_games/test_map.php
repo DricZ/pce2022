@@ -66,10 +66,14 @@
         }
 
         .row {
-            margin: auto;
+            /* margin: auto;
             margin-left: 15px;
+<<<<<<< Updated upstream
             margin-right: 15px;
             margin-top: 10px;
+=======
+            margin-right: 15px; */
+>>>>>>> Stashed changes
         }
 
         #modal_saat_ini,
@@ -443,107 +447,107 @@
             width: 8vh;
         }
 
-        /* .a44{
+        .a44{
                 top: 0vh;
                 left: 40vh;
                 width: 45vh;
             }
 
-            .a45{
-                top: 0vh;
-                left: 140vh;
-                width: 50vh;
-            }
+        .a45{
+            top: 0vh;
+            left: 140vh;
+            width: 50vh;
+        }
 
-            .a46{
-                top: 0vh;
-                left: 160vh;
-                width: 50vh;
-            }
+        .a46{
+            top: 0vh;
+            left: 160vh;
+            width: 50vh;
+        }
 
-            .a47{
-                top: 0vh;
-                left: 170vh;
-                width: 40vh;
-            }
+        .a47{
+            top: 0vh;
+            left: 170vh;
+            width: 40vh;
+        }
 
-            .a48{
-                top: 0vh;
-                left: 130vh;
-                width: 20vh;
-            }
+        .a48{
+            top: 0vh;
+            left: 130vh;
+            width: 20vh;
+        }
 
-            .a49{
-                top: 0vh;
-                left: 120vh;
-                width: 20vh;
-            }
+        .a49{
+            top: 0vh;
+            left: 120vh;
+            width: 20vh;
+        }
 
-            .a50{
-                top: 0vh;
-                left: 110vh;
-                width: 15vh;
-            }
+        .a50{
+            top: 0vh;
+            left: 110vh;
+            width: 15vh;
+        }
 
-            .a51{
-                top: 0vh;
-                left: 100vh;
-                width: 15vh;
-            }
+        .a51{
+            top: 0vh;
+            left: 100vh;
+            width: 15vh;
+        }
 
-            .a52{
-                top: 5vh;
-                left: 110vh;
-                width: 15vh;
-            }
+        .a52{
+            top: 5vh;
+            left: 110vh;
+            width: 15vh;
+        }
 
-            .a53{
-                top: 0vh;
-                left: 70vh;
-                width: 30vh;
-            }
+        .a53{
+            top: 0vh;
+            left: 70vh;
+            width: 30vh;
+        }
 
-            .a54{
-                top: 20vh;
-                left: 150vh;
-                width: 50vh;
-            }
+        .a54{
+            top: 20vh;
+            left: 150vh;
+            width: 50vh;
+        }
 
-            .a55{
-                top: 20vh;
-                left: 170vh;
-                width: 50vh;
-            }
+        .a55{
+            top: 20vh;
+            left: 170vh;
+            width: 50vh;
+        }
 
-            .a56{
-                top: 10vh;
-                left: 170vh;
-                width: 50vh;
-            }
+        .a56{
+            top: 10vh;
+            left: 170vh;
+            width: 50vh;
+        }
 
-            .a57{
-                top: 0vh;
-                left: 140vh;
-                width: 50vh;
-            }
+        .a57{
+            top: 0vh;
+            left: 140vh;
+            width: 50vh;
+        }
 
-            .a58{
-                top: 0vh;
-                left: 140vh;
-                width: 50vh;
-            }
+        .a58{
+            top: 0vh;
+            left: 140vh;
+            width: 50vh;
+        }
 
-            .a59{
-                top: 0vh;
-                left: 140vh;
-                width: 50vh;
-            }
+        .a59{
+            top: 0vh;
+            left: 140vh;
+            width: 50vh;
+        }
 
-            .a60{
-                top: 0vh;
-                left: 140vh;
-                width: 50vh;
-            } */
+        .a60{
+            top: 0vh;
+            left: 140vh;
+            width: 50vh;
+        }
 
         .jembatan_ku {
             opacity: 0.5;
@@ -2378,7 +2382,7 @@
             <div class="modal-body"
                 style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
                 <div class="container">
-                    <div class='row' style="width:50%">
+                    <div class='row' style="width:50%; ">
                         <p>Pilih tipe jembatan yang ingin dibangun:</p>
                         <div class='col-sm-4'>
                             <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
