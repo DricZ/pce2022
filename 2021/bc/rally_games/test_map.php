@@ -589,6 +589,7 @@
             width: 105px;
             font-size: large;
         }
+        .g_jembatan{width: 100%}
     </style>
 </head>
 
@@ -2366,7 +2367,9 @@
 <div class="modal fade" id="modal_build">
     <div class="modal-dialog">
         <div class="modal-content">
-        <input id="session_tipe_jembatan" type="hidden" value="">
+            <form name="session_tipe">
+                <input id="session_tipe_jembatan" name="session_tj" type="hidden" value="">
+            </form>
 
             <!-- Modal Header -->
             <div class="modal-header">
@@ -2640,6 +2643,7 @@ function pindah() {
         document.location.href = "cobadestroyjembatan.html";
     }, 1000);
 }
+
 </script>
 
 </html>

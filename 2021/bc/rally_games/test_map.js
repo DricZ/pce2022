@@ -1,5 +1,5 @@
 var username = document.getElementById('session_username').value;
-var current_island, clicked_island, transportasi, treasure_island;
+var current_island, clicked_island, transportasi, treasure_island, id_tipe, path_jembatan;
 
 // AMBIL LOKASI SAAT INI
 function get_lokasi() {
@@ -45,6 +45,8 @@ function get_jembatan() {
 }
 
 function build_jembatan(id_jembatan) {
+    path_jembatan = id_jembatan;
+
     $.ajax({
         url: "new_phps/build_jembatan.php",
         method: "POST",
@@ -73,12 +75,12 @@ function build_jembatan(id_jembatan) {
 
                     } else {
                         document.getElementById("upkayu").classList.add('hidden');
-
                     }
 
                     // Baja
                     if (item['tipe_jembatan'] == 2) {
                         document.getElementById("upbaja").classList.remove('hidden');
+
 
                     } else {
                         document.getElementById("upbaja").classList.add('hidden');
@@ -87,6 +89,7 @@ function build_jembatan(id_jembatan) {
                     // BETON
                     if (item['tipe_jembatan'] == 3) {
                         document.getElementById("upbeton").classList.remove('hidden');
+
 
                     } else {
                         document.getElementById("upbeton").classList.add('hidden');
@@ -99,8 +102,6 @@ function build_jembatan(id_jembatan) {
                     // KAYU
                     if (item['tipe_jembatan'] == 1) {
                         document.getElementById("destkayu").classList.remove('hidden');
-                        document.getElementById("session_tipe_jembatan").value = "1";
-
 
                     } else {
                         document.getElementById("destkayu").classList.add('hidden');
@@ -110,7 +111,6 @@ function build_jembatan(id_jembatan) {
                     // Baja
                     if (item['tipe_jembatan'] == 2) {
                         document.getElementById("destbaja").classList.remove('hidden');
-                        document.getElementById("session_tipe_jembatan").value = "3";
 
                     } else {
                         document.getElementById("destbaja").classList.add('hidden');
@@ -119,7 +119,6 @@ function build_jembatan(id_jembatan) {
                     // BETON
                     if (item['tipe_jembatan'] == 3) {
                         document.getElementById("destbeton").classList.remove('hidden');
-                        document.getElementById("session_tipe_jembatan").value = "3";
 
                     } else {
                         document.getElementById("destbeton").classList.add('hidden');
@@ -137,14 +136,19 @@ function build_jembatan(id_jembatan) {
     })
 }
 
+
+
 $('#build').click(function () {
     var id_tipe = document.getElementById("session_tipe_jembatan").value;
+    console.log(id_tipe);
+    console.log(path_jembatan);
 
     $.ajax({
         url: "new_phps/post_pengiriman.php",
         method: "POST",
         data: {
-            id_tipe: id_tipe
+            id_tipe: id_tipe,
+            id_jembatan: path_jembatan
         },
         success: function (res) {
             // document.location.reload(true);
@@ -442,6 +446,7 @@ function use(skill) {
 // MODAL BANGUN
 var arr_j = ['jmbkayu', 'jmbbaja', 'jmbbeton'];
 var arr_j2 = ['desckayu', 'descbaja', 'descbeton'];
+var ss = document.forms['session_tipe']['session_tj'];
 
 function on(id) {
     for (let i = 0; i < arr_j.length; i++) {
@@ -452,6 +457,20 @@ function on(id) {
             desckay(arr_j2[i]);
         }
     }
+
+    if(id == "jmbkayu"){
+        ss.setAttribute('value','1');
+    }
+    else if(id == "jmbbaja"){
+        ss.setAttribute('value','2');
+    }
+
+    else if(id == "jmbbeton"){
+        ss.setAttribute('value','3');
+
+    }
+
+    console.log(document.getElementById("session_tipe_jembatan").value);
 }
 
 function desckay(id) {

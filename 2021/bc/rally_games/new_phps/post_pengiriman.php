@@ -3,7 +3,7 @@
     header("Content-Type: application/json");
     
     if($_SERVER['REQUEST_METHOD'] == 'POST' 
-    && isset($_POST['id_tipe']) && isset($_SESSION['username'])){
+    && isset($_POST['id_tipe']) && isset($_SESSION['username']) && isset($_POST['id_jembatan'])){
         $result = 0;
 
         $sql_team = "SELECT * FROM team WHERE username = ?;";
@@ -81,7 +81,7 @@
             //mengurangi bahan
             $sql_kayu = "UPDATE team_resources SET count =
             (SELECT count-? FROM team_resources 
-            WHERE id_resource=1  AND id_team =?)
+            WHERE id_resource = 1  AND id_team =?)
             WHERE id_resource = 1 AND id_team =?;";
             $stmt_kayu = $pdo->prepare($sql_kayu);
             $stmt_kayu->execute([$kayu,$id_team,$id_team]);
@@ -116,14 +116,14 @@
             
             //kurang uang
             $sql_money = "UPDATE team SET money=
-            (SELECT money-? FROM team WHERE id=?) WHERE id = ?;";
+            (SELECT money-? FROM team WHERE username=?) WHERE username = ?;";
             $stmt_money = $pdo->prepare($sql_money);
-            $stmt_money->execute([$harga,$id_team,$id_team]);
+            $stmt_money->execute([$harga,$_SESSION['username'],$_SESSION['username']]);
 
             // UPDATE JEMBATAN
-            $updateidTeamsql = "UPDATE `new_jembatan` SET `id_team` = ?,`id_tipe` = ? WHERE 'id_team' = ?";
+            $updateidTeamsql = "UPDATE `new_jembatan` SET `id_team` = ?,`id_tipe` = ? WHERE 'nama' = ?";
             $updateidTeamstmt = $pdo->prepare($updateidTeamsql);
-            $updateidTeamstmt->execute([$id_team, $_POST['id_tipe'], $id_team]);
+            $updateidTeamstmt->execute([$row_team['id'], $_POST['id_tipe'], $_POST['id_jembatan']]);
            
         }
         else {
