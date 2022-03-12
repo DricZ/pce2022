@@ -4,7 +4,7 @@ require "connect.php";
 if (isset($_POST)) {
     $username = $_POST['team'];
     $money = $_POST['money'];
-    $keterangan = $_POST['keterangan'] + "(Menggunakan <b>X2 Scocial Credits</b>)";
+    $keterangan = $_POST['keterangan'] . "(Menggunakan <b>X2 Scocial Credits</b>)";
 
     $sql_cek =  "SELECT * FROM team WHERE username = ? AND x2_earning != 0";
     $stmt_cek = $pdo->prepare($sql_cek);
@@ -19,7 +19,7 @@ if (isset($_POST)) {
         $addMoneystmt = $pdo->prepare($addMoneysql);
         $addMoneystmt->execute([$money, $username]);
 
-        $matikanSkill = "UPDATE `team` SET `x2_earning` = `0` WHERE username = ?";
+        $matikanSkill = "UPDATE `team` SET `x2_earning` = 0 WHERE username = ?";
         $matikanStmt = $pdo->prepare($matikanSkill);
         $matikanStmt->execute([$username]);
     }
