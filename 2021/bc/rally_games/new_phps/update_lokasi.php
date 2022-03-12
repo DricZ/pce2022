@@ -11,29 +11,40 @@
         $row_team = $stmt_team->fetch();
         $id_team = $row_team['id'];
 
-        if ($_POST['transportasi'] == 'tiket') {
-            // KURANGI TIKET PESAWAT DI INVENTORI
-            $sql_inventory = "UPDATE team_resources tr
-            SET tr.count = (SELECT tr.count-1
-                        FROM team_resources tr
-                        WHERE tr.id_resource = 6
-                        AND tr.id_team = 1)
-            WHERE tr.id_resource = 6
-            AND tr.id_team = ?";
-            $stmt_inventory = $pdo->prepare($sql_inventory);
-            $stmt_inventory->execute([$id_team]);
+        // CEK TIKET
+        $sql_tiket = "SELECT * FROM team_resources 
+        WHERE id_team = ? AND id_resource = 6";
+        $stmt_tiket = $pdo->prepare($sql_tiket);
+        $stmt_tiket->execute([$id_team]);
+        $row_tiket = $stmt_tiket->fetch();
+
+        if ($row_tiket['count'] == 0) {
+            echo json_encode("kurang");
+        } else {
+            if ($_POST['transportasi'] == 'tiket') {
+                // KURANGI TIKET PESAWAT DI INVENTORI
+                $sql_inventory = "UPDATE team_resources tr
+                SET tr.count = (SELECT tr.count-1
+                            FROM team_resources tr
+                            WHERE tr.id_resource = 6
+                            AND tr.id_team = 1)
+                WHERE tr.id_resource = 6
+                AND tr.id_team = ?";
+                $stmt_inventory = $pdo->prepare($sql_inventory);
+                $stmt_inventory->execute([$id_team]);
+            }
+    
+            // PINDAH LOKASI TEAM SEKARANG
+            $sql_pindah = "UPDATE team t
+            SET t.id_lokasi = (SELECT p.id
+                                         FROM new_pulau p
+                                         WHERE p.path = ?)
+            WHERE t.username = ?";
+            $stmt_pindah = $pdo->prepare($sql_pindah);
+            $stmt_pindah->execute([$_POST['pulau_tujuan'], $_SESSION['username']]);    
+
+            echo json_encode($_POST['pulau_tujuan']);
         }
-
-        // PINDAH LOKASI TEAM SEKARANG
-        $sql_pindah = "UPDATE team t
-        SET t.id_lokasi = (SELECT p.id
-                                     FROM new_pulau p
-                                     WHERE p.path = ?)
-        WHERE t.username = ?";
-        $stmt_pindah = $pdo->prepare($sql_pindah);
-        $stmt_pindah->execute([$_POST['pulau_tujuan'], $_SESSION['username']]);
-
-        echo json_encode($_POST['pulau_tujuan']);
     } else {
         header("HTTP/1.1 400 Bad Request");
         $error = array(

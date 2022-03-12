@@ -5,7 +5,7 @@
     && isset($_SESSION['username']) 
     && isset($_POST['pulau_tujuan'])
     && isset($_POST['pulau_skrg'])) {
-        $result = "kosong";
+        $result = ["tiket"];
 
         // LIST JEMBATAN YG TERHUBUNG KE PULAU SAAT INI
         $sql = "SELECT p.path AS pulau1, p2.path AS pulau2, 

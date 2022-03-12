@@ -175,8 +175,12 @@ $('#ya').click(function () {
             transportasi: transportasi
         },
         success: function (data) {
-            console.log(data);
-            get_lokasi();
+            if (data == "kurang") {
+                $("#modal_tdk_bisa").modal();
+            } else {
+                console.log(data);
+                get_lokasi();
+            }
         }
     });
 
@@ -347,32 +351,35 @@ $('.pulau_ku').click(function () {
             document.getElementById('modal_saat_ini').style.display = "block";
             $('#modal_pulau').modal();
         } else {
-            $.ajax({
-                url: "new_phps/check_lokasi.php",
-                method: "POST",
-                data: {
-                    pulau_tujuan: clicked_island,
-                    pulau_skrg: current_island
-                },
-                success: function (data) {
-                    console.log(data);
-                    if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
-                        document.getElementById('modal_saat_jembatan').style.display = "block";
-                        document.getElementById('modal_saat_jembatan').innerHTML = "<p>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</p><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
-                        $('#modal_pulau').modal();
-                    } else if (data[0] == "tiket") { // JIKA PINDAH PULAU PAKAI TIKET
-                        document.getElementById('modal_saat_tiket').style.display = "block";
-                        $('#modal_pulau').modal();
-                    } else { // JIKA TDK PUNYA JEMBATAN & TIKET
-                        $('#modal_tdk_bisa').modal();
+            if (current_island == undefined) {
+                document.getElementById('modal_saat_tiket').style.display = "block";
+                $('#modal_pulau').modal();
+            } else {
+                $.ajax({
+                    url: "new_phps/check_lokasi.php",
+                    method: "POST",
+                    data: {
+                        pulau_tujuan: clicked_island,
+                        pulau_skrg: current_island
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
+                            document.getElementById('modal_saat_jembatan').style.display = "block";
+                            document.getElementById('modal_saat_jembatan').innerHTML = "<p>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</p><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
+                            $('#modal_pulau').modal();
+                        } else { // JIKA PINDAH PULAU PAKAI TIKET
+                            document.getElementById('modal_saat_tiket').style.display = "block";
+                            $('#modal_pulau').modal();
+                        }
+                        transportasi = data[0];
+                    },
+                    error: function ($xhr, errorThrown) {
+                        console.log(errorThrown);
+                        console.warn($xhr.responseText);
                     }
-                    transportasi = data[0];
-                },
-                error: function ($xhr, errorThrown) {
-                    console.log(errorThrown);
-                    console.warn($xhr.responseText);
-                }
-            });
+                });
+            }
         }
     }
 });
@@ -687,6 +694,7 @@ $(function () {
     get_jembatan();
     get_lokasi();
     load_map();
+    $("#modal_konfirmasi").modal();
 });
 
 // else if (skill == 'Divide Et Impera') {

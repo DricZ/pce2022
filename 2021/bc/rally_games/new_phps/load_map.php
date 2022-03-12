@@ -6,6 +6,13 @@
         $jembatan_hancur = array();
         $pulau_ban = array();
 
+        // ambil id team
+        $sql_team = "SELECT * FROM team WHERE username = ?;";
+        $stmt_team = $pdo->prepare($sql_team);
+        $stmt_team->execute([$_SESSION['username']]);
+        $row_team = $stmt_team->fetch();
+        $id_team = $row_team['id'];
+
         // HANCURKAN PULAU
         $sql = "SELECT * FROM new_pulau WHERE nama = 'hancur'";
         $stmt = $pdo->prepare($sql);
@@ -25,9 +32,10 @@
         }
 
         // BAN PULAU
-        $sql_tbl = "SELECT * FROM new_pulau WHERE kepemilikan != 0";
+        $sql_tbl = "SELECT * FROM new_pulau
+        WHERE kepemilikan != 0 AND kepemilikan != ?";
         $stmt_tbl = $pdo->prepare($sql_tbl);
-        $stmt_tbl->execute();
+        $stmt_tbl->execute([$id_team]);
         while($row = $stmt_tbl->fetch()) {
             array_push($pulau_ban, $row);
         }
