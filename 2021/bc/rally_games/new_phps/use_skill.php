@@ -2,7 +2,7 @@
     require_once 'connect.php';
     header("Content-Type: application/json");
     if ($_SERVER['REQUEST_METHOD'] == 'POST' 
-    and isset($_POST['skill']) and isset($_POST['pulau'])) {
+    and isset($_POST['skill'])) {
         $result='kosong';
 
         // AMBIL ID TEAM
@@ -12,7 +12,7 @@
         $row_team = $stmt_team->fetch();
         $id_team = $row_team['id'];
         
-        // AMBIL ID PULAU
+        //AMBIL ID PULAU
         if (isset($_POST['pulau'])) {
             $sql_pulau = "SELECT * FROM new_pulau WHERE path = ?";
             $stmt_pulau = $pdo->prepare($sql_pulau);
@@ -23,6 +23,7 @@
     
         if ($_POST['skill'] == 'Inventory Ganda') {
             // update 2 kali bahan
+            
             $sql_kayu = "UPDATE team_resources 
             SET count = (SELECT count*2 FROM team_resources 
                         WHERE id_resource = 1 AND id_team = ?)
@@ -53,10 +54,11 @@
 
             $sql_inventory = "UPDATE team_resources 
             SET count = (SELECT count-1 FROM team_resources 
-                        WHERE id_resource = 24 AND id_tea m =?)
-                        WHERE id_resource = 24 AND id_team  =;";
+                        WHERE id_resource = 24 AND id_team =?)
+                        WHERE id_resource = 24 AND id_team =?;";
             $stmt_inventory = $pdo->prepare($sql_inventory);
             $stmt_inventory->execute([$id_team, $id_team]);
+            
         } else if ($_POST['skill'] == 'Boom Mega Boom') {
             // id_team = 0 
             $sql_idteam = "UPDATE new_jembatan SET id_team = 0 WHERE id_pulau1 = ? OR id_pulau2 = ?";
