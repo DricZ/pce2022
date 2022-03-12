@@ -539,6 +539,28 @@ $('#upgrade').click(function () {
     });
 });
 
+$('#destroy').click(function () {
+    var id_tipe = document.getElementById("session_tipe_jembatan").value;
+    console.log(id_tipe);
+
+    $.ajax({
+        url: "new_phps/post_destroy.php",
+        method: "POST",
+        data: {
+            id_tipe: id_tipe,
+            id_jembatan: path_jembatan
+        },
+        success: function (res) {
+            // document.location.reload(true);
+            console.log(res);
+        },
+        error: function ($xhr, errorThrown) {
+            console.log(errorThrown);
+            console.warn($xhr.responseText);
+        }
+    });
+});
+
 $('.jembatan_ku').click(function () {
     build_jembatan(this.id);
 });
