@@ -1,6 +1,6 @@
 <?php
 require 'phps/connect.php';
-$_SESSION['page'] = 'give_money';
+$_SESSION['page'] = 'mantan';
 
 include 'header.php';
 ?>
@@ -56,7 +56,7 @@ if (isset($_GET['stat'])) {
 
     <h3 style="text-align: center; font-weight: bold; color: yellow;"><?= $_SESSION['namaAdmin'] ?></h3>
 
-    <p style="text-align: center; font-weight: bold;">SILAKAN LAKUKAN CEK ADD BRIDGE MONEY HISTORY SECARA BERKALA UNTUK MENGATASI KESALAHAN INPUT</p>
+    <p style="text-align: center; font-weight: bold;">SILAKAN LAKUKAN CEK ADD DIASASTER SECARA BERKALA UNTUK MENGATASI KESALAHAN INPUT</p>
 
     <div class="row mt-5">
         <div class="col-12 col-md-4">
@@ -79,7 +79,7 @@ if (isset($_GET['stat'])) {
         </div>
         <script>
             $(document).ready(function(){
-                document.getElementById("bencana").innerHTML = '<center><a href="mantan.php" id="popover_bencana" data-trigger="hover"class="btn btn-danger container-fluid" style="width: 250px; font-weight: bold;"data-content="Bencana berikutnya: " data-placement="bottom">Natural Disaster</a></center>';
+                document.getElementById("bencana").innerHTML = '<center><a href="#" id="popover_bencana" data-trigger="hover"class="btn btn-danger container-fluid" style="width: 250px; font-weight: bold;"data-content="Bencana berikutnya: " data-placement="bottom">Natural Disaster</a></center>';
                 document.getElementById("treasure").innerHTML = '<center><a href="#" id="popover_treasure" data-trigger="hover"class="btn btn-warning container-fluid" style="width: 250px; font-weight: bold;"data-content="Treasure: " data-placement="bottom">Spawn Treasure</a></center>';
                 $("#popover_bencana").popover({ trigger: "hover" });  
                 $("#popover_treasure").popover({ trigger: "hover" }); 
@@ -89,26 +89,32 @@ if (isset($_GET['stat'])) {
     </div>
 
     <div class="container pt-3">
-        <form action="phps/add_money.php" onsubmit="pleaseWait()" method="POST">
+        <form action="phps/add_mantan.php" onsubmit="pleaseWait()" method="POST">
             <div class="form-group">
-                <center><label for="team" style="font-weight: bold;" class="mt-3">Nama Team</label></center>
+                <center><label for="team" style="font-weight: bold;" class="mt-3">Bencana</label></center>
                 <select class="form-control" id="team" name="team" style="height:40px; font-size: 12pt;" required>
-                    <option value="">Pilih nama team...</option>
-                    <?php
-                    $sqlTeam = "SELECT * FROM team";
-                    $stmtTeam = $pdo->prepare($sqlTeam);
-                    $stmtTeam->execute([]);
-                    while ($rowTeam = $stmtTeam->fetch()) { ?>
-                        <option value="<?php echo $rowTeam['username']; ?>"><?php echo $rowTeam['team_name']; ?></option>
-                    <?php  } ?>
+                    <option value="">Pilih bencana...</option>
+                    <option value="">Letusan Gunung Berapi</option>
+                    <option value="">Tanah Longsor</option>
+                    <option value="">Tsunami</option>
+                    <option value="">Gempa Bumi</option>
+                    <option value="">Angin Puting Beliung</option>
+
                 </select>
-                <center><label for="money" style="font-weight: bold;" class="mt-3">Jumlah Bridge Money</label></center>
-                <input type="number" style="text-align: center;" id="money" name="money" placeholder="Ex: 10000" class="form-control" min="0" required>
-                <center><label for="keterangan" style="font-weight: bold;" class="mt-3">Keterangan</label></center>
-                <input type="text" style="text-align: center;" id="keterangan" name="keterangan" placeholder="Ex: Pemenang Mini Games ... Juara 1/2/3 dst." class="form-control" required>
+                
+                <center><label for="money" style="font-weight: bold;" class="mt-3">Pilih Area</label></center>
+                <select class="form-control" id="team" name="team" style="height:40px; font-size: 12pt;" required>
+                    <option value="">Pilih area...</option>
+                    <option value="">A</option>
+                    <option value="">B</option>
+                    <option value="">C</option>
+                    <option value="">D</option>
+                    <option value="">E</option>
+                </select>
+
             </div>
             <p style="text-align: center; font-weight: bold; color: red;">HARAP PASTIKAN JUMLAH BRIDGE MONEY YANG DILAKUKAN INPUT <u>SUDAH SESUAI</u>!!!<br>APABILA TERJADI KESALAHAN INPUT <u>SEGERA</u> HUBUNGI DIVISI IT</p>
-            <center><input type="submit" id="submit" name="submit" value="Add Bridge Money" class="btn btn-warning container-fluid" style="width: 200px; font-weight: bold;"></center>
+            <center><input type="submit" id="submit" name="submit" value="Submit" class="btn btn-warning container-fluid" style="width: 200px; font-weight: bold;"></center>
             <div id="uploading" class="row justify-content-center mb-5" hidden>
                 <div class="spinner-border text-primary" role="status">
                     <span class="sr-only" style="color: white;">Loading...</span>
