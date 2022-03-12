@@ -3,7 +3,8 @@
     header("Content-Type: application/json");
     
     if($_SERVER['REQUEST_METHOD'] == 'POST' 
-    && isset($_SESSION['username'])){
+    && isset($_SESSION['username']) && isset($_POST['id_tipe']) 
+    && isset($_POST['id_jembatan'])){
         $result = 0;
 
         // AMBIL ID TEAM
