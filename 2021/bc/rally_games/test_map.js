@@ -305,6 +305,8 @@ function showSkill() {
 function _cancelSkill() {
     document.getElementById("nav-cancel").style.display = "none";
     document.getElementById("msg-choose").style.display = "none";
+    document.getElementById("choose-small").style.display = "none";
+    document.getElementById("choose-all").style.display = "none";
     document.getElementById("nav-zoom-out").style.display = "block";
     document.getElementById("nav-back").style.display = "block";
     document.getElementById("nav-skill").style.display = "block";
@@ -425,17 +427,22 @@ function use(skill, target) {
                 }
             });
 
+            document.getElementById("msg-choose").style.display = "block";
+
             // NAVIGASI GANTI CANCEL BUTTON
             if (skill == "Boom Mega Boom") {
-                document.body.style.cursor = "url(assets/image/cursor-bom.png) 25 25, auto";
+                document.body.style.cursor = "url(assets/image/cursor-boom.png) 25 25, auto";
+                document.getElementById("choose-small").style.display = "block";
             } else if (skill == "Meteor") {
                 document.body.style.cursor = "url(assets/image/cursor-meteor.png) 25 25, auto";
+                document.getElementById("choose-small").style.display = "block";
             } else if (skill == "TBL TBL TBL") {
-
+                document.body.style.cursor = "url(assets/image/cursor-tbl.png) 25 25, auto";
+                document.getElementById("choose-all").style.display = "block";
             }
 
             document.getElementById("nav-cancel").style.display = "block";
-            document.getElementById("msg-choose").style.display = "block";
+
             document.getElementById("nav-zoom-out").style.display = "none";
             document.getElementById("nav-back").style.display = "none";
             document.getElementById("nav-skill").style.display = "none";
@@ -452,7 +459,7 @@ function use(skill, target) {
                 },
                 success: function (result) {
                     console.log(result);
-                    // location.reload();
+                    location.reload();
                 },
                 error: function ($xhr, errorThrown) {
                     console.log(errorThrown);

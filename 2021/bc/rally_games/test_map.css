@@ -66,6 +66,10 @@ body {
     text-align: center;
     display: none;
 }
+
+#choose-all, #choose-small {
+    display: none;
+}
 /*  */
 
 /* SKILL INVENTORY */

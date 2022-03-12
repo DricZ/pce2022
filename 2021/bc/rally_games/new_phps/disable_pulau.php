@@ -12,13 +12,6 @@
             while($row = $stmt_pulau->fetch()) {
                 array_push($result, $row);
             }
-        } else if ($_POST['skill'] == 'TBL TBL TBL') {
-            $sql_pulau = "SELECT path AS _path FROM new_pulau";
-            $stmt_pulau = $pdo->prepare($sql_pulau);
-            $stmt_pulau->execute();
-            while($row = $stmt_pulau->fetch()) {
-                array_push($result, $row);
-            }
         }
         
         $sql_jembatan = "SELECT nama AS _path FROM new_jembatan";
