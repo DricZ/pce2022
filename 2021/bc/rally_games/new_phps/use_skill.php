@@ -5,12 +5,14 @@
     and isset($_POST['skill']) and isset($_POST['pulau'])) {
         $result='kosong';
 
+        // AMBIL ID TEAM
         $sql_team = "SELECT * FROM team WHERE username = ?";
         $stmt_team = $pdo->prepare($sql_team);
         $stmt_team->execute([$_SESSION['username']]);
         $row_team = $stmt_team->fetch();
         $id_team = $row_team['id'];
         
+        // AMBIL ID PULAU
         if (isset($_POST['pulau'])) {
             $sql_pulau = "SELECT * FROM new_pulau WHERE path = ?";
             $stmt_pulau = $pdo->prepare($sql_pulau);
@@ -21,40 +23,40 @@
     
         if ($_POST['skill'] == 'Inventory Ganda') {
             // update 2 kali bahan
-            $sql_kayu = "UPDATE team_resources SET count =
-            (SELECT count*2 FROM team_resources 
-            WHERE id_resource=1 AND id_team=?)
-            WHERE id_resource =1 AND id_team =?;";
+            $sql_kayu = "UPDATE team_resources 
+            SET count = (SELECT count*2 FROM team_resources 
+                        WHERE id_resource = 1 AND id_team = ?)
+                        WHERE id_resource = 1 AND id_team = ?";
             $stmt_kayu = $pdo->prepare($sql_kayu);
-            $stmt_kayu->execute([$id_team,$id_team]);
+            $stmt_kayu->execute([$id_team, $id_team]);
 
-            $sql_baja = "UPDATE team_resources SET count =
-            (SELECT count*2 FROM team_resources 
-            WHERE id_resource=2 AND id_team=?)
-            WHERE id_resource =2 AND id_team =?;";
+            $sql_baja = "UPDATE team_resources 
+            SET count = (SELECT count*2 FROM team_resources 
+                        WHERE id_resource = 2 AND id_team = ?)
+                        WHERE id_resource = 2 AND id_team = ?";
             $stmt_baja = $pdo->prepare($sql_baja);
-            $stmt_baja->execute([$id_team,$id_team]);
+            $stmt_baja->execute([$id_team, $id_team]);
 
-            $sql_semen = "UPDATE team_resources SET count =
-            (SELECT count*2 FROM team_resources 
-            WHERE id_resource=3 AND id_team=?)
-            WHERE id_resource =3 AND id_team =?;";
+            $sql_semen = "UPDATE team_resources 
+            SET count = (SELECT count*2 FROM team_resources 
+                        WHERE id_resource = 3 AND id_team = ?)
+                        WHERE id_resource = 3 AND id_team = ?";
             $stmt_semen = $pdo->prepare($sql_semen);
-            $stmt_semen->execute([$id_team,$id_team]);
+            $stmt_semen->execute([$id_team, $id_team]);
 
-            $sql_pasir = "UPDATE team_resources SET count =
-            (SELECT count*2 FROM team_resources 
-            WHERE id_resource=4 AND id_team=?)
-            WHERE id_resource =4 AND id_team =?;";
+            $sql_pasir = "UPDATE team_resources 
+            SET count = (SELECT count*2 FROM team_resources 
+                        WHERE id_resource = 4 AND id_team = ?)
+                        WHERE id_resource = 4 AND id_team = ?";
             $stmt_pasir = $pdo->prepare($sql_pasir);
-            $stmt_pasir->execute([$id_team,$id_team]);
+            $stmt_pasir->execute([$id_team, $id_team]);
 
-            $sql_inventory = "UPDATE team_resources SET count =
-            (SELECT count-1 FROM team_resources 
-            WHERE id_resource=24 AND id_team=?)
-            WHERE id_resource =24 AND id_team =?;";
+            $sql_inventory = "UPDATE team_resources 
+            SET count = (SELECT count-1 FROM team_resources 
+                        WHERE id_resource = 24 AND id_tea m =?)
+                        WHERE id_resource = 24 AND id_team  =;";
             $stmt_inventory = $pdo->prepare($sql_inventory);
-            $stmt_inventory->execute([$id_team,$id_team]);
+            $stmt_inventory->execute([$id_team, $id_team]);
         } else if ($_POST['skill'] == 'Boom Mega Boom') {
             // id_team = 0 
             $sql_idteam = "UPDATE new_jembatan SET id_team = 0 WHERE id_pulau1 = ? OR id_pulau2 = ?";

@@ -267,7 +267,7 @@ function show() {
                         </div>
                         <div style="text-align: center; font-size: large;">
                             <p class="resource-name">` + d.nama + `</p>
-                            <button type="button" class="btn btn-success" onclick="use('`+ d.nama + `')">USE</button>
+                            <button type="button" class="btn btn-success" onclick="use('`+ d.nama + `','none')">USE</button>
                         </div>
                     </div>
                 `;
@@ -376,7 +376,7 @@ $('.pulau_ku').click(function () {
 });
 
 function use(skill, target) {
-    if (target != undefined) {
+    if (target != "none") {
         $.ajax({
             url: "new_phps/use_skill.php",
             type: "POST",
@@ -409,11 +409,15 @@ function use(skill, target) {
             // DISABLE PULAU & JEMBATAN SELAIN PULAU KECIL
             $.ajax({
                 url: "new_phps/disable_pulau.php",
-                type: "GET",
+                method: "POST",
+                data: {
+                    skill: currentSkill
+                },
                 success: function (data) {
                     data.forEach(function (item) {
                         document.getElementById(item['_path']).style.pointerEvents = "none";
                     });
+                    console.log(data);
                 },
                 error: function ($xhr, errorThrown) {
                     console.log(errorThrown);
@@ -429,6 +433,7 @@ function use(skill, target) {
             } else if (skill == "TBL TBL TBL") {
 
             }
+
             document.getElementById("nav-cancel").style.display = "block";
             document.getElementById("msg-choose").style.display = "block";
             document.getElementById("nav-zoom-out").style.display = "none";
@@ -436,24 +441,27 @@ function use(skill, target) {
             document.getElementById("nav-skill").style.display = "none";
 
             state = "choosing";
+            console.log("targeted");
         } else if (skill == "Inventory Ganda" || skill == "X2 Social Credits") {
+            console.log("halo");
             $.ajax({
                 url: "new_phps/use_skill.php",
-                type: "POST",
-                dataType: "json",
+                method: "POST",
                 data: {
                     skill: skill
                 },
                 success: function (result) {
                     console.log(result);
-                    location.reload();
+                    // location.reload();
                 },
                 error: function ($xhr, errorThrown) {
                     console.log(errorThrown);
                     console.warn($xhr.responseText);
                 }
             });
+            console.log("non-targeted");
         }
+        console.log("halo??");
     }
 }
 

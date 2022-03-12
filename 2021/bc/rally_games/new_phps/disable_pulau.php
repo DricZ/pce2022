@@ -3,17 +3,24 @@
     header("Content-Type: application/json");
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['skill'])) {
-        if ($_POST['skill'] == 'Boom Mega Boom' || $_POST['skill'] == 'Boom Mega Boom') {
-            
-        }
-        $sql_pulau = "SELECT path AS _path FROM new_pulau WHERE tipe <> 'kecil'";
-        $stmt_pulau = $pdo->prepare($sql_pulau);
-        $stmt_pulau->execute();
         $result = array();
-        while($row = $stmt_pulau->fetch()) {
-            array_push($result, $row);
-        }
 
+        if ($_POST['skill'] == 'Boom Mega Boom' || $_POST['skill'] == 'Meteor') {
+            $sql_pulau = "SELECT path AS _path FROM new_pulau WHERE tipe != 'kecil'";
+            $stmt_pulau = $pdo->prepare($sql_pulau);
+            $stmt_pulau->execute();    
+            while($row = $stmt_pulau->fetch()) {
+                array_push($result, $row);
+            }
+        } else if ($_POST['skill'] == 'TBL TBL TBL') {
+            $sql_pulau = "SELECT path AS _path FROM new_pulau";
+            $stmt_pulau = $pdo->prepare($sql_pulau);
+            $stmt_pulau->execute();
+            while($row = $stmt_pulau->fetch()) {
+                array_push($result, $row);
+            }
+        }
+        
         $sql_jembatan = "SELECT nama AS _path FROM new_jembatan";
         $stmt_jembatan = $pdo->prepare($sql_jembatan);
         $stmt_jembatan->execute();

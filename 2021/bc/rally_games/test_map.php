@@ -26,152 +26,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="test_map.css">
+
     <style>
-        /* INVENTORY */
-        #containerAll {
-            max-height: 100vh;
-            height: 90vh;
-            width: 100%;
-            top: 5000px;
-        }
-
-        .content {
-            margin: 0;
-        }
-
-        .resource-name {
-            font-size: larger;
-            margin: 0;
-        }
-        
-        .icons {
-            border-radius: 25px;
-            width: 50%;
-        }
-
-        .mySkill:hover{
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 5px rgba(0, 0, 255, 1);
-        }
-        /*  */
-
-        /* MODAL */
-        .custom_row {
-            display: flex;
-            align-items: center;
-        }
-
-        p {
-            font-size: large;
-        }
-
-        #modal_saat_ini,
-        #modal_saat_jembatan,
-        #modal_saat_tiket {
-            display: none;
-        }
-        /*  */
-
-        @keyframes glowing_dark {
-            0% {
-                filter: drop-shadow(0 0 5px black);
-            }
-
-            50% {
-                filter: drop-shadow(0 0 20px black);
-            }
-
-            100% {
-                filter: drop-shadow(0 0 5px black);
-            }
-        }
-
-        @keyframes glowing_yellow {
-            0% {
-                filter: drop-shadow(0 0 5px yellow);
-            }
-
-            50% {
-                filter: drop-shadow(0 0 20px yellow);
-            }
-
-            100% {
-                filter: drop-shadow(0 0 5px yellow);
-            }
-        }
-
-        @keyframes zoomout {
-            0% {
-                transform: scale(3.0);
-            }
-
-            100% {
-                transform: scale(1.0);
-            }
-        }
-
-        @keyframes shake {
-            50% {
-                transform: translate(1px, 1px) rotate(0deg);
-            }
-
-            55% {
-                transform: translate(-1px, -2px) rotate(-1deg);
-            }
-
-            60% {
-                transform: translate(-3px, 0px) rotate(1deg);
-            }
-
-            65% {
-                transform: translate(3px, 2px) rotate(0deg);
-            }
-
-            70% {
-                transform: translate(1px, -1px) rotate(1deg);
-            }
-
-            75% {
-                transform: translate(-1px, 2px) rotate(-1deg);
-            }
-
-            80% {
-                transform: translate(-3px, 1px) rotate(0deg);
-            }
-
-            85% {
-                transform: translate(3px, 1px) rotate(-1deg);
-            }
-
-            90% {
-                transform: translate(-1px, -1px) rotate(1deg);
-            }
-
-            95% {
-                transform: translate(1px, 2px) rotate(0deg);
-            }
-
-            100% {
-                transform: translate(1px, -2px) rotate(-1deg);
-            }
-        }
-
-        body {
-            animation: 1s ease-out 0s 1 zoomout;
-            background-image: url('assets/laut.png');
-            background-size: 110vw 110vh;
-            overflow: hidden;
-        }
-
-        #svg2 {
-            box-sizing: content-box;
-            width: 80vw;
-            max-height: 100vh;
-            transition: all 0.75s;
-            z-index: 1;
-            position: relative;
-        }
-
         .awan {
             z-index: 2;
             position: absolute;
@@ -436,10 +294,10 @@
         }
 
         .a44{
-                top: 0vh;
-                left: 40vh;
-                width: 45vh;
-            }
+            top: 0vh;
+            left: 40vh;
+            width: 45vh;
+        }
 
         .a45{
             top: 0vh;
@@ -537,61 +395,14 @@
             width: 50vh;
         }
 
-        .jembatan_ku {
-            opacity: 0.5;
-        }
-
-        .pulau_ku:hover {
-            transition: all 0.3s ease-in-out;
-            filter: drop-shadow(0 0 15px white);
-        }
-
-        .jembatan_ku:hover {
-            transition: all 0.3s ease-in-out;
-            filter: drop-shadow(0 0 3px white);
-        }
-
-        .demo_btn {
-            position: fixed;
-            left: 92.5vw;
-            z-index: 2;
-        }
-
         .default:hover {
             background: #e7e7e7;
             padding: 10px 32px;
             text-align: center;
         }
 
-        .current {
-            animation: glowing_dark 1300ms infinite;
-        }
-
-        .icon-navBar {
-            margin-top: 15px;
-            width: 75px;
-            cursor: pointer;
-            transition: all 0.25s ease-in-out;
-            text-align: center;
-            font-size: small;
-        }
-
-        .icon-navBar:hover {
-            transition: all 0.25s ease-in-out;
-            filter: drop-shadow(0 0 10px white);
-            width: 105px;
-            font-size: large;
-        }
-
         .g_jembatan {
             width: 100%;
-        }
-
-        #msg-choose{
-            position: absolute;
-            width: 100vw;
-            text-align: center;
-            display: none;
         }
     </style>
 </head>
