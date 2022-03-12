@@ -29,7 +29,7 @@ $_SESSION['page'] = 'info';
         <?php
         $timestamp = date("H:i");
 
-        if ($timestamp < '13:35') {
+        if ($timestamp < '18:00') {
         ?>
         <!-- Tampilan jika tidak ada info (kosong) -->
         <div id="no-content-msg-info">
@@ -43,7 +43,7 @@ $_SESSION['page'] = 'info';
         ?>
 
         <?php
-        if ($timestamp >= '15:55') {
+        if ($timestamp >= '23:00') {
         ?>
         <!-- Mulai Tampilan untuk satu info -->
         <div class="card news-card latest news-8" id="info-card">
@@ -54,12 +54,11 @@ $_SESSION['page'] = 'info';
                 </div>
                 <img src="assets/image/vaksin.jpg" width="100%" class="mb-3">
                 <p class="card-text">
-                    Terjadi tsunami di kota A, &nbsp; mengakibatkan <b>jembatan turun 3 level (beton proteksi ->
-                        baja)<b>
+                    Terjadi Angin puting beliung di area A, mengakibatkan <b> jembatan turun 2 level (beton proteksi -> baja proteksi) <b>
                 </p>
                 <p class="card-text">
                     <small class="text-muted">
-                        <?= intval((strtotime($timestamp) - strtotime('15:55')) / 60) ?> mins ago
+                        <?= intval((strtotime($timestamp) - strtotime('23:00')) / 60) ?> mins ago
                     </small>
                 </p>
             </div>
@@ -70,7 +69,7 @@ $_SESSION['page'] = 'info';
         ?>
 
         <?php
-        if ($timestamp >= '15:35') {
+        if ($timestamp >= '22:15') {
         ?>
         <!-- Mulai Tampilan untuk satu info -->
         <div class="card news-card news-7" id="info-card">
@@ -85,13 +84,11 @@ $_SESSION['page'] = 'info';
                 </div>
                 <img src="assets/image/factory.jpg" width="100%" class="mb-3">
                 <p class="card-text">
-                    Terjadi angin puting beliung di kota A, mengakibatkan <b>jembatan turun 2 level (beton proteksi ->
-                        baja
-                        proteksi)<b>
+                    Terjadi gempa bumi di area E, mengakibatkan <b>jembatan turun 1 level (beton proteksi -> beton)<b>
                 </p>
                 <p class="card-text">
                     <small class="text-muted">
-                        <?= intval((strtotime($timestamp) - strtotime('15:35')) / 60) ?> mins ago
+                        <?= intval((strtotime($timestamp) - strtotime('21:15')) / 60) ?> mins ago
                     </small>
                 </p>
             </div>
@@ -102,7 +99,7 @@ $_SESSION['page'] = 'info';
         ?>
 
         <?php
-        if ($timestamp >= '15:15') {
+        if ($timestamp >= '21:30') {
         ?>
         <!-- Mulai Tampilan untuk satu info -->
         <div class="card news-card news-6" id="info-card">
@@ -117,13 +114,11 @@ $_SESSION['page'] = 'info';
                 </div>
                 <img src="assets/image/longsor.jpg" width="100%" class="mb-3">
                 <p class="card-text">
-                    Terjadi letusan gunung berapi di kota A, mengakibatkan <b>jembatan turun 2 level (beton proteksi ->
-                        baja
-                        proteksi)<b>
+                    Terjadi Tsunami di area B, mengakibatkan <b>jembatan turun 3 level (beton proteksi -> baja)<b>
                 </p>
                 <p class="card-text">
                     <small class="text-muted">
-                        <?= intval((strtotime($timestamp) - strtotime('15:15')) / 60) ?> mins ago
+                        <?= intval((strtotime($timestamp) - strtotime('21:30')) / 60) ?> mins ago
                     </small>
                 </p>
             </div>
@@ -134,7 +129,7 @@ $_SESSION['page'] = 'info';
         ?>
 
         <?php
-        if ($timestamp >= '14:55') {
+        if ($timestamp >= '20:00') {
         ?>
         <!-- Mulai Tampilan untuk satu info -->
         <div class="card news-card news-5" id="info-card">
@@ -149,11 +144,11 @@ $_SESSION['page'] = 'info';
                 </div>
                 <img src="assets/image/demo.jpg" width="100%" class="mb-3">
                 <p class="card-text">
-                    Terjadi gempa bumi di kota A, mengakibatkan <b>jembatan turun 1 level (beton proteksi -> beton)<b>
+                    Terjadi Tanah longsor di area C, mengakibatkan <b>jembatan akan turun 1 level (beton proteksi ->beton) <b>
                 </p>
                 <p class="card-text">
                     <small class="text-muted">
-                        <?= intval((strtotime($timestamp) - strtotime('14:55')) / 60) ?> mins ago
+                        <?= intval((strtotime($timestamp) - strtotime('20:00')) / 60) ?> mins ago
                     </small>
                 </p>
             </div>
@@ -164,7 +159,7 @@ $_SESSION['page'] = 'info';
         ?>
 
         <?php
-        if ($timestamp >= '14:35') {
+        if ($timestamp >= '19:30') {
         ?>
         <!-- Mulai Tampilan untuk satu info -->
         <div class="card news-card news-4" id="info-card">
@@ -179,12 +174,11 @@ $_SESSION['page'] = 'info';
                 </div>
                 <img src="assets/image/eruption.jpg" width="100%" class="mb-3">
                 <p class="card-text">
-                    Terjadi tanah longsor di kota A, mengakibatkan <b>jembatan turun 1 level (beton proteksi ->
-                        beton)<b>
+                    Terjadi Letusan gunung berapi di area D, &nbsp; mengakibatkan <b>jembatan turun 2 level (beton proteksi->baja proteksi)<b>
                 </p>
                 <p class="card-text">
                     <small class="text-muted">
-                        <?= intval((strtotime($timestamp) - strtotime('14:35')) / 60) ?> mins ago
+                        <?= intval((strtotime($timestamp) - strtotime('19:30')) / 60) ?> mins ago
                     </small>
                 </p>
             </div>
@@ -386,53 +380,53 @@ $_SESSION['page'] = 'info';
 <?php
     $firstNews = false;
     $secondNews = false;
-    $thirdNews = false;
+    $thirdNews = true;
     $fourthNews = false;
     $fifthNews = false;
     $sixthNews = false;
     $seventhNews = false;
     $eightNews = false;
 
-    if ($timestamp >= '13:35') {
-        $firstNews = true;
-    }
-    if ($timestamp >= '13:55') {
-        if ($firstNews) {
-            $firstNews = false;
-            $secondNews = true;
-        }
-    }
-    if ($timestamp >= '14:15') {
-        if ($secondNews) {
-            $secondNews = false;
-            $thirdNews = true;
-        }
-    }
-    if ($timestamp >= '14:35') {
+    // if ($timestamp >= '13:35') {
+    //     $firstNews = true;
+    // }
+    // if ($timestamp >= '13:55') {
+    //     if ($firstNews) {
+    //         $firstNews = false;
+    //         $secondNews = true;
+    //     }
+    // }
+    // if ($timestamp >= '14:15') {
+    //     if ($secondNews) {
+    //         $secondNews = false;
+    //         $thirdNews = true;
+    //     }
+    // }
+    if ($timestamp >= '19:30') {
         if ($thirdNews) {
             $thirdNews = false;
             $fourthNews = true;
         }
     }
-    if ($timestamp >= '14:55') {
+    if ($timestamp >= '20:00') {
         if ($fourthNews) {
             $fourthNews = false;
             $fifthNews = true;
         }
     }
-    if ($timestamp >= '15:15') {
+    if ($timestamp >= '21:30') {
         if ($fifthNews) {
             $fifthNews = false;
             $sixthNews = true;
         }
     }
-    if ($timestamp >= '15:35') {
+    if ($timestamp >= '22:15') {
         if ($sixthNews) {
             $sixthNews = false;
             $seventhNews = true;
         }
     }
-    if ($timestamp >= '15:55') {
+    if ($timestamp >= '23:00') {
         if ($seventhNews) {
             $seventhNews = false;
             $eightNews = true;
