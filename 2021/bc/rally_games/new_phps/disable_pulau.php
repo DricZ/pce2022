@@ -2,7 +2,10 @@
     require_once 'connect.php';
     header("Content-Type: application/json");
 
-    if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['skill'])) {
+        if ($_POST['skill'] == 'Boom Mega Boom' || $_POST['skill'] == 'Boom Mega Boom') {
+            
+        }
         $sql_pulau = "SELECT path AS _path FROM new_pulau WHERE tipe <> 'kecil'";
         $stmt_pulau = $pdo->prepare($sql_pulau);
         $stmt_pulau->execute();

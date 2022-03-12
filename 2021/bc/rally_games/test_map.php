@@ -586,6 +586,13 @@
         .g_jembatan {
             width: 100%;
         }
+
+        #msg-choose{
+            position: absolute;
+            width: 100vw;
+            text-align: center;
+            display: none;
+        }
     </style>
 </head>
 
@@ -595,6 +602,10 @@
     <div class="row wallet" hidden>
         <img src="assets/image/bridge coin.png" width="35px" class="mx-2 pt-1">
         <div class="uang pr-4"><?= number_format($rowTeam['money'],0,',','.'); ?></div>
+    </div>
+
+    <div id="msg-choose">
+        <h1>PILIH <span style="color: #acff4d"><b>PULAU KECIL</b></span> YANG AKAN DITARGET!</h1>
     </div>
 
     <!-- NAVIGATIONS -->

@@ -2,6 +2,7 @@ var username = document.getElementById('session_username').value;
 var current_island, clicked_island, transportasi;
 var treasure_island, id_tipe, path_jembatan;
 var state, currentSkill;
+var banned_island = [];
 
 // AMBIL LOKASI SAAT INI
 function get_lokasi() {
@@ -22,6 +23,33 @@ function get_lokasi() {
             });
         }
     });
+}
+
+function load_map() {
+    $.ajax({
+        url: "new_phps/load_map.php",
+        method: "GET",
+        success: function (data) {
+            // HILANGKAN PULAU
+            for (let i = 0; i < data[0].length; i++) {
+                document.getElementById(data[0][i]["path"]).style.display = "none";
+            }
+
+            // HILANGKAN JEMBATAN
+            for (let i = 0; i < data[1].length; i++) {
+                document.getElementById(data[1][i]["nama"]).style.display = "none";
+            }
+
+            // BAN PULAU
+            for (let i = 0; i < data[2].length; i++) {
+                banned_island[i] = data[2][i]["path"];
+            }
+        },
+        error: function ($xhr, errorThrown) {
+            console.log(errorThrown);
+            console.warn($xhr.responseText);
+        }
+    })
 }
 
 // AMBIL JEMBATAN YG SUDAH DIBANGUN
@@ -276,9 +304,11 @@ function showSkill() {
 }
 function _cancelSkill() {
     document.getElementById("nav-cancel").style.display = "none";
+    document.getElementById("msg-choose").style.display = "none";
     document.getElementById("nav-zoom-out").style.display = "block";
     document.getElementById("nav-back").style.display = "block";
     document.getElementById("nav-skill").style.display = "block";
+    document.body.style.cursor = "auto";
 
     var pulau = document.getElementsByClassName("pulau_ku");
     for (let i = 0; i < pulau.length; i++) {
@@ -298,6 +328,17 @@ $('.pulau_ku').click(function () {
         state = "none";
     } else {
         get_team(this.id);
+
+        // JIKA PULAU DI-BAN
+        if (banned_island.length != 0) {
+            for (let i = 0; i < banned_island.length; i++) {
+                if (banned_island[i] == this.id) {
+                    $('#modal_tdk_bisa').modal();
+                    return;
+                }
+            }
+        }
+
         // JIKA LOKASI SAAT INI
         clicked_island = this.id;
         if (this.id == current_island) {
@@ -354,7 +395,7 @@ function use(skill, target) {
             }
         });
     } else { // JIKA BELUM ADA TARGET, PILIH TARGET
-        if (skill == "Boom Mega Boom" || skill == "Meteor") {
+        if (skill == "Boom Mega Boom" || skill == "Meteor" || skill == "TBL TBL TBL") {
             currentSkill = skill;
 
             $('#modal_skill').modal('hide');
@@ -364,7 +405,6 @@ function use(skill, target) {
             for (let i = 0; i < pulau.length; i++) {
                 pulau[i].style.pointerEvents = "auto";
             }
-            // cursor: url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), auto;
 
             // DISABLE PULAU & JEMBATAN SELAIN PULAU KECIL
             $.ajax({
@@ -382,12 +422,21 @@ function use(skill, target) {
             });
 
             // NAVIGASI GANTI CANCEL BUTTON
+            if (skill == "Boom Mega Boom") {
+                document.body.style.cursor = "url(assets/image/cursor-bom.png) 25 25, auto";
+            } else if (skill == "Meteor") {
+                document.body.style.cursor = "url(assets/image/cursor-meteor.png) 25 25, auto";
+            } else if (skill == "TBL TBL TBL") {
+
+            }
             document.getElementById("nav-cancel").style.display = "block";
+            document.getElementById("msg-choose").style.display = "block";
             document.getElementById("nav-zoom-out").style.display = "none";
             document.getElementById("nav-back").style.display = "none";
             document.getElementById("nav-skill").style.display = "none";
+
             state = "choosing";
-        } else if (skill == "Inventory Ganda") {
+        } else if (skill == "Inventory Ganda" || skill == "X2 Social Credits") {
             $.ajax({
                 url: "new_phps/use_skill.php",
                 type: "POST",
@@ -600,6 +649,7 @@ function ambil_jembatan() {
 $(function () {
     get_jembatan();
     get_lokasi();
+    load_map();
 });
 
 // else if (skill == 'Divide Et Impera') {
