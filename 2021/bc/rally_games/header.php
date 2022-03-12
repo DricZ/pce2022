@@ -156,7 +156,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
     <nav class="navbar fixed-bottom justify-content-center" role="navigation">
         <ul>
             <a class="nav-link active" id="menu" href="menu.php">
-                <li><img class="icon-navBar" src="assets/Design Web/rumah-01.png" alt="" style="margin-bottom: 5px; width: 64px;">
+                <li><img class="icon-navBar" src="assets/Design Web/rumah-01.png" alt="" style="margin-bottom: 5px;">
             </li>
             <li>HOME</li>
             </a>

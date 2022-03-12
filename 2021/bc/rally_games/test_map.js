@@ -1,5 +1,7 @@
 var username = document.getElementById('session_username').value;
-var current_island, clicked_island, transportasi, treasure_island, id_tipe, path_jembatan;
+var current_island, clicked_island, transportasi;
+var treasure_island, id_tipe, path_jembatan;
+var state, currentSkill;
 
 // AMBIL LOKASI SAAT INI
 function get_lokasi() {
@@ -135,43 +137,6 @@ $('#harta_karun').click(function () {
     cek_harta(treasure_island, "harta");
 });
 
-// UNTUK MUNCULKAN MODAL PULAU
-$('.pulau_ku').click(function () {
-    get_team(this.id);
-    // JIKA LOKASI SAAT INI
-    clicked_island = this.id;
-    if (this.id == current_island) {
-        document.getElementById('modal_saat_ini').style.display = "block";
-        $('#modal_pulau').modal();
-    } else {
-        $.ajax({
-            url: "new_phps/check_lokasi.php",
-            method: "POST",
-            data: {
-                pulau_tujuan: clicked_island,
-                pulau_skrg: current_island
-            },
-            success: function (data) {
-                console.log(data);
-                if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
-                    document.getElementById('modal_saat_jembatan').style.display = "block";
-                    document.getElementById('modal_saat_jembatan').innerHTML = "<p>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</p><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
-                    $('#modal_pulau').modal();
-                } else if (data[0] == "tiket") { // JIKA PINDAH PULAU PAKAI TIKET
-                    document.getElementById('modal_saat_tiket').style.display = "block";
-                    $('#modal_pulau').modal();
-                } else { // JIKA TDK PUNYA JEMBATAN & TIKET
-                    $('#modal_tdk_bisa').modal();
-                }
-                transportasi = data[0];
-            },
-            error: function ($xhr, errorThrown) {
-                console.log(errorThrown);
-                console.warn($xhr.responseText);
-            }
-        });
-    }
-});
 // MODAL PULAU YA/TIDAK
 $('#ya').click(function () {
     $.ajax({
@@ -326,55 +291,121 @@ function _cancelSkill() {
     }
 }
 
-function use(skill) {
-    if (skill == 'Boom Mega Boom') {
-        $('#modal_skill').modal('hide');
-        _zoomOut();
-
-        var pulau = document.getElementsByClassName("pulau_ku");
-        for (let i = 0; i < pulau.length; i++) {
-            pulau[i].style.pointerEvents = "auto";
+// UNTUK MUNCULKAN MODAL PULAU
+$('.pulau_ku').click(function () {
+    if (state == "choosing") {
+        use(currentSkill, this.id);
+        state = "none";
+    } else {
+        get_team(this.id);
+        // JIKA LOKASI SAAT INI
+        clicked_island = this.id;
+        if (this.id == current_island) {
+            document.getElementById('modal_saat_ini').style.display = "block";
+            $('#modal_pulau').modal();
+        } else {
+            $.ajax({
+                url: "new_phps/check_lokasi.php",
+                method: "POST",
+                data: {
+                    pulau_tujuan: clicked_island,
+                    pulau_skrg: current_island
+                },
+                success: function (data) {
+                    console.log(data);
+                    if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
+                        document.getElementById('modal_saat_jembatan').style.display = "block";
+                        document.getElementById('modal_saat_jembatan').innerHTML = "<p>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</p><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
+                        $('#modal_pulau').modal();
+                    } else if (data[0] == "tiket") { // JIKA PINDAH PULAU PAKAI TIKET
+                        document.getElementById('modal_saat_tiket').style.display = "block";
+                        $('#modal_pulau').modal();
+                    } else { // JIKA TDK PUNYA JEMBATAN & TIKET
+                        $('#modal_tdk_bisa').modal();
+                    }
+                    transportasi = data[0];
+                },
+                error: function ($xhr, errorThrown) {
+                    console.log(errorThrown);
+                    console.warn($xhr.responseText);
+                }
+            });
         }
-        // cursor: url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), auto;
+    }
+});
 
-        // DISABLE PULAU & JEMBATAN SELAIN PULAU KECIL
+function use(skill, target) {
+    if (target != undefined) {
         $.ajax({
-            url: "new_phps/disable_pulau.php",
-            type: "GET",
-            success: function (data) {
-                data.forEach(function (item) {
-                    document.getElementById(item['_path']).style.pointerEvents = "none";
-                });
+            url: "new_phps/use_skill.php",
+            type: "POST",
+            dataType: "json",
+            data: {
+                skill: skill,
+                pulau: target
+            },
+            success: function (result) {
+                console.log(result);
+                location.reload();
             },
             error: function ($xhr, errorThrown) {
                 console.log(errorThrown);
                 console.warn($xhr.responseText);
             }
         });
+    } else { // JIKA BELUM ADA TARGET, PILIH TARGET
+        if (skill == "Boom Mega Boom" || skill == "Meteor") {
+            currentSkill = skill;
 
-        // NAVIGASI GANTI CANCEL BUTTON
-        document.getElementById("nav-cancel").style.display = "block";
-        document.getElementById("nav-zoom-out").style.display = "none";
-        document.getElementById("nav-back").style.display = "none";
-        document.getElementById("nav-skill").style.display = "none";
-    }
-    $.ajax({
-        url: "new_phps/use_skill.php",
-        type: "POST",
-        dataType: "json",
-        data: {
-            skill: skill
-        },
-        success: function (result) {
-            console.log(result);
-            location.reload();
-        },
-        error: function ($xhr, errorThrown) {
-            console.log(errorThrown);
-            console.warn($xhr.responseText);
+            $('#modal_skill').modal('hide');
+            _zoomOut();
+
+            var pulau = document.getElementsByClassName("pulau_ku");
+            for (let i = 0; i < pulau.length; i++) {
+                pulau[i].style.pointerEvents = "auto";
+            }
+            // cursor: url(http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif), auto;
+
+            // DISABLE PULAU & JEMBATAN SELAIN PULAU KECIL
+            $.ajax({
+                url: "new_phps/disable_pulau.php",
+                type: "GET",
+                success: function (data) {
+                    data.forEach(function (item) {
+                        document.getElementById(item['_path']).style.pointerEvents = "none";
+                    });
+                },
+                error: function ($xhr, errorThrown) {
+                    console.log(errorThrown);
+                    console.warn($xhr.responseText);
+                }
+            });
+
+            // NAVIGASI GANTI CANCEL BUTTON
+            document.getElementById("nav-cancel").style.display = "block";
+            document.getElementById("nav-zoom-out").style.display = "none";
+            document.getElementById("nav-back").style.display = "none";
+            document.getElementById("nav-skill").style.display = "none";
+            state = "choosing";
+        } else if (skill == "Inventory Ganda") {
+            $.ajax({
+                url: "new_phps/use_skill.php",
+                type: "POST",
+                dataType: "json",
+                data: {
+                    skill: skill
+                },
+                success: function (result) {
+                    console.log(result);
+                    location.reload();
+                },
+                error: function ($xhr, errorThrown) {
+                    console.log(errorThrown);
+                    console.warn($xhr.responseText);
+                }
+            });
         }
-    });
-
+    }
 }
 
 function build_jembatan(id_jembatan) {
@@ -418,41 +449,42 @@ function build_jembatan(id_jembatan) {
                     }
 
                     $('#modal_upgrade').modal();
-                } 
-                
-                else if(item['username'] != username) {
+                }
+
+                else if (item['username'] != username) {
                     // KAYU
                     if (item['tipe_jembatan'] == 1) {
-                        if(item['proteksi'] == 1){
+                        if (item['proteksi'] == 1) {
                             document.getElementById("destkayup").classList.remove('hidden');
                         }
-                        else{
+                        else {
                             document.getElementById("destkayu").classList.remove('hidden');
                         }
-                    } 
-                    
-                    else if(item['tipe_jembatan'] == 2){
-                        if(item['proteksi'] == 1){
+                    }
+
+                    else if (item['tipe_jembatan'] == 2) {
+                        if (item['proteksi'] == 1) {
                             document.getElementById("destbajap").classList.remove('hidden');
                         }
 
-                        else{
+                        else {
                             document.getElementById("destbaja").classList.remove('hidden');
-                        }                    }
+                        }
+                    }
 
-                    else if(item['tipe_jembatan'] == 3){
-                        if(item['proteksi'] == 1){
+                    else if (item['tipe_jembatan'] == 3) {
+                        if (item['proteksi'] == 1) {
                             document.getElementById("destbetonp").classList.remove('hidden');
                         }
 
-                        else{
+                        else {
                             document.getElementById("destbeton").classList.remove('hidden');
-                        } 
+                        }
                     }
 
                     $('#modal_destroy').modal();
                 }
-                else{
+                else {
 
                 }
             });
