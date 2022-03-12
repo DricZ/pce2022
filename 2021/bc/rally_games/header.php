@@ -11,10 +11,10 @@ date_default_timezone_set(TIMEZONE);
 $currTime = date("H:i");
 $timestamp = strtotime(date("H:i"));
 
-if ($currTime >= '16:15') {
-    header("Location: thankyou.php");
-    exit();
-}
+// if ($currTime >= '16:15') {
+//     header("Location: thankyou.php");
+//     exit();
+// }
 
 require_once 'phps/include.php';
 
