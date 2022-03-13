@@ -32,11 +32,6 @@ include "./phps/include.php";
             height:100vh;
             place-items:center;
             display:grid;
-            /* transform :translateY(-100px); */
-            /* position:fixed;
-            top:50%;
-            left:50%;
-            transform: translate(-50%, -50%); */
         }
         .thankyou-container h1 {
             background: linear-gradient(to right, #ffdca2, #ff9190, #36d1dc, #5b86e5);

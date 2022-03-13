@@ -167,38 +167,55 @@ $('#harta_karun').click(function () {
 
 // MODAL PULAU YA/TIDAK
 $('#ya').click(function () {
-    $.ajax({
-        url: "new_phps/update_lokasi.php",
-        method: "POST",
-        data: {
-            pulau_tujuan: clicked_island,
-            transportasi: transportasi
-        },
-        success: function (data) {
-            if (data == "kurang") {
-                $("#modal_tdk_bisa").modal();
-            } else {
-                console.log(data);
-                get_lokasi();
-            }
+    if (document.getElementById('modal_saat_ini').style.display == "block") {
+        get_lokasi();
+
+        // CEK APAKAH PULAU BESAR YG DIKLIK
+        if (document.getElementById(clicked_island).classList.contains('p_besar')) {
+            _zoomIn(clicked_island, true);
+        } else {
+            _zoomIn(clicked_island, false);
         }
-    });
+
+        // CEK APAKAH DI PULAU ADA HARTA KARUN
+        if (document.getElementById(clicked_island).classList.contains('cek_harta')) {
+            cek_harta(clicked_island, "pulau");
+            treasure_island = clicked_island;
+        }
+    } else {
+        $.ajax({
+            url: "new_phps/update_lokasi.php",
+            method: "POST",
+            data: {
+                pulau_tujuan: clicked_island,
+                transportasi: transportasi
+            },
+            success: function (data) {
+                if (data == "kurang") {
+                    $("#modal_tdk_bisa").modal();
+                } else {
+                    console.log(data);
+                    get_lokasi();
+
+                    // CEK APAKAH PULAU BESAR YG DIKLIK
+                    if (document.getElementById(clicked_island).classList.contains('p_besar')) {
+                        _zoomIn(clicked_island, true);
+                    } else {
+                        _zoomIn(clicked_island, false);
+                    }
+
+                    // CEK APAKAH DI PULAU ADA HARTA KARUN
+                    if (document.getElementById(clicked_island).classList.contains('cek_harta')) {
+                        cek_harta(clicked_island, "pulau");
+                        treasure_island = clicked_island;
+                    }
+                }
+            }
+        });
+    }
 
     if (treasure_island != null) {
         treasure_island = null;
-    }
-
-    // CEK APAKAH PULAU BESAR YG DIKLIK
-    if (document.getElementById(clicked_island).classList.contains('p_besar')) {
-        _zoomIn(clicked_island, true);
-    } else {
-        _zoomIn(clicked_island, false);
-    }
-
-    // CEK APAKAH DI PULAU ADA HARTA KARUN
-    if (document.getElementById(clicked_island).classList.contains('cek_harta')) {
-        cek_harta(clicked_island, "pulau");
-        treasure_island = clicked_island;
     }
 
     setTimeout(() => {
@@ -228,8 +245,6 @@ $('.jembatan_ku').hover(function (e) {
         mouse_y = event.y;
     })
     $('#coba').css({
-        // left: e.pageX,
-        // top: e.pageY,
         left: mouse_x,
         top: mouse_y,
         'display': 'block',
@@ -366,7 +381,7 @@ $('.pulau_ku').click(function () {
                         console.log(data);
                         if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
                             document.getElementById('modal_saat_jembatan').style.display = "block";
-                            document.getElementById('modal_saat_jembatan').innerHTML = "<p>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</p><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
+                            document.getElementById('modal_saat_jembatan').innerHTML = "<h3>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</h3><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
                             $('#modal_pulau').modal();
                         } else { // JIKA PINDAH PULAU PAKAI TIKET
                             document.getElementById('modal_saat_tiket').style.display = "block";
@@ -788,18 +803,73 @@ $(function () {
     get_jembatan();
     get_lokasi();
     load_map();
-    $("#modal_konfirmasi").modal();
-});
+    // $("#modal_konfirmasi").modal();
 
-// else if (skill == 'Divide Et Impera') {
-    //     alert('devide');
-    // }
-    // else if (skill == 'X2 Social Credits') {
-    //     alert('2x');
-    // }
-    // else if (skill == 'TBL TBL TBL') {
-    //     alert('TBL');
-    // }
-    // else if (skill == 'Meteor') {
-    //     alert('meteor');
-    // }
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes();
+
+    if (time >= "19:00") {
+        $.ajax({
+            url: "new_phps/add_treasure.php",
+            method: "POST",
+            data: {
+                pulau: ["path758", "path766", "path798"],
+                harta: [21, 21, 18],
+                time: 0
+            }, success: function (data) {
+                console.log(data);
+            }, error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
+            }
+        });
+    }
+    if (time >= "20:00") {
+        $.ajax({
+            url: "new_phps/add_treasure.php",
+            method: "POST",
+            data: {
+                pulau: ["path878", "path778", "path738", "path910"],
+                harta: [0, 0, 18, 21],
+                time: 1
+            }, success: function (data) {
+                console.log(data);
+            }, error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
+            }
+        });
+    }
+    if (time >= "21:00") {
+        $.ajax({
+            url: "new_phps/add_treasure.php",
+            method: "POST",
+            data: {
+                pulau: ["path674", "path934", "path770", "path946"],
+                harta: [0, 22, 21, 23],
+                time: 2
+            }, success: function (data) {
+                console.log(data);
+            }, error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
+            }
+        });
+    }
+    if (time >= "22:00") {
+        $.ajax({
+            url: "new_phps/add_treasure.php",
+            method: "POST",
+            data: {
+                pulau: ["path802", "path862", "path910", "path938"],
+                harta: [21, 19, 0, 22],
+                time: 3
+            }, success: function (data) {
+                console.log(data);
+            }, error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
+            }
+        });
+    }
+});

@@ -18,7 +18,7 @@ if (isset($_GET['stat'])) {
         '	Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Sukses Memberikan Bridge Money!",
+                title: "Sukses Membawa Bencana!",
                 showConfirmButton: false,
                 timer: 2000
                 })',
@@ -28,7 +28,7 @@ if (isset($_GET['stat'])) {
         '	Swal.fire({
                 position: "center",
                 icon: "error",
-                title: "Gagal Memberikan Bridge Money! <br>Silakan Coba Ulangi Kembali.",
+                title: "Gagal Membawa Bencana! <br>Silakan Coba Ulangi Kembali.",
                 showConfirmButton: false,
                 timer: 2000
                 })',
@@ -47,7 +47,7 @@ if (isset($_GET['stat'])) {
     <div class="row mb-3">
         <div class="col-12 col-md-10 offset-md-1 mt-5">
             <div align="center">
-                <h2>ADD BRIDGE MONEY</h2>
+                <h2>SUMMON NATURAL DISASTERS</h2>
                 <h2><b>RALLY GAMES BRIDGE COMPETITION</b></h2>
                 <h2><b>PETRA CIVIL EXPO 2022</b></h2>
             </div>
@@ -56,26 +56,32 @@ if (isset($_GET['stat'])) {
 
     <h3 style="text-align: center; font-weight: bold; color: yellow;"><?= $_SESSION['namaAdmin'] ?></h3>
 
-    <p style="text-align: center; font-weight: bold;">SILAKAN LAKUKAN CEK ADD DIASASTER SECARA BERKALA UNTUK MENGATASI KESALAHAN INPUT</p>
+    <p style="text-align: center; font-weight: bold;">SILAKAN LAKUKAN CEK BENCANA ALAM SECARA BERKALA UNTUK MENGATASI KESALAHAN INPUT</p>
 
     <div class="row mt-5">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-3">
             <center><a href="statistics.php" class="btn btn-info container-fluid" style="width: 250px; font-weight: bold;">Statistics</a></center>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-3">
             <center><a href="add_bridge_money_history.php" class="btn btn-success container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Money History</a></center>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-3">
             <center><a href="team_ranking.php" class="btn btn-primary container-fluid" style="width: 250px; font-weight: bold;">Team Ranking</a></center>
+        </div>
+        <div class="col-12 col-md-3">
+            <center><a href="give_money.php" class="btn btn-success container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Money</a></center>
         </div>
     </div>
 
     <div class="row mt-5">
-        <div class="col-12 col-md-6" id="bencana">
+        <div class="col-12 col-md-4" id="bencana">
         
         </div>
-        <div class="col-12 col-md-6" id ="treasure">
+        <div class="col-12 col-md-4" id ="treasure">
             
+        </div>
+        <div class="col-12 col-md-4" >
+            <center><a href="addskill.php" class="btn btn-light container-fluid" style="width: 250px; font-weight: bold;">Add Skill</a></center>
         </div>
         <script>
             $(document).ready(function(){
@@ -89,29 +95,27 @@ if (isset($_GET['stat'])) {
     </div>
 
     <div class="container pt-3">
-        <form action="phps/add_mantan.php" onsubmit="pleaseWait()" method="POST">
+        <form action="phps/add_disaster.php" onsubmit="pleaseWait()" method="POST">
             <div class="form-group">
-                <center><label for="team" style="font-weight: bold;" class="mt-3">Bencana</label></center>
-                <select class="form-control" id="team" name="team" style="height:40px; font-size: 12pt;" required>
+                <center><label for="bencana" style="font-weight: bold;" class="mt-3">Bencana</label></center>
+                <select class="form-control" id="bencana" name="bencana" style="height:40px; font-size: 12pt;" required>
                     <option value="">Pilih bencana...</option>
-                    <option value="">Letusan Gunung Berapi</option>
-                    <option value="">Tanah Longsor</option>
-                    <option value="">Tsunami</option>
-                    <option value="">Gempa Bumi</option>
-                    <option value="">Angin Puting Beliung</option>
-
+                    <option value="gunung">Letusan Gunung Berapi</option>
+                    <option value="longsor">Tanah Longsor</option>
+                    <option value="tsunami">Tsunami</option>
+                    <option value="gempa">Gempa Bumi</option>
+                    <option value="tornado">Angin Puting Beliung</option>
                 </select>
                 
-                <center><label for="money" style="font-weight: bold;" class="mt-3">Pilih Area</label></center>
-                <select class="form-control" id="team" name="team" style="height:40px; font-size: 12pt;" required>
+                <center><label for="area" style="font-weight: bold;" class="mt-3">Pilih Area</label></center>
+                <select class="form-control" id="area" name="area" style="height:40px; font-size: 12pt;" required>
                     <option value="">Pilih area...</option>
-                    <option value="">A</option>
-                    <option value="">B</option>
-                    <option value="">C</option>
-                    <option value="">D</option>
-                    <option value="">E</option>
+                    <option value="a">A</option>
+                    <option value="b">B</option>
+                    <option value="c">C</option>
+                    <option value="d">D</option>
+                    <option value="e">E</option>
                 </select>
-
             </div>
             <p style="text-align: center; font-weight: bold; color: red;">HARAP PASTIKAN JUMLAH BRIDGE MONEY YANG DILAKUKAN INPUT <u>SUDAH SESUAI</u>!!!<br>APABILA TERJADI KESALAHAN INPUT <u>SEGERA</u> HUBUNGI DIVISI IT</p>
             <center><input type="submit" id="submit" name="submit" value="Submit" class="btn btn-warning container-fluid" style="width: 200px; font-weight: bold;"></center>
