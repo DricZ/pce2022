@@ -700,7 +700,7 @@ $('#build').click(function () {
 
 $('#upgrade').click(function () {
     var id_tipe = document.getElementById("session_tipe_jembatan").value;
-
+    console.log(id_tipe);
     $.ajax({
         url: "new_phps/post_upgrade.php",
         method: "POST",
@@ -731,7 +731,7 @@ $('#destroy').click(function () {
             id_jembatan: path_jembatan
         },
         success: function (res) {
-            // document.location.reload(true);
+            document.location.reload(true);
             console.log(res);
         },
         error: function ($xhr, errorThrown) {

@@ -110,6 +110,19 @@
             $stmt_money = $pdo->prepare($sql_money);
             $stmt_money->execute([$harga, $_SESSION['username'], $_SESSION['username']]);
 
+            $updateidpoinksql = "UPDATE team SET point = (SELECT point + ? FROM team WHERE id = ?) WHERE id = ?";
+            $updateidpoinkstmt = $pdo->prepare($updateidpoinksql);
+
+            if ($_POST['id_tipe'] == 1){
+                $updateidpoinkstmt->execute([10, $row_team['id'], $row_team['id']]);
+            }
+            else if ($_POST['id_tipe'] == 2){
+                $updateidpoinkstmt->execute([30, $row_team['id'], $row_team['id']]);
+            }
+            else{
+                $updateidpoinkstmt->execute([50, $row_team['id'], $row_team['id']]);
+            }
+
             // UPDATE JEMBATAN
             $updateidTeamsql = "UPDATE new_jembatan SET id_team = ?, id_tipe = ? WHERE nama = ?";
             $updateidTeamstmt = $pdo->prepare($updateidTeamsql);

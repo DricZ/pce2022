@@ -14,13 +14,19 @@
         $row_team = $stmt_team->fetch();
         $id_team = $row_team['id'];
 
+        $sql_jembatan = "SELECT * FROM new_jembatan WHERE nama = ?;";
+        $stmt_jembatan = $pdo->prepare($sql_jembatan);
+        $stmt_jembatan->execute([$_POST['id_jembatan']]);
+        $row_jembatan = $stmt_jembatan->fetch();
+        $id_tipe = $row_jembatan['id_tipe'];
+
         $harga = 0;
 
-        if ($_POST['id_tipe']== '1') {
+        if ($id_tipe== '1') {
             $harga = 8500;
-        } elseif ($_POST['id_tipe']== '2') {
+        } else if ($id_tipe== '2') {
             $harga = 15250;
-        } elseif ($_POST['id_tipe']== '3') {
+        } else if ($id_tipe== '3') {
             $harga = 23500;
         }
         
@@ -33,10 +39,23 @@
             $stmt_money = $pdo->prepare($sql_money);
             $stmt_money->execute([$harga, $_SESSION['username'], $_SESSION['username']]);
 
+            $updateidpoinksql = "UPDATE team SET point = (SELECT point + ? FROM team WHERE id = ?) WHERE id = ?";
+            $updateidpoinkstmt = $pdo->prepare($updateidpoinksql);
+
+            if ($id_tipe == '1'){
+                $updateidpoinkstmt->execute([20, $row_team['id'], $row_team['id']]);
+            }
+            else if ($id_tipe == '2'){
+                $updateidpoinkstmt->execute([40, $row_team['id'], $row_team['id']]);
+            }
+            else{
+                $updateidpoinkstmt->execute([60, $row_team['id'], $row_team['id']]);
+            }
+
             // UPDATE JEMBATAN
             $updateidTeamsql = "UPDATE new_jembatan SET proteksi = 1 WHERE nama = ?";
             $updateidTeamstmt = $pdo->prepare($updateidTeamsql);
-            $updateidTeamstmt->execute([$_POST['id_jembatan']]);  
+            $updateidTeamstmt->execute([$_POST['id_jembantan']]);  
             
         } else {
             if ($row_team['money'] < $harga) {

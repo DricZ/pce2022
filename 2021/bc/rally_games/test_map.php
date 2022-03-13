@@ -412,11 +412,11 @@
 <body>
     <input id="session_username" type="hidden" value="<?php echo $_SESSION['username']; ?>">
 
-    <div id="coba">
+    <!-- <div id="coba">
     <div class="alert alert-primary" role="alert">
   This is a primary alert—check it out!
 </div>
-    </div>
+    </div> -->
 
     <div class="row wallet" hidden>
         <img src="assets/image/bridge coin.png" width="35px" class="mx-2 pt-1">
