@@ -501,6 +501,7 @@ function build_jembatan(id_jembatan) {
                     // KAYU
                     if (item['tipe_jembatan'] == 1) {
                         document.getElementById("upkayu").classList.remove('hidden');
+                        document.getElementById("harga").innerHTML = "8.500";
                     } else {
                         document.getElementById("upkayu").classList.add('hidden');
                     }
@@ -508,6 +509,8 @@ function build_jembatan(id_jembatan) {
                     // BAJA
                     if (item['tipe_jembatan'] == 2) {
                         document.getElementById("upbaja").classList.remove('hidden');
+                        document.getElementById("harga").innerHTML = "15.250";
+
                     } else {
                         document.getElementById("upbaja").classList.add('hidden');
                     }
@@ -515,6 +518,8 @@ function build_jembatan(id_jembatan) {
                     // BETON
                     if (item['tipe_jembatan'] == 3) {
                         document.getElementById("upbeton").classList.remove('hidden');
+                        document.getElementById("harga").innerHTML = "23.500";
+
                     } else {
                         document.getElementById("upbeton").classList.add('hidden');
                     }
@@ -556,7 +561,96 @@ function build_jembatan(id_jembatan) {
                     $('#modal_destroy').modal();
                 }
                 else {
+                    if (item['tipe_jembatan'] == 1) {
+                        if (item['proteksi'] == 1) {
+                            document.getElementById("info").innerHTML = `
+                            <div class='col-12'>
+                            <br>
+                            <center>
+                                <h1 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Kayu Proteksi</h1>
+                            </center>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            
+                            </div>
+                            `;
+                        }
+                        else {
+                            document.getElementById("info").innerHTML = `
+                            <div class='col-12'>
+                            <br>
+                            <center>
+                                <h1 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Kayu</h1>
+                            </center>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            
+                            </div>
+                            `;
+                        }
+                    }
 
+                    else if (item['tipe_jembatan'] == 2) {
+                        if (item['proteksi'] == 1) {
+                            document.getElementById("info").innerHTML = `
+                            <div class='col-12'>
+                            <br>
+                            <center>
+                                <h1 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Baja Proteksi</h1>
+                            </center>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            
+                            </div>
+                            `;
+                        }
+
+                        else {
+                            document.getElementById("info").innerHTML = `
+                            <div class='col-12'>
+                            <br>
+                            <center>
+                                <h1 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Baja</h1>
+                            </center>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            
+                            </div>
+                            `;
+                        }
+                    }
+
+                    else if (item['tipe_jembatan'] == 3) {
+                        if (item['proteksi'] == 1) {
+                            document.getElementById("info").innerHTML = `
+                            <div class='col-12'>
+                            <br>
+                            <center>
+                                <h1 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Beton Proteksi</h1>
+                            </center>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            
+                            </div>
+                            `;
+                        }
+
+                        else {
+                            document.getElementById("info").innerHTML = `
+                            <div class='col-12'>
+                            <br>
+                            <center>
+                                <h1 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Beton</h1>
+                            </center>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            
+                            </div>
+                            `;
+                        }
+                    }
+
+                    $('#modal_info').modal();
                 }
             });
         },

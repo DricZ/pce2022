@@ -404,6 +404,8 @@
         .g_jembatan {
             width: 100%;
         }
+
+        
     </style>
 </head>
 
@@ -2342,10 +2344,9 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-
                     <p>
                         <img src="assets/image/bridge coin.png" width="30px" height="30px">
-                        8500
+                        <b id="harga">8500</b>
 
                         <button id="upgrade" type="button" class="btn btn-success" data-dismiss="modal">UPGRADE</button>
                     </p>
@@ -2475,6 +2476,40 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_info">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form name="session_tipe">
+                <input id="session_tipe_jembatan" name="session_tj" type="hidden" value="">
+            </form>
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    Info Jembatan
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </h4>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body"
+                style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <div class="container">
+                    <div id="info" class="row" style="width:50%">
+
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button id="build" type="button" class="btn btn-success" data-dismiss="modal"
+                        >Close</button>
+                </div>
             </div>
         </div>
     </div>
