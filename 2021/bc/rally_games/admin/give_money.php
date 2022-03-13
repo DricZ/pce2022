@@ -63,7 +63,7 @@ if (isset($_GET['stat'])) {
             <center><a href="statistics.php" class="btn btn-info container-fluid" style="width: 250px; font-weight: bold;">Statistics</a></center>
         </div>
         <div class="col-12 col-md-4">
-            <center><a href="add_bridge_money_history.php" class="btn btn-success container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Money History</a></center>
+            <center><a href="add_bridge_money_history.php" class="btn btn-danger container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Money History</a></center>
         </div>
         <div class="col-12 col-md-4">
             <center><a href="team_ranking.php" class="btn btn-primary container-fluid" style="width: 250px; font-weight: bold;">Team Ranking</a></center>
@@ -71,24 +71,20 @@ if (isset($_GET['stat'])) {
     </div>
 
     <div class="row mt-5">
-        <div class="col-12 col-md-4" id="bencana">
-        
+        <div class="col-12 col-md-6">
+            <center><a href="give_money.php" class="btn btn-success container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Money</a></center>
         </div>
-        <div class="col-12 col-md-4" id ="treasure">
-            
+        <div class="col-12 col-md-6" >
+            <center><a href="addskill.php" class="btn btn-light container-fluid" style="width: 250px; font-weight: bold;">Add Skill</a></center>
         </div>
-        <div class="col-12 col-md-4" >
-            <center><a href="addskill.php" class="btn btn-light container-fluid" style="width: 250px; font-weight: bold;">ADD SKILL</a></center>
-        </div>
-        <script>
+        <!-- <script>
             $(document).ready(function(){
                 document.getElementById("bencana").innerHTML = '<center><a href="mantan.php" id="popover_bencana" data-trigger="hover"class="btn btn-danger container-fluid" style="width: 250px; font-weight: bold;"data-content="Bencana berikutnya: " data-placement="bottom">Natural Disaster</a></center>';
                 document.getElementById("treasure").innerHTML = '<center><a href="#" id="popover_treasure" data-trigger="hover"class="btn btn-warning container-fluid" style="width: 250px; font-weight: bold;"data-content="Treasure: " data-placement="bottom">Spawn Treasure</a></center>';
                 $("#popover_bencana").popover({ trigger: "hover" });  
                 $("#popover_treasure").popover({ trigger: "hover" }); 
             });
-            
-        </script>
+        </script> -->
     </div>
 
     <div class="container pt-3">
@@ -132,6 +128,10 @@ if (isset($_GET['stat'])) {
         $('#submit').prop('hidden', true);
         $("#uploading").removeAttr("hidden");
     }
+
+    $(".treasure").click(function () {
+        
+    });
 </script>
 
 </html>

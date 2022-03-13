@@ -410,6 +410,12 @@
 <body>
     <input id="session_username" type="hidden" value="<?php echo $_SESSION['username']; ?>">
 
+    <div id="coba">
+    <div class="alert alert-primary" role="alert">
+  This is a primary alert—check it out!
+</div>
+    </div>
+
     <div class="row wallet" hidden>
         <img src="assets/image/bridge coin.png" width="35px" class="mx-2 pt-1">
         <div class="uang pr-4"><?= number_format($rowTeam['money'],0,',','.'); ?></div>
@@ -1021,7 +1027,7 @@
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path386" />
                             </g>
                             <g id="g388" transform="translate(338.4668,658.3936)">
-                                <path class="jembatan_ku pulau_a"
+                                <path class="jembatan_ku"
                                     d="m 0,0 c 2.893,-9.577 5.972,-19.097 9.235,-28.554 0.417,-1.21 2.35,-0.69 1.929,0.532 C 7.901,-18.565 4.822,-9.045 1.928,0.532 1.557,1.76 -0.374,1.237 0,0"
                                     style="fill:#a8bfc8;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path390" />
                             </g>
@@ -2127,23 +2133,20 @@
                     </div>
                     <div class="col-sm-6">
                         <!-- LOKASI SAAT INI -->
-                        <p id="modal_saat_ini">
-                            Pulau tersebut adalah lokasi anda saat ini.
-                        </p>
+                        <h3 id="modal_saat_ini">Pulau tersebut adalah lokasi anda saat ini.</h3>
 
                         <!-- JEMBATAN -->
                         <div id="modal_saat_jembatan">
-                            <p>Pergi dengan melalui <b>jembatan baja</b>.</p>
-                            <img id="gambar_jembatan" src="assets/image/jembatan baja tampak depan-01.png" alt="" width="100%">
+                            <!-- pulau_ku on click -->
                         </div>
 
                         <!-- TIKET PESAWAT -->
                         <div id="modal_saat_tiket" class="row custom_row">
-                            <p>Pergi menggunakan <b>1 tiket pesawat</b>.</p>
+                            <h3>Pergi menggunakan <b>1 tiket pesawat</b>.</h3>
                             <div class="col-sm-4 text-right">
                                 <h1 style="color: red;"><b>-1</b></h1>
                             </div>
-                            <div class="col-sm-8 text-left">
+                            <div class="col-sm-8 text-left" style="margin-bottom: 15px">
                                 <img src="assets/image/Tiket.png" alt="" width="100%">
                             </div>
                         </div>
