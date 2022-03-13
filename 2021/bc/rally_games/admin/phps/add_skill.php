@@ -64,9 +64,9 @@ if (isset($_POST)) {
     date_default_timezone_set(TIMEZONE);
     $timestamp = date("d-m-Y H:i:s");
 
-    $historysql = "INSERT INTO `history_add_skill`(`id`, `username`, `nama_skill`, `added_on`, `added_by`, `keterangan`) VALUES (NULL, ? , ?, ?, ?, ?)";
-    $historystmt = $pdo->prepare($historysql);
-    $historystmt->execute([$username, $skill, $timestamp, $_SESSION['namaAdmin'], $keterangan]);
+    // $historysql = "INSERT INTO `history_add_skill`(`id`, `username`, `nama_skill`, `added_on`, `added_by`, `keterangan`) VALUES (NULL, ? , ?, ?, ?, ?)";
+    // $historystmt = $pdo->prepare($historysql);
+    // $historystmt->execute([$username, $skill, $timestamp, $_SESSION['namaAdmin'], $keterangan]);
 
     header("Location: ../addskill.php?stat=1");
     exit();
