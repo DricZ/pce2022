@@ -196,6 +196,7 @@ $('#ya').click(function () {
                 } else {
                     console.log(data);
                     get_lokasi();
+                    disableIsland("pulau");
 
                     // CEK APAKAH PULAU BESAR YG DIKLIK
                     if (document.getElementById(clicked_island).classList.contains('p_besar')) {
@@ -399,6 +400,40 @@ $('.pulau_ku').click(function () {
     }
 });
 
+function disableIsland(when) {
+    var bridge = document.getElementsByClassName("jembatan_ku");
+    for (let i = 0; i < bridge.length; i++) {
+        bridge[i].style.pointerEvents = "none";
+    }
+
+    if (when != "start") {
+        $.ajax({
+            url: "new_phps/disable_pulau.php",
+            method: "POST",
+            data: {
+                skill: when,
+                pulau: clicked_island
+            },
+            success: function (data) {
+                var island = document.getElementsByClassName("pulau_ku");
+                for (let i = 0; i < island.length; i++) {
+                    island[i].style.pointerEvents = "none";
+                }
+                console.log(data);
+
+                data.forEach(function (item) {
+                    console.log(item['_path']);
+                    document.getElementById(item['_path']).style.pointerEvents = "auto";
+                });
+            },
+            error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
+            }
+        });
+    }
+}
+
 function use(skill, target) {
     if (target != "none") {
         $.ajax({
@@ -431,25 +466,7 @@ function use(skill, target) {
             }
 
             // DISABLE PULAU & JEMBATAN SELAIN PULAU KECIL
-            $.ajax({
-                url: "new_phps/disable_pulau.php",
-                method: "POST",
-                data: {
-                    skill: currentSkill
-                },
-                success: function (data) {
-                    data.forEach(function (item) {
-                        document.getElementById(item['_path']).style.pointerEvents = "none";
-                    });
-                    console.log(data);
-                },
-                error: function ($xhr, errorThrown) {
-                    console.log(errorThrown);
-                    console.warn($xhr.responseText);
-                }
-            });
-
-            document.getElementById("msg-choose").style.display = "block";
+            disableIsland(currentSkill);
 
             // NAVIGASI GANTI CANCEL BUTTON
             if (skill == "Boom Mega Boom") {
@@ -462,9 +479,8 @@ function use(skill, target) {
                 document.body.style.cursor = "url(assets/image/cursor-tbl.png) 25 25, auto";
                 document.getElementById("choose-all").style.display = "block";
             }
-
+            document.getElementById("msg-choose").style.display = "block";
             document.getElementById("nav-cancel").style.display = "block";
-
             document.getElementById("nav-zoom-out").style.display = "none";
             document.getElementById("nav-back").style.display = "none";
             document.getElementById("nav-skill").style.display = "none";
@@ -585,7 +601,7 @@ function build_jembatan(id_jembatan) {
                                 <h1 style='margin-top: -20px;
     padding-bottom: 25px;'>Jembatan Kayu Proteksi</h1>
                             </center>
-                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
                             `;
@@ -598,7 +614,7 @@ function build_jembatan(id_jembatan) {
                                 <h1 style='margin-top: -20px;
     padding-bottom: 25px;'>Jembatan Kayu</h1>
                             </center>
-                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
                             `;
@@ -614,7 +630,7 @@ function build_jembatan(id_jembatan) {
                                 <h1 style='margin-top: -20px;
     padding-bottom: 25px;'>Jembatan Baja Proteksi</h1>
                             </center>
-                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
                             `;
@@ -628,7 +644,7 @@ function build_jembatan(id_jembatan) {
                                 <h1 style='margin-top: -20px;
     padding-bottom: 25px;'>Jembatan Baja</h1>
                             </center>
-                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
                             `;
@@ -644,7 +660,7 @@ function build_jembatan(id_jembatan) {
                                 <h1 style='margin-top: -20px;
     padding-bottom: 25px;'>Jembatan Beton Proteksi</h1>
                             </center>
-                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
                             `;
@@ -658,7 +674,7 @@ function build_jembatan(id_jembatan) {
                                 <h1 style='margin-top: -20px;
     padding-bottom: 25px;'>Jembatan Beton</h1>
                             </center>
-                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] +`</h4>
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
                             `;
@@ -803,6 +819,7 @@ $(function () {
     get_jembatan();
     get_lokasi();
     load_map();
+    disableIsland("start");
     // $("#modal_konfirmasi").modal();
 
     var today = new Date();
