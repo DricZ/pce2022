@@ -25,6 +25,7 @@ function get_lokasi() {
     });
 }
 
+// HILANGKAN PULAU YG KENA BOM & BAN
 function load_map() {
     $.ajax({
         url: "new_phps/load_map.php",
@@ -74,6 +75,7 @@ function get_jembatan() {
     });
 }
 
+// AMBIL NAMA TEAM DI PULAU TERTENTU
 function get_team(di_pulau) {
     $.ajax({
         url: "new_phps/get_team.php",
@@ -312,6 +314,11 @@ function _zoomOut() {
             scrollTop: 0
         }, 500, 'linear');
     }, 500);
+
+    var pulau = document.getElementsByClassName("pulau_ku");
+    for (let i = 0; i < pulau.length; i++) {
+        pulau[i].style.pointerEvents = "auto";
+    }
 
     $(".awan").fadeIn(1000);
 }
@@ -822,9 +829,9 @@ $(function () {
     disableIsland("start");
     // $("#modal_konfirmasi").modal();
 
+    // ADD TREASURE
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes();
-
     if (time >= "19:00") {
         $.ajax({
             url: "new_phps/add_treasure.php",
