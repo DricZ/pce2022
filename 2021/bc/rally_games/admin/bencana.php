@@ -91,35 +91,31 @@ if (isset($_GET['stat'])) {
     </div>
 
     <div class="container pt-3">
-        <form action="phps/add_skill.php" onsubmit="pleaseWait()" method="POST">
+        <form action="phps/bencanasql.php" onsubmit="pleaseWait()" method="POST">
             <div class="form-group">
-                <center><label for="team" style="font-weight: bold;" class="mt-3">Nama Team</label></center>
-                <select class="form-control" id="team" name="team" style="height:40px; font-size: 12pt;" required>
-                    <option value="">Pilih nama team...</option>
-                    <?php
-                    $sqlTeam = "SELECT * FROM team";
-                    $stmtTeam = $pdo->prepare($sqlTeam);
-                    $stmtTeam->execute([]);
-                    while ($rowTeam = $stmtTeam->fetch()) { ?>
-                        <option value="<?php echo $rowTeam['username']; ?>"><?php echo $rowTeam['team_name']; ?></option>
-                    <?php  } ?>
+                <center><label for="bencana" style="font-weight: bold;" class="mt-3">Nama Bencana</label></center>
+                <select class="form-control" id="bencana" name="bencana" style="height:40px; font-size: 12pt;" required>
+                    <option value="">Pilih Bencana...</option>
+                    <!-- <option value="letusan_gunung_berapi">Letusan Gunung Berapi</option> -->
+                    <!-- <option value="tanah_longsor">Tanah Longsor</option> -->
+                    <option value="tsunami">Tsunami</option>
+                    <option value="gempa_bumi">Gempa Bumi</option>
+                    <option value="angin_puting_beliung">Angin Puting Beliung</option>
                 </select>
-                <center><label for="skill" style="font-weight: bold;" class="mt-3">Nama Skill</label></center>
-                <select class="form-control" id="skill" name="skill" style="height:40px; font-size: 12pt;" required>
-                    <option value="">Pilih nama team...</option>
-                    <?php
-                    $sqlskill = "SELECT * FROM new_skill";
-                    $stmtskill = $pdo->prepare($sqlskill);
-                    $stmtskill->execute([]);
-                    while ($rowskill = $stmtskill->fetch()) { ?>
-                        <option value="<?php echo $rowskill['nama']; ?>"><?php echo $rowskill['nama']; ?></option>
-                    <?php  } ?>
+                <center><label for="area" style="font-weight: bold;" class="mt-3">Nama area</label></center>
+                <select class="form-control" id="area" name="area" style="height:40px; font-size: 12pt;" required>
+                    <option value="">Pilih area...</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
                 </select>
                 <center><label for="keterangan" style="font-weight: bold;" class="mt-3">Keterangan</label></center>
                 <input type="text" style="text-align: center;" id="keterangan" name="keterangan" placeholder="Ex: Pemenang Mini Games ... Juara 1/2/3 dst." class="form-control" required>
             </div>
             <p style="text-align: center; font-weight: bold; color: red;">HARAP PASTIKAN JUMLAH BRIDGE MONEY YANG DILAKUKAN INPUT <u>SUDAH SESUAI</u>!!!<br>APABILA TERJADI KESALAHAN INPUT <u>SEGERA</u> HUBUNGI DIVISI IT</p>
-            <center><input type="submit" id="submit" name="submit" value="Add skill" class="btn btn-warning container-fluid" style="width: 200px; font-weight: bold;"></center>
+            <center><input type="submit" id="submit" name="submit" value="Add Bencana" class="btn btn-warning container-fluid" style="width: 200px; font-weight: bold;"></center>
             <div id="uploading" class="row justify-content-center mb-5" hidden>
                 <div class="spinner-border text-primary" role="status">
                     <span class="sr-only" style="color: white;">Loading...</span>

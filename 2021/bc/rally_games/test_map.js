@@ -955,4 +955,19 @@ $(function () {
             }
         });
     }
+    if (time >= "21:00") {
+        $.ajax({
+            url: "new_phps/addbencana.php",
+            method: "POST",
+            data: {
+                pulau: ["path678", "path770", "path774", "path778", "path782", "path810", "path814", "path818", "path838", "path870", "path874", "path878", "path882", "path886", "path942", "path946"],
+                time: 0
+            }, success: function (data) {
+                console.log(data);
+            }, error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
+            }
+        });
+    }
 });

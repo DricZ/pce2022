@@ -63,7 +63,7 @@ if (isset($_GET['stat'])) {
             <center><a href="statistics.php" class="btn btn-info container-fluid" style="width: 250px; font-weight: bold;">Statistics</a></center>
         </div>
         <div class="col-12 col-md-4">
-            <center><a href="add_bridge_money_history.php" class="btn btn-danger container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Money History</a></center>
+            <center><a href="add_bridge_money_history.php" class="btn btn-warning container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Money History</a></center>
         </div>
         <div class="col-12 col-md-4">
             <center><a href="team_ranking.php" class="btn btn-primary container-fluid" style="width: 250px; font-weight: bold;">Team Ranking</a></center>
@@ -71,11 +71,14 @@ if (isset($_GET['stat'])) {
     </div>
 
     <div class="row mt-5">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-4">
             <center><a href="give_money.php" class="btn btn-success container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Money</a></center>
         </div>
-        <div class="col-12 col-md-6" >
+        <div class="col-12 col-md-4" >
             <center><a href="addskill.php" class="btn btn-light container-fluid" style="width: 250px; font-weight: bold;">Add Skill</a></center>
+        </div>
+        <div class="col-12 col-md-4">
+            <center><a href="bencana.php" class="btn btn-danger container-fluid" style="width: 250px; font-weight: bold;">Bencana</a></center>
         </div>
         <!-- <script>
             $(document).ready(function(){
