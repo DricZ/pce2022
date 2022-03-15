@@ -4,6 +4,16 @@ var treasure_island, id_tipe, path_jembatan;
 var state, currentSkill;
 var banned_island = [];
 
+const shopSwal = Swal.mixin({
+    customClass: {
+        confirmButton: 'btn-gradient btn-sweet py-3 px-4',
+        cancelButton: 'btn-gradient btn-sweet py-3 px-4 mr-5'
+    },
+    buttonsStyling: false,
+    allowOutsideClick: false,
+    background: 'rgb(68,63,63)'
+});
+
 // AMBIL LOKASI SAAT INI
 function get_lokasi() {
     $.ajax({
@@ -699,27 +709,71 @@ function build_jembatan(id_jembatan) {
     })
 }
 
-$('#build').click(function () {
-    var id_tipe = document.getElementById("session_tipe_jembatan").value;
-    console.log(id_tipe);
-    console.log(path_jembatan);
+// $('#build').click(function () {
+//     var id_tipe = document.getElementById("session_tipe_jembatan").value;
+//     console.log(id_tipe);
+//     console.log(path_jembatan);
 
-    $.ajax({
-        url: "new_phps/post_pengiriman.php",
+//     $.ajax({
+//         url: "new_phps/post_pengiriman.php",
+//         method: "POST",
+//         data: {
+//             id_tipe: id_tipe,
+//             id_jembatan: path_jembatan
+//         },
+//         success: function (res) {
+//             document.location.reload(true);
+//             console.log(res);
+//         },
+//         error: function ($xhr, errorThrown) {
+//             console.log(errorThrown);
+//             console.warn($xhr.responseText);
+//         }
+//     });
+// });
+
+$('#build').click(function() {
+    var id_tipe = document.getElementById("session_tipe_jembatan").value;
+    cash = $('.uang').text();
+
+    shopSwal.fire({
+        title: '<h3 style="color:white;">Konfirmasi pembutan</h3>',
+        html: "<div style='color:white;'>Anda akan membuat<h5>" + id_tipe + "</b></div>",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Build',
+        cancelButtonText: 'Batal',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "new_phps/post_pengiriman.php",
         method: "POST",
         data: {
             id_tipe: id_tipe,
             id_jembatan: path_jembatan
         },
-        success: function (res) {
-            document.location.reload(true);
-            console.log(res);
-        },
-        error: function ($xhr, errorThrown) {
-            console.log(errorThrown);
-            console.warn($xhr.responseText);
+                success: function(res) {
+                document.location.reload(true);    
+                },
+                error: function($xhr, textStatus,
+                    errorThrown) {
+                        console.log(errorThrown);
+                        console.warn($xhr.responseText);
+                }
+            });
+            
+        } else if (result.dismiss === Swal.DismissReason
+            .cancel) {
+
+            // load_data(0);
+            shopSwal.fire({
+                title: '<h3 style="color:white;">Batal membuat Boom!</h3>',
+                html: '',
+                icon: 'error'
+            })
         }
-    });
+    })
 });
 
 $('#upgrade').click(function () {
