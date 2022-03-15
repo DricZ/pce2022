@@ -10,6 +10,8 @@
     $stmtTeam = $pdo->prepare($sqlTeam);
     $stmtTeam->execute([$_SESSION['username']]);
     $rowTeam = $stmtTeam->fetch();
+    
+    require_once 'phps/include.php';
 ?>
 
 <head>
@@ -28,6 +30,8 @@
 
     <!-- EXTERNAL CSS -->
     <link rel="stylesheet" href="test_map.css">
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
         .awan {
