@@ -171,6 +171,7 @@ $('#harta_karun').click(function () {
 $('#ya').click(function () {
     if (document.getElementById('modal_saat_ini').style.display == "block") {
         get_lokasi();
+        disableIsland("pulau");
 
         // CEK APAKAH PULAU BESAR YG DIKLIK
         if (document.getElementById(clicked_island).classList.contains('p_besar')) {
@@ -828,6 +829,10 @@ $(function () {
     load_map();
     disableIsland("start");
     // $("#modal_konfirmasi").modal();
+
+    // for (let i = 0; i < document.getElementsByClassName("pulau_e").length; i++) {
+    //     console.log(document.getElementsByClassName("pulau_e")[i].id);
+    // }
 
     // ADD TREASURE
     var today = new Date();
