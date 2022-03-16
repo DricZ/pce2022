@@ -768,7 +768,7 @@ $('#build').click(function() {
 
             // load_data(0);
             shopSwal.fire({
-                title: '<h3 style="color:white;">Batal membuat Boom!</h3>',
+                title: '<h3 style="color:white;">Batal membuat Jembatan!</h3>',
                 html: '',
                 icon: 'error'
             })
