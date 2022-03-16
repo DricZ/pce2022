@@ -961,12 +961,12 @@ $(function () {
             }
         });
     }
-    if (time >= "21:00") {
+    if (time >= "18:00") {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
             data: {
-                pulau: ["path678", "path770", "path774", "path778", "path782", "path810", "path814", "path818", "path838", "path870", "path874", "path878", "path882", "path886", "path942", "path946"],
+                pulau: ["path714","path718","path722","path726","path730","path750","path754","path798","path802","path806","path842","path846","path850","path854","path858","path862","path954","path958"],
                 time: 0
             }, success: function (data) {
                 console.log(data);
@@ -975,5 +975,41 @@ $(function () {
                 console.warn($xhr.responseText);
             }
         });
+    
     }
+    if (time >= "21:00") {
+        $.ajax({
+            url: "new_phps/addbencana.php",
+            method: "POST",
+            data: {
+                pulau: ["path1246","path670","path674","path682","path686","path690","path694","path698","path702","path706","path710","path850","path890","path894","path898","path906","path934"],
+                time: 1
+            }, success: function (data) {
+                console.log(data);
+            }, error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
+            }
+        });
+    }
+    if (time >= "23:00") {
+        $.ajax({
+            url: "new_phps/addbencana.php",
+            method: "POST",
+            data: {
+                pulau: ["path758", "path762", "path766", "path790", "path794", "path822", "path826", "path914", "path918", "path922", "path926", "path930", "path950"],
+                time: 2
+            }, success: function (data) {
+                console.log(data);
+            }, error: function ($xhr, errorThrown) {
+                console.log(errorThrown);
+                console.warn($xhr.responseText);
+            }
+        });
+    
+    }
+    // for (let i = 0; i < document.getElementsByClassName("pulau_c").length; i++) {
+    //     console.log(document.getElementsByClassName("pulau_c")[i].id+'", ');
+    // }
+    
 });
