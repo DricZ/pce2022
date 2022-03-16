@@ -19,7 +19,12 @@ body {
 }
 
 .jembatan_ku {
+    transition: all 0.3s ease-in-out;
     opacity: 0.5;
+}
+
+.pulau_ku {
+    transition: all 0.3s ease-in-out;
 }
 
 .pulau_ku:hover {

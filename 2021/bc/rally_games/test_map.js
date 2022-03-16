@@ -732,7 +732,7 @@ function build_jembatan(id_jembatan) {
 //     });
 // });
 
-$('#build').click(function() {
+$('#build').click(function () {
     var id_tipe = document.getElementById("session_tipe_jembatan").value;
     cash = $('.uang').text();
 
@@ -748,21 +748,21 @@ $('#build').click(function() {
         if (result.isConfirmed) {
             $.ajax({
                 url: "new_phps/post_pengiriman.php",
-        method: "POST",
-        data: {
-            id_tipe: id_tipe,
-            id_jembatan: path_jembatan
-        },
-                success: function(res) {
-                document.location.reload(true);    
+                method: "POST",
+                data: {
+                    id_tipe: id_tipe,
+                    id_jembatan: path_jembatan
                 },
-                error: function($xhr, textStatus,
+                success: function (res) {
+                    document.location.reload(true);
+                },
+                error: function ($xhr, textStatus,
                     errorThrown) {
-                        console.log(errorThrown);
-                        console.warn($xhr.responseText);
+                    console.log(errorThrown);
+                    console.warn($xhr.responseText);
                 }
             });
-            
+
         } else if (result.dismiss === Swal.DismissReason
             .cancel) {
 
@@ -882,10 +882,11 @@ $(function () {
     get_lokasi();
     load_map();
     disableIsland("start");
+    var pulau_harta;
     // $("#modal_konfirmasi").modal();
 
     // for (let i = 0; i < document.getElementsByClassName("pulau_e").length; i++) {
-    //     console.log(document.getElementsByClassName("pulau_e")[i].id);
+    //     console.log(document.getElementsByClassName('"pulau_e", ')[i].id);
     // }
 
     // ADD TREASURE
@@ -908,15 +909,20 @@ $(function () {
         });
     }
     if (time >= "20:00") {
+        pulau_harta = ["path878", "path778", "path738", "path910"]
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
             data: {
-                pulau: ["path878", "path778", "path738", "path910"],
+                pulau: pulau_harta,
                 harta: [0, 0, 18, 21],
                 time: 1
             }, success: function (data) {
                 console.log(data);
+                for (let i = 0; i < pulau_harta.length; i++) {
+                    // document.getElementById(pulau_harta[i]).style.animation = "";
+                    document.getElementById(pulau_harta[i]).classList.add("pulau_spesial");
+                }
             }, error: function ($xhr, errorThrown) {
                 console.log(errorThrown);
                 console.warn($xhr.responseText);
