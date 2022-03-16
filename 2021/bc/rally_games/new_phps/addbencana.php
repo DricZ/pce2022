@@ -10,6 +10,15 @@
         $row_time = $stmt_time->fetch();
 
         $result =array();
+        if($_POST['time']==0){
+            $level=3;
+        }
+        else if($_POST['time']==1){
+            $level=2;
+        }
+        else if($_POST['time']==2){
+            $level=1;
+        }
 
         if ($row_time['jam'] == $_POST['time']) {
             for ($i=0; $i < sizeof($_POST['pulau']); $i++) { 
@@ -20,48 +29,147 @@
                 while($row = $stmt->fetch()) {
                     array_push($row_pulau, $row);
                 }
+                $stmt_jembatanrow;
                 for ($j=0; $j < sizeof($row_pulau); $j++) { 
-                    $sql_jembatan = "SELECT DISTINCT(id),id_tipe,proteksi FROM new_jembatan WHERE id_pulau1 =? or id_pulau2=?;";
+                    $sql_jembatan = "SELECT id,id_tipe,proteksi,id_team FROM new_jembatan WHERE (id_pulau1 =? or id_pulau2=?) AND id_team != 0;";
                     $stmt_jembatan = $pdo->prepare($sql_jembatan);
                     $stmt_jembatan->execute([$row_pulau[$j]['id'],$row_pulau[$j]['id']]);
+                    // $stmt_jembatanrow = $stmt_jembatan->fetch();
                     $stmt_jembatanrow = array();
                     while($row = $stmt_jembatan->fetch()) {
-                        array_push($stmt_jembatanrow, $row);
-                       
-                    }
-                    for ($k=0; $k < sizeof($result); $k++) { 
-                        if (!in_array($stmt_jembatanrow, $result[$k])) {
-                            array_push($result, $stmt_jembatanrow) ;
+                        if (!in_array($row,$result)) {
+                            array_push($result, $row);
                         }
+                    }     
+                }
+                
+                
+                
+                // for ($k=0; $k <sizeof($result) ; $k++) { 
+                //     if ($level==1) {
+                //         if ($result[$k]['id_tipe']==1 and $result[$k]['proteksi']==1 ) {
+                //             // $result[$k]['proteksi']=0;
+                //             $replacements2 = array($result[$k]['proteksi'] => 0);
+                //             $result =array_replace($result[$k],$replacements2);
+                //         }
+                //     }
+                    
+                // }
+                
+                //update
+                
+                // $update = "UPDATE new_jembatan SET id_tipe = ?,proteksi =?,id_team=? WHERE id=?;";
+                // $stmtupdate = $pdo->prepare($update);
+                // $stmtupdate->execute([$stmt_jembatanrow[$i]['id_tipe'],$stmt_jembatanrow[$i]['proteksi'],$stmt_jembatanrow[$i]['id_team'],$stmt_jembatanrow[$i]['id']]);   
+            }
+            for ($i=0; $i <sizeof($result) ; $i++) { 
+                if ($level==1) {
+                    if ($result[$i]['id_tipe']==1 and $result[$i]['proteksi']==0) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe =0,proteksi =0,id_team=0 WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id']]);
                     }
-                    
-                    // for ($k=0; $k < $level-1; $k++) { 
-                    //     if ($stmt_jembatanrow[$i]['proteksi'] - 1 < 0) {
-                    //         $stmt_jembatanrow[$i]['id_tipe'] -= 1;
-                    //         if ($stmt_jembatanrow[$i]['id_tipe'] < 0 ) {
-                    //             $stmt_jembatanrow[$i]['id_tipe'] = 0;
-                    //             $stmt_jembatanrow[$i]['id_team'] = 0;
-                    //         }
-                    //     } else {
-                    //         $stmt_jembatanrow[$i]['proteksi'] -= 1;
-                    //     }
-                    
-                    //     //update
-                    //     $update = "UPDATE new_jembatan SET id_tipe = ?,proteksi =?,id_team=? WHERE id=?;";
-                    //     $stmtupdate = $pdo->prepare($update);
-                    //     $stmtupdate->execute([$stmt_jembatanrow[$i]['id_tipe'],$stmt_jembatanrow[$i]['proteksi'],$stmt_jembatanrow[$i]['id_team'],$stmt_jembatanrow[$i]['id']]);  
-                    // } 
+                    elseif ($result[$i]['id_tipe']==1 and $result[$i]['proteksi']==1) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 1,proteksi =0,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==2 and $result[$i]['proteksi']==0) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 1,proteksi =1,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==2 and $result[$i]['proteksi']==1) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 2,proteksi =0,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==3 and $result[$i]['proteksi']==0) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 2,proteksi =1,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==3 and $result[$i]['proteksi']==1) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 3,proteksi =0,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                }
+                elseif ($level==2) {
+                    if ($result[$i]['id_tipe']==1 and $result[$i]['proteksi']==0) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe =0,proteksi =0,id_team=0 WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==1 and $result[$i]['proteksi']==1) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 0,proteksi =0,id_team=0 WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==2 and $result[$i]['proteksi']==0) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 1,proteksi =0,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==2 and $result[$i]['proteksi']==1) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 1,proteksi =1,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==3 and $result[$i]['proteksi']==0) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 2,proteksi =0,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==3 and $result[$i]['proteksi']==1) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 2,proteksi =1,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                }
+                elseif ($level==3) {
+                    if ($result[$i]['id_tipe']==1 and $result[$i]['proteksi']==0) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe =0,proteksi =0,id_team=0 WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==1 and $result[$i]['proteksi']==1) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 0,proteksi =0,id_team=0 WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==2 and $result[$i]['proteksi']==0) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 0,proteksi =0,id_team=0 WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==2 and $result[$i]['proteksi']==1) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 1,proteksi =0,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==3 and $result[$i]['proteksi']==0) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 1,proteksi =1,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
+                    elseif ($result[$i]['id_tipe']==3 and $result[$i]['proteksi']==1) {
+                        $update_tipe = "UPDATE new_jembatan SET id_tipe = 2,proteksi =0,id_team=? WHERE id=?;";
+                        $update_tipe_stmt = $pdo->prepare($update_tipe);
+                        $update_tipe_stmt->execute([$result[$i]['id_team'],$result[$i]['id']]);
+                    }
                 }
             }
+            
 
             
 
-            $sql_change = "UPDATE new_timing SET jam = ? WHERE nama = 'treasure'";
-            $stmt_change = $pdo->prepare($sql_change);
-            $stmt_change->execute([$_POST['time']+1]);
+            // $sql_change = "UPDATE new_timing SET jam = ? WHERE nama = 'bencana'";
+            // $stmt_change = $pdo->prepare($sql_change);
+            // $stmt_change->execute([$_POST['time']+1]);
         }
         
-        echo json_encode([$result]);
+        echo json_encode($result);
     } else {
         header("HTTP/1.1 400 Bad Request");
         $error = array(
