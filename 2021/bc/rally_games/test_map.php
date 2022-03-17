@@ -2207,11 +2207,9 @@
             </form>
 
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    Bangun Jembatan
-                    <button style="margin-top:-7px" type="button" class="close" data-dismiss="modal">&times;</button>
-                </h4>
+            <div class="modal-header" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <h1 class="modal-title"style ='margin-left: auto;'>Bangun Jembatan</h1>
+                <button style="margin-top:-7px" type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
@@ -2219,7 +2217,7 @@
                 style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
                 <div class="container">
                     <div class='row' style="width:40%; ">
-                        <p>Pilih tipe jembatan yang ingin dibangun:</p>
+                        <h4>Pilih tipe jembatan yang ingin dibangun:</h4>
                         <div class='col-sm-4'>
                             <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
                                 src="assets/image/jembatan Kayu.png" alt="Card image">
@@ -2235,7 +2233,7 @@
                                 src="assets/image/jembatan Beton.png" alt="Card image">
                         </div>
                     </div>
-                    <div class="row" style="width:50%">
+                    <div class="row" style="width:40%">
 
                         <!-- Jembatan Kayu -->
                         <div class="col-12 jembatan hidden" id="desckayu">
@@ -2298,23 +2296,22 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    Upgrade Jembatan
-                    <button style="margin-top: -7px;" type="button" class="close" data-dismiss="modal">&times;</button>
-                </h4>
+            <div class="modal-header" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <h1 class="modal-title"style ='margin-left: auto;'>Upgrade Jembatan</h1>
+                <button style="margin-top: -7px;" type="button" class="close" data-dismiss="modal">&times;</button>
+                
             </div>
 
             <!-- Modal body -->
             <div class="modal-body"
                 style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
                 <div class="container">
-                    <div class="row" style="width:50%; margin-top:-2%; margin-left:-15px">
+                    <div class="row" style="width:70%; margin-top:-2%; margin-left:-15px">
 
                         <!-- Jembatan Kayu -->
                         <div class="col-12 jembatan hidden" id="upkayu">
                             
-                            <h1 style="margin-left:18%;">Jembatan Kayu</h1>
+                            <h3 >Jembatan Kayu</h3>
                             
                             <h4>Bahan yang diperlukan:</h4>
                             <p>
@@ -2326,7 +2323,7 @@
                         <!-- Jembatan Baja -->
                         <div class="col-12 jembatan hidden" id="upbaja">
                            
-                            <h1 style="margin-left:18%;">Jembatan Baja</h1>
+                            <h1 >Jembatan Baja</h1>
                             
                             <h4>Bahan yang diperlukan:</h4>
                             <p>
@@ -2338,7 +2335,7 @@
                         <!-- Jembatan Beton -->
                         <div class="col-12 jembatan hidden" id="upbeton">
                           
-                            <h1 style="margin-left:18%;">Jembatan Beton</h1>
+                            <h1 >Jembatan Beton</h1>
                             
                             <h4>Bahan yang diperluhkan:</h4>
                             <p>
@@ -2367,11 +2364,9 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    Hancurkan Jembatan
-                    <button style="margin-top:-7px" type="button" class="close" data-dismiss="modal">&times;</button>
-                </h4>
+            <div class="modal-header" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <h1 class="modal-title" style ='margin-left: auto;'>Hancurkan Jembatan</h1>
+                <button style="margin-top:-7px" type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
             <!-- Modal body -->
@@ -2383,7 +2378,7 @@
                         <!-- Jembatan Kayu -->
                         <div class="col-12 jembatan hidden" id="destkayu">
                             
-                            <h1 style="margin-left:18%; margin-top: -15px">Jembatan Kayu</h1>
+                            <h3 style=" margin-top: -15px">Jembatan Kayu</h3>
                             
                             <h4>Bom yang diperlukan:</h4>
                             <p>
@@ -2395,19 +2390,19 @@
                         <!-- Jembatan Kayu Proteksi -->
                         <div class="col-12 jembatan hidden" id="destkayup">
                             
-                            <h1 style="margin-left:18%; margin-top: -15px">Jembatan Kayu Proteksi</h1>
+                            <h3 style=" margin-top: -15px">Jembatan Kayu Proteksi</h3>
                             
                             <h4>Bom yang diperlukan:</h4>
                             <p>
                                 1x Bom level 2
-                                <img src="assets/image/BOMB LV 1.png" width="100px" height="100px">
+                                <img src="assets/image/BOMB LV 2.png" width="100px" height="100px">
                             </p>
                         </div>
 
                         <!-- Jembatan Baja -->
                         <div class="col-12 jembatan hidden" id="destbaja">
                             
-                            <h1 style="margin-left:18%; margin-top: -15px">Jembatan Baja</h1>
+                            <h3 style=" margin-top: -15px">Jembatan Baja</h3>
                             
                             <h4>Bom yang diperlukan:</h4>
                             <p>
@@ -2419,7 +2414,7 @@
                         <!-- Jembatan Baja Proteksi -->
                         <div class="col-12 jembatan hidden" id="destbajap">
                             
-                            <h1 style="margin-left:18%; margin-top: -15px">Jembatan Baja Proteksi</h1>
+                            <h3 style=" margin-top: -15px">Jembatan Baja Proteksi</h3>
                             
                             <h4>Bom yang diperlukan:</h4>
                             <p>
@@ -2431,7 +2426,7 @@
                         <!-- Jembatan Beton -->
                         <div class="col-12 jembatan hidden" id="destbeton">
                             
-                            <h1 style="margin-left:18%; margin-top: -15px">Jembatan Beton</h1>
+                            <h3 style=" margin-top: -15px">Jembatan Beton</h3>
                         
                             <h4>Bom yang diperluhkan:</h4>
                             <p>
@@ -2443,7 +2438,7 @@
                         <!-- Jembatan Beton Proteksi -->
                         <div class="col-12 jembatan hidden" id="destbetonp">
                             
-                            <h1 style="margin-left:18%; margin-top: -15px">Jembatan Beton Proteksi</h1>
+                            <h3 style=" margin-top: -15px">Jembatan Beton Proteksi</h3>
                             
                             <h4>Bom yang diperluhkan:</h4>
                             <p>
