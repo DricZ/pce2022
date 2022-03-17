@@ -105,7 +105,7 @@ if (isset($_GET['stat'])) {
                     <?php  } ?>
                 </select>
                 <center><label for="money" style="font-weight: bold;" class="mt-3">Jumlah Bridge Money</label></center>
-                <input type="number" style="text-align: center;" id="money" name="money" placeholder="Ex: 10000" class="form-control" min="0" required>
+                <input type="number" style="text-align: center;" id="money" name="money" placeholder="Ex: 10000" class="form-control"  required>
                 <center><label for="keterangan" style="font-weight: bold;" class="mt-3">Keterangan</label></center>
                 <input type="text" style="text-align: center;" id="keterangan" name="keterangan" placeholder="Ex: Pemenang Mini Games ... Juara 1/2/3 dst." class="form-control" required>
             </div>

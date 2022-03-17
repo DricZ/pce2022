@@ -620,10 +620,10 @@ function build_jembatan(id_jembatan) {
                             document.getElementById("info").innerHTML = `
                             <div class='col-12'>
                             <br>
-                            <center>
-                                <h1 style='margin-top: -20px;
-    padding-bottom: 25px;'>Jembatan Kayu Proteksi</h1>
-                            </center>
+                            
+                                <h3 style='margin-top: -20px;
+                            padding-bottom: 25px;'>Jembatan Kayu Proteksi</h3>
+                            
                             <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
@@ -633,10 +633,10 @@ function build_jembatan(id_jembatan) {
                             document.getElementById("info").innerHTML = `
                             <div class='col-12'>
                             <br>
-                            <center>
-                                <h1 style='margin-top: -20px;
-    padding-bottom: 25px;'>Jembatan Kayu</h1>
-                            </center>
+                            
+                                <h3 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Kayu</h3>
+                            
                             <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
@@ -649,10 +649,10 @@ function build_jembatan(id_jembatan) {
                             document.getElementById("info").innerHTML = `
                             <div class='col-12'>
                             <br>
-                            <center>
-                                <h1 style='margin-top: -20px;
-    padding-bottom: 25px;'>Jembatan Baja Proteksi</h1>
-                            </center>
+                            
+                                <h3 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Baja Proteksi</h3>
+                            
                             <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
@@ -663,10 +663,10 @@ function build_jembatan(id_jembatan) {
                             document.getElementById("info").innerHTML = `
                             <div class='col-12'>
                             <br>
-                            <center>
-                                <h1 style='margin-top: -20px;
-    padding-bottom: 25px;'>Jembatan Baja</h1>
-                            </center>
+                            
+                                <h3 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Baja</h3>
+                            
                             <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
@@ -679,10 +679,10 @@ function build_jembatan(id_jembatan) {
                             document.getElementById("info").innerHTML = `
                             <div class='col-12'>
                             <br>
-                            <center>
-                                <h1 style='margin-top: -20px;
-    padding-bottom: 25px;'>Jembatan Beton Proteksi</h1>
-                            </center>
+                            
+                                <h3 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Beton Proteksi</h3>
+                            
                             <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>
@@ -693,10 +693,10 @@ function build_jembatan(id_jembatan) {
                             document.getElementById("info").innerHTML = `
                             <div class='col-12'>
                             <br>
-                            <center>
-                                <h1 style='margin-top: -20px;
-    padding-bottom: 25px;'>Jembatan Beton</h1>
-                            </center>
+                            
+                                <h3 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Beton</h3>
+                            
                             <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
                             </div>

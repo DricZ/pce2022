@@ -225,7 +225,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
             </a>
         </ul>
 
-        <ul>
+        <!-- <ul>
             <a class="nav-link active" id="menu" href="achievements.php">
                 <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 64px; width: 64px;">
                         <g class="" transform="translate(0,0)" style="">
@@ -234,7 +234,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
                     </svg></li>
                 <li>Achievements</li>
             </a>
-        </ul>
+        </ul> -->
         <ul>
             <a class="nav-link active" id="menu" href="history.php">
                 <li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 64px; width: 64px;">
