@@ -152,15 +152,15 @@ if (isset($_GET['bet'])) {
             $timestamp = strtotime(date("H:i"));
 
             //ISI DI SINI
-            $timestamp1 = strtotime('14:00');
+            $timestamp1 = strtotime('18:30');
             $timestamp1End = $timestamp1 + (60 * 5);
             $timestamp1End = strtotime(date("H:i", $timestamp1End));
 
-            $timestamp2 = strtotime('14:50');
+            $timestamp2 = strtotime('19:30');
             $timestamp2End = $timestamp2 + (60 * 5);
             $timestamp2End = strtotime(date("H:i", $timestamp2End));
 
-            $timestamp3 = strtotime('15:25');
+            $timestamp3 = strtotime('20:30');
             $timestamp3End = $timestamp3 + (60 * 5);
             $timestamp3End = strtotime(date("H:i", $timestamp3End));
 
