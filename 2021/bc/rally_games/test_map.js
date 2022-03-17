@@ -784,45 +784,133 @@ $('#build').click(function () {
 $('#upgrade').click(function () {
     var id_tipe = document.getElementById("session_tipe_jembatan").value;
     console.log(id_tipe);
-    $.ajax({
-        url: "new_phps/post_upgrade.php",
-        method: "POST",
-        data: {
-            id_tipe: id_tipe,
-            id_jembatan: path_jembatan
-        },
-        success: function (res) {
-            document.location.reload(true);
-            console.log(res);
-        },
-        error: function ($xhr, errorThrown) {
-            console.log(errorThrown);
-            console.warn($xhr.responseText);
+
+    shopSwal.fire({
+        title: '<h3 style="color:white;">Konfirmasi Upgrade</h3>',
+        html: "<div style='color:white;'>Anda akan Upgrade <h5>" + id_tipe + "</b></div>",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Build',
+        cancelButtonText: 'Batal',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "new_phps/post_upgrade.php",
+                method: "POST",
+                data: {
+                    id_tipe: id_tipe,
+                    id_jembatan: path_jembatan
+                },
+                success: function (res) {
+                    document.location.reload(true);
+                    console.log(res);
+                },
+                error: function ($xhr, errorThrown) {
+                    console.log(errorThrown);
+                    console.warn($xhr.responseText);
+                }
+            });
+
+        } else if (result.dismiss === Swal.DismissReason
+            .cancel) {
+
+            // load_data(0);
+            shopSwal.fire({
+                title: '<h3 style="color:white;">Gagal Upgrade Jembatan!</h3>',
+                html: '',
+                icon: 'error'
+            })
         }
-    });
+    })
 });
+
+// $('#upgrade').click(function () {
+    // var id_tipe = document.getElementById("session_tipe_jembatan").value;
+    // console.log(id_tipe);
+//     $.ajax({
+//         url: "new_phps/post_upgrade.php",
+//         method: "POST",
+//         data: {
+//             id_tipe: id_tipe,
+//             id_jembatan: path_jembatan
+//         },
+//         success: function (res) {
+//             document.location.reload(true);
+//             console.log(res);
+//         },
+//         error: function ($xhr, errorThrown) {
+//             console.log(errorThrown);
+//             console.warn($xhr.responseText);
+//         }
+//     });
+// });
 
 $('#destroy').click(function () {
     var id_tipe = document.getElementById("session_tipe_jembatan").value;
     console.log(id_tipe);
 
-    $.ajax({
-        url: "new_phps/post_destroy.php",
-        method: "POST",
-        data: {
-            id_tipe: id_tipe,
-            id_jembatan: path_jembatan
-        },
-        success: function (res) {
-            document.location.reload(true);
-            console.log(res);
-        },
-        error: function ($xhr, errorThrown) {
-            console.log(errorThrown);
-            console.warn($xhr.responseText);
+    shopSwal.fire({
+        title: '<h3 style="color:white;">Konfirmasi Destroy</h3>',
+        html: "<div style='color:white;'>Anda akan Destroy <h5>" + id_tipe + "</b></div>",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Build',
+        cancelButtonText: 'Batal',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "new_phps/post_destroy.php",
+                method: "POST",
+                data: {
+                    id_tipe: id_tipe,
+                    id_jembatan: path_jembatan
+                },
+                success: function (res) {
+                    document.location.reload(true);
+                    console.log(res);
+                },
+                error: function ($xhr, errorThrown) {
+                    console.log(errorThrown);
+                    console.warn($xhr.responseText);
+                }
+            });
+
+        } else if (result.dismiss === Swal.DismissReason
+            .cancel) {
+
+            // load_data(0);
+            shopSwal.fire({
+                title: '<h3 style="color:white;">Gagal Destroy Jembatan!</h3>',
+                html: '',
+                icon: 'error'
+            })
         }
-    });
+    })
 });
+
+// $('#destroy').click(function () {
+//     var id_tipe = document.getElementById("session_tipe_jembatan").value;
+//     console.log(id_tipe);
+
+//     $.ajax({
+//         url: "new_phps/post_destroy.php",
+//         method: "POST",
+//         data: {
+//             id_tipe: id_tipe,
+//             id_jembatan: path_jembatan
+//         },
+//         success: function (res) {
+//             document.location.reload(true);
+//             console.log(res);
+//         },
+//         error: function ($xhr, errorThrown) {
+//             console.log(errorThrown);
+//             console.warn($xhr.responseText);
+//         }
+//     });
+// });
 
 $('.jembatan_ku').click(function () {
     build_jembatan(this.id);
