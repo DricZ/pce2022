@@ -22,7 +22,7 @@ var x = setInterval(function() {
 
   // Get today's date and time
   var now = new Date().getTime();
-  var countDownDate = new Date("Mar 19, 2022").getTime();
+  var countDownDate = new Date("Mar 21, 2022").getTime();
 
     
   // Find the distance between now and the count down date
@@ -55,7 +55,12 @@ var x = setInterval(function() {
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date().getTime()+362000;
+// var countDownDate = new Date().getTime()+362000;
+// 15.26
+var c = "09:08:00";
+var d = new Date('2022-03-17T'+c+'Z');
+var countDownDate = new Date('2022-03-17T'+c+'Z');
+
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -71,11 +76,11 @@ var x = setInterval(function() {
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
+  // var coba = moment().format('2020-03-20 14:32:20');  
   // Output the result in an element with id="demo"
   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
-    
+  console.log();
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
