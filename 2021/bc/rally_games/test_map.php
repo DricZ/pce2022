@@ -2175,6 +2175,27 @@
     </div>
 </div>
 
+<div class="modal fade" id="modal_ban">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="modal-title">Tidak dapat berpindah pulau!</p>
+                    <p>Anda <b>di-BAN</b> untuk masuk ke pulau tersebut.</p>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">
+                            CLOSE
+                        </button>
+                    </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="modal_tdk_bisa">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -2186,9 +2207,7 @@
                         terbang ke pulau tersebut.</p>
                     <p>Beli <b>tiket pesawat</b> / bahan untuk membangun <b>jembatan</b> di <b>SHOP</b></p>
                     <div class="text-center">
-                        <button type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">
-                            SHOP
-                        </button>
+                        <a href="shop.php" type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">SHOP</a>
                     </div>
             </div>
 

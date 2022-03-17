@@ -3,10 +3,11 @@
     header("Content-Type: application/json");
     if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_SESSION['username'])) {
         $pulau_hancur = array();
+        $pulau_spesial = array();
         $jembatan_hancur = array();
         $pulau_ban = array();
 
-        // ambil id team
+        // AMBIL ID TEAM
         $sql_team = "SELECT * FROM team WHERE username = ?;";
         $stmt_team = $pdo->prepare($sql_team);
         $stmt_team->execute([$_SESSION['username']]);
@@ -40,7 +41,15 @@
             array_push($pulau_ban, $row);
         }
 
-        echo json_encode([$pulau_hancur, $jembatan_hancur, $pulau_ban]);
+        // AMBIL PULAU YG SPESIAL
+        $sql_special = "SELECT * FROM new_pulau WHERE treasure != 0";
+        $stmt_special = $pdo->prepare($sql_special);
+        $stmt_special->execute();
+        while($row = $stmt_special->fetch()) {
+            array_push($pulau_spesial, $row);
+        }
+
+        echo json_encode([$pulau_hancur, $jembatan_hancur, $pulau_ban, $pulau_spesial]);
     } else {
         header("HTTP/1.1 400 Bad Request");
         $error = array(

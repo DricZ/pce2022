@@ -55,6 +55,11 @@ function load_map() {
             for (let i = 0; i < data[2].length; i++) {
                 banned_island[i] = data[2][i]["path"];
             }
+
+            // PULAU SPESIAL
+            for (let i = 0; i < data[3].length; i++) {
+                document.getElementById(data[3][i]["path"]).style.animation = "glowing_yellow 1.5s infinite";
+            }
         },
         error: function ($xhr, errorThrown) {
             console.log(errorThrown);
@@ -373,7 +378,7 @@ $('.pulau_ku').click(function () {
         if (banned_island.length != 0) {
             for (let i = 0; i < banned_island.length; i++) {
                 if (banned_island[i] == this.id) {
-                    $('#modal_tdk_bisa').modal();
+                    $('#modal_ban').modal();
                     return;
                 }
             }
@@ -864,16 +869,8 @@ function desckay(id) {
     }
 }
 
-function build() {
-
-}
-
 function off(id) {
     document.getElementById(id).style.backgroundColor = "white";
-}
-
-function ambil_jembatan() {
-
 }
 
 // INISIALISASI
@@ -882,8 +879,6 @@ $(function () {
     get_lokasi();
     load_map();
     disableIsland("start");
-    var pulau_harta;
-    // $("#modal_konfirmasi").modal();
 
     // for (let i = 0; i < document.getElementsByClassName("pulau_e").length; i++) {
     //     console.log(document.getElementsByClassName('"pulau_e", ')[i].id);
@@ -909,20 +904,15 @@ $(function () {
         });
     }
     if (time >= "20:00") {
-        pulau_harta = ["path878", "path778", "path738", "path910"]
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
             data: {
-                pulau: pulau_harta,
+                pulau: ["path878", "path778", "path738", "path910"],
                 harta: [0, 0, 18, 21],
                 time: 1
             }, success: function (data) {
                 console.log(data);
-                for (let i = 0; i < pulau_harta.length; i++) {
-                    // document.getElementById(pulau_harta[i]).style.animation = "";
-                    document.getElementById(pulau_harta[i]).classList.add("pulau_spesial");
-                }
             }, error: function ($xhr, errorThrown) {
                 console.log(errorThrown);
                 console.warn($xhr.responseText);
@@ -966,7 +956,7 @@ $(function () {
             url: "new_phps/addbencana.php",
             method: "POST",
             data: {
-                pulau: ["path714","path718","path722","path726","path730","path750","path754","path798","path802","path806","path842","path846","path850","path854","path858","path862","path954","path958"],
+                pulau: ["path714", "path718", "path722", "path726", "path730", "path750", "path754", "path798", "path802", "path806", "path842", "path846", "path850", "path854", "path858", "path862", "path954", "path958"],
                 time: 0
             }, success: function (data) {
                 console.log(data);
@@ -975,14 +965,14 @@ $(function () {
                 console.warn($xhr.responseText);
             }
         });
-    
+
     }
     if (time >= "21:00") {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
             data: {
-                pulau: ["path1246","path670","path674","path682","path686","path690","path694","path698","path702","path706","path710","path850","path890","path894","path898","path906","path934"],
+                pulau: ["path1246", "path670", "path674", "path682", "path686", "path690", "path694", "path698", "path702", "path706", "path710", "path850", "path890", "path894", "path898", "path906", "path934"],
                 time: 1
             }, success: function (data) {
                 console.log(data);
@@ -1006,10 +996,10 @@ $(function () {
                 console.warn($xhr.responseText);
             }
         });
-    
+
     }
     // for (let i = 0; i < document.getElementsByClassName("pulau_c").length; i++) {
     //     console.log(document.getElementsByClassName("pulau_c")[i].id+'", ');
     // }
-    
+
 });
