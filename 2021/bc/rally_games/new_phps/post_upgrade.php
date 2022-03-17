@@ -55,7 +55,7 @@
             // UPDATE JEMBATAN
             $updateidTeamsql = "UPDATE new_jembatan SET proteksi = 1 WHERE nama = ?";
             $updateidTeamstmt = $pdo->prepare($updateidTeamsql);
-            $updateidTeamstmt->execute([$_POST['id_jembantan']]);  
+            $updateidTeamstmt->execute([$_POST['id_jembatan']]);  
             
         } else {
             if ($row_team['money'] < $harga) {
