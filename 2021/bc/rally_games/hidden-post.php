@@ -9,7 +9,7 @@ if (isset($_GET['stat'])) {
 ?>
 <style>
     html {
-        background-color: rgb(32, 31, 31) !important;
+        /* background-color: rgb(32, 31, 31) !important; */
     }
 </style>
 
