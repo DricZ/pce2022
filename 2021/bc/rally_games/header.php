@@ -44,7 +44,8 @@ if ($rowTeam['location_now_id_city'] != 0) {
     
     body{
         background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url('./assets/Design Web/background web-01.png');
-        background-size: 100%;
+        background-size: 100vw 100vh;
+        background-attachment: fixed;
     }
 
     ::-webkit-scrollbar {

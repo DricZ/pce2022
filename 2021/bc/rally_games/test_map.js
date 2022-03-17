@@ -339,7 +339,7 @@ function _zoomOut() {
     $(".awan").fadeIn(1000);
 }
 function goBack() {
-    document.location.href = "http://localhost/pce2022/2021/bc/rally_games/map.php";
+    document.location.href = "menu.php";
 }
 function showSkill() {
     show();
