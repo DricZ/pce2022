@@ -262,7 +262,9 @@ while ($row = $stmt_skill->fetch()) {
                     </div>
                     <p class="text-center" style="font-size: 1.5vw;">Boom Mega Boom</p>
                     <div class="itemdesc-description">
+                    <p class="text-center mb-0 mt-2" style="font-size: 1.5vw;">
                     <i> Selamat! kamu berhasil menemukan treasure Boom Megaboom. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>
+                    </p>
                     </div>
 
                 </div>
@@ -278,7 +280,9 @@ while ($row = $stmt_skill->fetch()) {
                     </div>
                     <p class="text-center" style="font-size: 1.5vw;">Divide Et Impera</p>
                     <div class="itemdesc-description">
-                    Selamat! kamu berhasil menemukan treasure Devide Et Impera. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>
+                    <p class="text-center mb-0 mt-2" style="font-size: 1.5vw;">
+                    <i>Selamat! kamu berhasil menemukan treasure Devide Et Impera. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>
+                    </p>
                     </div>
 
                 </div>
@@ -294,7 +298,9 @@ while ($row = $stmt_skill->fetch()) {
                     </div>
                     <p class="text-center" style="font-size: 1.5vw;">X2 Social Credit</p>
                     <div class="itemdesc-description">
+                    <p class="text-center mb-0 mt-2" style="font-size: 1.5vw;">
                     <i> Selamat! kamu berhasil menemukan treasure X2 Social Credits. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>
+                    </p>
                     </div>
 
                 </div>
@@ -310,7 +316,9 @@ while ($row = $stmt_skill->fetch()) {
                     </div>
                     <p class="text-center" style="font-size: 1.5vw;">Hutan</p>
                     <div class="itemdesc-description">
+                    <p class="text-center mb-0 mt-2" style="font-size: 1.5vw;">
                     <i> Selamat! kamu berhasil menemukan treasure TBL TBL TBL. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>
+                    </p>
                     </div>
 
                 </div>
@@ -326,7 +334,9 @@ while ($row = $stmt_skill->fetch()) {
                     </div>
                     <p class="text-center" style="font-size: 1.5vw;"> Meteor</p>
                     <div class="itemdesc-description">
+                    <p class="text-center mb-0 mt-2" style="font-size: 1.5vw;">
                     <i> Selamat! kamu berhasil menemukan treasure Meteor. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>
+                    </p>
                     </div>
 
                 </div>

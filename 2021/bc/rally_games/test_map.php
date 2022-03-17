@@ -2509,10 +2509,9 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title">
-                    Info Jembatan
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </h4>
+                <h1 class="modal-title"style ='margin-left: auto;'>Info Jembatan</h1>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                
             </div>
 
             <!-- Modal body -->
@@ -2520,7 +2519,7 @@
                 style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
                 <div class="container">
                     <div id="info" class="row" style="width:50%">
-
+                        
                     </div>
                 </div>
 
