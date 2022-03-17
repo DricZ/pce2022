@@ -987,7 +987,7 @@ $(function () {
     // ADD TREASURE
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes();
-    if (time >= "18:30") {
+    if (time >= "18:45") {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1003,7 +1003,7 @@ $(function () {
             }
         });
     }
-    if (time >= "20:00") {
+    if (time >= "19:30") {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1019,7 +1019,7 @@ $(function () {
             }
         });
     }
-    if (time >= "21:00") {
+    if (time >= "20:15") {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1035,7 +1035,7 @@ $(function () {
             }
         });
     }
-    if (time >= "22:00") {
+    if (time >= "21:00") {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1051,7 +1051,7 @@ $(function () {
             }
         });
     }
-    if (time >= "18:00") {
+    if (time >= "19:30") {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1067,7 +1067,7 @@ $(function () {
         });
 
     }
-    if (time >= "21:00") {
+    if (time >= "20:15") {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1082,7 +1082,7 @@ $(function () {
             }
         });
     }
-    if (time >= "23:00") {
+    if (time >= "21:00") {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
