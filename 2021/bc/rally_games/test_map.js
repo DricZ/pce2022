@@ -388,11 +388,17 @@ $('.pulau_ku').click(function () {
         clicked_island = this.id;
         if (this.id == current_island) {
             document.getElementById('modal_saat_ini').style.display = "block";
-            $('#modal_pulau').modal();
+            $('#modal_pulau').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
         } else {
             if (current_island == undefined) {
                 document.getElementById('modal_saat_tiket').style.display = "block";
-                $('#modal_pulau').modal();
+                $('#modal_pulau').modal({
+                    backdrop: 'static',
+                    keyboard: false
+                });
             } else {
                 $.ajax({
                     url: "new_phps/check_lokasi.php",
@@ -406,10 +412,16 @@ $('.pulau_ku').click(function () {
                         if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
                             document.getElementById('modal_saat_jembatan').style.display = "block";
                             document.getElementById('modal_saat_jembatan').innerHTML = "<h3>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</h3><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
-                            $('#modal_pulau').modal();
+                            $('#modal_pulau').modal({
+                                backdrop: 'static',
+                                keyboard: false
+                            });
                         } else { // JIKA PINDAH PULAU PAKAI TIKET
                             document.getElementById('modal_saat_tiket').style.display = "block";
-                            $('#modal_pulau').modal();
+                            $('#modal_pulau').modal({
+                                backdrop: 'static',
+                                keyboard: false
+                            });
                         }
                         transportasi = data[0];
                     },
@@ -975,7 +987,7 @@ $(function () {
     // ADD TREASURE
     var today = new Date();
     var time = today.getHours() + ":" + today.getMinutes();
-    if (time >= "19:00") {
+    if (time >= "18:30") {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
