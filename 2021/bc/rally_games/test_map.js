@@ -35,6 +35,10 @@ function get_lokasi() {
     });
 }
 
+// BELI SHIELD PERMANEN
+// $("#shield_")
+
+
 // HILANGKAN PULAU YG KENA BOM & BAN
 function load_map() {
     $.ajax({
@@ -78,12 +82,9 @@ function get_jembatan() {
                 if (item['username'] == username) {
                     document.getElementById(item['nama_jembatan']).style.opacity = "1";
                     document.getElementById(item['nama_jembatan']).style.fill = "black";
-                    $('#coba').append(item['nama_jembatan']);
-                }
-                else {
+                } else {
                     document.getElementById(item['nama_jembatan']).style.opacity = "1";
                     document.getElementById(item['nama_jembatan']).style.fill = "red";
-                    $('#coba').append(item['nama_jembatan']);
                 }
             });
         }
@@ -115,6 +116,25 @@ function get_team(di_pulau) {
 
 // UNTUK ZOOM PULAU
 function _zoomIn(id_pulau, pulau_besar) {
+
+    $.ajax({
+        url: "new_phps/check_jembatan.php",
+        method: "POST",
+        data: {
+            pulau: clicked_island
+        },
+        success: function (data) {
+            if (data[0] != "tampilkan") {
+                document.getElementById(clicked_island).style.pointerEvents = "none";
+                console.log(data);
+            }
+        },
+        error: function ($xhr, errorThrown) {
+            console.log(errorThrown);
+            console.warn($xhr.responseText);
+        }
+    });
+
     var change_height = 0;
     zoom = true;
 
@@ -256,26 +276,6 @@ $('.tidak').click(function () {
         document.getElementById('modal_saat_tiket').style.display = "none";
     }, 500);
     $('#modal_pulau').modal("hide");
-})
-
-// UNTUK MENAMPILKAN INFO JEMBATAN SAAT DI-HOVER
-var mouse_x = 0;
-var mouse_y = 0;
-$('.jembatan_ku').hover(function (e) {
-    document.body.addEventListener('mousemove', (event) => {
-        mouse_x = event.x;
-        mouse_y = event.y;
-    })
-    $('#coba').css({
-        left: mouse_x,
-        top: mouse_y,
-        'display': 'block',
-        'z-index': '5'
-    });
-}, function () {
-    $('#coba').css({
-        'display': 'none'
-    })
 });
 
 function show() {
@@ -373,68 +373,72 @@ function _cancelSkill() {
 
 // UNTUK MUNCULKAN MODAL PULAU
 $('.pulau_ku').click(function () {
-    if (state == "choosing") {
-        use(currentSkill, this.id);
-        state = "none";
+    if (zoom == true) {
+        $("#modal_permanent").modal();
     } else {
-        get_team(this.id);
+        if (state == "choosing") {
+            use(currentSkill, this.id);
+            state = "none";
+        } else {
+            get_team(this.id);
 
-        // JIKA PULAU DI-BAN
-        if (banned_island.length != 0) {
-            for (let i = 0; i < banned_island.length; i++) {
-                if (banned_island[i] == this.id) {
-                    $('#modal_ban').modal();
-                    return;
+            // JIKA PULAU DI-BAN
+            if (banned_island.length != 0) {
+                for (let i = 0; i < banned_island.length; i++) {
+                    if (banned_island[i] == this.id) {
+                        $('#modal_ban').modal();
+                        return;
+                    }
                 }
             }
-        }
 
-        // JIKA LOKASI SAAT INI
-        clicked_island = this.id;
-        if (this.id == current_island) {
-            document.getElementById('modal_saat_ini').style.display = "block";
-            $('#modal_pulau').modal({
-                backdrop: 'static',
-                keyboard: false
-            });
-        } else {
-            if (current_island == undefined) {
-                document.getElementById('modal_saat_tiket').style.display = "block";
+            // JIKA LOKASI SAAT INI
+            clicked_island = this.id;
+            if (this.id == current_island) {
+                document.getElementById('modal_saat_ini').style.display = "block";
                 $('#modal_pulau').modal({
                     backdrop: 'static',
                     keyboard: false
                 });
             } else {
-                $.ajax({
-                    url: "new_phps/check_lokasi.php",
-                    method: "POST",
-                    data: {
-                        pulau_tujuan: clicked_island,
-                        pulau_skrg: current_island
-                    },
-                    success: function (data) {
-                        console.log(data);
-                        if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
-                            document.getElementById('modal_saat_jembatan').style.display = "block";
-                            document.getElementById('modal_saat_jembatan').innerHTML = "<h3>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</h3><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
-                            $('#modal_pulau').modal({
-                                backdrop: 'static',
-                                keyboard: false
-                            });
-                        } else { // JIKA PINDAH PULAU PAKAI TIKET
-                            document.getElementById('modal_saat_tiket').style.display = "block";
-                            $('#modal_pulau').modal({
-                                backdrop: 'static',
-                                keyboard: false
-                            });
+                if (current_island == undefined) {
+                    document.getElementById('modal_saat_tiket').style.display = "block";
+                    $('#modal_pulau').modal({
+                        backdrop: 'static',
+                        keyboard: false
+                    });
+                } else {
+                    $.ajax({
+                        url: "new_phps/check_lokasi.php",
+                        method: "POST",
+                        data: {
+                            pulau_tujuan: clicked_island,
+                            pulau_skrg: current_island
+                        },
+                        success: function (data) {
+                            console.log(data);
+                            if (data[0] == "jembatan") { // JIKA PINDAH PULAU PAKAI JEMBATAN
+                                document.getElementById('modal_saat_jembatan').style.display = "block";
+                                document.getElementById('modal_saat_jembatan').innerHTML = "<h3>Pergi dengan melalui <b>jembatan " + data[1] + "</b>.</h3><img id='gambar_jembatan' src='assets/image/" + data[2] + "' alt='' width='100%'></img>";
+                                $('#modal_pulau').modal({
+                                    backdrop: 'static',
+                                    keyboard: false
+                                });
+                            } else { // JIKA PINDAH PULAU PAKAI TIKET
+                                document.getElementById('modal_saat_tiket').style.display = "block";
+                                $('#modal_pulau').modal({
+                                    backdrop: 'static',
+                                    keyboard: false
+                                });
+                            }
+                            transportasi = data[0];
+                        },
+                        error: function ($xhr, errorThrown) {
+                            console.log(errorThrown);
+                            console.warn($xhr.responseText);
                         }
-                        transportasi = data[0];
-                    },
-                    error: function ($xhr, errorThrown) {
-                        console.log(errorThrown);
-                        console.warn($xhr.responseText);
-                    }
-                });
+                    });
+                }
             }
         }
     }
@@ -1053,28 +1057,6 @@ $('#destroy').click(function () {
     })
 });
 
-// $('#destroy').click(function () {
-//     var id_tipe = document.getElementById("session_tipe_jembatan").value;
-//     console.log(id_tipe);
-
-//     $.ajax({
-//         url: "new_phps/post_destroy.php",
-//         method: "POST",
-//         data: {
-//             id_tipe: id_tipe,
-//             id_jembatan: path_jembatan
-//         },
-//         success: function (res) {
-//             document.location.reload(true);
-//             console.log(res);
-//         },
-//         error: function ($xhr, errorThrown) {
-//             console.log(errorThrown);
-//             console.warn($xhr.responseText);
-//         }
-//     });
-// });
-
 $('.jembatan_ku').click(function () {
     build_jembatan(this.id);
 });
@@ -1131,8 +1113,6 @@ $(function () {
     load_map();
     disableIsland("start");
 
-    $("#modal_permanent").modal();
-
     // for (let i = 0; i < document.getElementsByClassName("pulau_e").length; i++) {
     //     console.log(document.getElementsByClassName('"pulau_e", ')[i].id);
     // }
@@ -1142,12 +1122,12 @@ $(function () {
     var hour = today.getHours();
     var mintues = today.getMinutes();
 
-    if ( hour >= 9  && mintues >= 30) { 
-        
+    if (hour >= 9 && mintues >= 30) {
+
     }
     var time = today.getHours() + ":" + today.getMinutes();
     // console.log(time);
-    if ( hour >= 18  && mintues >= 45) {
+    if (hour >= 18 && mintues >= 45) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1163,7 +1143,7 @@ $(function () {
             }
         });
     }
-    if ( hour >= 19  && mintues >= 30) {
+    if (hour >= 19 && mintues >= 30) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1179,7 +1159,7 @@ $(function () {
             }
         });
     }
-    if ( hour >= 20  && mintues >= 15) {
+    if (hour >= 20 && mintues >= 15) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1195,7 +1175,7 @@ $(function () {
             }
         });
     }
-    if ( hour >= 21  && mintues >= 00) {
+    if (hour >= 21 && mintues >= 00) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1211,7 +1191,7 @@ $(function () {
             }
         });
     }
-    if ( hour >= 9  && mintues >= 36) {
+    if (hour >= 9 && mintues >= 36) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1228,7 +1208,7 @@ $(function () {
         });
 
     }
-    if ( hour >= 20  && mintues >= 15) {
+    if (hour >= 20 && mintues >= 15) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1243,7 +1223,7 @@ $(function () {
             }
         });
     }
-    if ( hour >= 21  && mintues >= 00) {
+    if (hour >= 21 && mintues >= 00) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",

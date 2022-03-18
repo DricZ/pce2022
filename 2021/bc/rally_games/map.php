@@ -2126,7 +2126,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close tidak" data-dismiss="modal">&times;</button>
                 <h1 class="modal-title">Ingin pergi ke pulau tersebut?</h1>
                 <div class="row">
                     <div class="col-sm-6" id="team_here">
@@ -2177,11 +2177,12 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h1 class="modal-title">Tidak dapat berpindah pulau!</h1>
                     <p>Anda <b>di-BAN</b> untuk masuk ke pulau tersebut.</p>
-                    <div class="text-center">
+                    <img src="assets\image\TBL (2).png" alt="" width="100%">
+                    <!-- <div class="text-center">
                         <button type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">
                             CLOSE
                         </button>
-                    </div>
+                    </div> -->
             </div>
 
             <div class="modal-footer">
@@ -2204,7 +2205,7 @@
                 </center>
                 <div class="text-center">
                     <p>Pasang <b>Shield Pulau Permanen</b> untuk melindungi jembatan Anda yang terhubung pada pulau ini dari bencana dan serangan bom dari tim lawan</p>
-                    <button type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">
+                    <button id="shield_pulau" type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">
                     50.000 <img src="assets\image\Bridge Coin.png" alt="" width="32px">
                     </button>
                 </div>
