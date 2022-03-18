@@ -37,25 +37,90 @@ function get_lokasi() {
 
 // BELI SHIELD PERMANEN
 $("#shield_pulau").click(function () {
-    $.ajax({
-        url: "new_phps/activate_shield.php",
-        method: "POST",
-        data: {
-            pulau: clicked_island
-        },
-        success: function (data) {
-            if (data != "berhasil") {
-                // uang kurang
-            } else {
-                // berhasil
-            }
-        },
-        error: function ($xhr, errorThrown) {
-            console.log(errorThrown);
-            console.warn($xhr.responseText);
+    shopSwal.fire({
+        title: '<h3 style="color:white;">Konfirmasi Pembelian Shield Permanen</h3>',
+        html: "<div style='color:white;'>Anda akan membeli <b>Shield Permanen</b></div>",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Build',
+        cancelButtonText: 'Batal',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: "new_phps/activate_shield.php",
+                method: "POST",
+                data: {
+                    pulau: clicked_island
+                },
+                success: function (res) {
+                    //document.location.reload(true);
+
+                    if (res != "berhasil") {
+                        shopSwal.fire({
+                            title: '<h3 style="color:white;">Gagal membeli Shield Permanen!</h3>',
+                            html: "<div style='color:white;'><b>" + 'uang tidak cukup' + "</b> .</div>",
+                            icon: 'error', confirmButtonText: 'Oke'
+
+                        }).then((result2) => {
+                            if (result2.isConfirmed) {
+                                location.reload();
+                            }
+                        })
+                    } else {
+                        shopSwal.fire({
+                            title: '<h3 style="color:white;">Berhasil membeli Shield Permanen!</h3>',
+                            icon: 'success', confirmButtonText: 'Oke'
+
+                        }).then((result2) => {
+                            if (result2.isConfirmed) {
+                                location.reload();
+                            }
+                        })
+                    }
+                },
+
+                error: function ($xhr, textStatus,
+                    errorThrown) {
+                    console.log(errorThrown);
+                    console.warn($xhr.responseText);
+                }
+            });
+
+        } else if (result.dismiss === Swal.DismissReason
+            .cancel) {
+
+            // load_data(0);
+            shopSwal.fire({
+                title: '<h3 style="color:white;">Batal Membeli Shield Permanen!</h3>',
+                html: '',
+                icon: 'error'
+            })
         }
-    });
+    })
 });
+
+
+// $("#shield_pulau").click(function () {
+//     $.ajax({
+//         url: "new_phps/activate_shield.php",
+//         method: "POST",
+//         data: {
+//             pulau: clicked_island
+//         },
+//         success: function (data) {
+//             if (data != "berhasil") {
+//                 // uang kurang
+//             } else {
+//                 // berhasil
+//             }
+//         },
+//         error: function ($xhr, errorThrown) {
+//             console.log(errorThrown);
+//             console.warn($xhr.responseText);
+//         }
+//     });
+// });
 
 
 // HILANGKAN PULAU YG KENA BOM & BAN
