@@ -112,52 +112,66 @@
                 $stmt->execute([$idboom,$id_team]);
                 $result = "masuk if";
             } else {
-                $sql = "UPDATE team_resources SET count =
-                (SELECT count+1 FROM team_resources 
-                WHERE id_resource=? And id_team = ?)
-                WHERE id_resource = ? AND id_team =?;";
+            //     UPDATE team_resources AS a
+            // INNER JOIN team_resources AS b ON a.id = b.id
+            // SET a.count = b.count+1
+            // WHERE a.id_resource = ? AND a.id_team = ? AND b.id_resource = ? AND b.id_team = ?
+                $sql = "UPDATE team_resources AS a
+                INNER JOIN team_resources AS b ON a.id = b.id
+                SET a.count = b.count+1
+                WHERE a.id_resource = ? AND a.id_team = ? AND b.id_resource = ? AND b.id_team = ?;";
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute([$idboom,$id_team,$idboom,$id_team]);
                 $result = "masuk else";
             } 
             //mengurangi bahan
-            $sql_korek = "UPDATE team_resources SET count =
-            (SELECT count-? FROM team_resources 
-            WHERE id_resource=13 And id_team =?)
-            WHERE id_resource = 13 AND id_team =?;";
+            // UPDATE team_resources AS a
+            // INNER JOIN team_resources AS b ON a.id = b.id
+            // SET a.count = b.count-?
+            // WHERE a.id_resource = 13 AND a.id_team = ? AND b.id_resource = 13 AND b.id_team = ?
+            $sql_korek = "UPDATE team_resources AS a
+            INNER JOIN team_resources AS b ON a.id = b.id
+            SET a.count = b.count-?
+            WHERE a.id_resource = 13 AND a.id_team = ? AND b.id_resource = 13 AND b.id_team = ?;";
             $stmt_korek = $pdo->prepare($sql_korek);
             $stmt_korek->execute([$korek,$id_team,$id_team]);
 
-            $sql_hcl = "UPDATE team_resources SET count =
-            (SELECT count-? FROM team_resources 
-            WHERE id_resource=14 AND id_team =?)
-            WHERE id_resource = 14 AND id_team =?;";
+            $sql_hcl = "UPDATE team_resources AS a
+            INNER JOIN team_resources AS b ON a.id = b.id
+            SET a.count = b.count-?
+            WHERE a.id_resource = 14 AND a.id_team = ? AND b.id_resource = 14 AND b.id_team = ?;";
             $stmt_hcl = $pdo->prepare($sql_hcl);
             $stmt_hcl->execute([$hcl,$id_team,$id_team]);
 
             $sql_belerang = "UPDATE team_resources AS a
             INNER JOIN team_resources AS b ON a.id = b.id
             SET a.count = b.count-?
-            WHERE a.id_resource = 15 AND a.id = ? AND b.id_resource = 15 AND b.id = ?";
+            WHERE a.id_resource = 15 AND a.id_team = ? AND b.id_resource = 15 AND b.id_team = ?;";
             $stmt_belerang = $pdo->prepare($sql_belerang);
             $stmt_belerang->execute([$belerang,$id_team,$id_team]);
 
-            $sql_styrofoam = "UPDATE team_resources SET count =
-            (SELECT count-? FROM team_resources 
-            WHERE id_resource=16 AND id_team =?)
-            WHERE id_resource = 16 AND id_team =?;";
+            $sql_styrofoam = "UPDATE team_resources AS a
+            INNER JOIN team_resources AS b ON a.id = b.id
+            SET a.count = b.count-?
+            WHERE a.id_resource = 16 AND a.id_team = ? AND b.id_resource = 16 AND b.id_team = ?;";
             $stmt_styrofoam = $pdo->prepare($sql_styrofoam);
             $stmt_styrofoam->execute([$styrofoam,$id_team,$id_team]);
 
-            $sql_black_powder = "UPDATE team_resources SET count =
-            (SELECT count-? FROM team_resources 
-            WHERE id_resource=17 AND id_team =?)
-            WHERE id_resource = 17 AND id_team =?;";
+            $sql_black_powder = "UPDATE team_resources AS a
+            INNER JOIN team_resources AS b ON a.id = b.id
+            SET a.count = b.count-?
+            WHERE a.id_resource = 17 AND a.id_team = ? AND b.id_resource = 17 AND b.id_team = ?;";
             $stmt_black_powder = $pdo->prepare($sql_black_powder);
             $stmt_black_powder->execute([$blackpowder,$id_team,$id_team]);
             //kurang uang
-            $sql_money = "UPDATE team SET money=
-            (SELECT money-? FROM team WHERE id=?) WHERE id = ?;";
+            // UPDATE team AS a
+            // INNER JOIN team AS b ON a.id = b.id
+            // SET a.money = b.money-?
+            // WHERE a.id = ? AND b.id = ?
+            $sql_money = "UPDATE team AS a
+            INNER JOIN team AS b ON a.id = b.id
+            SET a.money = b.money-?
+            WHERE a.id = ? AND b.id = ?;";
             $stmt_money = $pdo->prepare($sql_money);
             $stmt_money->execute([$harga,$id_team,$id_team]);
            

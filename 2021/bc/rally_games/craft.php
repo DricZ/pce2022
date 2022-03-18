@@ -161,7 +161,7 @@ $rowTeam = $stmtTeam->fetch();
                 <h1 id="title">Craft</h1>
 
                 <div class="row wallet">
-                    <img src="assets/image/bridge coin.png" width="35px" class="mx-2 pt-1">
+                    <img src="assets/image/Bridge Coin.png" width="35px" class="mx-2 pt-1">
                     <div class="uang pr-4"><?= number_format($rowTeam['money'],0,',','.'); ?></div>
                 </div>
                 <div class="container" style="margin-top: 2cm;">
@@ -222,7 +222,7 @@ $rowTeam = $stmtTeam->fetch();
                                     <b>2x</b>
                                 </div>
                                 <div class='col-4' style = 'margin-top: auto; margin-bottom: auto;'>
-                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>6000</span>
+                                    <img src="assets/image/Bridge Coin.png" width="10%"><span id='uangbom1'>6000</span>
                                     <a href="#" class="btn btn-primary craft" id = 'Bom Lvl 1' style="text-align:right;">buat</a>
                                 </div>
                             </div>
@@ -269,7 +269,7 @@ $rowTeam = $stmtTeam->fetch();
                                     <b>3x</b>
                                 </div>
                                 <div class='col-4' style = 'margin-top: auto; margin-bottom: auto;'>
-                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>10000</span>
+                                    <img src="assets/image/Bridge Coin.png" width="10%"><span id='uangbom1'>10000</span>
                                     <a href="#" class="btn btn-primary craft" id = 'Bom Lvl 2' style="text-align:right;">buat</a>
                                 </div>
                             </div>
@@ -316,7 +316,7 @@ $rowTeam = $stmtTeam->fetch();
                                     <b>4x</b>
                                 </div>
                                 <div class='col-4' style = 'margin-top: auto; margin-bottom: auto;'>
-                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>14250</span>
+                                    <img src="assets/image/Bridge Coin.png" width="10%"><span id='uangbom1'>14250</span>
                                     <a href="#" class="btn btn-primary craft" id = 'Bom Lvl 3' style="text-align:right;">buat</a>
                                 </div>
                             </div>
@@ -363,7 +363,7 @@ $rowTeam = $stmtTeam->fetch();
                                     <b>4x</b>
                                 </div>
                                 <div class='col-4' style = 'margin-top: auto; margin-bottom: auto;'>
-                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>16750</span>
+                                    <img src="assets/image/Bridge Coin.png" width="10%"><span id='uangbom1'>16750</span>
                                     <a href="#" class="btn btn-primary craft" id = 'Bom Lvl 4' style="text-align:right;">buat</a>
                                 </div>
                             </div>
@@ -410,7 +410,7 @@ $rowTeam = $stmtTeam->fetch();
                                     <b>5x</b>
                                 </div>
                                 <div class='col-4' style = 'margin-top: auto; margin-bottom: auto;'>
-                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>18500</span>
+                                    <img src="assets/image/Bridge Coin.png" width="10%"><span id='uangbom1'>18500</span>
                                     <a href="#" class="btn btn-primary craft" id = 'Bom Lvl 5' style="text-align:right;">buat</a>
                                 </div>
                             </div>
@@ -457,7 +457,7 @@ $rowTeam = $stmtTeam->fetch();
                                     <b>6x</b>
                                 </div>
                                 <div class='col-4' style = 'margin-top: auto; margin-bottom: auto;'>
-                                    <img src="assets/image/bridge coin.png" width="10%"><span id='uangbom1'>22250</span>
+                                    <img src="assets/image/Bridge Coin.png" width="10%"><span id='uangbom1'>22250</span>
                                     <a href="#" class="btn btn-primary craft" id = 'Bom Lvl 6' style="text-align:right;">buat</a>
                                 </div>
                             </div>
