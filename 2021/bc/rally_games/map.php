@@ -2335,7 +2335,7 @@
                             <h4>Bahan yang diperlukan:</h4>
                             <p>
                                 1x Shield Jembatan Kayu
-                                <img src="assets/image/shield jembatan kayu-01.png" width="100px" height="100px">
+                                <img src="assets/image/shield jembatan kayu-01.png" width="200px" height="200px">
                             </p>
                         </div>
 
@@ -2347,7 +2347,7 @@
                             <h4>Bahan yang diperlukan:</h4>
                             <p>
                                 1x Shield Jembatan Baja
-                                <img src="assets/image/shield jembatan baja-01.png" width="100px" height="100px">
+                                <img src="assets/image/shield jembatan baja-01.png" width="200px" height="200px">
                             </p>
                         </div>
 
@@ -2359,7 +2359,7 @@
                             <h4>Bahan yang diperluhkan:</h4>
                             <p>
                                 1x Shield Jembatan Beton
-                                <img src="assets/image/shield jembatan beton-01.png" width="100px" height="100px">
+                                <img src="assets/image/shield jembatan beton-01.png" width="200px" height="200px">
                             </p>
                         </div>
                     </div>
