@@ -152,7 +152,7 @@ if (isset($_GET['bet'])) {
             $timestamp = strtotime(date("H:i"));
 
             //ISI DI SINI
-            $timestamp1 = strtotime('18:30');
+            $timestamp1 = strtotime('09:44');
             $timestamp1End = $timestamp1 + (60 * 5);
             $timestamp1End = strtotime(date("H:i", $timestamp1End));
 
@@ -172,7 +172,7 @@ if (isset($_GET['bet'])) {
                 <div class="card news-card mb-4">
                     <div class="card-body">
                         <h4 class="card-title">The first Hidden Post has appeared!</h4>
-                        <p class="card-text">Click <a href='bet-game.php?hidpost=1'>here</a> to visit the hidden post</p>
+                        <p class="card-text">Click <a href='https://us02web.zoom.us/j/87022111494?pwd=NVA3NXE1Q2k3dlpBTm9Za2dxWlEzdz09'>here</a> to visit the hidden post</p>
 
                     </div>
                 </div>
@@ -186,7 +186,7 @@ if (isset($_GET['bet'])) {
                 <div class="card news-card mb-4">
                     <div class="card-body">
                         <h4 class="card-title">The second Hidden Post has appeared!</h4>
-                        <p class="card-text">Click <a href='bet-game.php?hidpost=2'>here</a> to visit the hidden post</p>
+                        <p class="card-text">Click <a href='https://us02web.zoom.us/j/87022111494?pwd=NVA3NXE1Q2k3dlpBTm9Za2dxWlEzdz09'>here</a> to visit the hidden post</p>
 
                     </div>
                 </div>
@@ -200,7 +200,7 @@ if (isset($_GET['bet'])) {
                 <div class="card news-card mb-4">
                     <div class="card-body">
                         <h4 class="card-title">The third Hidden Post has appeared!</h4>
-                        <p class="card-text">Click <a href='bet-game.php?hidpost=3'>here</a> to visit the hidden post</p>
+                        <p class="card-text">Click <a href='https://us02web.zoom.us/j/87022111494?pwd=NVA3NXE1Q2k3dlpBTm9Za2dxWlEzdz09'>here</a> to visit the hidden post</p>
 
                     </div>
                 </div>
