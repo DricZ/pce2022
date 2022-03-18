@@ -2218,17 +2218,17 @@
                         <p>Pilih tipe jembatan yang ingin dibangun:</p>
                         <div class='col-sm-4'>
                             <img id="jmbkayu" onclick="on('jmbkayu')" class="card-img-top g_jembatan"
-                                src="assets/image/Jembatan Kayu.png" alt="Card image">
+                                src="assets 2022/ASSET WEB/Jembatan Kayu.png" alt="Card image">
                         </div>
 
                         <div class='col-sm-4'>
                             <img id="jmbbaja" onclick="on('jmbbaja')" class="card-img-top g_jembatan"
-                                src="assets/image/Jembatan Baja.png" alt="Card image">
+                                src="assets 2022/ASSET WEB/Jembatan Baja.png" alt="Card image">
                         </div>
 
                         <div class='col-sm-4'>
                             <img id="jmbbeton" onclick="on('jmbbeton')" class="card-img-top g_jembatan"
-                                src="assets/image/Jembatan Beton.png" alt="Card image">
+                                src="assets 2022/ASSET WEB/Jembatan Beton.png" alt="Card image">
                         </div>
                     </div>
                     <div class="row" style="width:50%">
