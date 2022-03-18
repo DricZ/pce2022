@@ -6,7 +6,7 @@
         $result = array();
 
         if ($_POST['skill'] == 'Boom Mega Boom' || $_POST['skill'] == 'Meteor') {
-            $sql_pulau = "SELECT path AS _path FROM new_pulau WHERE tipe = 'kecil'";
+            $sql_pulau = "SELECT path AS _path FROM new_pulau WHERE tipe = 'kecil' AND nama != 'shield'";
             $stmt_pulau = $pdo->prepare($sql_pulau);
             $stmt_pulau->execute();    
             while($row = $stmt_pulau->fetch()) {

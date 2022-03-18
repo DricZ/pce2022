@@ -37,6 +37,9 @@ if ($rowTeam['location_now_id_city'] != 0) {
 ?>
 
 <style>
+    .navbar{
+        position: fixed !important;
+    }
     html {
         /* background-color: rgb(32, 31, 31); */
         font-family: "Industry";
@@ -220,7 +223,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
                 <li>
                     <img class="icon-navBar" src="assets/Design Web/treasure-01.png" alt="">
                 </li>
-                <li>Skill</li>
+                <li>Treasure</li>
             </a>
         </ul>
         <ul>

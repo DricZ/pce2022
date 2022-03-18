@@ -10,7 +10,7 @@ include 'header.php';
 <html>
 
 <head>
-    <title>Admin BC 2022 - Bridge Coin History</title>
+    <title>Admin BC 2022 - Bridge Skill History</title>
 </head>
 
 <style>
@@ -73,7 +73,7 @@ include 'header.php';
         }
 
         $.ajax({
-            url: "phps/refresh_history_money.php",
+            url: "phps/refresh_history_skill.php",
             type: "get",
             dataType: "json",
             success: function(result) {
@@ -87,7 +87,7 @@ include 'header.php';
                     str += "<tr style='font-weight: 100;'>";
                     str += "<td>" + num + "</td>";
                     str += "<td>" + d.team_name + "</td>";
-                    str += "<td>" + d.money_value + "</td>";
+                    str += "<td>" + d.nama_skill + "</td>";
                     str += "<td>" + d.keterangan + "</td>";
                     str += "<td>" + d.added_on + " WIB</td>";
                     str += "<td>" + d.added_by + "</td>";
@@ -125,7 +125,7 @@ include 'header.php';
 <body>
     <div class="container-fluid" style="margin-top: 30px;">
         <div class="title-row row mx-4">
-            <h1 class="title"><i class="fas fa-history"></i> ADD BRIDGE COIN HISTORY</h1>
+            <h1 class="title"><i class="fas fa-history"></i> ADD SKILL HISTORY</h1>
         </div>
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2" style="padding-top: 30px;">
@@ -148,7 +148,7 @@ include 'header.php';
                         <tr>
                             <td style="width: 5%;">#</td>
                             <td>Nama Team</td>
-                            <td>Bridge Coin yang Ditambahkan</td>
+                            <td>Skill yang Ditambahkan</td>
                             <td>Keterangan</td>
                             <td>Added On</td>
                             <td>Added By</td>
