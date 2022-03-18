@@ -32,14 +32,17 @@
         
         if ($row_team['money']>= $harga) {
             //kurang uang
-            $sql_money = "UPDATE team SET money =
-            (SELECT money-? FROM team 
-            WHERE username = ?) 
-            WHERE username = ?";
+            $sql_money = "UPDATE team AS a
+            INNER JOIN team AS b ON a.id = b.id
+            SET a.money = b.money-?
+            WHERE a.username = ? AND b.username = ?";
             $stmt_money = $pdo->prepare($sql_money);
             $stmt_money->execute([$harga, $_SESSION['username'], $_SESSION['username']]);
 
-            $updateidpoinksql = "UPDATE team SET point = (SELECT point + ? FROM team WHERE id = ?) WHERE id = ?";
+            $updateidpoinksql = "UPDATE team AS a
+            INNER JOIN team AS b ON a.id = b.id
+            SET a.point = b.point+?
+            WHERE a.id = ? AND b.id = ?";
             $updateidpoinkstmt = $pdo->prepare($updateidpoinksql);
 
             if ($id_tipe == '1'){

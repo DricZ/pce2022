@@ -209,7 +209,9 @@ $('#ya').click(function () {
                 transportasi: transportasi
             },
             success: function (data) {
+                console.log(data);
                 if (data == "kurang") {
+                    console.log(data);
                     $("#modal_tdk_bisa").modal();
                 } else {
                     console.log(data);
@@ -826,8 +828,8 @@ $('#upgrade').click(function () {
 });
 
 // $('#upgrade').click(function () {
-    // var id_tipe = document.getElementById("session_tipe_jembatan").value;
-    // console.log(id_tipe);
+// var id_tipe = document.getElementById("session_tipe_jembatan").value;
+// console.log(id_tipe);
 //     $.ajax({
 //         url: "new_phps/post_upgrade.php",
 //         method: "POST",

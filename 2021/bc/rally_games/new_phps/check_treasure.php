@@ -14,17 +14,17 @@
         $row_team = $stmt_team->fetch();
         $id_team = $row_team['id'];
 
-        // AMBIL ID TREASURE
-        $sql = "SELECT * FROM `new_pulau` WHERE path = ? 
-        AND treasure != '0'";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute([$_POST['pulau_harta']]);
-        $row = $stmt->fetch();
-        $treasure = $row['treasure'];
-
+        // AMBIL PULAU BERISI TREASURE
+        $sql_treasure = "SELECT * FROM `new_pulau` 
+        WHERE path = ? AND treasure != 0";
+        $stmt_treasure = $pdo->prepare($sql_treasure);
+        $stmt_treasure->execute([$_POST['pulau_harta']]);
+        $row_treasure = $stmt_treasure->fetch();
+        
         // CEK APAKAH TREASURE MASIH ADA
-        if ($stmt->rowCount() != 0) {
+        if ($stmt_treasure->rowCount() != 0) {
             $result = "ada";
+            $treasure = $row_treasure['treasure'];
         }
 
         // PINDAH HARTA DARI PULAU KE INVENTORI

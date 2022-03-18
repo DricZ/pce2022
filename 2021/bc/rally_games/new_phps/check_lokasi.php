@@ -6,21 +6,38 @@
     && isset($_POST['pulau_tujuan'])
     && isset($_POST['pulau_skrg'])) {
         $result = ["tiket"];
+        // pulau_tujuan: path674
+        // pulau_skrg: path694
+
+        // AMBIL ID TEAM
+        $sql_team = "SELECT * FROM team WHERE username = ?";
+        $stmt_team = $pdo->prepare($sql_team);
+        $stmt_team->execute([$_SESSION['username']]);
+        $row_team = $stmt_team->fetch();
+        $id_team = $row_team['id'];
+
+        // AMBIL ID PULAU SEKARANG
+        $sql_pulau = "SELECT * FROM new_pulau WHERE path = ?";
+        $stmt_pulau = $pdo->prepare($sql_pulau);
+        $stmt_pulau->execute([$_POST["pulau_skrg"]]);
+        $row_pulau = $stmt_pulau->fetch();
+        $id_pulau = $row_pulau['id'];
+
+        // AMBIL ID PULAU TUJUAN
+        $sql_tujuan = "SELECT * FROM new_pulau WHERE path = ?";
+        $stmt_tujuan = $pdo->prepare($sql_tujuan);
+        $stmt_tujuan->execute([$_POST["pulau_tujuan"]]);
+        $row_tujuan = $stmt_tujuan->fetch();
+        $id_tujuan = $row_tujuan['id'];
 
         // LIST JEMBATAN YG TERHUBUNG KE PULAU SAAT INI
-        $sql = "SELECT p.path AS pulau1, p2.path AS pulau2, 
-        tj.nama AS tipe, tj.gambar AS gambar_jembatan
-        FROM new_jembatan j
-        JOIN team t ON j.id_team = t.id
-        JOIN new_pulau p ON p.id = j.id_pulau1
-        JOIN new_pulau p2 ON p2.id = j.id_pulau2
-        JOIN new_tipe_jembatan tj ON tj.id = j.id_tipe
-        WHERE t.id_lokasi = j.id_pulau1 
-        OR t.id_lokasi = j.id_pulau2;";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
+        $sql_jembatan = "SELECT nj.id_pulau1, nj.id_pulau2, nt.nama AS tipe FROM new_jembatan nj
+        JOIN new_tipe_jembatan nt ON nj.id_tipe = nt.id
+        WHERE (id_pulau1 = ? OR id_pulau2 = ?) AND id_team = ?";
+        $stmt_jembatan = $pdo->prepare($sql_jembatan);
+        $stmt_jembatan->execute([$id_pulau, $id_pulau, $id_team]);
         $arr_jembatan = array();
-        while($row = $stmt->fetch()) {
+        while($row = $stmt_jembatan->fetch()) {
             array_push($arr_jembatan, $row);
         }
         // contoh hasil $arr_jembatan:
@@ -29,28 +46,25 @@
         // 2: {pulau1: 'path1246', pulau2: 'path678', tipe: 'kayu', gambar_jembatan: 'jembatan kayu tampak atas-01.png')
     
         $pulau_ditemukan = false;
-        for ($i=0; $i < sizeof($arr_jembatan); $i++) { 
-            if ($_POST['pulau_tujuan'] == $arr_jembatan[$i]['pulau1'] ||
-                $_POST['pulau_tujuan'] == $arr_jembatan[$i]['pulau2']) { // JIKA DARI LIST ADA PULAU TUJUAN
-                $result = ["jembatan", $arr_jembatan[$i]['tipe'], $arr_jembatan[$i]['gambar_jembatan']];
+        for ($i=0; $i < sizeof($arr_jembatan); $i++) {
+            if ($id_tujuan == $arr_jembatan[$i]["id_pulau1"] || $id_tujuan == $arr_jembatan[$i]["id_pulau2"]) {
+                $result = ["jembatan", $arr_jembatan[$i]["tipe"], $arr_jembatan[$i]['gambar']];
                 $pulau_ditemukan = true;
                 break;
             }
         }
 
-        if ($pulau_ditemukan == false) { // JIKA PULAU TUJUAN TDK TERHUBUNG JEMBATAN
-            // CEK INVENTORI
-            $sql_inventory = "SELECT * 
-            FROM `team_resources` tr
-            JOIN team t ON tr.id_team = t.id
-            WHERE tr.id_resource = 6 AND username = ?;";
-            $stmt_inventory = $pdo->prepare($sql_inventory);
-            $stmt_inventory->execute([$_SESSION['username']]);
-            $row_inventory = $stmt_inventory->fetch();
-            if ($row_inventory['count'] > 0) { // JIKA PUNYA TIKET PESAWAT
-                $result = ["tiket"];
-            }
-        }
+        // if ($pulau_ditemukan == false) { // JIKA PULAU TUJUAN TDK TERHUBUNG JEMBATAN
+        //     // CEK INVENTORI
+        //     $sql_inventory = "SELECT * FROM team_resources
+        //     WHERE id_resource = 6 AND id_team = ?";
+        //     $stmt_inventory = $pdo->prepare($sql_inventory);
+        //     $stmt_inventory->execute([$id_team]);
+        //     $row_inventory = $stmt_inventory->fetch();
+        //     if ($row_inventory['count'] > 0) { // JIKA PUNYA TIKET PESAWAT
+        //         $result = ["tiket"];
+        //     }
+        // }
         
         echo json_encode($result);
     } else {

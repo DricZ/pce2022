@@ -23,25 +23,24 @@
         } else {
             if ($_POST['transportasi'] == 'tiket') {
                 // KURANGI TIKET PESAWAT DI INVENTORI
-                $sql_inventory = "UPDATE team_resources tr
-                SET tr.count = (SELECT tr.count-1
-                            FROM team_resources tr
-                            WHERE tr.id_resource = 6
-                            AND tr.id_team = 1)
-                WHERE tr.id_resource = 6
-                AND tr.id_team = ?";
+                $sql_inventory = "UPDATE team_resources AS a
+                INNER JOIN team_resources AS b ON a.id = b.id
+                SET a.count = b.count-1
+                WHERE a.id_resource = 6 AND a.id_team = ? 
+                AND b.id_resource = 6 AND b.id_team = ?";
                 $stmt_inventory = $pdo->prepare($sql_inventory);
-                $stmt_inventory->execute([$id_team]);
+                $stmt_inventory->execute([$id_team, $id_team]);
             }
     
             // PINDAH LOKASI TEAM SEKARANG
-            $sql_pindah = "UPDATE team t
-            SET t.id_lokasi = (SELECT p.id
-                                         FROM new_pulau p
-                                         WHERE p.path = ?)
-            WHERE t.username = ?";
+            $sql_pulau = "SELECT * FROM new_pulau WHERE path = ?";
+            $stmt_pulau = $pdo->prepare($sql_pulau);
+            $stmt_pulau->execute([$_POST['pulau_tujuan']]); 
+            $row_pulau = $stmt_pulau->fetch();
+
+            $sql_pindah = "UPDATE team SET id_lokasi = ? WHERE username = ?";
             $stmt_pindah = $pdo->prepare($sql_pindah);
-            $stmt_pindah->execute([$_POST['pulau_tujuan'], $_SESSION['username']]);    
+            $stmt_pindah->execute([$row_pulau['id'], $_SESSION['username']]);
 
             echo json_encode($_POST['pulau_tujuan']);
         }

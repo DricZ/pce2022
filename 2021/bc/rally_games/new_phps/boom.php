@@ -135,10 +135,10 @@
             $stmt_hcl = $pdo->prepare($sql_hcl);
             $stmt_hcl->execute([$hcl,$id_team,$id_team]);
 
-            $sql_belerang = "UPDATE team_resources SET count =
-            (SELECT count-? FROM team_resources 
-            WHERE id_resource=15 AND id_team=?)
-            WHERE id_resource = 15 AND id_team =?;";
+            $sql_belerang = "UPDATE team_resources AS a
+            INNER JOIN team_resources AS b ON a.id = b.id
+            SET a.count = b.count-?
+            WHERE a.id_resource = 15 AND a.id = ? AND b.id_resource = 15 AND b.id = ?";
             $stmt_belerang = $pdo->prepare($sql_belerang);
             $stmt_belerang->execute([$belerang,$id_team,$id_team]);
 
