@@ -168,7 +168,7 @@
             }
         }
 
-        echo json_encode($cek);
+        echo json_encode($result);
     }
 
     else {
