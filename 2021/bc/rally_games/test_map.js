@@ -1119,14 +1119,10 @@ $(function () {
 
     // ADD TREASURE
     var today = new Date();
-    var hour = today.getHours();
+    var hours = today.getHours();
     var mintues = today.getMinutes();
+    var times = parseInt(hours + "" + mintues);
 
-    if (hour >= 9 && mintues >= 30) {
-
-    }
-    var time = today.getHours() + ":" + today.getMinutes();
-    // console.log(time);
     if (hour >= 18 && mintues >= 45) {
         $.ajax({
             url: "new_phps/add_treasure.php",
@@ -1191,6 +1187,7 @@ $(function () {
             }
         });
     }
+
     if (hour >= 9 && mintues >= 36) {
         $.ajax({
             url: "new_phps/addbencana.php",
