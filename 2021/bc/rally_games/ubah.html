@@ -1,72 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Document</title>
 </head>
 <body>
 
-<div class="container">
-  <h2>Modal Example</h2>
-  <!-- Button to Open the Modal -->
-  <button id="treasure" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_bencana">
     Open modal
   </button>
 
-  <!-- The Modal -->
-  <div class="modal" id="myModal">
+  <div class="modal fade" id="modal_bencana">
     <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">CLUE</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <h1 class="modal-title"style ='margin-left: auto;'>Terjadi Bencana!</h1>
+                <button style="margin-top: -7px;" type="button" class="close" data-dismiss="modal">&times;</button>
+                
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body"
+                style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <div class="container">
+                    <div class="row" style="width:100%; margin-top:-2%; margin-left:-15px">
+
+                        <!-- Jembatan Beton -->
+                        
+                        <div class="col-12 jembatan hidden" id="upbeton">
+
+                            <p>Bencana akan menurunkan tingkatan dari jembatan anda bahkan sampai hancur </p>
+                            <center><img src="assets/image/angin beliung.png" alt="" style="width: 50%;"></center>
+                            <p>untuk mempelajari lebih lanjut silakan ke :</p>
+                            <a href="#" class="btn btn-info" role="button" style="width: inherit;">Info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <p>
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </p>
+                </div>
+            </div>
         </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body" id="body_treasure">
-          <i>Selamat! kamu berhasil menemukan treasure skill Penggandaan. Cara mendapatkan skill nya bisa kamu tanyakan di <b> <a href=""> Pos Penukaran Skill.</a></b> Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>
-          <i> Selamat! kamu berhasil menemukan treasure Boom Megaboom. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-        
-      </div>
     </div>
-  </div>
-  
 </div>
 </body>
-<script>
-  $('#treasure').click(function () {
-    if(penggandaan){
-      document.getElementById('body_treasure').innerHTML = '<i>Selamat! kamu berhasil menemukan treasure skill Penggandaan. Cara mendapatkan skill nya bisa kamu tanyakan di <b> <a href=""> Pos Penukaran Skill.</a></b> Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
-    }
-    else if(megaboom) {
-      document.getElementById('body_treasure').innerHTML = ' <i> Selamat! kamu berhasil menemukan treasure Boom Megaboom. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
-    }
-    else if(Devide Et Impera) {
-      document.getElementById('body_treasure').innerHTML = ' <i> Selamat! kamu berhasil menemukan treasure Devide Et Impera. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
-    }
-    else if(X2 Social Credits) {
-      document.getElementById('body_treasure').innerHTML = ' <i> Selamat! kamu berhasil menemukan treasure X2 Social Credits. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
-    }
-    else if(TBL TBL TBL) {
-      document.getElementById('body_treasure').innerHTML = ' <i> Selamat! kamu berhasil menemukan treasure TBL TBL TBL. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
-    }
-    else if(Meteor) {
-      document.getElementById('body_treasure').innerHTML = ' <i> Selamat! kamu berhasil menemukan treasure Meteor. Cara mendapatkan skill nya bisa kamu tanyakan di <b><a href="">Pos Penukaran Skill.</a></b>  Tukarkan di pos penukaran dan dapatkan hadiahnya segera sebelum kehabisan, karena hanya terbatas untuk beberapa kelompok aja lho!</i>';
-    }
-    
-  })
-</script>
 </html>

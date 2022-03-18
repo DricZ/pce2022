@@ -2538,6 +2538,27 @@
     </div>
 </div>
 
+
+<div class="modal fade" id="modal_bencana">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="modal-title">Terjadi Bencana!</h1>
+                    <p>Bencana akan menurunkan tingkatan dari jembatan anda bahkan sampai hancur </p>
+                    <center><img src="" alt="" style="width: 50%; " id = 'imgbencana'></center>
+                    <p>Untuk mempelajari lebih lanjut silakan ke :</p>
+                    <a href="#" class="btn btn-info" role="button" style="width: inherit;">Info</a>
+                    
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="modal_info">
     <div class="modal-dialog">
         <div class="modal-content">
