@@ -122,20 +122,42 @@
             WHERE a.id = ? AND b.id = ?";
             $updateidpoinkstmt = $pdo->prepare($updateidpoinksql);
 
+            define('TIMEZONE', 'Asia/Jakarta');
+            date_default_timezone_set(TIMEZONE);
+            $timestamp = date("d-m-Y H:i:s");
+
+            //ambil nama jembatan 
+            $sqlnama = "SELECT * FROM new_tipe_jembatan WHERE id = ?;";
+            $stmtnama = $pdo->prepare($sqlnama);
+            $stmtnama->execute([$_POST['id_tipe']]);
+            $rownama = $stmtnama->fetch();
+            $nama = $rownama['nama'];
+            
             if ($_POST['id_tipe'] == 1){
                 $updateidpoinkstmt->execute([10, $row_team['id'], $row_team['id']]);
+                $sqlhistory ="INSERT INTO `history_point`(`id`, `id_team`, `point_value`, `added_on`, `keterangan`) VALUES (NULL,?,10,?,?)";
+                $stmthistory = $pdo->prepare($sqlhistory);
+                $stmthistory->execute([$id_team, $timestamp,$nama]);
             }
             else if ($_POST['id_tipe'] == 2){
                 $updateidpoinkstmt->execute([30, $row_team['id'], $row_team['id']]);
+                $sqlhistory ="INSERT INTO `history_point`(`id`, `id_team`, `point_value`, `added_on`, `keterangan`) VALUES (NULL,?,30,?,?)";
+                $stmthistory = $pdo->prepare($sqlhistory);
+                $stmthistory->execute([$id_team, $timestamp,$nama]);
             }
             else{
                 $updateidpoinkstmt->execute([50, $row_team['id'], $row_team['id']]);
+                $sqlhistory ="INSERT INTO `history_point`(`id`, `id_team`, `point_value`, `added_on`, `keterangan`) VALUES (NULL,?,50,?,?)";
+                $stmthistory = $pdo->prepare($sqlhistory);
+                $stmthistory->execute([$id_team, $timestamp,$nama]);
             }
 
             // UPDATE JEMBATAN
             $updateidTeamsql = "UPDATE new_jembatan SET id_team = ?, id_tipe = ? WHERE nama = ?";
             $updateidTeamstmt = $pdo->prepare($updateidTeamsql);
             $updateidTeamstmt->execute([$row_team['id'], $_POST['id_tipe'], $_POST['id_jembatan']]);  
+
+            
         } else {
             if ($cek < 5 and $row_team['money'] < $harga) {
                 $result = 1;
