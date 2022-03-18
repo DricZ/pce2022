@@ -708,6 +708,8 @@ function build_jembatan(id_jembatan) {
                         else {
                             document.getElementById("destkayu").classList.remove('hidden');
                         }
+
+                        $('#modal_destroy').modal();
                     }
 
                     else if (item['tipe_jembatan'] == 2) {
@@ -718,6 +720,8 @@ function build_jembatan(id_jembatan) {
                         else {
                             document.getElementById("destbaja").classList.remove('hidden');
                         }
+
+                        $('#modal_destroy').modal();
                     }
 
                     else if (item['tipe_jembatan'] == 3) {
@@ -728,9 +732,13 @@ function build_jembatan(id_jembatan) {
                         else {
                             document.getElementById("destbeton").classList.remove('hidden');
                         }
+
+                        $('#modal_destroy').modal();
                     }
 
-                    $('#modal_destroy').modal();
+                    else if (item['tipe_jembatan'] == 4) {
+                        $('#modal_destroy_permanen').modal();
+                    }
                 }
                 else {
                     if (item['tipe_jembatan'] == 1) {
