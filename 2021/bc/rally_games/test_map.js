@@ -1134,8 +1134,15 @@ $(function () {
 
     // ADD TREASURE
     var today = new Date();
+    var hour = today.getHours();
+    var mintues = today.getMinutes();
+
+    if ( hour >= 9  && mintues >= 30) { 
+        
+    }
     var time = today.getHours() + ":" + today.getMinutes();
-    if (time >= "18:45") {
+    // console.log(time);
+    if ( hour >= 18  && mintues >= 45) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1151,7 +1158,7 @@ $(function () {
             }
         });
     }
-    if (time >= "19:30") {
+    if ( hour >= 19  && mintues >= 30) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1167,7 +1174,7 @@ $(function () {
             }
         });
     }
-    if (time >= "20:15") {
+    if ( hour >= 20  && mintues >= 15) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1183,7 +1190,7 @@ $(function () {
             }
         });
     }
-    if (time >= "21:00") {
+    if ( hour >= 21  && mintues >= 00) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1199,7 +1206,7 @@ $(function () {
             }
         });
     }
-    if (time >= "19:30") {
+    if ( hour >= 9  && mintues >= 36) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1208,6 +1215,7 @@ $(function () {
                 time: 0
             }, success: function (data) {
                 console.log(data);
+                console.log("masuk");
             }, error: function ($xhr, errorThrown) {
                 console.log(errorThrown);
                 console.warn($xhr.responseText);
@@ -1215,7 +1223,7 @@ $(function () {
         });
 
     }
-    if (time >= "20:15") {
+    if ( hour >= 20  && mintues >= 15) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1230,7 +1238,7 @@ $(function () {
             }
         });
     }
-    if (time >= "21:00") {
+    if ( hour >= 21  && mintues >= 00) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
