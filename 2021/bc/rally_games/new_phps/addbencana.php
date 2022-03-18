@@ -9,6 +9,7 @@
         $stmt_time->execute();
         $row_time = $stmt_time->fetch();
         $level;
+        $var="";
         $result =array();
         if($_POST['time']==0){
             $level=3;
@@ -19,7 +20,6 @@
         else if($_POST['time']==2){
             $level=1;
         }
-
         if ($row_time['jam'] == $_POST['time']) {
             for ($i=0; $i < sizeof($_POST['pulau']); $i++) { 
                 $sql = "SELECT * FROM new_pulau WHERE path =?;";
@@ -160,16 +160,14 @@
                     }
                 }
             }
-            
 
-            
             $count = $_POST['time']+1 ; 
             $sql_change = "UPDATE `new_timing` SET `jam` = ? WHERE `nama` = 'bencana'";
             $stmt_change = $pdo->prepare($sql_change);
             $stmt_change->execute([$count]);
+            $var = "hancur";
         }
-        
-        echo json_encode($result);
+        echo json_encode($var);
     } else {
         header("HTTP/1.1 400 Bad Request");
         $error = array(
