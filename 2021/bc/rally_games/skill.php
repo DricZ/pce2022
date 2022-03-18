@@ -403,7 +403,7 @@ while ($row = $stmt_skill->fetch()) {
             $(".itemdesc-container").hide();
             $(".desc-jakarta").show();
             $("#containerAll").css({
-                'background-image': 'url("assets/image/monas.jpg")'
+                'background-image': 'url("assets/Design Web/design web 2-01.png")'
             });
         });
 
@@ -415,7 +415,7 @@ while ($row = $stmt_skill->fetch()) {
             $(".desc-jayapura").show();
             $("#itemdesc").fadeIn();
             $("#containerAll").css({
-                'background-image': 'url("assets/image/jaya3.jpg")'
+                'background-image': 'url("assets/Design Web/design web 2-01.png")'
             });
         });
 
@@ -427,7 +427,7 @@ while ($row = $stmt_skill->fetch()) {
             $(".desc-jogjakarta").show();
             $("#itemdesc").fadeIn();
             $("#containerAll").css({
-                'background-image': 'url("assets/image/bg-jogja.png")'
+                'background-image': 'url("assets/Design Web/design web 2-01.png")'
             });
         });
 
@@ -439,7 +439,7 @@ while ($row = $stmt_skill->fetch()) {
             $(".desc-bali").show();
             $("#itemdesc").fadeIn();
             $("#containerAll").css({
-                'background-image': 'url("assets/image/bali.png")'
+                'background-image': 'url("assets/Design Web/design web 2-01.png")'
             });
         });
 
@@ -451,7 +451,7 @@ while ($row = $stmt_skill->fetch()) {
             $(".desc-banjarmasin").show();
             $("#itemdesc").fadeIn();
             $("#containerAll").css({
-                'background-image': 'url("assets/image/hutann.jpg")'
+                'background-image': 'url("assets/Design Web/design web 2-01.png")'
             });
         });
 
@@ -463,7 +463,7 @@ while ($row = $stmt_skill->fetch()) {
             $(".desc-lampung").show();
             $("#itemdesc").fadeIn();
             $("#containerAll").css({
-                'background-image': 'url("assets/image/sigerrr.jpg")'
+                'background-image': 'url("assets/Design Web/design web 2-01.png")'
             });
 
         });

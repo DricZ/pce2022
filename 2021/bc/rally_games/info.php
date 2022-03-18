@@ -323,7 +323,7 @@ $_SESSION['page'] = 'info';
         <!-- Akhir dari Tampilan untuk satu info -->
 
         <!-- Mulai Tampilan untuk satu info -->
-        <div class="card news-card" id="info-card">
+        <!-- <div class="card news-card" id="info-card">
             <div class="card-body">
                 <div class="card-title" id="num-1">
                     <p class="text-right">
@@ -343,7 +343,7 @@ $_SESSION['page'] = 'info';
                     Passcode: <b>659120</b>
                 </p>
             </div>
-        </div>
+        </div> -->
         <!-- Akhir dari Tampilan untuk satu info -->
 
         <!-- Akhir dari Tampilan jika ada info -->

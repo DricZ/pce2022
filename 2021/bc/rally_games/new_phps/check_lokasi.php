@@ -6,8 +6,6 @@
     && isset($_POST['pulau_tujuan'])
     && isset($_POST['pulau_skrg'])) {
         $result = ["tiket"];
-        // pulau_tujuan: path674
-        // pulau_skrg: path694
 
         // AMBIL ID TEAM
         $sql_team = "SELECT * FROM team WHERE username = ?";
@@ -40,10 +38,6 @@
         while($row = $stmt_jembatan->fetch()) {
             array_push($arr_jembatan, $row);
         }
-        // contoh hasil $arr_jembatan:
-        // 0: {pulau1: 'path1246', pulau2: 'path674', tipe: 'kayu', gambar_jembatan: 'jembatan kayu tampak atas-01.png'}
-        // 1: {pulau1: 'path1246', pulau2: 'path686', tipe: 'kayu', gambar_jembatan: 'jembatan kayu tampak atas-01.png'}
-        // 2: {pulau1: 'path1246', pulau2: 'path678', tipe: 'kayu', gambar_jembatan: 'jembatan kayu tampak atas-01.png')
     
         $pulau_ditemukan = false;
         for ($i=0; $i < sizeof($arr_jembatan); $i++) {
@@ -53,18 +47,6 @@
                 break;
             }
         }
-
-        // if ($pulau_ditemukan == false) { // JIKA PULAU TUJUAN TDK TERHUBUNG JEMBATAN
-        //     // CEK INVENTORI
-        //     $sql_inventory = "SELECT * FROM team_resources
-        //     WHERE id_resource = 6 AND id_team = ?";
-        //     $stmt_inventory = $pdo->prepare($sql_inventory);
-        //     $stmt_inventory->execute([$id_team]);
-        //     $row_inventory = $stmt_inventory->fetch();
-        //     if ($row_inventory['count'] > 0) { // JIKA PUNYA TIKET PESAWAT
-        //         $result = ["tiket"];
-        //     }
-        // }
         
         echo json_encode($result);
     } else {

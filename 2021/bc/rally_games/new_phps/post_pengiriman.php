@@ -69,7 +69,7 @@
             //mengurangi bahan
             $sql_kayu = "UPDATE team_resources AS a
             INNER JOIN team_resources AS b ON a.id = b.id
-            SET a.count = b.count-1
+            SET a.count = b.count- ?
             WHERE a.id_resource = 1 AND a.id_team = ? 
             AND b.id_resource = 1 AND b.id_team = ?";
             
@@ -78,7 +78,7 @@
 
             $sql_baja = "UPDATE team_resources AS a
             INNER JOIN team_resources AS b ON a.id = b.id
-            SET a.count = b.count-1
+            SET a.count = b.count-?
             WHERE a.id_resource = 2 AND a.id_team = ? 
             AND b.id_resource = 2 AND b.id_team = ?";
             $stmt_baja = $pdo->prepare($sql_baja);
@@ -86,7 +86,7 @@
 
             $sql_semen = "UPDATE team_resources AS a
             INNER JOIN team_resources AS b ON a.id = b.id
-            SET a.count = b.count-1
+            SET a.count = b.count-?
             WHERE a.id_resource = 3 AND a.id_team = ? 
             AND b.id_resource = 3 AND b.id_team = ?";
             $stmt_semen = $pdo->prepare($sql_semen);
@@ -94,7 +94,7 @@
 
             $sql_pasir = "UPDATE team_resources AS a
             INNER JOIN team_resources AS b ON a.id = b.id
-            SET a.count = b.count-1
+            SET a.count = b.count-?
             WHERE a.id_resource = 4 AND a.id_team = ? 
             AND b.id_resource = 4 AND b.id_team = ?";
             $stmt_pasir = $pdo->prepare($sql_pasir);
@@ -102,7 +102,7 @@
 
             $sql_pekerja = "UPDATE team_resources AS a
             INNER JOIN team_resources AS b ON a.id = b.id
-            SET a.count = b.count-1
+            SET a.count = b.count-?
             WHERE a.id_resource = 5 AND a.id_team = ? 
             AND b.id_resource = 5 AND b.id_team = ?";
             $stmt_pekerja = $pdo->prepare($sql_pekerja);

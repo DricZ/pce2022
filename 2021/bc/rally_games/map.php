@@ -41,363 +41,363 @@
         }
 
         .a1 {
-            top: 6vh;
-            left: 128vh;
-            width: 20vh;
+            top: 17vh;
+            left: 34vw;
+            width: 15%;
         }
 
         .a2 {
-            top: 13vh;
-            left: 136vh;
-            width: 20vh;
+            top: 23vh;
+            left: 27vw;
+            width: 20%;
         }
 
         .a3 {
             top: 23vh;
-            left: 143vh;
-            width: 20vh;
+            left: 143vw;
+            width: 20%;
         }
 
         .a4 {
             top: 40vh;
-            left: 125vh;
-            width: 20vh;
+            left: 125vw;
+            width: 20%;
         }
 
         .a5 {
             top: 51vh;
-            left: 110vh;
-            width: 20vh;
+            left: 110vw;
+            width: 20%;
         }
 
         .a6 {
             top: 55vh;
-            left: 120vh;
-            width: 20vh;
+            left: 120vw;
+            width: 20%;
         }
 
         .a7 {
             top: 22vh;
-            left: 65vh;
-            width: 20vh;
+            left: 65vw;
+            width: 20%;
         }
 
         .a8 {
             top: 45vh;
-            left: 50vh;
-            width: 20vh;
+            left: 50vw;
+            width: 20%;
         }
 
         .a9 {
             top: 50vh;
-            left: 80vh;
-            width: 15vh;
+            left: 80vw;
+            width: 15%;
         }
 
         .a10 {
             top: 56vh;
-            left: 78vh;
-            width: 20vh;
+            left: 78vw;
+            width: 20%;
         }
 
         .a11 {
             top: 33vh;
-            left: 150vh;
-            width: 20vh;
+            left: 150vw;
+            width: 20%;
         }
 
         .a12 {
             top: 38vh;
-            left: 150vh;
-            width: 20vh;
+            left: 150vw;
+            width: 20%;
         }
 
         .a13 {
             top: 58vh;
-            left: 145vh;
-            width: 18vh;
+            left: 145vw;
+            width: 18%;
         }
 
         .a14 {
             top: 56vh;
-            left: 130vh;
-            width: 18vh;
+            left: 130vw;
+            width: 18%;
         }
 
         .a15 {
             top: 48vh;
-            left: 125vh;
-            width: 20vh;
+            left: 125vw;
+            width: 20%;
         }
 
         .a16 {
             top: 40vh;
-            left: 140vh;
-            width: 10vh;
+            left: 140vw;
+            width: 10%;
         }
 
         .a17 {
             top: 58vh;
-            left: 100vh;
-            width: 20vh;
+            left: 100vw;
+            width: 20%;
         }
 
         .a18 {
             top: 65vh;
-            left: 115vh;
-            width: 10vh;
+            left: 115vw;
+            width: 10%;
         }
 
         .a19 {
             top: 63vh;
-            left: 120vh;
-            width: 15vh;
+            left: 120vw;
+            width: 15%;
         }
 
         .a20 {
             top: 65vh;
-            left: 130vh;
-            width: 10vh;
+            left: 130vw;
+            width: 10%;
         }
 
         .a21 {
             top: 65vh;
-            left: 80vh;
-            width: 20vh;
+            left: 80vw;
+            width: 20%;
         }
 
         .a22 {
             top: 63vh;
-            left: 87vh;
-            width: 20vh;
+            left: 87vw;
+            width: 20%;
         }
 
         .a23 {
             top: 75vh;
-            left: 78vh;
-            width: 20vh;
+            left: 78vw;
+            width: 20%;
         }
 
         .a24 {
             top: 80vh;
-            left: 78vh;
-            width: 20vh;
+            left: 78vw;
+            width: 20%;
         }
 
         .a25 {
             top: 73vh;
-            left: 95vh;
-            width: 20vh;
+            left: 95vw;
+            width: 20%;
         }
 
         .a26 {
             top: 72vh;
-            left: 98vh;
-            width: 20vh;
+            left: 98vw;
+            width: 20%;
         }
 
         .a27 {
             top: 58vh;
-            left: 98vh;
-            width: 20vh;
+            left: 98vw;
+            width: 20%;
         }
 
         .a28 {
             top: 80vh;
-            left: 98vh;
-            width: 20vh;
+            left: 98vw;
+            width: 20%;
         }
 
         .a29 {
             top: 83vh;
-            left: 90vh;
-            width: 20vh;
+            left: 90vw;
+            width: 20%;
         }
 
         .a30 {
             top: 80vh;
-            left: 115vh;
-            width: 10vh;
+            left: 115vw;
+            width: 10%;
         }
 
         .a31 {
             top: 84vh;
-            left: 118vh;
-            width: 10vh;
+            left: 118vw;
+            width: 10%;
         }
 
         .a32 {
             top: 87vh;
-            left: 120vh;
-            width: 10vh;
+            left: 120vw;
+            width: 10%;
         }
 
         .a33 {
             top: 89vh;
-            left: 125vh;
-            width: 10vh;
+            left: 125vw;
+            width: 10%;
         }
 
         .a34 {
             top: 89vh;
-            left: 128vh;
-            width: 10vh;
+            left: 128vw;
+            width: 10%;
         }
 
         .a35 {
             top: 89vh;
-            left: 130vh;
-            width: 10vh;
+            left: 130vw;
+            width: 10%;
         }
 
         .a36 {
             top: 85vh;
-            left: 136vh;
-            width: 10vh;
+            left: 136vw;
+            width: 10%;
         }
 
         .a37 {
             top: 83vh;
-            left: 136vh;
-            width: 10vh;
+            left: 136vw;
+            width: 10%;
         }
 
         .a38 {
             top: 47vh;
-            left: 80vh;
-            width: 10vh;
+            left: 80vw;
+            width: 10%;
         }
 
         .a39 {
             top: 37vh;
-            left: 77vh;
-            width: 10vh;
+            left: 77vw;
+            width: 10%;
         }
 
         .a40 {
             top: 25vh;
-            left: 86vh;
-            width: 10vh;
+            left: 86vw;
+            width: 10%;
         }
 
         .a41 {
             top: 25vh;
-            left: 95vh;
-            width: 10vh;
+            left: 95vw;
+            width: 10%;
         }
 
         .a42 {
             top: 24vh;
-            left: 115vh;
-            width: 15vh;
+            left: 115vw;
+            width: 15%;
         }
 
         .a43 {
             top: 46vh;
-            left: 113vh;
-            width: 8vh;
+            left: 113vw;
+            width: 8%;
         }
 
         .a44{
             top: 0vh;
-            left: 40vh;
-            width: 45vh;
+            left: 40vw;
+            width: 45%;
         }
 
         .a45{
             top: 0vh;
-            left: 140vh;
-            width: 50vh;
+            left: 140vw;
+            width: 50%;
         }
 
         .a46{
             top: 0vh;
-            left: 160vh;
-            width: 50vh;
+            left: 160vw;
+            width: 50%;
         }
 
         .a47{
             top: 0vh;
-            left: 170vh;
-            width: 40vh;
+            left: 170vw;
+            width: 40%;
         }
 
         .a48{
             top: 0vh;
-            left: 130vh;
-            width: 20vh;
+            left: 130vw;
+            width: 20%;
         }
 
         .a49{
             top: 0vh;
-            left: 120vh;
-            width: 20vh;
+            left: 120vw;
+            width: 20%;
         }
 
         .a50{
             top: 0vh;
-            left: 110vh;
-            width: 15vh;
+            left: 110vw;
+            width: 15%;
         }
 
         .a51{
             top: 0vh;
-            left: 100vh;
-            width: 15vh;
+            left: 100vw;
+            width: 15%;
         }
 
         .a52{
             top: 5vh;
-            left: 110vh;
-            width: 15vh;
+            left: 110vw;
+            width: 15%;
         }
 
         .a53{
             top: 0vh;
-            left: 70vh;
-            width: 30vh;
+            left: 70vw;
+            width: 30%;
         }
 
         .a54{
             top: 20vh;
-            left: 150vh;
-            width: 50vh;
+            left: 150vw;
+            width: 50%;
         }
 
         .a55{
             top: 20vh;
-            left: 170vh;
-            width: 50vh;
+            left: 170vw;
+            width: 50%;
         }
 
         .a56{
             top: 10vh;
-            left: 170vh;
-            width: 50vh;
+            left: 170vw;
+            width: 50%;
         }
 
         .a57{
             top: 0vh;
-            left: 140vh;
-            width: 50vh;
+            left: 140vw;
+            width: 50%;
         }
 
         .a58{
             top: 0vh;
-            left: 140vh;
-            width: 50vh;
+            left: 140vw;
+            width: 50%;
         }
 
         .a59{
             top: 0vh;
-            left: 140vh;
-            width: 50vh;
+            left: 140vw;
+            width: 50%;
         }
 
         .a60{
             top: 0vh;
-            left: 140vh;
-            width: 50vh;
+            left: 140vw;
+            width: 50%;
         }
 
         .default:hover {
@@ -410,11 +410,27 @@
             width: 100%;
         }
 
+        #background-video {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: fixed;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
         
     </style>
 </head>
 
 <body>
+    <video id="background-video" autoplay loop muted>
+        <source src="assets/bg.mov" type="video/mp4">
+    </video>
     <input id="session_username" type="hidden" value="<?php echo $_SESSION['username']; ?>">
 
     <div class="row wallet" hidden>
@@ -533,9 +549,9 @@
             <img class="awan a40" src="./assets/image/Artboard 3.png">
             <img class="awan a41" src="./assets/image/Artboard 3.png">
             <img class="awan a42" src="./assets/image/Artboard 3.png">
-            <img class="awan a43" src="./assets/image/Artboard 3.png"> -->
+            <img class="awan a43" src="./assets/image/Artboard 3.png">
 
-            <!-- <img class="awan a44" src="./assets/image/Artboard 3.png">
+            <img class="awan a44" src="./assets/image/Artboard 3.png">
             <img class="awan a45" src="./assets/image/Artboard 3.png">
             <img class="awan a46" src="./assets/image/Artboard 3.png">
             <img class="awan a47" src="./assets/image/Artboard 3.png">
