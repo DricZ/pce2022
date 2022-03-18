@@ -773,8 +773,58 @@ $('#build').click(function () {
                     id_jembatan: path_jembatan
                 },
                 success: function (res) {
-                    document.location.reload(true);
+                    //document.location.reload(true);
+
+                    console.log(res);
+                    if (res == 1){
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Gagal Membuat Jembatan!</h3>',
+                        html: "<div style='color:white;'><b>"+ 'uang dan bahan tidak cukup' +"</b> .</div>",
+                        icon: 'error',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
+                    else if (res == 2){
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Gagal Membuat Jembatan!</h3>',
+                        html: "<div style='color:white;'><b>"+ 'uang tidak cukup' +"</b> .</div>",
+                        icon: 'error',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
+                    else if (res == 3){
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Gagal Membuat Jembatan!</h3>',
+                        html: "<div style='color:white;'><b>"+ 'bahan tidak cukup' +"</b> .</div>",
+                        icon: 'error',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
+                    else {
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Berhasil Membuat Jembatan!</h3>',
+                        icon: 'success',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
                 },
+
                 error: function ($xhr, textStatus,
                     errorThrown) {
                     console.log(errorThrown);
@@ -817,8 +867,56 @@ $('#upgrade').click(function () {
                     id_jembatan: path_jembatan
                 },
                 success: function (res) {
-                    document.location.reload(true);
+                    //document.location.reload(true);
+
                     console.log(res);
+                    if (res == 1){
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Gagal Upgrade Jembatan!</h3>',
+                        html: "<div style='color:white;'><b>"+ 'uang dan bahan tidak cukup' +"</b> .</div>",
+                        icon: 'error',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
+                    else if (res == 2){
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Gagal Upgrade Jembatan!</h3>',
+                        html: "<div style='color:white;'><b>"+ 'uang tidak cukup' +"</b> .</div>",
+                        icon: 'error',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
+                    else if (res == 3){
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Gagal Upgrade Jembatan!</h3>',
+                        html: "<div style='color:white;'><b>"+ 'bahan tidak cukup' +"</b> .</div>",
+                        icon: 'error',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
+                    else {
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Berhasil Upgrade Jembatan!</h3>',
+                        icon: 'success',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
                 },
                 error: function ($xhr, errorThrown) {
                     console.log(errorThrown);
@@ -882,8 +980,56 @@ $('#destroy').click(function () {
                     id_jembatan: path_jembatan
                 },
                 success: function (res) {
-                    document.location.reload(true);
+                    //document.location.reload(true);
+                    
                     console.log(res);
+                    if (res == 1){
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Gagal Menghancurkan Jembatan!</h3>',
+                        html: "<div style='color:white;'><b>"+ 'uang dan bahan tidak cukup' +"</b> .</div>",
+                        icon: 'error',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
+                    else if (res == 2){
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Gagal Menghancurkan Jembatan!</h3>',
+                        html: "<div style='color:white;'><b>"+ 'uang tidak cukup' +"</b> .</div>",
+                        icon: 'error',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
+                    else if (res == 3){
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Gagal Menghancurkan Jembatan!</h3>',
+                        html: "<div style='color:white;'><b>"+ 'bahan tidak cukup' +"</b> .</div>",
+                        icon: 'error',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
+                    else {
+                        shopSwal.fire({
+                        title: '<h3 style="color:white;">Berhasil Menghancurkan Jembatan!</h3>',
+                        icon: 'success',confirmButtonText: 'Oke'
+                        
+                        }).then((result2)=>{
+                            if(result2.isConfirmed){
+                                location.reload();
+                            }
+                        })
+                    }
                 },
                 error: function ($xhr, errorThrown) {
                     console.log(errorThrown);
@@ -896,7 +1042,7 @@ $('#destroy').click(function () {
 
             // load_data(0);
             shopSwal.fire({
-                title: '<h3 style="color:white;">Gagal Destroy Jembatan!</h3>',
+                title: '<h3 style="color:white;">Gagal Menghancurkan Jembatan!</h3>',
                 html: '',
                 icon: 'error'
             })
