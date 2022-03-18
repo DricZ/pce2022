@@ -574,7 +574,7 @@ function build_jembatan(id_jembatan) {
             data.forEach(function (item) {
                 if (item['username'] == username && item['proteksi'] == 0) {
                     // KAYU
-                    if (item['tipe_jembatan'] == 1) {
+                    if (item['tipe_jembatan'] == 1 || item['tipe_jembatan'] == 4) {
                         document.getElementById("upkayu").classList.remove('hidden');
                         document.getElementById("harga").innerHTML = "8.500";
                     } else {
@@ -582,7 +582,7 @@ function build_jembatan(id_jembatan) {
                     }
 
                     // BAJA
-                    if (item['tipe_jembatan'] == 2) {
+                    if (item['tipe_jembatan'] == 2 || item['tipe_jembatan'] == 4) {
                         document.getElementById("upbaja").classList.remove('hidden');
                         document.getElementById("harga").innerHTML = "15.250";
 
@@ -591,7 +591,7 @@ function build_jembatan(id_jembatan) {
                     }
 
                     // BETON
-                    if (item['tipe_jembatan'] == 3) {
+                    if (item['tipe_jembatan'] == 3 || item['tipe_jembatan'] == 4) {
                         document.getElementById("upbeton").classList.remove('hidden');
                         document.getElementById("harga").innerHTML = "23.500";
 
