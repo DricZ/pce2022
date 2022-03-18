@@ -142,7 +142,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
     }
     .icon-navBar {
             margin-top: 15px;
-            width: 75px;
+            width: 55px;
             cursor: pointer;
             transition: all 0.25s ease-in-out;
             text-align: center;
@@ -152,7 +152,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
     .icon-navBar:hover {
         transition: all 0.25s ease-in-out;
         filter: drop-shadow(0 0 10px white);
-        width: 105px;
+        width: 80px;
         font-size: large;
     }
 
@@ -187,7 +187,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
         <ul>
             <a class="nav-link active" id="menu" href="info.php">
                 <li>
-                    <img class="icon-navBar" src="assets/Design Web/info.png" alt="">
+                    <img class="icon-navBar" src="assets/Design Web/Info.png" alt="">
                 </li>
                 <li>Info</li>
             </a>
@@ -232,14 +232,14 @@ if ($rowTeam['location_now_id_city'] != 0) {
             </a>
         </ul>
 
-        <ul>
+        <!-- <ul>
             <a class="nav-link active" id="menu" href="achievements.php">
                 <li>
                     <img class="icon-navBar" src="assets/Design Web/achievement.png" alt="">
                 </li>
                 <li>Achievements</li>
             </a>
-        </ul>
+        </ul> -->
         <ul>
             <a class="nav-link active" id="menu" href="history.php">
                 <li>

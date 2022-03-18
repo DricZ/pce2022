@@ -180,6 +180,10 @@ while ($row = $stmt_skill->fetch()) {
             display: none;
         }
     }
+
+    #decor{
+        left: 20%;
+    }
 </style>
 
 <body>
