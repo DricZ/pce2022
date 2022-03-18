@@ -657,33 +657,46 @@ function build_jembatan(id_jembatan) {
 
             data.forEach(function (item) {
                 if (item['username'] == username && item['proteksi'] == 0) {
-                    // KAYU
-                    if (item['tipe_jembatan'] == 1 || item['tipe_jembatan'] == 4) {
-                        document.getElementById("upkayu").classList.remove('hidden');
-                        document.getElementById("harga").innerHTML = "8.500";
+                    if (item['tipe_jembatan'] == 4) {
+                        document.getElementById("info").innerHTML = `
+                            <div class='col-12'>
+                            <br>
+                            
+                                <h3 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Shield Pulau</h3>
+                            
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
+                            
+                            </div>
+                            `;
+                        $("#modal_info").modal();
                     } else {
-                        document.getElementById("upkayu").classList.add('hidden');
+                        // KAYU
+                        if (item['tipe_jembatan'] == 1) {
+                            document.getElementById("upkayu").classList.remove('hidden');
+                            document.getElementById("harga").innerHTML = "8.500";
+                        } else {
+                            document.getElementById("upkayu").classList.add('hidden');
+                        }
+
+                        // BAJA
+                        if (item['tipe_jembatan'] == 2) {
+                            document.getElementById("upbaja").classList.remove('hidden');
+                            document.getElementById("harga").innerHTML = "15.250";
+                        } else {
+                            document.getElementById("upbaja").classList.add('hidden');
+                        }
+
+                        // BETON
+                        if (item['tipe_jembatan'] == 3) {
+                            document.getElementById("upbeton").classList.remove('hidden');
+                            document.getElementById("harga").innerHTML = "23.500";
+                        } else {
+                            document.getElementById("upbeton").classList.add('hidden');
+                        }
+
+                        $('#modal_upgrade').modal();
                     }
-
-                    // BAJA
-                    if (item['tipe_jembatan'] == 2 || item['tipe_jembatan'] == 4) {
-                        document.getElementById("upbaja").classList.remove('hidden');
-                        document.getElementById("harga").innerHTML = "15.250";
-
-                    } else {
-                        document.getElementById("upbaja").classList.add('hidden');
-                    }
-
-                    // BETON
-                    if (item['tipe_jembatan'] == 3 || item['tipe_jembatan'] == 4) {
-                        document.getElementById("upbeton").classList.remove('hidden');
-                        document.getElementById("harga").innerHTML = "23.500";
-
-                    } else {
-                        document.getElementById("upbeton").classList.add('hidden');
-                    }
-
-                    $('#modal_upgrade').modal();
                 }
 
                 else if (item['username'] != username) {
@@ -801,6 +814,36 @@ function build_jembatan(id_jembatan) {
                             
                                 <h3 style='margin-top: -20px;
     padding-bottom: 25px;'>Jembatan Beton</h3>
+                            
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
+                            
+                            </div>
+                            `;
+                        }
+                    }
+
+                    else if (item['tipe_jembatan'] == 4) {
+                        if (item['proteksi'] == 1) {
+                            document.getElementById("info").innerHTML = `
+                            <div class='col-12'>
+                            <br>
+                            
+                                <h3 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Shield Pulau</h3>
+                            
+                            <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
+                            
+                            </div>
+                            `;
+                        }
+
+                        else {
+                            document.getElementById("info").innerHTML = `
+                            <div class='col-12'>
+                            <br>
+                            
+                                <h3 style='margin-top: -20px;
+    padding-bottom: 25px;'>Jembatan Shield Pulau</h3>
                             
                             <h4>Jembatan ini dibangun oleh team: `+ item["nama_tim"] + `</h4>
                             
