@@ -18,7 +18,7 @@ if (isset($_GET['stat'])) {
         '	Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Sukses Memberikan Bridge Money!",
+                title: "Sukses Memberikan Skill!",
                 showConfirmButton: false,
                 timer: 2000
                 })',
@@ -28,7 +28,7 @@ if (isset($_GET['stat'])) {
         '	Swal.fire({
                 position: "center",
                 icon: "error",
-                title: "Gagal Memberikan Bridge Money! <br>Silakan Coba Ulangi Kembali.",
+                title: "Gagal Memberikan Skill! <br>Silakan Coba Ulangi Kembali.",
                 showConfirmButton: false,
                 timer: 2000
                 })',
@@ -49,7 +49,7 @@ if (isset($_GET['stat'])) {
             <div align="center">
                 <h2>ADD SKILL</h2>
                 <h2><b>RALLY GAMES BRIDGE COMPETITION</b></h2>
-                <h2><b>PETRA CIVIL EXPO 2021</b></h2>
+                <h2><b>PETRA CIVIL EXPO 2022</b></h2>
             </div>
         </div>
     </div>
@@ -59,27 +59,30 @@ if (isset($_GET['stat'])) {
     <p style="text-align: center; font-weight: bold;">SILAKAN MELAKUKAN ADD SKILL SECARA DENGAN TELITI UNTUK MENGATASI KESALAHAN INPUT</p>
 
     <div class="row mt-5">
-        <div class="col-12 col-md-4">
+        <!-- <div class="col-12 col-md-4">
             <center><a href="statistics.php" class="btn btn-info container-fluid" style="width: 250px; font-weight: bold;">Statistics</a></center>
+        </div> -->
+        <div class="col-12 col-md-6">
+            <center><a href="add_bridge_money_history.php" class="btn btn-warning container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Coin History</a></center>
         </div>
-        <div class="col-12 col-md-4">
-            <center><a href="add_bridge_money_history.php" class="btn btn-warning container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Money History</a></center>
+        <div class="col-12 col-md-6">
+            <center><a href="add_skill_history.php" class="btn btn-danger container-fluid" style="width: 250px; font-weight: bold;">Add Skill History</a></center>
         </div>
-        <div class="col-12 col-md-4">
+        <!-- <div class="col-12 col-md-4">
             <center><a href="team_ranking.php" class="btn btn-primary container-fluid" style="width: 250px; font-weight: bold;">Team Ranking</a></center>
-        </div>
+        </div> -->
     </div>
 
     <div class="row mt-5">
-        <div class="col-12 col-md-4">
-            <center><a href="give_money.php" class="btn btn-success container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Money</a></center>
+        <div class="col-12 col-md-6">
+            <center><a href="give_money.php" class="btn btn-success container-fluid" style="width: 250px; font-weight: bold;">Add Bridge Coin</a></center>
         </div>
-        <div class="col-12 col-md-4" >
+        <div class="col-12 col-md-6" >
             <center><a href="addskill.php" class="btn btn-light container-fluid" style="width: 250px; font-weight: bold;">Add Skill</a></center>
         </div>
-        <div class="col-12 col-md-4">
-            <center><a href="bencana.php" class="btn btn-danger container-fluid" style="width: 250px; font-weight: bold;">Bencana</a></center>
-        </div>
+        <!-- <div class="col-12 col-md-4">
+            <center><a href="add_skill_history.php" class="btn btn-danger container-fluid" style="width: 250px; font-weight: bold;">Add Skill History</a></center>
+        </div> -->
         <!-- <script>
             $(document).ready(function(){
                 document.getElementById("bencana").innerHTML = '<center><a href="mantan.php" id="popover_bencana" data-trigger="hover"class="btn btn-danger container-fluid" style="width: 250px; font-weight: bold;"data-content="Bencana berikutnya: " data-placement="bottom">Natural Disaster</a></center>';
@@ -118,7 +121,7 @@ if (isset($_GET['stat'])) {
                 <center><label for="keterangan" style="font-weight: bold;" class="mt-3">Keterangan</label></center>
                 <input type="text" style="text-align: center;" id="keterangan" name="keterangan" placeholder="Ex: Pemenang Mini Games ... Juara 1/2/3 dst." class="form-control" required>
             </div>
-            <p style="text-align: center; font-weight: bold; color: red;">HARAP PASTIKAN JUMLAH BRIDGE MONEY YANG DILAKUKAN INPUT <u>SUDAH SESUAI</u>!!!<br>APABILA TERJADI KESALAHAN INPUT <u>SEGERA</u> HUBUNGI DIVISI IT</p>
+            <p style="text-align: center; font-weight: bold; color: red;">HARAP PASTIKAN SKILL YANG DILAKUKAN INPUT <u>SUDAH SESUAI</u>!!!<br>APABILA TERJADI KESALAHAN INPUT <u>SEGERA</u> HUBUNGI DIVISI IT</p>
             <center><input type="submit" id="submit" name="submit" value="Add skill" class="btn btn-warning container-fluid" style="width: 200px; font-weight: bold;"></center>
             <div id="uploading" class="row justify-content-center mb-5" hidden>
                 <div class="spinner-border text-primary" role="status">
