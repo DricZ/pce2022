@@ -3,6 +3,7 @@
 
 <?php
     require_once 'phps/connect.php';
+    require_once 'header.php';
 
     $username = $_SESSION['username'];
     
@@ -11,7 +12,7 @@
     $stmtTeam->execute([$_SESSION['username']]);
     $rowTeam = $stmtTeam->fetch();
     
-    require_once 'phps/include.php';
+    // require_once 'phps/include.php';
 ?>
 
 <head>
@@ -415,12 +416,6 @@
 
 <body>
     <input id="session_username" type="hidden" value="<?php echo $_SESSION['username']; ?>">
-
-    <!-- <div id="coba">
-    <div class="alert alert-primary" role="alert">
-  This is a primary alert—check it out!
-</div>
-    </div> -->
 
     <div class="row wallet" hidden>
         <img src="assets/image/bridge coin.png" width="35px" class="mx-2 pt-1">
@@ -2180,13 +2175,39 @@
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h1 class="modal-title">Tidak dapat berpindah pulau!</p>
+                <h1 class="modal-title">Tidak dapat berpindah pulau!</h1>
                     <p>Anda <b>di-BAN</b> untuk masuk ke pulau tersebut.</p>
                     <div class="text-center">
                         <button type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">
                             CLOSE
                         </button>
                     </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal_permanent">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <center>
+                    <h1 class="modal-title">Shield Permanen Pulau</h1>
+                </center>
+                <center>
+                    <img src="assets\image\shield pulau.png" alt="" width="50%">
+                </center>
+                <div class="text-center">
+                    <p>Pasang <b>Shield Pulau Permanen</b> untuk melindungi jembatan Anda yang terhubung pada pulau ini dari bencana dan serangan bom dari tim lawan</p>
+                    <button type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">
+                    50.000 <img src="assets\image\Bridge Coin.png" alt="" width="32px">
+                    </button>
+                </div>
             </div>
 
             <div class="modal-footer">

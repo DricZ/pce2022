@@ -12,7 +12,7 @@ body {
 #svg2 {
     box-sizing: content-box;
     width: 80vw;
-    max-height: 100vh;
+    max-height: 80vh;
     transition: all 0.75s;
     z-index: 1;
     position: relative;
