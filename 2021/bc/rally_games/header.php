@@ -162,7 +162,7 @@ if ($rowTeam['location_now_id_city'] != 0) {
 </style>
 
 <body>
-    <nav class="navbar fixed-bottom justify-content-center" role="navigation">
+    <nav class="navbar fixed-bottom justify-content-center" role="navigation" id="navbar_ku">
         <ul>
             <a class="nav-link active" id="menu" href="menu.php">
                 <li>

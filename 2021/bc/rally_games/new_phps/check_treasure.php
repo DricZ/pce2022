@@ -45,12 +45,13 @@
                 $stmt_inventori = $pdo->prepare($sql_inventori);
                 $stmt_inventori->execute([$treasure, $id_team]);
             } else {
-                $sql_inventori = "UPDATE team_resources 
-                SET count = (SELECT count+1 FROM team_resources 
-                            WHERE id_resource = ? AND id_team = ?)
-                            WHERE id_resource = ? AND id_team = ?";
+                $sql_inventori = "UPDATE team_resources AS a 
+                INNER JOIN team_resources AS b ON a.id = b.id 
+                SET a.count = b.count+1 
+                WHERE a.id_resource = ? AND a.id_team = ? 
+                AND b.id_resource = ? AND b.id_team = ?";
                 $stmt_inventori = $pdo->prepare($sql_inventori);
-                $stmt_inventori->execute([$treasure, $treasure, $id_team]);
+                $stmt_inventori->execute([$treasure, $id_team, $treasure, $id_team]);
             }
         }
         

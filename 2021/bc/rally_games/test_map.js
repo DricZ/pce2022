@@ -36,7 +36,26 @@ function get_lokasi() {
 }
 
 // BELI SHIELD PERMANEN
-// $("#shield_")
+$("#shield_pulau").click(function () {
+    $.ajax({
+        url: "new_phps/activate_shield.php",
+        method: "POST",
+        data: {
+            pulau: clicked_island
+        },
+        success: function (data) {
+            if (data != "berhasil") {
+                // uang kurang
+            } else {
+                // berhasil
+            }
+        },
+        error: function ($xhr, errorThrown) {
+            console.log(errorThrown);
+            console.warn($xhr.responseText);
+        }
+    });
+});
 
 
 // HILANGKAN PULAU YG KENA BOM & BAN
@@ -574,7 +593,7 @@ function build_jembatan(id_jembatan) {
             data.forEach(function (item) {
                 if (item['username'] == username && item['proteksi'] == 0) {
                     // KAYU
-                    if (item['tipe_jembatan'] == 1) {
+                    if (item['tipe_jembatan'] == 1 || item['tipe_jembatan'] == 4) {
                         document.getElementById("upkayu").classList.remove('hidden');
                         document.getElementById("harga").innerHTML = "8.500";
                     } else {
@@ -582,7 +601,7 @@ function build_jembatan(id_jembatan) {
                     }
 
                     // BAJA
-                    if (item['tipe_jembatan'] == 2) {
+                    if (item['tipe_jembatan'] == 2 || item['tipe_jembatan'] == 4) {
                         document.getElementById("upbaja").classList.remove('hidden');
                         document.getElementById("harga").innerHTML = "15.250";
 
@@ -591,7 +610,7 @@ function build_jembatan(id_jembatan) {
                     }
 
                     // BETON
-                    if (item['tipe_jembatan'] == 3) {
+                    if (item['tipe_jembatan'] == 3 || item['tipe_jembatan'] == 4) {
                         document.getElementById("upbeton").classList.remove('hidden');
                         document.getElementById("harga").innerHTML = "23.500";
 
@@ -734,29 +753,6 @@ function build_jembatan(id_jembatan) {
         }
     })
 }
-
-// $('#build').click(function () {
-//     var id_tipe = document.getElementById("session_tipe_jembatan").value;
-//     console.log(id_tipe);
-//     console.log(path_jembatan);
-
-//     $.ajax({
-//         url: "new_phps/post_pengiriman.php",
-//         method: "POST",
-//         data: {
-//             id_tipe: id_tipe,
-//             id_jembatan: path_jembatan
-//         },
-//         success: function (res) {
-//             document.location.reload(true);
-//             console.log(res);
-//         },
-//         error: function ($xhr, errorThrown) {
-//             console.log(errorThrown);
-//             console.warn($xhr.responseText);
-//         }
-//     });
-// });
 
 $('#build').click(function () {
     var id_tipe = document.getElementById("session_tipe_jembatan").value;
@@ -1108,6 +1104,8 @@ function off(id) {
 
 // INISIALISASI
 $(function () {
+    // document.getElementById("navbar_ku").style.display = "fixed";
+
     get_jembatan();
     get_lokasi();
     load_map();
@@ -1119,11 +1117,11 @@ $(function () {
 
     // ADD TREASURE
     var today = new Date();
-    var hour = today.getHours();
+    var hours = today.getHours();
     var mintues = today.getMinutes();
-    var time = today.getHours() +""+ today.getMinutes();
-    console.log(time);
-    if (time >=1845) {
+    var times = parseInt(hours + "" + mintues);
+
+    if (times >= 2045) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1139,7 +1137,7 @@ $(function () {
             }
         });
     }
-    if (time>=1930) {
+    if (times >= 2115) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1155,7 +1153,7 @@ $(function () {
             }
         });
     }
-    if (time>=2015) {
+    if (times >= 2145) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1171,7 +1169,7 @@ $(function () {
             }
         });
     }
-    if (time>=2100) {
+    if (times >= 2215) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1187,7 +1185,8 @@ $(function () {
             }
         });
     }
-    if (time>=93) {
+
+    if (times >= 2030) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1197,10 +1196,6 @@ $(function () {
             }, success: function (data) {
                 console.log(data);
                 console.log("masuk");
-                // if(data=="hancur"){
-                //     $('#modal_bencana').modal();
-                //     document.getElementById("imgbencana").src = "assets/image/tsunami.png";
-                // }
             }, error: function ($xhr, errorThrown) {
                 console.log(errorThrown);
                 console.warn($xhr.responseText);
@@ -1208,7 +1203,7 @@ $(function () {
         });
 
     }
-    if (time>=2015) {
+    if (times >= 2145) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1217,17 +1212,13 @@ $(function () {
                 time: 1
             }, success: function (data) {
                 console.log(data);
-                // if(data=="hancur"){
-                //     $('#modal_bencana').modal();
-                //     document.getElementById("imgbencana").src = "assets/image/gempa bumi.png";
-                // }
             }, error: function ($xhr, errorThrown) {
                 console.log(errorThrown);
                 console.warn($xhr.responseText);
             }
         });
     }
-    if (time>=2100) {
+    if (times >= 2215) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1236,10 +1227,6 @@ $(function () {
                 time: 2
             }, success: function (data) {
                 console.log(data);
-                // if(data=="hancur"){
-                //     $('#modal_bencana').modal();
-                //     document.getElementById("imgbencana").src = "assets/image/angin beliung.png";
-                // }
             }, error: function ($xhr, errorThrown) {
                 console.log(errorThrown);
                 console.warn($xhr.responseText);
