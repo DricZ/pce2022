@@ -41,7 +41,7 @@ $getTeamDatarow = $getTeamDatastmt->fetch();
         letter-spacing: 7px;
     }
 
-    img {
+    .img-s {
         width: 150px;
         height: 250px;
         object-fit: cover;
@@ -86,7 +86,7 @@ $getTeamDatarow = $getTeamDatastmt->fetch();
             if ($getTeamDatarow['jumlah_anggota'] == 1) {
             ?>
                 <div class="player one px-3 col-12">
-                    <img src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_1'] ?>">
+                    <img class="img-s" src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_1'] ?>">
                     <div class="text-centered pt-2" style="font-size:16pt;"><?= $getTeamDatarow['nama_peserta_1'] ?></div>
                 </div>
             <?php
@@ -94,11 +94,11 @@ $getTeamDatarow = $getTeamDatastmt->fetch();
             if ($getTeamDatarow['jumlah_anggota'] == 2) {
             ?>
                 <div class="player one px-3 col-md-6 col-12">
-                    <img src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_1'] ?>">
+                    <img class="img-s" src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_1'] ?>">
                     <div class="text-centered pt-2" style="font-size:16pt;"><?= $getTeamDatarow['nama_peserta_1'] ?></div>
                 </div>
                 <div class="player two px-3 col-md-6 col-12">
-                    <img src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_2'] ?>">
+                    <img class="img-s" src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_2'] ?>">
                     <div class="text-centered pt-2" style="font-size:16pt;"><?= $getTeamDatarow['nama_peserta_2'] ?></div>
                 </div>
             <?php
@@ -106,15 +106,15 @@ $getTeamDatarow = $getTeamDatastmt->fetch();
             if ($getTeamDatarow['jumlah_anggota'] == 3) {
             ?>
                 <div class="player one px-3 col-md-4 col-12">
-                    <img src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_1'] ?>">
+                    <img class="img-s" src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_1'] ?>">
                     <div class="text-centered pt-2" style="font-size:16pt;"><?= $getTeamDatarow['nama_peserta_1'] ?></div>
                 </div>
                 <div class="player two px-3 col-md-4 col-12">
-                    <img src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_2'] ?>">
+                    <img class="img-s" src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_2'] ?>">
                     <div class="text-centered pt-2" style="font-size:16pt;"><?= $getTeamDatarow['nama_peserta_2'] ?></div>
                 </div>
                 <div class="player three px-3 col-md-4 col-12">
-                    <img src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_3'] ?>">
+                    <img class="img-s" src="../../uploads/3x4/<?= $getTeamDatarow['3x4_peserta_3'] ?>">
                     <div class="text-centered pt-2" style="font-size:16pt;"><?= $getTeamDatarow['nama_peserta_3'] ?></div>
                 </div>
             <?php
