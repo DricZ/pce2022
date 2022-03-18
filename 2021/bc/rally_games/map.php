@@ -35,399 +35,397 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <style>
-        /* #navbar_ku {
+    /* #navbar_ku {
             display: none;
         } */
 
-        .awan {
-            z-index: 2;
-            position: absolute;
-        }
-
-        .a1 {
-            top: 17vh;
-            left: 34vw;
-            width: 15%;
-        }
-
-        .a2 {
-            top: 23vh;
-            left: 27vw;
-            width: 20%;
-        }
-
-        .a3 {
-            top: 23vh;
-            left: 143vw;
-            width: 20%;
-        }
-
-        .a4 {
-            top: 40vh;
-            left: 125vw;
-            width: 20%;
-        }
-
-        .a5 {
-            top: 51vh;
-            left: 110vw;
-            width: 20%;
-        }
-
-        .a6 {
-            top: 55vh;
-            left: 120vw;
-            width: 20%;
-        }
-
-        .a7 {
-            top: 22vh;
-            left: 65vw;
-            width: 20%;
-        }
-
-        .a8 {
-            top: 45vh;
-            left: 50vw;
-            width: 20%;
-        }
-
-        .a9 {
-            top: 50vh;
-            left: 80vw;
-            width: 15%;
-        }
-
-        .a10 {
-            top: 56vh;
-            left: 78vw;
-            width: 20%;
-        }
-
-        .a11 {
-            top: 33vh;
-            left: 150vw;
-            width: 20%;
-        }
-
-        .a12 {
-            top: 38vh;
-            left: 150vw;
-            width: 20%;
-        }
-
-        .a13 {
-            top: 58vh;
-            left: 145vw;
-            width: 18%;
-        }
-
-        .a14 {
-            top: 56vh;
-            left: 130vw;
-            width: 18%;
-        }
-
-        .a15 {
-            top: 48vh;
-            left: 125vw;
-            width: 20%;
-        }
-
-        .a16 {
-            top: 40vh;
-            left: 140vw;
-            width: 10%;
-        }
-
-        .a17 {
-            top: 58vh;
-            left: 100vw;
-            width: 20%;
-        }
-
-        .a18 {
-            top: 65vh;
-            left: 115vw;
-            width: 10%;
-        }
-
-        .a19 {
-            top: 63vh;
-            left: 120vw;
-            width: 15%;
-        }
-
-        .a20 {
-            top: 65vh;
-            left: 130vw;
-            width: 10%;
-        }
-
-        .a21 {
-            top: 65vh;
-            left: 80vw;
-            width: 20%;
-        }
-
-        .a22 {
-            top: 63vh;
-            left: 87vw;
-            width: 20%;
-        }
-
-        .a23 {
-            top: 75vh;
-            left: 78vw;
-            width: 20%;
-        }
-
-        .a24 {
-            top: 80vh;
-            left: 78vw;
-            width: 20%;
-        }
-
-        .a25 {
-            top: 73vh;
-            left: 95vw;
-            width: 20%;
-        }
-
-        .a26 {
-            top: 72vh;
-            left: 98vw;
-            width: 20%;
-        }
-
-        .a27 {
-            top: 58vh;
-            left: 98vw;
-            width: 20%;
-        }
-
-        .a28 {
-            top: 80vh;
-            left: 98vw;
-            width: 20%;
-        }
-
-        .a29 {
-            top: 83vh;
-            left: 90vw;
-            width: 20%;
-        }
-
-        .a30 {
-            top: 80vh;
-            left: 115vw;
-            width: 10%;
-        }
-
-        .a31 {
-            top: 84vh;
-            left: 118vw;
-            width: 10%;
-        }
-
-        .a32 {
-            top: 87vh;
-            left: 120vw;
-            width: 10%;
-        }
-
-        .a33 {
-            top: 89vh;
-            left: 125vw;
-            width: 10%;
-        }
-
-        .a34 {
-            top: 89vh;
-            left: 128vw;
-            width: 10%;
-        }
-
-        .a35 {
-            top: 89vh;
-            left: 130vw;
-            width: 10%;
-        }
-
-        .a36 {
-            top: 85vh;
-            left: 136vw;
-            width: 10%;
-        }
-
-        .a37 {
-            top: 83vh;
-            left: 136vw;
-            width: 10%;
-        }
-
-        .a38 {
-            top: 47vh;
-            left: 80vw;
-            width: 10%;
-        }
-
-        .a39 {
-            top: 37vh;
-            left: 77vw;
-            width: 10%;
-        }
-
-        .a40 {
-            top: 25vh;
-            left: 86vw;
-            width: 10%;
-        }
-
-        .a41 {
-            top: 25vh;
-            left: 95vw;
-            width: 10%;
-        }
-
-        .a42 {
-            top: 24vh;
-            left: 115vw;
-            width: 15%;
-        }
-
-        .a43 {
-            top: 46vh;
-            left: 113vw;
-            width: 8%;
-        }
-
-        .a44{
-            top: 0vh;
-            left: 40vw;
-            width: 45%;
-        }
-
-        .a45{
-            top: 0vh;
-            left: 140vw;
-            width: 50%;
-        }
-
-        .a46{
-            top: 0vh;
-            left: 160vw;
-            width: 50%;
-        }
-
-        .a47{
-            top: 0vh;
-            left: 170vw;
-            width: 40%;
-        }
-
-        .a48{
-            top: 0vh;
-            left: 130vw;
-            width: 20%;
-        }
-
-        .a49{
-            top: 0vh;
-            left: 120vw;
-            width: 20%;
-        }
-
-        .a50{
-            top: 0vh;
-            left: 110vw;
-            width: 15%;
-        }
-
-        .a51{
-            top: 0vh;
-            left: 100vw;
-            width: 15%;
-        }
-
-        .a52{
-            top: 5vh;
-            left: 110vw;
-            width: 15%;
-        }
-
-        .a53{
-            top: 0vh;
-            left: 70vw;
-            width: 30%;
-        }
-
-        .a54{
-            top: 20vh;
-            left: 150vw;
-            width: 50%;
-        }
-
-        .a55{
-            top: 20vh;
-            left: 170vw;
-            width: 50%;
-        }
-
-        .a56{
-            top: 10vh;
-            left: 170vw;
-            width: 50%;
-        }
-
-        .a57{
-            top: 0vh;
-            left: 140vw;
-            width: 50%;
-        }
-
-        .a58{
-            top: 0vh;
-            left: 140vw;
-            width: 50%;
-        }
-
-        .a59{
-            top: 0vh;
-            left: 140vw;
-            width: 50%;
-        }
-
-        .a60{
-            top: 0vh;
-            left: 140vw;
-            width: 50%;
-        }
-
-        .default:hover {
-            background: #e7e7e7;
-            padding: 10px 32px;
-            text-align: center;
-        }
-
-        .g_jembatan {
-            width: 100%;
-        }
-
-        #background-video {
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            position: fixed;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            z-index: -1;
-            opacity: 0.3;
-        }
-
-        
+    .awan {
+        z-index: 2;
+        position: absolute;
+    }
+
+    .a1 {
+        top: 17vh;
+        left: 34vw;
+        width: 15%;
+    }
+
+    .a2 {
+        top: 23vh;
+        left: 27vw;
+        width: 20%;
+    }
+
+    .a3 {
+        top: 23vh;
+        left: 143vw;
+        width: 20%;
+    }
+
+    .a4 {
+        top: 40vh;
+        left: 125vw;
+        width: 20%;
+    }
+
+    .a5 {
+        top: 51vh;
+        left: 110vw;
+        width: 20%;
+    }
+
+    .a6 {
+        top: 55vh;
+        left: 120vw;
+        width: 20%;
+    }
+
+    .a7 {
+        top: 22vh;
+        left: 65vw;
+        width: 20%;
+    }
+
+    .a8 {
+        top: 45vh;
+        left: 50vw;
+        width: 20%;
+    }
+
+    .a9 {
+        top: 50vh;
+        left: 80vw;
+        width: 15%;
+    }
+
+    .a10 {
+        top: 56vh;
+        left: 78vw;
+        width: 20%;
+    }
+
+    .a11 {
+        top: 33vh;
+        left: 150vw;
+        width: 20%;
+    }
+
+    .a12 {
+        top: 38vh;
+        left: 150vw;
+        width: 20%;
+    }
+
+    .a13 {
+        top: 58vh;
+        left: 145vw;
+        width: 18%;
+    }
+
+    .a14 {
+        top: 56vh;
+        left: 130vw;
+        width: 18%;
+    }
+
+    .a15 {
+        top: 48vh;
+        left: 125vw;
+        width: 20%;
+    }
+
+    .a16 {
+        top: 40vh;
+        left: 140vw;
+        width: 10%;
+    }
+
+    .a17 {
+        top: 58vh;
+        left: 100vw;
+        width: 20%;
+    }
+
+    .a18 {
+        top: 65vh;
+        left: 115vw;
+        width: 10%;
+    }
+
+    .a19 {
+        top: 63vh;
+        left: 120vw;
+        width: 15%;
+    }
+
+    .a20 {
+        top: 65vh;
+        left: 130vw;
+        width: 10%;
+    }
+
+    .a21 {
+        top: 65vh;
+        left: 80vw;
+        width: 20%;
+    }
+
+    .a22 {
+        top: 63vh;
+        left: 87vw;
+        width: 20%;
+    }
+
+    .a23 {
+        top: 75vh;
+        left: 78vw;
+        width: 20%;
+    }
+
+    .a24 {
+        top: 80vh;
+        left: 78vw;
+        width: 20%;
+    }
+
+    .a25 {
+        top: 73vh;
+        left: 95vw;
+        width: 20%;
+    }
+
+    .a26 {
+        top: 72vh;
+        left: 98vw;
+        width: 20%;
+    }
+
+    .a27 {
+        top: 58vh;
+        left: 98vw;
+        width: 20%;
+    }
+
+    .a28 {
+        top: 80vh;
+        left: 98vw;
+        width: 20%;
+    }
+
+    .a29 {
+        top: 83vh;
+        left: 90vw;
+        width: 20%;
+    }
+
+    .a30 {
+        top: 80vh;
+        left: 115vw;
+        width: 10%;
+    }
+
+    .a31 {
+        top: 84vh;
+        left: 118vw;
+        width: 10%;
+    }
+
+    .a32 {
+        top: 87vh;
+        left: 120vw;
+        width: 10%;
+    }
+
+    .a33 {
+        top: 89vh;
+        left: 125vw;
+        width: 10%;
+    }
+
+    .a34 {
+        top: 89vh;
+        left: 128vw;
+        width: 10%;
+    }
+
+    .a35 {
+        top: 89vh;
+        left: 130vw;
+        width: 10%;
+    }
+
+    .a36 {
+        top: 85vh;
+        left: 136vw;
+        width: 10%;
+    }
+
+    .a37 {
+        top: 83vh;
+        left: 136vw;
+        width: 10%;
+    }
+
+    .a38 {
+        top: 47vh;
+        left: 80vw;
+        width: 10%;
+    }
+
+    .a39 {
+        top: 37vh;
+        left: 77vw;
+        width: 10%;
+    }
+
+    .a40 {
+        top: 25vh;
+        left: 86vw;
+        width: 10%;
+    }
+
+    .a41 {
+        top: 25vh;
+        left: 95vw;
+        width: 10%;
+    }
+
+    .a42 {
+        top: 24vh;
+        left: 115vw;
+        width: 15%;
+    }
+
+    .a43 {
+        top: 46vh;
+        left: 113vw;
+        width: 8%;
+    }
+
+    .a44 {
+        top: 0vh;
+        left: 40vw;
+        width: 45%;
+    }
+
+    .a45 {
+        top: 0vh;
+        left: 140vw;
+        width: 50%;
+    }
+
+    .a46 {
+        top: 0vh;
+        left: 160vw;
+        width: 50%;
+    }
+
+    .a47 {
+        top: 0vh;
+        left: 170vw;
+        width: 40%;
+    }
+
+    .a48 {
+        top: 0vh;
+        left: 130vw;
+        width: 20%;
+    }
+
+    .a49 {
+        top: 0vh;
+        left: 120vw;
+        width: 20%;
+    }
+
+    .a50 {
+        top: 0vh;
+        left: 110vw;
+        width: 15%;
+    }
+
+    .a51 {
+        top: 0vh;
+        left: 100vw;
+        width: 15%;
+    }
+
+    .a52 {
+        top: 5vh;
+        left: 110vw;
+        width: 15%;
+    }
+
+    .a53 {
+        top: 0vh;
+        left: 70vw;
+        width: 30%;
+    }
+
+    .a54 {
+        top: 20vh;
+        left: 150vw;
+        width: 50%;
+    }
+
+    .a55 {
+        top: 20vh;
+        left: 170vw;
+        width: 50%;
+    }
+
+    .a56 {
+        top: 10vh;
+        left: 170vw;
+        width: 50%;
+    }
+
+    .a57 {
+        top: 0vh;
+        left: 140vw;
+        width: 50%;
+    }
+
+    .a58 {
+        top: 0vh;
+        left: 140vw;
+        width: 50%;
+    }
+
+    .a59 {
+        top: 0vh;
+        left: 140vw;
+        width: 50%;
+    }
+
+    .a60 {
+        top: 0vh;
+        left: 140vw;
+        width: 50%;
+    }
+
+    .default:hover {
+        background: #e7e7e7;
+        padding: 10px 32px;
+        text-align: center;
+    }
+
+    .g_jembatan {
+        width: 100%;
+    }
+
+    #background-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0.3;
+    }
     </style>
 </head>
 
@@ -464,10 +462,14 @@
         <!-- CANCEL -->
         <div id="nav-cancel" class="icon-navBar" style="max-width: 100px; display: none;">
             <a onclick="_cancelSkill()">
-                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 305.002 305.002" style="enable-background:new 0 0 305.002 305.002;" xml:space="preserve">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 305.002 305.002"
+                    style="enable-background:new 0 0 305.002 305.002;" xml:space="preserve">
                     <g>
-                        <path d="M152.502,0.001C68.412,0.001,0,68.412,0,152.501s68.412,152.5,152.502,152.5c84.089,0,152.5-68.411,152.5-152.5 S236.591,0.001,152.502,0.001z M152.502,280.001C82.197,280.001,25,222.806,25,152.501c0-70.304,57.197-127.5,127.502-127.5 c70.304,0,127.5,57.196,127.5,127.5C280.002,222.806,222.806,280.001,152.502,280.001z"/>
-                        <path d="M170.18,152.5l43.13-43.129c4.882-4.882,4.882-12.796,0-17.678c-4.881-4.882-12.796-4.881-17.678,0l-43.13,43.13 l-43.131-43.131c-4.882-4.881-12.796-4.881-17.678,0c-4.881,4.882-4.881,12.796,0,17.678l43.13,43.13l-43.131,43.131 c-4.881,4.882-4.881,12.796,0,17.679c2.441,2.44,5.64,3.66,8.839,3.66c3.199,0,6.398-1.221,8.839-3.66l43.131-43.132 l43.131,43.132c2.441,2.439,5.64,3.66,8.839,3.66s6.398-1.221,8.839-3.66c4.882-4.883,4.882-12.797,0-17.679L170.18,152.5z"/>
+                        <path
+                            d="M152.502,0.001C68.412,0.001,0,68.412,0,152.501s68.412,152.5,152.502,152.5c84.089,0,152.5-68.411,152.5-152.5 S236.591,0.001,152.502,0.001z M152.502,280.001C82.197,280.001,25,222.806,25,152.501c0-70.304,57.197-127.5,127.502-127.5 c70.304,0,127.5,57.196,127.5,127.5C280.002,222.806,222.806,280.001,152.502,280.001z" />
+                        <path
+                            d="M170.18,152.5l43.13-43.129c4.882-4.882,4.882-12.796,0-17.678c-4.881-4.882-12.796-4.881-17.678,0l-43.13,43.13 l-43.131-43.131c-4.882-4.881-12.796-4.881-17.678,0c-4.881,4.882-4.881,12.796,0,17.678l43.13,43.13l-43.131,43.131 c-4.881,4.882-4.881,12.796,0,17.679c2.441,2.44,5.64,3.66,8.839,3.66c3.199,0,6.398-1.221,8.839-3.66l43.131-43.132 l43.131,43.132c2.441,2.439,5.64,3.66,8.839,3.66s6.398-1.221,8.839-3.66c4.882-4.883,4.882-12.797,0-17.679L170.18,152.5z" />
                     </g>
                 </svg>
             </a>
@@ -1769,8 +1771,8 @@
                         </g>
 
                         <g id="ini_pulau_dekorasi">
-                        <g id="g828" transform="translate(1028.3916,637.5356)">
-                                <path class="pulau_ku" 
+                            <g id="g828" transform="translate(1028.3916,637.5356)">
+                                <path class="pulau_ku"
                                     d="m 0,0 c -1.777,-2.598 2.036,-7.866 2.381,-8.333 3.716,-5.032 8.034,-4.955 8.729,-8.332 0.448,-2.173 -1.068,-4.109 -2.777,-6.349 -4.477,-5.868 -12.322,-11.13 -12.04,-12.29 0.478,-1.961 4.318,-0.121 5.276,-2.909 0.547,-1.592 10.278,1.819 3.193,-5.037 -2.351,-2.275 -9.54,-9.233 -8.333,-11.111 1.078,-1.678 11.114,5.384 13.094,3.174 1.738,-1.938 -4.989,-8.303 -3.968,-17.855 0.18,-1.689 0.454,-3.967 1.984,-4.762 2.789,-1.449 8.135,2.868 11.11,6.745 0.978,1.273 3.651,5.041 5.159,15.476 1.69,11.693 -0.92,12.128 0.794,22.617 1.221,7.481 3.059,10.38 1.19,14.681 -0.726,1.669 -2.864,3.626 -7.143,7.54 C 11.366,-0.082 8.772,0.841 6.745,1.19 5.801,1.354 1.441,2.105 0,0"
                                     style="fill:#344716;fill-opacity:1;fill-rule:nonzero;stroke:none" id="path830" />
                             </g>
@@ -2196,9 +2198,9 @@
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h1 class="modal-title">Tidak dapat berpindah pulau!</h1>
-                    <p>Anda <b>di-BAN</b> untuk masuk ke pulau tersebut.</p>
-                    <img src="assets\image\TBL (2).png" alt="" width="100%">
-                    <!-- <div class="text-center">
+                <p>Anda <b>di-BAN</b> untuk masuk ke pulau tersebut.</p>
+                <img src="assets\image\TBL (2).png" alt="" width="100%">
+                <!-- <div class="text-center">
                         <button type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">
                             CLOSE
                         </button>
@@ -2224,9 +2226,11 @@
                     <img src="assets\image\shield pulau.png" alt="" width="50%">
                 </center>
                 <div class="text-center">
-                    <p>Pasang <b>Shield Pulau Permanen</b> untuk melindungi jembatan Anda yang terhubung pada pulau ini dari bencana dan serangan bom dari tim lawan</p>
-                    <button id="shield_pulau" type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">
-                    50.000 <img src="assets\image\Bridge Coin.png" alt="" width="32px">
+                    <p>Pasang <b>Shield Pulau Permanen</b> untuk melindungi jembatan Anda yang terhubung pada pulau ini
+                        dari bencana dan serangan bom dari tim lawan</p>
+                    <button id="shield_pulau" type="button" class="btn btn-success"
+                        style="width: 75%; font-size: x-large;">
+                        50.000 <img src="assets\image\Bridge Coin.png" alt="" width="32px">
                     </button>
                 </div>
             </div>
@@ -2249,7 +2253,8 @@
                         terbang ke pulau tersebut.</p>
                     <p>Beli <b>tiket pesawat</b> / bahan untuk membangun <b>jembatan</b> di <b>SHOP</b></p>
                     <div class="text-center">
-                        <a href="shop.php" type="button" class="btn btn-success" style="width: 75%; font-size: x-large;">SHOP</a>
+                        <a href="shop.php" type="button" class="btn btn-success"
+                            style="width: 75%; font-size: x-large;">SHOP</a>
                     </div>
             </div>
 
@@ -2268,8 +2273,9 @@
             </form>
 
             <!-- Modal Header -->
-            <div class="modal-header" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
-                <h1 class="modal-title"style ='margin-left: auto;'>Bangun Jembatan</h1>
+            <div class="modal-header"
+                style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <h1 class="modal-title" style='margin-left: auto;'>Bangun Jembatan</h1>
                 <button style="margin-top:-7px" type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -2345,8 +2351,7 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button id="build" type="button" class="btn btn-success" data-dismiss="modal"
-                        >BUILD</button>
+                    <button id="build" type="button" class="btn btn-success" data-dismiss="modal">BUILD</button>
                 </div>
             </div>
         </div>
@@ -2357,10 +2362,11 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
-            <div class="modal-header" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
-                <h1 class="modal-title"style ='margin-left: auto;'>Upgrade Jembatan</h1>
+            <div class="modal-header"
+                style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <h1 class="modal-title" style='margin-left: auto;'>Upgrade Jembatan</h1>
                 <button style="margin-top: -7px;" type="button" class="close" data-dismiss="modal">&times;</button>
-                
+
             </div>
 
             <!-- Modal body -->
@@ -2371,37 +2377,37 @@
 
                         <!-- Jembatan Kayu -->
                         <div class="col-12 jembatan hidden" id="upkayu">
-                            
-                            <h3 >Jembatan Kayu</h3>
-                            
+
+                            <h3>Jembatan Kayu</h3>
+
                             <h4>Bahan yang diperlukan:</h4>
                             <p>
                                 1x Shield Jembatan Kayu
-                                <img src="assets/image/shield jembatan kayu-01.png" style= "width: 40%;">
+                                <img src="assets/image/shield jembatan kayu-01.png" style="width: 40%;">
                             </p>
                         </div>
 
                         <!-- Jembatan Baja -->
                         <div class="col-12 jembatan hidden" id="upbaja">
-                        
-                            <h1 >Jembatan Baja</h1>
-                            
+
+                            <h1>Jembatan Baja</h1>
+
                             <h4>Bahan yang diperlukan:</h4>
                             <p>
                                 1x Shield Jembatan Baja
-                                <img src="assets/image/shield jembatan baja-01.png" style= "width: 40%;">
+                                <img src="assets/image/shield jembatan baja-01.png" style="width: 40%;">
                             </p>
                         </div>
 
                         <!-- Jembatan Beton -->
                         <div class="col-12 jembatan hidden" id="upbeton">
-                        
-                            <h1 >Jembatan Beton</h1>
-                            
+
+                            <h1>Jembatan Beton</h1>
+
                             <h4>Bahan yang diperluhkan:</h4>
                             <p>
                                 1x Shield Jembatan Beton
-                                <img src="assets/image/shield jembatan beton-01.png" style= "width: 40%;">
+                                <img src="assets/image/shield jembatan beton-01.png" style="width: 40%;">
                             </p>
                         </div>
                     </div>
@@ -2425,8 +2431,9 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <!-- Modal Header -->
-            <div class="modal-header" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
-                <h1 class="modal-title" style ='margin-left: auto;'>Hancurkan Jembatan</h1>
+            <div class="modal-header"
+                style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                <h1 class="modal-title" style='margin-left: auto;'>Hancurkan Jembatan</h1>
                 <button style="margin-top:-7px" type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
@@ -2438,9 +2445,9 @@
 
                         <!-- Jembatan Kayu -->
                         <div class="col-12 jembatan hidden" id="destkayu">
-                            
+
                             <h3 style=" margin-top: -15px">Jembatan Kayu</h3>
-                            
+
                             <h4>Bom yang diperlukan:</h4>
                             <p>
                                 1x Bom level 1
@@ -2450,9 +2457,9 @@
 
                         <!-- Jembatan Kayu Proteksi -->
                         <div class="col-12 jembatan hidden" id="destkayup">
-                            
+
                             <h3 style=" margin-top: -15px">Jembatan Kayu Proteksi</h3>
-                            
+
                             <h4>Bom yang diperlukan:</h4>
                             <p>
                                 1x Bom level 2
@@ -2462,9 +2469,9 @@
 
                         <!-- Jembatan Baja -->
                         <div class="col-12 jembatan hidden" id="destbaja">
-                            
+
                             <h3 style=" margin-top: -15px">Jembatan Baja</h3>
-                            
+
                             <h4>Bom yang diperlukan:</h4>
                             <p>
                                 1x Bom level 3
@@ -2474,9 +2481,9 @@
 
                         <!-- Jembatan Baja Proteksi -->
                         <div class="col-12 jembatan hidden" id="destbajap">
-                            
+
                             <h3 style=" margin-top: -15px">Jembatan Baja Proteksi</h3>
-                            
+
                             <h4>Bom yang diperlukan:</h4>
                             <p>
                                 1x Bom level 4
@@ -2486,9 +2493,9 @@
 
                         <!-- Jembatan Beton -->
                         <div class="col-12 jembatan hidden" id="destbeton">
-                            
+
                             <h3 style=" margin-top: -15px">Jembatan Beton</h3>
-                        
+
                             <h4>Bom yang diperluhkan:</h4>
                             <p>
                                 1x Bom level 5
@@ -2498,9 +2505,9 @@
 
                         <!-- Jembatan Beton Proteksi -->
                         <div class="col-12 jembatan hidden" id="destbetonp">
-                            
+
                             <h3 style=" margin-top: -15px">Jembatan Beton Proteksi</h3>
-                            
+
                             <h4>Bom yang diperluhkan:</h4>
                             <p>
                                 1x Bom level 6
@@ -2549,11 +2556,11 @@
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h1 class="modal-title">Terjadi Bencana!</h1>
-                    <p>Bencana akan menurunkan tingkatan dari jembatan anda bahkan sampai hancur </p>
-                    <center><img src="" alt="" style="width: 50%; " id = 'imgbencana'></center>
-                    <p>Untuk mempelajari lebih lanjut silakan ke :</p>
-                    <a href="#" class="btn btn-info" role="button" style="width: inherit;">Info</a>
-                    
+                <p>Bencana akan menurunkan tingkatan dari jembatan anda bahkan sampai hancur </p>
+                <center><img src="" alt="" style="width: 50%; " id='imgbencana'></center>
+                <p>Untuk mempelajari lebih lanjut silakan ke :</p>
+                <a href="#" class="btn btn-info" role="button" style="width: inherit;">Info</a>
+
             </div>
 
             <div class="modal-footer">
@@ -2569,9 +2576,9 @@
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h1 class="modal-title">Tidak bisa di Hancurkan!</h1>
-                    <img src="assets/image/shield pulau.png" alt="">
-                    <p>jembatan ini tidak bisa di hancurkan karena sudah memiliki shield permanent</p>
-                    
+                <img src="assets/image/shield pulau.png" alt="" width="100%">
+                <p>jembatan ini tidak bisa di hancurkan karena sudah memiliki shield permanent</p>
+
             </div>
 
             <div class="modal-footer">
@@ -2590,9 +2597,9 @@
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h1 class="modal-title"style ='margin-left: auto;'>Info Jembatan</h1>
+                <h1 class="modal-title" style='margin-left: auto;'>Info Jembatan</h1>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                
+
             </div>
 
             <!-- Modal body -->
@@ -2600,14 +2607,13 @@
                 style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
                 <div class="container">
                     <div id="info" class="row" style="width:50%">
-                        
+
                     </div>
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button id="build" type="button" class="btn btn-success" data-dismiss="modal"
-                        >Close</button>
+                    <button id="build" type="button" class="btn btn-success" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -2623,7 +2629,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center backbutton">
-                    
+
                 </div>
             </div>
         </div>
@@ -2631,23 +2637,23 @@
 </div>
 
 <div class="modal" tabindex="-1" role="dialog" id="modal_konfirmasi">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Konfirmasi</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" id="confirm-msg">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Konfirmasi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="confirm-msg">
+                <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <script src="test_map.js"></script>
