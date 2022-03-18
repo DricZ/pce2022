@@ -38,22 +38,34 @@
             if ($id_tipe== '1' and ($row_inventory[$i]['id_resource'] == 7 or $row_inventory[$i]['id_resource'] == 8) 
             and $row_inventory[$i]['count'] >= 1) {
                 if ($proteksi == 1) {
-                    $sql_bom2 = "UPDATE team_resources SET count =
-                    (SELECT count-1 FROM team_resources 
-                    WHERE id_resource = 8 AND id_team = ?)
-                    WHERE id_resource = 8 AND id_team = ?";
+                    $sql_bom2 = "UPDATE team_resources AS a
+                    INNER JOIN team_resources AS b ON a.id = b.id
+                    SET a.count = b.count-1
+                    WHERE a.id_resource = 8 AND b.id_team = ?";
+
+                    // $sql_bom2 = "UPDATE team_resources SET count =
+                    // (SELECT count-1 FROM team_resources 
+                    // WHERE id_resource = 8 AND id_team = ?)
+                    // WHERE id_resource = 8 AND id_team = ?";
+
                     $stmt_bom2 = $pdo->prepare($sql_bom2);
-                    $stmt_bom2->execute([$id_team, $id_team]);
+                    $stmt_bom2->execute([$id_team]);
 
                     $cek++;
                 }
                 else {
-                    $sql_bom1 = "UPDATE team_resources SET count =
-                    (SELECT count-1 FROM team_resources 
-                    WHERE id_resource = 7 AND id_team = ?)
-                    WHERE id_resource = 7 AND id_team = ?";
+                    $sql_bom1 = "UPDATE team_resources AS a
+                    INNER JOIN team_resources AS b ON a.id = b.id
+                    SET a.count = b.count-1
+                    WHERE a.id_resource = 7 AND b.id_team = ?";
+
+                    // $sql_bom1 = "UPDATE team_resources SET count =
+                    // (SELECT count-1 FROM team_resources 
+                    // WHERE id_resource = 7 AND id_team = ?)
+                    // WHERE id_resource = 7 AND id_team = ?";
+
                     $stmt_bom1 = $pdo->prepare($sql_bom1);
-                    $stmt_bom1->execute([$id_team, $id_team]);    
+                    $stmt_bom1->execute([$id_team]);    
 
                     $cek++;
 
@@ -63,23 +75,33 @@
             else if ($id_tipe== '2' and ($row_inventory[$i]['id_resource'] == 9 or $row_inventory[$i]['id_resource'] == 10) 
             and $row_inventory[$i]['count'] >= 1) {
                 if ($proteksi == 1) {
-                    $sql_bom4 = "UPDATE team_resources SET count =
-                    (SELECT count-1 FROM team_resources 
-                    WHERE id_resource = 10 AND id_team = ?)
-                    WHERE id_resource = 10 AND id_team = ?";
+                    $sql_bom4 = "UPDATE team_resources AS a
+                    INNER JOIN team_resources AS b ON a.id = b.id
+                    SET a.count = b.count-1
+                    WHERE a.id_resource = 10 AND b.id_team = ?";
+
+                    // $sql_bom4 = "UPDATE team_resources SET count =
+                    // (SELECT count-1 FROM team_resources 
+                    // WHERE id_resource = 10 AND id_team = ?)
+                    // WHERE id_resource = 10 AND id_team = ?";
                     $stmt_bom4 = $pdo->prepare($sql_bom4);
-                    $stmt_bom4->execute([$id_team, $id_team]);
+                    $stmt_bom4->execute([$id_team]);
 
                     $cek++;
 
                     }
                 else {
-                    $sql_bom3 = "UPDATE team_resources SET count =
-                    (SELECT count-1 FROM team_resources 
-                    WHERE id_resource = 9 AND id_team = ?)
-                    WHERE id_resource = 9 AND id_team = ?";
+                    $sql_bom3 = "UPDATE team_resources AS a
+                    INNER JOIN team_resources AS b ON a.id = b.id
+                    SET a.count = b.count-1
+                    WHERE a.id_resource = 9 AND b.id_team = ?";
+
+                    // $sql_bom3 = "UPDATE team_resources SET count =
+                    // (SELECT count-1 FROM team_resources 
+                    // WHERE id_resource = 9 AND id_team = ?)
+                    // WHERE id_resource = 9 AND id_team = ?";
                     $stmt_bom3 = $pdo->prepare($sql_bom3);
-                    $stmt_bom3->execute([$id_team, $id_team]);
+                    $stmt_bom3->execute([$id_team]);
 
                     $cek++;
 
@@ -89,23 +111,34 @@
             else if ($id_tipe== '3' and ($row_inventory[$i]['id_resource'] == 11 or $row_inventory[$i]['id_resource'] == 12) 
             and $row_inventory[$i]['count'] >= 1) {
                 if ($proteksi == 1) {
-                    $sql_bom6 = "UPDATE team_resources SET count =
-                    (SELECT count-1 FROM team_resources 
-                    WHERE id_resource = 12 AND id_team = ?)
-                    WHERE id_resource = 12 AND id_team = ?";
+                    $sql_bom6 = "UPDATE team_resources AS a
+                    INNER JOIN team_resources AS b ON a.id = b.id
+                    SET a.count = b.count-1
+                    WHERE a.id_resource = 12 AND b.id_team = ?";
+
+                    // $sql_bom6 = "UPDATE team_resources SET count =
+                    // (SELECT count-1 FROM team_resources 
+                    // WHERE id_resource = 12 AND id_team = ?)
+                    // WHERE id_resource = 12 AND id_team = ?";
+
                     $stmt_bom6 = $pdo->prepare($sql_bom6);
-                    $stmt_bom6->execute([$id_team, $id_team]);
+                    $stmt_bom6->execute([$id_team]);
 
                     $cek++;
 
                 }
                 else {
-                    $sql_bom5 = "UPDATE team_resources SET count =
-                    (SELECT count-1 FROM team_resources 
-                    WHERE id_resource = 11 AND id_team = ?)
-                    WHERE id_resource = 11 AND id_team = ?";
-                    $stmt_bom5 = $pdo->prepare($sql_bom5);
-                    $stmt_bom5->execute([$id_team, $id_team]);    
+                    $sql_bom1 = "UPDATE team_resources AS a
+                    INNER JOIN team_resources AS b ON a.id = b.id
+                    SET a.count = b.count-1
+                    WHERE a.id_resource = 11 AND b.id_team = ?";
+
+                    // $sql_bom5 = "UPDATE team_resources SET count =
+                    // (SELECT count-1 FROM team_resources 
+                    // WHERE id_resource = 11 AND id_team = ?)
+                    // WHERE id_resource = 11 AND id_team = ?";
+                    // $stmt_bom5 = $pdo->prepare($sql_bom5);
+                    $stmt_bom5->execute([$id_team]);    
                     
                     $cek++;
 
