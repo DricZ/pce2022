@@ -2563,6 +2563,24 @@
     </div>
 </div>
 
+<div class="modal fade" id="modal_destroy_permanent">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h1 class="modal-title">Tidak bisa di Hancurkan!</h1>
+                    <img src="assets/image/shield pulau.png" alt="">
+                    <p>jembatan ini tidak bisa di hancurkan karena sudah memiliki shield permanent</p>
+                    
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="modal fade" id="modal_info">
     <div class="modal-dialog">
         <div class="modal-content">
