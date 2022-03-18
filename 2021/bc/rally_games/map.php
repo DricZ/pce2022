@@ -2311,73 +2311,73 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal_upgrade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
-                <h1 class="modal-title"style ='margin-left: auto;'>Upgrade Jembatan</h1>
-                <button style="margin-top: -7px;" type="button" class="close" data-dismiss="modal">&times;</button>
-                
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body"
-                style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
-                <div class="container">
-                    <div class="row" style="width:70%; margin-top:-2%; margin-left:-15px">
-
-                        <!-- Jembatan Kayu -->
-                        <div class="col-12 jembatan hidden" id="upkayu">
-                            
-                            <h3 >Jembatan Kayu</h3>
-                            
-                            <h4>Bahan yang diperlukan:</h4>
-                            <p>
-                                1x Shield Jembatan Kayu
-                                <img src="assets/image/shield jembatan kayu-01.png" width="200px" height="200px">
-                            </p>
-                        </div>
-
-                        <!-- Jembatan Baja -->
-                        <div class="col-12 jembatan hidden" id="upbaja">
-                           
-                            <h1 >Jembatan Baja</h1>
-                            
-                            <h4>Bahan yang diperlukan:</h4>
-                            <p>
-                                1x Shield Jembatan Baja
-                                <img src="assets/image/shield jembatan baja-01.png" width="200px" height="200px">
-                            </p>
-                        </div>
-
-                        <!-- Jembatan Beton -->
-                        <div class="col-12 jembatan hidden" id="upbeton">
-                          
-                            <h1 >Jembatan Beton</h1>
-                            
-                            <h4>Bahan yang diperluhkan:</h4>
-                            <p>
-                                1x Shield Jembatan Beton
-                                <img src="assets/image/shield jembatan beton-01.png" width="200px" height="200px">
-                            </p>
-                        </div>
-                    </div>
+    <div class="modal fade" id="modal_upgrade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header" style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                    <h1 class="modal-title"style ='margin-left: auto;'>Upgrade Jembatan</h1>
+                    <button style="margin-top: -7px;" type="button" class="close" data-dismiss="modal">&times;</button>
+                    
                 </div>
 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <p>
-                        <img src="assets/image/bridge coin.png" width="30px" height="30px">
-                        <b id="harga">8500</b>
+                <!-- Modal body -->
+                <div class="modal-body"
+                    style='font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";'>
+                    <div class="container">
+                        <div class="row" style="width:70%; margin-top:-2%; margin-left:-15px">
 
-                        <button id="upgrade" type="button" class="btn btn-success" data-dismiss="modal">UPGRADE</button>
-                    </p>
+                            <!-- Jembatan Kayu -->
+                            <div class="col-12 jembatan hidden" id="upkayu">
+                                
+                                <h3 >Jembatan Kayu</h3>
+                                
+                                <h4>Bahan yang diperlukan:</h4>
+                                <p>
+                                    1x Shield Jembatan Kayu
+                                    <img src="assets/image/shield jembatan kayu-01.png" width="200px" height="200px">
+                                </p>
+                            </div>
+
+                            <!-- Jembatan Baja -->
+                            <div class="col-12 jembatan hidden" id="upbaja">
+                            
+                                <h1 >Jembatan Baja</h1>
+                                
+                                <h4>Bahan yang diperlukan:</h4>
+                                <p>
+                                    1x Shield Jembatan Baja
+                                    <img src="assets/image/shield jembatan baja-01.png" width="200px" height="200px">
+                                </p>
+                            </div>
+
+                            <!-- Jembatan Beton -->
+                            <div class="col-12 jembatan hidden" id="upbeton">
+                            
+                                <h1 >Jembatan Beton</h1>
+                                
+                                <h4>Bahan yang diperluhkan:</h4>
+                                <p>
+                                    1x Shield Jembatan Beton
+                                    <img src="assets/image/shield jembatan beton-01.png" width="200px" height="200px">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <p>
+                            <img src="assets/image/bridge coin.png" width="30px" height="30px">
+                            <b id="harga">8500</b>
+
+                            <button id="upgrade" type="button" class="btn btn-success" data-dismiss="modal">UPGRADE</button>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 <div class="modal fade" id="modal_destroy">
     <div class="modal-dialog">
