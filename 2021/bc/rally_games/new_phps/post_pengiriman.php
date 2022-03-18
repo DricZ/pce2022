@@ -67,50 +67,59 @@
 
         if ($cek == 5 and $row_team['money']>= $harga) {
             //mengurangi bahan
-            $sql_kayu = "UPDATE team_resources SET count =
-            (SELECT count-? FROM team_resources 
-            WHERE id_resource = 1 AND id_team = ?)
-            WHERE id_resource = 1 AND id_team = ?";
+            $sql_kayu = "UPDATE team_resources AS a
+            INNER JOIN team_resources AS b ON a.id = b.id
+            SET a.count = b.count-1
+            WHERE a.id_resource = 1 AND a.id_team = ? 
+            AND b.id_resource = 1 AND b.id_team = ?";
+            
             $stmt_kayu = $pdo->prepare($sql_kayu);
             $stmt_kayu->execute([$kayu, $id_team, $id_team]);
 
-            $sql_baja = "UPDATE team_resources SET count =
-            (SELECT count-? FROM team_resources 
-            WHERE id_resource = 2 AND id_team = ?)
-            WHERE id_resource = 2 AND id_team = ?";
+            $sql_baja = "UPDATE team_resources AS a
+            INNER JOIN team_resources AS b ON a.id = b.id
+            SET a.count = b.count-1
+            WHERE a.id_resource = 2 AND a.id_team = ? 
+            AND b.id_resource = 2 AND b.id_team = ?";
             $stmt_baja = $pdo->prepare($sql_baja);
             $stmt_baja->execute([$baja, $id_team, $id_team]);
 
-            $sql_semen = "UPDATE team_resources SET count =
-            (SELECT count-? FROM team_resources 
-            WHERE id_resource = 3 AND id_team = ?)
-            WHERE id_resource = 3 AND id_team = ?";
+            $sql_semen = "UPDATE team_resources AS a
+            INNER JOIN team_resources AS b ON a.id = b.id
+            SET a.count = b.count-1
+            WHERE a.id_resource = 3 AND a.id_team = ? 
+            AND b.id_resource = 3 AND b.id_team = ?";
             $stmt_semen = $pdo->prepare($sql_semen);
             $stmt_semen->execute([$semen, $id_team, $id_team]);
 
-            $sql_pasir = "UPDATE team_resources SET count =
-            (SELECT count-? FROM team_resources 
-            WHERE id_resource = 4 AND id_team = ?)
-            WHERE id_resource = 4 AND id_team = ?";
+            $sql_pasir = "UPDATE team_resources AS a
+            INNER JOIN team_resources AS b ON a.id = b.id
+            SET a.count = b.count-1
+            WHERE a.id_resource = 4 AND a.id_team = ? 
+            AND b.id_resource = 4 AND b.id_team = ?";
             $stmt_pasir = $pdo->prepare($sql_pasir);
             $stmt_pasir->execute([$pasir, $id_team, $id_team]);
 
-            $sql_pekerja = "UPDATE team_resources SET count =
-            (SELECT count-? FROM team_resources 
-            WHERE id_resource = 5 AND id_team = ?)
-            WHERE id_resource = 5 AND id_team = ?";
+            $sql_pekerja = "UPDATE team_resources AS a
+            INNER JOIN team_resources AS b ON a.id = b.id
+            SET a.count = b.count-1
+            WHERE a.id_resource = 5 AND a.id_team = ? 
+            AND b.id_resource = 5 AND b.id_team = ?";
             $stmt_pekerja = $pdo->prepare($sql_pekerja);
             $stmt_pekerja->execute([$pekerja, $id_team, $id_team]);
             
             //kurang uang
-            $sql_money = "UPDATE team SET money =
-            (SELECT money-? FROM team 
-            WHERE username = ?) 
-            WHERE username = ?";
+            $sql_money = "UPDATE team AS a
+            INNER JOIN team AS b ON a.id = b.id
+            SET a.money = b.money-?
+            WHERE a.username = ? AND b.username = ?";
             $stmt_money = $pdo->prepare($sql_money);
             $stmt_money->execute([$harga, $_SESSION['username'], $_SESSION['username']]);
 
-            $updateidpoinksql = "UPDATE team SET point = (SELECT point + ? FROM team WHERE id = ?) WHERE id = ?";
+            $updateidpoinksql = "UPDATE team AS a
+            INNER JOIN team AS b ON a.id = b.id
+            SET a.point = b.point+?
+            WHERE a.id = ? AND b.id = ?";
             $updateidpoinkstmt = $pdo->prepare($updateidpoinksql);
 
             if ($_POST['id_tipe'] == 1){
