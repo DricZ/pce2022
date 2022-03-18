@@ -1121,13 +1121,9 @@ $(function () {
     var today = new Date();
     var hour = today.getHours();
     var mintues = today.getMinutes();
-
-    if (hour >= 9 && mintues >= 30) {
-
-    }
-    var time = today.getHours() + ":" + today.getMinutes();
-    // console.log(time);
-    if (hour >= 18 && mintues >= 45) {
+    var time = today.getHours() +""+ today.getMinutes();
+    console.log(time);
+    if (time >=1845) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1143,7 +1139,7 @@ $(function () {
             }
         });
     }
-    if (hour >= 19 && mintues >= 30) {
+    if (time>=1930) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1159,7 +1155,7 @@ $(function () {
             }
         });
     }
-    if (hour >= 20 && mintues >= 15) {
+    if (time>=2015) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1175,7 +1171,7 @@ $(function () {
             }
         });
     }
-    if (hour >= 21 && mintues >= 00) {
+    if (time>=2100) {
         $.ajax({
             url: "new_phps/add_treasure.php",
             method: "POST",
@@ -1191,7 +1187,7 @@ $(function () {
             }
         });
     }
-    if (hour >= 9 && mintues >= 36) {
+    if (time>=93) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1201,6 +1197,10 @@ $(function () {
             }, success: function (data) {
                 console.log(data);
                 console.log("masuk");
+                // if(data=="hancur"){
+                //     $('#modal_bencana').modal();
+                //     document.getElementById("imgbencana").src = "assets/image/tsunami.png";
+                // }
             }, error: function ($xhr, errorThrown) {
                 console.log(errorThrown);
                 console.warn($xhr.responseText);
@@ -1208,7 +1208,7 @@ $(function () {
         });
 
     }
-    if (hour >= 20 && mintues >= 15) {
+    if (time>=2015) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1217,13 +1217,17 @@ $(function () {
                 time: 1
             }, success: function (data) {
                 console.log(data);
+                // if(data=="hancur"){
+                //     $('#modal_bencana').modal();
+                //     document.getElementById("imgbencana").src = "assets/image/gempa bumi.png";
+                // }
             }, error: function ($xhr, errorThrown) {
                 console.log(errorThrown);
                 console.warn($xhr.responseText);
             }
         });
     }
-    if (hour >= 21 && mintues >= 00) {
+    if (time>=2100) {
         $.ajax({
             url: "new_phps/addbencana.php",
             method: "POST",
@@ -1232,6 +1236,10 @@ $(function () {
                 time: 2
             }, success: function (data) {
                 console.log(data);
+                // if(data=="hancur"){
+                //     $('#modal_bencana').modal();
+                //     document.getElementById("imgbencana").src = "assets/image/angin beliung.png";
+                // }
             }, error: function ($xhr, errorThrown) {
                 console.log(errorThrown);
                 console.warn($xhr.responseText);
