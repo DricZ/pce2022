@@ -31,7 +31,7 @@
         $id_tujuan = $row_tujuan['id'];
 
         // LIST JEMBATAN YG TERHUBUNG KE PULAU SAAT INI
-        $sql_jembatan = "SELECT nj.id_pulau1, nj.id_pulau2, nt.nama AS tipe FROM new_jembatan nj
+        $sql_jembatan = "SELECT nj.id_pulau1, nj.id_pulau2, nt.nama AS tipe, nt.gambar FROM new_jembatan nj
         JOIN new_tipe_jembatan nt ON nj.id_tipe = nt.id
         WHERE (id_pulau1 = ? OR id_pulau2 = ?) AND id_team = ?";
         $stmt_jembatan = $pdo->prepare($sql_jembatan);

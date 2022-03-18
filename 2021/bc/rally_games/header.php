@@ -37,6 +37,9 @@ if ($rowTeam['location_now_id_city'] != 0) {
 ?>
 
 <style>
+    .navbar{
+        position: fixed !important;
+    }
     html {
         /* background-color: rgb(32, 31, 31); */
         font-family: "Industry";
