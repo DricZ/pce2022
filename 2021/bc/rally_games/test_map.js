@@ -737,7 +737,7 @@ function build_jembatan(id_jembatan) {
                     }
 
                     else if (item['tipe_jembatan'] == 4) {
-                        $('#modal_destroy_permanen').modal();
+                        $('#modal_destroy_permanent').modal();
                     }
                 }
                 else {
