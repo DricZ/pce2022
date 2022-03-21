@@ -55,7 +55,7 @@ $("#shield_pulau").click(function () {
                 },
                 success: function (res) {
                     //document.location.reload(true);
-
+                    console.log(res);
                     if (res != "berhasil") {
                         shopSwal.fire({
                             title: '<h3 style="color:white;">Gagal membeli Shield Permanen!</h3>',
@@ -703,10 +703,10 @@ function build_jembatan(id_jembatan) {
                     // KAYU
                     if (item['tipe_jembatan'] == 1) {
                         if (item['proteksi'] == 1) {
-                            document.getElementById("destkayup").classList.remove('hidden');
+                            document.getElementById("destkayup").removeAttribute('hidden');
                         }
                         else {
-                            document.getElementById("destkayu").classList.remove('hidden');
+                            document.getElementById("destkayu").removeAttribute('hidden');
                         }
 
                         $('#modal_destroy').modal();
@@ -714,11 +714,11 @@ function build_jembatan(id_jembatan) {
 
                     else if (item['tipe_jembatan'] == 2) {
                         if (item['proteksi'] == 1) {
-                            document.getElementById("destbajap").classList.remove('hidden');
+                            document.getElementById("destbajap").removeAttribute('hidden');
                         }
 
                         else {
-                            document.getElementById("destbaja").classList.remove('hidden');
+                            document.getElementById("destbaja").removeAttribute('hidden');
                         }
 
                         $('#modal_destroy').modal();
@@ -726,11 +726,11 @@ function build_jembatan(id_jembatan) {
 
                     else if (item['tipe_jembatan'] == 3) {
                         if (item['proteksi'] == 1) {
-                            document.getElementById("destbetonp").classList.remove('hidden');
+                            document.getElementById("destbetonp").removeAttribute('hidden');
                         }
 
                         else {
-                            document.getElementById("destbeton").classList.remove('hidden');
+                            document.getElementById("destbeton").removeAttribute('hidden');
                         }
 
                         $('#modal_destroy').modal();
