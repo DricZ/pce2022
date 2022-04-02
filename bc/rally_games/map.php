@@ -2444,8 +2444,8 @@
                     <div class="row" style="width:50%;">
 
                         <!-- Jembatan Kayu -->
-                        <div class="col-12 jembatan hidden" id="destkayu">
-
+                        <div class="col-12 jembatan " id="destkayu" hidden>
+                            
                             <h3 style=" margin-top: -15px">Jembatan Kayu</h3>
 
                             <h4>Bom yang diperlukan:</h4>
@@ -2456,8 +2456,8 @@
                         </div>
 
                         <!-- Jembatan Kayu Proteksi -->
-                        <div class="col-12 jembatan hidden" id="destkayup">
-
+                        <div class="col-12 jembatan " id="destkayup" hidden>
+                            
                             <h3 style=" margin-top: -15px">Jembatan Kayu Proteksi</h3>
 
                             <h4>Bom yang diperlukan:</h4>
@@ -2468,8 +2468,8 @@
                         </div>
 
                         <!-- Jembatan Baja -->
-                        <div class="col-12 jembatan hidden" id="destbaja">
-
+                        <div class="col-12 jembatan " id="destbaja" hidden>
+                            
                             <h3 style=" margin-top: -15px">Jembatan Baja</h3>
 
                             <h4>Bom yang diperlukan:</h4>
@@ -2480,8 +2480,8 @@
                         </div>
 
                         <!-- Jembatan Baja Proteksi -->
-                        <div class="col-12 jembatan hidden" id="destbajap">
-
+                        <div class="col-12 jembatan " id="destbajap" hidden>
+                            
                             <h3 style=" margin-top: -15px">Jembatan Baja Proteksi</h3>
 
                             <h4>Bom yang diperlukan:</h4>
@@ -2492,8 +2492,8 @@
                         </div>
 
                         <!-- Jembatan Beton -->
-                        <div class="col-12 jembatan hidden" id="destbeton">
-
+                        <div class="col-12 jembatan " id="destbeton" hidden>
+                            
                             <h3 style=" margin-top: -15px">Jembatan Beton</h3>
 
                             <h4>Bom yang diperluhkan:</h4>
@@ -2504,8 +2504,8 @@
                         </div>
 
                         <!-- Jembatan Beton Proteksi -->
-                        <div class="col-12 jembatan hidden" id="destbetonp">
-
+                        <div class="col-12 jembatan " id="destbetonp" hidden>
+                            
                             <h3 style=" margin-top: -15px">Jembatan Beton Proteksi</h3>
 
                             <h4>Bom yang diperluhkan:</h4>

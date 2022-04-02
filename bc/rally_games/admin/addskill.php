@@ -109,7 +109,7 @@ if (isset($_GET['stat'])) {
                 </select>
                 <center><label for="skill" style="font-weight: bold;" class="mt-3">Nama Skill</label></center>
                 <select class="form-control" id="skill" name="skill" style="height:40px; font-size: 12pt;" required>
-                    <option value="">Pilih nama team...</option>
+                    <option value="">Pilih skill..</option>
                     <?php
                     $sqlskill = "SELECT * FROM new_skill";
                     $stmtskill = $pdo->prepare($sqlskill);

@@ -13,7 +13,7 @@ p {
 <body>
 
 <p id="demo"></p>
-
+<!-- 
 <script>
 // Set the date we're counting down to
 
@@ -44,7 +44,7 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
-</script>
+</script> -->
 
 </body>
 </html>
@@ -57,16 +57,27 @@ var x = setInterval(function() {
 // Set the date we're counting down to
 // var countDownDate = new Date().getTime()+362000;
 // 15.26
-var c = "09:08:00";
+//get dari sql
+var c = "11:08:00";
 var d = new Date('2022-03-17T'+c+'Z');
 var countDownDate = new Date('2022-03-17T'+c+'Z');
 
+//coba
+//post to  sql
+var t = new Date().getTime()+362000;
+var y =t.toString();
+var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((t % (1000 * 60)) / 1000);
+
+console.log(hours,minutes,seconds);
 
 // Update the count down every 1 second
 var x = setInterval(function() {
 
   // Get today's date and time
   var now = new Date().getTime();
+  // var y =now.toUTCString();
     
   // Find the distance between now and the count down date
   var distance = countDownDate - now;
@@ -80,11 +91,12 @@ var x = setInterval(function() {
   // Output the result in an element with id="demo"
   document.getElementById("demo").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
-  console.log();
+  
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
+    console.log(y);
   }
 }, 1000);
 </script>
