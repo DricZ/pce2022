@@ -8,23 +8,52 @@
     <title>Document</title>
 
     <style>
-        .gambar {
+        .custom_img {
             cursor: pointer;
-            height: 100vh;
+            width: 100vw;
             transition: 1s ease-out;
-            transform: scale(1);
+            position: absolute;
+            top: 50%;
+            transform: scale(1) translateY(-50%);
+            z-index: -1;
         }
 
-        .penampung {
+        .penampung,
+        body {
             overflow: hidden;
+        }
+
+        #video-pce {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-55%);
+            left: 21vw;
+            width: 52.5vw;
+            z-index: -2;
+            opacity: 0;
+            transition: 1s ease-out;
+        }
+
+        #orang {
+            position: absolute;
+            transition: 1.5s ease-out;
+            top: 47.5%;
         }
     </style>
 </head>
 
 <body style="margin: 0%;">
-    <div class="penampung" style="background-color: grey;">
-        <center><img src="assets/background.jpg" alt="" id="pintu" class="gambar"></center>
+    <div class="penampung">
+        <img src="assets/background awal luar gedung.jpg" id="pintu" class="custom_img">
+        <img src="assets/MPC PCE.gif" alt="" width="500px" id="orang">
     </div>
+
+    <video id="video-pce">
+        <source src="assets/ANIMASI BACKGROUND.mp4" type="video/mp4">
+        Your browser doesn't support the video tag.
+    </video>
+
+
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -33,36 +62,61 @@
     $('#pintu').click(function () {
         if (clicked == 0) {
             // ZOOM IN & FADE OUT
-            $('.gambar').fadeOut(1000);
-            document.getElementById('pintu').style.transform = 'scale(2)';
+            $('.custom_img').fadeOut(1000);
+            $('#orang').slideUp(500);
+            document.getElementById('pintu').style.transform = 'scale(2) translateY(-50%)';
+
+            setTimeout(() => {
+                document.getElementById('orang').style.left = '-100%';
+            }, 500);
 
             // GANTI GAMBAR
             setTimeout(() => {
-                $('#pintu').prop("src", "assets/ruangan.jpeg");
+                $('#pintu').prop("src", "assets/resepsionis-clear.png");
             }, 1000);
 
             // ZOOM OUT & FADE IN
-            $('.gambar').fadeIn(50);
+            $('.custom_img').fadeIn(50);
             setTimeout(() => {
-                document.getElementById('pintu').style.transform = 'scale(1)';
+                document.getElementById('pintu').style.transform = 'scale(1) translateY(-50%)';
+                document.getElementById('pintu').style.transform = 'scale(1) translateY(-50%)';
+
+                // PLAY VIDEO
+                var myVideo = document.getElementById('video-pce');
+                if (typeof myVideo.loop == 'boolean') { // loop supported
+                    myVideo.loop = true;
+                } else { // loop property not supported
+                    myVideo.addEventListener('ended', function () {
+                        this.currentTime = 0;
+                        this.play();
+                    }, false);
+                }
+                //...
+                myVideo.play();
+                document.getElementById('orang').style.display = 'block';
+                setTimeout(() => {
+                    myVideo.style.opacity = "1";
+                    document.getElementById('orang').style.left = '-5%';
+                }, 1250);
             }, 1050);
 
-            clicked = 1;
+            clicked += 1;
         }
+    });
 
-        else{
-            // ZOOM IN & FADE OUT
-            $('.gambar').fadeOut(1000);
-            document.getElementById('pintu').style.transform = 'scale(2)';
+        // else {
+        //     // ZOOM IN & FADE OUT
+        //     $('.custom_img').fadeOut(1000);
+        //     document.getElementById('pintu').style.transform = 'scale(2)';
 
-            // GANTI GAMBAR
-            setTimeout(() => {
-                window.location.replace("stand.html");;
-            }, 1000);
+        //     // GANTI GAMBAR
+        //     setTimeout(() => {
+        //         window.location.replace("stand.html");;
+        //     }, 1000);
 
-            clicked = 1;
-        }
-    })
+        //     clicked = 1;
+        // }
+
 </script>
 
 </html>

@@ -18,6 +18,8 @@ $getTeamstmt = $pdo->prepare($getTeamsql);
 $getTeamstmt->execute([$_SESSION['username'], $_SESSION['username']]);
 $getTeam = $getTeamstmt->fetch();
 
+$str = "";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
