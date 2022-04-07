@@ -20,31 +20,97 @@
   <!-- JQUERY -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/021a36bbfc.js" crossorigin="anonymous"></script>
+
   <style>
+<<<<<<< Updated upstream
     .stand{
       z-index: 0;
+=======
+    .custom_btn {
+      font-size: 50px;
+      z-index: 5;
+      margin: 25px;
+      position: relative;
+      top: -50%;
+      width: 150px;
+    }
+
+    body {
+      animation: animasi_fade ease 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+    }
+
+    @keyframes animasi_fade {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .stand {
+      z-index: 1;
+>>>>>>> Stashed changes
       width: 100vw;
 
     }
+
     .barang_stand_panjang {
+<<<<<<< Updated upstream
       z-index: 1;
       position: absolute ;
+=======
+      z-index: 2;
+      position: absolute;
+>>>>>>> Stashed changes
       width: 4.5vw;
       margin-left: 37.8vw;
       margin-top: 13.05vw;
       height: 15.3vw;
       cursor: pointer;
     }
+
     .barang_stand_barang {
+<<<<<<< Updated upstream
       z-index: 1;
       position: absolute ;
       width: 10.3vw;
       cursor: pointer;
     }
+=======
+      z-index: 2;
+      position: absolute;
+      width: 10.3vw;
+      cursor: pointer;
+    }
+
+    .barang_stand_barang :hover {
+      width: 1000vh;
+    }
+>>>>>>> Stashed changes
   </style>
 </head>
 
 <body style="margin: 0%;">
+
+  <div id="button_container" style="position: absolute;">
+    <button type="button" class="btn btn-danger custom_btn" onclick="pindah('index')">
+      <i class="fa-solid fa-door-closed"></i><br>
+      <!-- <i class="fa-solid fa-door-open"></i> -->
+      <p style="font-size: large;">Exit</p>
+    </button>
+    <button type="button" class="btn btn-success custom_btn" onclick="pindah('receptionist')">
+      <i class="fa-solid fa-person-booth"></i>
+      <p style="font-size: large;">Receptionist</p>
+    </button>
+  </div>
+
   <!-- Carousel -->
   <!-- <img src="assets/pintu.jpeg" alt="" class="barang_stand_panjang" id="panjang" onclick="klik()"> -->
   <div id="demo" class="carousel slide" data-bs-interval="false">
@@ -60,9 +126,16 @@
           <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang" style="margin-left: 53.5vw;
           margin-top: 18.59vw;height: 7.95vw;"onclick="klik()">
           <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang" style="margin-left: 53.5vw;
+<<<<<<< Updated upstream
           margin-top: 26.6vw;height: 6vw;"onclick="klik()">
           <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang" style="margin-left: 53.5vw;margin-top: 32.5vw;height:16.05vh;"onclick="klik()">
           <img src="assets/booth fix.jpg" alt="" class="stand"> 
+=======
+          margin-top: 26.6vw;height: 6vw;">
+          <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang"
+            style="margin-left: 53.5vw;margin-top: 32.5vw;height:7.55vh;">
+          <img src="assets/booth fix.jpg" alt="" class="stand">
+>>>>>>> Stashed changes
         </div>
       </div>
       <div class="carousel-item">
@@ -113,6 +186,7 @@
 
 
   <script>
+<<<<<<< Updated upstream
     function klik() {
       $("#myModal").modal('show');
       console.log("masuk");
@@ -129,11 +203,11 @@
 
     function playVid() {
       vid.play();
+=======
+    function pindah(ke_mana) {
+      document.location.href = ke_mana + ".html";
+>>>>>>> Stashed changes
     }
-
-    function pauseVid() {
-      vid.pause();
-    } 
   </script>
 </body>
 

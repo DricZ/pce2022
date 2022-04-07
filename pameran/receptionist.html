@@ -28,10 +28,12 @@
         @keyframes animasi_fade {
             0% {
                 opacity: 0;
+                transform: scale(2) translateY(90%);
             }
 
             100% {
                 opacity: 1;
+                transform: scale(1) translateY(90%);
             }
         }
 
@@ -49,22 +51,63 @@
             top: 50%;
             transform: scale(1) translateY(-50%);
             z-index: -1;
+            opacity: 1;
         }
 
         #gambar_orang {
             position: absolute;
             transition: 1.5s ease-out;
-            top: 50%;
+            top: 75%;
             width: 500px;
+        }
+
+        #video_pce {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-55%);
+            left: 21vw;
+            width: 52.5vw;
+            z-index: -2;
+            opacity: 1;
+            transition: 1s ease-out;
+        }
+
+        .custom_btn {
+            margin: 50px;
+            margin-bottom: 25px;
+            margin-top: 0px;
+            width: 100%;
+            height: 100%;
+            font-size: 50px;
+            border-radius: 15px;
         }
     </style>
 </head>
 
 <body>
     <div class="penampung">
-        <img src="assets/background awal luar gedung.jpg" id="gambar_gedung">
+        <img src="assets/resepsionis-clear.png" id="gambar_gedung">
         <img src="assets/MPC PCE.gif" id="gambar_orang">
     </div>
+
+    <video id="video_pce">
+        <source src="assets/ANIMASI BACKGROUND.mp4" type="video/mp4">
+        Your browser doesn't support the video tag.
+    </video>
+
+    <div id="button_container" style="width: 10vw;">
+        <button type="button" class="btn btn-danger custom_btn" onclick="pindah('index')">
+            <i class="fa-solid fa-door-closed"></i><br>
+            <!-- <i class="fa-solid fa-door-open"></i> -->
+            <p style="font-size: large;">Exit</p>
+        </button>
+        <button type="button" class="btn btn-success custom_btn" onclick="pindah('stand')">
+            <i class="fa-solid fa-store"></i>
+            <!-- <i class="fa-solid fa-booth-curtain"></i> -->
+            <p style="font-size: large;">Stands</p>
+        </button>
+    </div>
+
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -73,25 +116,9 @@
 </body>
 
 <script>
-    var clicked = 0;
-    $('#gambar_gedung').click(function () {
-        if (clicked == 0) {
-            // ZOOM IN & FADE OUT
-            $('#gambar_gedung').fadeOut(1000);
-            $('#gambar_gedung').css({ "transform": "scale(2) translateY(-50%)" });
-            $('#gambar_orang').slideUp(500);
-
-            // ORANG LEFT
-            setTimeout(() => {
-                $('#gambar_orang').css({ "left": "-100%" });
-            }, 500);
-
-            // GANTI PAGE
-            setTimeout(() => {
-                document.location.href = "receptionist.html";
-            }, 1000);
-        }
-    });
+    function pindah(ke_mana) {
+        document.location.href = ke_mana + ".html";
+    }
 </script>
 
 </html>
