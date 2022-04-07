@@ -24,10 +24,6 @@
   <script src="https://kit.fontawesome.com/021a36bbfc.js" crossorigin="anonymous"></script>
 
   <style>
-<<<<<<< Updated upstream
-    .stand{
-      z-index: 0;
-=======
     .custom_btn {
       font-size: 50px;
       z-index: 5;
@@ -56,19 +52,13 @@
 
     .stand {
       z-index: 1;
->>>>>>> Stashed changes
       width: 100vw;
 
     }
 
     .barang_stand_panjang {
-<<<<<<< Updated upstream
-      z-index: 1;
-      position: absolute ;
-=======
       z-index: 2;
       position: absolute;
->>>>>>> Stashed changes
       width: 4.5vw;
       margin-left: 37.8vw;
       margin-top: 13.05vw;
@@ -77,13 +67,6 @@
     }
 
     .barang_stand_barang {
-<<<<<<< Updated upstream
-      z-index: 1;
-      position: absolute ;
-      width: 10.3vw;
-      cursor: pointer;
-    }
-=======
       z-index: 2;
       position: absolute;
       width: 10.3vw;
@@ -93,7 +76,6 @@
     .barang_stand_barang :hover {
       width: 1000vh;
     }
->>>>>>> Stashed changes
   </style>
 </head>
 
@@ -118,24 +100,18 @@
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div style="text-align: center;">
-          <img src="assets/pintu.jpeg" alt="" class="barang_stand_panjang" id="panjang" onclick="klik()">
+          <img src="assets/pintu.jpeg" alt="" class="barang_stand_panjang" id="panjang" onclick="buka()">
           <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang" style="margin-left: 42.49vw;
-          margin-top: 13.2vw;height: 5vw;"onclick="klik()">
+          margin-top: 13.2vw;height: 5vw;" onclick="buka()">
           <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang" style="height: 5.6vw;margin-left: 53.5vw;
-          margin-top: 13vw;"onclick="klik()">
+          margin-top: 13vw;" onclick="buka()">
           <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang" style="margin-left: 53.5vw;
-          margin-top: 18.59vw;height: 7.95vw;"onclick="klik()">
+          margin-top: 18.59vw;height: 7.95vw;" onclick="buka()">
           <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang" style="margin-left: 53.5vw;
-<<<<<<< Updated upstream
-          margin-top: 26.6vw;height: 6vw;"onclick="klik()">
-          <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang" style="margin-left: 53.5vw;margin-top: 32.5vw;height:16.05vh;"onclick="klik()">
-          <img src="assets/booth fix.jpg" alt="" class="stand"> 
-=======
-          margin-top: 26.6vw;height: 6vw;">
+          margin-top: 26.6vw;height: 6vw;" onclick="buka()">
           <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang"
-            style="margin-left: 53.5vw;margin-top: 32.5vw;height:7.55vh;">
+            style="margin-left: 53.5vw;margin-top: 32.5vw;height:16.05vh;" onclick="buka()">
           <img src="assets/booth fix.jpg" alt="" class="stand">
->>>>>>> Stashed changes
         </div>
       </div>
       <div class="carousel-item">
@@ -159,54 +135,35 @@
     </button>
   </div>
 
-  <!-- The Modal -->
-  <div class="modal" id="myModal">
+  <div class="modal fade" tabindex="-1" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
-      
-        <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title">Modal Heading</h4>
-          <button type="button" class="close" data-dismiss="modal" onclick="tutup()">&times;</button>
+          <h5 class="modal-title">Nama barang</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        
-        <!-- Modal body -->
         <div class="modal-body">
-          Modal body..
+          <p>Deskripsi barang.</p>
         </div>
-        
-        <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="tutup()">Close</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
-        
       </div>
     </div>
   </div>
 
-
   <script>
-<<<<<<< Updated upstream
-    function klik() {
+    function pindah(ke_mana) {
+      document.location.href = ke_mana + ".html";
+    }
+
+    function buka() {
       $("#myModal").modal('show');
       console.log("masuk");
     }
+
     function tutup() {
       $("#myModal").modal('hide');
-    }
-    // $(document).ready(function(){
-    //   $("#panjang").click(function(){
-    //     $("#myModal").modal();
-    //   });
-    // });
-    var vid = document.getElementById("myVideo");
-
-    function playVid() {
-      vid.play();
-=======
-    function pindah(ke_mana) {
-      document.location.href = ke_mana + ".html";
->>>>>>> Stashed changes
     }
   </script>
 </body>
