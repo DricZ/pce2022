@@ -23,17 +23,18 @@
             animation: animasi_fade ease 1s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
+            margin-top: 15vw;
         }
 
         @keyframes animasi_fade {
             0% {
                 opacity: 0;
-                transform: scale(2) translateY(90%);
+                transform: scale(2);
             }
 
             100% {
                 opacity: 1;
-                transform: scale(1) translateY(90%);
+                transform: scale(1);
             }
         }
 
@@ -44,7 +45,6 @@
         }
 
         #gambar_gedung {
-            cursor: pointer;
             width: 100vw;
             transition: 1s ease-out;
             position: absolute;
@@ -90,7 +90,7 @@
         <img src="assets/MPC PCE.gif" id="gambar_orang">
     </div>
 
-    <video id="video_pce">
+    <video id="video_pce" autoplay muted>
         <source src="assets/ANIMASI BACKGROUND.mp4" type="video/mp4">
         Your browser doesn't support the video tag.
     </video>
