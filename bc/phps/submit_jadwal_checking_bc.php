@@ -21,11 +21,9 @@ if (isset($_POST['tanggal']) && isset($_POST['jam'])) {
 		$updateCountsql = "UPDATE jadwal_checking_bc SET count = count + 1 WHERE id = ?";
         $updateCountstmt = $pdo->prepare($updateCountsql);
         $updateCountstmt->execute([$getJadwal['id']]);
-
         $updateStatussql = "UPDATE pendaftar SET status = 3 WHERE id = ?";
         $updateStatusstmt = $pdo->prepare($updateStatussql);
         $updateStatusstmt->execute([$getPendaftar['id_pendaftar']]);
-		
 		header("Location: ../../index.php?status=5");
 		exit();
 	} else {
