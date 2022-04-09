@@ -31,7 +31,8 @@ $str = "";
 </style>
 
 <head>
-    <title>PCE 2021 - Jadwal Checking Jembatan</title>
+    <title>PCE 2022 - Jadwal Checking Jembatan</title>
+
 </head>
 
 <body>
@@ -86,13 +87,13 @@ $str = "";
                                 $jadwalstmt->execute();
                                 while ($jadwalrow = $jadwalstmt->fetch()) {
                                     if ($getTeam['jenjang_pendidikan'] == 'College') {
-                                        if ($jadwalrow['tanggal'] == '24-04-2021') {
+                                        if ($jadwalrow['tanggal'] == '12-04-2022') {
                                 ?>
                                             <option value="<?= $jadwalrow['tanggal'] ?>"><?= $jadwalrow['tanggal'] ?></option>
                                         <?php
                                         }
                                     } else if ($getTeam['jenjang_pendidikan'] == 'Senior High School') {
-                                        if ($jadwalrow['tanggal'] == '23-04-2021') {
+                                        if ($jadwalrow['tanggal'] == '11-04-2022') {
                                         ?>
                                             <option value="<?= $jadwalrow['tanggal'] ?>"><?= $jadwalrow['tanggal'] ?></option>
                                 <?php
@@ -111,7 +112,8 @@ $str = "";
                             </select>
                         </div>
                     </div>
-                </div>
+                </div>     
+
                 <hr class="mt-5">
                 <h5 style="text-align: center; font-size: 12pt; color: red; font-weight:bold;" class="mx-3">Harap pastikan jadwal yang dipilih sudah <u>sesuai</u>!<br>Data hanya dapat dilakukan submit 1 (satu) kali dan tidak dapat diubah kembali.</h5>
                 <center><input type="submit" id="submit" name="submit" value="Submit Data" class="btn btn-warning mt-3 mb-5" style="font-weight: bold;"></center>
