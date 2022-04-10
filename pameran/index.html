@@ -23,6 +23,8 @@
             animation: animasi_fade ease 1s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
+            overflow: hidden;
+            transition: 1.5s ease-in-out;
         }
 
         @keyframes animasi_fade {
@@ -35,36 +37,42 @@
             }
         }
 
-        .penampung,
-        body {
-            overflow: hidden;
-            transition: 1.5s ease-in-out;
+        .gambar_ku {
+            top: 50%;
+            position: absolute;
+            transition: 1.5s ease-out;
+            z-index: 2;
         }
 
         #gambar_gedung {
             cursor: pointer;
-            height: 100vh;
-            transition: 1s ease-out;
-            position: absolute;
-            top: 50%;
+            width: 100vw;
             transform: scale(1) translateY(-50%);
-            z-index: -1;
         }
 
         #gambar_orang {
-            position: absolute;
-            transition: 1.5s ease-out;
-            top: 50%;
-            width: 500px;
+            width: 25vw;
+        }
+
+        #background_ku {
+            background-image: url(assets/background\ awal\ luar\ gedung.jpg);
+            background-position: 50% 40%;
+            background-repeat: no-repeat;
+            height: 100vh;
+            filter: blur(10px);
         }
     </style>
 </head>
 
 <body>
-    <div class="penampung">
-        <img src="assets/background awal luar gedung.jpg" id="gambar_gedung">
-        <img src="assets/MPC PCE.gif" id="gambar_orang">
-    </div>
+    <!-- BLURRED BACKGROUND -->
+    <div id="background_ku"></div>
+
+    <!-- GAMBAR GEDUNG -->
+    <img src="assets/background awal luar gedung.jpg" id="gambar_gedung" class="gambar_ku">
+
+    <!-- GAMBAR ORANG -->
+    <img src="assets/MPC PCE.gif" id="gambar_orang" class="gambar_ku">
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -73,24 +81,17 @@
 </body>
 
 <script>
-    var clicked = 0;
     $('#gambar_gedung').click(function () {
-        if (clicked == 0) {
-            // ZOOM IN & FADE OUT
-            $('#gambar_gedung').fadeOut(1000);
-            $('#gambar_gedung').css({ "transform": "scale(2) translateY(-50%)" });
-            $('#gambar_orang').slideUp(500);
+        // ANIMASI ZOOM IN & FADE OUT
+        $('#gambar_gedung').fadeOut(1000);
+        $('#gambar_gedung').css({ "transform": "scale(2) translateY(-50%)" });
+        $('#gambar_orang').slideUp(500);
+        $('#background_ku').css({ "background-image": "none" });
 
-            // ORANG LEFT
-            setTimeout(() => {
-                $('#gambar_orang').css({ "left": "-100%" });
-            }, 500);
-
-            // GANTI PAGE
-            setTimeout(() => {
-                document.location.href = "receptionist.html";
-            }, 1000);
-        }
+        // GANTI PAGE
+        setTimeout(() => {
+            document.location.href = "receptionist.html";
+        }, 1000);
     });
 </script>
 
