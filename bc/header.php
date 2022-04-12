@@ -1,5 +1,7 @@
 <?php
 require_once 'phps/connect.php';
+
+header("location: ../");
 ?>
 
 <!DOCTYPE html>
