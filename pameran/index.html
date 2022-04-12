@@ -81,6 +81,10 @@
 </body>
 
 <script>
+    if (screen.width <= 700) {
+        document.location = "gabisa.html";
+    }
+
     $('#gambar_gedung').click(function () {
         // ANIMASI ZOOM IN & FADE OUT
         $('#gambar_gedung').fadeOut(1000);
