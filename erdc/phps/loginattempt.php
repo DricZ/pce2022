@@ -2,8 +2,8 @@
 require "connect.php";
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
-    // if(isset($_POST['g-recaptcha-response'])&& !empty($_POST['g-recaptcha-response']))
-    // {
+    if(isset($_POST['g-recaptcha-response'])&& !empty($_POST['g-recaptcha-response']))
+    {
         if ($_POST['username'] == 'dummy' && $_POST['password'] == 'test') {
             $_SESSION['username'] = $_POST['username'];
         } else {
@@ -27,10 +27,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
                 header("Location: ../index.php?stat=1");
             }
         }
-    // }
-    // else {
-    //     header("Location: ../index.php?stat=2"); //captcha salah
-    // }
+    }
+    else {
+        header("Location: ../index.php?stat=2"); //captcha salah
+    }
 } else {
     exit();
 }
