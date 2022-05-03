@@ -131,10 +131,10 @@
         opacity: 1;
       }
     }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-      height: 100px;
-      width: 100px;
+    .fa-chevron-left,
+    .fa-chevron-right {
+      height: 80px;
+      width: 80px;
       outline: black;
       background-size: 100%, 100%;
       border-radius: 50%;
@@ -143,14 +143,14 @@
       background-color: #4e73df;
     }
 
-    .carousel-control-next-icon:after {
-      content: '>';
+    .fa-chevron-right:after {
+      content: "";
       font-size: 55px;
       color: black;
     }
 
-    .carousel-control-prev-icon:after {
-      content: '<';
+    .fa-chevron-left:after {
+      content: "";
       font-size: 55px;
       color: black;
     }
@@ -203,10 +203,10 @@
   
   <!-- Left and right controls -->
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
+    <span><i class="fa-solid fa-chevron-left fa-2x"></i></span>
   </a>
   <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
+    <span><i class="fa-solid fa-chevron-right fa-2x"></i></span>
   </a>
 
   
