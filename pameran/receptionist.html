@@ -16,7 +16,7 @@
     <!-- FONT AWESOME -->
     <script src="https://kit.fontawesome.com/021a36bbfc.js" crossorigin="anonymous"></script>
 
-    <title>Hello, world!</title>
+    <title>Receptionist PCE</title>
 
     <style>
         body {
@@ -24,6 +24,8 @@
             animation-iteration-count: 1;
             animation-fill-mode: forwards;
             margin-top: 15vw;
+            background-image: url(assets/background_receptionist.jpg);
+            background-size: 100vw 100vh;
         }
 
         @keyframes animasi_fade {
@@ -58,8 +60,10 @@
         #gambar_orang {
             position: absolute;
             transition: 1.5s ease-out;
-            top: 75%;
+            top: 50%;
+            left: 10%;
             width: 30vw;
+            z-index: -1;
         }
 
         #video_pce {
@@ -77,10 +81,15 @@
             margin: 50px;
             margin-bottom: 25px;
             margin-top: 0px;
-            width: 100%;
-            height: 100%;
+            width: 125%;
             font-size: 50px;
             border-radius: 15px;
+            z-index: 2;
+        }
+
+        .modal-backdrop {
+            top: -100%;
+            height: 150vh;
         }
     </style>
 </head>
@@ -96,7 +105,7 @@
         Your browser doesn't support the video tag.
     </video>
 
-    <div id="button_container" style="width: 10vw;">
+    <div style="width: 10vw;">
         <button type="button" class="btn btn-danger custom_btn" onclick="pindah('index')">
             <i class="fa-solid fa-door-closed"></i><br>
             <!-- <i class="fa-solid fa-door-open"></i> -->
@@ -109,6 +118,52 @@
         </button>
     </div>
 
+    <!-- MODAL -->
+    <div class="modal fade" tabindex="-1" id="modal_stand" style="height: auto; top: -50%;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Mohon isi form berikut ini sebelum mengunjungi stand kami.</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="input_nama" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="input_nama">
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="mb-1">
+                                    <label for="input_email" class="form-label">Alamat Email</label>
+                                    <input type="email" class="form-control" id="input_email">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-1">
+                                    <label for="input_hp" class="form-label">Nomor HP</label>
+                                    <input type="text" class="form-control" id="input_hp">
+                                </div>
+                            </div>
+                            <div id="emailHelp" class="form-text mb-3">
+                                Kami tidak akan membagikan <b>Alamat Email dan Nomor HP</b> Anda kepada siapapun.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="input_instansi" class="form-label">Asal Instansi</label>
+                            <input type="text" class="form-control" id="input_instansi">
+                            <div class="form-text">Contoh: Universitas Kristen Petra</div>
+                        </div>
+                        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary">Lanjutkan</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -118,7 +173,13 @@
 
 <script>
     function pindah(ke_mana) {
-        document.location.href = ke_mana + ".html";
+        if (ke_mana == "stand") {
+            $("#modal_stand").modal('show');
+            // pakai form action, panggil php utk cek apakah data valid, 
+            // jika data baru di insert ke database
+        } else {
+            document.location.href = ke_mana + ".html";
+        }
     }
 </script>
 
