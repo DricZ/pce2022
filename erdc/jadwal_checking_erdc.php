@@ -136,7 +136,7 @@ if (isset($_GET['stat'])) {
         $checkFilledstmt = $pdo->prepare($checkFilledsql);
         $checkFilledstmt->execute([$getTeam['id']]);
 
-        if ($checkFilledstmt->rowCount() >= 2) {
+        if ($checkFilledstmt->rowCount() >= 1) {
         ?>
             <div class="justify-content-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
                 <h1 style="text-align: center; font-weight: bold; letter-spacing: 5px; color: brown; font-size: 72pt; margin-bottom: 0.3em;">TERIMA KASIH</h1>
@@ -205,20 +205,20 @@ if (isset($_GET['stat'])) {
             $checkingstmt->execute([$getTeam['id']]);
             if ($checkingstmt->rowCount() == 0) {
             ?>
-                <h3 style="text-align: center; font-weight: bold; color: black;">Pemilihan Jadwal Checking Pertama</h3>
+                <h3 style="text-align: center; font-weight: bold; color: black;">Pemilihan Jadwal Checking</h3>
         </div>
         <div class="justify-content-center mt-4 mb-5 mx-3">
-            <h5 style="text-align: center;">Team <?= $getTeam['nama_kelompok'] ?> <b>belum pernah</b> memilih jadwal untuk checking,<br>pemilihan jadwal dapat dilakukan sebanyak <b>2 (dua)</b> kali</h5>
-            <h5 style="text-align: center;">Silakan memilih <b>jadwal pertama</b> untuk checking team <?= $getTeam['nama_kelompok'] ?></h5>
+            <h5 style="text-align: center;">Team <?= $getTeam['nama_kelompok'] ?> <b>belum pernah</b> memilih jadwal untuk checking,<br>pemilihan jadwal dapat dilakukan sebanyak <b>1 (satu)</b> kali</h5>
+            <h5 style="text-align: center;">Silakan memilih <b>jadwal</b> untuk checking team <?= $getTeam['nama_kelompok'] ?></h5>
         <?php
-            } else if ($checkingstmt->rowCount() == 1) {
+            // } else if ($checkingstmt->rowCount() == 1) {
         ?>
-            <h3 style="text-align: center; font-weight: bold; color: black;">Pemilihan Jadwal Checking Kedua</h3>
+            <!-- <h3 style="text-align: center; font-weight: bold; color: black;">Pemilihan Jadwal Checking Kedua</h3>
             <h3 style="text-align: center; font-weight: bold; color: black;">Earthquake Resistant Design Competition</h3>
         </div>
         <div class="justify-content-center mt-4 mb-3 mx-3">
             <h5 style="text-align: center;">Team <?= $getTeam['nama_kelompok'] ?> sudah pernah memilih jadwal untuk checking sebanyak <b>1 (satu)</b> kali, team <?= $getTeam['nama_kelompok'] ?> dapat memilih jadwal sebanyak <b>1 (satu)</b> kali lagi</h5>
-            <h5 style="text-align: center;">Silakan memilih <b>jadwal kedua</b> untuk checking team <?= $getTeam['nama_kelompok'] ?> <b>(opsional)</b></h5>
+            <h5 style="text-align: center;">Silakan memilih <b>jadwal kedua</b> untuk checking team <?= $getTeam['nama_kelompok'] ?> <b>(opsional)</b></h5> -->
             <?php
                 if ($getJadwalstmt->rowCount() > 0) {
             ?>

@@ -29,8 +29,8 @@ require_once 'header.php';
                      <p style="font-size: 14pt;">
                         <a href="https://petra.id/CheckingERDC2022" style="text-decoration: none; font-weight: bold; color: brown;" target="_blank">petra.id/CheckingERDC2022</a>
                         <br>
-                        Meeting ID: <b>824 6925 7392</b><br>
-                        Passcode: <b>433777</b>
+                        Meeting ID: <b>833 7345 1333</b><br>
+                        Passcode: <b>863134</b>
                      </p>
                      `;
 
@@ -178,15 +178,14 @@ if (isset($_GET['status'])) {
             <h2 style="text-align:right;font-weight:bold;" class="pt-5 pb-3 mx-5">ERDC Checking Session</h2>
 
             <p style="text-align:justify;" class="mx-5">
-                <b><i>Checking session</i></b> adalah waktu yang diberikan bagi para peserta lomba <i><b>Earthquake Resistant Design Competition 2022</b></i> untuk melakukan pengecekan terhadap maket yang telah dibuat. Setiap tim diberi kesempatan memilih maksimal 2 (dua) sesi <i>checking</i> sesuai jadwal yang dapat dipilih oleh peserta pada <i>website</i>.
-                Setiap sesi mempunyai durasi maksimal 1 (satu) jam. <i>Checking session</i> akan menggunakan <i>link</i> Zoom yang akan diberikan setelah peserta memilih jadwal sesi pada <i>website</i>.
+                <b><i>Checking session</i></b> adalah waktu yang diberikan bagi para peserta lomba <i><b>Earthquake Resistant Design Competition 2022</b></i> untuk melakukan pengecekan terhadap maket yang telah dibuat. Checking diadakan sebanyak 3 kali, tanggal 7-9 Mei 2022 merupakan checking yang wajib dihadiri sebanyak 1x sedangkan untuk 2 checking lainnya bisa dilakukan sampai tanggal 15 Mei 2022 dengan janji terlebih dahulu dengan panitia yang ada. <i>Checking session</i> akan menggunakan <i>link</i> Zoom yang akan diberikan setelah peserta memilih jadwal sesi pada <i>website</i>.
             </p>
             <p style="text-align:justify;" class="mx-5">
                 Yang dapat dilakukan saat <i>checking</i>:<br>
             <ol class="mx-5 mb-5">
                 <li>QnA kepada panitia mengenai ketentuan maket</li>
-                <li>Pengecekan berat maket</li>
-                <li>Pengecekan ukuran dimensi maket (panitia menggunakan penggaris segitiga <i>rotring orange</i>)</li>
+                <li>Pengecekan kesesuaian maket dengan proposal</li>
+                <!-- <li>Pengecekan ukuran dimensi maket (panitia menggunakan penggaris segitiga <i>rotring orange</i>)</li> -->
             </ol>
             </p>
         </div>
