@@ -126,41 +126,43 @@
                     <h5 class="modal-title">Mohon isi form berikut ini sebelum mengunjungi stand kami.</h5>
                     <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
-                <div class="modal-body">
-                    <form>
+                <form action="phps/loginattempt.php" method="post">
+                    <div class="modal-body">
                         <div class="mb-3">
                             <label for="input_nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="input_nama">
+                            <input type="text" class="form-control" id="input_nama" name="nama_lengkap">
                         </div>
                         <div class="row">
                             <div class="col-6">
                                 <div class="mb-1">
                                     <label for="input_email" class="form-label">Alamat Email</label>
-                                    <input type="email" class="form-control" id="input_email">
+                                    <input type="email" class="form-control" id="input_email" name="email_peserta">
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="mb-1">
                                     <label for="input_hp" class="form-label">Nomor HP</label>
-                                    <input type="text" class="form-control" id="input_hp">
+                                    <input type="text" class="form-control" id="input_hp" name="hp_peserta">
                                 </div>
                             </div>
                             <div id="emailHelp" class="form-text mb-3">
-                                Kami tidak akan membagikan <b>Alamat Email dan Nomor HP</b> Anda kepada siapapun.
+                                <b>Alamat Email dan Nomor HP</b> tidak akan dibagikan kepada siapapun.
+                                <br>
+                                Nomor hp mohon menggunakan angka saja. (Contoh: 08xxxxxxxxxx)
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="input_instansi" class="form-label">Asal Instansi</label>
-                            <input type="text" class="form-control" id="input_instansi">
+                            <input type="text" class="form-control" id="input_instansi" name="asal_instansi">
                             <div class="form-text">Contoh: Universitas Kristen Petra</div>
                         </div>
                         <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <button type="button" class="btn btn-primary">Lanjutkan</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary">Lanjutkan</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
