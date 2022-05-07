@@ -18,6 +18,18 @@
       width: 100%;
       height: 100%;
     } */
+    /* .modal-dialog {
+    max-width: 70%;
+    margin: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: auto;
+    display: flex;
+
+    
+} */
 
     .stand {
       z-index: 1;
@@ -38,7 +50,8 @@
 
     .b1:hover {
       height: 16.3vw;
-      width: 5.5vw;
+      /* width: 5.5vw; */
+      width: auto;
       z-index: 3;
     }
 
@@ -57,7 +70,8 @@
     }
 
     .b2:hover {
-      height: 6vw;
+      /* height: 6vw; */
+      height: auto;
       width: 11.3vw;
       z-index: 3;
     }
@@ -69,7 +83,8 @@
     }
 
     .b3:hover {
-      height: 6.6vw;
+      /* height: 6.6vw; */
+      height: auto;
       width: 11.3vw;
       z-index: 3;
     }
@@ -81,7 +96,8 @@
     }
 
     .b4:hover {
-      height: 8.95vw;
+      /* height: 8.95vw; */
+      height: auto;
       width: 11.3vw;
       z-index: 3;
     }
@@ -93,7 +109,8 @@
     }
 
     .b5:hover {
-      height: 7vw;
+      /* height: 7vw; */
+      height: auto;
       width: 11.3vw;
       z-index: 3;
     }
@@ -105,9 +122,14 @@
     }
 
     .b6:hover {
-      height: 8.5vw;
+      /* height: 8.5vw; */
+      height: auto;
       width: 11.3vw;
       z-index: 3;
+    }
+    .b7 {
+      margin-left: 64vw;
+      margin-top: 1vw;
     }
 
     .custom_btn {
@@ -117,6 +139,10 @@
       position: relative;
       top: -50%;
       width: 150px;
+    }
+    .videomodal{
+      height: 70%;
+      width: -webkit-fill-available;
     }
 
     body {
@@ -194,30 +220,33 @@
     <!-- The slideshow -->
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_panjang b1" id="panjang" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b2" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b3" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b4" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b5" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b6" onclick="buka()">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_panjang b1" id="panjang" onclick="buka('additon')">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b2" onclick="buka('additon')">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b3" onclick="buka('additon')">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b4" onclick="buka('additon')">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b5" onclick="buka('additon')">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b6" onclick="buka('additon')">
+        <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7" >
         <img src="assets/additon.png" alt="" class="stand">
       </div>
       <div class="carousel-item">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_panjang b1" id="panjang" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b2" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b3" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b4" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b5" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b6" onclick="buka()">
+        <img src="assets/gocement/post 07 04.jpg" alt="" class="barang_stand_panjang b1" id="panjang" onclick="buka('gocement1')">
+        <img src="assets/gocement/post 07 06.jpg" alt="" class="barang_stand_barang b2" onclick="buka('gocement2')">
+        <img src="assets/gocement/post 15 03.jpg" alt="" class="barang_stand_barang b3" onclick="buka('gocement3')">
+        <a href="instagram.com/gocement.id"><img src="assets/gocement/post 20 15.jpg" alt="" class="barang_stand_barang b4" ></a>
+        <a href="instagram.com/gocement.id"><img src="assets/gocement/post 26 2.jpg" alt="" class="barang_stand_barang b5"></a>
+        <img src="assets/gocement/post 29 04 4.jpg" alt="" class="barang_stand_barang b6" onclick="buka('gocement6')">
+        <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7" >
         <img src="assets/gocement.png" alt="" class="stand">
       </div>
       <div class="carousel-item">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_panjang b1" id="panjang" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b2" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b3" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b4" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b5" onclick="buka()">
-        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b6" onclick="buka()">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_panjang b1" id="panjang" onclick="buka('wkc')">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b2" onclick="buka('wkc')">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b3" onclick="buka('wkc')">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b4" onclick="buka('wkc')">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b5" onclick="buka('wkc')">
+        <img src="assets/pintu.jpeg" alt="" class="barang_stand_barang b6" onclick="buka('wkc')">
+        <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7" >
         <img src="assets/wkc.png" alt="" class="stand">
       </div>
     </div>
@@ -231,21 +260,37 @@
     </a>
 
     <!-- MODAL -->
-    <div class="modal" tabindex="-1" id="modalbarang">
+    <!-- <div class="modal" tabindex="-1" id="modalbarang" >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
+            <h5 class="modal-title" id="titlemodal">Modal title</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" id="bodymodal" style="text-align: center;">
             <p>Modal body text goes here.</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="modal fade bd-example-modal-lg" id="modalbarang" tabindex="-1"  aria-labelledby="myLargeModalLabel" >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" >
+    
+          <div class="modal-header" id="titlemodal">
+          </div>
+          <div class="modal-body" id="bodymodal" style="max-height: 70vh;
+          max-width: 50vw; place-self: center;">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -254,17 +299,79 @@
 
 <script>
   function pindah(ke_mana) {
-    document.location.href = ke_mana + ".html";
+    
+    if (ke_mana == 'receptionist') {
+      document.location.href = ke_mana + ".php";
+    }
+    else{
+      document.location.href = ke_mana + ".html";
+    }
   }
 
-  function buka() {
+  function buka(isi) {
     $("#modalbarang").modal('show');
+    if (isi=='gocement1') {
+      document.getElementById('titlemodal').innerHTML=`<h5 class='modal-title'>Introduction GoCement</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    `;
+    document.getElementById('bodymodal').innerHTML=`<video autoplay muted class='videomodal'>
+        <source src="assets/gocement/Kelebihan GoCement.mp4" type="video/mp4">
+        Your browser doesn't support the video tag.
+    </video>`;
+    }
+    else if (isi=='gocement2') {
+      document.getElementById('titlemodal').innerHTML=`<h5 class='modal-title'>Kelebihan GoCement</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    `;
+    document.getElementById('bodymodal').innerHTML=`<video autoplay muted class='videomodal'>
+        <source src="assets/gocement/Kelebihan GoCement.mp4" type="video/mp4">
+        Your browser doesn't support the video tag.
+    </video>`;
+    }
+    else if (isi=='gocement3') {
+      document.getElementById('titlemodal').innerHTML=`<h5 class='modal-title'>Kelebihan GoCement</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    `;
+    document.getElementById('bodymodal').innerHTML=`<video autoplay muted class='videomodal'>
+        <source src="assets/gocement/Kelebihan GoCement 2.mp4" type="video/mp4">
+        Your browser doesn't support the video tag.
+    </video>`;
+    }
+    else if (isi=='gocement6') {
+      document.getElementById('titlemodal').innerHTML=`<h5 class='modal-title'>Kelebihan GoCement</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    `;
+    document.getElementById('bodymodal').innerHTML=`<video autoplay muted class='videomodal'>
+        <source src="assets/gocement/Kelebihan GoCement 3.mp4" type="video/mp4">
+        Your browser doesn't support the video tag.
+    </video>`;
+    }
+    else if (isi=='additon') {
+      document.getElementById('titlemodal').innerHTML=`<h5 class='modal-title'>Additon</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    `;
+    document.getElementById('bodymodal').innerHTML=`<video autoplay muted class='videomodal'>
+        <source src="assets/gocement/Kelebihan GoCement 3.mp4" type="video/mp4">
+        Your browser doesn't support the video tag.
+    </video>`;
+    }
+    else if (isi=='wkc') {
+      document.getElementById('titlemodal').innerHTML=`<h5 class='modal-title'>Wijaya Kusuma Contractors</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    `;
+    document.getElementById('bodymodal').innerHTML=`<video autoplay muted class='videomodal'>
+        <source src="assets/gocement/Kelebihan GoCement 3.mp4" type="video/mp4">
+        Your browser doesn't support the video tag.
+    </video>`;
+    }
+
     // console.log("masuk");
   }
 
   function tutup() {
     $("#modalbarang").modal('hide');
   }
+
 </script>
 
 </html>

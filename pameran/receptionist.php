@@ -1,6 +1,21 @@
 <!doctype html>
 <html lang="en">
+<?php
+//header("location: ../");
+require_once 'phps/connect.php';
+if (isset($_SESSION["username"])) {
+    header("location: jadwal_checking_bc.php");
+}
 
+
+if (isset($_GET['stat'])) {
+    if ($_GET['stat'] == 1) {
+        echo "<script>alert('data yang anda masukan tidak lengkap, silahkan periksa kembali.');</script>";
+    } else if ($_GET['stat'] == 2) {
+        echo "<script>alert('Nomor hp anda tidak valid, silahkan periksa kembali.');</script>";
+    } 
+}
+?>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
