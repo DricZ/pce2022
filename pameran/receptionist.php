@@ -1,21 +1,16 @@
-<!doctype html>
-<html lang="en">
 <?php
-//header("location: ../");
-require_once 'phps/connect.php';
-if (isset($_SESSION["username"])) {
-    header("location: jadwal_checking_bc.php");
-}
-
-
-if (isset($_GET['stat'])) {
-    if ($_GET['stat'] == 1) {
-        echo "<script>alert('data yang anda masukan tidak lengkap, silahkan periksa kembali.');</script>";
-    } else if ($_GET['stat'] == 2) {
-        echo "<script>alert('Nomor hp anda tidak valid, silahkan periksa kembali.');</script>";
-    } 
-}
+    if (isset($_GET['stat'])) {
+        if ($_GET['stat'] == 1) {
+            echo "<script>alert('Data yang anda masukan tidak lengkap, silahkan periksa kembali.');</script>";
+        } else if ($_GET['stat'] == 2) {
+            echo "<script>alert('Nomor hp anda tidak valid, silahkan periksa kembali.');</script>";
+        } 
+    }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -34,78 +29,78 @@ if (isset($_GET['stat'])) {
     <title>Receptionist PCE</title>
 
     <style>
-        body {
-            animation: animasi_fade ease 1s;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-            margin-top: 15vw;
-            background-image: url(assets/background_receptionist.jpg);
-            background-size: 100vw 100vh;
+    body {
+        animation: animasi_fade ease 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        margin-top: 15vw;
+        background-image: url(assets/background_receptionist.jpg);
+        background-size: 100vw 100vh;
+    }
+
+    @keyframes animasi_fade {
+        0% {
+            opacity: 0;
+            transform: scale(2);
         }
 
-        @keyframes animasi_fade {
-            0% {
-                opacity: 0;
-                transform: scale(2);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .penampung,
-        body {
-            overflow: hidden;
-            transition: 1.5s ease-in-out;
-        }
-
-        #gambar_gedung {
-            width: 100vw;
-            transition: 1s ease-out;
-            position: absolute;
-            top: 50%;
-            transform: scale(1) translateY(-50%);
-            z-index: -1;
+        100% {
             opacity: 1;
-            max-height: 100vh;
+            transform: scale(1);
         }
+    }
 
-        #gambar_orang {
-            position: absolute;
-            transition: 1.5s ease-out;
-            top: 50%;
-            left: 10%;
-            width: 30vw;
-            z-index: -1;
-        }
+    .penampung,
+    body {
+        overflow: hidden;
+        transition: 1.5s ease-in-out;
+    }
 
-        #video_pce {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-55%);
-            left: 21vw;
-            width: 52.5vw;
-            z-index: -2;
-            opacity: 1;
-            transition: 1s ease-out;
-        }
+    #gambar_gedung {
+        width: 100vw;
+        transition: 1s ease-out;
+        position: absolute;
+        top: 50%;
+        transform: scale(1) translateY(-50%);
+        z-index: -1;
+        opacity: 1;
+        max-height: 100vh;
+    }
 
-        .custom_btn {
-            margin: 50px;
-            margin-bottom: 25px;
-            margin-top: 0px;
-            width: 125%;
-            font-size: 50px;
-            border-radius: 15px;
-            z-index: 2;
-        }
+    #gambar_orang {
+        position: absolute;
+        transition: 1.5s ease-out;
+        top: 50%;
+        left: 10%;
+        width: 30vw;
+        z-index: -1;
+    }
 
-        .modal-backdrop {
-            top: -100%;
-            height: 150vh;
-        }
+    #video_pce {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-55%);
+        left: 21vw;
+        width: 52.5vw;
+        z-index: -2;
+        opacity: 1;
+        transition: 1s ease-out;
+    }
+
+    .custom_btn {
+        margin: 50px;
+        margin-bottom: 25px;
+        margin-top: 0px;
+        width: 125%;
+        font-size: 50px;
+        border-radius: 15px;
+        z-index: 2;
+    }
+
+    .modal-backdrop {
+        top: -100%;
+        height: 150vh;
+    }
     </style>
 </head>
 
@@ -184,20 +179,20 @@ if (isset($_GET['stat'])) {
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 </body>
 
 <script>
-    function pindah(ke_mana) {
-        if (ke_mana == "stand") {
-            $("#modal_stand").modal('show');
-            // pakai form action, panggil php utk cek apakah data valid, 
-            // jika data baru di insert ke database
-        } else {
-            document.location.href = ke_mana + ".html";
-        }
+function pindah(ke_mana) {
+    if (ke_mana == "stand") {
+        $("#modal_stand").modal('show');
+        // pakai form action, panggil php utk cek apakah data valid, 
+        // jika data baru di insert ke database
+    } else {
+        document.location.href = ke_mana + ".html";
     }
+}
 </script>
 
 </html>
