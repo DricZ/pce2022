@@ -1,10 +1,12 @@
 <?php
+    require "connect.php";
+
     if (isset($_GET['stat'])) {
         if ($_GET['stat'] == 1) {
-            echo "<script>alert('Data yang anda masukan tidak lengkap, silahkan periksa kembali.');</script>";
+            echo "<script>alert('Data yang Anda masukan kurang lengkap, silahkan periksa kembali.');</script>";
         } else if ($_GET['stat'] == 2) {
-            echo "<script>alert('Nomor hp anda tidak valid, silahkan periksa kembali.');</script>";
-        } 
+            echo "<script>alert('Nomor HP yang Anda masukkan tidak valid, silahkan periksa kembali.');</script>";
+        }
     }
 ?>
 
@@ -118,14 +120,24 @@
     <div style="width: 10vw;">
         <button type="button" class="btn btn-danger custom_btn" onclick="pindah('index')">
             <i class="fa-solid fa-door-closed"></i><br>
-            <!-- <i class="fa-solid fa-door-open"></i> -->
             <p style="font-size: large;">Exit</p>
         </button>
-        <button type="button" class="btn btn-success custom_btn" onclick="pindah('stand')">
+
+        <?php if (!isset($_SESSION['email_peserta'])) { ?>
+
+        <button type="button" class="btn btn-success custom_btn" onclick="pindah('stand_blm')">
             <i class="fa-solid fa-store"></i>
-            <!-- <i class="fa-solid fa-booth-curtain"></i> -->
             <p style="font-size: large;">Stands</p>
         </button>
+
+        <?php } else { ?>
+
+        <button type="button" class="btn btn-success custom_btn" onclick="pindah('stand_sdh')">
+            <i class="fa-solid fa-store"></i>
+            <p style="font-size: large;">Stands</p>
+        </button>
+
+        <?php } ?>
     </div>
 
     <!-- MODAL -->
@@ -134,8 +146,8 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Mohon isi form berikut ini sebelum mengunjungi stand kami.</h5>
-                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                 </div>
+                <!-- FORM -->
                 <form action="phps/loginattempt.php" method="post">
                     <div class="modal-body">
                         <div class="mb-3">
@@ -166,7 +178,6 @@
                             <input type="text" class="form-control" id="input_instansi" name="asal_instansi">
                             <div class="form-text">Contoh: Universitas Kristen Petra</div>
                         </div>
-                        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
@@ -185,10 +196,10 @@
 
 <script>
 function pindah(ke_mana) {
-    if (ke_mana == "stand") {
+    if (ke_mana == "stand_blm") {
         $("#modal_stand").modal('show');
-        // pakai form action, panggil php utk cek apakah data valid, 
-        // jika data baru di insert ke database
+    } else if (ke_mana == "stand_sdh") {
+        document.location.href = "stand.php";
     } else {
         document.location.href = ke_mana + ".html";
     }
