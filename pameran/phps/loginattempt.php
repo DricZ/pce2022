@@ -18,10 +18,9 @@ if (isset($_POST['nama_lengkap'])
             header("Location: ../stand.html");
         } else {
             if (strlen($_POST['hp_peserta']) == 12 && preg_match("/^\d+$/", $_POST['hp_peserta'])) { // cek apakah nomor hp valid
-                // buatkan data di database
-                // $sqlhistory ="INSERT INTO `history_point`(`id`, `id_team`, `point_value`, `added_on`, `keterangan`) VALUES (NULL,?,10,?,?)";
-                // $stmthistory = $pdo->prepare($sqlhistory);
-                // $stmthistory->execute([$id_team, $timestamp,$nama]);
+                $sqlhistory ="INSERT INTO tabel peserta VALUES (NULL,?,?,?,?)";
+                $stmthistory = $pdo->prepare($sqlhistory);
+                $stmthistory->execute([$_POST['nama_lengkap'], $_POST['email_peserta'], $_POST['hp_peserta'], $_POST['asal_instansi']]);
                 header("Location: ../stand.html");
             } else {
                 header("Location: ../receptionist.php?stat=2"); 

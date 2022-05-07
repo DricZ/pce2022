@@ -33,6 +33,7 @@
       margin-top: 13.05vw;
       height: 15.3vw;
       cursor: pointer;
+      transition: 0.3s ease-in-out;
     }
 
     .b1:hover {
@@ -46,6 +47,7 @@
       position: absolute;
       width: 10.3vw;
       cursor: pointer;
+      transition: 0.3s ease-in-out;
     }
 
     .b2 {
@@ -121,7 +123,7 @@
       animation: animasi_fade ease 1s;
       animation-iteration-count: 1;
       animation-fill-mode: forwards;
-      overflow: visible;
+      overflow: hidden;
       /* background-image: url('assets/booth fix.jpg');
       background-size: 100%;
       background-position: center; */
@@ -219,35 +221,35 @@
         <img src="assets/wkc.png" alt="" class="stand">
       </div>
     </div>
-    
-  <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span><i class="fa-solid fa-chevron-left fa-2x"></i></span>
-  </a>
-  <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span><i class="fa-solid fa-chevron-right fa-2x"></i></span>
-  </a>
 
-  <!-- MODAL -->
-  <div class="modal" tabindex="-1" id="modalbarang">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span><i class="fa-solid fa-chevron-left fa-2x"></i></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span><i class="fa-solid fa-chevron-right fa-2x"></i></span>
+    </a>
+
+    <!-- MODAL -->
+    <div class="modal" tabindex="-1" id="modalbarang">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </body>
 
 <script>
