@@ -1,8 +1,8 @@
 <?php
-    require "connect.php";
+    require "phps/connect.php";
 
     if (!isset($_SESSION['email_peserta'])) {
-      header("Location: ../index.html");
+      header("Location: ../.");
     }
 ?>
 
@@ -229,30 +229,30 @@
                 <img src="assets/additon.png" alt="" class="stand">
             </div>
             <div class="carousel-item">
-                <img src="assets/gocement/post 07 04.jpg" alt="" class="barang_stand_panjang b1" id="panjang"
+                <img src="assets/gocement/post 07 04.jpeg" alt="" class="barang_stand_panjang b1" id="panjang"
                     onclick="buka('gocement1')">
-                <img src="assets/gocement/post 07 06.jpg" alt="" class="barang_stand_barang b2"
+                <img src="assets/gocement/post 07 06.jpeg" alt="" class="barang_stand_barang b2"
                     onclick="buka('gocement2')">
-                <img src="assets/gocement/post 15 03.jpg" alt="" class="barang_stand_barang b3"
+                <img src="assets/gocement/post 15 03.jpeg" alt="" class="barang_stand_barang b3"
                     onclick="buka('gocement3')">
-                <a href="https://www.instagram.com/gocement.id/">
-                    <img src="assets/gocement/post 20 15.jpg" alt="" class="barang_stand_barang b4">
+                <a href="https://www.instagram.com/gocement.id/" target="blank">
+                    <img src="assets/gocement/post 20 15.jpeg" alt="" class="barang_stand_barang b4">
                 </a>
-                <a href="https://www.instagram.com/gocement.id/">
-                    <img src="assets/gocement/post 26 2.jpg" alt="" class="barang_stand_barang b5">
+                <a href="https://www.instagram.com/gocement.id/" target="blank">
+                    <img src="assets/gocement/post 26 2.jpeg" alt="" class="barang_stand_barang b5">
                 </a>
-                <img src="assets/gocement/post 29 04 4.jpg" alt="" class="barang_stand_barang b6"
+                <img src="assets/gocement/post 29 04 4.jpeg" alt="" class="barang_stand_barang b6"
                     onclick="buka('gocement6')">
                 <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7">
                 <img src="assets/gocement.png" alt="" class="stand">
             </div>
             <div class="carousel-item">
-                <img src="assets/wkc/Logo Utama WKC - Copy.jpg" alt="" class="barang_stand_panjang b1" id="panjang"
+                <img src="assets/wkc/Logo Utama WKC - Copy.jpeg" alt="" class="barang_stand_panjang b1" id="panjang"
                     onclick="buka('wkc')">
-                <img src="assets/wkc/Logo Utama WKC.jpg" alt="" class="barang_stand_barang b2" onclick="buka('wkc')">
-                <img src="assets/wkc/Logo Utama WKC.jpg" alt="" class="barang_stand_barang b3" onclick="buka('wkc')">
+                <img src="assets/wkc/Logo Utama WKC.jpeg" alt="" class="barang_stand_barang b2" onclick="buka('wkc')">
+                <img src="assets/wkc/Logo Utama WKC.jpeg" alt="" class="barang_stand_barang b3" onclick="buka('wkc')">
                 <img src="assets/wkc/Logogram WKC.jpg" alt="" class="barang_stand_barang b4" onclick="buka('wkc')">
-                <img src="assets/wkc/Logo Utama WKC.jpg" alt="" class="barang_stand_barang b5" onclick="buka('wkc')">
+                <img src="assets/wkc/Logo Utama WKC.jpeg" alt="" class="barang_stand_barang b5" onclick="buka('wkc')">
                 <img src="assets/wkc/Logogram WKC.jpg" alt="" class="barang_stand_barang b6" onclick="buka('wkc')">
                 <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7">
                 <img src="assets/wkc.png" alt="" class="stand">
@@ -336,7 +336,7 @@ function buka(isi) {
         document.getElementById('titlemodal').innerHTML = `<h5 class='modal-title'>Wijaya Kusuma Contractors</h5>`;
         document.getElementById('bodymodal').innerHTML = `
       <video autoplay controls class='videomodal'>
-        <source src="assets/gocement/wkc_iklan.mp4" type="video/mp4">
+        <source src="assets/wkc/wkc_iklan.mp4" type="video/mp4">
         Your browser doesn't support the video tag.
       </video>`;
     }
@@ -344,6 +344,9 @@ function buka(isi) {
 
 function tutup() {
     $("#modalbarang").modal('hide');
+    for (let i = 0; i < document.getElementByClass('videomodal').length; i++) {
+        document.getElementByClass('videomodal')[i].pause();
+    }
 }
 </script>
 

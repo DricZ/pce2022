@@ -1,11 +1,9 @@
 <?php
-    require "connect.php";
+    require "phps/connect.php";
 
     if (isset($_GET['stat'])) {
         if ($_GET['stat'] == 1) {
             echo "<script>alert('Data yang Anda masukan kurang lengkap, silahkan periksa kembali.');</script>";
-        } else if ($_GET['stat'] == 2) {
-            echo "<script>alert('Nomor HP yang Anda masukkan tidak valid, silahkan periksa kembali.');</script>";
         }
     }
 ?>
@@ -36,7 +34,7 @@
         animation-iteration-count: 1;
         animation-fill-mode: forwards;
         margin-top: 15vw;
-        background-image: url(assets/background_receptionist.jpg);
+        background-image: url(assets/background_receptionist.jpeg);
         background-size: 100vw 100vh;
     }
 
