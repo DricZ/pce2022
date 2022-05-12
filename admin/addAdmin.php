@@ -81,7 +81,7 @@ if (isset($_GET['stat'])) {
 
     <div class="container pt-3">
         <?php
-        if ($_SESSION['nrpAdmin'] == 'b11190189' || $_SESSION['nrpAdmin'] == 'b11190099' || $_SESSION['nrpAdmin'] == 'b11190085' || $_SESSION['nrpAdmin'] == 'b11190011' || $_SESSION['nrpAdmin'] == 'b11190184' || $_SESSION['nrpAdmin'] == 'b11190092' || $_SESSION['nrpAdmin'] == 'b11190056' || $_SESSION['nrpAdmin'] == 'c14190033' || $_SESSION['nrpAdmin'] == 'c14190027' || $_SESSION['nrpAdmin'] == 'c14190050' || $_SESSION['nrpAdmin'] == 'c14190064' || $_SESSION['nrpAdmin'] == 'c14190218' || $_SESSION['nrpAdmin'] == 'b11190057') {
+        if ($_SESSION['nrpAdmin'] == 'b11200024' || $_SESSION['nrpAdmin'] == 'c14200195' || $_SESSION['nrpAdmin'] == 'c14200135' || $_SESSION['nrpAdmin'] == 'c14200121' || $_SESSION['nrpAdmin'] == 'c14200136' || $_SESSION['nrpAdmin'] == 'c14200179' || $_SESSION['nrpAdmin'] == 'b11190056' || $_SESSION['nrpAdmin'] == 'c14190033' || $_SESSION['nrpAdmin'] == 'c14190027' || $_SESSION['nrpAdmin'] == 'c14190050' || $_SESSION['nrpAdmin'] == 'c14190064' || $_SESSION['nrpAdmin'] == 'c14190218' || $_SESSION['nrpAdmin'] == 'b11190057') {
         ?>
             <form action="phps/submitAdmin.php" method="POST">
                 <div class="form-group">

@@ -19,7 +19,7 @@ $randomIndex = array_rand($emojiTexts);
 <!DOCTYPE html>
 
 <head>
-    <title>List Pendaftar Webinar</title>
+    <title>List Pendaftar TalkShow</title>
 </head>
 
 <script src="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css"></script>
@@ -230,7 +230,7 @@ $randomIndex = array_rand($emojiTexts);
                     str +=
                         `<a type='button' onclick='displayBukti(this)' data-bukti='` +
                         bukti +
-                        `' class='btn btn-warning' style='-webkit-appearance: none;'>LIHAT BUKTI PEMBAYARAN<br><b>WEBINAR INTERNASIONAL</b></a><br><br>`;
+                        `' class='btn btn-warning' style='-webkit-appearance: none;'>LIHAT BUKTI PEMBAYARAN<br><b>TalkShow INTERNASIONAL</b></a><br><br>`;
                     str += `
                         <hr>NOMOR REKENING<br>
                         <b>` + norek + `</b>
@@ -448,7 +448,7 @@ if (isset($_GET['stat'])) {
             <div class="col-12 col-md-10 offset-md-1">
                 <div align="center">
                     <h2>LIST PENDAFTAR</h2>
-                    <h2><b>&#127982; WEBINAR &#127982;</b></h2>
+                    <h2><b>&#127982; TaklShow &#127982;</b></h2>
                     <h3><?php echo $emojiTexts[$randomIndex]; ?></h3><br>
                 </div>
             </div>

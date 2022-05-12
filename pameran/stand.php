@@ -44,6 +44,13 @@
         z-index: 3;
     }
 
+    .gc1:hover {
+        margin-left: 27.8vw;
+        height: 16.3vw;
+        width: 16.3vw;
+        z-index: 3;
+    }
+
     .barang_stand_barang {
         z-index: 2;
         position: absolute;
@@ -52,7 +59,8 @@
         transition: 0.3s ease-in-out;
     }
 
-    .b2 {
+    .b2,
+    .gc2 {
         margin-left: 42.49vw;
         margin-top: 13.2vw;
         height: 5vw;
@@ -64,7 +72,18 @@
         z-index: 3;
     }
 
-    .b3 {
+    .gc2:hover,
+    .gc3:hover,
+    .gc4:hover,
+    .gc5:hover,
+    .gc6:hover {
+        height: 11.3vw;
+        width: 11.3vw;
+        z-index: 3;
+    }
+
+    .b3,
+    .gc3 {
         height: 5.6vw;
         margin-left: 53.5vw;
         margin-top: 13vw;
@@ -76,7 +95,8 @@
         z-index: 3;
     }
 
-    .b4 {
+    .b4,
+    .gc4 {
         margin-left: 53.5vw;
         margin-top: 18.59vw;
         height: 7.95vw;
@@ -88,7 +108,8 @@
         z-index: 3;
     }
 
-    .b5 {
+    .b5,
+    .gc5 {
         margin-left: 53.5vw;
         margin-top: 26.6vw;
         height: 6vw;
@@ -100,7 +121,8 @@
         z-index: 3;
     }
 
-    .b6 {
+    .b6,
+    .gc6 {
         margin-left: 53.5vw;
         margin-top: 32.5vw;
         height: 7.5vw;
@@ -229,19 +251,19 @@
                 <img src="assets/additon.png" alt="" class="stand">
             </div>
             <div class="carousel-item">
-                <img src="assets/gocement/post 07 04.jpeg" alt="" class="barang_stand_panjang b1" id="panjang"
+                <img src="assets/gocement/post 07 04.jpeg" alt="" class="barang_stand_panjang gc1" id="panjang"
                     onclick="buka('gocement1')">
-                <img src="assets/gocement/post 07 06.jpeg" alt="" class="barang_stand_barang b2"
+                <img src="assets/gocement/post 07 06.jpeg" alt="" class="barang_stand_barang gc2"
                     onclick="buka('gocement2')">
-                <img src="assets/gocement/post 15 03.jpeg" alt="" class="barang_stand_barang b3"
+                <img src="assets/gocement/post 15 03.jpeg" alt="" class="barang_stand_barang gc3"
                     onclick="buka('gocement3')">
                 <a href="https://www.instagram.com/gocement.id/" target="blank">
-                    <img src="assets/gocement/post 20 15.jpeg" alt="" class="barang_stand_barang b4">
+                    <img src="assets/gocement/post 20 15.jpeg" alt="" class="barang_stand_barang gc4">
                 </a>
                 <a href="https://www.instagram.com/gocement.id/" target="blank">
-                    <img src="assets/gocement/post 26 2.jpeg" alt="" class="barang_stand_barang b5">
+                    <img src="assets/gocement/post 26 2.jpeg" alt="" class="barang_stand_barang gc5">
                 </a>
-                <img src="assets/gocement/post 29 04 4.jpeg" alt="" class="barang_stand_barang b6"
+                <img src="assets/gocement/post 29 04 4.jpeg" alt="" class="barang_stand_barang gc6"
                     onclick="buka('gocement6')">
                 <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7">
                 <img src="assets/gocement.png" alt="" class="stand">

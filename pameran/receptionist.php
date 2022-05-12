@@ -199,7 +199,7 @@ function pindah(ke_mana) {
     } else if (ke_mana == "stand_sdh") {
         document.location.href = "stand.php";
     } else {
-        document.location.href = ke_mana + ".html";
+        document.location.href = "index.html";
     }
 }
 </script>

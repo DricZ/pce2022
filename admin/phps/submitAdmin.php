@@ -2,7 +2,7 @@
 require_once 'connect.php';
 
 if (isset($_POST['nrp']) && isset($_POST['nama']) && isset($_POST['divisi']) && isset($_POST['bidang'])) {
-	$stmt = $pdo->prepare("INSERT INTO `admin`(`id`, `nrp`, `nama`, `divisi`, `id_bidang`) VALUES (?,?,?,?,?)");
+	$stmt = $pdo->prepare("INSERT INTO `admin`(`id`, `nrp`, `nama`, `divisi`, `id_divisi`) VALUES (?,?,?,?,?)");
 
 	$nrpAdminBaru = strtolower($_POST['nrp']);
 
