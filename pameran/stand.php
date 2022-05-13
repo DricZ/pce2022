@@ -1,9 +1,9 @@
 <?php
-    require "phps/connect.php";
+    // require "phps/connect.php";
 
-    if (!isset($_SESSION['email_peserta'])) {
-      header("Location: ../.");
-    }
+    // if (!isset($_SESSION['email_peserta'])) {
+    //   header("Location: ../.");
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -298,11 +298,12 @@
                 <a href="https://www.wkc.co.id/category/projects/recreation-museum/" target="blank">
                 <img src="assets/wkc/5-wkc.png" alt="" class="barang_stand_barang b5">
                 </a>
-                <a href="https://www.wkc.co.id/careers/" terget="blank">
+                <a href="https://www.wkc.co.id/careers/" target="blank">
                 <img src="assets/wkc/6-wkc.png" alt="" class="barang_stand_barang b6">
                 </a>
-                <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7">
-                <img src="assets/wkc.png" alt="" class="stand">
+                <!-- <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7"> -->
+                <img src="assets/wkc/Logo Utama WKC.png" alt="" style="z-index: 2;position: absolute;width: 29vw;margin-left: 37vw;">
+                <img src="assets/background interior1.jpeg" alt="" class="stand">
             </div>
         </div>
 
