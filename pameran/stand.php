@@ -66,6 +66,24 @@
         height: 5vw;
     }
 
+    .ad2 {
+        margin-left: 45.5vw;
+    }
+
+    .ad1,
+    .ad2 {
+        margin-top: 13.05vw;
+        width: 7.7vw;
+        height: 15vw;
+    }
+
+    .ad1:hover,
+    .ad2:hover {
+        width: 11vw;
+        height: 16vw;
+        z-index: 3;
+    }
+
     .b2:hover {
         height: 6vw;
         width: 11.3vw;
@@ -235,18 +253,16 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="assets/additon/logo additon high - Copy.png" alt="" class="barang_stand_panjang b1"
-                    id="panjang" onclick="buka('additon')">
-                <img src="assets/additon/logo additon high.png" alt="" class="barang_stand_barang b2"
+                <img src="assets/additon/BROSUR WS protect-01.jpeg" alt="" class="barang_stand_panjang ad1" id="panjang"
                     onclick="buka('additon')">
-                <img src="assets/additon/logo additon high.png" alt="" class="barang_stand_barang b3"
+                <img src="assets/additon/BROSUR WS ULTIMATE-01.jpeg" alt="" class="barang_stand_barang ad2"
                     onclick="buka('additon')">
-                <img src="assets/additon/logo additon high.png" alt="" class="barang_stand_barang b4"
+                <img src="assets/additon/all produk-01.jpeg" alt="" class="barang_stand_barang b3"
                     onclick="buka('additon')">
-                <img src="assets/additon/logo additon high.png" alt="" class="barang_stand_barang b5"
+                <img src="assets/additon/all produk-01.jpeg" alt="" class="barang_stand_barang b4"
                     onclick="buka('additon')">
-                <img src="assets/additon/logo additon high.png" alt="" class="barang_stand_barang b6"
-                    onclick="buka('additon')">
+                <img src="assets/additon/bg 3-01.jpeg" alt="" class="barang_stand_barang b5" onclick="buka('additon')">
+                <img src="assets/additon/bg 3-01.jpeg" alt="" class="barang_stand_barang b6" onclick="buka('additon')">
                 <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7">
                 <img src="assets/additon.png" alt="" class="stand">
             </div>
