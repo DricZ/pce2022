@@ -269,13 +269,22 @@
                 <img src="assets/gocement.png" alt="" class="stand">
             </div>
             <div class="carousel-item">
-                <img src="assets/wkc/Logo Utama WKC - Copy.jpeg" alt="" class="barang_stand_panjang b1" id="panjang"
-                    onclick="buka('wkc')">
-                <img src="assets/wkc/Logo Utama WKC.jpeg" alt="" class="barang_stand_barang b2" onclick="buka('wkc')">
-                <img src="assets/wkc/Logo Utama WKC.jpeg" alt="" class="barang_stand_barang b3" onclick="buka('wkc')">
-                <img src="assets/wkc/Logogram WKC.jpg" alt="" class="barang_stand_barang b4" onclick="buka('wkc')">
-                <img src="assets/wkc/Logo Utama WKC.jpeg" alt="" class="barang_stand_barang b5" onclick="buka('wkc')">
-                <img src="assets/wkc/Logogram WKC.jpg" alt="" class="barang_stand_barang b6" onclick="buka('wkc')">
+                <a href="https://www.wkc.co.id/grand-mercure-lampung/" target="blank">
+                <img src="assets/wkc/1-wkc.png" alt="" class="barang_stand_panjang b1" id="panjang">
+                </a>
+                <a href=" https://www.wkc.co.id/about-wkc/" target="blank">
+                <img src="assets/wkc/2-wkc.png" alt="" class="barang_stand_barang b2">
+                </a>
+                <img src="assets/wkc/3-wkc.png" alt="" class="barang_stand_barang b3" onclick="buka('wkc')">
+                <a href="https://www.wkc.co.id/category/projects/" target="blank">
+                <img src="assets/wkc/4-wkc.png" alt="" class="barang_stand_barang b4">
+                </a>
+                <a href="https://www.wkc.co.id/category/projects/recreation-museum/" target="blank">
+                <img src="assets/wkc/5-wkc.png" alt="" class="barang_stand_barang b5">
+                </a>
+                <a href="https://www.wkc.co.id/careers/" terget="blank">
+                <img src="assets/wkc/6-wkc.png" alt="" class="barang_stand_barang b6">
+                </a>
                 <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7">
                 <img src="assets/wkc.png" alt="" class="stand">
             </div>
