@@ -1,9 +1,9 @@
 <?php
-    // require "phps/connect.php";
+    require "phps/connect.php";
 
-    // if (!isset($_SESSION['email_peserta'])) {
-    //   header("Location: ../.");
-    // }
+    if (!isset($_SESSION['email_peserta'])) {
+      header("Location: ../index.html");
+    }
 ?>
 
 <!DOCTYPE html>
@@ -286,23 +286,24 @@
             </div>
             <div class="carousel-item">
                 <a href="https://www.wkc.co.id/grand-mercure-lampung/" target="blank">
-                <img src="assets/wkc/1-wkc.png" alt="" class="barang_stand_panjang b1" id="panjang">
+                    <img src="assets/wkc/1-wkc.png" alt="" class="barang_stand_panjang b1" id="panjang">
                 </a>
                 <a href=" https://www.wkc.co.id/about-wkc/" target="blank">
-                <img src="assets/wkc/2-wkc.png" alt="" class="barang_stand_barang b2">
+                    <img src="assets/wkc/2-wkc.png" alt="" class="barang_stand_barang b2">
                 </a>
                 <img src="assets/wkc/3-wkc.png" alt="" class="barang_stand_barang b3" onclick="buka('wkc')">
                 <a href="https://www.wkc.co.id/category/projects/" target="blank">
-                <img src="assets/wkc/4-wkc.png" alt="" class="barang_stand_barang b4">
+                    <img src="assets/wkc/4-wkc.png" alt="" class="barang_stand_barang b4">
                 </a>
                 <a href="https://www.wkc.co.id/category/projects/recreation-museum/" target="blank">
-                <img src="assets/wkc/5-wkc.png" alt="" class="barang_stand_barang b5">
+                    <img src="assets/wkc/5-wkc.png" alt="" class="barang_stand_barang b5">
                 </a>
                 <a href="https://www.wkc.co.id/careers/" target="blank">
-                <img src="assets/wkc/6-wkc.png" alt="" class="barang_stand_barang b6">
+                    <img src="assets/wkc/6-wkc.png" alt="" class="barang_stand_barang b6">
                 </a>
                 <!-- <img src="assets/pce_logo color.png" alt="" class="barang_stand_barang b7"> -->
-                <img src="assets/wkc/Logo Utama WKC.png" alt="" style="z-index: 2;position: absolute;width: 29vw;margin-left: 37vw;">
+                <img src="assets/wkc/Logo Utama WKC.jpeg" alt=""
+                    style="z-index: 2; position: absolute; width: 27.25vw; margin-left: 33vw;">
                 <img src="assets/background interior1.jpeg" alt="" class="stand">
             </div>
         </div>
