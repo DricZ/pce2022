@@ -1,5 +1,5 @@
 <?php
-// header("location: ../");
+header("location: ../");
 //require_once 'phps/connect.php';
 ?>
 
