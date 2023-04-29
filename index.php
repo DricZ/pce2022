@@ -5,7 +5,7 @@ $_SESSION['page'] = 'home';
 
 require_once 'header.php';
 
-// $_SESSION['id'] = 89;
+// $_SESSION['id'] = 69;
 if (isset($_SESSION['id'])) {
    $sql = "SELECT * FROM pendaftar WHERE id = ?";
    $stmt = $pdo->prepare($sql);
@@ -17,7 +17,7 @@ if (isset($_SESSION['id'])) {
 
 <style>
    .jconfirm .jconfirm-box.hilight.jconfirm-hilight-random {
-      /*the animation name is bob*/
+      /* the animation name is bob */
       transform: translate3d(0, 0, 0);
       animation: random 2s;
    }

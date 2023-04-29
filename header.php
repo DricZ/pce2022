@@ -284,15 +284,15 @@ require_once 'phps/connect.php';
                     if (isset($_SESSION['page'])) {
                         if ($_SESSION['page'] == 'home') {
                     ?>
-                            <li><a href="../index.php" style="color: black;">Home</a></li>
-                            <li><a href="../index.php#about" style="color: black;">About</a></li>
+                            <li><a href="index.php" style="color: black;">Home</a></li>
+                            <li><a href="#about" style="color: black;">About</a></li>
                             <li><a href="cap.php" style="color: black;">Civil Analysis & Photography</a></li>
                             <li><a href="#contactus" style="color: black;">Contact Us</a></li>
                         <?php
                         } else if ($_SESSION['page'] == 'cap') {
                         ?>
-                            <li><a href="../index.php" style="color: black;">Home</a></li>
-                            <li><a href="../index.php#about" style="color: black;">About</a></li>
+                            <li><a href="index.php" style="color: black;">Home</a></li>
+                            <li><a href="#about" style="color: black;">About</a></li>
                             <li><a href="#contactus" style="color: black;">Contact Us</a></li>
                     <?php
                         }

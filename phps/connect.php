@@ -1,8 +1,8 @@
 <?php
-    $host = 'pce.petra.ac.id';
+    $host = '127.0.0.1'; // pce.petra.ac.id
     $db = 'pcepetra_pce2022';
-    $user = 'pcepetraac11';
-    $pass = '3AZdwqazba!M';
+    $user = 'root'; // pcepetraac11
+    $pass = ''; // 3AZdwqazba!M
     $charset = 'utf8mb4';
 
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset;";
